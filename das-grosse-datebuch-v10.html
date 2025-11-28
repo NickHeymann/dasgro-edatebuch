@@ -1215,13 +1215,42 @@
         function parseSheetData(json) {
             const cols = json.table.cols.map(c => c.label?.toLowerCase() || '');
             const rows = json.table.rows;
-            
+
+            // Kategorie-Mapping: alte Sheet-Kategorien → neue App-Kategorien
+            const categoryMap = {
+                'konzert': 'musik',
+                'kultur': 'erlebnis',
+                'event': 'erlebnis',
+                'ausstellung': 'ausstellung',
+                'erlebnis': 'erlebnis',
+                'theater': 'theater',
+                'musik': 'musik',
+                'comedy': 'comedy',
+                'wellness': 'wellness',
+                'aktiv': 'aktiv',
+                'handwerk': 'handwerk',
+                'essen': 'essen'
+            };
+
             return rows.map((row, i) => {
                 const event = { id: `sheet-${i}` };
                 row.c.forEach((cell, j) => {
                     const key = cols[j];
                     if (key && cell) {
-                        event[key] = cell.v || '';
+                        let value = cell.v || '';
+                        // Datum-Format korrigieren (Google gibt "Date(2025,11,3)" zurück)
+                        if ((key === 'date' || key === 'enddate') && typeof value === 'string' && value.startsWith('Date(')) {
+                            const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
+                            if (match) {
+                                const [_, y, m, d] = match;
+                                value = `${y}-${String(parseInt(m)+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+                            }
+                        }
+                        // Kategorie mappen
+                        if (key === 'category') {
+                            value = categoryMap[value.toLowerCase()] || value.toLowerCase();
+                        }
+                        event[key] = value;
                     }
                 });
                 return event;
