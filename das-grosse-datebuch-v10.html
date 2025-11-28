@@ -746,11 +746,11 @@
         </div>
         
         <nav class="nav-tabs">
-            <button class="nav-tab active" data-category="ausstellung">🖼️ Ausstellung</button>
-            <button class="nav-tab" data-category="erlebnis">🎪 Erlebnis</button>
+            <button class="nav-tab active" data-category="musical">🎭 Musical</button>
+            <button class="nav-tab" data-category="variete">🎪 Varieté</button>
             <button class="nav-tab" data-category="theater">🎭 Theater</button>
-            <button class="nav-tab" data-category="musik">🎵 Musik</button>
             <button class="nav-tab" data-category="comedy">😂 Comedy</button>
+            <button class="nav-tab" data-category="musik">🎵 Musik</button>
             <button class="nav-tab" data-category="wellness">💆 Wellness</button>
             <button class="nav-tab" data-category="aktiv">🏃‍♀️ Aktiv</button>
             <button class="nav-tab" data-category="handwerk">🔨 Handwerk</button>
@@ -763,13 +763,13 @@
         </nav>
         
         <div class="book-content">
-            <!-- AUSSTELLUNG -->
-            <section class="category-section active" id="ausstellung">
+            <!-- MUSICAL -->
+            <section class="category-section active" id="musical">
                 <div class="category-header">
-                    <h2>🖼️ Ausstellungen</h2>
-                    <p>Kunst & Kultur in Hamburgs Museen</p>
+                    <h2>🎭 Musicals</h2>
+                    <p>Die großen Musical-Shows in Hamburg</p>
                 </div>
-                <div id="ausstellung-container">
+                <div id="musical-container">
                     <div class="loading-indicator">
                         <div class="loading-spinner"></div>
                         <p>Wird geladen...</p>
@@ -777,14 +777,14 @@
                 </div>
             </section>
 
-            <!-- ERLEBNIS -->
-            <section class="category-section" id="erlebnis">
+            <!-- VARIETÉ -->
+            <section class="category-section" id="variete">
                 <div class="category-header">
-                    <h2>🎪 Erlebnisse</h2>
-                    <p>Besondere Events & immersive Erfahrungen</p>
+                    <h2>🎪 Varieté</h2>
+                    <p>Akrobatik, Comedy & Dinner-Shows</p>
                 </div>
-                <div id="erlebnis-container">
-                    <p class="empty-message">Keine Erlebnisse gefunden.</p>
+                <div id="variete-container">
+                    <p class="empty-message">Keine Varieté-Shows gefunden.</p>
                 </div>
             </section>
 
@@ -1216,16 +1216,15 @@
             const cols = json.table.cols.map(c => c.label?.toLowerCase() || '');
             const rows = json.table.rows;
 
-            // Kategorie-Mapping: alte Sheet-Kategorien → neue App-Kategorien
+            // Kategorie-Mapping: Sheet-Kategorien → App-Kategorien
             const categoryMap = {
-                'konzert': 'musik',
-                'kultur': 'erlebnis',
-                'event': 'erlebnis',
-                'ausstellung': 'ausstellung',
-                'erlebnis': 'erlebnis',
+                'musical': 'musical',
+                'variete': 'variete',
+                'varieté': 'variete',
                 'theater': 'theater',
-                'musik': 'musik',
                 'comedy': 'comedy',
+                'musik': 'musik',
+                'konzert': 'musik',
                 'wellness': 'wellness',
                 'aktiv': 'aktiv',
                 'handwerk': 'handwerk',
@@ -1259,7 +1258,7 @@
         
         // Rendert alle Events in ihre jeweiligen Kategorie-Container
         function renderCategoryEvents() {
-            const categories = ['ausstellung', 'erlebnis', 'theater', 'musik', 'comedy', 'wellness', 'aktiv', 'handwerk', 'essen'];
+            const categories = ['musical', 'variete', 'theater', 'comedy', 'musik', 'wellness', 'aktiv', 'handwerk', 'essen'];
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             const ratings = saved.ratings || {};
 
@@ -1284,11 +1283,11 @@
         // Hilfsfunktion: Kategorie-Name für leere Meldungen
         function getCategoryName(category) {
             const names = {
-                ausstellung: 'Ausstellungen',
-                erlebnis: 'Erlebnisse',
+                musical: 'Musicals',
+                variete: 'Varieté-Shows',
                 theater: 'Theater-Events',
-                musik: 'Musik-Events',
                 comedy: 'Comedy-Events',
+                musik: 'Musik-Events',
                 wellness: 'Wellness-Angebote',
                 aktiv: 'Aktiv-Angebote',
                 handwerk: 'Handwerk-Workshops',
