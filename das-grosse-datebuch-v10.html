@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <!-- Leaflet für Karten -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
         :root {
             --cream: #faf8f5;
@@ -689,6 +692,119 @@
         }
         @keyframes toastOut { from { opacity: 1; } to { opacity: 0; } }
         
+        /* DATE BUILDER */
+        .date-builder-flow { display: flex; flex-direction: column; gap: 20px; }
+        .date-builder-question {
+            background: linear-gradient(135deg, var(--ice-blue), var(--cream));
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        .date-builder-question h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        .date-builder-options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .date-option-btn {
+            padding: 12px 20px;
+            background: white;
+            border: 2px solid var(--sage);
+            border-radius: 12px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .date-option-btn:hover { background: var(--sage); color: white; transform: translateY(-2px); }
+        .date-option-btn.selected { background: var(--sage); color: white; }
+
+        /* CATEGORY PILLS */
+        .category-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
+        .category-pill {
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid var(--ice-blue);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .category-pill:hover { border-color: var(--sage); transform: translateY(-1px); }
+        .category-pill.active { background: var(--sage); border-color: var(--sage); color: white; }
+        .category-pill .pill-count {
+            background: var(--rose);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 6px;
+        }
+
+        /* LEAFLET MAP */
+        .map-container {
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 16px 0;
+            border: 2px solid var(--ice-blue);
+        }
+        #dateBuilderMap { height: 100%; width: 100%; }
+
+        /* EVENT CARD ENHANCEMENTS */
+        .event-location-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 10px;
+            background: var(--ice-blue);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        .event-location-info .location-icon { font-size: 1.2rem; }
+        .event-link-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+        }
+        .event-link-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(143,188,143,0.4); }
+
+        /* DATE SUMMARY */
+        .date-summary {
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .date-summary h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 15px; }
+        .date-summary-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .date-summary-item:last-child { border-bottom: none; }
+        .date-summary-item .step-num {
+            width: 28px; height: 28px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
         /* MOBILE */
         @media (max-width: 600px) {
             .book-cover { padding: 35px 20px 90px; }
@@ -701,6 +817,7 @@
             .globe-container { height: 280px; }
             .roulette-actions { flex-direction: column; }
             .date-filter { flex-direction: column; }
+            .map-container { height: 200px; }
         }
     </style>
 </head>
@@ -995,13 +1112,35 @@
 
     <!-- Events an diesem Tag Modal -->
     <div class="modal" id="dayEventsModal">
-        <div class="modal-content" style="max-width:600px;">
+        <div class="modal-content" style="max-width:700px;">
             <button class="modal-close" onclick="closeDayEventsModal()">✕</button>
             <div class="modal-header">
                 <h3 id="dayEventsTitle">📅 Events am ...</h3>
             </div>
             <div class="modal-body" id="dayEventsBody" style="max-height:70vh;overflow-y:auto;">
+                <!-- Kategorie-Filter Pills -->
+                <div id="categoryPills" class="category-pills"></div>
+                <!-- Karte -->
+                <div class="map-container" id="mapContainer" style="display:none;">
+                    <div id="dateBuilderMap"></div>
+                </div>
                 <!-- Events werden hier eingefügt -->
+                <div id="dayEventsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date Builder Modal -->
+    <div class="modal" id="dateBuilderModal">
+        <div class="modal-content" style="max-width:650px;">
+            <button class="modal-close" onclick="closeDateBuilder()">✕</button>
+            <div class="modal-header">
+                <h3>💕 Date zusammenstellen</h3>
+            </div>
+            <div class="modal-body" id="dateBuilderBody">
+                <div class="date-builder-flow" id="dateBuilderFlow">
+                    <!-- Flow wird dynamisch generiert -->
+                </div>
             </div>
         </div>
     </div>
@@ -1246,9 +1385,42 @@
         }
 
         // Rendert eine einzelne Event-Karte
-        function renderEventCard(e, ratings) {
+        function renderEventCard(e, ratings, showDateBuilder = false) {
             const isLiked = ratings[e.id]?.liked;
             const badge = getBadge(e);
+
+            // Location-Info HTML
+            const locationHtml = e.location ? `
+                <div class="event-location-info">
+                    <span class="location-icon">📍</span>
+                    <div>
+                        <strong>${e.location}</strong>
+                        ${e.address ? `<br><small style="color:var(--text-light)">${e.address}</small>` : ''}
+                        ${e.time ? `<br><small>🕐 ${e.time}</small>` : ''}
+                        ${e.price ? `<small style="margin-left:10px">💰 ${e.price}</small>` : ''}
+                    </div>
+                </div>
+            ` : '';
+
+            // Treatment für Wellness
+            const treatmentHtml = e.treatment ? `
+                <div style="background:linear-gradient(135deg, var(--rose), var(--rose-dark)); color:white; padding:10px; border-radius:8px; margin-top:10px; font-size:0.9rem;">
+                    <strong>💆 Empfohlenes Treatment:</strong><br>
+                    ${e.treatment}
+                </div>
+            ` : '';
+
+            // Link-Button
+            const linkHtml = e.link ? `
+                <a href="${e.link}" target="_blank" rel="noopener" class="event-link-btn">🎫 Tickets / Buchen</a>
+            ` : '';
+
+            // Date Builder Button
+            const dateBuilderBtn = showDateBuilder ? `
+                <button class="btn btn-add" style="margin-top:10px; width:100%;" onclick="startDateBuilder('${e.id}')">
+                    💕 Date zusammenstellen
+                </button>
+            ` : '';
 
             return `
             <article class="date-card" data-date-id="${e.id}">
@@ -1259,6 +1431,8 @@
                 </div>
                 <div class="date-card-body">
                     <p class="date-description">${e.description || ''}</p>
+                    ${locationHtml}
+                    ${treatmentHtml}
                     ${e.part1Title ? `
                     <div class="combo-parts">
                         <div class="combo-part-card">
@@ -1267,7 +1441,6 @@
                                 <span class="combo-part-title">${e.part1Title}</span>
                             </div>
                             <div class="combo-part-desc">${e.part1Desc || ''}</div>
-                            ${e.location ? `<span class="combo-part-link">→ ${e.location}</span>` : ''}
                         </div>
                         ${e.part2Title ? `
                         <div class="combo-part-card">
@@ -1280,6 +1453,8 @@
                         ` : ''}
                     </div>
                     ` : ''}
+                    ${linkHtml}
+                    ${dateBuilderBtn}
                     <div class="thumbs-rating">
                         <div class="thumbs-rating-label">Wollen wir hin?</div>
                         <div class="thumbs-buttons">
@@ -1331,13 +1506,17 @@
         }
 
         // ============ DAY EVENTS MODAL ============
+        let currentDayEvents = [];
+        let currentFilterCategory = 'all';
+        let dayEventsMap = null;
+
         function showEventsForDate(dateStr) {
             const date = new Date(dateStr);
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             const ratings = saved.ratings || {};
 
             // Events filtern, die an diesem Datum aktiv sind
-            const dayEvents = allEvents.filter(e => {
+            currentDayEvents = allEvents.filter(e => {
                 if (ratings[e.id]?.disliked) return false;
                 const start = new Date(e.date);
                 const end = e.endDate ? new Date(e.endDate) : start;
@@ -1353,27 +1532,145 @@
             });
             document.getElementById('dayEventsTitle').textContent = `📅 Events am ${formattedDate}`;
 
-            // Events rendern
-            const body = document.getElementById('dayEventsBody');
-            if (dayEvents.length === 0) {
-                body.innerHTML = `
+            // Kategorie-Pills und Events rendern
+            currentFilterCategory = 'all';
+            renderCategoryPillsAndEvents(ratings);
+
+            // Modal öffnen
+            document.getElementById('dayEventsModal').classList.add('active');
+            showToast(`📅 ${currentDayEvents.length} Events gefunden`);
+
+            // Karte initialisieren wenn Events mit Koordinaten existieren
+            setTimeout(() => initDayEventsMap(), 200);
+        }
+
+        function renderCategoryPillsAndEvents(ratings) {
+            const pillsContainer = document.getElementById('categoryPills');
+            const listContainer = document.getElementById('dayEventsList');
+
+            if (currentDayEvents.length === 0) {
+                pillsContainer.innerHTML = '';
+                document.getElementById('mapContainer').style.display = 'none';
+                listContainer.innerHTML = `
                     <div style="text-align:center;padding:40px 20px;">
                         <span style="font-size:3rem;">😢</span>
                         <p style="margin-top:15px;color:var(--text-light);">Keine Events an diesem Tag gefunden.</p>
                         <p style="color:var(--text-light);font-size:0.9rem;">Probier ein anderes Datum!</p>
                     </div>
                 `;
-            } else {
-                body.innerHTML = dayEvents.map(e => renderEventCard(e, ratings)).join('');
+                return;
             }
 
-            // Modal öffnen
-            document.getElementById('dayEventsModal').classList.add('active');
-            showToast(`📅 ${dayEvents.length} Events gefunden`);
+            // Kategorien zählen
+            const categoryCounts = {};
+            currentDayEvents.forEach(e => {
+                categoryCounts[e.category] = (categoryCounts[e.category] || 0) + 1;
+            });
+
+            // Kategorie-Namen und Emojis
+            const categoryInfo = {
+                musical: { name: 'Musical', emoji: '🎭' },
+                variete: { name: 'Varieté', emoji: '🎪' },
+                theater: { name: 'Theater', emoji: '🎬' },
+                comedy: { name: 'Comedy', emoji: '😂' },
+                musik: { name: 'Musik', emoji: '🎸' },
+                wellness: { name: 'Wellness', emoji: '💆' },
+                aktiv: { name: 'Aktiv', emoji: '🏃' },
+                handwerk: { name: 'Handwerk', emoji: '🎨' },
+                essen: { name: 'Essen', emoji: '🍽️' }
+            };
+
+            // Pills rendern (nur wenn mehr als 3 Events)
+            if (currentDayEvents.length > 3) {
+                let pillsHtml = `<div class="category-pill ${currentFilterCategory === 'all' ? 'active' : ''}" onclick="filterDayEvents('all')">
+                    Alle <span class="pill-count">${currentDayEvents.length}</span>
+                </div>`;
+
+                Object.keys(categoryCounts).forEach(cat => {
+                    const info = categoryInfo[cat] || { name: cat, emoji: '📅' };
+                    pillsHtml += `<div class="category-pill ${currentFilterCategory === cat ? 'active' : ''}" onclick="filterDayEvents('${cat}')">
+                        ${info.emoji} ${info.name} <span class="pill-count">${categoryCounts[cat]}</span>
+                    </div>`;
+                });
+                pillsContainer.innerHTML = pillsHtml;
+            } else {
+                pillsContainer.innerHTML = '';
+            }
+
+            // Events filtern
+            const filteredEvents = currentFilterCategory === 'all'
+                ? currentDayEvents
+                : currentDayEvents.filter(e => e.category === currentFilterCategory);
+
+            // Events rendern mit Date Builder Button
+            listContainer.innerHTML = filteredEvents.map(e => renderEventCard(e, ratings, true)).join('');
+        }
+
+        function filterDayEvents(category) {
+            currentFilterCategory = category;
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            renderCategoryPillsAndEvents(ratings);
+            updateDayEventsMap();
+        }
+
+        function initDayEventsMap() {
+            const eventsWithCoords = currentDayEvents.filter(e => e.coords && e.coords.length === 2);
+            if (eventsWithCoords.length === 0) {
+                document.getElementById('mapContainer').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('mapContainer').style.display = 'block';
+
+            // Alte Karte entfernen
+            if (dayEventsMap) {
+                dayEventsMap.remove();
+                dayEventsMap = null;
+            }
+
+            // Neue Karte erstellen
+            dayEventsMap = L.map('dateBuilderMap').setView([53.5511, 9.9937], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(dayEventsMap);
+
+            updateDayEventsMap();
+        }
+
+        function updateDayEventsMap() {
+            if (!dayEventsMap) return;
+
+            // Alte Marker entfernen
+            dayEventsMap.eachLayer(layer => {
+                if (layer instanceof L.Marker) dayEventsMap.removeLayer(layer);
+            });
+
+            // Gefilterte Events mit Koordinaten
+            const filteredEvents = currentFilterCategory === 'all'
+                ? currentDayEvents
+                : currentDayEvents.filter(e => e.category === currentFilterCategory);
+
+            const eventsWithCoords = filteredEvents.filter(e => e.coords && e.coords.length === 2);
+            const bounds = [];
+
+            eventsWithCoords.forEach(e => {
+                const marker = L.marker(e.coords).addTo(dayEventsMap);
+                marker.bindPopup(`<strong>${e.emoji} ${e.title}</strong><br>${e.location || ''}<br><small>${e.time || ''} - ${e.price || ''}</small>`);
+                bounds.push(e.coords);
+            });
+
+            if (bounds.length > 0) {
+                dayEventsMap.fitBounds(bounds, { padding: [20, 20] });
+            }
         }
 
         function closeDayEventsModal() {
             document.getElementById('dayEventsModal').classList.remove('active');
+            if (dayEventsMap) {
+                dayEventsMap.remove();
+                dayEventsMap = null;
+            }
         }
 
         // ============ ROULETTE ============
@@ -1553,6 +1850,197 @@
             if (saved) updateLists();
         }
         
+        // ============ DATE BUILDER ============
+        let currentDatePlan = {
+            activity: null,
+            wantFood: null,
+            foodTiming: null,
+            restaurant: null,
+            wantDrinks: null,
+            bar: null
+        };
+
+        function startDateBuilder(eventId) {
+            const event = allEvents.find(e => e.id === eventId);
+            if (!event) return;
+
+            currentDatePlan = {
+                activity: event,
+                wantFood: null,
+                foodTiming: null,
+                restaurant: null,
+                wantDrinks: null,
+                bar: null
+            };
+
+            // Date Builder Modal öffnen
+            document.getElementById('dateBuilderModal').classList.add('active');
+            renderDateBuilderStep1();
+        }
+
+        function renderDateBuilderStep1() {
+            const flow = document.getElementById('dateBuilderFlow');
+            const e = currentDatePlan.activity;
+
+            flow.innerHTML = `
+                <div class="date-builder-question">
+                    <h4>🎯 Deine Aktivität</h4>
+                    <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
+                        <strong>${e.emoji} ${e.title}</strong><br>
+                        <small style="color:var(--text-light)">${e.location || ''} ${e.time ? '• ' + e.time : ''}</small>
+                    </div>
+                </div>
+
+                <div class="date-builder-question">
+                    <h4>🍽️ Wollen wir was essen gehen?</h4>
+                    <div class="date-builder-options">
+                        <button class="date-option-btn" onclick="setWantFood(true)">Ja, klar! 😋</button>
+                        <button class="date-option-btn" onclick="setWantFood(false)">Nein, diesmal nicht</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setWantFood(want) {
+            currentDatePlan.wantFood = want;
+            if (want) {
+                renderDateBuilderStep2();
+            } else {
+                renderDateBuilderSummary();
+            }
+        }
+
+        function renderDateBuilderStep2() {
+            const flow = document.getElementById('dateBuilderFlow');
+            const e = currentDatePlan.activity;
+
+            // Vorher/Nachher aus Event-Daten oder Standard
+            const defaultTiming = e.vorher_nachher || 'Nachher';
+
+            flow.innerHTML = `
+                <div class="date-builder-question">
+                    <h4>🎯 Deine Aktivität</h4>
+                    <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
+                        <strong>${e.emoji} ${e.title}</strong><br>
+                        <small style="color:var(--text-light)">${e.location || ''} ${e.time ? '• ' + e.time : ''}</small>
+                    </div>
+                </div>
+
+                <div class="date-builder-question">
+                    <h4>⏰ Vorher oder nachher essen?</h4>
+                    <p style="color:var(--text-light);font-size:0.9rem;margin-bottom:12px;">
+                        ${defaultTiming === 'Vorher' ? 'Bei diesem Event empfehlen wir: Vorher essen!' : 'Bei diesem Event empfehlen wir: Nachher essen!'}
+                    </p>
+                    <div class="date-builder-options">
+                        <button class="date-option-btn" onclick="setFoodTiming('vorher')">🌅 Vorher</button>
+                        <button class="date-option-btn" onclick="setFoodTiming('nachher')">🌙 Nachher</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setFoodTiming(timing) {
+            currentDatePlan.foodTiming = timing;
+            currentDatePlan.restaurant = currentDatePlan.activity.restaurant;
+            renderDateBuilderStep3();
+        }
+
+        function renderDateBuilderStep3() {
+            const flow = document.getElementById('dateBuilderFlow');
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+
+            const restaurantHtml = r ? `
+                <div style="background:white;padding:15px;border-radius:12px;text-align:left;margin-top:10px;">
+                    <strong>🍽️ ${r.name}</strong><br>
+                    <small style="color:var(--text-light)">${r.type || ''}</small><br>
+                    <small>${r.address || ''}</small>
+                    ${r.link ? `<br><a href="${r.link}" target="_blank" style="color:var(--sage-dark);font-size:0.85rem;">→ Zum Restaurant</a>` : ''}
+                </div>
+            ` : '<p style="color:var(--text-light)">Kein Restaurant-Vorschlag verfügbar</p>';
+
+            flow.innerHTML = `
+                <div class="date-builder-question">
+                    <h4>🎯 Aktivität + 🍽️ Essen (${currentDatePlan.foodTiming})</h4>
+                    <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
+                        <strong>${e.emoji} ${e.title}</strong><br>
+                        <small style="color:var(--text-light)">${e.location || ''}</small>
+                    </div>
+                    ${restaurantHtml}
+                </div>
+
+                <div class="date-builder-question">
+                    <h4>🍸 Willst du danach auch noch was trinken gehen?</h4>
+                    <div class="date-builder-options">
+                        <button class="date-option-btn" onclick="setWantDrinks(true)">Ja, noch eine Bar! 🥂</button>
+                        <button class="date-option-btn" onclick="setWantDrinks(false)">Nein, reicht so</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setWantDrinks(want) {
+            currentDatePlan.wantDrinks = want;
+            if (want) {
+                currentDatePlan.bar = currentDatePlan.activity.bar;
+            }
+            renderDateBuilderSummary();
+        }
+
+        function renderDateBuilderSummary() {
+            const flow = document.getElementById('dateBuilderFlow');
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+            const b = currentDatePlan.bar;
+
+            let steps = [];
+            let stepNum = 1;
+
+            // Aktivität und Essen in richtiger Reihenfolge
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
+                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link });
+            }
+
+            steps.push({ num: stepNum++, emoji: e.emoji, title: e.title, sub: e.location + (e.time ? ' • ' + e.time : ''), link: e.link });
+
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
+                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link });
+            }
+
+            if (currentDatePlan.wantDrinks && b) {
+                steps.push({ num: stepNum++, emoji: '🍸', title: b.name, sub: b.type || '', link: b.link });
+            }
+
+            const stepsHtml = steps.map(s => `
+                <div class="date-summary-item">
+                    <span class="step-num">${s.num}</span>
+                    <div style="flex:1;">
+                        <strong>${s.emoji} ${s.title}</strong><br>
+                        <small style="opacity:0.8">${s.sub}</small>
+                    </div>
+                    ${s.link ? `<a href="${s.link}" target="_blank" style="color:white;font-size:1.2rem;">🔗</a>` : ''}
+                </div>
+            `).join('');
+
+            flow.innerHTML = `
+                <div class="date-summary">
+                    <h4>💕 Euer perfektes Date!</h4>
+                    ${stepsHtml}
+                </div>
+
+                <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
+                    <button class="btn btn-primary" onclick="closeDateBuilder()">Fertig! 🎉</button>
+                    <button class="btn btn-secondary" onclick="startDateBuilder('${e.id}')">Nochmal planen</button>
+                </div>
+            `;
+
+            showToast('💕 Date geplant!');
+        }
+
+        function closeDateBuilder() {
+            document.getElementById('dateBuilderModal').classList.remove('active');
+        }
+
         // ============ TOAST ============
         function showToast(msg) {
             document.querySelector('.toast-notification')?.remove();
@@ -1587,7 +2075,7 @@
         function closeDestinationPopup() { document.getElementById('destinationPopup').classList.remove('active'); }
         
         // Modal close handlers
-        ['rouletteModal', 'destinationPopup', 'addDateModal', 'memoryModal', 'dayEventsModal'].forEach(id => {
+        ['rouletteModal', 'destinationPopup', 'addDateModal', 'memoryModal', 'dayEventsModal', 'dateBuilderModal'].forEach(id => {
             document.getElementById(id)?.addEventListener('click', e => {
                 if (e.target === e.currentTarget) document.getElementById(id).classList.remove('active');
             });
