@@ -8,29 +8,53 @@
       "category": "musik",
       "description": "Schwedische Garagenrock-Legende! Energiegeladene Show in der Sporthalle.",
       "location": "Alsterdorfer Sporthalle",
+      "address": "Krochmannstraße 55, 22297 Hamburg",
+      "coords": [53.6108, 10.0183],
       "link": "https://www.eventim.de/artist/the-hives/",
-      "venue": "Alsterdorfer Sporthalle",
       "time": "20:00",
       "price": "ab 55€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Mirou (Israelische Mezze Winterhude)",
-      "restaurant_link": "https://www.mirou-hamburg.de/"
+      "restaurant": {
+        "name": "Mirou",
+        "type": "Israelische Mezze",
+        "address": "Gertigstraße 21, Winterhude",
+        "link": "https://www.mirou-hamburg.de/",
+        "coords": [53.5889, 10.0083]
+      },
+      "bar": {
+        "name": "Eppendorfer Grillstation",
+        "type": "Gemütliche Bar",
+        "address": "Eppendorfer Weg 56",
+        "link": "https://www.instagram.com/eppendorfergrillstation/"
+      }
     },
     {
       "id": "dez03-charlotte",
       "emoji": "🎤",
-      "title": "Charlotte OC - Seriously Love, Go Home",
+      "title": "Charlotte OC",
       "date": "2025-12-03",
       "category": "musik",
-      "description": "Britische Sängerin mit düsterem Soul und cineastischem Pop. Neue EP live!",
+      "description": "Britische Sängerin mit düsterem Soul und cineastischem Pop. Neue EP 'Seriously Love, Go Home' live!",
       "location": "Nochtspeicher",
+      "address": "Bernhard-Nocht-Straße 69a, 20359 Hamburg",
+      "coords": [53.5467, 9.9631],
       "link": "https://www.nochtspeicher.de/",
-      "venue": "Nochtspeicher",
       "time": "20:00",
       "price": "ab 20€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Kleine Pause (Burger)",
-      "restaurant_link": "https://www.instagram.com/kleinepause_hamburg/"
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Rooftop Bar mit Hafenblick",
+        "address": "Reeperbahn 1, Tanzende Türme",
+        "link": "https://clouds-hamburg.de/"
+      }
     },
     {
       "id": "dez03-loewe",
@@ -38,15 +62,27 @@
       "title": "König der Löwen",
       "date": "2025-12-03",
       "category": "musical",
-      "description": "Der Musical-Welterfolg! Kostenloses Shuttle-Schiff ab Landungsbrücken.",
+      "description": "Der Musical-Welterfolg seit 2001! Kostenloses Shuttle-Schiff ab Landungsbrücken. Di-So, Montags spielfrei.",
       "location": "Stage Theater im Hafen",
+      "address": "Norderelbstraße 6, 20457 Hamburg",
+      "coords": [53.5333, 9.9833],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-der-koenig-der-loewen-hamburg/ticketshop",
-      "venue": "Stage Theater im Hafen",
       "time": "19:30",
       "price": "ab 67€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "ÜberQuell (Pizza + Hafenblick)",
-      "restaurant_link": "https://www.ueberquell.com/"
+      "restaurant": {
+        "name": "ÜberQuell",
+        "type": "Pizza & Craft Beer mit Hafenblick",
+        "address": "St. Pauli Fischmarkt 28-32",
+        "link": "https://www.ueberquell.com/",
+        "coords": [53.5456, 9.9511]
+      },
+      "bar": {
+        "name": "Tower Bar",
+        "type": "Rooftop im Hotel Hafen Hamburg",
+        "address": "Seewartenstraße 9",
+        "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
+      }
     },
     {
       "id": "dez03-harry",
@@ -54,15 +90,27 @@
       "title": "Harry Potter und das verwunschene Kind",
       "date": "2025-12-03",
       "category": "theater",
-      "description": "3h 15min Theaterspektakel mit Magie! Mittwochs früher Start.",
+      "description": "3h 15min Theaterspektakel mit Magie! Mittwochs früher Start um 18:30.",
       "location": "Mehr! Theater am Großmarkt",
+      "address": "Banksstraße 28, 20097 Hamburg",
+      "coords": [53.5458, 10.0217],
       "link": "https://www.atgtickets.de/musicals-shows/harry-potter-und-das-verwunschene-kind/tickets/",
-      "venue": "Mehr! Theater",
       "time": "18:30",
       "price": "ab 60€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Hobenköök (Regional HafenCity)",
-      "restaurant_link": "https://www.hobenkoeoek.de/"
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regionale Küche HafenCity",
+        "address": "Stockmeyerstraße 43, HafenCity",
+        "link": "https://www.hobenkoeoek.de/",
+        "coords": [53.5419, 10.0189]
+      },
+      "bar": {
+        "name": "Boilerman Bar",
+        "type": "Cocktails & Whisky",
+        "address": "Ericusspitze 4, HafenCity",
+        "link": "https://www.boilermanbar.de/"
+      }
     },
     {
       "id": "dez03-tarzan",
@@ -70,15 +118,27 @@
       "title": "Tarzan Musical",
       "date": "2025-12-03",
       "category": "musical",
-      "description": "Phil Collins Musik + spektakuläre Akrobatik in der Neuen Flora!",
+      "description": "Phil Collins Musik + spektakuläre Akrobatik! Alexander Klaws an ausgewählten Samstagen.",
       "location": "Stage Theater Neue Flora",
+      "address": "Stresemannstraße 159a, 22769 Hamburg",
+      "coords": [53.5600, 9.9500],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
       "time": "19:30",
       "price": "ab 67€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Tassajara (Vegan seit 1976)",
-      "restaurant_link": "https://www.tassajara.de/"
+      "restaurant": {
+        "name": "Tassajara",
+        "type": "Vegan seit 1976",
+        "address": "Eppendorfer Weg 47, Eimsbüttel",
+        "link": "https://www.tassajara.de/",
+        "coords": [53.5700, 9.9600]
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Legendäre Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
     },
     {
       "id": "dez03-mj",
@@ -88,13 +148,25 @@
       "category": "musical",
       "description": "25+ Greatest Hits: Beat It - Billie Jean - Thriller! Shuttle ab Landungsbrücken.",
       "location": "Stage Theater an der Elbe",
+      "address": "Norderelbstraße 8, 20457 Hamburg",
+      "coords": [53.5328, 9.9822],
       "link": "https://www.stage-entertainment.de/musicals-shows/mj-das-michael-jackson-musical-hamburg/ticketshop",
-      "venue": "Stage Theater an der Elbe",
       "time": "19:30",
       "price": "ab 64€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Salt & Silver (Mezze zum Teilen)",
-      "restaurant_link": "https://www.saltandsilver.de/"
+      "restaurant": {
+        "name": "Salt & Silver",
+        "type": "Mezze zum Teilen",
+        "address": "St. Pauli Fischmarkt 3",
+        "link": "https://www.saltandsilver.de/",
+        "coords": [53.5456, 9.9511]
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Bar im Empire",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
     },
     {
       "id": "dez03-julia",
@@ -102,15 +174,27 @@
       "title": "& Julia Musical",
       "date": "2025-12-03",
       "category": "musical",
-      "description": "Max Martin Hits: Baby One More Time + It's My Life! Deutsche Dialoge.",
+      "description": "Max Martin Hits: Baby One More Time, Roar, It's My Life! Bis 01.02.2026.",
       "location": "Stage Operettenhaus",
+      "address": "Spielbudenplatz 1, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.stage-entertainment.de/musicals-shows/und-julia-hamburg/ticketshop",
-      "venue": "Operettenhaus Reeperbahn",
       "time": "18:30",
       "price": "ab 57€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Kokomo Noodle Club (Ramen)",
-      "restaurant_link": "https://www.kokomo-noodleclub.de/"
+      "restaurant": {
+        "name": "Kokomo Noodle Club",
+        "type": "Ramen & Asiatisch",
+        "address": "Bartelsstraße 12, Schanze",
+        "link": "https://www.kokomo-noodleclub.de/",
+        "coords": [53.5633, 9.9622]
+      },
+      "bar": {
+        "name": "Katze",
+        "type": "Kiezbar mit Charakter",
+        "address": "Schulterblatt 86, Schanze",
+        "link": "https://www.instagram.com/katze_bar/"
+      }
     },
     {
       "id": "dez03-dreigroschen",
@@ -120,13 +204,25 @@
       "category": "theater",
       "description": "Brechts Klassiker auf dem Kiez! Mackie Messer + Live-Musik.",
       "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.st-pauli-theater.de/",
-      "venue": "St. Pauli Theater",
       "time": "20:00",
       "price": "ab 19€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Gassenhaur (Österreichisch)",
-      "restaurant_link": "https://gassenhaur.de/"
+      "restaurant": {
+        "name": "Gassenhaur",
+        "type": "Österreichische Küche",
+        "address": "Beim Grünen Jäger 14",
+        "link": "https://gassenhaur.de/",
+        "coords": [53.5592, 9.9625]
+      },
+      "bar": {
+        "name": "Zum Silbersack",
+        "type": "Kiez-Legende seit 1949",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
     },
     {
       "id": "dez03-comedy",
@@ -134,15 +230,27 @@
       "title": "St. Pauli Comedy Club",
       "date": "2025-12-03",
       "category": "comedy",
-      "description": "8-10 Stand-Up Comedians! Jeden Mi-Sa im Klubhaus St. Pauli.",
+      "description": "8-10 Stand-Up Comedians! Jeden Mi-Sa im Klubhaus St. Pauli, 3. OG.",
       "location": "Klubhaus St. Pauli",
+      "address": "Spielbudenplatz 21, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.stpaulicomedyclub.de/",
-      "venue": "Klubhaus St. Pauli 3. OG",
       "time": "20:00",
       "price": "ab 20€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Tazzi Pizza (Beste Pizza St. Pauli)",
-      "restaurant_link": "https://www.tazzi-pizza.de/"
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Ritze",
+        "type": "Legendäre Boxkneipe",
+        "address": "Reeperbahn 140",
+        "link": "https://www.ritze.de/"
+      }
     },
     {
       "id": "dez03-eis",
@@ -150,95 +258,27 @@
       "title": "Eislaufen Planten un Blomen",
       "date": "2025-12-03",
       "category": "aktiv",
-      "description": "4.300 qm Eisfläche! Schlittschuh-Verleih vor Ort. Dienstags Familientag.",
+      "description": "4.300 qm Eisfläche! Schlittschuh-Verleih vor Ort. Fr+Sa Club Night mit DJ!",
       "location": "EisArena Hamburg",
+      "address": "Holstenwall, Planten un Blomen",
+      "coords": [53.5567, 9.9833],
       "link": "https://www.eisarena-hamburg.de/",
-      "venue": "Planten un Blomen",
-      "time": "10-22 Uhr",
+      "time": "10:00-22:00",
       "price": "14€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Café Paris (Französisch Rathaus)",
-      "restaurant_link": "https://www.cafeparis.net/"
-    },
-    {
-      "id": "dez03-wellnest",
-      "emoji": "💆",
-      "title": "Wellnest Private Spa",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "Private Suite für 2: Sauna + Whirlpool + Erlebnis-Dusche. Online buchbar!",
-      "location": "Wellnest Altona",
-      "link": "https://wellnest.me/standort/hamburg/",
-      "venue": "Wellnest Altona",
-      "time": "10-24 Uhr",
-      "price": "ab 80€/2h",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Maquis (100% vegetarisch)",
-      "restaurant_link": "https://maquis.hamburg/"
-    },
-    {
-      "id": "dez03-mywellness",
-      "emoji": "🧖",
-      "title": "MyWellness Private Suite",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "Private Wellness-Suite ab 26€/h! Whirlpool + Sauna + Regendusche. Bis zu 4 Personen.",
-      "location": "MyWellness Hamburg Harburg",
-      "link": "https://mywellness.de/standorte/hamburg-harburg/",
-      "venue": "Hamburg Harburg",
-      "time": "flexibel",
-      "price": "ab 26€/h pro Person",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Hatari (Sri Lanka)",
-      "restaurant_link": "https://hatari-hamburg.de/"
-    },
-    {
-      "id": "dez03-heavenly",
-      "emoji": "✨",
-      "title": "Heavenly Spa Elbphilharmonie",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "Luxus-Spa im 6. Stock der Elbphilharmonie! Private Suite mit Hafenblick + Champagner.",
-      "location": "The Westin Hamburg",
-      "link": "https://www.heavenlyspahamburg.de/",
-      "venue": "Elbphilharmonie",
-      "time": "flexibel",
-      "price": "ab 298€ (Romantic Moments)",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Hobenköök (Regional HafenCity)",
-      "restaurant_link": "https://www.hobenkoeoek.de/"
-    },
-    {
-      "id": "dez03-fontenay",
-      "emoji": "🏨",
-      "title": "The Fontenay Private Spa Suite",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "Luxuriöse Private Spa Suite mit Sauna, Whirlpool und Panoramablick über die Alster.",
-      "location": "The Fontenay Hamburg",
-      "link": "https://www.thefontenay.com/en/spa/private-spa-suite-hamburg",
-      "venue": "The Fontenay an der Alster",
-      "time": "nach Vereinbarung",
-      "price": "ab 200€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Lakeside (im Hotel)",
-      "restaurant_link": "https://www.thefontenay.com/"
-    },
-    {
-      "id": "dez03-vierjahreszeiten",
-      "emoji": "👑",
-      "title": "Vier Jahreszeiten Spa",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "1.000 qm Wellness! Über 100 Behandlungen. Hamburgs legendärstes Luxus-Spa.",
-      "location": "Fairmont Hotel Vier Jahreszeiten",
-      "link": "https://hvj.de/en/spa-fitness.html",
-      "venue": "Neuer Jungfernstieg",
-      "time": "nach Vereinbarung",
-      "price": "ab 150€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Haerlin (2 Michelin-Sterne)",
-      "restaurant_link": "https://hvj.de/"
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französische Brasserie",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/",
+        "coords": [53.5503, 9.9933]
+      },
+      "bar": {
+        "name": "Parlament",
+        "type": "Weinbar am Rathaus",
+        "address": "Rathausmarkt 1",
+        "link": "https://www.parlament-hamburg.de/"
+      }
     },
     {
       "id": "dez03-palazzo",
@@ -246,15 +286,171 @@
       "title": "Cornelia Poletto PALAZZO",
       "date": "2025-12-03",
       "category": "variete",
-      "description": "Akrobatik + Comedy + 4-Gang-Menü von Cornelia Poletto im Spiegelpalast!",
+      "description": "Akrobatik + Comedy + 4-Gang-Menü von Sterneköchin Cornelia Poletto im Spiegelpalast!",
       "location": "Spiegelpalast Altona",
+      "address": "Virchowstraße 1, 22767 Hamburg",
+      "coords": [53.5550, 9.9350],
       "link": "https://www.palazzo.org/hamburg/de/home/tickets-eventim.html",
-      "venue": "Spiegelpalast",
       "time": "19:00",
       "price": "ab 183€",
       "vorher_nachher": "Komplett",
-      "restaurant_tipp": "Menü inklusive!",
-      "restaurant_link": "https://www.palazzo.org/hamburg/"
+      "restaurant": {
+        "name": "Menü inklusive",
+        "type": "4-Gang-Menü von Cornelia Poletto",
+        "address": "Im Spiegelpalast",
+        "link": "https://www.palazzo.org/hamburg/"
+      },
+      "bar": {
+        "name": "Docks",
+        "type": "Club & Bar",
+        "address": "Spielbudenplatz 19",
+        "link": "https://www.docks.de/"
+      }
+    },
+    {
+      "id": "dez03-wellnest",
+      "emoji": "💆",
+      "title": "Wellnest Private Spa",
+      "date": "2025-12-03",
+      "category": "wellness",
+      "description": "Private Suite für 2: Sauna, Whirlpool, Erlebnis-Dusche. Online buchbar!",
+      "location": "Wellnest Altona",
+      "address": "Max-Brauer-Allee 277, 22769 Hamburg",
+      "coords": [53.5572, 9.9372],
+      "link": "https://wellnest.me/standort/hamburg/",
+      "time": "10:00-24:00",
+      "price": "ab 80€/2h",
+      "treatment": "Private Suite mit Sauna + Whirlpool + Erlebnis-Dusche",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Maquis",
+        "type": "100% vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/",
+        "coords": [53.5589, 9.9450]
+      },
+      "bar": {
+        "name": "Ampere",
+        "type": "Cocktails & Vinyl",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://www.instagram.com/ampere_bar/"
+      }
+    },
+    {
+      "id": "dez03-mywellness",
+      "emoji": "🧖",
+      "title": "MyWellness Private Suite",
+      "date": "2025-12-03",
+      "category": "wellness",
+      "description": "Günstigste Option! Private Wellness-Suite ab 26€/h mit Whirlpool, Sauna & Regendusche.",
+      "location": "MyWellness Hamburg Harburg",
+      "address": "Moorburger Bogen 1, 21079 Hamburg",
+      "coords": [53.4592, 9.9783],
+      "link": "https://mywellness.de/standorte/hamburg-harburg/",
+      "time": "flexibel buchbar",
+      "price": "ab 26€/h pro Person",
+      "treatment": "Superior Suite: Whirlpool + Finnische Sauna + Regendusche (2h ab 52€/Person)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Hatari",
+        "type": "Sri Lanka Küche",
+        "address": "Bremer Straße 14, Harburg",
+        "link": "https://hatari-hamburg.de/",
+        "coords": [53.4597, 9.9792]
+      },
+      "bar": {
+        "name": "Goldener Hahn",
+        "type": "Kneipe mit Charme",
+        "address": "Harburger Rathausstraße 27",
+        "link": "https://www.instagram.com/goldenerhahn/"
+      }
+    },
+    {
+      "id": "dez03-heavenly",
+      "emoji": "✨",
+      "title": "Heavenly Spa Elbphilharmonie",
+      "date": "2025-12-03",
+      "category": "wellness",
+      "description": "Luxus-Spa im 6. Stock der Elbphilharmonie! Infinity-Pool + Saunen + Hafenblick.",
+      "location": "The Westin Hamburg",
+      "address": "Platz der Deutschen Einheit 2, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
+      "link": "https://www.heavenlyspahamburg.de/",
+      "time": "nach Vereinbarung",
+      "price": "ab 40€ (Day Spa) / 298€ (Romantic Moments)",
+      "treatment": "Romantic Moments: Private Suite + Harmony Massage für 2 + Prosecco + Früchte (298€)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regional HafenCity",
+        "address": "Stockmeyerstraße 43",
+        "link": "https://www.hobenkoeoek.de/",
+        "coords": [53.5419, 10.0189]
+      },
+      "bar": {
+        "name": "The Fontenay Bar",
+        "type": "Champagner & Cocktails",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/"
+      }
+    },
+    {
+      "id": "dez03-fontenay",
+      "emoji": "🏨",
+      "title": "The Fontenay Private Spa Suite",
+      "date": "2025-12-03",
+      "category": "wellness",
+      "description": "1.000 qm Luxus-Spa über den Dächern! Infinity-Pool + Alsterblick.",
+      "location": "The Fontenay Hamburg",
+      "address": "Fontenay 10, 20354 Hamburg",
+      "coords": [53.5639, 9.9969],
+      "link": "https://www.thefontenay.com/en/spa/private-spa-suite-hamburg",
+      "time": "nach Vereinbarung",
+      "price": "ab 200€",
+      "treatment": "Private Spa Suite: Sauna + Dampfbad + Whirlpool + Panoramablick + Erlebnisdusche (ab 200€)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Lakeside",
+        "type": "Fine Dining im Hotel",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/",
+        "coords": [53.5639, 9.9969]
+      },
+      "bar": {
+        "name": "The Fontenay Bar",
+        "type": "Champagner mit Alsterblick",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/"
+      }
+    },
+    {
+      "id": "dez03-vierjahreszeiten",
+      "emoji": "👑",
+      "title": "Vier Jahreszeiten Spa",
+      "date": "2025-12-03",
+      "category": "wellness",
+      "description": "Hamburgs legendärstes Luxus-Spa! 1.000 qm mit über 100 Behandlungen.",
+      "location": "Fairmont Hotel Vier Jahreszeiten",
+      "address": "Neuer Jungfernstieg 9-14, 20354 Hamburg",
+      "coords": [53.5561, 9.9933],
+      "link": "https://hvj.de/en/spa-fitness.html",
+      "time": "9:00-20:00",
+      "price": "ab 100€",
+      "treatment": "Vier Jahreszeiten Massage: Individuell angepasste Ganzkörpermassage + Dachterrasse + Kamin (ab 150€, Day Spa inklusive)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Haerlin",
+        "type": "2 Michelin-Sterne",
+        "address": "Im Hotel Vier Jahreszeiten",
+        "link": "https://hvj.de/",
+        "coords": [53.5561, 9.9933]
+      },
+      "bar": {
+        "name": "Jahreszeiten Bar",
+        "type": "Classic Cocktails",
+        "address": "Im Hotel",
+        "link": "https://hvj.de/"
+      }
     },
     {
       "id": "dez05-emel",
@@ -262,31 +458,55 @@
       "title": "Emel - MRA Tour",
       "date": "2025-12-05",
       "category": "musik",
-      "description": "Feministisches Manifest als audiovisuelle Show! Tunesische Sängerin.",
+      "description": "Feministisches Manifest als audiovisuelle Show! Tunesische Sängerin live.",
       "location": "Kampnagel",
+      "address": "Jarrestraße 20, 22303 Hamburg",
+      "coords": [53.5819, 10.0236],
       "link": "https://kampnagel.de/",
-      "venue": "Kampnagel KMH",
       "time": "20:30",
       "price": "ab 25€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Mirou (Israelische Mezze)",
-      "restaurant_link": "https://www.mirou-hamburg.de/"
+      "restaurant": {
+        "name": "Mirou",
+        "type": "Israelische Mezze",
+        "address": "Gertigstraße 21",
+        "link": "https://www.mirou-hamburg.de/",
+        "coords": [53.5889, 10.0083]
+      },
+      "bar": {
+        "name": "Die Schöne",
+        "type": "Bar & Café Winterhude",
+        "address": "Barmbeker Straße 159",
+        "link": "https://www.instagram.com/dieschoene_bar/"
+      }
     },
     {
       "id": "dez05-knust",
       "emoji": "🎸",
-      "title": "Knust - Erik Cohen",
+      "title": "Erik Cohen",
       "date": "2025-12-05",
       "category": "musik",
-      "description": "Singer-Songwriter mit Band. Deutschsprachiger Indie-Folk.",
+      "description": "Singer-Songwriter mit Band. Deutschsprachiger Indie-Folk live im Knust.",
       "location": "Knust",
+      "address": "Neuer Kamp 30, 20357 Hamburg",
+      "coords": [53.5617, 9.9603],
       "link": "https://www.knusthamburg.de/programm/",
-      "venue": "Knust Neuer Kamp",
       "time": "21:00",
       "price": "30€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Altes Mädchen (Craft Beer)",
-      "restaurant_link": "https://www.altes-maedchen.com/"
+      "restaurant": {
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
+      },
+      "bar": {
+        "name": "Kronensaal",
+        "type": "Gemütliche Schanze-Bar",
+        "address": "Sternstraße 2",
+        "link": "https://www.kronensaal-hamburg.de/"
+      }
     },
     {
       "id": "dez07-yoga",
@@ -296,13 +516,26 @@
       "category": "wellness",
       "description": "Den Zauber der Rauhnächte erleben. Wünsche fürs neue Jahr entdecken.",
       "location": "Urban Yoga Hamburg",
+      "address": "Feldstraße 66, 20357 Hamburg",
+      "coords": [53.5567, 9.9650],
       "link": "https://www.urbanyoga-hamburg.com/events",
-      "venue": "Urban Yoga",
       "time": "Nachmittag",
       "price": "tba",
+      "treatment": "Rauhnächte Workshop: Meditation + Yoga + Räucherritual",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Froindlichst (Vegan)",
-      "restaurant_link": "https://www.froindlichst.de/"
+      "restaurant": {
+        "name": "Froindlichst",
+        "type": "100% Vegan",
+        "address": "Lagerstraße 34",
+        "link": "https://www.froindlichst.de/",
+        "coords": [53.5636, 9.9622]
+      },
+      "bar": {
+        "name": "Rooster",
+        "type": "Weinbar Schanze",
+        "address": "Juliusstraße 23",
+        "link": "https://rooster-schanze.de/"
+      }
     },
     {
       "id": "dez13-schneidebrett",
@@ -310,15 +543,27 @@
       "title": "Schneidebrett Workshop",
       "date": "2025-12-13",
       "category": "handwerk",
-      "description": "Eigenes Schneidebrett aus Edelholz! 4h Workshop mit Tischlermeister.",
+      "description": "Eigenes Schneidebrett aus Edelholz bauen! 4h Workshop mit Tischlermeister.",
       "location": "Ärmel Hoch Bargteheide",
+      "address": "Hamburger Straße 80, Bargteheide",
+      "coords": [53.7267, 10.2544],
       "link": "https://www.aermelhoch.jetzt/",
-      "venue": "Tischlerei Ärmel Hoch",
       "time": "10:00-14:00",
       "price": "99€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Bidges & Sons (Vegan)",
-      "restaurant_link": "https://www.bidgesandsons.de/"
+      "restaurant": {
+        "name": "Bidges & Sons",
+        "type": "Vegan Streetfood",
+        "address": "Schulterblatt 1, Hamburg",
+        "link": "https://www.bidgesandsons.de/",
+        "coords": [53.5631, 9.9617]
+      },
+      "bar": {
+        "name": "Astra Stube",
+        "type": "Kultkneipe Schanze",
+        "address": "Max-Brauer-Allee 200",
+        "link": "https://www.astrastube.de/"
+      }
     },
     {
       "id": "dez19-variete",
@@ -326,15 +571,27 @@
       "title": "Varieté im Hansa-Theater",
       "date": "2025-12-19",
       "category": "variete",
-      "description": "Weltklasse-Artisten + Live-Orchester! Kulinarisch begleitet.",
+      "description": "Weltklasse-Artisten + Live-Orchester! Hamburgs traditionsreichstes Varieté seit 1894.",
       "location": "Hansa-Theater",
+      "address": "Steindamm 17, 20099 Hamburg",
+      "coords": [53.5528, 10.0075],
       "link": "https://www.hansa-theater.com/spielplan/",
-      "venue": "Hansa-Theater St. Georg",
       "time": "19:30",
       "price": "ab 70€",
       "vorher_nachher": "Im Haus",
-      "restaurant_tipp": "Strauchs Falco (Partner)",
-      "restaurant_link": "https://www.strauchs-falco.de/"
+      "restaurant": {
+        "name": "Strauchs Falco",
+        "type": "Partner-Restaurant im Theater",
+        "address": "Im Hansa-Theater",
+        "link": "https://www.strauchs-falco.de/",
+        "coords": [53.5528, 10.0075]
+      },
+      "bar": {
+        "name": "Christiansen's",
+        "type": "Gin-Bar",
+        "address": "Pinnasberg 60, St. Pauli",
+        "link": "https://www.christiansens.de/"
+      }
     },
     {
       "id": "dez20-variete",
@@ -344,13 +601,25 @@
       "category": "variete",
       "description": "Weltklasse-Artisten + Live-Orchester! Zwei Shows: 15:30 + 19:30.",
       "location": "Hansa-Theater",
+      "address": "Steindamm 17, 20099 Hamburg",
+      "coords": [53.5528, 10.0075],
       "link": "https://www.hansa-theater.com/spielplan/",
-      "venue": "Hansa-Theater St. Georg",
       "time": "15:30 + 19:30",
       "price": "ab 70€",
       "vorher_nachher": "Im Haus",
-      "restaurant_tipp": "Strauchs Falco (Partner)",
-      "restaurant_link": "https://www.strauchs-falco.de/"
+      "restaurant": {
+        "name": "Strauchs Falco",
+        "type": "Partner-Restaurant",
+        "address": "Im Hansa-Theater",
+        "link": "https://www.strauchs-falco.de/",
+        "coords": [53.5528, 10.0075]
+      },
+      "bar": {
+        "name": "Boilerman",
+        "type": "Cocktails HafenCity",
+        "address": "Ericusspitze 4",
+        "link": "https://www.boilermanbar.de/"
+      }
     },
     {
       "id": "dez20-tarzan-klaws",
@@ -360,13 +629,25 @@
       "category": "musical",
       "description": "DSDS-Gewinner Alexander Klaws als Tarzan! Samstags-Show.",
       "location": "Stage Theater Neue Flora",
+      "address": "Stresemannstraße 159a, 22769 Hamburg",
+      "coords": [53.5600, 9.9500],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
       "time": "19:30",
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Wolfs Junge (Grüner Michelin-Stern)",
-      "restaurant_link": "https://www.wolfsjunge.de/"
+      "restaurant": {
+        "name": "Wolfs Junge",
+        "type": "Grüner Michelin-Stern",
+        "address": "Zimmerstraße 30",
+        "link": "https://www.wolfsjunge.de/",
+        "coords": [53.5575, 9.9708]
+      },
+      "bar": {
+        "name": "Julep",
+        "type": "Whiskey & Cocktails",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
+      }
     },
     {
       "id": "dez27-comedy",
@@ -374,15 +655,27 @@
       "title": "Moin Comedy Club",
       "date": "2025-12-27",
       "category": "comedy",
-      "description": "Beste Stand-Up Comedians! Wohnzimmer-Atmosphäre mit guten Drinks.",
+      "description": "Die besten Stand-Up Comedians! Wohnzimmer-Atmosphäre mit guten Drinks.",
       "location": "Universo Tango",
+      "address": "Beim Grünen Jäger 7, 20359 Hamburg",
+      "coords": [53.5592, 9.9625],
       "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
       "time": "20:00",
       "price": "ab 25€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Tazzi Pizza",
-      "restaurant_link": "https://www.tazzi-pizza.de/"
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Golem",
+        "type": "Craft Beer & Beats",
+        "address": "Große Elbstraße 14",
+        "link": "https://www.golem.hamburg/"
+      }
     },
     {
       "id": "dez31-yoga",
@@ -392,13 +685,26 @@
       "category": "wellness",
       "description": "Tiefenentspannung zum Jahresende. Spenden für Hamburger Kältebus!",
       "location": "Yogaraum Hamburg",
+      "address": "Schulterblatt 58, 20357 Hamburg",
+      "coords": [53.5633, 9.9625],
       "link": "https://www.yogaraum-hamburg.de/workshops",
-      "venue": "Yogaraum",
       "time": "13:00-14:30",
       "price": "Spende",
+      "treatment": "90 Minuten Yin Yoga für tiefe Entspannung",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Lily of the Valley",
-      "restaurant_link": "https://www.instagram.com/lilyofthevalley.hh/"
+      "restaurant": {
+        "name": "Lily of the Valley",
+        "type": "Café & Brunch",
+        "address": "Schanzenstraße 75",
+        "link": "https://www.instagram.com/lilyofthevalley.hh/",
+        "coords": [53.5636, 9.9622]
+      },
+      "bar": {
+        "name": "Komet Musik Bar",
+        "type": "Indie & Cocktails",
+        "address": "Erichstraße 11",
+        "link": "https://www.komet-hamburg.de/"
+      }
     },
     {
       "id": "dez31-variete",
@@ -406,15 +712,27 @@
       "title": "Silvester Varieté Hansa-Theater",
       "date": "2025-12-31",
       "category": "variete",
-      "description": "Silvester-Show mit Weltklasse-Artisten! Zwei Shows verfügbar.",
+      "description": "Silvester-Show mit Weltklasse-Artisten! Zwei Shows: 14:30 + 18:30.",
       "location": "Hansa-Theater",
+      "address": "Steindamm 17, 20099 Hamburg",
+      "coords": [53.5528, 10.0075],
       "link": "https://www.hansa-theater.com/spielplan/",
-      "venue": "Hansa-Theater",
       "time": "14:30 + 18:30",
       "price": "ab 85€",
       "vorher_nachher": "Im Haus",
-      "restaurant_tipp": "Strauchs Falco (Partner)",
-      "restaurant_link": "https://www.strauchs-falco.de/"
+      "restaurant": {
+        "name": "Strauchs Falco",
+        "type": "Silvester-Menü",
+        "address": "Im Hansa-Theater",
+        "link": "https://www.strauchs-falco.de/",
+        "coords": [53.5528, 10.0075]
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Silvester-Party",
+        "address": "Reeperbahn 1",
+        "link": "https://clouds-hamburg.de/"
+      }
     },
     {
       "id": "dez31-molotow",
@@ -424,13 +742,25 @@
       "category": "musik",
       "description": "Dein Bester Silvester! Zwei Floors - einzigartige Party-Atmosphäre.",
       "location": "Molotow",
+      "address": "Nobistor 14, 22767 Hamburg",
+      "coords": [53.5500, 9.9542],
       "link": "https://molotowclub.com/programm/programm.php",
-      "venue": "Molotow Reeperbahn",
       "time": "22:00",
       "price": "tba",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Die Kombüse (Mexikanisch)",
-      "restaurant_link": "https://www.diekombuesehamburg.de/"
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Silvester",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
     },
     {
       "id": "jan03-comedy",
@@ -440,45 +770,25 @@
       "category": "comedy",
       "description": "Neujahrs-Comedy! Die besten Stand-Up Comedians live.",
       "location": "Universo Tango",
+      "address": "Beim Grünen Jäger 7",
+      "coords": [53.5592, 9.9625],
       "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
       "time": "20:00",
       "price": "ab 25€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Hidden Kitchen (Veggie)",
-      "restaurant_link": "https://www.instagram.com/hiddenkitchen.hh/"
-    },
-    {
-      "id": "jan09-comedy",
-      "emoji": "😂",
-      "title": "Moin Comedy Club",
-      "date": "2026-01-09",
-      "category": "comedy",
-      "description": "Freitags-Comedy im Universo Tango!",
-      "location": "Universo Tango",
-      "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
-      "time": "20:00",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Kuchnia (Polnische Piroggen)",
-      "restaurant_link": "https://www.instagram.com/kuchnia.hamburg/"
-    },
-    {
-      "id": "jan10-tarzan-klaws",
-      "emoji": "🌿",
-      "title": "Tarzan mit Alexander Klaws",
-      "date": "2026-01-10",
-      "category": "musical",
-      "description": "Alexander Klaws als Tarzan! Samstags-Highlight.",
-      "location": "Stage Theater Neue Flora",
-      "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
-      "time": "19:30",
-      "price": "ab 80€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Tassajara (Vegan)",
-      "restaurant_link": "https://www.tassajara.de/"
+      "restaurant": {
+        "name": "Hidden Kitchen",
+        "type": "Vegetarisch",
+        "address": "Bartelsstraße 29",
+        "link": "https://www.instagram.com/hiddenkitchen.hh/",
+        "coords": [53.5633, 9.9622]
+      },
+      "bar": {
+        "name": "Zwick",
+        "type": "Späti & Bar",
+        "address": "Schulterblatt 59",
+        "link": "https://www.zwick-stpauli.de/"
+      }
     },
     {
       "id": "jan14-krimi",
@@ -486,223 +796,55 @@
       "title": "Der improvisierte Krimi",
       "date": "2026-01-14",
       "category": "theater",
-      "description": "Es geschieht ein Mord - jede Show anders! Auf der Reeperbahn.",
+      "description": "Es geschieht ein Mord - jede Show anders! Impro-Theater auf der Reeperbahn.",
       "location": "Imperial Theater",
+      "address": "Reeperbahn 5, 20359 Hamburg",
+      "coords": [53.5492, 9.9625],
       "link": "https://www.imperial-theater.de/",
-      "venue": "Imperial Theater",
       "time": "20:00",
       "price": "ab 25€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Gassenhaur (Österreichisch)",
-      "restaurant_link": "https://gassenhaur.de/"
-    },
-    {
-      "id": "jan17-tarzan-klaws",
-      "emoji": "🌿",
-      "title": "Tarzan mit Alexander Klaws",
-      "date": "2026-01-17",
-      "category": "musical",
-      "description": "Alexander Klaws als Tarzan!",
-      "location": "Stage Theater Neue Flora",
-      "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
-      "time": "19:30",
-      "price": "ab 80€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Café Paris",
-      "restaurant_link": "https://www.cafeparis.net/"
-    },
-    {
-      "id": "jan21-knust",
-      "emoji": "🎹",
-      "title": "Anna von Hausswolff",
-      "date": "2026-01-21",
-      "category": "musik",
-      "description": "Schwedische Musikerin - experimenteller Dark Ambient/Drone.",
-      "location": "Knust",
-      "link": "https://www.knusthamburg.de/programm/",
-      "venue": "Knust Neuer Kamp",
-      "time": "21:00",
-      "price": "34€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Erikas Eck (Kult 24h)",
-      "restaurant_link": "https://www.instagram.com/erikas_eck/"
-    },
-    {
-      "id": "jan22-grossstadt",
-      "emoji": "🎭",
-      "title": "Ein Stück Großstadtrevier",
-      "date": "2026-01-22",
-      "category": "theater",
-      "description": "Die TV-Kultserie live auf der Bühne!",
-      "location": "St. Pauli Theater",
-      "link": "https://www.st-pauli-theater.de/",
-      "venue": "St. Pauli Theater",
-      "time": "19:30",
-      "price": "ab 19€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Hidden Kitchen",
-      "restaurant_link": "https://www.instagram.com/hiddenkitchen.hh/"
-    },
-    {
-      "id": "jan24-comedy",
-      "emoji": "😂",
-      "title": "Moin Comedy Club",
-      "date": "2026-01-24",
-      "category": "comedy",
-      "description": "Samstags Stand-Up Comedy!",
-      "location": "Universo Tango",
-      "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
-      "time": "20:00",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Maharaja (Vegetarisch)",
-      "restaurant_link": "https://www.maharaja-hamburg.de/"
-    },
-    {
-      "id": "jan24-schneidebrett",
-      "emoji": "🪵",
-      "title": "Schneidebrett Workshop",
-      "date": "2026-01-24",
-      "category": "handwerk",
-      "description": "Eigenes Schneidebrett bauen! Mit Tischlermeister André Wolf.",
-      "location": "Ärmel Hoch",
-      "link": "https://www.aermelhoch.jetzt/",
-      "venue": "Tischlerei Bargteheide",
-      "time": "10:00-14:00",
-      "price": "99€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Altes Mädchen",
-      "restaurant_link": "https://www.altes-maedchen.com/"
-    },
-    {
-      "id": "jan24-tarzan-klaws",
-      "emoji": "🌿",
-      "title": "Tarzan mit Alexander Klaws",
-      "date": "2026-01-24",
-      "category": "musical",
-      "description": "Alexander Klaws als Tarzan!",
-      "location": "Stage Theater Neue Flora",
-      "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
-      "time": "19:30",
-      "price": "ab 80€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Wolfs Junge (Michelin)",
-      "restaurant_link": "https://www.wolfsjunge.de/"
-    },
-    {
-      "id": "jan28-krimi",
-      "emoji": "🔪",
-      "title": "Der improvisierte Krimi",
-      "date": "2026-01-28",
-      "category": "theater",
-      "description": "Improvisierter Krimi auf dem Kiez!",
-      "location": "Imperial Theater",
-      "link": "https://www.imperial-theater.de/",
-      "venue": "Imperial Theater",
-      "time": "20:00",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "XO Seafoodbar (bis 1 Uhr)",
-      "restaurant_link": "https://www.xo-seafoodbar.de/"
-    },
-    {
-      "id": "jan31-comedy",
-      "emoji": "😂",
-      "title": "SCHNACK Stand-Up",
-      "date": "2026-01-31",
-      "category": "comedy",
-      "description": "Mit Marvin Hoffmann + Karo Bender + Kawus Kalantar!",
-      "location": "St. Pauli Theater",
-      "link": "https://www.st-pauli-theater.de/",
-      "venue": "St. Pauli Theater",
-      "time": "20:00",
-      "price": "ab 15€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Kleine Pause (Burger)",
-      "restaurant_link": "https://www.instagram.com/kleinepause_hamburg/"
-    },
-    {
-      "id": "feb06-comedy",
-      "emoji": "😂",
-      "title": "Moin Comedy Club",
-      "date": "2026-02-06",
-      "category": "comedy",
-      "description": "Freitags Stand-Up im Universo!",
-      "location": "Universo Tango",
-      "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
-      "time": "19:30",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Tazzi Pizza",
-      "restaurant_link": "https://www.tazzi-pizza.de/"
-    },
-    {
-      "id": "feb07-tarzan-klaws",
-      "emoji": "🌿",
-      "title": "Tarzan mit Alexander Klaws",
-      "date": "2026-02-07",
-      "category": "musical",
-      "description": "Alexander Klaws als Tarzan!",
-      "location": "Stage Theater Neue Flora",
-      "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
-      "time": "19:30",
-      "price": "ab 80€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Café Paris",
-      "restaurant_link": "https://www.cafeparis.net/"
-    },
-    {
-      "id": "feb11-krimi",
-      "emoji": "🔪",
-      "title": "Der improvisierte Krimi",
-      "date": "2026-02-11",
-      "category": "theater",
-      "description": "Improvisierter Mord auf der Bühne!",
-      "location": "Imperial Theater",
-      "link": "https://www.imperial-theater.de/",
-      "venue": "Imperial Theater",
-      "time": "20:00",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Gassenhaur",
-      "restaurant_link": "https://gassenhaur.de/"
-    },
-    {
-      "id": "feb14-comedy",
-      "emoji": "😂",
-      "title": "Valentinstag Comedy",
-      "date": "2026-02-14",
-      "category": "comedy",
-      "description": "Valentinstag im Moin Comedy Club! Romantisch-lustig.",
-      "location": "Universo Tango",
-      "link": "https://www.tickettailor.com/events/moincomedyclub",
-      "venue": "Beim Grünen Jäger",
-      "time": "20:00",
-      "price": "ab 25€",
-      "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Sami Sami (Bowls)",
-      "restaurant_link": "https://www.instagram.com/samisami.hh/"
+      "restaurant": {
+        "name": "Gassenhaur",
+        "type": "Österreichisch",
+        "address": "Beim Grünen Jäger 14",
+        "link": "https://gassenhaur.de/",
+        "coords": [53.5592, 9.9625]
+      },
+      "bar": {
+        "name": "Golden Pudel",
+        "type": "Kultclub",
+        "address": "St. Pauli Fischmarkt 27",
+        "link": "https://www.pudel.com/"
+      }
     },
     {
       "id": "feb14-tarzan-klaws",
       "emoji": "🌿",
-      "title": "Valentinstag Tarzan mit Alexander Klaws",
+      "title": "Valentinstag: Tarzan mit Alexander Klaws",
       "date": "2026-02-14",
       "category": "musical",
-      "description": "Romantischer Valentinstag mit Tarzan!",
+      "description": "Romantischer Valentinstag mit Tarzan! Alexander Klaws in der Hauptrolle.",
       "location": "Stage Theater Neue Flora",
+      "address": "Stresemannstraße 159a",
+      "coords": [53.5600, 9.9500],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
       "time": "19:30",
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Wolfs Junge (Michelin)",
-      "restaurant_link": "https://www.wolfsjunge.de/"
+      "restaurant": {
+        "name": "Wolfs Junge",
+        "type": "Grüner Michelin-Stern",
+        "address": "Zimmerstraße 30",
+        "link": "https://www.wolfsjunge.de/",
+        "coords": [53.5575, 9.9708]
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Beste Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
     },
     {
       "id": "feb14-wellness",
@@ -710,31 +852,28 @@
       "title": "Valentinstag Wellnest Spa",
       "date": "2026-02-14",
       "category": "wellness",
-      "description": "Private Spa-Suite zu zweit am Valentinstag! Früh buchen!",
+      "description": "Private Spa-Suite zu zweit am Valentinstag! Früh buchen empfohlen.",
       "location": "Wellnest Altona",
+      "address": "Max-Brauer-Allee 277",
+      "coords": [53.5572, 9.9372],
       "link": "https://wellnest.me/standort/hamburg/",
-      "venue": "Wellnest",
-      "time": "10-24 Uhr",
+      "time": "10:00-24:00",
       "price": "ab 80€",
+      "treatment": "Valentinstag Special: Private Suite für 2 mit Sauna + Whirlpool",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Maquis (Vegetarisch)",
-      "restaurant_link": "https://maquis.hamburg/"
-    },
-    {
-      "id": "feb21-tarzan-klaws",
-      "emoji": "🌿",
-      "title": "Tarzan mit Alexander Klaws",
-      "date": "2026-02-21",
-      "category": "musical",
-      "description": "Alexander Klaws als Tarzan!",
-      "location": "Stage Theater Neue Flora",
-      "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
-      "time": "19:30",
-      "price": "ab 80€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Tassajara",
-      "restaurant_link": "https://www.tassajara.de/"
+      "restaurant": {
+        "name": "Maquis",
+        "type": "100% Vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/",
+        "coords": [53.5589, 9.9450]
+      },
+      "bar": {
+        "name": "Christiansen's",
+        "type": "Gin Bar",
+        "address": "Pinnasberg 60",
+        "link": "https://www.christiansens.de/"
+      }
     },
     {
       "id": "feb27-abba",
@@ -744,13 +883,25 @@
       "category": "theater",
       "description": "Die ABBA-Story mit allen Hits! Premiere am St. Pauli Theater.",
       "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.st-pauli-theater.de/",
-      "venue": "St. Pauli Theater",
       "time": "20:00",
       "price": "ab 17€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "XO Seafoodbar",
-      "restaurant_link": "https://www.xo-seafoodbar.de/"
+      "restaurant": {
+        "name": "XO Seafoodbar",
+        "type": "Fisch & Meeresfrüchte (bis 1 Uhr)",
+        "address": "Peterstraße 28",
+        "link": "https://www.xo-seafoodbar.de/",
+        "coords": [53.5500, 9.9667]
+      },
+      "bar": {
+        "name": "Silbersack",
+        "type": "Kiez-Legende",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
     },
     {
       "id": "dauer-loewe",
@@ -761,13 +912,25 @@
       "category": "musical",
       "description": "Der Musical-Welterfolg seit 2001! Di-So 19:30 / Sa+So auch 14:30. Montags spielfrei.",
       "location": "Stage Theater im Hafen",
+      "address": "Norderelbstraße 6, 20457 Hamburg",
+      "coords": [53.5333, 9.9833],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-der-koenig-der-loewen-hamburg/ticketshop",
-      "venue": "Stage Theater im Hafen",
       "time": "Di-So 19:30",
       "price": "ab 67€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "ÜberQuell (Hafenblick)",
-      "restaurant_link": "https://www.ueberquell.com/"
+      "restaurant": {
+        "name": "ÜberQuell",
+        "type": "Pizza & Craft Beer",
+        "address": "St. Pauli Fischmarkt 28-32",
+        "link": "https://www.ueberquell.com/",
+        "coords": [53.5456, 9.9511]
+      },
+      "bar": {
+        "name": "Tower Bar",
+        "type": "Rooftop Hafenblick",
+        "address": "Seewartenstraße 9",
+        "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
+      }
     },
     {
       "id": "dauer-harry",
@@ -778,13 +941,25 @@
       "category": "theater",
       "description": "3h 15min Magie! Mi 18:30 / Do-So verschiedene Zeiten.",
       "location": "Mehr! Theater",
+      "address": "Banksstraße 28, 20097 Hamburg",
+      "coords": [53.5458, 10.0217],
       "link": "https://www.atgtickets.de/musicals-shows/harry-potter-und-das-verwunschene-kind/tickets/",
-      "venue": "Mehr! Theater",
       "time": "Mi 18:30",
       "price": "ab 60€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Hobenköök",
-      "restaurant_link": "https://www.hobenkoeoek.de/"
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regional HafenCity",
+        "address": "Stockmeyerstraße 43",
+        "link": "https://www.hobenkoeoek.de/",
+        "coords": [53.5419, 10.0189]
+      },
+      "bar": {
+        "name": "Boilerman Bar",
+        "type": "Cocktails",
+        "address": "Ericusspitze 4",
+        "link": "https://www.boilermanbar.de/"
+      }
     },
     {
       "id": "dauer-mj",
@@ -795,13 +970,25 @@
       "category": "musical",
       "description": "25+ Hits! Di-So 19:30 / Sa+So auch 14:30. Shuttle ab Landungsbrücken.",
       "location": "Stage Theater an der Elbe",
+      "address": "Norderelbstraße 8, 20457 Hamburg",
+      "coords": [53.5328, 9.9822],
       "link": "https://www.stage-entertainment.de/musicals-shows/mj-das-michael-jackson-musical-hamburg/ticketshop",
-      "venue": "Stage an der Elbe",
       "time": "Di-So 19:30",
       "price": "ab 64€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Salt & Silver",
-      "restaurant_link": "https://www.saltandsilver.de/"
+      "restaurant": {
+        "name": "Salt & Silver",
+        "type": "Mezze",
+        "address": "St. Pauli Fischmarkt 3",
+        "link": "https://www.saltandsilver.de/",
+        "coords": [53.5456, 9.9511]
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Bar",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
     },
     {
       "id": "dauer-tarzan",
@@ -812,13 +999,25 @@
       "category": "musical",
       "description": "Phil Collins Musik! Di-So. Alexander Klaws an ausgewählten Samstagen.",
       "location": "Stage Neue Flora",
+      "address": "Stresemannstraße 159a, 22769 Hamburg",
+      "coords": [53.5600, 9.9500],
       "link": "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg/ticketshop",
-      "venue": "Stage Neue Flora",
       "time": "Di-So 19:30",
       "price": "ab 67€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Tassajara",
-      "restaurant_link": "https://www.tassajara.de/"
+      "restaurant": {
+        "name": "Tassajara",
+        "type": "Vegan",
+        "address": "Eppendorfer Weg 47",
+        "link": "https://www.tassajara.de/",
+        "coords": [53.5700, 9.9600]
+      },
+      "bar": {
+        "name": "Julep",
+        "type": "Whiskey Bar",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
+      }
     },
     {
       "id": "dauer-julia",
@@ -829,13 +1028,25 @@
       "category": "musical",
       "description": "Max Martin Hits! Bis 01.02.2026 - dann kommt Back to the Future.",
       "location": "Stage Operettenhaus",
+      "address": "Spielbudenplatz 1, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.stage-entertainment.de/musicals-shows/und-julia-hamburg/ticketshop",
-      "venue": "Operettenhaus",
       "time": "Di-So 18:30/19:30",
       "price": "ab 57€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Kokomo Noodle Club",
-      "restaurant_link": "https://www.kokomo-noodleclub.de/"
+      "restaurant": {
+        "name": "Kokomo Noodle Club",
+        "type": "Ramen",
+        "address": "Bartelsstraße 12",
+        "link": "https://www.kokomo-noodleclub.de/",
+        "coords": [53.5633, 9.9622]
+      },
+      "bar": {
+        "name": "Katze",
+        "type": "Kiezbar",
+        "address": "Schulterblatt 86",
+        "link": "https://www.instagram.com/katze_bar/"
+      }
     },
     {
       "id": "dauer-palazzo",
@@ -846,13 +1057,24 @@
       "category": "variete",
       "description": "Akrobatik + Comedy + 4-Gang-Menü im Spiegelpalast! Mi-Sa 19:00 / So 18:00.",
       "location": "Spiegelpalast Altona",
+      "address": "Virchowstraße 1, 22767 Hamburg",
+      "coords": [53.5550, 9.9350],
       "link": "https://www.palazzo.org/hamburg/de/home/tickets-eventim.html",
-      "venue": "Spiegelpalast",
       "time": "Mi-Sa 19:00",
       "price": "ab 183€",
       "vorher_nachher": "Komplett",
-      "restaurant_tipp": "Menü inklusive!",
-      "restaurant_link": "https://www.palazzo.org/hamburg/"
+      "restaurant": {
+        "name": "Menü inklusive",
+        "type": "4-Gang von Cornelia Poletto",
+        "address": "Im Spiegelpalast",
+        "link": "https://www.palazzo.org/hamburg/"
+      },
+      "bar": {
+        "name": "Tower Bar",
+        "type": "Hafenblick",
+        "address": "Seewartenstraße 9",
+        "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
+      }
     },
     {
       "id": "dauer-stpauli-comedy",
@@ -863,13 +1085,25 @@
       "category": "comedy",
       "description": "8-10 Comedians! Mi-Sa 20:00 / Sa auch 17:00 Early Show.",
       "location": "Klubhaus St. Pauli",
+      "address": "Spielbudenplatz 21, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
       "link": "https://www.stpaulicomedyclub.de/",
-      "venue": "Klubhaus 3. OG",
       "time": "Mi-Sa 20:00",
       "price": "ab 20€",
       "vorher_nachher": "Vorher",
-      "restaurant_tipp": "Tazzi Pizza",
-      "restaurant_link": "https://www.tazzi-pizza.de/"
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Ritze",
+        "type": "Boxkneipe",
+        "address": "Reeperbahn 140",
+        "link": "https://www.ritze.de/"
+      }
     },
     {
       "id": "dauer-eis",
@@ -880,13 +1114,25 @@
       "category": "aktiv",
       "description": "4.300 qm! Täglich 10-22h (Di bis 20h). Fr+Sa Club Night mit DJ!",
       "location": "EisArena",
+      "address": "Holstenwall, Planten un Blomen",
+      "coords": [53.5567, 9.9833],
       "link": "https://www.eisarena-hamburg.de/",
-      "venue": "Planten un Blomen",
-      "time": "10-22 Uhr",
+      "time": "10:00-22:00",
       "price": "14€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Café Paris",
-      "restaurant_link": "https://www.cafeparis.net/"
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französisch",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/",
+        "coords": [53.5503, 9.9933]
+      },
+      "bar": {
+        "name": "Parlament",
+        "type": "Weinbar",
+        "address": "Rathausmarkt 1",
+        "link": "https://www.parlament-hamburg.de/"
+      }
     },
     {
       "id": "dauer-nordwand",
@@ -897,13 +1143,25 @@
       "category": "aktiv",
       "description": "4.000 qm Kletterfläche! Mo-Fr 10-23h / Sa+So 10-22h. Restaurant im Haus.",
       "location": "Nordwandhalle",
+      "address": "Am Inselpark 20, 21109 Hamburg",
+      "coords": [53.5069, 9.9856],
       "link": "https://nordwandhalle.de/",
-      "venue": "Wilhelmsburg",
       "time": "Mo-Fr 10-23h",
       "price": "ab 14€",
       "vorher_nachher": "Im Haus",
-      "restaurant_tipp": "Refugium (in der Halle)",
-      "restaurant_link": "https://nordwandhalle.de/"
+      "restaurant": {
+        "name": "Refugium",
+        "type": "In der Halle",
+        "address": "Nordwandhalle",
+        "link": "https://nordwandhalle.de/",
+        "coords": [53.5069, 9.9856]
+      },
+      "bar": {
+        "name": "elbgold",
+        "type": "Kaffee & Drinks",
+        "address": "Veritaskai 1",
+        "link": "https://www.elbgold.com/"
+      }
     },
     {
       "id": "dauer-flashh",
@@ -914,30 +1172,25 @@
       "category": "aktiv",
       "description": "200+ Routen! Täglich 7-23h. Perfekt für Anfänger.",
       "location": "FLASHH",
+      "address": "Von-Hutten-Straße 6, 22761 Hamburg",
+      "coords": [53.5625, 9.9186],
       "link": "https://www.flashh.de/",
-      "venue": "Bahrenfeld",
-      "time": "7-23 Uhr",
+      "time": "7:00-23:00",
       "price": "ab 13€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Cai Kitchen",
-      "restaurant_link": "https://www.cai-kitchen.de/"
-    },
-    {
-      "id": "dauer-holthus",
-      "emoji": "🏊",
-      "title": "Holthusenbad + Sauna",
-      "date": "2025-12-01",
-      "endDate": "2026-02-28",
-      "category": "aktiv",
-      "description": "Jugendstil-Bad von 1914! 25m-Becken + verschiedene Saunen.",
-      "location": "Holthusenbad",
-      "link": "https://www.baederland.de/bad/holthusenbad.html",
-      "venue": "Eppendorf",
-      "time": "verschiedene",
-      "price": "ab 7€",
-      "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Mirou",
-      "restaurant_link": "https://www.mirou-hamburg.de/"
+      "restaurant": {
+        "name": "Cai Kitchen",
+        "type": "Asiatisch",
+        "address": "Große Bergstraße 179",
+        "link": "https://www.cai-kitchen.de/",
+        "coords": [53.5547, 9.9386]
+      },
+      "bar": {
+        "name": "Deck 8",
+        "type": "Hotel Atlantic Bar",
+        "address": "An der Alster 72-79",
+        "link": "https://www.kempinski.com/"
+      }
     },
     {
       "id": "dauer-wellnest",
@@ -948,13 +1201,26 @@
       "category": "wellness",
       "description": "Private Suite: Sauna + Whirlpool + Erlebnis-Dusche. Täglich 10-24h.",
       "location": "Wellnest",
+      "address": "Max-Brauer-Allee 277, 22769 Hamburg",
+      "coords": [53.5572, 9.9372],
       "link": "https://wellnest.me/standort/hamburg/",
-      "venue": "Altona",
-      "time": "10-24 Uhr",
+      "time": "10:00-24:00",
       "price": "ab 80€/2h",
+      "treatment": "Private Suite für 2: Sauna + Whirlpool + Erlebnis-Dusche (2h ab 80€)",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Maquis",
-      "restaurant_link": "https://maquis.hamburg/"
+      "restaurant": {
+        "name": "Maquis",
+        "type": "Vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/",
+        "coords": [53.5589, 9.9450]
+      },
+      "bar": {
+        "name": "Ampere",
+        "type": "Cocktails & Vinyl",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://www.instagram.com/ampere_bar/"
+      }
     },
     {
       "id": "dauer-mywellness",
@@ -963,15 +1229,28 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "wellness",
-      "description": "Private Wellness-Suite ab 26€/h! Whirlpool + Sauna + Regendusche für bis zu 4 Personen.",
+      "description": "Günstigste Option! Private Suite ab 26€/h mit Whirlpool + Sauna.",
       "location": "MyWellness Hamburg",
+      "address": "Moorburger Bogen 1, 21079 Hamburg",
+      "coords": [53.4592, 9.9783],
       "link": "https://mywellness.de/standorte/hamburg-harburg/",
-      "venue": "Hamburg Harburg",
-      "time": "flexibel buchbar",
-      "price": "ab 26€/h pro Person",
+      "time": "flexibel",
+      "price": "ab 26€/h",
+      "treatment": "Superior Suite: Whirlpool + Finnische Sauna + Regendusche (2h ab 52€/Person)",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Hatari (Sri Lanka)",
-      "restaurant_link": "https://hatari-hamburg.de/"
+      "restaurant": {
+        "name": "Hatari",
+        "type": "Sri Lanka",
+        "address": "Bremer Straße 14",
+        "link": "https://hatari-hamburg.de/",
+        "coords": [53.4597, 9.9792]
+      },
+      "bar": {
+        "name": "Goldener Hahn",
+        "type": "Kneipe Harburg",
+        "address": "Harburger Rathausstraße 27",
+        "link": "https://www.instagram.com/goldenerhahn/"
+      }
     },
     {
       "id": "dauer-heavenly",
@@ -980,15 +1259,28 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "wellness",
-      "description": "Luxus-Spa in der Elbphilharmonie! Day Spa ab 40€, Private Suite mit Champagner ab 298€.",
+      "description": "Luxus in der Elbphilharmonie! Infinity-Pool, Saunen, Hafenblick.",
       "location": "The Westin Hamburg",
+      "address": "Platz der Deutschen Einheit 2, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
       "link": "https://www.heavenlyspahamburg.de/",
-      "venue": "Elbphilharmonie 6. Stock",
       "time": "nach Vereinbarung",
-      "price": "ab 40€ (Day Spa)",
+      "price": "ab 40€",
+      "treatment": "Romantic Moments: Private Suite + Harmony Massage für 2 + Prosecco (298€)",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Hobenköök",
-      "restaurant_link": "https://www.hobenkoeoek.de/"
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regional",
+        "address": "Stockmeyerstraße 43",
+        "link": "https://www.hobenkoeoek.de/",
+        "coords": [53.5419, 10.0189]
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
     },
     {
       "id": "dauer-fontenay",
@@ -997,15 +1289,28 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "wellness",
-      "description": "Luxuriöse Private Spa Suite mit Sauna, Whirlpool und Panoramablick über die Alster.",
-      "location": "The Fontenay Hamburg",
+      "description": "1.000 qm Luxus-Spa über den Dächern mit Alsterblick!",
+      "location": "The Fontenay",
+      "address": "Fontenay 10, 20354 Hamburg",
+      "coords": [53.5639, 9.9969],
       "link": "https://www.thefontenay.com/en/spa/private-spa-suite-hamburg",
-      "venue": "The Fontenay an der Alster",
       "time": "nach Vereinbarung",
       "price": "ab 200€",
+      "treatment": "Private Spa Suite: Sauna + Dampfbad + Whirlpool + Panorama-Alsterblick (ab 200€)",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Lakeside (im Hotel)",
-      "restaurant_link": "https://www.thefontenay.com/"
+      "restaurant": {
+        "name": "Lakeside",
+        "type": "Fine Dining",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/",
+        "coords": [53.5639, 9.9969]
+      },
+      "bar": {
+        "name": "The Fontenay Bar",
+        "type": "Champagner",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/"
+      }
     },
     {
       "id": "dauer-vierjahreszeiten",
@@ -1014,15 +1319,28 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "wellness",
-      "description": "1.000 qm Wellness! Über 100 Behandlungen. Hamburgs legendärstes Luxus-Spa.",
+      "description": "Hamburgs legendärstes Spa! 1.000 qm mit 100+ Behandlungen.",
       "location": "Fairmont Hotel Vier Jahreszeiten",
+      "address": "Neuer Jungfernstieg 9-14, 20354 Hamburg",
+      "coords": [53.5561, 9.9933],
       "link": "https://hvj.de/en/spa-fitness.html",
-      "venue": "Neuer Jungfernstieg",
-      "time": "nach Vereinbarung",
-      "price": "ab 150€",
+      "time": "9:00-20:00",
+      "price": "ab 100€",
+      "treatment": "Vier Jahreszeiten Massage + Dachterrasse mit Kamin (ab 150€, Day Spa inklusive)",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Haerlin (2 Michelin-Sterne)",
-      "restaurant_link": "https://hvj.de/"
+      "restaurant": {
+        "name": "Haerlin",
+        "type": "2 Michelin-Sterne",
+        "address": "Im Hotel",
+        "link": "https://hvj.de/",
+        "coords": [53.5561, 9.9933]
+      },
+      "bar": {
+        "name": "Jahreszeiten Bar",
+        "type": "Classic Cocktails",
+        "address": "Im Hotel",
+        "link": "https://hvj.de/"
+      }
     },
     {
       "id": "dauer-amun",
@@ -1033,13 +1351,25 @@
       "category": "handwerk",
       "description": "Töpfern an der Drehscheibe! 2:45h inkl. Material + Glasur + Brand.",
       "location": "Studio Amun",
+      "address": "Osterstraße 47, 20259 Hamburg",
+      "coords": [53.5739, 9.9586],
       "link": "https://studioamun.com/products/anfangerkurs-regular",
-      "venue": "Hamburg",
       "time": "verschiedene",
       "price": "ab 80€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Cai Kitchen",
-      "restaurant_link": "https://www.cai-kitchen.de/"
+      "restaurant": {
+        "name": "Cai Kitchen",
+        "type": "Asiatisch",
+        "address": "Große Bergstraße 179",
+        "link": "https://www.cai-kitchen.de/",
+        "coords": [53.5547, 9.9386]
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
     },
     {
       "id": "dauer-makerhafen",
@@ -1048,15 +1378,27 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "handwerk",
-      "description": "Handaufbau-Techniken ohne Scheibe! Nur 35€ inkl. alles.",
+      "description": "Handaufbau ohne Scheibe! Nur 35€ inkl. alles. Günstigste Option!",
       "location": "Makerhafen",
+      "address": "Ottenser Hauptstraße 10, 22765 Hamburg",
+      "coords": [53.5519, 9.9306],
       "link": "https://makerhafen.de/kurse/toepferkurs-in-hamburg/",
-      "venue": "Altona",
       "time": "verschiedene",
       "price": "35€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Maquis",
-      "restaurant_link": "https://maquis.hamburg/"
+      "restaurant": {
+        "name": "Maquis",
+        "type": "Vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/",
+        "coords": [53.5589, 9.9450]
+      },
+      "bar": {
+        "name": "Strand Pauli",
+        "type": "Beach Bar",
+        "address": "St. Pauli Hafenstraße 89",
+        "link": "https://www.strandpauli.de/"
+      }
     },
     {
       "id": "dauer-siebdruck",
@@ -1067,13 +1409,25 @@
       "category": "handwerk",
       "description": "T-Shirts + Taschen bedrucken! Max 4 Teilnehmer.",
       "location": "Kunsthandwerkerei",
+      "address": "Eimsbütteler Straße 25, 22769 Hamburg",
+      "coords": [53.5636, 9.9550],
       "link": "https://www.kunsthandwerkerei.de/workshops-1/",
-      "venue": "Hamburg",
       "time": "verschiedene",
       "price": "85€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Sami Sami",
-      "restaurant_link": "https://www.instagram.com/samisami.hh/"
+      "restaurant": {
+        "name": "Sami Sami",
+        "type": "Bowls",
+        "address": "Sternstraße 50",
+        "link": "https://www.instagram.com/samisami.hh/",
+        "coords": [53.5628, 9.9608]
+      },
+      "bar": {
+        "name": "Astra Stube",
+        "type": "Kultkneipe",
+        "address": "Max-Brauer-Allee 200",
+        "link": "https://www.astrastube.de/"
+      }
     },
     {
       "id": "dauer-schmieden",
@@ -1082,15 +1436,37 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "handwerk",
-      "description": "Eigenes Messer schmieden! Grundkenntnisse + fertiges Messer.",
+      "description": "Eigenes Messer schmieden! Grundkenntnisse + fertiges Messer zum Mitnehmen.",
       "location": "Schmiedejungs",
+      "address": "Hamburg (genauer Ort bei Buchung)",
+      "coords": [53.5511, 9.9937],
       "link": "https://www.schmiedejungs.de/privates-schmieden/schnupper-schmieden/",
-      "venue": "Hamburg",
       "time": "nach Absprache",
       "price": "ab 150€",
       "vorher_nachher": "Nachher",
-      "restaurant_tipp": "Hatari (Sri Lanka)",
-      "restaurant_link": "https://hatari-hamburg.de/"
+      "restaurant": {
+        "name": "Hatari",
+        "type": "Sri Lanka",
+        "address": "Bremer Straße 14",
+        "link": "https://hatari-hamburg.de/",
+        "coords": [53.4597, 9.9792]
+      },
+      "bar": {
+        "name": "Kampai",
+        "type": "Japan Whisky",
+        "address": "Poolstraße 11",
+        "link": "https://www.kampai-bar.de/"
+      }
     }
-  ]
+  ],
+  "categories": {
+    "musical": { "emoji": "🎭", "name": "Musical", "color": "#e74c3c" },
+    "variete": { "emoji": "🎪", "name": "Varieté", "color": "#9b59b6" },
+    "theater": { "emoji": "🎭", "name": "Theater", "color": "#3498db" },
+    "comedy": { "emoji": "😂", "name": "Comedy", "color": "#f39c12" },
+    "musik": { "emoji": "🎵", "name": "Musik", "color": "#1abc9c" },
+    "wellness": { "emoji": "💆", "name": "Wellness & Spa", "color": "#e91e63" },
+    "aktiv": { "emoji": "🏃", "name": "Aktiv", "color": "#2ecc71" },
+    "handwerk": { "emoji": "🔨", "name": "Handwerk", "color": "#795548" }
+  }
 }
