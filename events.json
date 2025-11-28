@@ -1647,6 +1647,453 @@
       }
     },
     {
+      "id": "dez05-uebel-discovaganza",
+      "emoji": "🎧",
+      "title": "DISCOVAGANZA X OBSCUR",
+      "date": "2025-12-05",
+      "category": "musik",
+      "description": "Elektronische Nacht im legendären Bunker-Club! Techno & House im Uebel & Gefährlich.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez06-suedpol",
+      "emoji": "🎧",
+      "title": "Techno-Nacht im Südpol",
+      "date": "2025-12-06",
+      "category": "musik",
+      "description": "Techno im legendären Südpol Hammerbrook! Kollektiv-geführter Club am Billekanal mit Top-DJs.",
+      "location": "Südpol Hamburg",
+      "address": "Süderstraße 112, 20537 Hamburg",
+      "coords": [53.5447, 10.0389],
+      "link": "https://www.suedpol.org/",
+      "time": "22:00",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://www.suedpol.org/"
+      }
+    },
+    {
+      "id": "dez12-uebel-bunkerrave",
+      "emoji": "🎧",
+      "title": "Bunker Rave w/ CLTX & SHOKI287",
+      "date": "2025-12-12",
+      "category": "musik",
+      "description": "Bunker Rave im Uebel & Gefährlich! Harter Techno im legendären Feldstraßen-Bunker.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez13-uebel-mallgrab",
+      "emoji": "🎧",
+      "title": "HUNGRY4 pres. Mall Grab + Friends",
+      "date": "2025-12-13",
+      "category": "musik",
+      "description": "Mall Grab live im Uebel! Der australische Lo-Fi House & Techno-Produzent mit Freunden.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:00",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez20-uebel-stilvortaltent",
+      "emoji": "🎧",
+      "title": "Stil vor Talent 20 Years Showcase",
+      "date": "2025-12-20",
+      "category": "musik",
+      "description": "20 Jahre Stil vor Talent! Oliver Koletzki's Label feiert Jubiläum im Bunker.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez27-uebel-extrawelt",
+      "emoji": "🎧",
+      "title": "Extrawelt Live",
+      "date": "2025-12-27",
+      "category": "musik",
+      "description": "Extrawelt live im Uebel! Das Hamburger Techno-Duo mit ihrem einzigartigen Live-Set.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "21:00",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez31-uebel-silvester",
+      "emoji": "🎧",
+      "title": "Silvester im Uebel & Gefährlich",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "VER w/ DJ Tallboy & Andata - Silvester im legendären Bunker-Club!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dez31-suedpol-silvester",
+      "emoji": "🎧",
+      "title": "Silvester im Südpol",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "Silvester-Techno im Südpol! Mit Anja Schneider, Pilocka Krach, Just Emma u.v.m.",
+      "location": "Südpol Hamburg",
+      "address": "Süderstraße 112, 20537 Hamburg",
+      "coords": [53.5447, 10.0389],
+      "link": "https://www.suedpol.org/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://www.suedpol.org/"
+      }
+    },
+    {
+      "id": "jan09-uebel-boomroom",
+      "emoji": "🎧",
+      "title": "BOOM ROOM w/ Paraçek",
+      "date": "2026-01-09",
+      "category": "musik",
+      "description": "BOOM ROOM Party mit Paraçek im Uebel & Gefährlich!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "jan31-uebel-boomroom2",
+      "emoji": "🎧",
+      "title": "BOOM ROOM w/ Prada2000",
+      "date": "2026-01-31",
+      "category": "musik",
+      "description": "BOOM ROOM kehrt zurück mit Prada2000 im Uebel & Gefährlich!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "feb14-uebel-felixjaehn",
+      "emoji": "🎧",
+      "title": "Felix Jaehn",
+      "date": "2026-02-14",
+      "category": "musik",
+      "description": "Felix Jaehn Valentinstag-Party im Uebel & Gefährlich!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "feb21-uebel-karlablum",
+      "emoji": "🎧",
+      "title": "INNERBLUM w/ Karla Blum & Felix Kröcher",
+      "date": "2026-02-21",
+      "category": "musik",
+      "description": "Techno-Nacht mit Karla Blum, A.D.H.S. & Felix Kröcher im Uebel!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dauer-suedpol",
+      "emoji": "🎧",
+      "title": "Südpol Hamburg",
+      "date": "dauerhaft",
+      "category": "musik",
+      "description": "Kollektiv-geführter Techno-Club in Hammerbrook! Legendärer Ort am Billekanal mit mehrstündigen Partys.",
+      "location": "Südpol Hamburg",
+      "address": "Süderstraße 112, 20537 Hamburg",
+      "coords": [53.5447, 10.0389],
+      "link": "https://www.suedpol.org/",
+      "time": "Fr-So variabel",
+      "price": "variabel",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://www.suedpol.org/"
+      }
+    },
+    {
+      "id": "dauer-uebel",
+      "emoji": "🎧",
+      "title": "Uebel & Gefährlich",
+      "date": "dauerhaft",
+      "category": "musik",
+      "description": "Legendärer Bunker-Club auf dem Heiligengeistfeld! Techno, Konzerte & Partys im 4. Stock.",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "variabel",
+      "price": "variabel",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "dauer-waagenbau",
+      "emoji": "🎧",
+      "title": "Waagenbau",
+      "date": "dauerhaft",
+      "category": "musik",
+      "description": "Techno-Club im Industriegebäude mit Dachterrasse! Techno, House & mehr in einzigartiger Atmosphäre.",
+      "location": "Waagenbau",
+      "address": "Max-Brauer-Allee 204, 22769 Hamburg",
+      "coords": [53.5594, 9.9433],
+      "link": "https://waagenbau.com/",
+      "time": "variabel",
+      "price": "variabel",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://waagenbau.com/"
+      }
+    },
+    {
+      "id": "dauer-technotischtennis",
+      "emoji": "🏓",
+      "title": "Techno Tischtennis",
+      "date": "dauerhaft",
+      "category": "aktiv",
+      "description": "Tischtennis + Techno! Rundlauf mit DJ-Begleitung - regelmäßig im Südpol, Karoline oder anderen Locations.",
+      "location": "Verschiedene Locations",
+      "address": "Wechselt - siehe techno-tischtennis.de",
+      "coords": [53.5511, 9.9937],
+      "link": "https://techno-tischtennis.de/",
+      "time": "meist ab 19:00",
+      "price": "ca. 10-15€",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Vor Ort",
+        "type": "Snacks & Drinks",
+        "address": "An der Location",
+        "link": "https://techno-tischtennis.de/"
+      },
+      "bar": {
+        "name": "Vor Ort",
+        "type": "Drinks",
+        "address": "An der Location",
+        "link": "https://techno-tischtennis.de/"
+      }
+    },
+    {
       "id": "essen-mirou",
       "emoji": "🍽️",
       "title": "Israelische Mezze bei Mirou",
