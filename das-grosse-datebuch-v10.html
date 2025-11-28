@@ -1469,13 +1469,13 @@
                 }
 
                 renderCategoryEvents();
-                showToast(`✅ ${allEvents.length} Events geladen!`);
+                // Toast entfernt - stilles Laden
             } catch (error) {
                 console.error('Fehler beim Laden der Events:', error);
                 // Fallback zu Default-Events
                 allEvents = deduplicateEvents(defaultEvents);
                 renderCategoryEvents();
-                showToast('📋 Demo-Events geladen');
+                // Toast entfernt - stilles Laden
             }
         }
         
@@ -1814,41 +1814,73 @@
             const emoji = document.getElementById('rouletteEmoji');
             const title = document.getElementById('rouletteTitle');
             const parts = document.getElementById('rouletteParts');
-            
+
             modal.classList.add('active');
             emoji.classList.add('spinning');
             parts.innerHTML = '';
             title.textContent = 'Drehe...';
-            
+
             setTimeout(() => {
                 emoji.classList.remove('spinning');
-                
-                // Zufälliges Event aus allen Events
+
+                // Nur Events mit Restaurant für vollständige Date-Ideen
                 const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
                 const ratings = saved.ratings || {};
-                const available = allEvents.filter(e => !ratings[e.id]?.disliked);
-                
+                const available = allEvents.filter(e =>
+                    !ratings[e.id]?.disliked &&
+                    e.restaurant &&
+                    e.restaurant.name &&
+                    e.vorher_nachher !== 'Komplett' // Events wo Essen schon dabei ist, ausschließen
+                );
+
                 if (available.length === 0) {
                     title.textContent = 'Keine Events mehr!';
                     parts.innerHTML = '<p>Alle Events aussortiert.</p>';
                     return;
                 }
-                
+
                 const event = available[Math.floor(Math.random() * available.length)];
+                const r = event.restaurant;
+                const isVorher = event.vorher_nachher === 'Vorher';
+
                 emoji.textContent = event.emoji || '🎯';
-                title.textContent = event.title;
-                parts.innerHTML = `
+                title.textContent = 'Euer Date-Vorschlag 💕';
+
+                // Zeige immer Aktivität + Restaurant als Paar
+                const activityPart = `
                     <div class="roulette-part">
-                        <div class="roulette-part-title">${event.part1Title || event.title}</div>
-                        <div class="roulette-part-desc">${event.part1Desc || event.description || ''}</div>
+                        <div class="roulette-part-title">${event.emoji} ${event.title}</div>
+                        <div class="roulette-part-desc">
+                            📍 ${event.location}${event.time ? ' • 🕐 ' + event.time : ''}${event.price ? ' • 💰 ' + event.price : ''}
+                        </div>
                     </div>
-                    ${event.part2Title ? `
-                    <div class="roulette-part">
-                        <div class="roulette-part-title">${event.part2Title}</div>
-                        <div class="roulette-part-desc">${event.part2Desc || ''}</div>
-                    </div>
-                    ` : ''}
                 `;
+
+                const restaurantPart = `
+                    <div class="roulette-part">
+                        <div class="roulette-part-title">🍽️ ${r.name}</div>
+                        <div class="roulette-part-desc">
+                            ${r.type || ''}${r.address ? ' • 📍 ' + r.address : ''}
+                        </div>
+                    </div>
+                `;
+
+                // Reihenfolge basierend auf vorher/nachher
+                if (isVorher) {
+                    parts.innerHTML = `
+                        <p style="text-align:center;font-size:0.9rem;opacity:0.8;margin-bottom:15px;">Erst gemütlich essen, dann Action!</p>
+                        ${restaurantPart}
+                        <div style="text-align:center;font-size:1.5rem;margin:10px 0;">⬇️</div>
+                        ${activityPart}
+                    `;
+                } else {
+                    parts.innerHTML = `
+                        <p style="text-align:center;font-size:0.9rem;opacity:0.8;margin-bottom:15px;">Erst Action, dann gemütlich essen!</p>
+                        ${activityPart}
+                        <div style="text-align:center;font-size:1.5rem;margin:10px 0;">⬇️</div>
+                        ${restaurantPart}
+                    `;
+                }
             }, 550);
         }
         
