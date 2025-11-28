@@ -2643,9 +2643,6 @@
             const flow = document.getElementById('dateBuilderFlow');
             const e = currentDatePlan.activity;
 
-            // Vorher/Nachher aus Event-Daten oder Standard
-            const defaultTiming = e.vorher_nachher || 'Nachher';
-
             flow.innerHTML = `
                 <div class="date-builder-question">
                     <h4>🎯 Deine Aktivität</h4>
@@ -2656,23 +2653,26 @@
                 </div>
 
                 <div class="date-builder-question">
-                    <h4>⏰ Vorher oder nachher essen?</h4>
-                    <p style="color:var(--text-light);font-size:0.9rem;margin-bottom:12px;">
-                        ${defaultTiming === 'Vorher' ? 'Bei diesem Event empfehlen wir: Vorher essen!' : 'Bei diesem Event empfehlen wir: Nachher essen!'}
-                    </p>
+                    <h4>🍽️ Das könnte spät werden, wollen wir vorher etwas essen gehen?</h4>
                     <div class="date-builder-options">
-                        <button class="date-option-btn" onclick="setFoodTiming('vorher')">🍽️ Vorher</button>
-                        <button class="date-option-btn" onclick="setFoodTiming('nachher')">🌙 Nachher</button>
+                        <button class="date-option-btn" onclick="setWantFood(true)">Ja, klar! 😋</button>
+                        <button class="date-option-btn" onclick="setWantFood(false)">Nein, diesmal nicht</button>
                     </div>
                 </div>
             `;
         }
 
-        function setFoodTiming(timing) {
-            currentDatePlan.wantFood = true;
-            currentDatePlan.foodTiming = timing;
-            currentDatePlan.restaurant = currentDatePlan.activity.restaurant;
-            renderDateBuilderStep2();
+        function setWantFood(want) {
+            currentDatePlan.wantFood = want;
+            if (want) {
+                // Automatisch Vorher/Nachher aus Event-Daten setzen
+                const defaultTiming = currentDatePlan.activity.vorher_nachher || 'Nachher';
+                currentDatePlan.foodTiming = defaultTiming.toLowerCase();
+                currentDatePlan.restaurant = currentDatePlan.activity.restaurant;
+                renderDateBuilderStep2();
+            } else {
+                renderDateBuilderStep2();
+            }
         }
 
         function renderDateBuilderStep2() {
