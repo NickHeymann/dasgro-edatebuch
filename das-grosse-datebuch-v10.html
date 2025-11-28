@@ -1179,11 +1179,8 @@
         }
         
         async function loadEvents() {
-            // Nick's Google Sheet ID direkt eingetragen
-            const sheetId = '1HfKlPudMIyT2R3W7APMbtiuRYdr81u1FY4jarJYBV1A';
-
             // Loading-Anzeige in allen Containern
-            const categories = ['ausstellung', 'erlebnis', 'theater', 'musik', 'comedy', 'wellness', 'aktiv', 'handwerk', 'essen'];
+            const categories = ['musical', 'variete', 'theater', 'comedy', 'musik', 'wellness', 'aktiv', 'handwerk', 'essen'];
             categories.forEach(cat => {
                 const container = document.getElementById(`${cat}-container`);
                 if (container) {
@@ -1192,68 +1189,20 @@
             });
 
             try {
-                // Google Sheets API (öffentliches Sheet)
-                const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-                const response = await fetch(url);
-                const text = await response.text();
+                // Events aus events.json laden (GitHub Pages)
+                const response = await fetch('events.json');
+                const data = await response.json();
 
-                // Google's JSON-Response parsen (hat prefix)
-                const json = JSON.parse(text.substring(47, text.length - 2));
-
-                allEvents = parseSheetData(json);
+                allEvents = data.events || [];
                 renderCategoryEvents();
                 showToast(`✅ ${allEvents.length} Events geladen!`);
             } catch (error) {
-                console.error('Sheet-Fehler:', error);
+                console.error('Fehler beim Laden der Events:', error);
                 // Fallback zu Default-Events
                 allEvents = defaultEvents;
                 renderCategoryEvents();
                 showToast('📋 Demo-Events geladen');
             }
-        }
-        
-        function parseSheetData(json) {
-            const cols = json.table.cols.map(c => c.label?.toLowerCase() || '');
-            const rows = json.table.rows;
-
-            // Kategorie-Mapping: Sheet-Kategorien → App-Kategorien
-            const categoryMap = {
-                'musical': 'musical',
-                'variete': 'variete',
-                'varieté': 'variete',
-                'theater': 'theater',
-                'comedy': 'comedy',
-                'musik': 'musik',
-                'konzert': 'musik',
-                'wellness': 'wellness',
-                'aktiv': 'aktiv',
-                'handwerk': 'handwerk',
-                'essen': 'essen'
-            };
-
-            return rows.map((row, i) => {
-                const event = { id: `sheet-${i}` };
-                row.c.forEach((cell, j) => {
-                    const key = cols[j];
-                    if (key && cell) {
-                        let value = cell.v || '';
-                        // Datum-Format korrigieren (Google gibt "Date(2025,11,3)" zurück)
-                        if ((key === 'date' || key === 'enddate') && typeof value === 'string' && value.startsWith('Date(')) {
-                            const match = value.match(/Date\((\d+),(\d+),(\d+)\)/);
-                            if (match) {
-                                const [_, y, m, d] = match;
-                                value = `${y}-${String(parseInt(m)+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-                            }
-                        }
-                        // Kategorie mappen
-                        if (key === 'category') {
-                            value = categoryMap[value.toLowerCase()] || value.toLowerCase();
-                        }
-                        event[key] = value;
-                    }
-                });
-                return event;
-            }).filter(e => e.title); // Nur Events mit Titel
         }
         
         // Rendert alle Events in ihre jeweiligen Kategorie-Container
