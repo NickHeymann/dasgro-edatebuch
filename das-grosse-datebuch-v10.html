@@ -1772,6 +1772,9 @@
         }
         
         // ============ NAV ============
+        // Kategorien, bei denen "Solli hat frei ab" angezeigt werden soll
+        const feierabendCategories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows'];
+
         function setupNavigation() {
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.addEventListener('click', () => {
@@ -1781,6 +1784,13 @@
                     document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
                     document.getElementById(cat)?.classList.add('active');
                     if (cat === 'travel') setTimeout(initGlobe, 150);
+
+                    // Feierabend-Toggle nur für bestimmte Kategorien anzeigen
+                    const feierabendToggle = document.getElementById('feierabendToggle');
+                    if (feierabendToggle) {
+                        feierabendToggle.style.display = feierabendCategories.includes(cat) ? 'flex' : 'none';
+                    }
+
                     updateLists();
                 });
             });
@@ -3624,14 +3634,14 @@ END:VCALENDAR`;
                 if (coords.length < 3) return;
 
                 try {
-                    // Flatten coordinates for earcut
+                    // Flatten coordinates for earcut (lon, lat pairs)
                     const flatCoords = [];
                     coords.forEach(([lon, lat]) => {
                         flatCoords.push(lon, lat);
                     });
 
-                    // Triangulate using earcut
-                    const indices = earcut(flatCoords);
+                    // Triangulate using earcut - returns indices into vertex array (not flat array)
+                    const indices = earcut(flatCoords, null, 2);
 
                     if (indices.length === 0) {
                         // Fallback to simple fan if earcut fails
@@ -3648,6 +3658,11 @@ END:VCALENDAR`;
                         const i1 = indices[i + 1];
                         const i2 = indices[i + 2];
 
+                        // Check bounds - earcut returns vertex indices (0, 1, 2...) not flat array indices
+                        if (i0 >= coords.length || i1 >= coords.length || i2 >= coords.length) {
+                            continue;
+                        }
+
                         const v0 = latLonToVector3(coords[i0][1], coords[i0][0], rad);
                         const v1 = latLonToVector3(coords[i1][1], coords[i1][0], rad);
                         const v2 = latLonToVector3(coords[i2][1], coords[i2][0], rad);
@@ -3657,12 +3672,18 @@ END:VCALENDAR`;
                         vertices.push(v2.x, v2.y, v2.z);
                     }
 
+                    if (vertices.length === 0) {
+                        drawPolygonFallback(coords, mat, rad);
+                        return;
+                    }
+
                     geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
                     geo.computeVertexNormals();
 
                     const mesh = new THREE.Mesh(geo, mat);
                     globeGroup.add(mesh);
                 } catch (e) {
+                    console.warn('Earcut failed, using fallback:', e);
                     drawPolygonFallback(coords, mat, rad);
                 }
             };
