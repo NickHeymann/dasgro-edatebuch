@@ -1402,6 +1402,49 @@
             showToast('💾 Sheet-ID gespeichert!');
         }
         
+        // Dedupliziert Events basierend auf ID und Titel+Location+Datum Kombination
+        function deduplicateEvents(events) {
+            const seen = new Map();
+            const duplicates = [];
+
+            events.forEach(event => {
+                // Primärer Key: ID
+                if (seen.has(event.id)) {
+                    duplicates.push(event.id);
+                    return;
+                }
+
+                // Sekundärer Key: Titel + Location + Datum (für Events ohne einzigartige ID)
+                const contentKey = `${event.title}|${event.location}|${event.date}`.toLowerCase();
+                if (seen.has(contentKey)) {
+                    duplicates.push(`${event.title} (${event.date})`);
+                    return;
+                }
+
+                seen.set(event.id, true);
+                seen.set(contentKey, true);
+            });
+
+            if (duplicates.length > 0) {
+                console.warn('⚠️ Duplikate gefunden und entfernt:', duplicates);
+            }
+
+            // Entferne Duplikate und gib einzigartige Events zurück
+            const uniqueIds = new Set();
+            const uniqueContentKeys = new Set();
+
+            return events.filter(event => {
+                if (uniqueIds.has(event.id)) return false;
+
+                const contentKey = `${event.title}|${event.location}|${event.date}`.toLowerCase();
+                if (uniqueContentKeys.has(contentKey)) return false;
+
+                uniqueIds.add(event.id);
+                uniqueContentKeys.add(contentKey);
+                return true;
+            });
+        }
+
         async function loadEvents() {
             // Loading-Anzeige in allen Containern
             const categories = ['musical', 'variete', 'theater', 'comedy', 'musik', 'wellness', 'aktiv', 'handwerk', 'essen'];
@@ -1417,13 +1460,20 @@
                 const response = await fetch('events.json');
                 const data = await response.json();
 
-                allEvents = data.events || [];
+                const rawEvents = data.events || [];
+                allEvents = deduplicateEvents(rawEvents);
+
+                const removedCount = rawEvents.length - allEvents.length;
+                if (removedCount > 0) {
+                    console.log(`🧹 ${removedCount} Duplikate entfernt. ${allEvents.length} Events übrig.`);
+                }
+
                 renderCategoryEvents();
                 showToast(`✅ ${allEvents.length} Events geladen!`);
             } catch (error) {
                 console.error('Fehler beim Laden der Events:', error);
                 // Fallback zu Default-Events
-                allEvents = defaultEvents;
+                allEvents = deduplicateEvents(defaultEvents);
                 renderCategoryEvents();
                 showToast('📋 Demo-Events geladen');
             }
