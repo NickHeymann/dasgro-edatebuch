@@ -367,34 +367,6 @@
       }
     },
     {
-      "id": "dez31-molotow",
-      "emoji": "🎸",
-      "title": "Silvester im Molotow",
-      "date": "2025-12-31",
-      "category": "musik",
-      "description": "Dein Bester Silvester! Zwei Floors - einzigartige Party-Atmosphäre.",
-      "location": "Molotow",
-      "address": "Nobistor 14, 22767 Hamburg",
-      "coords": [53.5500, 9.9542],
-      "link": "https://molotowclub.com/programm/programm.php",
-      "time": "22:00",
-      "price": "tba",
-      "vorher_nachher": "Vorher",
-      "restaurant": {
-        "name": "Die Kombüse",
-        "type": "Mexikanisch",
-        "address": "Wohlwillstraße 20",
-        "link": "https://www.diekombuesehamburg.de/",
-        "coords": [53.5517, 9.9600]
-      },
-      "bar": {
-        "name": "20up",
-        "type": "Skyline Silvester",
-        "address": "Bernhard-Nocht-Straße 97",
-        "link": "https://www.empire-riverside.de/20up/"
-      }
-    },
-    {
       "id": "jan03-comedy",
       "emoji": "😂",
       "title": "Moin Comedy Club",
@@ -1672,61 +1644,6 @@
         "type": "Im Club",
         "address": "Im Club",
         "link": "https://www.docks.de/"
-      }
-    },
-    {
-      "id": "dez31-boom-moondoo",
-      "emoji": "🏳️‍🌈",
-      "title": "BOOM - Queer NYE Party",
-      "date": "2025-12-31",
-      "category": "musik",
-      "description": "Hamburgs größte Queer-Party! 2 Floors, beste Musik, Dancer & Drag Queens im Moondoo.",
-      "location": "Moondoo",
-      "address": "Reeperbahn 136, 20359 Hamburg",
-      "coords": [53.5497, 9.9567],
-      "link": "https://www.moondoo.de/",
-      "time": "22:00",
-      "price": "ab 30€",
-      "vorher_nachher": "Vorher",
-      "restaurant": {
-        "name": "Die Kombüse",
-        "type": "Mexikanisch",
-        "address": "Wohlwillstraße 20",
-        "link": "https://www.diekombuesehamburg.de/",
-        "coords": [53.5517, 9.9600]
-      },
-      "bar": {
-        "name": "Moondoo Bar",
-        "type": "Im Club",
-        "address": "Im Club",
-        "link": "https://www.moondoo.de/"
-      }
-    },
-    {
-      "id": "dez31-karoline",
-      "emoji": "🥂",
-      "title": "Silvester All-Inclusive Karoline",
-      "date": "2025-12-31",
-      "category": "musik",
-      "description": "4 Floors + Außenbereich + Winter Wonderland! ALLE Drinks inklusive. Charts, House, 80s-2000s.",
-      "location": "Karoline",
-      "address": "Karolinenstraße 45, 20357 Hamburg",
-      "coords": [53.5578, 9.9614],
-      "link": "https://karoline.club/",
-      "time": "21:00",
-      "price": "89€ (All-Inclusive)",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Snack Area inklusive",
-        "type": "Im Club",
-        "address": "Im Club",
-        "link": "https://karoline.club/"
-      },
-      "bar": {
-        "name": "Alle Drinks inklusive",
-        "type": "All-Inclusive",
-        "address": "Im Club",
-        "link": "https://karoline.club/"
       }
     },
     {
