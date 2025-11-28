@@ -29,12 +29,19 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
+
+        /* Hamster Cursor für Solli */
         body {
             font-family: 'Quicksand', sans-serif;
             background: linear-gradient(180deg, #e8f4f8 0%, var(--cream) 30%, var(--warm-white) 100%);
             color: var(--text);
             min-height: 100vh;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='22' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='44' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='24' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='40' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='25' cy='31' r='1' fill='white'/%3E%3Ccircle cx='41' cy='31' r='1' fill='white'/%3E%3Cellipse cx='32' cy='40' rx='4' ry='3' fill='%23ffb6c1'/%3E%3Cpath d='M28 44 Q32 48 36 44' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ccircle cx='46' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3C/svg%3E") 16 16, auto;
+        }
+
+        /* Pointer-Cursor auch als Hamster */
+        a, button, .btn, .event-card, .calendar-day.has-events, .memory-item, .autocomplete-item, [onclick] {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='22' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='44' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='24' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='40' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='25' cy='31' r='1' fill='white'/%3E%3Ccircle cx='41' cy='31' r='1' fill='white'/%3E%3Cellipse cx='32' cy='40' rx='4' ry='3' fill='%23ffb6c1'/%3E%3Cpath d='M26 44 Q32 50 38 44' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ccircle cx='46' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ctext x='32' y='58' text-anchor='middle' font-size='10' fill='%23e8b4b8'%3E♥%3C/text%3E%3C/svg%3E") 16 16, pointer;
         }
         
         .book-wrapper { max-width: 900px; margin: 0 auto; padding: 10px; }
@@ -647,7 +654,48 @@
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--sage); }
         .form-group textarea { min-height: 70px; resize: vertical; }
-        
+
+        /* AUTOCOMPLETE */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid var(--ice-blue);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .autocomplete-dropdown.active { display: block; }
+        .autocomplete-item {
+            padding: 10px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--ice-blue);
+            transition: background 0.2s;
+        }
+        .autocomplete-item:last-child { border-bottom: none; }
+        .autocomplete-item:hover { background: var(--frost); }
+        .autocomplete-item .item-name { font-weight: 600; color: var(--navy); }
+        .autocomplete-item .item-location { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; }
+        .autocomplete-item .item-type { font-size: 0.75rem; color: var(--rose); background: var(--blush); padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+        .location-info-badge {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: var(--frost);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            display: none;
+        }
+        .location-info-badge.active { display: block; }
+        .location-info-badge .loc-name { font-weight: 600; color: var(--navy); }
+        .location-info-badge .loc-address { color: var(--text-light); font-size: 0.8rem; }
+        .location-info-badge .loc-district { display: inline-block; background: var(--sage); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-top: 4px; }
+
         /* LISTS */
         .list-container { background: var(--frost); border-radius: 16px; padding: 20px; }
         .empty-message { text-align: center; color: var(--text-light); padding: 35px 20px; }
@@ -1144,7 +1192,7 @@
                     <div class="roulette-actions">
                         <button class="btn btn-primary" onclick="acceptRoulette()">👍 Ja!</button>
                         <button class="btn btn-roulette" onclick="spinRoulette()">🔄 Nochmal</button>
-                        <button class="btn btn-secondary" onclick="closeRoulette()">✕</button>
+                        <button class="btn btn-secondary" onclick="closeRoulette()">👎 Nein</button>
                     </div>
                 </div>
             </div>
@@ -1159,8 +1207,18 @@
                 <form id="addDateForm">
                     <div class="form-group"><label>Titel *</label><input type="text" id="newDateTitle" required placeholder="z.B. Bouldern + Ramen"></div>
                     <div class="form-group"><label>Beschreibung</label><textarea id="newDateDesc" placeholder="Was macht dieses Date besonders?"></textarea></div>
-                    <div class="form-group"><label>Aktivität 1</label><input type="text" id="newDatePart1" placeholder="z.B. Nordwandhalle"></div>
-                    <div class="form-group"><label>Aktivität 2</label><input type="text" id="newDatePart2" placeholder="z.B. Momo Ramen"></div>
+                    <div class="form-group" style="position:relative;">
+                        <label>Aktivität 🎯</label>
+                        <input type="text" id="newDatePart1" placeholder="Tippe zum Suchen..." autocomplete="off" oninput="showAutoComplete(this, 'activity')">
+                        <div id="autocomplete1" class="autocomplete-dropdown"></div>
+                        <div id="location1Info" class="location-info-badge"></div>
+                    </div>
+                    <div class="form-group" style="position:relative;">
+                        <label>Restaurant 🍽️</label>
+                        <input type="text" id="newDatePart2" placeholder="Tippe zum Suchen..." autocomplete="off" oninput="showAutoComplete(this, 'restaurant')">
+                        <div id="autocomplete2" class="autocomplete-dropdown"></div>
+                        <div id="location2Info" class="location-info-badge"></div>
+                    </div>
                     <button type="submit" class="btn btn-primary" style="width:100%;">✨ Speichern</button>
                 </form>
             </div>
@@ -1938,8 +1996,158 @@
         }
         
         // ============ CUSTOM DATES ============
-        function openAddDateModal() { document.getElementById('addDateModal').classList.add('active'); }
-        function closeAddDateModal() { document.getElementById('addDateModal').classList.remove('active'); document.getElementById('addDateForm').reset(); }
+        function openAddDateModal() {
+            document.getElementById('addDateModal').classList.add('active');
+            // Reset location info badges
+            document.getElementById('location1Info').classList.remove('active');
+            document.getElementById('location2Info').classList.remove('active');
+        }
+        function closeAddDateModal() {
+            document.getElementById('addDateModal').classList.remove('active');
+            document.getElementById('addDateForm').reset();
+            document.getElementById('autocomplete1').classList.remove('active');
+            document.getElementById('autocomplete2').classList.remove('active');
+            document.getElementById('location1Info').classList.remove('active');
+            document.getElementById('location2Info').classList.remove('active');
+        }
+
+        // Autocomplete-Daten aus den Events extrahieren
+        function getAutocompleteData() {
+            const activities = [];
+            const restaurants = [];
+            const seenActivities = new Set();
+            const seenRestaurants = new Set();
+
+            allEvents.forEach(e => {
+                // Aktivitäten (Locations)
+                if (e.location && !seenActivities.has(e.location)) {
+                    seenActivities.add(e.location);
+                    const district = extractDistrict(e.address);
+                    activities.push({
+                        name: e.location,
+                        address: e.address || '',
+                        district: district,
+                        type: e.category,
+                        emoji: e.emoji
+                    });
+                }
+
+                // Restaurants
+                if (e.restaurant && e.restaurant.name && !seenRestaurants.has(e.restaurant.name)) {
+                    seenRestaurants.add(e.restaurant.name);
+                    const district = extractDistrict(e.restaurant.address);
+                    restaurants.push({
+                        name: e.restaurant.name,
+                        address: e.restaurant.address || '',
+                        district: district,
+                        type: e.restaurant.type || 'Restaurant'
+                    });
+                }
+
+                // Bars auch als Restaurants anbieten
+                if (e.bar && e.bar.name && !seenRestaurants.has(e.bar.name)) {
+                    seenRestaurants.add(e.bar.name);
+                    const district = extractDistrict(e.bar.address);
+                    restaurants.push({
+                        name: e.bar.name,
+                        address: e.bar.address || '',
+                        district: district,
+                        type: e.bar.type || 'Bar'
+                    });
+                }
+            });
+
+            return { activities, restaurants };
+        }
+
+        // Stadtteil aus Adresse extrahieren
+        function extractDistrict(address) {
+            if (!address) return '';
+            const districts = ['St. Pauli', 'Schanze', 'Sternschanze', 'Altona', 'Ottensen', 'Eimsbüttel', 'Eppendorf', 'Winterhude', 'HafenCity', 'Harburg', 'Barmbek', 'St. Georg', 'Rotherbaum', 'Neustadt', 'Altstadt'];
+            for (const d of districts) {
+                if (address.toLowerCase().includes(d.toLowerCase())) return d;
+            }
+            // PLZ-basierte Zuordnung
+            const plzMatch = address.match(/\b(20|21|22)\d{3}\b/);
+            if (plzMatch) {
+                const plz = plzMatch[0];
+                if (plz.startsWith('203')) return 'St. Pauli';
+                if (plz.startsWith('205')) return 'Rotherbaum';
+                if (plz.startsWith('207')) return 'Altona';
+                if (plz.startsWith('209')) return 'St. Georg';
+                if (plz.startsWith('224')) return 'Eppendorf';
+                if (plz.startsWith('227')) return 'Altona';
+            }
+            return '';
+        }
+
+        // Autocomplete anzeigen
+        function showAutoComplete(input, type) {
+            const query = input.value.toLowerCase().trim();
+            const dropdownId = input.id === 'newDatePart1' ? 'autocomplete1' : 'autocomplete2';
+            const dropdown = document.getElementById(dropdownId);
+            const locInfoId = input.id === 'newDatePart1' ? 'location1Info' : 'location2Info';
+
+            if (query.length < 2) {
+                dropdown.classList.remove('active');
+                return;
+            }
+
+            const data = getAutocompleteData();
+            const items = type === 'activity' ? data.activities : data.restaurants;
+
+            const matches = items.filter(item =>
+                item.name.toLowerCase().includes(query) ||
+                (item.type && item.type.toLowerCase().includes(query)) ||
+                (item.district && item.district.toLowerCase().includes(query))
+            ).slice(0, 8);
+
+            if (matches.length === 0) {
+                dropdown.classList.remove('active');
+                return;
+            }
+
+            dropdown.innerHTML = matches.map(item => `
+                <div class="autocomplete-item" onclick="selectAutocomplete('${input.id}', '${item.name.replace(/'/g, "\\'")}', '${item.address.replace(/'/g, "\\'")}', '${item.district}', '${item.type || ''}')">
+                    <div>
+                        <span class="item-name">${item.emoji || '📍'} ${item.name}</span>
+                        ${item.type ? `<span class="item-type">${item.type}</span>` : ''}
+                    </div>
+                    <div class="item-location">${item.address}${item.district ? ' • ' + item.district : ''}</div>
+                </div>
+            `).join('');
+
+            dropdown.classList.add('active');
+        }
+
+        // Autocomplete-Auswahl
+        function selectAutocomplete(inputId, name, address, district, type) {
+            const input = document.getElementById(inputId);
+            input.value = name;
+
+            const dropdownId = inputId === 'newDatePart1' ? 'autocomplete1' : 'autocomplete2';
+            const locInfoId = inputId === 'newDatePart1' ? 'location1Info' : 'location2Info';
+
+            document.getElementById(dropdownId).classList.remove('active');
+
+            // Location-Info anzeigen
+            const locInfo = document.getElementById(locInfoId);
+            if (address || district) {
+                locInfo.innerHTML = `
+                    <div class="loc-name">📍 ${name}</div>
+                    ${address ? `<div class="loc-address">${address}</div>` : ''}
+                    ${district ? `<span class="loc-district">${district}</span>` : ''}
+                `;
+                locInfo.classList.add('active');
+            }
+        }
+
+        // Dropdown schließen bei Klick außerhalb
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.form-group')) {
+                document.querySelectorAll('.autocomplete-dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
         
         document.getElementById('addDateForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
