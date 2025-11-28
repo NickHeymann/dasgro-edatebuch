@@ -3116,9 +3116,46 @@ END:VCALENDAR`;
                         const mesh = new THREE.Mesh(shapeGeometry, material);
                         globeGroup.add(mesh);
                     } catch (e) {
-                        // Fallback: just draw the outline for complex shapes
+                        // Fallback: draw as simple triangles fan from centroid
+                        drawPolygonFallback(coords, material, radius);
                     }
                 }
+            };
+
+            // Fallback for complex shapes that fail triangulation
+            const drawPolygonFallback = (coords, mat, rad) => {
+                if (coords.length < 3) return;
+
+                // Calculate centroid
+                let sumLon = 0, sumLat = 0;
+                coords.forEach(([lon, lat]) => {
+                    sumLon += lon;
+                    sumLat += lat;
+                });
+                const centroid = [sumLon / coords.length, sumLat / coords.length];
+                const centroidVec = latLonToVector3(centroid[1], centroid[0], rad);
+
+                // Create triangle fan from centroid
+                const geometry = new THREE.BufferGeometry();
+                const vertices = [];
+
+                for (let i = 0; i < coords.length; i++) {
+                    const [lon1, lat1] = coords[i];
+                    const [lon2, lat2] = coords[(i + 1) % coords.length];
+
+                    const v1 = latLonToVector3(lat1, lon1, rad);
+                    const v2 = latLonToVector3(lat2, lon2, rad);
+
+                    vertices.push(centroidVec.x, centroidVec.y, centroidVec.z);
+                    vertices.push(v1.x, v1.y, v1.z);
+                    vertices.push(v2.x, v2.y, v2.z);
+                }
+
+                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                geometry.computeVertexNormals();
+
+                const mesh = new THREE.Mesh(geometry, mat);
+                globeGroup.add(mesh);
             };
 
             if (geometry.type === 'Polygon') {
