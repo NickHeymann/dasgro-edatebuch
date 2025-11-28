@@ -1133,15 +1133,14 @@
         <div class="book-3d" id="book3d">
             <div class="book-spine"></div>
             <div class="book-page">
-                <div>
-                    Willkommen zu unserem<br>
-                    <strong>Date-Abenteuer!</strong>
+                <div style="font-size: 1.5rem;">
+                    Ich freu mich drauf ❤️
                 </div>
             </div>
             <div class="book-cover-front">
                 <div class="book-cover-title">Das große Datebuch</div>
                 <div class="book-cover-subtitle">Winter Edition 2025/26</div>
-                <img src="memories/Picsart_23-10-04_20-10-46-036.png" alt="Nick & Solli" class="book-cover-photo" onerror="this.style.display='none'">
+                <img src="memories/IMG_6446.jpg" alt="Nick & Solli" class="book-cover-photo">
                 <button class="open-book-btn" id="openBookBtn">Aufschlagen</button>
             </div>
         </div>
@@ -1548,6 +1547,7 @@
 
             book.classList.add('opening');
 
+            // Wait for book to open (1.2s) + show message for 2s, then fade out
             setTimeout(() => {
                 intro.style.opacity = '0';
                 intro.style.transition = 'opacity 0.5s ease';
@@ -1559,7 +1559,7 @@
                     saved.hasSeenIntro = true;
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
                 }, 500);
-            }, 1200);
+            }, 3200); // 1.2s open + 2s display message
         }
 
         function checkIntro() {
