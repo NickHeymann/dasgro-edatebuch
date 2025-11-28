@@ -22,10 +22,10 @@
         "coords": [53.5889, 10.0083]
       },
       "bar": {
-        "name": "Eppendorfer Grillstation",
-        "type": "Gemütliche Bar",
-        "address": "Eppendorfer Weg 56",
-        "link": "https://www.instagram.com/eppendorfergrillstation/"
+        "name": "Julep",
+        "type": "Whiskey & Cocktails",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
       }
     },
     {
@@ -268,11 +268,11 @@
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Bullerei",
-        "type": "Tim Mälzer",
-        "address": "Lagerstraße 34b",
-        "link": "https://www.bullerei.com/",
-        "coords": [53.5672, 9.9633]
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & vegetarische Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
       },
       "bar": {
         "name": "Julep",
@@ -437,11 +437,11 @@
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Bullerei",
-        "type": "Tim Mälzer",
-        "address": "Lagerstraße 34b",
-        "link": "https://www.bullerei.com/",
-        "coords": [53.5672, 9.9633]
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & vegetarische Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
       },
       "bar": {
         "name": "Le Lion",
@@ -1074,11 +1074,11 @@
       "price": "ab 19€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Bullerei",
-        "type": "Tim Mälzer Restaurant",
-        "address": "Lagerstraße 34b",
-        "link": "https://www.bullerei.com/",
-        "coords": [53.5636, 9.9622]
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & vegetarische Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
       },
       "bar": {
         "name": "Silbersack",
@@ -1473,10 +1473,10 @@
         "link": "https://dammetto.de/"
       },
       "bar": {
-        "name": "Eppendorfer Grillstation",
-        "type": "Gemütliche Bar",
-        "address": "Eppendorfer Weg 56",
-        "link": "https://www.instagram.com/eppendorfergrillstation/"
+        "name": "Julep",
+        "type": "Whiskey & Cocktails",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
       }
     },
     {
@@ -1550,11 +1550,11 @@
       "price": "Spende (12€)",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Bullerei",
-        "type": "Tim Mälzer Restaurant",
-        "address": "Lagerstraße 34b",
-        "link": "https://www.bullerei.com/",
-        "coords": [53.5636, 9.9622]
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & vegetarische Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
       },
       "bar": {
         "name": "Stellwerk Bar",
@@ -2361,33 +2361,6 @@
         "type": "Craft Beer & Beats",
         "address": "Große Elbstraße 14",
         "link": "https://www.golem.hamburg/"
-      }
-    },
-    {
-      "id": "essen-bullerei",
-      "emoji": "👨‍🍳",
-      "title": "Tim Mälzer's Bullerei",
-      "date": "dauerhaft",
-      "category": "essen",
-      "description": "Das Restaurant des TV-Kochs in der alten Viehmarkthalle! Fleisch, aber auch gute vegetarische Optionen.",
-      "location": "Bullerei",
-      "address": "Lagerstraße 34b, 20357 Hamburg",
-      "coords": [53.5636, 9.9622],
-      "link": "https://www.bullerei.com/",
-      "time": "Mo-So 12-23h",
-      "price": "35-55€ p.P.",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Bullerei",
-        "type": "Tim Mälzer Restaurant",
-        "address": "Lagerstraße 34b",
-        "link": "https://www.bullerei.com/"
-      },
-      "bar": {
-        "name": "Rooster",
-        "type": "Weinbar Schanze",
-        "address": "Juliusstraße 23",
-        "link": "https://rooster-schanze.de/"
       }
     },
     {
