@@ -805,6 +805,87 @@
             font-weight: 700;
         }
 
+        /* TRAVEL DIARY */
+        .diary-section { margin-top: 20px; }
+        .diary-entry {
+            background: var(--ice-blue);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+        .diary-entry-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        .diary-entry-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+        .diary-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .diary-media-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .diary-media-item img, .diary-media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .diary-add-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .diary-add-btn:hover { opacity: 0.9; }
+        .diary-form { margin-top: 15px; }
+        .diary-form textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 2px solid var(--ice-blue);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        .diary-form textarea:focus { outline: none; border-color: var(--sage); }
+        .diary-media-upload {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .diary-upload-btn {
+            padding: 10px 15px;
+            background: var(--ice-blue);
+            border: 2px dashed var(--sage);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .diary-upload-btn:hover { background: white; }
+
         /* MOBILE */
         @media (max-width: 600px) {
             .book-cover { padding: 35px 20px 90px; }
@@ -1100,12 +1181,16 @@
     </div>
     
     <div class="modal" id="destinationPopup">
-        <div class="modal-content" style="max-width:420px;">
+        <div class="modal-content" style="max-width:500px;">
             <button class="modal-close" onclick="closeDestinationPopup()">✕</button>
             <div style="padding:20px;">
                 <h3 id="destPopupTitle" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy);margin-bottom:10px;"></h3>
                 <span id="destPopupStatus" style="display:inline-block;padding:5px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:15px;"></span>
                 <div id="destPopupBody"></div>
+                <!-- Diary Section -->
+                <div id="destDiarySection" class="diary-section"></div>
+                <!-- Hidden file input -->
+                <input type="file" id="diaryMediaInput" accept="image/*,video/*" multiple style="display:none;" onchange="handleDiaryMedia(event)">
             </div>
         </div>
     </div>
@@ -1892,7 +1977,7 @@
                 </div>
 
                 <div class="date-builder-question">
-                    <h4>🍽️ Wollen wir was essen gehen?</h4>
+                    <h4>🍽️ Das könnte spät werden, wollen wir vorher etwas essen gehen?</h4>
                     <div class="date-builder-options">
                         <button class="date-option-btn" onclick="setWantFood(true)">Ja, klar! 😋</button>
                         <button class="date-option-btn" onclick="setWantFood(false)">Nein, diesmal nicht</button>
@@ -2028,7 +2113,14 @@
                     ${stepsHtml}
                 </div>
 
+                <p style="text-align:center;font-size:1.3rem;margin:25px 0;color:var(--rose);">Ich freu mich drauf ❤️</p>
+
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
+                    <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">📅 In Kalender</button>
+                    <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">📱 WhatsApp</button>
+                </div>
+
+                <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:15px;">
                     <button class="btn btn-primary" onclick="closeDateBuilder()">Fertig! 🎉</button>
                     <button class="btn btn-secondary" onclick="startDateBuilder('${e.id}')">Nochmal planen</button>
                 </div>
@@ -2039,6 +2131,108 @@
 
         function closeDateBuilder() {
             document.getElementById('dateBuilderModal').classList.remove('active');
+        }
+
+        function addDateToCalendar() {
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+            const b = currentDatePlan.bar;
+
+            // Parse date from activity
+            const eventDate = new Date(e.date);
+            const year = eventDate.getFullYear();
+            const month = String(eventDate.getMonth() + 1).padStart(2, '0');
+            const day = String(eventDate.getDate()).padStart(2, '0');
+
+            // Build description
+            let description = `Date mit Solli 💕\\n\\n`;
+            let stepNum = 1;
+
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
+                description += `${stepNum}. 🍽️ ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
+                stepNum++;
+            }
+
+            description += `${stepNum}. ${e.emoji} ${e.title}\\n   📍 ${e.location}${e.time ? '\\n   🕐 ' + e.time : ''}${e.price ? '\\n   💰 ' + e.price : ''}\\n`;
+            stepNum++;
+
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
+                description += `${stepNum}. 🍽️ ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
+                stepNum++;
+            }
+
+            if (currentDatePlan.wantDrinks && b) {
+                description += `${stepNum}. 🍸 ${b.name}${b.type ? ' (' + b.type + ')' : ''}\\n`;
+            }
+
+            description += `\\nIch freu mich drauf ❤️`;
+
+            // Create ICS file
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Datebuch//Nick & Solli//DE
+BEGIN:VEVENT
+DTSTART:${year}${month}${day}T180000
+DTEND:${year}${month}${day}T230000
+SUMMARY:💕 Date: ${e.title}
+DESCRIPTION:${description}
+LOCATION:${e.location}${e.address ? ', ' + e.address : ''}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `date-${e.title.replace(/[^a-zA-Z0-9]/g, '-')}.ics`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast('📅 Kalender-Datei erstellt!');
+        }
+
+        function shareDateViaWhatsApp() {
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+            const b = currentDatePlan.bar;
+
+            // Format date nicely
+            const eventDate = new Date(e.date);
+            const dateStr = eventDate.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+            let message = `💕 *Unser Date am ${dateStr}*\n\n`;
+            let stepNum = 1;
+
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
+                message += `${stepNum}. 🍽️ *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
+                stepNum++;
+            }
+
+            message += `${stepNum}. ${e.emoji} *${e.title}*\n`;
+            message += `   📍 ${e.location}`;
+            if (e.address) message += `\n   ${e.address}`;
+            if (e.time) message += `\n   🕐 ${e.time}`;
+            if (e.price) message += `\n   💰 ${e.price}`;
+            message += '\n';
+            stepNum++;
+
+            if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
+                message += `${stepNum}. 🍽️ *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
+                stepNum++;
+            }
+
+            if (currentDatePlan.wantDrinks && b) {
+                message += `${stepNum}. 🍸 *${b.name}*${b.type ? ' (' + b.type + ')' : ''}\n`;
+            }
+
+            message += `\nIch freu mich drauf ❤️`;
+
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
+            showToast('📱 WhatsApp geöffnet!');
         }
 
         // ============ TOAST ============
@@ -2052,13 +2246,17 @@
         }
         
         // ============ DESTINATION POPUP ============
+        let currentDestination = null;
+
         function openDestinationPopup(dest, isVisited) {
+            currentDestination = { ...dest, isVisited };
+
             document.getElementById('destPopupTitle').textContent = dest.emoji + ' ' + dest.name;
             const status = document.getElementById('destPopupStatus');
             status.textContent = isVisited ? '✓ Waren wir schon' : '🌟 Wollen wir hin';
             status.style.background = isVisited ? 'var(--sage)' : 'var(--rose)';
             status.style.color = 'white';
-            
+
             let body = isVisited ? `<p style="margin-top:15px;">Unsere gemeinsame Erinnerung! 💕</p>` : '';
             if (!isVisited && dest.reasons) {
                 body = '<div style="margin-top:15px;">' + dest.reasons.map(r => `
@@ -2069,7 +2267,163 @@
                 `).join('') + '</div>';
             }
             document.getElementById('destPopupBody').innerHTML = body;
+
+            // Render diary section
+            renderDiarySection(dest.name, isVisited);
+
             document.getElementById('destinationPopup').classList.add('active');
+        }
+
+        // ============ TRAVEL DIARY ============
+        function renderDiarySection(destName, isVisited) {
+            const section = document.getElementById('destDiarySection');
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const diaries = saved.travelDiaries || {};
+            const entries = diaries[destName] || [];
+
+            let html = '<h4 style="font-family:\'Cormorant Garamond\',serif;font-size:1.2rem;color:var(--navy);margin-bottom:15px;">📔 Reisetagebuch</h4>';
+
+            if (entries.length > 0) {
+                html += entries.map((entry, index) => `
+                    <div class="diary-entry">
+                        <div class="diary-entry-date">${new Date(entry.date).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+                        <div class="diary-entry-text">${entry.text}</div>
+                        ${entry.media && entry.media.length > 0 ? `
+                            <div class="diary-media-grid">
+                                ${entry.media.map((m, i) => `
+                                    <div class="diary-media-item" onclick="viewMedia('${m}')">
+                                        ${m.startsWith('data:video') ?
+                                            `<video src="${m}"></video>` :
+                                            `<img src="${m}" alt="Foto">`}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        <button onclick="deleteDiaryEntry('${destName}', ${index})" style="background:none;border:none;color:var(--text-light);font-size:0.8rem;cursor:pointer;margin-top:8px;">🗑️ Löschen</button>
+                    </div>
+                `).join('');
+            } else {
+                html += `<p style="color:var(--text-light);font-size:0.9rem;text-align:center;padding:20px;">Noch keine Einträge. ${isVisited ? 'Erzählt von eurer Reise!' : 'Notiert eure Pläne!'}</p>`;
+            }
+
+            html += `
+                <div id="diaryForm" style="display:none;" class="diary-form">
+                    <textarea id="diaryText" placeholder="${isVisited ? 'Was habt ihr erlebt? Was war besonders schön?' : 'Was wollt ihr dort machen? Notizen...'}"></textarea>
+                    <div class="diary-media-upload">
+                        <label class="diary-upload-btn" onclick="document.getElementById('diaryMediaInput').click()">
+                            📷 Fotos/Videos hinzufügen
+                        </label>
+                        <div id="mediaPreview" style="display:flex;gap:5px;flex-wrap:wrap;"></div>
+                    </div>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-primary" style="flex:1;" onclick="saveDiaryEntry('${destName}')">💾 Speichern</button>
+                        <button class="btn btn-secondary" onclick="toggleDiaryForm()">Abbrechen</button>
+                    </div>
+                </div>
+                <button class="diary-add-btn" id="addDiaryBtn" onclick="toggleDiaryForm()">
+                    ✏️ Neuer Eintrag
+                </button>
+            `;
+
+            section.innerHTML = html;
+        }
+
+        let pendingMedia = [];
+
+        function toggleDiaryForm() {
+            const form = document.getElementById('diaryForm');
+            const btn = document.getElementById('addDiaryBtn');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                btn.style.display = 'none';
+                pendingMedia = [];
+                document.getElementById('mediaPreview').innerHTML = '';
+            } else {
+                form.style.display = 'none';
+                btn.style.display = 'flex';
+            }
+        }
+
+        function handleDiaryMedia(event) {
+            const files = event.target.files;
+            const preview = document.getElementById('mediaPreview');
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    pendingMedia.push(e.target.result);
+                    const isVideo = file.type.startsWith('video');
+                    preview.innerHTML += `
+                        <div style="width:60px;height:60px;border-radius:6px;overflow:hidden;">
+                            ${isVideo ? `<video src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;"></video>` :
+                                       `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;">`}
+                        </div>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function saveDiaryEntry(destName) {
+            const text = document.getElementById('diaryText').value.trim();
+            if (!text) {
+                showToast('📝 Bitte Text eingeben');
+                return;
+            }
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (!saved.travelDiaries) saved.travelDiaries = {};
+            if (!saved.travelDiaries[destName]) saved.travelDiaries[destName] = [];
+
+            saved.travelDiaries[destName].push({
+                date: new Date().toISOString(),
+                text: text,
+                media: pendingMedia
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            document.getElementById('diaryText').value = '';
+            pendingMedia = [];
+            renderDiarySection(destName, currentDestination?.isVisited);
+            showToast('📔 Eintrag gespeichert!');
+        }
+
+        function deleteDiaryEntry(destName, index) {
+            if (!confirm('Eintrag wirklich löschen?')) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (saved.travelDiaries && saved.travelDiaries[destName]) {
+                saved.travelDiaries[destName].splice(index, 1);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                renderDiarySection(destName, currentDestination?.isVisited);
+                showToast('🗑️ Gelöscht');
+            }
+        }
+
+        function viewMedia(src) {
+            // Simple fullscreen view
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:2000;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+            overlay.onclick = () => overlay.remove();
+
+            if (src.startsWith('data:video')) {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '90%';
+                video.style.maxHeight = '90%';
+                overlay.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                img.style.objectFit = 'contain';
+                overlay.appendChild(img);
+            }
+
+            document.body.appendChild(overlay);
         }
         
         function closeDestinationPopup() { document.getElementById('destinationPopup').classList.remove('active'); }
@@ -2167,6 +2521,22 @@
             return new THREE.Vector3(-r * Math.sin(phi) * Math.cos(theta), r * Math.cos(phi), r * Math.sin(phi) * Math.sin(theta));
         }
 
+        // Pastel colors for countries
+        const pastelColors = [
+            0xFFB5BA, // Soft pink
+            0xBAE1FF, // Light blue
+            0xBAFFBA, // Mint green
+            0xFFDFBA, // Peach
+            0xE0BBE4, // Lavender
+            0xD4F0F0, // Soft cyan
+            0xFFF5BA, // Soft yellow
+            0xFFCCE5, // Light rose
+            0xC9E4CA, // Sage
+            0xE8D5B7, // Sand
+            0xB5D8EB, // Sky blue
+            0xF0E6EF, // Lilac
+        ];
+
         // Load country borders from GeoJSON
         async function loadCountryBorders() {
             try {
@@ -2177,15 +2547,21 @@
                 // Convert TopoJSON to GeoJSON features
                 const countries = topojson.feature(topology, topology.objects.countries);
 
-                const landMaterial = new THREE.LineBasicMaterial({
-                    color: 0x4a9c6d,
-                    transparent: true,
-                    opacity: 0.9
-                });
+                // Draw each country with a pastel fill and border
+                countries.features.forEach((country, index) => {
+                    // Get pastel color based on index
+                    const fillColor = pastelColors[index % pastelColors.length];
 
-                // Draw country borders
-                countries.features.forEach(country => {
-                    drawGeoJSONFeature(country.geometry, landMaterial, 1.005);
+                    // Draw filled country
+                    drawFilledCountry(country.geometry, fillColor, 1.002);
+
+                    // Draw border
+                    const borderMaterial = new THREE.LineBasicMaterial({
+                        color: 0xffffff,
+                        transparent: true,
+                        opacity: 0.4
+                    });
+                    drawGeoJSONFeature(country.geometry, borderMaterial, 1.006);
                 });
 
             } catch (error) {
@@ -2195,7 +2571,73 @@
             }
         }
 
-        // Draw GeoJSON geometry on the globe
+        // Draw filled country on the globe
+        function drawFilledCountry(geometry, color, radius) {
+            if (!geometry) return;
+
+            const material = new THREE.MeshBasicMaterial({
+                color: color,
+                transparent: true,
+                opacity: 0.7,
+                side: THREE.DoubleSide
+            });
+
+            const drawPolygonFill = (coords) => {
+                if (coords.length < 3) return;
+
+                // Create points for the polygon
+                const points2D = [];
+                const points3D = [];
+
+                coords.forEach(([lon, lat]) => {
+                    points2D.push(new THREE.Vector2(lon, lat));
+                    points3D.push(latLonToVector3(lat, lon, radius));
+                });
+
+                // Use triangulation for the polygon
+                if (points3D.length >= 3) {
+                    try {
+                        const shape = new THREE.Shape();
+                        shape.moveTo(points2D[0].x, points2D[0].y);
+                        for (let i = 1; i < points2D.length; i++) {
+                            shape.lineTo(points2D[i].x, points2D[i].y);
+                        }
+                        shape.closePath();
+
+                        const shapeGeometry = new THREE.ShapeGeometry(shape);
+                        const positions = shapeGeometry.attributes.position.array;
+
+                        // Map flat positions back to sphere
+                        for (let i = 0; i < positions.length; i += 3) {
+                            const lon = positions[i];
+                            const lat = positions[i + 1];
+                            const spherePos = latLonToVector3(lat, lon, radius);
+                            positions[i] = spherePos.x;
+                            positions[i + 1] = spherePos.y;
+                            positions[i + 2] = spherePos.z;
+                        }
+
+                        shapeGeometry.attributes.position.needsUpdate = true;
+                        shapeGeometry.computeVertexNormals();
+
+                        const mesh = new THREE.Mesh(shapeGeometry, material);
+                        globeGroup.add(mesh);
+                    } catch (e) {
+                        // Fallback: just draw the outline for complex shapes
+                    }
+                }
+            };
+
+            if (geometry.type === 'Polygon') {
+                drawPolygonFill(geometry.coordinates[0]);
+            } else if (geometry.type === 'MultiPolygon') {
+                geometry.coordinates.forEach(polygon => {
+                    drawPolygonFill(polygon[0]);
+                });
+            }
+        }
+
+        // Draw GeoJSON geometry on the globe (borders)
         function drawGeoJSONFeature(geometry, material, radius) {
             if (!geometry) return;
 
