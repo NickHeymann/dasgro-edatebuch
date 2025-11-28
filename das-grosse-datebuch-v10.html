@@ -2643,38 +2643,6 @@
             const flow = document.getElementById('dateBuilderFlow');
             const e = currentDatePlan.activity;
 
-            flow.innerHTML = `
-                <div class="date-builder-question">
-                    <h4>🎯 Deine Aktivität</h4>
-                    <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
-                        <strong>${e.emoji} ${e.title}</strong><br>
-                        <small style="color:var(--text-light)">${e.location || ''} ${e.time ? '• ' + e.time : ''}</small>
-                    </div>
-                </div>
-
-                <div class="date-builder-question">
-                    <h4>🍽️ Das könnte spät werden, wollen wir vorher etwas essen gehen?</h4>
-                    <div class="date-builder-options">
-                        <button class="date-option-btn" onclick="setWantFood(true)">Ja, klar! 😋</button>
-                        <button class="date-option-btn" onclick="setWantFood(false)">Nein, diesmal nicht</button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function setWantFood(want) {
-            currentDatePlan.wantFood = want;
-            if (want) {
-                renderDateBuilderStep2();
-            } else {
-                renderDateBuilderSummary();
-            }
-        }
-
-        function renderDateBuilderStep2() {
-            const flow = document.getElementById('dateBuilderFlow');
-            const e = currentDatePlan.activity;
-
             // Vorher/Nachher aus Event-Daten oder Standard
             const defaultTiming = e.vorher_nachher || 'Nachher';
 
@@ -2693,7 +2661,7 @@
                         ${defaultTiming === 'Vorher' ? 'Bei diesem Event empfehlen wir: Vorher essen!' : 'Bei diesem Event empfehlen wir: Nachher essen!'}
                     </p>
                     <div class="date-builder-options">
-                        <button class="date-option-btn" onclick="setFoodTiming('vorher')">🌅 Vorher</button>
+                        <button class="date-option-btn" onclick="setFoodTiming('vorher')">🍽️ Vorher</button>
                         <button class="date-option-btn" onclick="setFoodTiming('nachher')">🌙 Nachher</button>
                     </div>
                 </div>
@@ -2701,12 +2669,13 @@
         }
 
         function setFoodTiming(timing) {
+            currentDatePlan.wantFood = true;
             currentDatePlan.foodTiming = timing;
             currentDatePlan.restaurant = currentDatePlan.activity.restaurant;
-            renderDateBuilderStep3();
+            renderDateBuilderStep2();
         }
 
-        function renderDateBuilderStep3() {
+        function renderDateBuilderStep2() {
             const flow = document.getElementById('dateBuilderFlow');
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
