@@ -1,6 +1,341 @@
 {
   "events": [
     {
+      "id": "nov28-weihnachtsmarkt",
+      "emoji": "🎄",
+      "title": "Weihnachtsmarkt Rathausplatz",
+      "date": "2025-11-28",
+      "category": "aktiv",
+      "description": "Eröffnung der Weihnachtssaison! Glühwein und Schmalzkuchen am Rathaus.",
+      "location": "Rathausmarkt",
+      "address": "Rathausmarkt, 20095 Hamburg",
+      "coords": [53.5503, 9.9925],
+      "link": "https://www.hamburger-weihnachtsmarkt.com/",
+      "time": "11-21 Uhr",
+      "price": "kostenlos",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französisch",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/",
+        "coords": [53.5503, 9.9933]
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Beste Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "nov28-winterdom",
+      "emoji": "🎡",
+      "title": "Hamburger Winterdom",
+      "date": "2025-11-28",
+      "category": "aktiv",
+      "description": "Größtes Volksfest des Nordens! Fahrgeschäfte, Zuckerwatte und Feuerwerk.",
+      "location": "Heiligengeistfeld",
+      "address": "Heiligengeistfeld, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://www.hamburg.de/dom/",
+      "time": "15-23 Uhr (Fr bis 24h)",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Zum Silbersack",
+        "type": "Kiez-Legende seit 1949",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
+    },
+    {
+      "id": "nov28-uebel-aggregat",
+      "emoji": "🎧",
+      "title": "Aggregat Techno Night",
+      "date": "2025-11-28",
+      "category": "musik",
+      "description": "Techno-Nacht im legendären Bunker-Club!",
+      "location": "Uebel & Gefährlich",
+      "address": "Feldstraße 66, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://uebelundgefaehrlich.com/",
+      "time": "23:59",
+      "price": "tba",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25, St. Pauli",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "Im Club",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://uebelundgefaehrlich.com/"
+      }
+    },
+    {
+      "id": "nov29-santapauli",
+      "emoji": "🎅",
+      "title": "Santa Pauli Weihnachtsmarkt",
+      "date": "2025-11-29",
+      "category": "aktiv",
+      "description": "Hamburgs frechster Weihnachtsmarkt auf dem Spielbudenplatz!",
+      "location": "Spielbudenplatz",
+      "address": "Spielbudenplatz, 20359 Hamburg",
+      "coords": [53.5492, 9.9631],
+      "link": "https://santa-pauli.de/",
+      "time": "16-24 Uhr",
+      "price": "kostenlos",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Rooftop Bar",
+        "address": "Reeperbahn 1",
+        "link": "https://clouds-hamburg.de/"
+      }
+    },
+    {
+      "id": "nov29-eislaufen",
+      "emoji": "⛸️",
+      "title": "Eislaufen Planten un Blomen",
+      "date": "2025-11-29",
+      "category": "aktiv",
+      "description": "Romantisches Schlittschuhlaufen auf 4.300 qm! Mit DJ am Abend.",
+      "location": "EisArena Planten un Blomen",
+      "address": "Planten un Blomen, 20355 Hamburg",
+      "coords": [53.5611, 9.9831],
+      "link": "https://www.eisarena-hamburg.de/",
+      "time": "10-22 Uhr",
+      "price": "14€ inkl. Schlittschuhe",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französisch",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/",
+        "coords": [53.5503, 9.9933]
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "nov29-winterdom",
+      "emoji": "🎡",
+      "title": "Winterdom Samstag",
+      "date": "2025-11-29",
+      "category": "aktiv",
+      "description": "Familientag am Dom! Samstags mit extra Programm und Feuerwerk um 22:30.",
+      "location": "Heiligengeistfeld",
+      "address": "Heiligengeistfeld, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://www.hamburg.de/dom/",
+      "time": "15-24 Uhr",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Ritze",
+        "type": "Boxkneipe",
+        "address": "Reeperbahn 140",
+        "link": "https://www.ritze.de/"
+      }
+    },
+    {
+      "id": "nov30-brunch",
+      "emoji": "🥐",
+      "title": "Sonntagsbrunch im Café Paris",
+      "date": "2025-11-30",
+      "category": "essen",
+      "description": "Entspannter Sonntagsbrunch in Hamburgs schönstem Café!",
+      "location": "Café Paris",
+      "address": "Rathausstraße 4, 20095 Hamburg",
+      "coords": [53.5503, 9.9933],
+      "link": "https://www.cafeparis.net/",
+      "time": "10-15 Uhr",
+      "price": "35-50€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französisch",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/"
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Beste Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "nov30-planetarium",
+      "emoji": "🌟",
+      "title": "Sternenstunde im Planetarium",
+      "date": "2025-11-30",
+      "category": "aktiv",
+      "description": "Romantische Reise durch das Universum! Perfekt für den 1. Advent.",
+      "location": "Planetarium Hamburg",
+      "address": "Linnering 1, 22299 Hamburg",
+      "coords": [53.5961, 10.0133],
+      "link": "https://www.planetarium-hamburg.de/",
+      "time": "verschiedene",
+      "price": "12-15€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Mirou",
+        "type": "Israelische Mezze",
+        "address": "Gertigstraße 21",
+        "link": "https://www.mirou-hamburg.de/",
+        "coords": [53.5889, 10.0083]
+      },
+      "bar": {
+        "name": "Die Schöne",
+        "type": "Bar & Café Winterhude",
+        "address": "Barmbeker Straße 159",
+        "link": "https://www.instagram.com/dieschoene_bar/"
+      }
+    },
+    {
+      "id": "dez01-winterdom",
+      "emoji": "🎡",
+      "title": "Hamburger Winterdom",
+      "date": "2025-12-01",
+      "category": "aktiv",
+      "description": "Montag am Dom - weniger los, perfekt für ein Date!",
+      "location": "Heiligengeistfeld",
+      "address": "Heiligengeistfeld, 20359 Hamburg",
+      "coords": [53.5536, 9.9667],
+      "link": "https://www.hamburg.de/dom/",
+      "time": "15-23 Uhr",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & vegetarische Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
+      },
+      "bar": {
+        "name": "Astra Stube",
+        "type": "Kultkneipe",
+        "address": "Max-Brauer-Allee 200",
+        "link": "https://www.astrastube.de/"
+      }
+    },
+    {
+      "id": "dez01-sauna",
+      "emoji": "🧖",
+      "title": "Sauna-Abend Bartholomäus Therme",
+      "date": "2025-12-01",
+      "category": "wellness",
+      "description": "Entspannung zum Wochenstart! Verschiedene Saunen und Pool.",
+      "location": "Bartholomäus Therme",
+      "address": "Bartholomäusstraße 95, 22083 Hamburg",
+      "coords": [53.5867, 10.0347],
+      "link": "https://www.baederland.de/bad/bartholomaeus-therme/",
+      "time": "10-23 Uhr",
+      "price": "ca. 25€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Tassajara",
+        "type": "Vegan",
+        "address": "Eppendorfer Weg 47",
+        "link": "https://www.tassajara.de/",
+        "coords": [53.5700, 9.9600]
+      },
+      "bar": {
+        "name": "Julep",
+        "type": "Whiskey & Cocktails",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
+      }
+    },
+    {
+      "id": "dez02-kino",
+      "emoji": "🎬",
+      "title": "Kino-Date im Abaton",
+      "date": "2025-12-02",
+      "category": "aktiv",
+      "description": "Hamburgs schönstes Programmkino! Gemütliche Sessel und gute Filme.",
+      "location": "Abaton Kino",
+      "address": "Allende-Platz 3, 20146 Hamburg",
+      "coords": [53.5672, 9.9850],
+      "link": "https://www.abaton.de/",
+      "time": "verschiedene",
+      "price": "12€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Café Leonar",
+        "type": "Jüdische Küche",
+        "address": "Grindelhof 59",
+        "link": "https://www.cafe-leonar.de/",
+        "coords": [53.5678, 9.9833]
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "dez02-weihnachtsmarkt",
+      "emoji": "🎄",
+      "title": "Weihnachtsmarkt Jungfernstieg",
+      "date": "2025-12-02",
+      "category": "aktiv",
+      "description": "Weißer Zauber am Jungfernstieg! Glühwein mit Alsterblick.",
+      "location": "Jungfernstieg",
+      "address": "Jungfernstieg, 20354 Hamburg",
+      "coords": [53.5531, 9.9933],
+      "link": "https://www.weihnachtsmaerkte-hamburg.de/",
+      "time": "11-21 Uhr",
+      "price": "kostenlos",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Café Paris",
+        "type": "Französisch",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/",
+        "coords": [53.5503, 9.9933]
+      },
+      "bar": {
+        "name": "Parlament",
+        "type": "Weinbar",
+        "address": "Rathausmarkt 1",
+        "link": "https://www.parlament-hamburg.de/"
+      }
+    },
+    {
       "id": "dez03-hives",
       "emoji": "🎸",
       "title": "The Hives - Live in Hamburg",
