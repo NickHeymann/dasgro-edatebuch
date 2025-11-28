@@ -1,0 +1,1388 @@
+{
+  "restaurants": [
+    {
+      "name": "Mirou",
+      "type": "Israelische Mezze",
+      "address": "Gertigstraße 21, Winterhude",
+      "district": "Winterhude",
+      "hours": "Di-Sa 18-23h, So geschlossen",
+      "link": "https://www.mirou-hamburg.de/",
+      "coords": [53.5889, 10.0083],
+      "cuisine": "vegetarisch-freundlich"
+    },
+    {
+      "name": "Kleine Pause",
+      "type": "Burger & Bowls",
+      "address": "Friedrichstraße 25, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 12-22h, Sa-So 11-22h",
+      "link": "https://www.instagram.com/kleinepause_hamburg/",
+      "coords": [53.5503, 9.9658],
+      "cuisine": "international"
+    },
+    {
+      "name": "ÜberQuell",
+      "type": "Pizza & Craft Beer",
+      "address": "St. Pauli Fischmarkt 28-32",
+      "district": "St. Pauli",
+      "hours": "Di-So 17-23h, Mo geschlossen",
+      "link": "https://www.ueberquell.com/",
+      "coords": [53.5456, 9.9511],
+      "cuisine": "pizza"
+    },
+    {
+      "name": "Hobenköök",
+      "type": "Regionale Küche",
+      "address": "Stockmeyerstraße 43, HafenCity",
+      "district": "HafenCity",
+      "hours": "Di-Sa 12-22h, So-Mo geschlossen",
+      "link": "https://www.hobenkoeoek.de/",
+      "coords": [53.5419, 10.0189],
+      "cuisine": "regional"
+    },
+    {
+      "name": "Tassajara",
+      "type": "Vegan seit 1976",
+      "address": "Eppendorfer Weg 47, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-So 11:30-22h",
+      "link": "https://www.tassajara.de/",
+      "coords": [53.5700, 9.9600],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Kokomo Noodle Club",
+      "type": "Ramen & Asiatisch",
+      "address": "Bartelsstraße 12, Schanze",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-22h",
+      "link": "https://www.kokomo-noodleclub.de/",
+      "coords": [53.5633, 9.9622],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Gassenhaur",
+      "type": "Österreichische Küche",
+      "address": "Beim Grünen Jäger 14",
+      "district": "St. Pauli",
+      "hours": "Di-Sa 18-23h, So-Mo geschlossen",
+      "link": "https://gassenhaur.de/",
+      "coords": [53.5592, 9.9625],
+      "cuisine": "österreichisch"
+    },
+    {
+      "name": "Tazzi Pizza",
+      "type": "Beste Pizza St. Pauli",
+      "address": "Reeperbahn 61",
+      "district": "St. Pauli",
+      "hours": "Mo-So 12-2h",
+      "link": "https://www.tazzi-pizza.de/",
+      "coords": [53.5494, 9.9611],
+      "cuisine": "pizza"
+    },
+    {
+      "name": "Café Paris",
+      "type": "Französische Brasserie",
+      "address": "Rathausstraße 4",
+      "district": "Neustadt",
+      "hours": "Mo-So 9-24h",
+      "link": "https://www.cafeparis.net/",
+      "coords": [53.5503, 9.9933],
+      "cuisine": "französisch"
+    },
+    {
+      "name": "Maquis",
+      "type": "100% Vegetarisch",
+      "address": "Max-Brauer-Allee 207",
+      "district": "Altona",
+      "hours": "Di-Sa 18-22h, So-Mo geschlossen",
+      "link": "https://maquis.hamburg/",
+      "coords": [53.5589, 9.9450],
+      "cuisine": "vegetarisch"
+    },
+    {
+      "name": "Hatari",
+      "type": "Sri Lanka Küche",
+      "address": "Bremer Straße 14, Harburg",
+      "district": "Harburg",
+      "hours": "Di-So 12-22h, Mo geschlossen",
+      "link": "https://hatari-hamburg.de/",
+      "coords": [53.4597, 9.9792],
+      "cuisine": "sri-lanka"
+    },
+    {
+      "name": "Altes Mädchen",
+      "type": "Craft Beer & Küche",
+      "address": "Lagerstraße 28b, Schanze",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-24h",
+      "link": "https://www.altes-maedchen.com/",
+      "coords": [53.5636, 9.9628],
+      "cuisine": "international"
+    },
+    {
+      "name": "Froindlichst",
+      "type": "100% Vegan",
+      "address": "Lagerstraße 34",
+      "district": "Sternschanze",
+      "hours": "Di-So 12-21h, Mo geschlossen",
+      "link": "https://www.froindlichst.de/",
+      "coords": [53.5636, 9.9622],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Bidges & Sons",
+      "type": "Vegan Streetfood",
+      "address": "Schulterblatt 1, Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-Sa 12-21h, So 13-21h",
+      "link": "https://www.bidgesandsons.de/",
+      "coords": [53.5631, 9.9617],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Salt & Silver",
+      "type": "Mexikanische Mezze",
+      "address": "St. Pauli Fischmarkt 3",
+      "district": "St. Pauli",
+      "hours": "Di-So 18-23h, Mo geschlossen",
+      "link": "https://www.saltandsilver.de/",
+      "coords": [53.5456, 9.9511],
+      "cuisine": "mexikanisch"
+    },
+    {
+      "name": "Die Kombüse",
+      "type": "Mexikanisch",
+      "address": "Wohlwillstraße 20",
+      "district": "St. Pauli",
+      "hours": "Mo-So 17-23h",
+      "link": "https://www.diekombuesehamburg.de/",
+      "coords": [53.5517, 9.9600],
+      "cuisine": "mexikanisch"
+    },
+    {
+      "name": "Zum Spätzle",
+      "type": "Schwäbische Küche",
+      "address": "Schanzenstraße 91",
+      "district": "Sternschanze",
+      "hours": "Mo-Fr 18-22h, Sa-So 12-22h",
+      "link": "https://www.zumspaetzle.de/",
+      "coords": [53.5633, 9.9622],
+      "cuisine": "schwäbisch"
+    },
+    {
+      "name": "Bullerei",
+      "type": "Tim Mälzer Restaurant",
+      "address": "Lagerstraße 34b",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-23h",
+      "link": "https://www.bullerei.com/",
+      "coords": [53.5636, 9.9622],
+      "cuisine": "international"
+    },
+    {
+      "name": "Café Leonar",
+      "type": "Jüdische Küche",
+      "address": "Grindelhof 59",
+      "district": "Rotherbaum",
+      "hours": "Di-So 10-22h, Mo geschlossen",
+      "link": "https://www.cafe-leonar.de/",
+      "coords": [53.5678, 9.9833],
+      "cuisine": "jüdisch"
+    },
+    {
+      "name": "Wolfs Junge",
+      "type": "Grüner Michelin-Stern",
+      "address": "Zimmerstraße 30",
+      "district": "Eimsbüttel",
+      "hours": "Di-Sa 18-23h, So-Mo geschlossen",
+      "link": "https://www.wolfsjunge.de/",
+      "coords": [53.5575, 9.9708],
+      "cuisine": "nachhaltig"
+    },
+    {
+      "name": "Hidden Kitchen",
+      "type": "Vegetarisch",
+      "address": "Bartelsstraße 29",
+      "district": "Sternschanze",
+      "hours": "Mi-So 18-22h, Mo-Di geschlossen",
+      "link": "https://www.instagram.com/hiddenkitchen.hh/",
+      "coords": [53.5633, 9.9622],
+      "cuisine": "vegetarisch"
+    },
+    {
+      "name": "XO Seafoodbar",
+      "type": "Fisch & Meeresfrüchte",
+      "address": "Peterstraße 28",
+      "district": "Neustadt",
+      "hours": "Mo-Sa 12-1h, So geschlossen",
+      "link": "https://www.xo-seafoodbar.de/",
+      "coords": [53.5500, 9.9667],
+      "cuisine": "fisch"
+    },
+    {
+      "name": "Lily of the Valley",
+      "type": "Café & Brunch",
+      "address": "Schanzenstraße 75",
+      "district": "Sternschanze",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "link": "https://www.instagram.com/lilyofthevalley.hh/",
+      "coords": [53.5636, 9.9622],
+      "cuisine": "café"
+    },
+    {
+      "name": "Cai Kitchen",
+      "type": "Asiatisch",
+      "address": "Große Bergstraße 179",
+      "district": "Altona",
+      "hours": "Mo-Sa 12-21h, So geschlossen",
+      "link": "https://www.cai-kitchen.de/",
+      "coords": [53.5547, 9.9386],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Sami Sami",
+      "type": "Bowls",
+      "address": "Sternstraße 50",
+      "district": "Sternschanze",
+      "hours": "Mo-Fr 12-21h, Sa-So 12-20h",
+      "link": "https://www.instagram.com/samisami.hh/",
+      "coords": [53.5628, 9.9608],
+      "cuisine": "bowls"
+    },
+    {
+      "name": "Trific Schanze",
+      "type": "Modern European",
+      "address": "Schulterblatt 1",
+      "district": "Sternschanze",
+      "hours": "Mo-So 17-23h",
+      "link": "https://www.trific.de/",
+      "coords": [53.5631, 9.9617],
+      "cuisine": "europäisch"
+    },
+    {
+      "name": "VLET in der Speicherstadt",
+      "type": "Hamburger Küche",
+      "address": "Am Sandtorkai 23-24",
+      "district": "HafenCity",
+      "hours": "Mo-Sa 12-22h, So 12-21h",
+      "link": "https://www.vlet.de/",
+      "coords": [53.5436, 9.9914],
+      "cuisine": "hamburger"
+    },
+    {
+      "name": "Wandrahm",
+      "type": "Fine Dining HafenCity",
+      "address": "Am Sandtorkai 77",
+      "district": "HafenCity",
+      "hours": "Di-Sa 18-22h, So-Mo geschlossen",
+      "link": "https://www.restaurant-wandrahm.de/",
+      "coords": [53.5433, 9.9917],
+      "cuisine": "fine-dining"
+    },
+    {
+      "name": "Jellyfish",
+      "type": "Fisch & Seafood",
+      "address": "Weidenallee 12",
+      "district": "Eimsbüttel",
+      "hours": "Di-Sa 18-22h, So-Mo geschlossen",
+      "link": "https://www.jellyfish-restaurant.de/",
+      "coords": [53.5694, 9.9647],
+      "cuisine": "fisch"
+    },
+    {
+      "name": "Haerlin",
+      "type": "2 Michelin-Sterne",
+      "address": "Neuer Jungfernstieg 9-14",
+      "district": "Neustadt",
+      "hours": "Mi-Sa 19-21h, So-Di geschlossen",
+      "link": "https://hvj.de/",
+      "coords": [53.5561, 9.9933],
+      "cuisine": "fine-dining"
+    },
+    {
+      "name": "Lakeside",
+      "type": "Fine Dining The Fontenay",
+      "address": "Fontenay 10",
+      "district": "Rotherbaum",
+      "hours": "Di-Sa 18-22h, So-Mo geschlossen",
+      "link": "https://www.thefontenay.com/",
+      "coords": [53.5639, 9.9969],
+      "cuisine": "fine-dining"
+    },
+    {
+      "name": "Edel Curry",
+      "type": "Beste Currywurst",
+      "address": "Grindelallee 26",
+      "district": "Rotherbaum",
+      "hours": "Mo-Sa 11-22h, So 12-20h",
+      "link": "https://www.instagram.com/edelcurry/",
+      "coords": [53.5658, 9.9783],
+      "cuisine": "deutsch"
+    }
+  ],
+  "bars": [
+    {
+      "name": "Clouds",
+      "type": "Rooftop Bar mit Hafenblick",
+      "address": "Reeperbahn 1, Tanzende Türme",
+      "district": "St. Pauli",
+      "hours": "Do-Sa 18-2h, So-Mi geschlossen",
+      "link": "https://clouds-hamburg.de/"
+    },
+    {
+      "name": "Tower Bar",
+      "type": "Rooftop im Hotel Hafen Hamburg",
+      "address": "Seewartenstraße 9",
+      "district": "St. Pauli",
+      "hours": "Mo-So 17-1h",
+      "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
+    },
+    {
+      "name": "Le Lion",
+      "type": "Legendäre Cocktailbar",
+      "address": "Rathausstraße 3",
+      "district": "Neustadt",
+      "hours": "Mo-Sa 18-2h, So geschlossen",
+      "link": "https://www.lelion.net/"
+    },
+    {
+      "name": "20up",
+      "type": "Skyline Bar im Empire",
+      "address": "Bernhard-Nocht-Straße 97",
+      "district": "St. Pauli",
+      "hours": "So-Do 18-1h, Fr-Sa 18-3h",
+      "link": "https://www.empire-riverside.de/20up/"
+    },
+    {
+      "name": "Boilerman Bar",
+      "type": "Cocktails & Whisky",
+      "address": "Ericusspitze 4, HafenCity",
+      "district": "HafenCity",
+      "hours": "Di-Sa 18-1h, So-Mo geschlossen",
+      "link": "https://www.boilermanbar.de/"
+    },
+    {
+      "name": "Katze",
+      "type": "Kiezbar mit Charakter",
+      "address": "Schulterblatt 86, Schanze",
+      "district": "Sternschanze",
+      "hours": "Mo-So 20-4h",
+      "link": "https://www.instagram.com/katze_bar/"
+    },
+    {
+      "name": "Zum Silbersack",
+      "type": "Kiez-Legende seit 1949",
+      "address": "Silbersackstraße 9",
+      "district": "St. Pauli",
+      "hours": "Mo-So 20-5h",
+      "link": "https://www.silbersack.de/"
+    },
+    {
+      "name": "Ritze",
+      "type": "Legendäre Boxkneipe",
+      "address": "Reeperbahn 140",
+      "district": "St. Pauli",
+      "hours": "Mo-So 20-spät",
+      "link": "https://www.ritze.de/"
+    },
+    {
+      "name": "Parlament",
+      "type": "Weinbar am Rathaus",
+      "address": "Rathausmarkt 1",
+      "district": "Neustadt",
+      "hours": "Mo-Sa 11-24h, So 12-22h",
+      "link": "https://www.parlament-hamburg.de/"
+    },
+    {
+      "name": "Ampere",
+      "type": "Cocktails & Vinyl",
+      "address": "Bahrenfelder Straße 157",
+      "district": "Ottensen",
+      "hours": "Di-Sa 19-2h, So-Mo geschlossen",
+      "link": "https://www.instagram.com/ampere_bar/"
+    },
+    {
+      "name": "The Fontenay Bar",
+      "type": "Champagner & Cocktails",
+      "address": "Fontenay 10",
+      "district": "Rotherbaum",
+      "hours": "Mo-So 18-1h",
+      "link": "https://www.thefontenay.com/"
+    },
+    {
+      "name": "Jahreszeiten Bar",
+      "type": "Classic Cocktails",
+      "address": "Neuer Jungfernstieg 9-14",
+      "district": "Neustadt",
+      "hours": "Mo-So 17-1h",
+      "link": "https://hvj.de/"
+    },
+    {
+      "name": "Die Schöne",
+      "type": "Bar & Café Winterhude",
+      "address": "Barmbeker Straße 159",
+      "district": "Winterhude",
+      "hours": "Mo-So 10-24h",
+      "link": "https://www.instagram.com/dieschoene_bar/"
+    },
+    {
+      "name": "Kronensaal",
+      "type": "Gemütliche Schanze-Bar",
+      "address": "Sternstraße 2",
+      "district": "Sternschanze",
+      "hours": "Mo-So 18-2h",
+      "link": "https://www.kronensaal-hamburg.de/"
+    },
+    {
+      "name": "Rooster",
+      "type": "Weinbar Schanze",
+      "address": "Juliusstraße 23",
+      "district": "Sternschanze",
+      "hours": "Di-Sa 18-24h, So-Mo geschlossen",
+      "link": "https://rooster-schanze.de/"
+    },
+    {
+      "name": "Astra Stube",
+      "type": "Kultkneipe Schanze",
+      "address": "Max-Brauer-Allee 200",
+      "district": "Altona",
+      "hours": "Mo-So 20-5h",
+      "link": "https://www.astrastube.de/"
+    },
+    {
+      "name": "Christiansen's",
+      "type": "Gin-Bar",
+      "address": "Pinnasberg 60, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Sa 19-2h, So geschlossen",
+      "link": "https://www.christiansens.de/"
+    },
+    {
+      "name": "Golden Pudel",
+      "type": "Kultclub",
+      "address": "St. Pauli Fischmarkt 27",
+      "district": "St. Pauli",
+      "hours": "Do-Sa 23-spät",
+      "link": "https://www.pudel.com/"
+    },
+    {
+      "name": "Golem",
+      "type": "Craft Beer & Beats",
+      "address": "Große Elbstraße 14",
+      "district": "Altona",
+      "hours": "Di-So 18-2h, Mo geschlossen",
+      "link": "https://www.golem.hamburg/"
+    },
+    {
+      "name": "Komet Musik Bar",
+      "type": "Indie & Cocktails",
+      "address": "Erichstraße 11",
+      "district": "St. Pauli",
+      "hours": "Mo-So 20-4h",
+      "link": "https://www.komet-hamburg.de/"
+    },
+    {
+      "name": "Zwick",
+      "type": "Späti & Bar",
+      "address": "Schulterblatt 59",
+      "district": "Sternschanze",
+      "hours": "Mo-So 10-3h",
+      "link": "https://www.zwick-stpauli.de/"
+    },
+    {
+      "name": "Hadley's",
+      "type": "Speakeasy Bar",
+      "address": "Beim Schlump 84a",
+      "district": "Eimsbüttel",
+      "hours": "Mi-Sa 19-2h, So-Di geschlossen",
+      "link": "https://hadleys.de/"
+    },
+    {
+      "name": "Julep",
+      "type": "Whiskey & Cocktails",
+      "address": "Eppendorfer Weg 139",
+      "district": "Eppendorf",
+      "hours": "Di-Sa 19-2h, So-Mo geschlossen",
+      "link": "https://www.instagram.com/julep_bar/"
+    },
+    {
+      "name": "Kampai",
+      "type": "Japan Whisky Bar",
+      "address": "Poolstraße 11",
+      "district": "Neustadt",
+      "hours": "Mi-Sa 19-2h, So-Di geschlossen",
+      "link": "https://www.kampai-bar.de/"
+    },
+    {
+      "name": "Deck 8",
+      "type": "Hotel Atlantic Bar",
+      "address": "An der Alster 72-79",
+      "district": "St. Georg",
+      "hours": "Mo-So 17-1h",
+      "link": "https://www.kempinski.com/"
+    },
+    {
+      "name": "Eppendorfer Grillstation",
+      "type": "Gemütliche Bar",
+      "address": "Eppendorfer Weg 56",
+      "district": "Eppendorf",
+      "hours": "Mo-So 18-2h",
+      "link": "https://www.instagram.com/eppendorfergrillstation/"
+    },
+    {
+      "name": "Störtebeker Elbphilharmonie",
+      "type": "Craft Beer & Hafenblick",
+      "address": "Am Kaiserkai 1",
+      "district": "HafenCity",
+      "hours": "Mo-So 11-24h",
+      "link": "https://stoertebeker-elbphilharmonie.de/"
+    },
+    {
+      "name": "Laundrette",
+      "type": "Cocktails Ottensen",
+      "address": "Friedensallee 26",
+      "district": "Ottensen",
+      "hours": "Mo-Sa 18-2h, So geschlossen",
+      "link": "https://www.instagram.com/laundrette_hh/"
+    },
+    {
+      "name": "Familieneck",
+      "type": "Gemütliche Kneipe",
+      "address": "Friedensallee 14",
+      "district": "Ottensen",
+      "hours": "Mo-So 18-2h",
+      "link": "https://www.instagram.com/familieneck/"
+    }
+  ],
+  "activities": [
+    {
+      "name": "Wellnest Private Spa",
+      "type": "Private Suite mit Sauna",
+      "address": "Max-Brauer-Allee 277, 22769 Hamburg",
+      "district": "Altona",
+      "hours": "Mo-So 10-24h",
+      "link": "https://wellnest.me/standort/hamburg/",
+      "price": "ab 80€/2h",
+      "category": "wellness"
+    },
+    {
+      "name": "MyWellness Private Suite",
+      "type": "Private Suite ab 26€/h",
+      "address": "Moorburger Bogen 1, 21079 Hamburg",
+      "district": "Harburg",
+      "hours": "flexibel buchbar",
+      "link": "https://mywellness.de/standorte/hamburg-harburg/",
+      "price": "ab 26€/h",
+      "category": "wellness"
+    },
+    {
+      "name": "Heavenly Spa Elbphilharmonie",
+      "type": "Luxus-Spa mit Hafenblick",
+      "address": "Platz der Deutschen Einheit 2, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "nach Vereinbarung",
+      "link": "https://www.heavenlyspahamburg.de/",
+      "price": "ab 40€",
+      "category": "wellness"
+    },
+    {
+      "name": "The Fontenay Private Spa Suite",
+      "type": "Luxus-Spa mit Alsterblick",
+      "address": "Fontenay 10, 20354 Hamburg",
+      "district": "Rotherbaum",
+      "hours": "nach Vereinbarung",
+      "link": "https://www.thefontenay.com/",
+      "price": "ab 200€",
+      "category": "wellness"
+    },
+    {
+      "name": "Vier Jahreszeiten Spa",
+      "type": "Legendäres Luxus-Spa",
+      "address": "Neuer Jungfernstieg 9-14, 20354 Hamburg",
+      "district": "Neustadt",
+      "hours": "9:00-20:00",
+      "link": "https://hvj.de/",
+      "price": "ab 100€",
+      "category": "wellness"
+    },
+    {
+      "name": "Urban Yoga Hamburg",
+      "type": "Yoga Studio",
+      "address": "Feldstraße 66, 20357 Hamburg",
+      "district": "St. Pauli",
+      "hours": "siehe Kursplan",
+      "link": "https://www.urbanyoga-hamburg.com/",
+      "price": "ab 15€",
+      "category": "wellness"
+    },
+    {
+      "name": "Yogaraum Hamburg",
+      "type": "Yoga Studio Schanze",
+      "address": "Schulterblatt 58, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "siehe Kursplan",
+      "link": "https://www.yogaraum-hamburg.de/",
+      "price": "ab 12€",
+      "category": "wellness"
+    },
+    {
+      "name": "EisArena Planten un Blomen",
+      "type": "Eislaufen",
+      "address": "Holstenwall, Planten un Blomen",
+      "district": "Neustadt",
+      "hours": "10:00-22:00 (Nov-März)",
+      "link": "https://www.eisarena-hamburg.de/",
+      "price": "14€",
+      "category": "aktiv"
+    },
+    {
+      "name": "Nordwandhalle",
+      "type": "Bouldern & Klettern",
+      "address": "Am Inselpark 20, 21109 Hamburg",
+      "district": "Wilhelmsburg",
+      "hours": "Mo-Fr 10-23h, Sa-So 10-22h",
+      "link": "https://nordwandhalle.de/",
+      "price": "ab 14€",
+      "category": "aktiv"
+    },
+    {
+      "name": "FLASHH Bouldern",
+      "type": "Bouldern für Anfänger",
+      "address": "Von-Hutten-Straße 6, 22761 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "7:00-23:00",
+      "link": "https://www.flashh.de/",
+      "price": "ab 13€",
+      "category": "aktiv"
+    },
+    {
+      "name": "Studio Amun Töpferkurs",
+      "type": "Töpfern an der Drehscheibe",
+      "address": "Osterstraße 47, 20259 Hamburg",
+      "district": "Eimsbüttel",
+      "hours": "verschiedene Termine",
+      "link": "https://studioamun.com/",
+      "price": "ab 80€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Makerhafen Töpferkurs",
+      "type": "Töpfern ohne Scheibe",
+      "address": "Ottenser Hauptstraße 10, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "verschiedene Termine",
+      "link": "https://makerhafen.de/",
+      "price": "35€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Kunsthandwerkerei Siebdruck",
+      "type": "Siebdruck Workshop",
+      "address": "Eimsbütteler Straße 25, 22769 Hamburg",
+      "district": "Eimsbüttel",
+      "hours": "verschiedene Termine",
+      "link": "https://www.kunsthandwerkerei.de/",
+      "price": "85€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Schmiedejungs Messer-Workshop",
+      "type": "Messer schmieden",
+      "address": "Hamburg (Ort bei Buchung)",
+      "district": "Hamburg",
+      "hours": "nach Absprache",
+      "link": "https://www.schmiedejungs.de/",
+      "price": "ab 150€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Ärmel Hoch Schneidebrett",
+      "type": "Schneidebrett Workshop",
+      "address": "Hamburger Straße 80, Bargteheide",
+      "district": "Bargteheide",
+      "hours": "verschiedene Termine",
+      "link": "https://www.aermelhoch.jetzt/",
+      "price": "99€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Olivia Kochschule",
+      "type": "Kochkurs für Paare",
+      "address": "Methfesselstraße 96, 20255 Hamburg",
+      "district": "Hoheluft",
+      "hours": "verschiedene Termine",
+      "link": "https://www.olivia-hamburg.com/",
+      "price": "ab 109€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Cornelia Poletto Kochschule",
+      "type": "Kochen mit Sterneköchin",
+      "address": "Eppendorfer Landstraße 80, 20249 Hamburg",
+      "district": "Eppendorf",
+      "hours": "verschiedene Termine",
+      "link": "https://www.cornelia-poletto.de/",
+      "price": "ab 200€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Dammetto Pasta-Workshop",
+      "type": "Frische Nudeln machen",
+      "address": "Erikastraße 70, 20251 Hamburg",
+      "district": "Eppendorf",
+      "hours": "verschiedene Termine",
+      "link": "https://dammetto.de/",
+      "price": "ab 89€",
+      "category": "handwerk"
+    }
+  ],
+  "ottensen": [
+    {
+      "name": "Mälzer's Restaurant",
+      "type": "Modern Deutsch",
+      "address": "Ottenser Hauptstraße 54, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 17-23h",
+      "cuisine": "deutsch-modern"
+    },
+    {
+      "name": "Farina & Mehl",
+      "type": "Pizza Napoletana",
+      "address": "Bahrenfelder Straße 148, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Di-So 17-22h",
+      "cuisine": "pizza"
+    },
+    {
+      "name": "Karo's Bistro",
+      "type": "Französisches Bistro",
+      "address": "Bahrenfelder Straße 135, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "französisch"
+    },
+    {
+      "name": "Mamalicious",
+      "type": "Frühstück & Brunch",
+      "address": "Bahrenfelder Straße 165, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 9-17h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Goldelse",
+      "type": "Café & Bar",
+      "address": "Bahrenfelder Straße 131, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 10-24h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Fischerhaus",
+      "type": "Fisch & Seafood",
+      "address": "Fischmarkt 14, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 11-22h",
+      "cuisine": "fisch"
+    },
+    {
+      "name": "Oma's Apotheke",
+      "type": "Cocktailbar",
+      "address": "Bahrenfelder Straße 134, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 18-2h",
+      "cuisine": "bar"
+    },
+    {
+      "name": "Mikkels",
+      "type": "Weinbar & Tapas",
+      "address": "Ottenser Hauptstraße 21, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Di-Sa 18-24h",
+      "cuisine": "weinbar"
+    },
+    {
+      "name": "Zeise Kinos",
+      "type": "Programmkino",
+      "address": "Friedensallee 7-9, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Kino-Zeiten",
+      "category": "kultur"
+    },
+    {
+      "name": "Luicella's Ice Cream",
+      "type": "Eis",
+      "address": "Ottenser Hauptstraße 56, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-So 12-21h",
+      "cuisine": "eis"
+    },
+    {
+      "name": "Elbe 76",
+      "type": "Café & Brunch",
+      "address": "Friedensallee 44, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Momo Ramen",
+      "type": "Japanische Ramen",
+      "address": "Bahrenfelder Straße 190, 22765 Hamburg",
+      "district": "Ottensen",
+      "hours": "Di-So 12-22h",
+      "cuisine": "asiatisch"
+    }
+  ],
+  "bahrenfeld": [
+    {
+      "name": "Von der Motte",
+      "type": "Brunch & Café",
+      "address": "Stresemannstraße 114, 22769 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "NENI Hamburg",
+      "type": "Israelisch-International",
+      "address": "Budapester Straße 25, 22769 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Mo-So 12-23h",
+      "cuisine": "israelisch"
+    },
+    {
+      "name": "Schlachthofklause",
+      "type": "Gutbürgerlich",
+      "address": "Lagerstraße 2, 20357 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Mo-So 11-23h",
+      "cuisine": "deutsch"
+    },
+    {
+      "name": "Freudenhaus",
+      "type": "Bistro & Bar",
+      "address": "Haubachstraße 44, 22765 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Di-Sa 18-2h",
+      "cuisine": "bistro"
+    },
+    {
+      "name": "Pizza Gang",
+      "type": "New York Style Pizza",
+      "address": "Stresemannstraße 162, 22769 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Di-So 17-22h",
+      "cuisine": "pizza"
+    },
+    {
+      "name": "Heimathafen",
+      "type": "Eventlocation & Restaurant",
+      "address": "Haubachstraße 45, 22765 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Event-abhängig",
+      "category": "eventlocation"
+    },
+    {
+      "name": "Vivo Pizza",
+      "type": "Italienisch",
+      "address": "Stresemannstraße 106, 22769 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Mo-So 11:30-22h",
+      "cuisine": "italienisch"
+    },
+    {
+      "name": "Mangold",
+      "type": "Vegetarisch/Vegan",
+      "address": "Stresemannstraße 94, 22769 Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "Mo-Sa 11:30-21h",
+      "cuisine": "vegetarisch"
+    }
+  ],
+  "winterhude": [
+    {
+      "name": "Café Johanna",
+      "type": "Frühstück & Brunch",
+      "address": "Mühlenkamp 1, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 9-18h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Café Eppendorfer Baum",
+      "type": "Café & Kuchen",
+      "address": "Mühlenkamp 27, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 10-19h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Sue & Cäsar",
+      "type": "Brunch & Café",
+      "address": "Mühlenkamp 18, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 9-18h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Nil",
+      "type": "Deutsches Restaurant",
+      "address": "Neuer Pferdemarkt 5, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "deutsch-modern"
+    },
+    {
+      "name": "Gretchens Villa",
+      "type": "Café & Bar",
+      "address": "Mühlenkamp 32, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 10-24h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Yamas",
+      "type": "Griechisch",
+      "address": "Gertigstraße 16, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 11:30-23h",
+      "cuisine": "griechisch"
+    },
+    {
+      "name": "Speicher52",
+      "type": "Deutsch-International",
+      "address": "Gertigstraße 52, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Di-Sa 17-23h",
+      "cuisine": "international"
+    },
+    {
+      "name": "Sattgrün",
+      "type": "Veganes Buffet",
+      "address": "Mühlenkamp 39, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 11:30-22h",
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Lemongrass",
+      "type": "Thai-Vietnamesisch",
+      "address": "Gertigstraße 56, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Mo-So 12-22h",
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Tio",
+      "type": "Spanisch-Tapas",
+      "address": "Mühlenkamp 48, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Di-So 18-23h",
+      "cuisine": "spanisch"
+    },
+    {
+      "name": "Goldene Gans",
+      "type": "Cocktailbar",
+      "address": "Barmbeker Straße 156, 22303 Hamburg",
+      "district": "Winterhude",
+      "hours": "Do-Sa 19-2h",
+      "cuisine": "bar"
+    }
+  ],
+  "hafencity": [
+    {
+      "name": "Carls an der Elbphilharmonie",
+      "type": "Brasserie",
+      "address": "Am Kaiserkai 69, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-So 10-24h",
+      "cuisine": "brasserie"
+    },
+    {
+      "name": "Elbspeicher",
+      "type": "Norddeutsch",
+      "address": "Osakaallee 6-8, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-So 11:30-22h",
+      "cuisine": "norddeutsch"
+    },
+    {
+      "name": "Coast by East",
+      "type": "Japanisch-Mediterran",
+      "address": "Großer Grasbrook 14, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "fusion"
+    },
+    {
+      "name": "Brücke 10",
+      "type": "Fischbrötchen",
+      "address": "St. Pauli Landungsbrücken, Brücke 10",
+      "district": "HafenCity",
+      "hours": "Mo-So 10-20h",
+      "cuisine": "fisch"
+    },
+    {
+      "name": "Maredo",
+      "type": "Steakhouse",
+      "address": "Am Sandtorkai 68, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-So 11:30-23h",
+      "cuisine": "steak"
+    },
+    {
+      "name": "Henssler & Henssler",
+      "type": "Japanisch-Modern",
+      "address": "Großer Grasbrook 11, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "japanisch"
+    },
+    {
+      "name": "NORD Coast Coffee Roastery",
+      "type": "Specialty Coffee",
+      "address": "Überseeboulevard 4, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-Fr 8-18h, Sa-So 10-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Blockbräu",
+      "type": "Brauhaus",
+      "address": "St. Pauli Landungsbrücken 3, 20359 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-So 10-24h",
+      "cuisine": "brauhaus"
+    },
+    {
+      "name": "Miniatur Wunderland Bistro",
+      "type": "Bistro",
+      "address": "Kehrwieder 2, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Je nach Wunderland-Zeiten",
+      "cuisine": "bistro"
+    },
+    {
+      "name": "Wasserschloss",
+      "type": "Teehaus & Café",
+      "address": "Dienerreihe 4, 20457 Hamburg",
+      "district": "HafenCity",
+      "hours": "Mo-So 10-19h",
+      "cuisine": "café"
+    }
+  ],
+  "stgeorg": [
+    {
+      "name": "Cox",
+      "type": "Modern Europäisch",
+      "address": "Lange Reihe 68, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "europäisch-modern"
+    },
+    {
+      "name": "SchauMahl",
+      "type": "Nachhaltig & Regional",
+      "address": "Lange Reihe 101, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Di-So 12-22h",
+      "cuisine": "regional"
+    },
+    {
+      "name": "Franz & Friends",
+      "type": "Frühstück & Brunch",
+      "address": "Lange Reihe 63, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 9-16h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Café Gnosa",
+      "type": "LGBTQ+ Café & Bar",
+      "address": "Lange Reihe 93, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 10-1h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Kyti Voo",
+      "type": "Thai-Streetfood",
+      "address": "Lange Reihe 76, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 12-22h",
+      "cuisine": "thai"
+    },
+    {
+      "name": "Bok",
+      "type": "Koreanisch",
+      "address": "Lange Reihe 66, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Di-So 12-22h",
+      "cuisine": "koreanisch"
+    },
+    {
+      "name": "Abou Karim",
+      "type": "Libanesisch",
+      "address": "Lange Reihe 37, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 11-23h",
+      "cuisine": "libanesisch"
+    },
+    {
+      "name": "Café Koppel",
+      "type": "Kulturcafé",
+      "address": "Lange Reihe 75, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 10-22h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Hadleys",
+      "type": "Weinbar & Deli",
+      "address": "Lange Reihe 67, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Di-Sa 17-24h",
+      "cuisine": "weinbar"
+    },
+    {
+      "name": "Frau Möller",
+      "type": "Bar & Drinks",
+      "address": "Lange Reihe 96, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 18-2h",
+      "cuisine": "bar"
+    },
+    {
+      "name": "Balutschistan",
+      "type": "Afghanisch",
+      "address": "Lange Reihe 44, 20099 Hamburg",
+      "district": "St. Georg",
+      "hours": "Mo-So 12-23h",
+      "cuisine": "afghanisch"
+    }
+  ],
+  "sternschanze": [
+    {
+      "name": "Erikas Eck",
+      "type": "Späti-Kneipe mit Herz",
+      "address": "Sternstraße 98, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 18-spät",
+      "cuisine": "kneipe"
+    },
+    {
+      "name": "Erika's Eck",
+      "type": "24h Kneipe",
+      "address": "Sternstraße 98, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "24h",
+      "cuisine": "kneipe"
+    },
+    {
+      "name": "Frank & Frei",
+      "type": "Cocktails & Bar",
+      "address": "Schanzenstraße 93, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 18-2h",
+      "cuisine": "bar"
+    },
+    {
+      "name": "Kähler's",
+      "type": "Café & Burger",
+      "address": "Susannenstraße 21, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 10-23h",
+      "cuisine": "burger"
+    },
+    {
+      "name": "Hans im Glück",
+      "type": "Burger",
+      "address": "Schulterblatt 73, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 11:30-23h",
+      "cuisine": "burger"
+    },
+    {
+      "name": "Kurz & Klein",
+      "type": "Café & Bar",
+      "address": "Bartelsstraße 26, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 10-1h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Café Mimosa",
+      "type": "Frühstück & Tapas",
+      "address": "Susannenstraße 33, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 9-18h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Geheimrat",
+      "type": "Weinbar",
+      "address": "Bartelsstraße 13, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Di-Sa 18-1h",
+      "cuisine": "weinbar"
+    },
+    {
+      "name": "Holy Taco",
+      "type": "Mexikanisch",
+      "address": "Schulterblatt 98, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 17-23h",
+      "cuisine": "mexikanisch"
+    },
+    {
+      "name": "Jim Burrito's",
+      "type": "Burritos & Tex-Mex",
+      "address": "Schulterblatt 12, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-22h",
+      "cuisine": "mexikanisch"
+    },
+    {
+      "name": "Pho Viet",
+      "type": "Vietnamesisch",
+      "address": "Schanzenstraße 54, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-22h",
+      "cuisine": "vietnamesisch"
+    },
+    {
+      "name": "Maharaja",
+      "type": "Indisch",
+      "address": "Schulterblatt 61, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-23h",
+      "cuisine": "indisch"
+    },
+    {
+      "name": "Stock's Fischrestaurant",
+      "type": "Fisch",
+      "address": "Sternstraße 116, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 12-22h",
+      "cuisine": "fisch"
+    },
+    {
+      "name": "Meşhur",
+      "type": "Türkisch-Grill",
+      "address": "Susannenstraße 8, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Mo-So 11-24h",
+      "cuisine": "türkisch"
+    },
+    {
+      "name": "Brasserie Belli",
+      "type": "Französisch-Mediterran",
+      "address": "Schulterblatt 16, 20357 Hamburg",
+      "district": "Sternschanze",
+      "hours": "Di-Sa 18-23h",
+      "cuisine": "französisch"
+    }
+  ],
+  "karoviertel": [
+    {
+      "name": "Cai Kitchen",
+      "type": "Vegane Sichuan-Küche",
+      "address": "Glashüttenstraße 85a, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Di-So 12-21h",
+      "cuisine": "vegan-asiatisch"
+    },
+    {
+      "name": "Brooklyn Burger Bar",
+      "type": "Burger",
+      "address": "Marktstraße 118, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-So 12-23h",
+      "cuisine": "burger"
+    },
+    {
+      "name": "Karo Coffee",
+      "type": "Third Wave Coffee",
+      "address": "Karolinenstraße 25, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-Fr 8-18h, Sa-So 10-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Pauline",
+      "type": "Café & Frühstück",
+      "address": "Karolinenstraße 10, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-So 9-18h",
+      "cuisine": "frühstück"
+    },
+    {
+      "name": "Café Luce",
+      "type": "Italienisches Café",
+      "address": "Marktstraße 38, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-Fr 8-18h, Sa 9-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Bao Bun",
+      "type": "Taiwanesisch",
+      "address": "Karolinenstraße 19, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Di-So 12-21h",
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Tandoori Palace",
+      "type": "Indisch",
+      "address": "Karolinenstraße 35, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-So 12-23h",
+      "cuisine": "indisch"
+    },
+    {
+      "name": "Schanze Bäckerei",
+      "type": "Handwerksbäcker",
+      "address": "Karolinenstraße 27, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-Sa 7-18h, So 8-17h",
+      "cuisine": "bäckerei"
+    },
+    {
+      "name": "Tante Marias",
+      "type": "Tapas & Wein",
+      "address": "Marktstraße 140, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Di-Sa 17-24h",
+      "cuisine": "spanisch"
+    },
+    {
+      "name": "Karo Kebap",
+      "type": "Döner Premium",
+      "address": "Karolinenstraße 8, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-So 11-2h",
+      "cuisine": "türkisch"
+    },
+    {
+      "name": "Haspa Café Karo",
+      "type": "Café",
+      "address": "Marktstraße 48, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Mo-Fr 8-18h",
+      "cuisine": "café"
+    },
+    {
+      "name": "Karolina",
+      "type": "Polnisch-Modern",
+      "address": "Karolinenstraße 28, 20357 Hamburg",
+      "district": "Karoviertel",
+      "hours": "Di-Sa 18-22h",
+      "cuisine": "polnisch"
+    }
+  ],
+  "lastUpdated": "2025-11-28",
+  "verificationNote": "Prüfe regelmäßig Öffnungszeiten und ob Locations noch existieren. Bei dauerhaft geschlossenen Orten 'status': 'geschlossen' hinzufügen."
+}

@@ -13,6 +13,7 @@ Eine Date-Ideen App für **Nick & Solli** - ein Pärchen aus Hamburg. Die App ze
 ```
 ├── das-grosse-datebuch-v10.html   # Hauptapp (HTML + CSS + JS)
 ├── events.json                     # Alle Events mit Details
+├── locations-database.json         # Restaurant/Bar/Aktivitäten-Datenbank mit Öffnungszeiten
 ├── deduplicate-events.js           # Node-Script für Deduplizierung
 └── CLAUDE.md                       # Diese Datei
 ```
@@ -35,13 +36,38 @@ Jedes Event hat:
 2. **Date Builder** - Aktivität + Essen + Drinks planen mit WhatsApp/Kalender-Export
 3. **3D Globus** - Reiseziele mit Tagebuch-Funktion
 4. **Karte** - Events auf OpenStreetMap anzeigen
+5. **Hamster-Cursor** - Solli liebt Hamster! Der Cursor ist ein süßer Hamster.
 
 ## Regelmäßige Aufgaben
+
+### Events updaten
 Wenn Nick sagt "Update die Events":
 1. Nach neuen Events in Hamburg recherchieren (Konzerte, Theater, Comedy, Wellness, etc.)
 2. Neue Events zu `events.json` hinzufügen (mit Restaurant + Bar!)
 3. `node deduplicate-events.js` ausführen
 4. Committen und pushen
+
+### Locations-Datenbank prüfen
+Die `locations-database.json` enthält alle Restaurants, Bars und Aktivitäten mit Öffnungszeiten. Bei jedem größeren Update:
+1. Prüfe ob die Locations noch existieren (Google Maps/Website)
+2. Aktualisiere Öffnungszeiten wenn nötig
+3. Bei dauerhaft geschlossenen Orten: `"status": "geschlossen"` hinzufügen
+4. Zeige dem User eine Warnung wenn ein Ort geschlossen ist
+
+## Content-Filter (WICHTIG!)
+Nick & Solli möchten KEINE:
+- **Rap-Konzerte** (kein SSIO, kein HipHop)
+- **Jazz-Events**
+- **Fleisch-Restaurants** (keine Steakhäuser wie Block House)
+- **Outdoor-Events im Winter** (es ist kalt!)
+- **Weihnachtsmärkte**
+
+Stattdessen bevorzugen sie:
+- Vegetarische/vegane Restaurants
+- Indoor-Aktivitäten
+- Wellness & Spa
+- Musicals, Theater, Comedy
+- Elektronische Musik, Indie, Rock
 
 ## Event-Quellen für Recherche
 - hamburg.de/kultur
@@ -52,12 +78,14 @@ Wenn Nick sagt "Update die Events":
 - quatsch-comedy-club.de
 - eventim.de
 - Wellness: wellnest.me, heavenlyspahamburg.de
+- Partys: ohschonhell.de, heuteinhamburg.de
 
 ## Stil der App
 - Romantisch, pastellfarben
 - Rose (#e8b4b8), Sage (#a8c5a0), Blush (#f5e6e8)
 - Deutsche Sprache
 - Emojis willkommen
+- Hamster-Cursor überall (größer bei klickbaren Elementen)
 
 ## Kontakt
 Nick Heymann - der Entwickler und Nutzer der App zusammen mit Solli.

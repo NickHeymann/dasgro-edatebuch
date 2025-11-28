@@ -281,33 +281,6 @@
       }
     },
     {
-      "id": "dez03-palazzo",
-      "emoji": "🎪",
-      "title": "Cornelia Poletto PALAZZO",
-      "date": "2025-12-03",
-      "category": "variete",
-      "description": "Akrobatik + Comedy + 4-Gang-Menü von Sterneköchin Cornelia Poletto im Spiegelpalast!",
-      "location": "Spiegelpalast Altona",
-      "address": "Virchowstraße 1, 22767 Hamburg",
-      "coords": [53.5550, 9.9350],
-      "link": "https://www.palazzo.org/hamburg/de/home/tickets-eventim.html",
-      "time": "19:00",
-      "price": "ab 183€",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Menü inklusive",
-        "type": "4-Gang-Menü von Cornelia Poletto",
-        "address": "Im Spiegelpalast",
-        "link": "https://www.palazzo.org/hamburg/"
-      },
-      "bar": {
-        "name": "Docks",
-        "type": "Club & Bar",
-        "address": "Spielbudenplatz 19",
-        "link": "https://www.docks.de/"
-      }
-    },
-    {
       "id": "dez03-wellnest",
       "emoji": "💆",
       "title": "Wellnest Private Spa",
@@ -1049,34 +1022,6 @@
       }
     },
     {
-      "id": "dauer-palazzo",
-      "emoji": "🎭",
-      "title": "Cornelia Poletto PALAZZO",
-      "date": "2025-12-01",
-      "endDate": "2026-03-08",
-      "category": "variete",
-      "description": "Akrobatik + Comedy + 4-Gang-Menü im Spiegelpalast! Mi-Sa 19:00 / So 18:00.",
-      "location": "Spiegelpalast Altona",
-      "address": "Virchowstraße 1, 22767 Hamburg",
-      "coords": [53.5550, 9.9350],
-      "link": "https://www.palazzo.org/hamburg/de/home/tickets-eventim.html",
-      "time": "Mi-Sa 19:00",
-      "price": "ab 183€",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Menü inklusive",
-        "type": "4-Gang von Cornelia Poletto",
-        "address": "Im Spiegelpalast",
-        "link": "https://www.palazzo.org/hamburg/"
-      },
-      "bar": {
-        "name": "Tower Bar",
-        "type": "Hafenblick",
-        "address": "Seewartenstraße 9",
-        "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
-      }
-    },
-    {
       "id": "dauer-stpauli-comedy",
       "emoji": "😂",
       "title": "St. Pauli Comedy Club",
@@ -1501,10 +1446,10 @@
       "price": "ab 25€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Block House",
-        "type": "Steakhouse",
-        "address": "Reeperbahn 117",
-        "link": "https://www.block-house.de/",
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
         "coords": [53.5494, 9.9611]
       },
       "bar": {
@@ -1936,34 +1881,6 @@
       }
     },
     {
-      "id": "dauer-kochkurs-poletto",
-      "emoji": "👩‍🍳",
-      "title": "Kochkurs bei Cornelia Poletto",
-      "date": "2025-12-01",
-      "endDate": "2026-02-28",
-      "category": "handwerk",
-      "description": "Kochen lernen von der Sterneköchin! Beginner bis Masterclass.",
-      "location": "Cornelia Poletto Kochschule",
-      "address": "Eppendorfer Landstraße 80, 20249 Hamburg",
-      "coords": [53.5889, 10.0083],
-      "link": "https://www.cornelia-poletto.de/kochschule/",
-      "time": "verschiedene",
-      "price": "ab 200€/Person",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "4-Gang-Menü inklusive",
-        "type": "Selbst gekocht mit Sterneköchin",
-        "address": "Vor Ort",
-        "link": "https://www.cornelia-poletto.de/"
-      },
-      "bar": {
-        "name": "Die Schöne",
-        "type": "Bar & Café Winterhude",
-        "address": "Barmbeker Straße 159",
-        "link": "https://www.instagram.com/dieschoene_bar/"
-      }
-    },
-    {
       "id": "dauer-pasta-dammetto",
       "emoji": "🍝",
       "title": "Pasta-Workshop Dammetto",
@@ -1989,34 +1906,6 @@
         "type": "Gemütliche Bar",
         "address": "Eppendorfer Weg 56",
         "link": "https://www.instagram.com/eppendorfergrillstation/"
-      }
-    },
-    {
-      "id": "dez04-ssio",
-      "emoji": "🎤",
-      "title": "SSIO - Die erste Tour nach Corona",
-      "date": "2025-12-04",
-      "category": "musik",
-      "description": "Bonner Rap-Legende mit neuem Album 'Alles oder Nix' - Wortwitz, Humor & Kopfnicker-Beats!",
-      "location": "Inselpark Arena",
-      "address": "Kurt-Emmerich-Platz 10, 21109 Hamburg",
-      "coords": [53.5069, 9.9856],
-      "link": "https://www.eventim.de/artist/ssio/",
-      "time": "20:00",
-      "price": "ab 45€",
-      "vorher_nachher": "Vorher",
-      "restaurant": {
-        "name": "Kleinhuis",
-        "type": "Burger & Craft Beer",
-        "address": "Am Inselpark 1",
-        "link": "https://www.kleinhuis.de/",
-        "coords": [53.5069, 9.9856]
-      },
-      "bar": {
-        "name": "elbgold",
-        "type": "Kaffee & Drinks",
-        "address": "Veritaskai 1",
-        "link": "https://www.elbgold.com/"
       }
     },
     {
@@ -2201,11 +2090,11 @@
       "price": "ab 30€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Block House",
-        "type": "Steakhouse",
-        "address": "Reeperbahn 117",
-        "link": "https://www.block-house.de/",
-        "coords": [53.5494, 9.9611]
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
       },
       "bar": {
         "name": "Moondoo Bar",
@@ -2242,25 +2131,105 @@
       }
     },
     {
-      "id": "dauer-weihnachtsmarkt-hafencity",
-      "emoji": "🎄",
-      "title": "Weihnachtsmarkt HafenCity",
-      "date": "2025-11-17",
-      "endDate": "2026-01-04",
-      "category": "aktiv",
-      "description": "Winterwunderland am Überseeboulevard! Glühwein, Leckereien & festliche Atmosphäre.",
-      "location": "Überseeboulevard HafenCity",
-      "address": "Überseeboulevard, 20457 Hamburg",
-      "coords": [53.5400, 10.0000],
-      "link": "https://www.hamburg-tourism.de/",
-      "time": "12:00-21:00",
-      "price": "Eintritt frei",
-      "vorher_nachher": "Nachher",
+      "id": "essen-mirou",
+      "emoji": "🍽️",
+      "title": "Israelische Mezze bei Mirou",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Authentische israelische Mezze zum Teilen! Hummus, Falafel, gegrilltes Gemüse und mehr in gemütlicher Atmosphäre.",
+      "location": "Mirou",
+      "address": "Gertigstraße 21, 22303 Hamburg",
+      "coords": [53.5889, 10.0083],
+      "link": "https://www.mirou-hamburg.de/",
+      "time": "Di-Sa 18-23h",
+      "price": "25-40€ p.P.",
+      "vorher_nachher": "Komplett",
       "restaurant": {
-        "name": "Stände auf dem Markt",
-        "type": "Weihnachtsspezialitäten",
-        "address": "Auf dem Markt",
-        "link": "https://www.hamburg-tourism.de/"
+        "name": "Mirou",
+        "type": "Israelische Mezze",
+        "address": "Gertigstraße 21, Winterhude",
+        "link": "https://www.mirou-hamburg.de/"
+      },
+      "bar": {
+        "name": "Die Schöne",
+        "type": "Bar & Café Winterhude",
+        "address": "Barmbeker Straße 159",
+        "link": "https://www.instagram.com/dieschoene_bar/"
+      }
+    },
+    {
+      "id": "essen-tassajara",
+      "emoji": "🌱",
+      "title": "Vegan essen bei Tassajara",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Hamburgs ältestes veganes Restaurant seit 1976! Kreative pflanzliche Küche mit Herz.",
+      "location": "Tassajara",
+      "address": "Eppendorfer Weg 47, 20259 Hamburg",
+      "coords": [53.5700, 9.9600],
+      "link": "https://www.tassajara.de/",
+      "time": "Mo-So 11:30-22h",
+      "price": "15-25€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Tassajara",
+        "type": "Vegan seit 1976",
+        "address": "Eppendorfer Weg 47, Eimsbüttel",
+        "link": "https://www.tassajara.de/"
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy Bar",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "essen-ueberquell",
+      "emoji": "🍕",
+      "title": "Pizza & Craft Beer bei ÜberQuell",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Beste Pizza am Hafen mit hausgebrautem Craft Beer! Toller Blick auf den Fischmarkt.",
+      "location": "ÜberQuell",
+      "address": "St. Pauli Fischmarkt 28-32, 20359 Hamburg",
+      "coords": [53.5456, 9.9511],
+      "link": "https://www.ueberquell.com/",
+      "time": "Di-So 17-23h",
+      "price": "20-35€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "ÜberQuell",
+        "type": "Pizza & Craft Beer",
+        "address": "St. Pauli Fischmarkt 28-32",
+        "link": "https://www.ueberquell.com/"
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Bar im Empire",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
+    },
+    {
+      "id": "essen-hobenkoeoek",
+      "emoji": "🥕",
+      "title": "Regionale Küche in der Hobenköök",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Farm-to-Table Konzept in der HafenCity! Saisonale Gerichte mit Zutaten von regionalen Bauern.",
+      "location": "Hobenköök",
+      "address": "Stockmeyerstraße 43, 20457 Hamburg",
+      "coords": [53.5419, 10.0189],
+      "link": "https://www.hobenkoeoek.de/",
+      "time": "Di-Sa 12-22h",
+      "price": "30-50€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regionale Küche",
+        "address": "Stockmeyerstraße 43, HafenCity",
+        "link": "https://www.hobenkoeoek.de/"
       },
       "bar": {
         "name": "Störtebeker Elbphilharmonie",
@@ -2270,60 +2239,300 @@
       }
     },
     {
-      "id": "dauer-winter-pride",
-      "emoji": "🏳️‍🌈",
-      "title": "Winter Pride - Queerer Weihnachtsmarkt",
-      "date": "2025-11-17",
-      "endDate": "2025-12-30",
-      "category": "aktiv",
-      "description": "Hamburgs queerer Weihnachtsmarkt auf der Langen Reihe in St. Georg!",
-      "location": "Lange Reihe, St. Georg",
-      "address": "Lange Reihe, 20099 Hamburg",
-      "coords": [53.5544, 10.0092],
-      "link": "https://www.winter-pride.de/",
-      "time": "12:00-22:00",
-      "price": "Eintritt frei",
-      "vorher_nachher": "Nachher",
+      "id": "essen-kokomo",
+      "emoji": "🍜",
+      "title": "Ramen im Kokomo Noodle Club",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Authentische japanische Ramen mitten in der Schanze! Dampfende Schüsseln voller Umami.",
+      "location": "Kokomo Noodle Club",
+      "address": "Bartelsstraße 12, 20357 Hamburg",
+      "coords": [53.5633, 9.9622],
+      "link": "https://www.kokomo-noodleclub.de/",
+      "time": "Mo-So 12-22h",
+      "price": "15-20€ p.P.",
+      "vorher_nachher": "Komplett",
       "restaurant": {
-        "name": "Cox",
-        "type": "Restaurant & Bar",
-        "address": "Lange Reihe 68",
-        "link": "https://www.restaurant-cox.de/",
-        "coords": [53.5544, 10.0092]
+        "name": "Kokomo Noodle Club",
+        "type": "Ramen & Asiatisch",
+        "address": "Bartelsstraße 12, Schanze",
+        "link": "https://www.kokomo-noodleclub.de/"
       },
       "bar": {
-        "name": "Glühwein am Markt",
-        "type": "Weihnachtsmarkt",
-        "address": "Auf dem Markt",
-        "link": "https://www.winter-pride.de/"
+        "name": "Katze",
+        "type": "Kiezbar mit Charakter",
+        "address": "Schulterblatt 86, Schanze",
+        "link": "https://www.instagram.com/katze_bar/"
       }
     },
     {
-      "id": "dauer-strandpauli-winter",
-      "emoji": "❄️",
-      "title": "Wintermarkt StrandPauli",
-      "date": "2025-11-01",
-      "endDate": "2026-02-15",
-      "category": "aktiv",
-      "description": "Beach Club wird zum Wintermarkt! Glühwein mit Hafenblick, Mi-So geöffnet.",
-      "location": "StrandPauli",
-      "address": "St. Pauli Hafenstraße 89, 20359 Hamburg",
-      "coords": [53.5456, 9.9511],
-      "link": "https://www.strandpauli.de/",
-      "time": "Mi-So ab 16:00",
-      "price": "Eintritt frei",
+      "id": "essen-cafe-paris",
+      "emoji": "🥐",
+      "title": "Französische Brasserie im Café Paris",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Pariser Flair am Rathausmarkt! Authentische französische Küche in einem historischen Jugendstil-Ambiente.",
+      "location": "Café Paris",
+      "address": "Rathausstraße 4, 20095 Hamburg",
+      "coords": [53.5503, 9.9933],
+      "link": "https://www.cafeparis.net/",
+      "time": "Mo-So 9-24h",
+      "price": "25-45€ p.P.",
       "vorher_nachher": "Komplett",
       "restaurant": {
-        "name": "StrandPauli Küche",
-        "type": "Wintergerichte",
-        "address": "Vor Ort",
-        "link": "https://www.strandpauli.de/"
+        "name": "Café Paris",
+        "type": "Französische Brasserie",
+        "address": "Rathausstraße 4",
+        "link": "https://www.cafeparis.net/"
       },
       "bar": {
-        "name": "Glühwein & Drinks",
-        "type": "Mit Hafenblick",
-        "address": "Vor Ort",
-        "link": "https://www.strandpauli.de/"
+        "name": "Le Lion",
+        "type": "Legendäre Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "essen-maquis",
+      "emoji": "🥗",
+      "title": "100% Vegetarisch im Maquis",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Kreative vegetarische Küche mit mediterranem Einschlag. Alles zum Teilen gedacht!",
+      "location": "Maquis",
+      "address": "Max-Brauer-Allee 207, 22769 Hamburg",
+      "coords": [53.5589, 9.9450],
+      "link": "https://maquis.hamburg/",
+      "time": "Di-Sa 18-22h",
+      "price": "35-50€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Maquis",
+        "type": "100% Vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/"
+      },
+      "bar": {
+        "name": "Laundrette",
+        "type": "Cocktails Ottensen",
+        "address": "Friedensallee 26",
+        "link": "https://www.instagram.com/laundrette_hh/"
+      }
+    },
+    {
+      "id": "essen-altes-maedchen",
+      "emoji": "🍺",
+      "title": "Craft Beer & Küche im Alten Mädchen",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Über 60 Craft Biere + leckere Küche im Schanzen-Hotspot! Hipster-Atmosphäre in der alten Rinderschlachthalle.",
+      "location": "Altes Mädchen",
+      "address": "Lagerstraße 28b, 20357 Hamburg",
+      "coords": [53.5636, 9.9628],
+      "link": "https://www.altes-maedchen.com/",
+      "time": "Mo-So 12-24h",
+      "price": "20-35€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & Küche",
+        "address": "Lagerstraße 28b, Schanze",
+        "link": "https://www.altes-maedchen.com/"
+      },
+      "bar": {
+        "name": "Kronensaal",
+        "type": "Gemütliche Schanze-Bar",
+        "address": "Sternstraße 2",
+        "link": "https://www.kronensaal-hamburg.de/"
+      }
+    },
+    {
+      "id": "essen-froindlichst",
+      "emoji": "🌿",
+      "title": "100% Vegan bei Froindlichst",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Vegane Burger, Bowls und mehr! Alles hausgemacht und richtig lecker.",
+      "location": "Froindlichst",
+      "address": "Lagerstraße 34, 20357 Hamburg",
+      "coords": [53.5636, 9.9622],
+      "link": "https://www.froindlichst.de/",
+      "time": "Di-So 12-21h",
+      "price": "12-18€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Froindlichst",
+        "type": "100% Vegan",
+        "address": "Lagerstraße 34",
+        "link": "https://www.froindlichst.de/"
+      },
+      "bar": {
+        "name": "Astra Stube",
+        "type": "Kultkneipe Schanze",
+        "address": "Max-Brauer-Allee 200",
+        "link": "https://www.astrastube.de/"
+      }
+    },
+    {
+      "id": "essen-salt-silver",
+      "emoji": "🌮",
+      "title": "Mexikanische Mezze bei Salt & Silver",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Lateinamerikanische Küche mit Blick auf den Hafen! Tacos, Ceviches und kreative Cocktails.",
+      "location": "Salt & Silver",
+      "address": "St. Pauli Fischmarkt 3, 20359 Hamburg",
+      "coords": [53.5456, 9.9511],
+      "link": "https://www.saltandsilver.de/",
+      "time": "Di-So 18-23h",
+      "price": "30-45€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Salt & Silver",
+        "type": "Mexikanische Mezze",
+        "address": "St. Pauli Fischmarkt 3",
+        "link": "https://www.saltandsilver.de/"
+      },
+      "bar": {
+        "name": "Golem",
+        "type": "Craft Beer & Beats",
+        "address": "Große Elbstraße 14",
+        "link": "https://www.golem.hamburg/"
+      }
+    },
+    {
+      "id": "essen-bullerei",
+      "emoji": "👨‍🍳",
+      "title": "Tim Mälzer's Bullerei",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Das Restaurant des TV-Kochs in der alten Viehmarkthalle! Fleisch, aber auch gute vegetarische Optionen.",
+      "location": "Bullerei",
+      "address": "Lagerstraße 34b, 20357 Hamburg",
+      "coords": [53.5636, 9.9622],
+      "link": "https://www.bullerei.com/",
+      "time": "Mo-So 12-23h",
+      "price": "35-55€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Bullerei",
+        "type": "Tim Mälzer Restaurant",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/"
+      },
+      "bar": {
+        "name": "Rooster",
+        "type": "Weinbar Schanze",
+        "address": "Juliusstraße 23",
+        "link": "https://rooster-schanze.de/"
+      }
+    },
+    {
+      "id": "essen-vlet",
+      "emoji": "⚓",
+      "title": "Hamburger Küche im VLET",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Moderne Hamburger Küche in der historischen Speicherstadt! Labskaus, Pannfisch und mehr.",
+      "location": "VLET in der Speicherstadt",
+      "address": "Am Sandtorkai 23-24, 20457 Hamburg",
+      "coords": [53.5436, 9.9914],
+      "link": "https://www.vlet.de/",
+      "time": "Mo-Sa 12-22h, So 12-21h",
+      "price": "35-55€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "VLET in der Speicherstadt",
+        "type": "Hamburger Küche",
+        "address": "Am Sandtorkai 23-24",
+        "link": "https://www.vlet.de/"
+      },
+      "bar": {
+        "name": "Boilerman Bar",
+        "type": "Cocktails & Whisky",
+        "address": "Ericusspitze 4, HafenCity",
+        "link": "https://www.boilermanbar.de/"
+      }
+    },
+    {
+      "id": "essen-wolfs-junge",
+      "emoji": "🌟",
+      "title": "Grüner Michelin-Stern: Wolfs Junge",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Nachhaltige Sterneküche! Zero-Waste Konzept mit regionalen und saisonalen Zutaten.",
+      "location": "Wolfs Junge",
+      "address": "Zimmerstraße 30, 20099 Hamburg",
+      "coords": [53.5575, 9.9708],
+      "link": "https://www.wolfsjunge.de/",
+      "time": "Di-Sa 18-23h",
+      "price": "65-95€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Wolfs Junge",
+        "type": "Grüner Michelin-Stern",
+        "address": "Zimmerstraße 30",
+        "link": "https://www.wolfsjunge.de/"
+      },
+      "bar": {
+        "name": "Jahreszeiten Bar",
+        "type": "Classic Cocktails",
+        "address": "Neuer Jungfernstieg 9-14",
+        "link": "https://hvj.de/"
+      }
+    },
+    {
+      "id": "essen-cafe-leonar",
+      "emoji": "✡️",
+      "title": "Jüdische Küche im Café Leonar",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Authentische jüdische Küche im Grindelviertel! Shakshuka, Bagels und hausgemachte Kuchen.",
+      "location": "Café Leonar",
+      "address": "Grindelhof 59, 20146 Hamburg",
+      "coords": [53.5678, 9.9833],
+      "link": "https://www.cafe-leonar.de/",
+      "time": "Di-So 10-22h",
+      "price": "15-30€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Café Leonar",
+        "type": "Jüdische Küche",
+        "address": "Grindelhof 59",
+        "link": "https://www.cafe-leonar.de/"
+      },
+      "bar": {
+        "name": "The Fontenay Bar",
+        "type": "Champagner & Cocktails",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/"
+      }
+    },
+    {
+      "id": "essen-gassenhaur",
+      "emoji": "🥨",
+      "title": "Österreichische Küche im Gassenhaur",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Wiener Schnitzel, Tafelspitz und Kaiserschmarrn! Gemütliches Lokal mit österreichischem Charme.",
+      "location": "Gassenhaur",
+      "address": "Beim Grünen Jäger 14, 20359 Hamburg",
+      "coords": [53.5592, 9.9625],
+      "link": "https://gassenhaur.de/",
+      "time": "Di-Sa 18-23h",
+      "price": "25-40€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Gassenhaur",
+        "type": "Österreichische Küche",
+        "address": "Beim Grünen Jäger 14",
+        "link": "https://gassenhaur.de/"
+      },
+      "bar": {
+        "name": "Christiansen's",
+        "type": "Gin-Bar",
+        "address": "Pinnasberg 60, St. Pauli",
+        "link": "https://www.christiansens.de/"
       }
     }
   ],
@@ -2335,6 +2544,7 @@
     "musik": { "emoji": "🎵", "name": "Musik", "color": "#1abc9c" },
     "wellness": { "emoji": "💆", "name": "Wellness & Spa", "color": "#e91e63" },
     "aktiv": { "emoji": "🏃", "name": "Aktiv", "color": "#2ecc71" },
-    "handwerk": { "emoji": "🔨", "name": "Handwerk", "color": "#795548" }
+    "handwerk": { "emoji": "🔨", "name": "Handwerk", "color": "#795548" },
+    "essen": { "emoji": "🍽️", "name": "Essen", "color": "#ff6b6b" }
   }
 }
