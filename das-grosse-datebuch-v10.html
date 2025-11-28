@@ -935,29 +935,9 @@
         }
         .diary-upload-btn:hover { background: white; }
 
-        /* Hamster-Cursor überall - KEINE Hand! */
-        *, *:hover, *:focus, *:active { cursor: inherit !important; }
-        a:hover, button:hover, [onclick]:hover { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='22' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='44' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='24' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='40' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='25' cy='31' r='1' fill='white'/%3E%3Ccircle cx='41' cy='31' r='1' fill='white'/%3E%3Cellipse cx='32' cy='40' rx='4' ry='3' fill='%23ffb6c1'/%3E%3Cpath d='M26 44 Q32 50 38 44' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ccircle cx='46' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ctext x='32' y='58' text-anchor='middle' font-size='10' fill='%23e8b4b8'%3E♥%3C/text%3E%3C/svg%3E") 20 20, auto !important; }
-
-        /* Peek-a-boo Tiere hinter Buttons */
-        .peek-animal {
-            position: absolute;
-            width: 35px;
-            height: 35px;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.2s ease;
-        }
-        .peek-animal.peeking {
-            opacity: 1;
-            animation: peekUp 2s ease-in-out;
-        }
-        @keyframes peekUp {
-            0% { transform: translateY(100%); opacity: 0; }
-            15% { transform: translateY(0); opacity: 1; }
-            85% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(100%); opacity: 0; }
+        /* Hamster-Cursor ÜBERALL - keine Hand, kein Default! */
+        * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='22' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='44' cy='20' r='10' fill='%23f4d9a0'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='44' cy='20' r='6' fill='%23fce5c0'/%3E%3Ccircle cx='24' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='40' cy='32' r='3' fill='%23333'/%3E%3Ccircle cx='25' cy='31' r='1' fill='white'/%3E%3Ccircle cx='41' cy='31' r='1' fill='white'/%3E%3Cellipse cx='32' cy='40' rx='4' ry='3' fill='%23ffb6c1'/%3E%3Cpath d='M28 44 Q32 48 36 44' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3Ccircle cx='46' cy='40' r='6' fill='%23ffcccb' opacity='0.6'/%3E%3C/svg%3E") 16 16, auto !important;
         }
 
         /* MOBILE */
@@ -3160,61 +3140,6 @@ END:VCALENDAR`;
             }
         });
 
-        // ============ PEEK-A-BOO TIERE ============
-        // Süße Tiere, die ab und an hinter Buttons hervorschauen
-        const bearSvg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='38' r='20' fill='%238B4513'/><circle cx='16' cy='22' r='10' fill='%238B4513'/><circle cx='48' cy='22' r='10' fill='%238B4513'/><circle cx='16' cy='22' r='6' fill='%23A0522D'/><circle cx='48' cy='22' r='6' fill='%23A0522D'/><circle cx='24' cy='34' r='3' fill='%23222'/><circle cx='40' cy='34' r='3' fill='%23222'/><circle cx='25' cy='33' r='1' fill='white'/><circle cx='41' cy='33' r='1' fill='white'/><ellipse cx='32' cy='42' rx='6' ry='5' fill='%23D2B48C'/><ellipse cx='32' cy='44' rx='3' ry='2' fill='%23222'/></svg>`;
-
-        const dogSvg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><ellipse cx='32' cy='40' rx='18' ry='16' fill='%23DEB887'/><ellipse cx='14' cy='28' rx='8' ry='14' fill='%23DEB887'/><ellipse cx='50' cy='28' rx='8' ry='14' fill='%23DEB887'/><ellipse cx='14' cy='24' rx='5' ry='10' fill='%23C4A882'/><ellipse cx='50' cy='24' rx='5' ry='10' fill='%23C4A882'/><circle cx='24' cy='36' r='3' fill='%23222'/><circle cx='40' cy='36' r='3' fill='%23222'/><circle cx='25' cy='35' r='1' fill='white'/><circle cx='41' cy='35' r='1' fill='white'/><ellipse cx='32' cy='44' rx='5' ry='4' fill='%23222'/><ellipse cx='32' cy='50' rx='4' ry='2' fill='%23ff9999'/></svg>`;
-
-        function createPeekAnimal(type) {
-            const div = document.createElement('div');
-            div.className = 'peek-animal';
-            div.innerHTML = type === 'bear' ? bearSvg : dogSvg;
-            return div;
-        }
-
-        function showPeekAnimal() {
-            // Finde alle Buttons mit position: relative
-            const buttons = document.querySelectorAll('.btn, button');
-            const eligibleButtons = Array.from(buttons).filter(btn => {
-                const rect = btn.getBoundingClientRect();
-                return rect.top > 100 && rect.bottom < window.innerHeight - 100 && !btn.closest('.modal');
-            });
-
-            if (eligibleButtons.length === 0) return;
-
-            const randomBtn = eligibleButtons[Math.floor(Math.random() * eligibleButtons.length)];
-            const type = Math.random() > 0.5 ? 'bear' : 'dog';
-            const animal = createPeekAnimal(type);
-
-            // Position the animal behind the button
-            randomBtn.style.position = 'relative';
-            randomBtn.style.overflow = 'visible';
-            animal.style.bottom = '-5px';
-            animal.style.left = Math.random() > 0.5 ? '-15px' : 'calc(100% - 20px)';
-
-            randomBtn.appendChild(animal);
-
-            // Trigger animation
-            requestAnimationFrame(() => {
-                animal.classList.add('peeking');
-            });
-
-            // Remove after animation
-            setTimeout(() => {
-                animal.remove();
-            }, 2100);
-        }
-
-        // Start peek-a-boo after page load (random intervals 8-20 seconds)
-        setTimeout(() => {
-            showPeekAnimal();
-            setInterval(() => {
-                if (Math.random() > 0.3) { // 70% chance each interval
-                    showPeekAnimal();
-                }
-            }, 8000 + Math.random() * 12000);
-        }, 5000);
     </script>
 </body>
 </html>
