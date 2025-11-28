@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
     <!-- Leaflet für Karten -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1491,7 +1492,73 @@
                 { name: 'Istanbul', emoji: '🇹🇷', lat: 41.0, lon: 29.0, reasons: ['🕌 Hagia Sophia', '🛒 Großer Basar', '🌉 Bosporus'] }
             ]
         };
-        
+
+        // Zentrale Restaurant & Bar Datenbank mit Koordinaten
+        const venueDatabase = {
+            restaurants: [
+                // Innenstadt / Rathausmarkt
+                { name: 'Café Paris', type: 'Französisch', address: 'Rathausstraße 4', coords: [53.5503, 9.9933], link: 'https://www.cafeparis.net/', veggie: true },
+                { name: 'Café Leonar', type: 'Jüdische Küche', address: 'Grindelhof 59', coords: [53.5678, 9.9833], link: 'https://www.cafe-leonar.de/', veggie: true },
+                // St. Pauli / Schanze
+                { name: 'Tazzi Pizza', type: 'Beste Pizza St. Pauli', address: 'Reeperbahn 61', coords: [53.5494, 9.9611], link: 'https://www.tazzi-pizza.de/', veggie: true },
+                { name: 'Kleine Pause', type: 'Burger & Bowls', address: 'Friedrichstraße 25', coords: [53.5503, 9.9658], link: 'https://www.instagram.com/kleinepause_hamburg/', veggie: true },
+                { name: 'Die Kombüse', type: 'Mexikanisch', address: 'Wohlwillstraße 20', coords: [53.5517, 9.9600], link: 'https://www.diekombuesehamburg.de/', veggie: true },
+                { name: 'Altes Mädchen', type: 'Craft Beer & vegetarische Küche', address: 'Lagerstraße 28b', coords: [53.5636, 9.9628], link: 'https://www.altes-maedchen.com/', veggie: true },
+                // Altona / Ottensen
+                { name: 'Maquis', type: '100% Vegetarisch', address: 'Thedestraße 2', coords: [53.5519, 9.9347], link: 'https://www.maquis.de/', veggie: true },
+                { name: 'Ahoi Steffen', type: 'Fischbrötchen', address: 'Ottenser Hauptstr.', coords: [53.5508, 9.9256], link: '', veggie: false },
+                // Eppendorf / Winterhude
+                { name: 'Mirou', type: 'Israelische Mezze', address: 'Mühlenkamp 43', coords: [53.5889, 10.0083], link: 'https://www.mirou-hamburg.de/', veggie: true },
+                { name: 'Tassajara', type: 'Vegan seit 1976', address: 'Eppendorfer Weg 47', coords: [53.5700, 9.9600], link: 'https://www.tassajara.de/', veggie: true },
+                // Karoviertel
+                { name: 'Cai Kitchen', type: '100% Vegan Sichuan', address: 'Glashüttenstr. 85a', coords: [53.5617, 9.9636], link: 'https://www.cai-kitchen.de/', veggie: true },
+                { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße', coords: [53.5633, 9.9611], link: '', veggie: true },
+                // Grindel
+                { name: 'Pony Bar', type: 'Gemütliche Bar & Essen', address: 'Allende-Platz', coords: [53.5669, 9.9850], link: '', veggie: true },
+                // HafenCity
+                { name: 'Hobenköök', type: 'Regionale Küche', address: 'Stockmeyerstraße 43', coords: [53.5350, 10.0050], link: 'https://www.hobenkoeok.de/', veggie: true },
+                { name: 'Oberhafenkantine', type: 'Hafenflair', address: 'Stockmeyerstraße 39', coords: [53.5375, 10.0075], link: '', veggie: false },
+            ],
+            bars: [
+                // Innenstadt
+                { name: 'Le Lion', type: 'Beste Cocktailbar', address: 'Rathausstraße 3', coords: [53.5503, 9.9930], link: 'https://www.lelion.net/' },
+                { name: 'Parlament', type: 'Weinbar', address: 'Rathausmarkt 1', coords: [53.5500, 9.9920], link: 'https://www.parlament-hamburg.de/' },
+                // St. Pauli
+                { name: 'Zum Silbersack', type: 'Kiez-Legende seit 1949', address: 'Silbersackstraße 9', coords: [53.5497, 9.9578], link: 'https://www.silbersack.de/' },
+                { name: 'Clouds', type: 'Rooftop Bar', address: 'Reeperbahn 1', coords: [53.5494, 9.9606], link: 'https://clouds-hamburg.de/' },
+                { name: 'Ritze', type: 'Boxkneipe', address: 'Reeperbahn 140', coords: [53.5489, 9.9539], link: 'https://www.ritze.de/' },
+                { name: 'Astra Stube', type: 'Kultkneipe', address: 'Max-Brauer-Allee 200', coords: [53.5550, 9.9528], link: 'https://www.astrastube.de/' },
+                // Schanze / Karoviertel
+                { name: 'Familieneck', type: 'Kultkneipe Schanze', address: 'Friedensallee', coords: [53.5611, 9.9600], link: '' },
+                // Eppendorf / Winterhude
+                { name: 'Julep', type: 'Whiskey & Cocktails', address: 'Eppendorfer Weg 139', coords: [53.5700, 9.9650], link: 'https://www.instagram.com/julep_bar/' },
+                { name: 'Hadleys', type: 'Speakeasy', address: 'Beim Schlump 84a', coords: [53.5683, 9.9775], link: 'https://hadleys.de/' },
+                { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Straße 159', coords: [53.5800, 10.0050], link: '' },
+            ]
+        };
+
+        // Distanz zwischen zwei Koordinaten berechnen (in km)
+        function getDistanceKm(coords1, coords2) {
+            if (!coords1 || !coords2) return Infinity;
+            const R = 6371;
+            const dLat = (coords2[0] - coords1[0]) * Math.PI / 180;
+            const dLon = (coords2[1] - coords1[1]) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(coords1[0] * Math.PI / 180) * Math.cos(coords2[0] * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        }
+
+        // Nächste Venues finden (sortiert nach Entfernung)
+        function findNearbyVenues(venueCoords, type = 'restaurants', limit = 3) {
+            if (!venueCoords) return [];
+            const venues = venueDatabase[type] || [];
+            return venues
+                .map(v => ({ ...v, distance: getDistanceKm(venueCoords, v.coords) }))
+                .sort((a, b) => a.distance - b.distance)
+                .slice(0, limit);
+        }
+
         // Default events (fallback wenn kein Sheet)
         const defaultEvents = [
             // ========== AUSSTELLUNG ==========
@@ -1810,7 +1877,7 @@
                     return;
                 }
 
-                container.innerHTML = categoryEvents.map(e => renderEventCard(e, ratings)).join('');
+                container.innerHTML = categoryEvents.map(e => renderEventCard(e, ratings, true)).join('');
             });
         }
 
@@ -1951,8 +2018,10 @@
         let currentDayEvents = [];
         let currentFilterCategory = 'all';
         let dayEventsMap = null;
+        let currentSelectedDateStr = null; // Speichert das ausgewählte Datum
 
         function showEventsForDate(dateStr) {
+            currentSelectedDateStr = dateStr; // Datum speichern
             const date = new Date(dateStr);
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             const ratings = saved.ratings || {};
@@ -2614,6 +2683,7 @@
         // ============ DATE BUILDER ============
         let currentDatePlan = {
             activity: null,
+            selectedDate: null, // Das tatsächlich ausgewählte Datum
             wantFood: null,
             foodTiming: null,
             restaurant: null,
@@ -2625,8 +2695,12 @@
             const event = allEvents.find(e => e.id === eventId);
             if (!event) return;
 
+            // Verwende das ausgewählte Datum, oder das Event-Datum als Fallback
+            const dateToUse = currentSelectedDateStr || event.date;
+
             currentDatePlan = {
                 activity: event,
+                selectedDate: dateToUse,
                 wantFood: null,
                 foodTiming: null,
                 restaurant: null,
@@ -2668,54 +2742,149 @@
                 // Automatisch Vorher/Nachher aus Event-Daten setzen
                 const defaultTiming = currentDatePlan.activity.vorher_nachher || 'Nachher';
                 currentDatePlan.foodTiming = defaultTiming.toLowerCase();
-                currentDatePlan.restaurant = currentDatePlan.activity.restaurant;
-                renderDateBuilderStep2();
+                // Restaurant-Auswahl zeigen statt direkt setzen
+                renderRestaurantSelection();
             } else {
                 renderDateBuilderStep2();
             }
         }
 
-        function renderDateBuilderStep2() {
+        function renderRestaurantSelection() {
             const flow = document.getElementById('dateBuilderFlow');
             const e = currentDatePlan.activity;
-            const r = currentDatePlan.restaurant;
 
-            const restaurantHtml = r ? `
-                <div style="background:white;padding:15px;border-radius:12px;text-align:left;margin-top:10px;">
-                    <strong>🍽️ ${r.name}</strong><br>
+            // Finde nahegelegene Restaurants (basierend auf Event-Koordinaten)
+            const nearbyRestaurants = findNearbyVenues(e.coords, 'restaurants', 3);
+
+            // Fallback: Event-Restaurant verwenden wenn vorhanden, oder erstes aus der Liste
+            if (nearbyRestaurants.length === 0 && e.restaurant) {
+                nearbyRestaurants.push(e.restaurant);
+            }
+
+            const restaurantOptionsHtml = nearbyRestaurants.map((r, i) => `
+                <div class="venue-option" onclick="selectRestaurant(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
+                    <strong>🍽️ ${r.name}</strong>
+                    ${r.distance ? `<span style="float:right;color:var(--sage-dark);font-size:0.85rem;">${(r.distance * 1000).toFixed(0)}m</span>` : ''}
+                    <br>
                     <small style="color:var(--text-light)">${r.type || ''}</small><br>
                     <small>${r.address || ''}</small>
-                    ${r.link ? `<br><a href="${r.link}" target="_blank" style="color:var(--sage-dark);font-size:0.85rem;">→ Zum Restaurant</a>` : ''}
+                    ${r.link ? `<br><a href="${r.link}" target="_blank" style="color:var(--sage-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zum Restaurant</a>` : ''}
                 </div>
-            ` : '<p style="color:var(--text-light)">Kein Restaurant-Vorschlag verfügbar</p>';
+            `).join('') || '<p style="color:var(--text-light)">Keine Restaurants in der Nähe gefunden</p>';
+
+            // Speichere die Optionen für später
+            currentDatePlan.restaurantOptions = nearbyRestaurants;
 
             flow.innerHTML = `
                 <div class="date-builder-question">
-                    <h4>🎯 Aktivität + 🍽️ Essen (${currentDatePlan.foodTiming})</h4>
+                    <h4>🎯 Deine Aktivität</h4>
                     <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
                         <strong>${e.emoji} ${e.title}</strong><br>
                         <small style="color:var(--text-light)">${e.location || ''}</small>
                     </div>
-                    ${restaurantHtml}
                 </div>
 
                 <div class="date-builder-question">
-                    <h4>🍸 Willst du danach auch noch was trinken gehen?</h4>
-                    <div class="date-builder-options">
-                        <button class="date-option-btn" onclick="setWantDrinks(true)">Ja, noch eine Bar! 🥂</button>
-                        <button class="date-option-btn" onclick="setWantDrinks(false)">Nein, reicht so</button>
-                    </div>
+                    <h4>🍽️ Wähle ein Restaurant (${currentDatePlan.foodTiming})</h4>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">In der Nähe von ${e.location || 'deiner Aktivität'}:</p>
+                    ${restaurantOptionsHtml}
+                    <button class="date-option-btn" style="margin-top:10px;width:100%;" onclick="skipRestaurant()">Überspringen</button>
                 </div>
             `;
         }
 
-        function setWantDrinks(want) {
-            currentDatePlan.wantDrinks = want;
-            if (want) {
-                currentDatePlan.bar = currentDatePlan.activity.bar;
-            }
+        function selectRestaurant(index) {
+            const r = currentDatePlan.restaurantOptions[index];
+            currentDatePlan.restaurant = r;
+
+            // Highlight selected option
+            document.querySelectorAll('.venue-option').forEach((el, i) => {
+                el.style.borderColor = i === index ? 'var(--sage)' : 'transparent';
+            });
+
+            // Kurze Verzögerung für visuelles Feedback, dann weiter
+            setTimeout(() => renderBarSelection(), 300);
+        }
+
+        function skipRestaurant() {
+            currentDatePlan.wantFood = false;
+            currentDatePlan.restaurant = null;
+            renderBarSelection();
+        }
+
+        function renderBarSelection() {
+            const flow = document.getElementById('dateBuilderFlow');
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+
+            // Finde nahegelegene Bars
+            const nearbyBars = findNearbyVenues(e.coords, 'bars', 3);
+
+            // Speichere die Optionen für später
+            currentDatePlan.barOptions = nearbyBars;
+
+            const restaurantInfo = r ? `
+                <div style="background:white;padding:12px;border-radius:10px;margin-top:8px;text-align:left;">
+                    <small style="color:var(--sage-dark)">🍽️ ${currentDatePlan.foodTiming}</small><br>
+                    <strong>${r.name}</strong>
+                </div>
+            ` : '';
+
+            const barOptionsHtml = nearbyBars.map((b, i) => `
+                <div class="venue-option" onclick="selectBar(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
+                    <strong>🍸 ${b.name}</strong>
+                    ${b.distance ? `<span style="float:right;color:var(--rose-dark);font-size:0.85rem;">${(b.distance * 1000).toFixed(0)}m</span>` : ''}
+                    <br>
+                    <small style="color:var(--text-light)">${b.type || ''}</small><br>
+                    <small>${b.address || ''}</small>
+                    ${b.link ? `<br><a href="${b.link}" target="_blank" style="color:var(--rose-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zur Bar</a>` : ''}
+                </div>
+            `).join('') || '<p style="color:var(--text-light)">Keine Bars in der Nähe gefunden</p>';
+
+            flow.innerHTML = `
+                <div class="date-builder-question">
+                    <h4>🎯 Dein bisheriger Plan</h4>
+                    <div style="background:white;padding:15px;border-radius:12px;text-align:left;">
+                        <strong>${e.emoji} ${e.title}</strong><br>
+                        <small style="color:var(--text-light)">${e.location || ''}</small>
+                    </div>
+                    ${restaurantInfo}
+                </div>
+
+                <div class="date-builder-question">
+                    <h4>🍸 Willst du danach noch was trinken gehen?</h4>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Bars in der Nähe:</p>
+                    ${barOptionsHtml}
+                    <button class="date-option-btn" style="margin-top:10px;width:100%;" onclick="skipBar()">Nein, reicht so</button>
+                </div>
+            `;
+        }
+
+        function selectBar(index) {
+            const b = currentDatePlan.barOptions[index];
+            currentDatePlan.bar = b;
+            currentDatePlan.wantDrinks = true;
+
+            // Highlight selected option
+            document.querySelectorAll('.venue-option').forEach((el, i) => {
+                el.style.borderColor = i === index ? 'var(--rose)' : 'transparent';
+            });
+
+            setTimeout(() => renderDateBuilderSummary(), 300);
+        }
+
+        function skipBar() {
+            currentDatePlan.wantDrinks = false;
+            currentDatePlan.bar = null;
             renderDateBuilderSummary();
         }
+
+        function renderDateBuilderStep2() {
+            // Wenn kein Essen gewünscht, direkt zur Bar-Auswahl
+            renderBarSelection();
+        }
+
+        let datePlanMap = null;
 
         function renderDateBuilderSummary() {
             const flow = document.getElementById('dateBuilderFlow');
@@ -2728,17 +2897,17 @@
 
             // Aktivität und Essen in richtiger Reihenfolge
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
-                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link });
+                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link, coords: r.coords });
             }
 
-            steps.push({ num: stepNum++, emoji: e.emoji, title: e.title, sub: e.location + (e.time ? ' • ' + e.time : ''), link: e.link });
+            steps.push({ num: stepNum++, emoji: e.emoji, title: e.title, sub: e.location + (e.time ? ' • ' + e.time : ''), link: e.link, coords: e.coords });
 
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
-                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link });
+                steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link, coords: r.coords });
             }
 
             if (currentDatePlan.wantDrinks && b) {
-                steps.push({ num: stepNum++, emoji: '🍸', title: b.name, sub: b.type || '', link: b.link });
+                steps.push({ num: stepNum++, emoji: '🍸', title: b.name, sub: b.type || '', link: b.link, coords: b.coords });
             }
 
             const stepsHtml = steps.map(s => `
@@ -2754,11 +2923,22 @@
                 </div>
             `).join('');
 
+            // Prüfen ob Koordinaten vorhanden sind für die Karte
+            const stepsWithCoords = steps.filter(s => s.coords && s.coords.length === 2);
+            const mapHtml = stepsWithCoords.length > 0 ? `
+                <div style="margin-top:20px;">
+                    <h5 style="margin-bottom:10px;color:var(--text);">Dein Date auf der Karte</h5>
+                    <div id="datePlanMapContainer" style="height:200px;border-radius:12px;overflow:hidden;"></div>
+                </div>
+            ` : '';
+
             flow.innerHTML = `
                 <div class="date-summary">
                     <h4>Euer perfektes Date!</h4>
                     ${stepsHtml}
                 </div>
+
+                ${mapHtml}
 
                 <p style="text-align:center;font-size:1.1rem;margin:25px 0;color:var(--rose);">Ich freu mich drauf!</p>
 
@@ -2773,7 +2953,61 @@
                 </div>
             `;
 
+            // Karte initialisieren wenn Koordinaten vorhanden
+            if (stepsWithCoords.length > 0) {
+                setTimeout(() => initDatePlanMap(steps), 100);
+            }
+
             showToast('Date geplant!');
+        }
+
+        function initDatePlanMap(steps) {
+            const container = document.getElementById('datePlanMapContainer');
+            if (!container) return;
+
+            // Alte Karte entfernen
+            if (datePlanMap) {
+                datePlanMap.remove();
+                datePlanMap = null;
+            }
+
+            const stepsWithCoords = steps.filter(s => s.coords && s.coords.length === 2);
+            if (stepsWithCoords.length === 0) return;
+
+            // Karte erstellen
+            datePlanMap = L.map('datePlanMapContainer').setView(stepsWithCoords[0].coords, 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(datePlanMap);
+
+            // Marker für jeden Schritt hinzufügen
+            const bounds = [];
+            const markerColors = ['#8fbc8f', '#e8b4b8', '#d4a574', '#6b8e6b'];
+
+            stepsWithCoords.forEach((s, i) => {
+                const color = markerColors[i % markerColors.length];
+                const icon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background:${color};color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;border:2px solid white;box-shadow:0 2px 5px rgba(0,0,0,0.3);">${s.num}</div>`,
+                    iconSize: [28, 28],
+                    iconAnchor: [14, 14]
+                });
+
+                const marker = L.marker(s.coords, { icon }).addTo(datePlanMap);
+                marker.bindPopup(`<strong>${s.emoji} ${s.title}</strong><br><small>${s.sub}</small>`);
+                bounds.push(s.coords);
+            });
+
+            // Verbindungslinie zeichnen
+            if (stepsWithCoords.length > 1) {
+                const coords = stepsWithCoords.map(s => s.coords);
+                L.polyline(coords, { color: '#e8b4b8', weight: 3, opacity: 0.7, dashArray: '10, 10' }).addTo(datePlanMap);
+            }
+
+            // Karte auf alle Marker zoomen
+            if (bounds.length > 1) {
+                datePlanMap.fitBounds(bounds, { padding: [30, 30] });
+            }
         }
 
         function closeDateBuilder() {
@@ -2785,8 +3019,8 @@
             const r = currentDatePlan.restaurant;
             const b = currentDatePlan.bar;
 
-            // Parse date from activity
-            const eventDate = new Date(e.date);
+            // Verwende das ausgewählte Datum (nicht das Event-Startdatum!)
+            const eventDate = new Date(currentDatePlan.selectedDate || e.date);
             const year = eventDate.getFullYear();
             const month = String(eventDate.getMonth() + 1).padStart(2, '0');
             const day = String(eventDate.getDate()).padStart(2, '0');
@@ -2845,8 +3079,8 @@ END:VCALENDAR`;
             const r = currentDatePlan.restaurant;
             const b = currentDatePlan.bar;
 
-            // Format date nicely
-            const eventDate = new Date(e.date);
+            // Verwende das ausgewählte Datum (nicht das Event-Startdatum!)
+            const eventDate = new Date(currentDatePlan.selectedDate || e.date);
             const dateStr = eventDate.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
             let message = `*Unser Date am ${dateStr}*\n\n`;
@@ -3259,14 +3493,14 @@ END:VCALENDAR`;
             }
         }
 
-        // Draw filled country on the globe
+        // Draw filled country on the globe using earcut triangulation
         function drawFilledCountry(geometry, color, radius) {
             if (!geometry) return;
 
             const material = new THREE.MeshBasicMaterial({
                 color: color,
                 transparent: true,
-                opacity: 0.85,
+                opacity: 0.9,
                 side: THREE.DoubleSide
             });
 
@@ -3280,13 +3514,26 @@ END:VCALENDAR`;
                 return false;
             };
 
-            // Split polygon at antimeridian
+            // Split polygon at antimeridian - improved version
             const splitAtAntimeridian = (coords) => {
                 const west = [], east = [];
+                let prevLon = null;
+
                 coords.forEach(([lon, lat]) => {
+                    // Handle the wrap-around
+                    let adjustedLon = lon;
+                    if (prevLon !== null && Math.abs(lon - prevLon) > 180) {
+                        // Jump detected - we're crossing the dateline
+                        if (lon > 0) adjustedLon = lon - 360;
+                        else adjustedLon = lon + 360;
+                    }
+
                     if (lon > 0) east.push([lon, lat]);
                     else west.push([lon, lat]);
+
+                    prevLon = lon;
                 });
+
                 return [west, east].filter(arr => arr.length >= 3);
             };
 
@@ -3306,18 +3553,62 @@ END:VCALENDAR`;
             const drawSinglePolygon = (coords, mat, rad) => {
                 if (coords.length < 3) return;
 
-                // Calculate proper centroid
+                try {
+                    // Flatten coordinates for earcut
+                    const flatCoords = [];
+                    coords.forEach(([lon, lat]) => {
+                        flatCoords.push(lon, lat);
+                    });
+
+                    // Triangulate using earcut
+                    const indices = earcut(flatCoords);
+
+                    if (indices.length === 0) {
+                        // Fallback to simple fan if earcut fails
+                        drawPolygonFallback(coords, mat, rad);
+                        return;
+                    }
+
+                    // Create geometry with proper triangulation
+                    const geo = new THREE.BufferGeometry();
+                    const vertices = [];
+
+                    for (let i = 0; i < indices.length; i += 3) {
+                        const i0 = indices[i];
+                        const i1 = indices[i + 1];
+                        const i2 = indices[i + 2];
+
+                        const v0 = latLonToVector3(coords[i0][1], coords[i0][0], rad);
+                        const v1 = latLonToVector3(coords[i1][1], coords[i1][0], rad);
+                        const v2 = latLonToVector3(coords[i2][1], coords[i2][0], rad);
+
+                        vertices.push(v0.x, v0.y, v0.z);
+                        vertices.push(v1.x, v1.y, v1.z);
+                        vertices.push(v2.x, v2.y, v2.z);
+                    }
+
+                    geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                    geo.computeVertexNormals();
+
+                    const mesh = new THREE.Mesh(geo, mat);
+                    globeGroup.add(mesh);
+                } catch (e) {
+                    drawPolygonFallback(coords, mat, rad);
+                }
+            };
+
+            // Fallback: triangle fan from centroid
+            const drawPolygonFallback = (coords, mat, rad) => {
+                if (coords.length < 3) return;
+
                 let sumLon = 0, sumLat = 0;
                 coords.forEach(([lon, lat]) => {
                     sumLon += lon;
                     sumLat += lat;
                 });
-                const centroidLon = sumLon / coords.length;
-                const centroidLat = sumLat / coords.length;
-                const centroidVec = latLonToVector3(centroidLat, centroidLon, rad);
+                const centroidVec = latLonToVector3(sumLat / coords.length, sumLon / coords.length, rad);
 
-                // Create triangle fan from centroid - always works!
-                const geometry = new THREE.BufferGeometry();
+                const geo = new THREE.BufferGeometry();
                 const vertices = [];
 
                 for (let i = 0; i < coords.length; i++) {
@@ -3332,10 +3623,10 @@ END:VCALENDAR`;
                     vertices.push(v2.x, v2.y, v2.z);
                 }
 
-                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-                geometry.computeVertexNormals();
+                geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                geo.computeVertexNormals();
 
-                const mesh = new THREE.Mesh(geometry, mat);
+                const mesh = new THREE.Mesh(geo, mat);
                 globeGroup.add(mesh);
             };
 

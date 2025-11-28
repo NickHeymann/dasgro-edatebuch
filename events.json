@@ -1,34 +1,6 @@
 {
   "events": [
     {
-      "id": "nov28-weihnachtsmarkt",
-      "emoji": "🎄",
-      "title": "Weihnachtsmarkt Rathausplatz",
-      "date": "2025-11-28",
-      "category": "aktiv",
-      "description": "Eröffnung der Weihnachtssaison! Glühwein und Schmalzkuchen am Rathaus.",
-      "location": "Rathausmarkt",
-      "address": "Rathausmarkt, 20095 Hamburg",
-      "coords": [53.5503, 9.9925],
-      "link": "https://www.hamburger-weihnachtsmarkt.com/",
-      "time": "11-21 Uhr",
-      "price": "kostenlos",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Café Paris",
-        "type": "Französisch",
-        "address": "Rathausstraße 4",
-        "link": "https://www.cafeparis.net/",
-        "coords": [53.5503, 9.9933]
-      },
-      "bar": {
-        "name": "Le Lion",
-        "type": "Beste Cocktailbar",
-        "address": "Rathausstraße 3",
-        "link": "https://www.lelion.net/"
-      }
-    },
-    {
       "id": "nov28-winterdom",
       "emoji": "🎡",
       "title": "Hamburger Winterdom",
@@ -82,34 +54,6 @@
         "type": "Im Club",
         "address": "Im Club",
         "link": "https://uebelundgefaehrlich.com/"
-      }
-    },
-    {
-      "id": "nov29-santapauli",
-      "emoji": "🎅",
-      "title": "Santa Pauli Weihnachtsmarkt",
-      "date": "2025-11-29",
-      "category": "aktiv",
-      "description": "Hamburgs frechster Weihnachtsmarkt auf dem Spielbudenplatz!",
-      "location": "Spielbudenplatz",
-      "address": "Spielbudenplatz, 20359 Hamburg",
-      "coords": [53.5492, 9.9631],
-      "link": "https://santa-pauli.de/",
-      "time": "16-24 Uhr",
-      "price": "kostenlos",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Tazzi Pizza",
-        "type": "Beste Pizza St. Pauli",
-        "address": "Reeperbahn 61",
-        "link": "https://www.tazzi-pizza.de/",
-        "coords": [53.5494, 9.9611]
-      },
-      "bar": {
-        "name": "Clouds",
-        "type": "Rooftop Bar",
-        "address": "Reeperbahn 1",
-        "link": "https://clouds-hamburg.de/"
       }
     },
     {
@@ -308,34 +252,6 @@
       }
     },
     {
-      "id": "dez02-weihnachtsmarkt",
-      "emoji": "🎄",
-      "title": "Weihnachtsmarkt Jungfernstieg",
-      "date": "2025-12-02",
-      "category": "aktiv",
-      "description": "Weißer Zauber am Jungfernstieg! Glühwein mit Alsterblick.",
-      "location": "Jungfernstieg",
-      "address": "Jungfernstieg, 20354 Hamburg",
-      "coords": [53.5531, 9.9933],
-      "link": "https://www.weihnachtsmaerkte-hamburg.de/",
-      "time": "11-21 Uhr",
-      "price": "kostenlos",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Café Paris",
-        "type": "Französisch",
-        "address": "Rathausstraße 4",
-        "link": "https://www.cafeparis.net/",
-        "coords": [53.5503, 9.9933]
-      },
-      "bar": {
-        "name": "Parlament",
-        "type": "Weinbar",
-        "address": "Rathausmarkt 1",
-        "link": "https://www.parlament-hamburg.de/"
-      }
-    },
-    {
       "id": "dez03-hives",
       "emoji": "🎸",
       "title": "The Hives - Live in Hamburg",
@@ -364,10 +280,10 @@
       }
     },
     {
-      "id": "dez03-charlotte",
+      "id": "dez04-charlotte",
       "emoji": "🎤",
       "title": "Charlotte OC",
-      "date": "2025-12-03",
+      "date": "2025-12-04",
       "category": "musik",
       "description": "Britische Sängerin mit düsterem Soul und cineastischem Pop. Neue EP 'Seriously Love, Go Home' live!",
       "location": "Nochtspeicher",
@@ -898,34 +814,6 @@
       }
     },
     {
-      "id": "dez10-weihnachtsmarkt",
-      "emoji": "🎄",
-      "title": "Weihnachtsmarkt Rathausplatz",
-      "date": "2025-12-10",
-      "category": "aktiv",
-      "description": "Glühwein, Schmalzkuchen und Weihnachtsstimmung am Rathaus!",
-      "location": "Rathausmarkt",
-      "address": "Rathausmarkt, 20095 Hamburg",
-      "coords": [53.5503, 9.9925],
-      "link": "https://www.hamburger-weihnachtsmarkt.com/",
-      "time": "11-21 Uhr",
-      "price": "kostenlos",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Café Paris",
-        "type": "Französisch",
-        "address": "Rathausstraße 4",
-        "link": "https://www.cafeparis.net/",
-        "coords": [53.5503, 9.9933]
-      },
-      "bar": {
-        "name": "Parlament",
-        "type": "Weinbar",
-        "address": "Rathausmarkt 1",
-        "link": "https://www.parlament-hamburg.de/"
-      }
-    },
-    {
       "id": "dez11-schlittschuh",
       "emoji": "⛸️",
       "title": "Eislaufen Planten un Blomen",
@@ -1395,34 +1283,6 @@
         "type": "Beste Cocktailbar",
         "address": "Rathausstraße 3",
         "link": "https://www.lelion.net/"
-      }
-    },
-    {
-      "id": "dez23-weihnachtsmarkt-petri",
-      "emoji": "🎄",
-      "title": "Weihnachtsmarkt St. Petri",
-      "date": "2025-12-23",
-      "category": "aktiv",
-      "description": "Kleiner feiner Weihnachtsmarkt an der St. Petri Kirche!",
-      "location": "St. Petri Kirche",
-      "address": "Speersort 10, 20095 Hamburg",
-      "coords": [53.5508, 9.9947],
-      "link": "https://www.sankt-petri.de/",
-      "time": "11-20 Uhr",
-      "price": "kostenlos",
-      "vorher_nachher": "Nachher",
-      "restaurant": {
-        "name": "Café Leonar",
-        "type": "Jüdische Küche",
-        "address": "Grindelhof 59",
-        "link": "https://www.cafe-leonar.de/",
-        "coords": [53.5678, 9.9833]
-      },
-      "bar": {
-        "name": "Parlament",
-        "type": "Weinbar",
-        "address": "Rathausmarkt 1",
-        "link": "https://www.parlament-hamburg.de/"
       }
     },
     {
