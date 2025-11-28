@@ -363,6 +363,30 @@
         .nav-tab:hover { border-color: var(--sage); }
         .nav-tab.active { background: var(--sage); color: white; }
 
+        /* Feierabend Toggle */
+        .feierabend-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+            border-radius: 12px;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        .feierabend-toggle select {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            background: white;
+            color: var(--text);
+            cursor: pointer;
+        }
+
         /* Side buttons (Favoriten, Nope, Eigene) - kompakter */
         .nav-tab-side { padding: 8px 10px; font-size: 1.1rem; }
         .nav-separator { color: var(--text-light); opacity: 0.4; margin: 0 4px; align-self: center; }
@@ -1011,6 +1035,18 @@
             <button class="nav-tab nav-tab-side" data-category="nope">👎</button>
             <button class="nav-tab nav-tab-side" data-category="custom">✨</button>
         </nav>
+
+        <!-- Feierabend Toggle -->
+        <div class="feierabend-toggle" id="feierabendToggle">
+            <span class="feierabend-label">Solli hat frei ab:</span>
+            <select id="feierabendTime" onchange="saveFeierabendSetting()">
+                <option value="17:00">17:00 (normal)</option>
+                <option value="16:00">16:00</option>
+                <option value="15:00">15:00</option>
+                <option value="14:00">14:00</option>
+                <option value="ganztags">Ganztags frei</option>
+            </select>
+        </div>
         
         <div class="book-content">
             <!-- HANDWERK (1. Position) -->
@@ -1250,7 +1286,7 @@
         <div class="modal-content" style="max-width:650px;">
             <button class="modal-close" onclick="closeDateBuilder()">✕</button>
             <div class="modal-header">
-                <h3>💕 Date zusammenstellen</h3>
+                <h3>Date zusammenstellen</h3>
             </div>
             <div class="modal-body" id="dateBuilderBody">
                 <div class="date-builder-flow" id="dateBuilderFlow">
@@ -1350,14 +1386,50 @@
             renderMemories();
             loadProgress();
             loadEvents();
+            loadFeierabendSetting();
             document.getElementById('globalDate').valueAsDate = new Date();
-            
+
             // Sheet ID aus Storage laden
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             if (saved.sheetId) {
                 document.getElementById('sheetIdInput').value = saved.sheetId;
             }
         });
+
+        // ============ FEIERABEND ============
+        function loadFeierabendSetting() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const feierabend = saved.feierabend || '17:00';
+            document.getElementById('feierabendTime').value = feierabend;
+        }
+
+        function saveFeierabendSetting() {
+            const feierabend = document.getElementById('feierabendTime').value;
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.feierabend = feierabend;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            showToast(feierabend === 'ganztags' ? 'Frei den ganzen Tag!' : `Frei ab ${feierabend}`);
+        }
+
+        function getFeierabendTime() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return saved.feierabend || '17:00';
+        }
+
+        function isDateTimeSuitable(eventTime) {
+            const feierabend = getFeierabendTime();
+            if (feierabend === 'ganztags') return true;
+            if (!eventTime) return true;
+
+            // Parse event time (format: "19:30" or "18:00-22:00")
+            const timeMatch = eventTime.match(/(\d{1,2}):(\d{2})/);
+            if (!timeMatch) return true;
+
+            const eventHour = parseInt(timeMatch[1]);
+            const feierabendHour = parseInt(feierabend.split(':')[0]);
+
+            return eventHour >= feierabendHour;
+        }
         
         // ============ ICICLES - nur 1 rechts ============
         function createIcicles() {
@@ -1562,12 +1634,11 @@
             // Location-Info HTML
             const locationHtml = e.location ? `
                 <div class="event-location-info">
-                    <span class="location-icon">📍</span>
                     <div>
                         <strong>${e.location}</strong>
                         ${e.address ? `<br><small style="color:var(--text-light)">${e.address}</small>` : ''}
-                        ${e.time ? `<br><small>🕐 ${e.time}</small>` : ''}
-                        ${e.price ? `<small style="margin-left:10px">💰 ${e.price}</small>` : ''}
+                        ${e.time ? `<br><small>${e.time}</small>` : ''}
+                        ${e.price ? `<small style="margin-left:10px">${e.price}</small>` : ''}
                     </div>
                 </div>
             ` : '';
@@ -1575,20 +1646,20 @@
             // Treatment für Wellness
             const treatmentHtml = e.treatment ? `
                 <div style="background:linear-gradient(135deg, var(--rose), var(--rose-dark)); color:white; padding:10px; border-radius:8px; margin-top:10px; font-size:0.9rem;">
-                    <strong>💆 Empfohlenes Treatment:</strong><br>
+                    <strong>Empfohlenes Treatment:</strong><br>
                     ${e.treatment}
                 </div>
             ` : '';
 
             // Link-Button
             const linkHtml = e.link ? `
-                <a href="${e.link}" target="_blank" rel="noopener" class="event-link-btn">🎫 Tickets / Buchen</a>
+                <a href="${e.link}" target="_blank" rel="noopener" class="event-link-btn">Tickets / Buchen</a>
             ` : '';
 
             // Date Builder Button
             const dateBuilderBtn = showDateBuilder ? `
                 <button class="btn btn-add" style="margin-top:10px; width:100%;" onclick="startDateBuilder('${e.id}')">
-                    💕 Date zusammenstellen
+                    Date zusammenstellen
                 </button>
             ` : '';
 
@@ -1879,14 +1950,14 @@
                 const isVorher = event.vorher_nachher === 'Vorher';
 
                 emoji.textContent = event.emoji || '🎯';
-                title.textContent = 'Wie wär\'s mit... 💕';
+                title.textContent = 'Wie wär\'s mit...';
 
                 // Zeige immer Aktivität + Restaurant als Paar
                 const activityPart = `
                     <div class="roulette-part">
                         <div class="roulette-part-title">${event.emoji} ${event.title}</div>
                         <div class="roulette-part-desc">
-                            📍 ${event.location}${event.time ? ' • 🕐 ' + event.time : ''}${event.price ? ' • 💰 ' + event.price : ''}
+                            ${event.location}${event.time ? ' • ' + event.time : ''}${event.price ? ' • ' + event.price : ''}
                         </div>
                     </div>
                 `;
@@ -1895,7 +1966,7 @@
                     <div class="roulette-part">
                         <div class="roulette-part-title">🍽️ ${r.name}</div>
                         <div class="roulette-part-desc">
-                            ${r.type || ''}${r.address ? ' • 📍 ' + r.address : ''}
+                            ${r.type || ''}${r.address ? ' • ' + r.address : ''}
                         </div>
                     </div>
                 `;
@@ -2009,7 +2080,7 @@
 
             const reader = new FileReader();
             reader.onload = (e) => {
-                const caption = prompt('Gib deiner Erinnerung einen Namen:', 'Neue Erinnerung 💕') || 'Neue Erinnerung 💕';
+                const caption = prompt('Gib deiner Erinnerung einen Namen:', 'Neue Erinnerung') || 'Neue Erinnerung';
 
                 const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
                 if (!saved.userMemories) saved.userMemories = [];
@@ -2218,7 +2289,7 @@
             dropdown.innerHTML = matches.map(item => `
                 <div class="autocomplete-item" onclick="selectAutocomplete('${input.id}', '${item.name.replace(/'/g, "\\'")}', '${item.address.replace(/'/g, "\\'")}', '${item.district}', '${item.type || ''}')">
                     <div>
-                        <span class="item-name">${item.emoji || '📍'} ${item.name}</span>
+                        <span class="item-name">${item.emoji ? item.emoji + ' ' : ''}${item.name}</span>
                         ${item.type ? `<span class="item-type">${item.type}</span>` : ''}
                     </div>
                     <div class="item-location">${item.address}${item.district ? ' • ' + item.district : ''}</div>
@@ -2248,7 +2319,7 @@
             const locInfo = document.getElementById(locInfoId);
             if (address || district) {
                 locInfo.innerHTML = `
-                    <div class="loc-name">📍 ${name}</div>
+                    <div class="loc-name">${name}</div>
                     ${address ? `<div class="loc-address">${address}</div>` : ''}
                     ${district ? `<span class="loc-district">${district}</span>` : ''}
                 `;
@@ -2515,24 +2586,24 @@
 
             flow.innerHTML = `
                 <div class="date-summary">
-                    <h4>💕 Euer perfektes Date!</h4>
+                    <h4>Euer perfektes Date!</h4>
                     ${stepsHtml}
                 </div>
 
-                <p style="text-align:center;font-size:1.3rem;margin:25px 0;color:var(--rose);">Ich freu mich drauf ❤️</p>
+                <p style="text-align:center;font-size:1.1rem;margin:25px 0;color:var(--rose);">Ich freu mich drauf!</p>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
-                    <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">📅 In Kalender</button>
-                    <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">📱 WhatsApp</button>
+                    <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">In Kalender</button>
+                    <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">WhatsApp</button>
                 </div>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:15px;">
-                    <button class="btn btn-primary" onclick="closeDateBuilder()">Fertig! 🎉</button>
+                    <button class="btn btn-primary" onclick="closeDateBuilder()">Fertig!</button>
                     <button class="btn btn-secondary" onclick="startDateBuilder('${e.id}')">Nochmal planen</button>
                 </div>
             `;
 
-            showToast('💕 Date geplant!');
+            showToast('Date geplant!');
         }
 
         function closeDateBuilder() {
@@ -2551,27 +2622,27 @@
             const day = String(eventDate.getDate()).padStart(2, '0');
 
             // Build description
-            let description = `Date mit Solli 💕\\n\\n`;
+            let description = `Date mit Solli\\n\\n`;
             let stepNum = 1;
 
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
-                description += `${stepNum}. 🍽️ ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
+                description += `${stepNum}. ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
                 stepNum++;
             }
 
-            description += `${stepNum}. ${e.emoji} ${e.title}\\n   📍 ${e.location}${e.time ? '\\n   🕐 ' + e.time : ''}${e.price ? '\\n   💰 ' + e.price : ''}\\n`;
+            description += `${stepNum}. ${e.title}\\n   ${e.location}${e.time ? '\\n   ' + e.time : ''}${e.price ? '\\n   ' + e.price : ''}\\n`;
             stepNum++;
 
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
-                description += `${stepNum}. 🍽️ ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
+                description += `${stepNum}. ${r.name}${r.type ? ' (' + r.type + ')' : ''}\\n`;
                 stepNum++;
             }
 
             if (currentDatePlan.wantDrinks && b) {
-                description += `${stepNum}. 🍸 ${b.name}${b.type ? ' (' + b.type + ')' : ''}\\n`;
+                description += `${stepNum}. ${b.name}${b.type ? ' (' + b.type + ')' : ''}\\n`;
             }
 
-            description += `\\nIch freu mich drauf ❤️`;
+            description += `\\nIch freu mich drauf!`;
 
             // Create ICS file
             const icsContent = `BEGIN:VCALENDAR
@@ -2580,7 +2651,7 @@ PRODID:-//Datebuch//Nick & Solli//DE
 BEGIN:VEVENT
 DTSTART:${year}${month}${day}T180000
 DTEND:${year}${month}${day}T230000
-SUMMARY:💕 Date: ${e.title}
+SUMMARY:Date: ${e.title}
 DESCRIPTION:${description}
 LOCATION:${e.location}${e.address ? ', ' + e.address : ''}
 END:VEVENT
@@ -2608,32 +2679,32 @@ END:VCALENDAR`;
             const eventDate = new Date(e.date);
             const dateStr = eventDate.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
-            let message = `💕 *Unser Date am ${dateStr}*\n\n`;
+            let message = `*Unser Date am ${dateStr}*\n\n`;
             let stepNum = 1;
 
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'vorher' && r) {
-                message += `${stepNum}. 🍽️ *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
+                message += `${stepNum}. *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
                 stepNum++;
             }
 
-            message += `${stepNum}. ${e.emoji} *${e.title}*\n`;
-            message += `   📍 ${e.location}`;
+            message += `${stepNum}. *${e.title}*\n`;
+            message += `   ${e.location}`;
             if (e.address) message += `\n   ${e.address}`;
-            if (e.time) message += `\n   🕐 ${e.time}`;
-            if (e.price) message += `\n   💰 ${e.price}`;
+            if (e.time) message += `\n   ${e.time}`;
+            if (e.price) message += `\n   ${e.price}`;
             message += '\n';
             stepNum++;
 
             if (currentDatePlan.wantFood && currentDatePlan.foodTiming === 'nachher' && r) {
-                message += `${stepNum}. 🍽️ *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
+                message += `${stepNum}. *${r.name}*${r.type ? ' (' + r.type + ')' : ''}\n`;
                 stepNum++;
             }
 
             if (currentDatePlan.wantDrinks && b) {
-                message += `${stepNum}. 🍸 *${b.name}*${b.type ? ' (' + b.type + ')' : ''}\n`;
+                message += `${stepNum}. *${b.name}*${b.type ? ' (' + b.type + ')' : ''}\n`;
             }
 
-            message += `\nIch freu mich drauf ❤️`;
+            message += `\nIch freu mich drauf!`;
 
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
@@ -2663,7 +2734,7 @@ END:VCALENDAR`;
             status.style.background = isVisited ? 'var(--sage)' : 'var(--rose)';
             status.style.color = 'white';
 
-            let body = isVisited ? `<p style="margin-top:15px;">Unsere gemeinsame Erinnerung! 💕</p>` : '';
+            let body = isVisited ? `<p style="margin-top:15px;">Unsere gemeinsame Erinnerung!</p>` : '';
             if (!isVisited && dest.reasons) {
                 body = '<div style="margin-top:15px;">' + dest.reasons.map(r => `
                     <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:10px;background:var(--ice-blue);border-radius:8px;">

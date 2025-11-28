@@ -368,64 +368,6 @@
       }
     },
     {
-      "id": "dez03-fontenay",
-      "emoji": "🏨",
-      "title": "The Fontenay Private Spa Suite",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "1.000 qm Luxus-Spa über den Dächern! Infinity-Pool + Alsterblick.",
-      "location": "The Fontenay Hamburg",
-      "address": "Fontenay 10, 20354 Hamburg",
-      "coords": [53.5639, 9.9969],
-      "link": "https://www.thefontenay.com/en/spa/private-spa-suite-hamburg",
-      "time": "nach Vereinbarung",
-      "price": "ab 200€",
-      "treatment": "Private Spa Suite: Sauna + Dampfbad + Whirlpool + Panoramablick + Erlebnisdusche (ab 200€)",
-      "vorher_nachher": "Nachher",
-      "restaurant": {
-        "name": "Lakeside",
-        "type": "Fine Dining im Hotel",
-        "address": "Fontenay 10",
-        "link": "https://www.thefontenay.com/",
-        "coords": [53.5639, 9.9969]
-      },
-      "bar": {
-        "name": "The Fontenay Bar",
-        "type": "Champagner mit Alsterblick",
-        "address": "Fontenay 10",
-        "link": "https://www.thefontenay.com/"
-      }
-    },
-    {
-      "id": "dez03-vierjahreszeiten",
-      "emoji": "👑",
-      "title": "Vier Jahreszeiten Spa",
-      "date": "2025-12-03",
-      "category": "wellness",
-      "description": "Hamburgs legendärstes Luxus-Spa! 1.000 qm mit über 100 Behandlungen.",
-      "location": "Fairmont Hotel Vier Jahreszeiten",
-      "address": "Neuer Jungfernstieg 9-14, 20354 Hamburg",
-      "coords": [53.5561, 9.9933],
-      "link": "https://hvj.de/en/spa-fitness.html",
-      "time": "9:00-20:00",
-      "price": "ab 100€",
-      "treatment": "Vier Jahreszeiten Massage: Individuell angepasste Ganzkörpermassage + Dachterrasse + Kamin (ab 150€, Day Spa inklusive)",
-      "vorher_nachher": "Nachher",
-      "restaurant": {
-        "name": "Haerlin",
-        "type": "2 Michelin-Sterne",
-        "address": "Im Hotel Vier Jahreszeiten",
-        "link": "https://hvj.de/",
-        "coords": [53.5561, 9.9933]
-      },
-      "bar": {
-        "name": "Jahreszeiten Bar",
-        "type": "Classic Cocktails",
-        "address": "Im Hotel",
-        "link": "https://hvj.de/"
-      }
-    },
-    {
       "id": "dez05-emel",
       "emoji": "🎤",
       "title": "Emel - MRA Tour",
@@ -609,11 +551,11 @@
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Wolfs Junge",
-        "type": "Grüner Michelin-Stern",
-        "address": "Zimmerstraße 30",
-        "link": "https://www.wolfsjunge.de/",
-        "coords": [53.5575, 9.9708]
+        "name": "Bullerei",
+        "type": "Tim Mälzer",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/",
+        "coords": [53.5672, 9.9633]
       },
       "bar": {
         "name": "Julep",
@@ -806,11 +748,11 @@
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Wolfs Junge",
-        "type": "Grüner Michelin-Stern",
-        "address": "Zimmerstraße 30",
-        "link": "https://www.wolfsjunge.de/",
-        "coords": [53.5575, 9.9708]
+        "name": "Bullerei",
+        "type": "Tim Mälzer",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/",
+        "coords": [53.5672, 9.9633]
       },
       "bar": {
         "name": "Le Lion",
@@ -1225,66 +1167,6 @@
         "type": "Skyline",
         "address": "Bernhard-Nocht-Straße 97",
         "link": "https://www.empire-riverside.de/20up/"
-      }
-    },
-    {
-      "id": "dauer-fontenay",
-      "emoji": "🏨",
-      "title": "The Fontenay Private Spa Suite",
-      "date": "2025-12-01",
-      "endDate": "2026-02-28",
-      "category": "wellness",
-      "description": "1.000 qm Luxus-Spa über den Dächern mit Alsterblick!",
-      "location": "The Fontenay",
-      "address": "Fontenay 10, 20354 Hamburg",
-      "coords": [53.5639, 9.9969],
-      "link": "https://www.thefontenay.com/en/spa/private-spa-suite-hamburg",
-      "time": "nach Vereinbarung",
-      "price": "ab 200€",
-      "treatment": "Private Spa Suite: Sauna + Dampfbad + Whirlpool + Panorama-Alsterblick (ab 200€)",
-      "vorher_nachher": "Nachher",
-      "restaurant": {
-        "name": "Lakeside",
-        "type": "Fine Dining",
-        "address": "Fontenay 10",
-        "link": "https://www.thefontenay.com/",
-        "coords": [53.5639, 9.9969]
-      },
-      "bar": {
-        "name": "The Fontenay Bar",
-        "type": "Champagner",
-        "address": "Fontenay 10",
-        "link": "https://www.thefontenay.com/"
-      }
-    },
-    {
-      "id": "dauer-vierjahreszeiten",
-      "emoji": "👑",
-      "title": "Vier Jahreszeiten Spa",
-      "date": "2025-12-01",
-      "endDate": "2026-02-28",
-      "category": "wellness",
-      "description": "Hamburgs legendärstes Spa! 1.000 qm mit 100+ Behandlungen.",
-      "location": "Fairmont Hotel Vier Jahreszeiten",
-      "address": "Neuer Jungfernstieg 9-14, 20354 Hamburg",
-      "coords": [53.5561, 9.9933],
-      "link": "https://hvj.de/en/spa-fitness.html",
-      "time": "9:00-20:00",
-      "price": "ab 100€",
-      "treatment": "Vier Jahreszeiten Massage + Dachterrasse mit Kamin (ab 150€, Day Spa inklusive)",
-      "vorher_nachher": "Nachher",
-      "restaurant": {
-        "name": "Haerlin",
-        "type": "2 Michelin-Sterne",
-        "address": "Im Hotel",
-        "link": "https://hvj.de/",
-        "coords": [53.5561, 9.9933]
-      },
-      "bar": {
-        "name": "Jahreszeiten Bar",
-        "type": "Classic Cocktails",
-        "address": "Im Hotel",
-        "link": "https://hvj.de/"
       }
     },
     {
@@ -1783,15 +1665,15 @@
       "price": "ab 80€",
       "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Haerlin",
-        "type": "2 Michelin-Sterne",
-        "address": "Neuer Jungfernstieg 9-14",
-        "link": "https://hvj.de/",
-        "coords": [53.5561, 9.9933]
+        "name": "VLET an der Alster",
+        "type": "Hamburger Küche",
+        "address": "Jungfernstieg 7",
+        "link": "https://www.vlet.de/",
+        "coords": [53.5520, 9.9920]
       },
       "bar": {
-        "name": "Jahreszeiten Bar",
-        "type": "Classic Cocktails",
+        "name": "Elbphilharmonie Café",
+        "type": "Drinks mit Elbblick",
         "address": "Neuer Jungfernstieg 9-14",
         "link": "https://hvj.de/"
       }
@@ -2452,33 +2334,6 @@
         "type": "Cocktails & Whisky",
         "address": "Ericusspitze 4, HafenCity",
         "link": "https://www.boilermanbar.de/"
-      }
-    },
-    {
-      "id": "essen-wolfs-junge",
-      "emoji": "🌟",
-      "title": "Grüner Michelin-Stern: Wolfs Junge",
-      "date": "dauerhaft",
-      "category": "essen",
-      "description": "Nachhaltige Sterneküche! Zero-Waste Konzept mit regionalen und saisonalen Zutaten.",
-      "location": "Wolfs Junge",
-      "address": "Zimmerstraße 30, 20099 Hamburg",
-      "coords": [53.5575, 9.9708],
-      "link": "https://www.wolfsjunge.de/",
-      "time": "Di-Sa 18-23h",
-      "price": "65-95€ p.P.",
-      "vorher_nachher": "Komplett",
-      "restaurant": {
-        "name": "Wolfs Junge",
-        "type": "Grüner Michelin-Stern",
-        "address": "Zimmerstraße 30",
-        "link": "https://www.wolfsjunge.de/"
-      },
-      "bar": {
-        "name": "Jahreszeiten Bar",
-        "type": "Classic Cocktails",
-        "address": "Neuer Jungfernstieg 9-14",
-        "link": "https://hvj.de/"
       }
     },
     {
