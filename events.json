@@ -1990,6 +1990,341 @@
         "address": "Eppendorfer Weg 56",
         "link": "https://www.instagram.com/eppendorfergrillstation/"
       }
+    },
+    {
+      "id": "dez04-ssio",
+      "emoji": "🎤",
+      "title": "SSIO - Die erste Tour nach Corona",
+      "date": "2025-12-04",
+      "category": "musik",
+      "description": "Bonner Rap-Legende mit neuem Album 'Alles oder Nix' - Wortwitz, Humor & Kopfnicker-Beats!",
+      "location": "Inselpark Arena",
+      "address": "Kurt-Emmerich-Platz 10, 21109 Hamburg",
+      "coords": [53.5069, 9.9856],
+      "link": "https://www.eventim.de/artist/ssio/",
+      "time": "20:00",
+      "price": "ab 45€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleinhuis",
+        "type": "Burger & Craft Beer",
+        "address": "Am Inselpark 1",
+        "link": "https://www.kleinhuis.de/",
+        "coords": [53.5069, 9.9856]
+      },
+      "bar": {
+        "name": "elbgold",
+        "type": "Kaffee & Drinks",
+        "address": "Veritaskai 1",
+        "link": "https://www.elbgold.com/"
+      }
+    },
+    {
+      "id": "dez06-fundbureau",
+      "emoji": "🎧",
+      "title": "Rodmor Takeover + Verflixt Music Showcase",
+      "date": "2025-12-06",
+      "category": "musik",
+      "description": "Artist of the Month Rodmor mit 2h Takeover! Ab 21h Eintritt frei inkl. Clubnacht.",
+      "location": "Fundbureau",
+      "address": "Altländer Str. 11, 20095 Hamburg",
+      "coords": [53.5536, 9.9867],
+      "link": "https://ohschonhell.de/orte/fundbureau/21",
+      "time": "21:00",
+      "price": "Frei bis 23h",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Edel Curry",
+        "type": "Beste Currywurst",
+        "address": "Grindelallee 26",
+        "link": "https://www.instagram.com/edelcurry/",
+        "coords": [53.5658, 9.9783]
+      },
+      "bar": {
+        "name": "Fundbureau Bar",
+        "type": "Club & Bar",
+        "address": "Im Club",
+        "link": "https://www.fundbureau.de/"
+      }
+    },
+    {
+      "id": "dez13-liquid-concrete",
+      "emoji": "🎧",
+      "title": "Liquid Concrete Residents Night",
+      "date": "2025-12-13",
+      "category": "musik",
+      "description": "Jahresabschluss mit Eightball, Fibe, IAM & Sindicate - Techno im Stellwerk!",
+      "location": "Stellwerk Hamburg",
+      "address": "Altländer Str. 4, 20095 Hamburg",
+      "coords": [53.5533, 9.9869],
+      "link": "https://ohschonhell.de/orte/stellwerk+hamburg/100",
+      "time": "23:00",
+      "price": "ab 15€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Zum Spätzle",
+        "type": "Schwäbische Küche",
+        "address": "Schanzenstraße 91",
+        "link": "https://www.zumspaetzle.de/",
+        "coords": [53.5633, 9.9622]
+      },
+      "bar": {
+        "name": "Stellwerk Bar",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://stellwerk-hamburg.com/"
+      }
+    },
+    {
+      "id": "dez19-unisex",
+      "emoji": "🎧",
+      "title": "UNISEX - Techno Night",
+      "date": "2025-12-19",
+      "category": "musik",
+      "description": "Hypnotic Groove & Techno auf Spendenbasis (12€ empfohlen)!",
+      "location": "Stellwerk Hamburg",
+      "address": "Altländer Str. 4, 20095 Hamburg",
+      "coords": [53.5533, 9.9869],
+      "link": "https://ohschonhell.de/orte/stellwerk+hamburg/100",
+      "time": "23:00",
+      "price": "Spende (12€)",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Bullerei",
+        "type": "Tim Mälzer Restaurant",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/",
+        "coords": [53.5636, 9.9622]
+      },
+      "bar": {
+        "name": "Stellwerk Bar",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://stellwerk-hamburg.com/"
+      }
+    },
+    {
+      "id": "dez20-hamburg-singt",
+      "emoji": "🎄",
+      "title": "Hamburg Singt - Weihnachtssingen",
+      "date": "2025-12-20",
+      "category": "musik",
+      "description": "Gemeinsam Weihnachtslieder singen mit 9-köpfiger Live-Band! HVV-Ticket inklusive.",
+      "location": "Barclays Arena",
+      "address": "Sylvesterallee 10, 22525 Hamburg",
+      "coords": [53.5872, 9.8983],
+      "link": "https://www.hamburg-singt.de/",
+      "time": "20:00",
+      "price": "ab 34€ (ausverkauft)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Arena Gastronomie",
+        "type": "Diverse Speisen",
+        "address": "In der Arena",
+        "link": "https://www.barclays-arena.de/"
+      },
+      "bar": {
+        "name": "Laundrette",
+        "type": "Cocktails Ottensen",
+        "address": "Friedensallee 26",
+        "link": "https://www.instagram.com/laundrette_hh/"
+      }
+    },
+    {
+      "id": "dez31-warehouse-xxl",
+      "emoji": "🎧",
+      "title": "NYE Warehouse XXL 2026",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "Silvester auf 4 Floors im Edelfettwerk - die größte Techno-Party Hamburgs!",
+      "location": "Edelfettwerk",
+      "address": "Schnackenburgallee 202, 22525 Hamburg",
+      "coords": [53.5822, 9.8947],
+      "link": "https://www.regioactive.de/party/nye-warehouse-xxl-2026-hamburg-edelfettwerk-2025-12-31-K07rdwD6vs",
+      "time": "23:00",
+      "price": "ab 35€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Edelfettwerk Bar",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://edelfettwerk.de/"
+      }
+    },
+    {
+      "id": "dez31-psychedelic",
+      "emoji": "🌀",
+      "title": "Psychedelic Nation Silvester Special",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "Psychedelische Beats & magische Lichtshows auf 1500qm mit 2 Floors! Protonica, Day.Din, DJ BIM.",
+      "location": "Docks Hamburg",
+      "address": "Spielbudenplatz 19, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://www.docks.de/",
+      "time": "22:00",
+      "price": "49€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Docks Bar",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://www.docks.de/"
+      }
+    },
+    {
+      "id": "dez31-boom-moondoo",
+      "emoji": "🏳️‍🌈",
+      "title": "BOOM - Queer NYE Party",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "Hamburgs größte Queer-Party! 2 Floors, beste Musik, Dancer & Drag Queens im Moondoo.",
+      "location": "Moondoo",
+      "address": "Reeperbahn 136, 20359 Hamburg",
+      "coords": [53.5497, 9.9567],
+      "link": "https://www.moondoo.de/",
+      "time": "22:00",
+      "price": "ab 30€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Block House",
+        "type": "Steakhouse",
+        "address": "Reeperbahn 117",
+        "link": "https://www.block-house.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Moondoo Bar",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://www.moondoo.de/"
+      }
+    },
+    {
+      "id": "dez31-karoline",
+      "emoji": "🥂",
+      "title": "Silvester All-Inclusive Karoline",
+      "date": "2025-12-31",
+      "category": "musik",
+      "description": "4 Floors + Außenbereich + Winter Wonderland! ALLE Drinks inklusive. Charts, House, 80s-2000s.",
+      "location": "Karoline",
+      "address": "Karolinenstraße 45, 20357 Hamburg",
+      "coords": [53.5578, 9.9614],
+      "link": "https://karoline.club/",
+      "time": "21:00",
+      "price": "89€ (All-Inclusive)",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Snack Area inklusive",
+        "type": "Im Club",
+        "address": "Im Club",
+        "link": "https://karoline.club/"
+      },
+      "bar": {
+        "name": "Alle Drinks inklusive",
+        "type": "All-Inclusive",
+        "address": "Im Club",
+        "link": "https://karoline.club/"
+      }
+    },
+    {
+      "id": "dauer-weihnachtsmarkt-hafencity",
+      "emoji": "🎄",
+      "title": "Weihnachtsmarkt HafenCity",
+      "date": "2025-11-17",
+      "endDate": "2026-01-04",
+      "category": "aktiv",
+      "description": "Winterwunderland am Überseeboulevard! Glühwein, Leckereien & festliche Atmosphäre.",
+      "location": "Überseeboulevard HafenCity",
+      "address": "Überseeboulevard, 20457 Hamburg",
+      "coords": [53.5400, 10.0000],
+      "link": "https://www.hamburg-tourism.de/",
+      "time": "12:00-21:00",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Stände auf dem Markt",
+        "type": "Weihnachtsspezialitäten",
+        "address": "Auf dem Markt",
+        "link": "https://www.hamburg-tourism.de/"
+      },
+      "bar": {
+        "name": "Störtebeker Elbphilharmonie",
+        "type": "Craft Beer & Hafenblick",
+        "address": "Am Kaiserkai 1",
+        "link": "https://stoertebeker-elbphilharmonie.de/"
+      }
+    },
+    {
+      "id": "dauer-winter-pride",
+      "emoji": "🏳️‍🌈",
+      "title": "Winter Pride - Queerer Weihnachtsmarkt",
+      "date": "2025-11-17",
+      "endDate": "2025-12-30",
+      "category": "aktiv",
+      "description": "Hamburgs queerer Weihnachtsmarkt auf der Langen Reihe in St. Georg!",
+      "location": "Lange Reihe, St. Georg",
+      "address": "Lange Reihe, 20099 Hamburg",
+      "coords": [53.5544, 10.0092],
+      "link": "https://www.winter-pride.de/",
+      "time": "12:00-22:00",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Cox",
+        "type": "Restaurant & Bar",
+        "address": "Lange Reihe 68",
+        "link": "https://www.restaurant-cox.de/",
+        "coords": [53.5544, 10.0092]
+      },
+      "bar": {
+        "name": "Glühwein am Markt",
+        "type": "Weihnachtsmarkt",
+        "address": "Auf dem Markt",
+        "link": "https://www.winter-pride.de/"
+      }
+    },
+    {
+      "id": "dauer-strandpauli-winter",
+      "emoji": "❄️",
+      "title": "Wintermarkt StrandPauli",
+      "date": "2025-11-01",
+      "endDate": "2026-02-15",
+      "category": "aktiv",
+      "description": "Beach Club wird zum Wintermarkt! Glühwein mit Hafenblick, Mi-So geöffnet.",
+      "location": "StrandPauli",
+      "address": "St. Pauli Hafenstraße 89, 20359 Hamburg",
+      "coords": [53.5456, 9.9511],
+      "link": "https://www.strandpauli.de/",
+      "time": "Mi-So ab 16:00",
+      "price": "Eintritt frei",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "StrandPauli Küche",
+        "type": "Wintergerichte",
+        "address": "Vor Ort",
+        "link": "https://www.strandpauli.de/"
+      },
+      "bar": {
+        "name": "Glühwein & Drinks",
+        "type": "Mit Hafenblick",
+        "address": "Vor Ort",
+        "link": "https://www.strandpauli.de/"
+      }
     }
   ],
   "categories": {
