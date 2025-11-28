@@ -1457,6 +1457,539 @@
         "address": "Poolstraße 11",
         "link": "https://www.kampai-bar.de/"
       }
+    },
+    {
+      "id": "dez18-winterspektakel",
+      "emoji": "🎪",
+      "title": "Winterspektakel Hamburg RELOADED",
+      "date": "2025-12-18",
+      "endDate": "2026-01-04",
+      "category": "variete",
+      "description": "70-Min-Show mit Akrobatik, Live-Musik & Lichteffekten + Jahrmarkt + Wintermarkt auf der Trabrennbahn!",
+      "location": "Trabrennbahn Bahrenfeld",
+      "address": "Luruper Chaussee 30, 22761 Hamburg",
+      "coords": [53.5711, 9.8833],
+      "link": "https://winterspektakel.de/",
+      "time": "verschiedene Zeiten",
+      "price": "ab 19€",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Food Court im Winterspektakel",
+        "type": "Verschiedene Stände",
+        "address": "Auf dem Gelände",
+        "link": "https://winterspektakel.de/"
+      },
+      "bar": {
+        "name": "Glühwein & Drinks",
+        "type": "Wintermarkt-Atmosphäre",
+        "address": "Auf dem Gelände",
+        "link": "https://winterspektakel.de/"
+      }
+    },
+    {
+      "id": "dez20-quatsch",
+      "emoji": "😂",
+      "title": "Quatsch Comedy Club",
+      "date": "2025-12-20",
+      "category": "comedy",
+      "description": "Live Show mit Simon Mann, Johann Theissen, Josepha Walter & Dittmar Bachmann. Moderiert von Lutz von Rosenberg Lipinsky.",
+      "location": "Quatsch Comedy Club",
+      "address": "Reeperbahn 39, 20359 Hamburg",
+      "coords": [53.5494, 9.9619],
+      "link": "https://quatsch-comedy-club.de/hamburg/",
+      "time": "19:00",
+      "price": "ab 25€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Block House",
+        "type": "Steakhouse",
+        "address": "Reeperbahn 117",
+        "link": "https://www.block-house.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Rooftop Bar",
+        "address": "Reeperbahn 1",
+        "link": "https://clouds-hamburg.de/"
+      }
+    },
+    {
+      "id": "dez26-gainsbourg",
+      "emoji": "🎭",
+      "title": "Je t'aime - Das Leben des Serge Gainsbourg",
+      "date": "2025-12-26",
+      "endDate": "2026-01-18",
+      "category": "theater",
+      "description": "Das spektakuläre Leben des Serge Gainsbourg - Musik, Liebe, Skandale!",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, 20146 Hamburg",
+      "coords": [53.5681, 9.9897],
+      "link": "https://hamburger-kammerspiele.de/",
+      "time": "20:00",
+      "price": "ab 30€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Café Leonar",
+        "type": "Jüdische Küche",
+        "address": "Grindelhof 59",
+        "link": "https://www.cafe-leonar.de/",
+        "coords": [53.5678, 9.9833]
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy Bar",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "dez26-nacht-tankstelle",
+      "emoji": "🎭",
+      "title": "Nacht-Tankstelle",
+      "date": "2025-12-26",
+      "category": "theater",
+      "description": "Premiere am St. Pauli Theater - spannendes neues Stück!",
+      "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://www.st-pauli-theater.de/",
+      "time": "20:00",
+      "price": "ab 19€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Bullerei",
+        "type": "Tim Mälzer Restaurant",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/",
+        "coords": [53.5636, 9.9622]
+      },
+      "bar": {
+        "name": "Silbersack",
+        "type": "Kiez-Legende",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
+    },
+    {
+      "id": "dez27-comedyflash",
+      "emoji": "😂",
+      "title": "Comedyflash Hamburg",
+      "date": "2025-12-27",
+      "category": "comedy",
+      "description": "Die besten Stand-Up Comedians - wechselndes Line-Up!",
+      "location": "Comedyflash Hamburg",
+      "address": "Spielbudenplatz 21, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://comedyflash.de/hamburg/",
+      "time": "20:00",
+      "price": "ab 19,90€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Die Kombüse",
+        "type": "Mexikanisch",
+        "address": "Wohlwillstraße 20",
+        "link": "https://www.diekombuesehamburg.de/",
+        "coords": [53.5517, 9.9600]
+      },
+      "bar": {
+        "name": "Ritze",
+        "type": "Boxkneipe",
+        "address": "Reeperbahn 140",
+        "link": "https://www.ritze.de/"
+      }
+    },
+    {
+      "id": "dez29-corvus",
+      "emoji": "🎸",
+      "title": "Corvus Corax - In Ecclesia",
+      "date": "2025-12-29",
+      "category": "musik",
+      "description": "Mittelalter-Rock-Legende mit besonderem Kirchenprogramm!",
+      "location": "Fabrik Hamburg",
+      "address": "Barnerstraße 36, 22765 Hamburg",
+      "coords": [53.5531, 9.9339],
+      "link": "https://fabrik.de/",
+      "time": "19:40",
+      "price": "ab 42,95€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Maquis",
+        "type": "100% Vegetarisch",
+        "address": "Max-Brauer-Allee 207",
+        "link": "https://maquis.hamburg/",
+        "coords": [53.5589, 9.9450]
+      },
+      "bar": {
+        "name": "Ampere",
+        "type": "Cocktails & Vinyl",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://www.instagram.com/ampere_bar/"
+      }
+    },
+    {
+      "id": "dez31-kammerspiele",
+      "emoji": "🎭",
+      "title": "Ron Williams meets Harry Belafonte - Silvester",
+      "date": "2025-12-31",
+      "category": "theater",
+      "description": "Ron Williams und das Jörg Seidel Trio - Silvester Special!",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, 20146 Hamburg",
+      "coords": [53.5681, 9.9897],
+      "link": "https://hamburger-kammerspiele.de/",
+      "time": "19:00",
+      "price": "ab 45€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Trific Schanze",
+        "type": "Modern European",
+        "address": "Schulterblatt 1",
+        "link": "https://www.trific.de/",
+        "coords": [53.5631, 9.9617]
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Silvester-Party",
+        "address": "Reeperbahn 1",
+        "link": "https://clouds-hamburg.de/"
+      }
+    },
+    {
+      "id": "jan02-stpauli-elphi",
+      "emoji": "🎵",
+      "title": "St. Pauli Theater meets Elbphilharmonie",
+      "date": "2026-01-02",
+      "category": "musik",
+      "description": "Einzigartiges Crossover-Event - Theater trifft Konzerthaus!",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00",
+      "price": "ab 40€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Hobenköök",
+        "type": "Regional HafenCity",
+        "address": "Stockmeyerstraße 43",
+        "link": "https://www.hobenkoeoek.de/",
+        "coords": [53.5419, 10.0189]
+      },
+      "bar": {
+        "name": "Störtebeker Elbphilharmonie",
+        "type": "Craft Beer & Hafenblick",
+        "address": "Am Kaiserkai 1",
+        "link": "https://stoertebeker-elbphilharmonie.de/"
+      }
+    },
+    {
+      "id": "jan03-nebenan",
+      "emoji": "🎭",
+      "title": "Nebenan",
+      "date": "2026-01-03",
+      "category": "theater",
+      "description": "Neue Premiere am St. Pauli Theater!",
+      "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://www.st-pauli-theater.de/",
+      "time": "20:00",
+      "price": "ab 19€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Tazzi Pizza",
+        "type": "Beste Pizza St. Pauli",
+        "address": "Reeperbahn 61",
+        "link": "https://www.tazzi-pizza.de/",
+        "coords": [53.5494, 9.9611]
+      },
+      "bar": {
+        "name": "Katze",
+        "type": "Kiezbar",
+        "address": "Schulterblatt 86",
+        "link": "https://www.instagram.com/katze_bar/"
+      }
+    },
+    {
+      "id": "jan04-woods",
+      "emoji": "🎸",
+      "title": "Woods of Birnam",
+      "date": "2026-01-04",
+      "category": "musik",
+      "description": "Theatrale Indie-Rock-Band von Christian Friedel (Babylon Berlin)!",
+      "location": "Bahnhof Pauli",
+      "address": "Spielbudenplatz 21-22, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://bahnhof-pauli.de/",
+      "time": "20:00",
+      "price": "ab 25€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "XO Seafoodbar",
+        "type": "Fisch & Meeresfrüchte",
+        "address": "Peterstraße 28",
+        "link": "https://www.xo-seafoodbar.de/",
+        "coords": [53.5500, 9.9667]
+      },
+      "bar": {
+        "name": "Golden Pudel",
+        "type": "Kultclub",
+        "address": "St. Pauli Fischmarkt 27",
+        "link": "https://www.pudel.com/"
+      }
+    },
+    {
+      "id": "jan08-vision-string",
+      "emoji": "🎻",
+      "title": "Vision String Quartet",
+      "date": "2026-01-08",
+      "category": "musik",
+      "description": "Berliner Quartett - Klassik trifft Pop, Rock & Minimal Music in der Elphi!",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00",
+      "price": "ab 30€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Wandrahm",
+        "type": "HafenCity Fine Dining",
+        "address": "Am Sandtorkai 77",
+        "link": "https://www.restaurant-wandrahm.de/",
+        "coords": [53.5433, 9.9917]
+      },
+      "bar": {
+        "name": "Boilerman Bar",
+        "type": "Cocktails & Whisky",
+        "address": "Ericusspitze 4",
+        "link": "https://www.boilermanbar.de/"
+      }
+    },
+    {
+      "id": "jan09-hara",
+      "emoji": "🎸",
+      "title": "The Hara",
+      "date": "2026-01-09",
+      "category": "musik",
+      "description": "Schottische Rock-Band live im Bahnhof Pauli!",
+      "location": "Bahnhof Pauli",
+      "address": "Spielbudenplatz 21-22, 20359 Hamburg",
+      "coords": [53.5489, 9.9639],
+      "link": "https://bahnhof-pauli.de/",
+      "time": "20:00",
+      "price": "ab 20€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Kleine Pause",
+        "type": "Burger & Bowls",
+        "address": "Friedrichstraße 25",
+        "link": "https://www.instagram.com/kleinepause_hamburg/",
+        "coords": [53.5503, 9.9658]
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Bar",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
+    },
+    {
+      "id": "jan17-oslo-phil",
+      "emoji": "🎻",
+      "title": "Oslo Philharmonic Orchestra",
+      "date": "2026-01-17",
+      "category": "musik",
+      "description": "Weltklasse-Orchester aus Norwegen in der Elbphilharmonie!",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00",
+      "price": "ab 45€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "VLET in der Speicherstadt",
+        "type": "Hamburger Küche",
+        "address": "Am Sandtorkai 23-24",
+        "link": "https://www.vlet.de/",
+        "coords": [53.5436, 9.9914]
+      },
+      "bar": {
+        "name": "The Fontenay Bar",
+        "type": "Champagner & Cocktails",
+        "address": "Fontenay 10",
+        "link": "https://www.thefontenay.com/"
+      }
+    },
+    {
+      "id": "jan20-wiener-phil",
+      "emoji": "🎻",
+      "title": "Wiener Philharmoniker",
+      "date": "2026-01-20",
+      "category": "musik",
+      "description": "Eines der besten Orchester der Welt live in Hamburg!",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5414, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00",
+      "price": "ab 80€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Haerlin",
+        "type": "2 Michelin-Sterne",
+        "address": "Neuer Jungfernstieg 9-14",
+        "link": "https://hvj.de/",
+        "coords": [53.5561, 9.9933]
+      },
+      "bar": {
+        "name": "Jahreszeiten Bar",
+        "type": "Classic Cocktails",
+        "address": "Neuer Jungfernstieg 9-14",
+        "link": "https://hvj.de/"
+      }
+    },
+    {
+      "id": "jan25-mama",
+      "emoji": "🎭",
+      "title": "Mama - Premiere",
+      "date": "2026-01-25",
+      "category": "theater",
+      "description": "Neue Premiere an den Hamburger Kammerspielen!",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, 20146 Hamburg",
+      "coords": [53.5681, 9.9897],
+      "link": "https://hamburger-kammerspiele.de/",
+      "time": "20:00",
+      "price": "ab 30€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Jellyfish",
+        "type": "Fisch & Seafood",
+        "address": "Weidenallee 12",
+        "link": "https://www.jellyfish-restaurant.de/",
+        "coords": [53.5694, 9.9647]
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Legendäre Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "jan26-filiz",
+      "emoji": "😂",
+      "title": "Filiz Tasdan - SUPER PLUS",
+      "date": "2026-01-26",
+      "category": "comedy",
+      "description": "Solo-Comedy-Show der beliebten Stand-Up Comedienne!",
+      "location": "Centralkomitee",
+      "address": "Beim Grünen Jäger 23, 20359 Hamburg",
+      "coords": [53.5592, 9.9625],
+      "link": "https://www.centralkomitee.de/",
+      "time": "20:00",
+      "price": "ab 25€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Altes Mädchen",
+        "type": "Craft Beer & Küche",
+        "address": "Lagerstraße 28b",
+        "link": "https://www.altes-maedchen.com/",
+        "coords": [53.5636, 9.9628]
+      },
+      "bar": {
+        "name": "Kronensaal",
+        "type": "Gemütliche Schanze-Bar",
+        "address": "Sternstraße 2",
+        "link": "https://www.kronensaal-hamburg.de/"
+      }
+    },
+    {
+      "id": "dauer-kochkurs-olivia",
+      "emoji": "👨‍🍳",
+      "title": "Kochkurs für Paare - Olivia",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "handwerk",
+      "description": "4h gemeinsam kochen im kleinen Kreis! Perfekt für Date Night.",
+      "location": "Olivia Kochschule",
+      "address": "Methfesselstraße 96, 20255 Hamburg",
+      "coords": [53.5756, 9.9547],
+      "link": "https://www.olivia-hamburg.com/",
+      "time": "verschiedene",
+      "price": "ab 109€/Person",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Menü inklusive",
+        "type": "Selbst gekocht!",
+        "address": "Vor Ort",
+        "link": "https://www.olivia-hamburg.com/"
+      },
+      "bar": {
+        "name": "Familieneck",
+        "type": "Gemütliche Kneipe",
+        "address": "Friedensallee 14",
+        "link": "https://www.instagram.com/familieneck/"
+      }
+    },
+    {
+      "id": "dauer-kochkurs-poletto",
+      "emoji": "👩‍🍳",
+      "title": "Kochkurs bei Cornelia Poletto",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "handwerk",
+      "description": "Kochen lernen von der Sterneköchin! Beginner bis Masterclass.",
+      "location": "Cornelia Poletto Kochschule",
+      "address": "Eppendorfer Landstraße 80, 20249 Hamburg",
+      "coords": [53.5889, 10.0083],
+      "link": "https://www.cornelia-poletto.de/kochschule/",
+      "time": "verschiedene",
+      "price": "ab 200€/Person",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "4-Gang-Menü inklusive",
+        "type": "Selbst gekocht mit Sterneköchin",
+        "address": "Vor Ort",
+        "link": "https://www.cornelia-poletto.de/"
+      },
+      "bar": {
+        "name": "Die Schöne",
+        "type": "Bar & Café Winterhude",
+        "address": "Barmbeker Straße 159",
+        "link": "https://www.instagram.com/dieschoene_bar/"
+      }
+    },
+    {
+      "id": "dauer-pasta-dammetto",
+      "emoji": "🍝",
+      "title": "Pasta-Workshop Dammetto",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "handwerk",
+      "description": "Frische Nudeln selbst machen! Workshop + 3-Gang-Menü + Wein.",
+      "location": "Dammetto Nudeln",
+      "address": "Erikastraße 70, 20251 Hamburg",
+      "coords": [53.5883, 9.9867],
+      "link": "https://dammetto.de/",
+      "time": "verschiedene",
+      "price": "ab 89€/Person",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "3-Gang-Menü inklusive",
+        "type": "Selbstgemachte Pasta",
+        "address": "Vor Ort",
+        "link": "https://dammetto.de/"
+      },
+      "bar": {
+        "name": "Eppendorfer Grillstation",
+        "type": "Gemütliche Bar",
+        "address": "Eppendorfer Weg 56",
+        "link": "https://www.instagram.com/eppendorfergrillstation/"
+      }
     }
   ],
   "categories": {
