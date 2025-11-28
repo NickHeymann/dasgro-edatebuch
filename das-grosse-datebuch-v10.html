@@ -3148,15 +3148,40 @@ END:VCALENDAR`;
             }, { passive: false });
             canvas.addEventListener('touchend', () => isDragging = false);
             
-            canvas.addEventListener('click', e => {
+            // Marker click handler function (shared between mouse and touch)
+            function handleMarkerClick(clientX, clientY) {
                 const rect = canvas.getBoundingClientRect();
-                const mouse = new THREE.Vector2(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
+                const mouse = new THREE.Vector2(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
                 const raycaster = new THREE.Raycaster();
                 raycaster.setFromCamera(mouse, camera);
                 const markers = globeGroup.children.filter(c => c.userData.destination);
                 const intersects = raycaster.intersectObjects(markers);
                 if (intersects.length > 0) openDestinationPopup(intersects[0].object.userData.destination, intersects[0].object.userData.isVisited);
-            });
+            }
+
+            canvas.addEventListener('click', e => handleMarkerClick(e.clientX, e.clientY));
+
+            // Mobile touch support for markers
+            let touchStartTime = 0;
+            let touchStartPos = { x: 0, y: 0 };
+            canvas.addEventListener('touchstart', e => {
+                touchStartTime = Date.now();
+                touchStartPos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }, { passive: true });
+
+            canvas.addEventListener('touchend', e => {
+                // Only trigger if it was a tap (short duration, minimal movement)
+                const touchDuration = Date.now() - touchStartTime;
+                if (touchDuration < 300 && e.changedTouches.length > 0) {
+                    const touch = e.changedTouches[0];
+                    const dx = touch.clientX - touchStartPos.x;
+                    const dy = touch.clientY - touchStartPos.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 20) { // Tap threshold
+                        handleMarkerClick(touch.clientX, touch.clientY);
+                    }
+                }
+            }, { passive: true });
             
             function animate() { requestAnimationFrame(animate); renderer.render(scene, camera); }
             animate();
@@ -3241,71 +3266,57 @@ END:VCALENDAR`;
             const material = new THREE.MeshBasicMaterial({
                 color: color,
                 transparent: true,
-                opacity: 0.7,
+                opacity: 0.85,
                 side: THREE.DoubleSide
             });
+
+            // Check if polygon crosses the antimeridian (dateline)
+            const crossesAntimeridian = (coords) => {
+                for (let i = 0; i < coords.length - 1; i++) {
+                    const lon1 = coords[i][0];
+                    const lon2 = coords[i + 1][0];
+                    if (Math.abs(lon2 - lon1) > 180) return true;
+                }
+                return false;
+            };
+
+            // Split polygon at antimeridian
+            const splitAtAntimeridian = (coords) => {
+                const west = [], east = [];
+                coords.forEach(([lon, lat]) => {
+                    if (lon > 0) east.push([lon, lat]);
+                    else west.push([lon, lat]);
+                });
+                return [west, east].filter(arr => arr.length >= 3);
+            };
 
             const drawPolygonFill = (coords) => {
                 if (coords.length < 3) return;
 
-                // Create points for the polygon
-                const points2D = [];
-                const points3D = [];
-
-                coords.forEach(([lon, lat]) => {
-                    points2D.push(new THREE.Vector2(lon, lat));
-                    points3D.push(latLonToVector3(lat, lon, radius));
-                });
-
-                // Use triangulation for the polygon
-                if (points3D.length >= 3) {
-                    try {
-                        const shape = new THREE.Shape();
-                        shape.moveTo(points2D[0].x, points2D[0].y);
-                        for (let i = 1; i < points2D.length; i++) {
-                            shape.lineTo(points2D[i].x, points2D[i].y);
-                        }
-                        shape.closePath();
-
-                        const shapeGeometry = new THREE.ShapeGeometry(shape);
-                        const positions = shapeGeometry.attributes.position.array;
-
-                        // Map flat positions back to sphere
-                        for (let i = 0; i < positions.length; i += 3) {
-                            const lon = positions[i];
-                            const lat = positions[i + 1];
-                            const spherePos = latLonToVector3(lat, lon, radius);
-                            positions[i] = spherePos.x;
-                            positions[i + 1] = spherePos.y;
-                            positions[i + 2] = spherePos.z;
-                        }
-
-                        shapeGeometry.attributes.position.needsUpdate = true;
-                        shapeGeometry.computeVertexNormals();
-
-                        const mesh = new THREE.Mesh(shapeGeometry, material);
-                        globeGroup.add(mesh);
-                    } catch (e) {
-                        // Fallback: draw as simple triangles fan from centroid
-                        drawPolygonFallback(coords, material, radius);
-                    }
+                // Handle antimeridian crossing
+                if (crossesAntimeridian(coords)) {
+                    const parts = splitAtAntimeridian(coords);
+                    parts.forEach(part => drawSinglePolygon(part, material, radius));
+                    return;
                 }
+
+                drawSinglePolygon(coords, material, radius);
             };
 
-            // Fallback for complex shapes that fail triangulation
-            const drawPolygonFallback = (coords, mat, rad) => {
+            const drawSinglePolygon = (coords, mat, rad) => {
                 if (coords.length < 3) return;
 
-                // Calculate centroid
+                // Calculate proper centroid
                 let sumLon = 0, sumLat = 0;
                 coords.forEach(([lon, lat]) => {
                     sumLon += lon;
                     sumLat += lat;
                 });
-                const centroid = [sumLon / coords.length, sumLat / coords.length];
-                const centroidVec = latLonToVector3(centroid[1], centroid[0], rad);
+                const centroidLon = sumLon / coords.length;
+                const centroidLat = sumLat / coords.length;
+                const centroidVec = latLonToVector3(centroidLat, centroidLon, rad);
 
-                // Create triangle fan from centroid
+                // Create triangle fan from centroid - always works!
                 const geometry = new THREE.BufferGeometry();
                 const vertices = [];
 
