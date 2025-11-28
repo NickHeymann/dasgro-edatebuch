@@ -1493,47 +1493,71 @@
             ]
         };
 
-        // Zentrale Restaurant & Bar Datenbank mit Koordinaten
+        // Zentrale Restaurant & Bar Datenbank mit Koordinaten (nur vegetarierfreundlich!)
         const venueDatabase = {
             restaurants: [
                 // Innenstadt / Rathausmarkt
                 { name: 'Café Paris', type: 'Französisch', address: 'Rathausstraße 4', coords: [53.5503, 9.9933], link: 'https://www.cafeparis.net/', veggie: true },
                 { name: 'Café Leonar', type: 'Jüdische Küche', address: 'Grindelhof 59', coords: [53.5678, 9.9833], link: 'https://www.cafe-leonar.de/', veggie: true },
+                { name: 'Wandrahm', type: 'Modern Europäisch', address: 'Am Sandtorkai 77', coords: [53.5433, 9.9892], link: '', veggie: true },
                 // St. Pauli / Schanze
                 { name: 'Tazzi Pizza', type: 'Beste Pizza St. Pauli', address: 'Reeperbahn 61', coords: [53.5494, 9.9611], link: 'https://www.tazzi-pizza.de/', veggie: true },
                 { name: 'Kleine Pause', type: 'Burger & Bowls', address: 'Friedrichstraße 25', coords: [53.5503, 9.9658], link: 'https://www.instagram.com/kleinepause_hamburg/', veggie: true },
                 { name: 'Die Kombüse', type: 'Mexikanisch', address: 'Wohlwillstraße 20', coords: [53.5517, 9.9600], link: 'https://www.diekombuesehamburg.de/', veggie: true },
-                { name: 'Altes Mädchen', type: 'Craft Beer & vegetarische Küche', address: 'Lagerstraße 28b', coords: [53.5636, 9.9628], link: 'https://www.altes-maedchen.com/', veggie: true },
+                { name: 'Altes Mädchen', type: 'Craft Beer & vegetarisch', address: 'Lagerstraße 28b', coords: [53.5636, 9.9628], link: 'https://www.altes-maedchen.com/', veggie: true },
+                { name: 'Vincent Vegan', type: '100% Vegan Burger', address: 'Schulterblatt 31', coords: [53.5622, 9.9583], link: 'https://vincent-vegan.com/', veggie: true },
+                { name: 'Leaf', type: '100% Vegan', address: 'Beim Grünen Jäger 14', coords: [53.5578, 9.9592], link: '', veggie: true },
+                { name: 'Bidges & Sons', type: 'Veganer Brunch', address: 'Schulterblatt 1', coords: [53.5617, 9.9611], link: '', veggie: true },
                 // Altona / Ottensen
                 { name: 'Maquis', type: '100% Vegetarisch', address: 'Thedestraße 2', coords: [53.5519, 9.9347], link: 'https://www.maquis.de/', veggie: true },
-                { name: 'Ahoi Steffen', type: 'Fischbrötchen', address: 'Ottenser Hauptstr.', coords: [53.5508, 9.9256], link: '', veggie: false },
+                { name: 'Froindlichst', type: '100% Vegan', address: 'Bahrenfelder Str. 131', coords: [53.5556, 9.9375], link: 'https://froindlichst.de/', veggie: true },
+                { name: 'Café May', type: 'Frühstück & Kuchen', address: 'Beim Grünen Jäger 66', coords: [53.5572, 9.9544], link: '', veggie: true },
                 // Eppendorf / Winterhude
                 { name: 'Mirou', type: 'Israelische Mezze', address: 'Mühlenkamp 43', coords: [53.5889, 10.0083], link: 'https://www.mirou-hamburg.de/', veggie: true },
                 { name: 'Tassajara', type: 'Vegan seit 1976', address: 'Eppendorfer Weg 47', coords: [53.5700, 9.9600], link: 'https://www.tassajara.de/', veggie: true },
-                // Karoviertel
+                { name: 'Happenpappen', type: 'Bio & Vegetarisch', address: 'Eppendorfer Weg 63', coords: [53.5711, 9.9583], link: '', veggie: true },
+                // Karoviertel / Sternschanze
                 { name: 'Cai Kitchen', type: '100% Vegan Sichuan', address: 'Glashüttenstr. 85a', coords: [53.5617, 9.9636], link: 'https://www.cai-kitchen.de/', veggie: true },
-                { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße', coords: [53.5633, 9.9611], link: '', veggie: true },
-                // Grindel
-                { name: 'Pony Bar', type: 'Gemütliche Bar & Essen', address: 'Allende-Platz', coords: [53.5669, 9.9850], link: '', veggie: true },
-                // HafenCity
+                { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße 2', coords: [53.5633, 9.9611], link: '', veggie: true },
+                { name: 'Mehl, Butter, Zucker', type: 'Café & Kuchen', address: 'Bartelsstraße 26', coords: [53.5639, 9.9597], link: '', veggie: true },
+                { name: 'Nil', type: 'Sudanesisch Vegetarisch', address: 'Neuer Pferdemarkt 5', coords: [53.5569, 9.9619], link: '', veggie: true },
+                // Grindel / Uni
+                { name: 'Pony Bar', type: 'Bar & Essen', address: 'Allende-Platz 1', coords: [53.5669, 9.9850], link: '', veggie: true },
+                { name: 'Campus Suite', type: 'Café & Bistro', address: 'Grindelallee 43', coords: [53.5672, 9.9842], link: '', veggie: true },
+                // HafenCity / Speicherstadt
                 { name: 'Hobenköök', type: 'Regionale Küche', address: 'Stockmeyerstraße 43', coords: [53.5350, 10.0050], link: 'https://www.hobenkoeok.de/', veggie: true },
-                { name: 'Oberhafenkantine', type: 'Hafenflair', address: 'Stockmeyerstraße 39', coords: [53.5375, 10.0075], link: '', veggie: false },
+                { name: 'Fleetschlösschen', type: 'Café Speicherstadt', address: 'Brooktorkai 17', coords: [53.5433, 10.0017], link: '', veggie: true },
+                // Barmbek / Uhlenhorst
+                { name: 'Momo Ramen', type: 'Vegane Ramen-Option', address: 'Mühlenkamp 59', coords: [53.5883, 10.0075], link: '', veggie: true },
+                { name: 'Feldstern', type: 'Bio-Café', address: 'Sternstraße 2', coords: [53.5856, 10.0039], link: '', veggie: true },
             ],
             bars: [
                 // Innenstadt
                 { name: 'Le Lion', type: 'Beste Cocktailbar', address: 'Rathausstraße 3', coords: [53.5503, 9.9930], link: 'https://www.lelion.net/' },
                 { name: 'Parlament', type: 'Weinbar', address: 'Rathausmarkt 1', coords: [53.5500, 9.9920], link: 'https://www.parlament-hamburg.de/' },
-                // St. Pauli
+                { name: 'Boilerman Bar', type: 'Highballs', address: 'Eppendorfer Weg 211', coords: [53.5722, 9.9583], link: 'https://www.theboilerman.de/' },
+                // St. Pauli / Reeperbahn
                 { name: 'Zum Silbersack', type: 'Kiez-Legende seit 1949', address: 'Silbersackstraße 9', coords: [53.5497, 9.9578], link: 'https://www.silbersack.de/' },
                 { name: 'Clouds', type: 'Rooftop Bar', address: 'Reeperbahn 1', coords: [53.5494, 9.9606], link: 'https://clouds-hamburg.de/' },
                 { name: 'Ritze', type: 'Boxkneipe', address: 'Reeperbahn 140', coords: [53.5489, 9.9539], link: 'https://www.ritze.de/' },
                 { name: 'Astra Stube', type: 'Kultkneipe', address: 'Max-Brauer-Allee 200', coords: [53.5550, 9.9528], link: 'https://www.astrastube.de/' },
+                { name: 'Komet', type: 'Indie-Bar', address: 'Erichstraße 11', coords: [53.5506, 9.9622], link: '' },
+                { name: 'Molotow', type: 'Club & Bar', address: 'Nobistor 14', coords: [53.5489, 9.9536], link: 'https://molotowclub.com/' },
                 // Schanze / Karoviertel
-                { name: 'Familieneck', type: 'Kultkneipe Schanze', address: 'Friedensallee', coords: [53.5611, 9.9600], link: '' },
+                { name: 'Familieneck', type: 'Kultkneipe Schanze', address: 'Friedensallee 9', coords: [53.5611, 9.9600], link: '' },
+                { name: 'Katze', type: 'Bar & Späti', address: 'Schulterblatt 63', coords: [53.5633, 9.9569], link: '' },
+                { name: 'Goldfischglas', type: 'Gemütliche Kneipe', address: 'Bartelsstraße 30', coords: [53.5636, 9.9594], link: '' },
+                { name: 'Zwick', type: 'Rock-Kneipe', address: 'Sternstraße 28', coords: [53.5628, 9.9558], link: '' },
+                { name: 'Reh Bar', type: 'Kleine Cocktailbar', address: 'Juliusstraße 22', coords: [53.5617, 9.9564], link: '' },
                 // Eppendorf / Winterhude
                 { name: 'Julep', type: 'Whiskey & Cocktails', address: 'Eppendorfer Weg 139', coords: [53.5700, 9.9650], link: 'https://www.instagram.com/julep_bar/' },
                 { name: 'Hadleys', type: 'Speakeasy', address: 'Beim Schlump 84a', coords: [53.5683, 9.9775], link: 'https://hadleys.de/' },
-                { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Straße 159', coords: [53.5800, 10.0050], link: '' },
+                { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Str. 159', coords: [53.5800, 10.0050], link: '' },
+                { name: 'Cascadas', type: 'Cocktails Eppendorf', address: 'Eppendorfer Landstr. 80', coords: [53.5856, 9.9958], link: '' },
+                // Altona / Ottensen
+                { name: 'Nachtasyl', type: 'Thalia Theater Bar', address: 'Alstertor 1', coords: [53.5522, 9.9986], link: '' },
+                { name: 'Elbschlosskeller', type: 'Legendäre Kneipe', address: 'Elbberg 1', coords: [53.5469, 9.9328], link: '' },
+                { name: 'Strandperle', type: 'Beach Bar', address: 'Övelgönne 60', coords: [53.5439, 9.9089], link: '' },
             ]
         };
 
@@ -2817,11 +2841,12 @@
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
 
-            // Finde nahegelegene Bars
-            const nearbyBars = findNearbyVenues(e.coords, 'bars', 3);
+            // Finde nahegelegene Bars (mehr Optionen!)
+            const nearbyBars = findNearbyVenues(e.coords, 'bars', 5);
 
             // Speichere die Optionen für später
             currentDatePlan.barOptions = nearbyBars;
+            currentDatePlan.selectedBars = []; // Array für Mehrfachauswahl
 
             const restaurantInfo = r ? `
                 <div style="background:white;padding:12px;border-radius:10px;margin-top:8px;text-align:left;">
@@ -2831,13 +2856,18 @@
             ` : '';
 
             const barOptionsHtml = nearbyBars.map((b, i) => `
-                <div class="venue-option" onclick="selectBar(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
-                    <strong>🍸 ${b.name}</strong>
-                    ${b.distance ? `<span style="float:right;color:var(--rose-dark);font-size:0.85rem;">${(b.distance * 1000).toFixed(0)}m</span>` : ''}
-                    <br>
-                    <small style="color:var(--text-light)">${b.type || ''}</small><br>
-                    <small>${b.address || ''}</small>
-                    ${b.link ? `<br><a href="${b.link}" target="_blank" style="color:var(--rose-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zur Bar</a>` : ''}
+                <div class="venue-option bar-option" onclick="toggleBarSelection(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span class="bar-checkbox" style="width:22px;height:22px;border:2px solid var(--rose);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"></span>
+                        <div style="flex:1;">
+                            <strong>🍸 ${b.name}</strong>
+                            ${b.distance ? `<span style="float:right;color:var(--rose-dark);font-size:0.85rem;">${(b.distance * 1000).toFixed(0)}m</span>` : ''}
+                            <br>
+                            <small style="color:var(--text-light)">${b.type || ''}</small><br>
+                            <small>${b.address || ''}</small>
+                            ${b.link ? `<br><a href="${b.link}" target="_blank" style="color:var(--rose-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zur Bar</a>` : ''}
+                        </div>
+                    </div>
                 </div>
             `).join('') || '<p style="color:var(--text-light)">Keine Bars in der Nähe gefunden</p>';
 
@@ -2852,30 +2882,59 @@
                 </div>
 
                 <div class="date-builder-question">
-                    <h4>🍸 Willst du danach noch was trinken gehen?</h4>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Bars in der Nähe:</p>
+                    <h4>🍸 Bars für danach? (mehrere möglich)</h4>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Wähle eine oder mehrere Bars aus:</p>
                     ${barOptionsHtml}
-                    <button class="date-option-btn" style="margin-top:10px;width:100%;" onclick="skipBar()">Nein, reicht so</button>
+                    <div style="display:flex;gap:10px;margin-top:15px;">
+                        <button class="date-option-btn" style="flex:1;" onclick="confirmBarSelection()">Weiter</button>
+                        <button class="date-option-btn" style="flex:1;opacity:0.7;" onclick="skipBar()">Ohne Bar</button>
+                    </div>
                 </div>
             `;
         }
 
-        function selectBar(index) {
-            const b = currentDatePlan.barOptions[index];
-            currentDatePlan.bar = b;
-            currentDatePlan.wantDrinks = true;
+        function toggleBarSelection(index) {
+            const selectedIndex = currentDatePlan.selectedBars.indexOf(index);
+            if (selectedIndex > -1) {
+                // Bereits ausgewählt -> entfernen
+                currentDatePlan.selectedBars.splice(selectedIndex, 1);
+            } else {
+                // Neu hinzufügen
+                currentDatePlan.selectedBars.push(index);
+            }
 
-            // Highlight selected option
-            document.querySelectorAll('.venue-option').forEach((el, i) => {
-                el.style.borderColor = i === index ? 'var(--rose)' : 'transparent';
+            // UI aktualisieren
+            document.querySelectorAll('.bar-option').forEach((el, i) => {
+                const isSelected = currentDatePlan.selectedBars.includes(i);
+                el.style.borderColor = isSelected ? 'var(--rose)' : 'transparent';
+                el.style.background = isSelected ? 'var(--rose-light, #fdf2f3)' : 'white';
+                const checkbox = el.querySelector('.bar-checkbox');
+                if (checkbox) {
+                    checkbox.innerHTML = isSelected ? '✓' : '';
+                    checkbox.style.background = isSelected ? 'var(--rose)' : 'transparent';
+                    checkbox.style.color = 'white';
+                }
             });
+        }
 
-            setTimeout(() => renderDateBuilderSummary(), 300);
+        function confirmBarSelection() {
+            if (currentDatePlan.selectedBars.length > 0) {
+                // Bars in der Reihenfolge der Auswahl speichern
+                currentDatePlan.bars = currentDatePlan.selectedBars.map(i => currentDatePlan.barOptions[i]);
+                currentDatePlan.bar = currentDatePlan.bars[0]; // Erste Bar für Kompatibilität
+                currentDatePlan.wantDrinks = true;
+            } else {
+                currentDatePlan.bars = [];
+                currentDatePlan.bar = null;
+                currentDatePlan.wantDrinks = false;
+            }
+            renderDateBuilderSummary();
         }
 
         function skipBar() {
             currentDatePlan.wantDrinks = false;
             currentDatePlan.bar = null;
+            currentDatePlan.bars = [];
             renderDateBuilderSummary();
         }
 
@@ -2890,7 +2949,7 @@
             const flow = document.getElementById('dateBuilderFlow');
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
-            const b = currentDatePlan.bar;
+            const bars = currentDatePlan.bars || (currentDatePlan.bar ? [currentDatePlan.bar] : []);
 
             let steps = [];
             let stepNum = 1;
@@ -2906,8 +2965,11 @@
                 steps.push({ num: stepNum++, emoji: '🍽️', title: r.name, sub: r.type || '', link: r.link, coords: r.coords });
             }
 
-            if (currentDatePlan.wantDrinks && b) {
-                steps.push({ num: stepNum++, emoji: '🍸', title: b.name, sub: b.type || '', link: b.link, coords: b.coords });
+            // Alle ausgewählten Bars hinzufügen
+            if (currentDatePlan.wantDrinks && bars.length > 0) {
+                bars.forEach(b => {
+                    steps.push({ num: stepNum++, emoji: '🍸', title: b.name, sub: b.type || '', link: b.link, coords: b.coords });
+                });
             }
 
             const stepsHtml = steps.map(s => `
@@ -3017,7 +3079,7 @@
         function addDateToCalendar() {
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
-            const b = currentDatePlan.bar;
+            const bars = currentDatePlan.bars || (currentDatePlan.bar ? [currentDatePlan.bar] : []);
 
             // Verwende das ausgewählte Datum (nicht das Event-Startdatum!)
             const eventDate = new Date(currentDatePlan.selectedDate || e.date);
@@ -3042,8 +3104,12 @@
                 stepNum++;
             }
 
-            if (currentDatePlan.wantDrinks && b) {
-                description += `${stepNum}. ${b.name}${b.type ? ' (' + b.type + ')' : ''}\\n`;
+            // Alle ausgewählten Bars hinzufügen
+            if (currentDatePlan.wantDrinks && bars.length > 0) {
+                bars.forEach(b => {
+                    description += `${stepNum}. ${b.name}${b.type ? ' (' + b.type + ')' : ''}\\n`;
+                    stepNum++;
+                });
             }
 
             description += `\\nIch freu mich drauf!`;
@@ -3077,7 +3143,7 @@ END:VCALENDAR`;
         function shareDateViaWhatsApp() {
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
-            const b = currentDatePlan.bar;
+            const bars = currentDatePlan.bars || (currentDatePlan.bar ? [currentDatePlan.bar] : []);
 
             // Verwende das ausgewählte Datum (nicht das Event-Startdatum!)
             const eventDate = new Date(currentDatePlan.selectedDate || e.date);
@@ -3104,8 +3170,12 @@ END:VCALENDAR`;
                 stepNum++;
             }
 
-            if (currentDatePlan.wantDrinks && b) {
-                message += `${stepNum}. *${b.name}*${b.type ? ' (' + b.type + ')' : ''}\n`;
+            // Alle ausgewählten Bars hinzufügen
+            if (currentDatePlan.wantDrinks && bars.length > 0) {
+                bars.forEach(b => {
+                    message += `${stepNum}. *${b.name}*${b.type ? ' (' + b.type + ')' : ''}\n`;
+                    stepNum++;
+                });
             }
 
             message += `\nIch freu mich drauf!`;
