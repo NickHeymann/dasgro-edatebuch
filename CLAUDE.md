@@ -15,6 +15,7 @@ Eine Date-Ideen App für **Nick & Solli** - ein Pärchen aus Hamburg. Die App ze
 ├── events.json                     # Alle Events mit Details
 ├── locations-database.json         # Restaurant/Bar/Aktivitäten-Datenbank mit Öffnungszeiten
 ├── deduplicate-events.js           # Node-Script für Deduplizierung
+├── memories/                       # Fotos für Erinnerungen-Sektion
 └── CLAUDE.md                       # Diese Datei
 ```
 
@@ -24,19 +25,41 @@ Jedes Event hat:
 - `location`, `address`, `coords` (für Karte)
 - `link` (Ticketshop), `time`, `price`
 - `restaurant` (Name, Type, Address, Link)
-- `bar` (Name, Type, Address, Link)
+- `bar` (Name, Type, Address, Link) - kann auch Array mit mehreren Bars sein!
 - Optional: `endDate` (für Dauerevents), `treatment` (für Wellness)
 
 ## Kategorien
 - musical, variete, theater, comedy
-- musik, wellness, aktiv, handwerk
+- musik, wellness, aktiv, handwerk, essen, shows
 
 ## Features
 1. **Kalender** - Events nach Datum anzeigen
 2. **Date Builder** - Aktivität + Essen + Drinks planen mit WhatsApp/Kalender-Export
-3. **3D Globus** - Reiseziele mit Tagebuch-Funktion
+3. **3D Globus** - Reiseziele mit Tagebuch-Funktion (Three.js + earcut für Polygon-Triangulation)
 4. **Karte** - Events auf OpenStreetMap anzeigen
 5. **Hamster-Cursor** - Solli liebt Hamster! Der Cursor ist ein süßer Hamster.
+6. **Buch-Animation** - Die App öffnet sich wie ein Buch beim Laden
+7. **Feierabend-Toggle** - "Solli hat frei ab:" Dropdown für Zeitfilterung (nur bei handwerk, aktiv, wellness, comedy, essen, shows)
+8. **Multi-Bar Auswahl** - Im Date Builder können mehrere Bars ausgewählt werden
+9. **Memories/Erinnerungen** - Polaroid-Galerie mit bearbeitbaren Titeln (werden in localStorage gespeichert)
+
+## Technische Details
+
+### Globe (3D Weltkarte)
+- Verwendet Three.js für 3D-Rendering
+- Länder werden mit earcut-Library trianguliert
+- **WICHTIG**: `earcut(flatCoords, null, 2)` - der dritte Parameter `2` ist für 2D-Koordinaten nötig!
+- Fallback auf Fan-Triangulation wenn earcut fehlschlägt
+
+### Memories/Erinnerungen
+- `memoriesData` im Code enthält Default-Titel
+- **WICHTIG**: User kann Titel bearbeiten - diese werden in localStorage gespeichert
+- **NIEMALS** die memoriesData-Titel im Code überschreiben - User-Anpassungen gehen sonst verloren!
+
+### Feierabend-Toggle
+- Zeigt nur Events an, die nach der gewählten Zeit starten
+- Nur sichtbar bei bestimmten Kategorien: `['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows']`
+- Bei Travel, Memories etc. versteckt
 
 ## Regelmäßige Aufgaben
 
