@@ -1507,6 +1507,135 @@
             font-size: 0.85rem;
         }
 
+        /* ============ AI INSIGHTS PANEL ============ */
+        .ai-insights-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+        .ai-insights-panel.collapsed {
+            display: none;
+        }
+        .ai-insights-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .ai-insights-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .ai-insights-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .ai-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+        .ai-section-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .ai-stat {
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        .ai-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .ai-stat-label {
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+        .ai-tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .ai-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .ai-tag.highlight {
+            background: rgba(255,255,255,0.4);
+            font-weight: 600;
+        }
+        .ai-recommendation {
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .ai-recommendation:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(5px);
+        }
+        .ai-recommendation-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .ai-recommendation-reason {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        .ai-district-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .ai-district-name {
+            width: 100px;
+            font-size: 0.85rem;
+        }
+        .ai-district-progress {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .ai-district-fill {
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        .ai-district-count {
+            width: 30px;
+            text-align: right;
+            font-size: 0.85rem;
+        }
+
         /* ============ ACHIEVEMENTS (kollabierbar) ============ */
         .achievements-section {
             background: var(--frost);
@@ -2035,6 +2164,11 @@
             <button class="widget-mini widget-btn" onclick="toggleMiniCalendar()" title="Kalender">
                 📅
             </button>
+
+            <!-- AI Insights Button -->
+            <button class="widget-mini widget-btn" onclick="toggleAIInsights()" title="Eure Date-Vorlieben" style="background:linear-gradient(135deg, #a855f7, #6366f1);color:white;">
+                🤖
+            </button>
         </div>
 
         <!-- Search Bar (kompakter) -->
@@ -2077,6 +2211,17 @@
             </div>
             <div class="weather-suggestion-box" id="weatherSuggestion">
                 Lade Date-Vorschlag...
+            </div>
+        </div>
+
+        <!-- AI Insights Panel (versteckt) -->
+        <div class="ai-insights-panel collapsed" id="aiInsightsPanel">
+            <div class="ai-insights-header">
+                <div class="ai-insights-title">🤖 Eure Date-DNA</div>
+                <button class="ai-insights-close" onclick="toggleAIInsights()">×</button>
+            </div>
+            <div class="ai-insights-content" id="aiInsightsContent">
+                <p style="text-align:center;color:var(--text-light);">Analysiere eure Dates...</p>
             </div>
         </div>
 
@@ -5260,6 +5405,232 @@ END:VCALENDAR`;
             const section = document.getElementById('achievementsSection');
             if (section) {
                 section.classList.toggle('collapsed');
+            }
+        }
+
+        function toggleAIInsights() {
+            const panel = document.getElementById('aiInsightsPanel');
+            if (panel) {
+                const wasCollapsed = panel.classList.contains('collapsed');
+                panel.classList.toggle('collapsed');
+                if (wasCollapsed) {
+                    generateAIInsights();
+                }
+            }
+        }
+
+        // ============ AI DATE ANALYSIS ============
+        function generateAIInsights() {
+            const content = document.getElementById('aiInsightsContent');
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            const dateHistory = saved.dateHistory || [];
+
+            // Analysiere gelikte Events
+            const likedEvents = allEvents.filter(e => ratings[e.id]?.liked);
+            const doneEvents = dateHistory.map(d => allEvents.find(e => e.id === d.id)).filter(Boolean);
+
+            // Kategorie-Analyse
+            const categoryCount = {};
+            const districtCount = {};
+
+            [...likedEvents, ...doneEvents].forEach(e => {
+                // Kategorien zählen
+                categoryCount[e.category] = (categoryCount[e.category] || 0) + 1;
+
+                // Stadtteile extrahieren
+                const district = extractDistrict(e.address || e.location || '');
+                if (district) {
+                    districtCount[district] = (districtCount[district] || 0) + 1;
+                }
+            });
+
+            // Sortieren
+            const topCategories = Object.entries(categoryCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+
+            const topDistricts = Object.entries(districtCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+
+            // Empfehlungen generieren
+            const recommendations = generateRecommendations(topCategories, topDistricts, likedEvents, ratings);
+
+            // Render
+            const totalDates = doneEvents.length;
+            const totalLiked = likedEvents.length;
+            const maxDistrictCount = topDistricts[0]?.[1] || 1;
+
+            content.innerHTML = `
+                <!-- Statistik-Übersicht -->
+                <div class="ai-section">
+                    <div class="ai-section-title">📊 Eure Statistiken</div>
+                    <div class="ai-stat-grid">
+                        <div class="ai-stat">
+                            <div class="ai-stat-value">${totalDates}</div>
+                            <div class="ai-stat-label">Dates gemacht</div>
+                        </div>
+                        <div class="ai-stat">
+                            <div class="ai-stat-value">${totalLiked}</div>
+                            <div class="ai-stat-label">Events geliked</div>
+                        </div>
+                        <div class="ai-stat">
+                            <div class="ai-stat-value">${topCategories[0]?.[0] ? getCategoryEmoji(topCategories[0][0]) : '❓'}</div>
+                            <div class="ai-stat-label">Lieblingskategorie</div>
+                        </div>
+                        <div class="ai-stat">
+                            <div class="ai-stat-value">${topDistricts[0]?.[0] || '?'}</div>
+                            <div class="ai-stat-label">Top-Stadtteil</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lieblings-Kategorien -->
+                <div class="ai-section">
+                    <div class="ai-section-title">💕 Das mögt ihr</div>
+                    <div class="ai-tag-cloud">
+                        ${topCategories.map((c, i) => `
+                            <span class="ai-tag ${i === 0 ? 'highlight' : ''}">${getCategoryEmoji(c[0])} ${getCategoryName(c[0])} (${c[1]})</span>
+                        `).join('')}
+                        ${topCategories.length === 0 ? '<span class="ai-tag">Noch keine Daten - liked mehr Events!</span>' : ''}
+                    </div>
+                </div>
+
+                <!-- Stadtteil-Heatmap -->
+                <div class="ai-section">
+                    <div class="ai-section-title">📍 Eure Lieblings-Stadtteile</div>
+                    ${topDistricts.map(d => `
+                        <div class="ai-district-bar">
+                            <div class="ai-district-name">${d[0]}</div>
+                            <div class="ai-district-progress">
+                                <div class="ai-district-fill" style="width:${(d[1] / maxDistrictCount) * 100}%"></div>
+                            </div>
+                            <div class="ai-district-count">${d[1]}</div>
+                        </div>
+                    `).join('')}
+                    ${topDistricts.length === 0 ? '<p style="opacity:0.8;font-size:0.9rem;">Noch keine Stadtteil-Daten</p>' : ''}
+                </div>
+
+                <!-- Personalisierte Empfehlungen -->
+                <div class="ai-section">
+                    <div class="ai-section-title">✨ Für euch empfohlen</div>
+                    ${recommendations.map(r => `
+                        <div class="ai-recommendation" onclick="showEventDetails('${r.id}')">
+                            <div class="ai-recommendation-title">${r.emoji} ${r.title}</div>
+                            <div class="ai-recommendation-reason">${r.reason}</div>
+                        </div>
+                    `).join('')}
+                    ${recommendations.length === 0 ? '<p style="opacity:0.8;font-size:0.9rem;">Liked mehr Events für Empfehlungen!</p>' : ''}
+                </div>
+            `;
+        }
+
+        function extractDistrict(address) {
+            const districts = [
+                'St. Pauli', 'Schanze', 'Sternschanze', 'Altona', 'Ottensen', 'Eimsbüttel',
+                'Eppendorf', 'Winterhude', 'Uhlenhorst', 'Barmbek', 'Wandsbek',
+                'HafenCity', 'Speicherstadt', 'Neustadt', 'Altstadt', 'St. Georg',
+                'Rotherbaum', 'Harvestehude', 'Blankenese', 'Wilhelmsburg', 'Veddel',
+                'Bahrenfeld', 'Karoviertel', 'Grindel', 'Hoheluft', 'Innenstadt',
+                'Landungsbrücken', 'Reeperbahn', 'Planten un Blomen'
+            ];
+
+            const addressLower = address.toLowerCase();
+            for (const d of districts) {
+                if (addressLower.includes(d.toLowerCase())) {
+                    return d;
+                }
+            }
+            return null;
+        }
+
+        function getCategoryEmoji(cat) {
+            const emojis = {
+                'wellness': '💆', 'aktiv': '🏃‍♀️', 'handwerk': '🔨', 'comedy': '😂',
+                'essen': '🍽️', 'shows': '🎭', 'musical': '🎭', 'theater': '🎭',
+                'variete': '🎪', 'musik': '🎵', 'travel': '🌍', 'erlebnis': '✨'
+            };
+            return emojis[cat] || '📌';
+        }
+
+        function getCategoryName(cat) {
+            const names = {
+                'wellness': 'Wellness', 'aktiv': 'Aktiv', 'handwerk': 'Handwerk', 'comedy': 'Comedy',
+                'essen': 'Essen', 'shows': 'Shows', 'musical': 'Musical', 'theater': 'Theater',
+                'variete': 'Varieté', 'musik': 'Musik', 'travel': 'Reisen', 'erlebnis': 'Erlebnis'
+            };
+            return names[cat] || cat;
+        }
+
+        function generateRecommendations(topCategories, topDistricts, likedEvents, ratings) {
+            const recommendations = [];
+            const likedIds = new Set(likedEvents.map(e => e.id));
+
+            // Finde Events in Lieblings-Kategorien die noch nicht geliked sind
+            const topCats = topCategories.slice(0, 2).map(c => c[0]);
+            const topDists = topDistricts.slice(0, 2).map(d => d[0].toLowerCase());
+
+            allEvents.forEach(e => {
+                if (likedIds.has(e.id) || ratings[e.id]?.disliked) return;
+
+                let score = 0;
+                let reasons = [];
+
+                // Kategorie-Match
+                if (topCats.includes(e.category)) {
+                    score += 3;
+                    reasons.push(`Ihr mögt ${getCategoryName(e.category)}`);
+                }
+
+                // Stadtteil-Match
+                const district = extractDistrict(e.address || e.location || '');
+                if (district && topDists.some(d => district.toLowerCase().includes(d))) {
+                    score += 2;
+                    reasons.push(`In eurem Lieblingsviertel ${district}`);
+                }
+
+                // Vegetarisch/Vegan Bonus (ihr seid vegetarisch)
+                if (e.restaurant?.type?.toLowerCase().includes('vegan') ||
+                    e.restaurant?.type?.toLowerCase().includes('vegetar')) {
+                    score += 1;
+                    reasons.push('Vegetarisch/Vegan');
+                }
+
+                if (score > 0 && reasons.length > 0) {
+                    recommendations.push({
+                        id: e.id,
+                        emoji: e.emoji,
+                        title: e.title,
+                        score,
+                        reason: reasons[0]
+                    });
+                }
+            });
+
+            // Nach Score sortieren und Top 3 zurückgeben
+            return recommendations
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 3);
+        }
+
+        function showEventDetails(eventId) {
+            const event = allEvents.find(e => e.id === eventId);
+            if (event) {
+                // Zur passenden Kategorie navigieren
+                const categoryBtn = document.querySelector(`[data-category="${event.category}"]`);
+                if (categoryBtn) categoryBtn.click();
+
+                // Event-Karte hervorheben
+                setTimeout(() => {
+                    const card = document.querySelector(`[data-event-id="${eventId}"]`);
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.style.animation = 'pulse 0.5s ease 3';
+                    }
+                }, 300);
+
+                toggleAIInsights();
             }
         }
 
