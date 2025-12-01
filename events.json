@@ -1829,26 +1829,28 @@
       "date": "2025-12-01",
       "endDate": "2026-03-31",
       "category": "aktiv",
-      "description": "4.300 qm! Täglich 10-22h (Di bis 20h). Fr+Sa Club Night mit DJ!",
+      "description": "4.300 qm Eisfläche! Täglich 10-22h (Di bis 20h). Fr+Sa Club Night mit DJ! Perfekt: Erst bei TA Vegan House essen, dann Schlittschuh laufen, danach Kakao im Café Leonar!",
       "location": "EisArena",
       "address": "Holstenwall, Planten un Blomen",
       "coords": [53.5567, 9.9833],
       "link": "https://www.eisarena-hamburg.de/",
       "time": "10:00-22:00",
-      "price": "14€",
-      "vorher_nachher": "Nachher",
+      "price": "14€ inkl. Schlittschuhe",
+      "vorher_nachher": "Vorher",
       "restaurant": {
-        "name": "Café Paris",
-        "type": "Französisch",
-        "address": "Rathausstraße 4",
-        "link": "https://www.cafeparis.net/",
-        "coords": [53.5503, 9.9933]
+        "name": "TA Vegan House",
+        "type": "100% Vegan Vietnamesisch",
+        "address": "Johannisbollwerk 6, Landungsbrücken",
+        "link": "https://www.taveganhouse.de/",
+        "coords": [53.5461, 9.9706],
+        "empfehlung": "Pho, Summer Rolls oder Bánh Mì (wie in Altona, wo ihr 2x wart!)"
       },
       "bar": {
-        "name": "Parlament",
-        "type": "Weinbar",
-        "address": "Rathausmarkt 1",
-        "link": "https://www.parlament-hamburg.de/"
+        "name": "Café Leonar",
+        "type": "Gemütliches Café zum Aufwärmen",
+        "address": "Grindelhof 59",
+        "link": "https://www.cafe-leonar.de/",
+        "empfehlung": "Heißer Kakao nach dem Eislaufen!"
       }
     },
     {
@@ -2006,26 +2008,26 @@
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "wellness",
-      "description": "Original türkisches Hamam in Wilhelmsburg! Peeling, Wolkenschaum-Massage, Begrüßungstee. Reservierung nötig unter 040/76752900!",
+      "description": "Original türkisches Hamam in Wilhelmsburg! ~40 Min von Sollis Arbeit. Ganzkörper-Peeling, Wolkenschaum-Massage, Begrüßungstee. 2-3h Aufenthalt. Man kann vor Ort auch Salate & Lahmacun essen! Um 18 Uhr noch Slots buchbar. Tel: 040/76752900",
       "location": "Das Hamam",
       "address": "Veringweg 4, 21107 Hamburg",
       "coords": [53.4978, 10.0056],
       "link": "https://www.das-hamam.de/",
-      "time": "nur mit Terminvereinbarung",
-      "price": "ab 35€",
-      "treatment": "Hamam-Ritual: Ganzkörper-Peeling + Seifenschaum-Waschung + Wolkenschaum-Massage. VIP-Paket mit Ölmassage ab 150€.",
-      "vorher_nachher": "Nachher",
+      "time": "Terminbuchung nötig (18 Uhr Slots verfügbar)",
+      "price": "ab 35€ (VIP mit Massage ab 150€)",
+      "treatment": "Hamam-Ritual: Ganzkörper-Peeling + Seifenschaum-Waschung + Wolkenschaum-Massage",
+      "vorher_nachher": "Komplett",
       "restaurant": {
-        "name": "Aomame Vegan",
-        "type": "100% Vegan Japanisch",
-        "address": "Veringstraße 155, Wilhelmsburg",
-        "link": "https://aomame-vegan.de/",
-        "coords": [53.4969, 10.0069],
-        "empfehlung": "Miso Ramen (ab 9,90€) oder vegane Tapas-Auswahl"
+        "name": "Im Hamam essen",
+        "type": "Türkische Snacks vor Ort",
+        "address": "Veringweg 4, Wilhelmsburg",
+        "link": "https://www.das-hamam.de/",
+        "coords": [53.4978, 10.0056],
+        "empfehlung": "Salate & Lahmacun direkt im Hamam"
       },
       "bar": {
         "name": "Deichdiele",
-        "type": "Wilhelmsburgs Wohnzimmer",
+        "type": "Wilhelmsburgs Wohnzimmer - gemütlich zum Absacken",
         "address": "Veringstraße 156",
         "link": "https://www.instagram.com/deichdiele/"
       }
