@@ -435,17 +435,18 @@
       "price": "99€",
       "vorher_nachher": "Nachher",
       "restaurant": {
-        "name": "Bidges & Sons",
-        "type": "Vegan Streetfood",
-        "address": "Schulterblatt 1, Hamburg",
-        "link": "https://www.bidgesandsons.de/",
-        "coords": [53.5631, 9.9617]
+        "name": "Röbl's Restaurant & Bar",
+        "type": "Kreative Küche mit veganen Optionen",
+        "address": "Am Markt 13, Bargteheide",
+        "link": "https://www.roebls.de/",
+        "coords": [53.7283, 10.2628],
+        "empfehlung": "Vegane Bowl oder Salat (direkt in Bargteheide!)"
       },
       "bar": {
-        "name": "Astra Stube",
-        "type": "Kultkneipe Schanze",
-        "address": "Max-Brauer-Allee 200",
-        "link": "https://www.astrastube.de/"
+        "name": "Röbl's Bar",
+        "type": "Im gleichen Lokal",
+        "address": "Am Markt 13, Bargteheide",
+        "link": "https://www.roebls.de/"
       }
     },
     {
