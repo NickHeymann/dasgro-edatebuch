@@ -6,12 +6,12 @@ Eine Date-Ideen App für **Nick & Solli** - ein Pärchen aus Hamburg. Die App ze
 ## Repo & Hosting
 - **GitHub**: github.com/NickHeymann/dasgro-edatebuch
 - **Live**: nickheymann.github.io/dasgro-edatebuch
-- **Hauptdatei**: `das-grosse-datebuch-v10.html`
+- **Hauptdatei**: `index.html`
 - **Events**: `events.json`
 
 ## Wichtige Dateien
 ```
-├── das-grosse-datebuch-v10.html   # Hauptapp (HTML + CSS + JS)
+├── index.html                      # Hauptapp (HTML + CSS + JS)
 ├── events.json                     # Alle Events mit Details
 ├── locations-database.json         # Restaurant/Bar/Aktivitäten-Datenbank mit Öffnungszeiten
 ├── deduplicate-events.js           # Node-Script für Deduplizierung
