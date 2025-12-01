@@ -465,8 +465,8 @@
         @keyframes snowballFly {
             0%, 70% { opacity: 0; transform: translate(0, 0); }
             75% { opacity: 1; }
-            90% { opacity: 1; transform: translate(70px, 20px); }
-            95% { opacity: 0; transform: translate(80px, 25px); }
+            90% { opacity: 1; transform: translate(var(--target-x, 70px), 20px); }
+            95% { opacity: 0; transform: translate(calc(var(--target-x, 70px) + 10px), 25px); }
             100% { opacity: 0; }
         }
         
@@ -475,14 +475,35 @@
             bottom: 22px;
             left: calc(8% + 110px);
             font-size: 1.4rem;
-            animation: dodgeAction 3.5s ease-in-out infinite;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.1s;
         }
-        
-        @keyframes dodgeAction {
-            0%, 85%, 100% { transform: translateX(0) rotate(0); }
-            90% { transform: translateX(12px) rotate(8deg); }
+        .person-nick:active { cursor: grabbing; }
+        .person-nick.hit {
+            animation: getHit 0.5s ease-out;
         }
-        
+        @keyframes getHit {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(-15deg) translateX(-5px); }
+            50% { transform: rotate(10deg) translateX(5px); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0); }
+        }
+
+        .icicle {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .icicle:hover { transform: scale(1.1); }
+        .icicle.falling {
+            animation: icicleFall 1s ease-in forwards !important;
+        }
+        @keyframes icicleFall {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(200px) rotate(20deg); opacity: 0; }
+        }
+
         .snowman { position: absolute; bottom: 22px; right: 20%; font-size: 2rem; }
         .sled { position: absolute; bottom: 5px; right: 12%; font-size: 1.3rem; }
         .tree { position: absolute; bottom: 22px; font-size: 1.8rem; }
@@ -3042,6 +3063,7 @@
             createParticles();
             setupHearts();
             setupNavigation();
+            setupDraggableNick();
             renderMemories();
             loadProgress();
             loadEvents();
@@ -3107,13 +3129,114 @@
         function createIcicles() {
             const c = document.getElementById('icicles');
             if (!c) return;
-            // Nur 1 Eiszapfen rechts
+            // Nur 1 Eiszapfen rechts - klickbar!
             const ic = document.createElement('div');
             ic.className = 'icicle';
             ic.style.setProperty('--h', '55px');
             ic.style.borderTopWidth = '55px';
             ic.style.left = '92%';
+            ic.title = 'Klick mich!';
+            ic.onclick = () => dropIcicle(ic);
             c.appendChild(ic);
+        }
+
+        // Eiszapfen fällt und regeneriert sich
+        function dropIcicle(ic) {
+            if (ic.classList.contains('falling')) return;
+            ic.classList.add('falling');
+            showToast('💎 Platsch!');
+
+            // Nach 1s entfernen und nach 15s regenerieren
+            setTimeout(() => {
+                ic.style.display = 'none';
+                ic.classList.remove('falling');
+                ic.style.borderTopWidth = '0';
+
+                setTimeout(() => {
+                    ic.style.display = '';
+                    ic.style.borderTopWidth = '55px';
+                    showToast('❄️ Eiszapfen nachgewachsen!');
+                }, 15000);
+            }, 1000);
+        }
+
+        // ============ DRAGGABLE NICK ============
+        let nickDragData = { isDragging: false, startX: 0, startLeft: 0 };
+        let nickPosition = 110; // Standard-Offset vom linken Rand (in px)
+
+        function setupDraggableNick() {
+            const nick = document.querySelector('.person-nick');
+            const snowballWrapper = document.querySelector('.snowball-wrapper');
+            if (!nick) return;
+
+            // Touch events für Mobile
+            nick.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                nickDragData.isDragging = true;
+                nickDragData.startX = e.touches[0].clientX;
+                nickDragData.startLeft = nickPosition;
+            }, { passive: false });
+
+            nick.addEventListener('touchmove', (e) => {
+                if (!nickDragData.isDragging) return;
+                e.preventDefault();
+                const deltaX = e.touches[0].clientX - nickDragData.startX;
+                nickPosition = Math.max(80, Math.min(200, nickDragData.startLeft + deltaX));
+                nick.style.left = `calc(8% + ${nickPosition}px)`;
+                updateSnowballTarget();
+            }, { passive: false });
+
+            nick.addEventListener('touchend', () => {
+                nickDragData.isDragging = false;
+            });
+
+            // Mouse events für Desktop
+            nick.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                nickDragData.isDragging = true;
+                nickDragData.startX = e.clientX;
+                nickDragData.startLeft = nickPosition;
+                document.addEventListener('mousemove', handleNickDrag);
+                document.addEventListener('mouseup', stopNickDrag);
+            });
+
+            // Schneeball trifft Nick Animation starten
+            setInterval(() => {
+                nick.classList.add('hit');
+                setTimeout(() => nick.classList.remove('hit'), 500);
+            }, 3500);
+        }
+
+        function handleNickDrag(e) {
+            if (!nickDragData.isDragging) return;
+            const deltaX = e.clientX - nickDragData.startX;
+            nickPosition = Math.max(80, Math.min(200, nickDragData.startLeft + deltaX));
+            const nick = document.querySelector('.person-nick');
+            if (nick) {
+                nick.style.left = `calc(8% + ${nickPosition}px)`;
+            }
+            updateSnowballTarget();
+        }
+
+        function stopNickDrag() {
+            nickDragData.isDragging = false;
+            document.removeEventListener('mousemove', handleNickDrag);
+            document.removeEventListener('mouseup', stopNickDrag);
+        }
+
+        function updateSnowballTarget() {
+            // Berechne die Schneeball-Flugbahn basierend auf Nicks Position
+            const snowball = document.querySelector('.snowball');
+            if (!snowball) return;
+
+            // Der Schneeball fliegt von Solli (links) zu Nick
+            // Standard Nick ist bei 110px, Schneeball fliegt 70px
+            const baseTarget = 70;
+            const offset = nickPosition - 110;
+            const newTarget = baseTarget + offset;
+
+            // Update die CSS Custom Property für die Animation
+            snowball.style.setProperty('--target-x', `${newTarget}px`);
         }
         
         // ============ PARTICLES ============
@@ -3273,16 +3396,17 @@
                 const container = document.getElementById(`${category}-container`);
                 if (!container) return;
 
-                // Events dieser Kategorie filtern (Aussortierte ausblenden)
+                // Events dieser Kategorie filtern (Aussortierte + vergangene ausblenden)
                 // "shows" = musical + variete + theater + musik fusioniert
+                const activeEvents = getActiveEvents(ratings);
                 let categoryEvents;
                 if (category === 'shows') {
-                    categoryEvents = allEvents.filter(e =>
-                        ['musical', 'variete', 'theater', 'musik'].includes(e.category) && !ratings[e.id]?.disliked
+                    categoryEvents = activeEvents.filter(e =>
+                        ['musical', 'variete', 'theater', 'musik'].includes(e.category)
                     );
                 } else {
-                    categoryEvents = allEvents.filter(e =>
-                        e.category === category && !ratings[e.id]?.disliked
+                    categoryEvents = activeEvents.filter(e =>
+                        e.category === category
                     );
                 }
 
@@ -3399,6 +3523,24 @@
             const d = new Date(event.date);
             return `<span class="date-badge badge-event">${d.toLocaleDateString('de-DE', { day: 'numeric', month: 'short' })}</span>`;
         }
+
+        // Prüft ob ein Event vergangen ist (Datum liegt in der Vergangenheit)
+        function isEventPast(event) {
+            if (!event.date) return false;
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Bei Dauerevents: prüfe ob endDate vergangen ist
+            const endDate = event.endDate ? new Date(event.endDate) : new Date(event.date);
+            endDate.setHours(23, 59, 59, 999); // Ende des Tages
+
+            return endDate < today;
+        }
+
+        // Filtert vergangene und disliked Events aus
+        function getActiveEvents(ratings = {}) {
+            return allEvents.filter(e => !isEventPast(e) && !ratings[e.id]?.disliked);
+        }
         
         function rateEvent(id, type) {
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
@@ -3440,9 +3582,9 @@
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             const ratings = saved.ratings || {};
 
-            // Events filtern, die an diesem Datum aktiv sind
-            currentDayEvents = allEvents.filter(e => {
-                if (ratings[e.id]?.disliked) return false;
+            // Events filtern, die an diesem Datum aktiv sind (vergangene ausblenden)
+            const activeEvents = getActiveEvents(ratings);
+            currentDayEvents = activeEvents.filter(e => {
                 const start = new Date(e.date);
                 const end = e.endDate ? new Date(e.endDate) : start;
                 return date >= start && date <= end;
@@ -3613,11 +3755,11 @@
             setTimeout(() => {
                 emoji.classList.remove('spinning');
 
-                // Nur Events mit Restaurant für vollständige Date-Ideen
+                // Nur Events mit Restaurant für vollständige Date-Ideen (vergangene ausblenden)
                 const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
                 const ratings = saved.ratings || {};
-                const available = allEvents.filter(e =>
-                    !ratings[e.id]?.disliked &&
+                const activeEvents = getActiveEvents(ratings);
+                const available = activeEvents.filter(e =>
                     e.restaurant &&
                     e.restaurant.name &&
                     e.vorher_nachher !== 'Komplett' // Events wo Essen schon dabei ist, ausschließen
@@ -3688,9 +3830,8 @@
                 const div = document.createElement('div');
                 div.className = 'memory-item';
                 div.innerHTML = `
-                    <img src="${mem.image || mem.src}" alt="${savedMem.caption || mem.caption}" onclick="openLightbox(${i})">
+                    <img src="${mem.image || mem.src}" alt="${savedMem.caption || mem.caption}" onclick="openMemoryModal('${mem.id}', ${i})">
                     <span class="caption">${savedMem.caption || mem.caption}</span>
-                    <span class="edit-note" onclick="event.stopPropagation(); openMemoryModal('${mem.id}', ${i})">📝</span>
                 `;
                 grid.appendChild(div);
             });
@@ -3701,9 +3842,8 @@
                 const div = document.createElement('div');
                 div.className = 'memory-item';
                 div.innerHTML = `
-                    <img src="${mem.image}" alt="${mem.caption}" onclick="openUserLightbox(${i})">
+                    <img src="${mem.image}" alt="${mem.caption}" onclick="openUserMemoryModal(${i})">
                     <span class="caption">${mem.caption}</span>
-                    <span class="edit-note" onclick="event.stopPropagation(); openUserMemoryModal(${i})">📝</span>
                 `;
                 grid.appendChild(div);
             });
@@ -5771,12 +5911,26 @@ END:VCALENDAR`;
             const startDay = (firstDay.getDay() + 6) % 7; // Montag als erster Tag
             const today = new Date();
 
-            // Event-Tage sammeln
+            // Event-Tage sammeln (vergangene Events ausblenden)
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            const activeEvents = getActiveEvents(ratings);
             const eventDays = new Set();
-            allEvents.forEach(e => {
+            activeEvents.forEach(e => {
                 const d = new Date(e.date);
                 if (d.getMonth() === calendarMonth && d.getFullYear() === calendarYear) {
                     eventDays.add(d.getDate());
+                }
+                // Bei Dauerevents: auch alle Tage dazwischen markieren
+                if (e.endDate) {
+                    const endD = new Date(e.endDate);
+                    let current = new Date(e.date);
+                    while (current <= endD) {
+                        if (current.getMonth() === calendarMonth && current.getFullYear() === calendarYear) {
+                            eventDays.add(current.getDate());
+                        }
+                        current.setDate(current.getDate() + 1);
+                    }
                 }
             });
 
@@ -5806,8 +5960,7 @@ END:VCALENDAR`;
         function selectCalendarDay(day) {
             const dateStr = `${calendarYear}-${String(calendarMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             document.getElementById('globalDate').value = dateStr;
-            filterEventsByDate();
-            showToast(`📅 ${day}. ${['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'][calendarMonth]}`);
+            showEventsForDate(dateStr);
         }
 
         // ============ DATE STATS ============
@@ -6293,10 +6446,10 @@ END:VCALENDAR`;
             currentLightboxIndex = index;
             const memory = memoriesData[index];
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-            const customTitle = saved.memoryTitles?.[memory.id];
+            const savedMem = saved.memories?.[memory.id] || {};
 
-            document.getElementById('lightboxImg').src = memory.src;
-            document.getElementById('lightboxCaption').textContent = customTitle || memory.title;
+            document.getElementById('lightboxImg').src = memory.image || memory.src;
+            document.getElementById('lightboxCaption').textContent = savedMem.caption || memory.caption || memory.title;
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
