@@ -1356,6 +1356,157 @@
             font-size: 0.9rem;
         }
 
+        /* ============ ESSEN SUCHE & KOCHEN ============ */
+        .food-options {
+            background: var(--frost);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .food-search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .food-search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--ice-blue);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .food-search-input:focus {
+            outline: none;
+            border-color: var(--sage);
+        }
+        .food-toggle {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+        .food-toggle-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--sage);
+            background: white;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .food-toggle-btn:hover {
+            background: var(--ice-blue);
+        }
+        .food-toggle-btn.active {
+            background: var(--sage);
+            color: white;
+        }
+        .cook-intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .cook-intro h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .recipe-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        .recipe-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .recipe-time {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .recipe-content {
+            padding: 15px;
+        }
+        .recipe-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .recipe-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .recipe-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .recipe-tag {
+            background: var(--ice-blue);
+            color: var(--navy);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        .recipe-tag.vegan {
+            background: #d4edda;
+            color: #155724;
+        }
+        .recipe-link {
+            display: inline-block;
+            color: var(--sage);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .recipe-link:hover {
+            text-decoration: underline;
+        }
+        .food-search-results {
+            margin-bottom: 20px;
+        }
+        .food-result-item {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .food-result-info h4 {
+            margin: 0 0 4px 0;
+            color: var(--navy);
+        }
+        .food-result-info p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
         /* ============ ACHIEVEMENTS (kollabierbar) ============ */
         .achievements-section {
             background: var(--frost);
@@ -2029,8 +2180,34 @@
                     <h2>🍽️ Essen</h2>
                     <p>Restaurants & kulinarische Erlebnisse</p>
                 </div>
-                <div id="essen-container">
-                    <p class="empty-message">Keine Restaurant-Tipps gefunden.</p>
+
+                <!-- Essen-Suche & Selberkochen Toggle -->
+                <div class="food-options">
+                    <div class="food-search-box">
+                        <input type="text" id="foodSearchInput" placeholder="Was willst du essen? (z.B. Ramen, Pizza...)" class="food-search-input">
+                        <button class="btn btn-primary" onclick="searchFood()">🔍 Finden</button>
+                    </div>
+                    <div class="food-toggle">
+                        <button class="food-toggle-btn active" onclick="showFoodMode('restaurant')">🍽️ Restaurant</button>
+                        <button class="food-toggle-btn" onclick="showFoodMode('cook')">👨‍🍳 Selber kochen</button>
+                    </div>
+                </div>
+
+                <!-- Restaurant-Ergebnisse -->
+                <div id="food-restaurant-mode">
+                    <div id="food-search-results" style="display:none;"></div>
+                    <div id="essen-container">
+                        <p class="empty-message">Keine Restaurant-Tipps gefunden.</p>
+                    </div>
+                </div>
+
+                <!-- Selber Kochen Modus -->
+                <div id="food-cook-mode" style="display:none;">
+                    <div class="cook-intro">
+                        <h3>👨‍🍳 Date-Night Rezepte</h3>
+                        <p>Zusammen kochen ist das beste Date! Hier sind unsere Favoriten:</p>
+                    </div>
+                    <div class="recipe-grid" id="recipeGrid"></div>
                 </div>
             </section>
 
@@ -5564,6 +5741,179 @@ END:VCALENDAR`;
             if (code <= 82) return { icon: '🌧️', desc: 'Starker Regen' };
             return { icon: '⛈️', desc: 'Gewitter' };
         }
+
+        // ============ ESSEN SUCHE & KOCHEN ============
+        const dateNightRecipes = [
+            {
+                id: 'pasta-aglio',
+                title: 'Pasta Aglio e Olio',
+                desc: 'Italienischer Klassiker - simpel aber unglaublich lecker! Knoblauch, Olivenöl, Chili, Petersilie.',
+                time: '20 Min',
+                tags: ['vegan', 'schnell', 'italienisch'],
+                image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400',
+                link: 'https://www.chefkoch.de/rezepte/1169381223132029/Spaghetti-aglio-olio-e-peperoncino.html',
+                ingredients: ['400g Spaghetti', '6 Knoblauchzehen', '100ml Olivenöl', '1 Chilischote', 'Petersilie', 'Salz']
+            },
+            {
+                id: 'thai-curry',
+                title: 'Rotes Thai-Curry',
+                desc: 'Cremiges Kokos-Curry mit Gemüse und Tofu. Wärmt von innen!',
+                time: '35 Min',
+                tags: ['vegan', 'asiatisch', 'wärmend'],
+                image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400',
+                link: 'https://www.chefkoch.de/rezepte/2713081421498566/Rotes-Thai-Curry-vegan.html',
+                ingredients: ['400ml Kokosmilch', '2 EL rote Currypaste', '200g Tofu', 'Paprika', 'Zucchini', 'Reis']
+            },
+            {
+                id: 'buddha-bowl',
+                title: 'Buddha Bowl',
+                desc: 'Bunte Bowl mit Quinoa, geröstetem Gemüse und Tahini-Dressing. Gesund & lecker!',
+                time: '40 Min',
+                tags: ['vegan', 'gesund', 'bowl'],
+                image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400',
+                link: 'https://www.chefkoch.de/rezepte/2892731449747990/Buddha-Bowl.html',
+                ingredients: ['200g Quinoa', 'Süßkartoffel', 'Kichererbsen', 'Avocado', 'Tahini', 'Zitrone']
+            },
+            {
+                id: 'risotto',
+                title: 'Pilzrisotto',
+                desc: 'Cremiges Risotto mit Champignons und Parmesan. Perfekt für einen gemütlichen Abend!',
+                time: '45 Min',
+                tags: ['vegetarisch', 'italienisch', 'gemütlich'],
+                image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400',
+                link: 'https://www.chefkoch.de/rezepte/1041881212526568/Risotto-mit-Pilzen.html',
+                ingredients: ['300g Risottoreis', '300g Champignons', 'Weißwein', 'Gemüsebrühe', 'Parmesan', 'Butter']
+            },
+            {
+                id: 'tacos',
+                title: 'Vegane Tacos',
+                desc: 'Knusprige Tacos mit Jackfruit-"Pulled Pork", Guacamole und Salsa. Fiesta!',
+                time: '30 Min',
+                tags: ['vegan', 'mexikanisch', 'party'],
+                image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400',
+                link: 'https://www.chefkoch.de/rezepte/3156921474147929/Vegane-Pulled-Jackfruit-Tacos.html',
+                ingredients: ['1 Dose Jackfruit', 'Taco-Shells', 'Avocado', 'Tomaten', 'Limette', 'Koriander']
+            },
+            {
+                id: 'ramen',
+                title: 'Vegane Miso-Ramen',
+                desc: 'Dampfende Nudelsuppe mit Miso, Pak Choi und Tofu. Seelenwärmer!',
+                time: '40 Min',
+                tags: ['vegan', 'japanisch', 'suppe'],
+                image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400',
+                link: 'https://www.chefkoch.de/rezepte/3219301482814247/Vegane-Miso-Ramen.html',
+                ingredients: ['Ramen-Nudeln', '2 EL Miso-Paste', 'Tofu', 'Pak Choi', 'Frühlingszwiebeln', 'Sesam']
+            }
+        ];
+
+        function initRecipes() {
+            const grid = document.getElementById('recipeGrid');
+            if (!grid) return;
+
+            grid.innerHTML = dateNightRecipes.map(r => `
+                <div class="recipe-card">
+                    <div class="recipe-image" style="background-image:url('${r.image}')">
+                        <span class="recipe-time">⏱️ ${r.time}</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-title">${r.title}</div>
+                        <div class="recipe-desc">${r.desc}</div>
+                        <div class="recipe-tags">
+                            ${r.tags.map(t => `<span class="recipe-tag ${t === 'vegan' ? 'vegan' : ''}">${t}</span>`).join('')}
+                        </div>
+                        <a href="${r.link}" target="_blank" class="recipe-link">→ Zum Rezept</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showFoodMode(mode) {
+            const restaurantMode = document.getElementById('food-restaurant-mode');
+            const cookMode = document.getElementById('food-cook-mode');
+            const btns = document.querySelectorAll('.food-toggle-btn');
+
+            btns.forEach(b => b.classList.remove('active'));
+
+            if (mode === 'cook') {
+                restaurantMode.style.display = 'none';
+                cookMode.style.display = 'block';
+                btns[1].classList.add('active');
+                initRecipes();
+            } else {
+                restaurantMode.style.display = 'block';
+                cookMode.style.display = 'none';
+                btns[0].classList.add('active');
+            }
+        }
+
+        function searchFood() {
+            const query = document.getElementById('foodSearchInput').value.toLowerCase().trim();
+            if (!query) return;
+
+            const resultsDiv = document.getElementById('food-search-results');
+
+            // Suche in der Venue-Datenbank
+            const matches = [];
+
+            venueDatabase.restaurants.forEach(r => {
+                const searchText = `${r.name} ${r.type} ${r.address}`.toLowerCase();
+                if (searchText.includes(query)) {
+                    matches.push(r);
+                }
+            });
+
+            // Auch in Events suchen
+            allEvents.filter(e => e.category === 'essen').forEach(e => {
+                const searchText = `${e.title} ${e.description} ${e.restaurant?.name || ''}`.toLowerCase();
+                if (searchText.includes(query)) {
+                    matches.push({
+                        name: e.restaurant?.name || e.title,
+                        type: e.restaurant?.type || e.description,
+                        address: e.restaurant?.address || e.location,
+                        link: e.restaurant?.link || e.link,
+                        empfehlung: e.restaurant?.empfehlung
+                    });
+                }
+            });
+
+            if (matches.length === 0) {
+                resultsDiv.innerHTML = `
+                    <div class="food-search-results">
+                        <p style="text-align:center;color:var(--text-light);">
+                            Nichts gefunden für "${query}".<br>
+                            <strong>Tipp:</strong> Probier "vegan", "italienisch", "ramen" oder "burger"!
+                        </p>
+                    </div>
+                `;
+            } else {
+                resultsDiv.innerHTML = `
+                    <div class="food-search-results">
+                        <h4 style="margin-bottom:12px;">🔍 ${matches.length} Ergebnisse für "${query}":</h4>
+                        ${matches.slice(0, 5).map(r => `
+                            <div class="food-result-item">
+                                <div class="food-result-info">
+                                    <h4>🍽️ ${r.name}</h4>
+                                    <p>${r.type} • ${r.address}</p>
+                                    ${r.empfehlung ? `<p style="color:var(--sage);margin-top:4px;">💡 ${r.empfehlung}</p>` : ''}
+                                </div>
+                                ${r.link ? `<a href="${r.link}" target="_blank" class="btn btn-secondary" style="flex-shrink:0;">→ Website</a>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+            resultsDiv.style.display = 'block';
+        }
+
+        // Enter-Taste für Suche
+        document.addEventListener('DOMContentLoaded', () => {
+            const foodInput = document.getElementById('foodSearchInput');
+            if (foodInput) {
+                foodInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') searchFood();
+                });
+            }
+        });
 
         // ============ LIGHTBOX FOR MEMORIES ============
         let currentLightboxIndex = 0;
