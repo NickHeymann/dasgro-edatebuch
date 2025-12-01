@@ -42,16 +42,16 @@ Jedes Event hat:
 7. **Feierabend-Toggle** - "Solli hat frei ab:" Dropdown für Zeitfilterung (nur bei handwerk, aktiv, wellness, comedy, essen, shows)
 8. **Multi-Bar Auswahl** - Im Date Builder können mehrere Bars ausgewählt werden
 9. **Memories/Erinnerungen** - Polaroid-Galerie mit bearbeitbaren Titeln (werden in localStorage gespeichert)
-10. **HVV-Verbindung** - Button "🚇 HVV ab Arbeit" öffnet Fahrplanauskunft mit Sollis Arbeitsadresse als Start
+10. **ÖPNV-Route** - Button "🚇 Route ab Arbeit" öffnet Google Maps mit ÖPNV-Modus von Sollis Arbeit zum Date
 
 ## Sollis Arbeitsweg (WICHTIG!)
 - **Sollis Arbeit**: Stadtdeich 5, 20097 Hamburg
 - **Frühester Feierabend**: 17:00 Uhr (variiert: 17:00, 17:30, 18:00)
 - **Transport**: Öffis (HVV) im Winter, Fahrrad/Emmy nur bei >10°C und <30 Min Fahrt
-- Der "🚇 HVV ab Arbeit" Button im Date Builder öffnet die HVV Fahrplanauskunft mit:
+- Der "🚇 Route ab Arbeit" Button im Date Builder öffnet Google Maps ÖPNV-Route mit:
   - Start: Stadtdeich 5, Hamburg
   - Ziel: Erstes Ziel des Dates (Restaurant wenn vorher, sonst Aktivität)
-- **WICHTIG**: iFrames sind laut HVV-Nutzungsbedingungen verboten! Nur Links erlaubt.
+- **Hinweis**: HVV Geofox URLs funktionieren nicht zuverlässig (Parameter werden nicht übernommen), daher Google Maps
 
 ## Technische Details
 
@@ -71,10 +71,12 @@ Jedes Event hat:
 - Nur sichtbar bei bestimmten Kategorien: `['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows']`
 - Bei Travel, Memories etc. versteckt
 
-### HVV-Integration
-- Funktion `openHVVConnection()` generiert HVV Geofox Link
-- URL-Format: `https://geofox.hvv.de/web/de/connections?originName=...&destName=...`
-- Öffnet im neuen Tab (kein iFrame erlaubt!)
+### ÖPNV-Routenplanung (Google Maps)
+- Funktion `openTransitConnection()` öffnet Google Maps mit ÖPNV-Modus
+- URL-Format: `https://www.google.com/maps/dir/[Start]/[Ziel]/?travelmode=transit`
+- Start: Sollis Arbeit (Stadtdeich 5, 20097 Hamburg)
+- Ziel: Erstes Ziel des Dates (Restaurant wenn vorher, sonst Aktivität)
+- **Hinweis**: HVV Geofox URL-Parameter funktionieren nicht zuverlässig, daher Google Maps
 
 ## Regelmäßige Aufgaben
 

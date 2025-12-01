@@ -3017,7 +3017,7 @@
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
                     <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">In Kalender</button>
                     <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">WhatsApp</button>
-                    <button class="btn btn-primary" onclick="openHVVConnection()" style="background:#e31e24;">🚇 HVV ab Arbeit</button>
+                    <button class="btn btn-primary" onclick="openTransitConnection()" style="background:#4285F4;">🚇 Route ab Arbeit</button>
                 </div>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:15px;">
@@ -3197,14 +3197,14 @@ END:VCALENDAR`;
             showToast('📱 WhatsApp geöffnet!');
         }
 
-        // ============ HVV VERBINDUNG ============
-        function openHVVConnection() {
+        // ============ ÖPNV VERBINDUNG (Google Maps) ============
+        function openTransitConnection() {
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
             const foodTiming = currentDatePlan.foodTiming;
 
             // Sollis Arbeitsadresse
-            const startAddress = "Stadtdeich 5, Hamburg";
+            const startAddress = "Stadtdeich 5, 20097 Hamburg";
 
             // Bestimme das erste Ziel (Restaurant vorher oder Aktivität)
             let firstDestination;
@@ -3214,11 +3214,11 @@ END:VCALENDAR`;
                 firstDestination = e.address || e.location + ", Hamburg";
             }
 
-            // HVV Geofox URL mit vorausgefülltem Start und Ziel
-            const hvvUrl = `https://geofox.hvv.de/web/de/connections?originName=${encodeURIComponent(startAddress)}&destName=${encodeURIComponent(firstDestination)}`;
+            // Google Maps URL mit ÖPNV-Modus (travelmode=transit)
+            const mapsUrl = `https://www.google.com/maps/dir/${encodeURIComponent(startAddress)}/${encodeURIComponent(firstDestination)}/?travelmode=transit`;
 
-            window.open(hvvUrl, '_blank');
-            showToast('🚇 HVV Fahrplanauskunft geöffnet!');
+            window.open(mapsUrl, '_blank');
+            showToast('🚇 ÖPNV-Route geöffnet!');
         }
 
         // ============ TOAST ============
