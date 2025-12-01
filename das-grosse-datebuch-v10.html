@@ -676,7 +676,68 @@
         .badge-event { background: linear-gradient(135deg, var(--rose), var(--rose-dark)); color: white; }
         .badge-free { background: linear-gradient(135deg, #48bb78, #38a169); color: white; }
         .badge-indoor { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
-        
+
+        /* ============ OPEN/CLOSED STATUS BADGES ============ */
+        .open-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+            cursor: help;
+        }
+        .open-status-badge.open {
+            color: #22c55e;
+            text-shadow: 0 0 4px rgba(34, 197, 94, 0.5);
+        }
+        .open-status-badge.closed {
+            color: #ef4444;
+            text-shadow: 0 0 4px rgba(239, 68, 68, 0.5);
+        }
+        .open-status-badge.unknown {
+            color: #9ca3af;
+            font-size: 10px;
+        }
+
+        .venue-hours {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .venue-hours .hours-icon {
+            font-size: 0.8rem;
+        }
+
+        .open-filter-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--sage);
+            color: var(--text);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .open-filter-toggle:hover {
+            background: var(--sage);
+            color: white;
+        }
+        .open-filter-toggle.active {
+            background: var(--sage);
+            color: white;
+        }
+
         .date-card-body { padding: 20px; }
         .date-description { color: var(--text-light); margin-bottom: 16px; line-height: 1.6; }
         
@@ -2078,69 +2139,332 @@
         const venueDatabase = {
             restaurants: [
                 // Innenstadt / Rathausmarkt
-                { name: 'Café Paris', type: 'Französisch', address: 'Rathausstraße 4', coords: [53.5503, 9.9933], link: 'https://www.cafeparis.net/', veggie: true },
-                { name: 'Café Leonar', type: 'Jüdische Küche', address: 'Grindelhof 59', coords: [53.5678, 9.9833], link: 'https://www.cafe-leonar.de/', veggie: true },
-                { name: 'Wandrahm', type: 'Modern Europäisch', address: 'Am Sandtorkai 77', coords: [53.5433, 9.9892], link: '', veggie: true },
+                { name: 'Café Paris', type: 'Französisch', address: 'Rathausstraße 4', coords: [53.5503, 9.9933], link: 'https://www.cafeparis.net/', veggie: true, hours: 'Mo-So 9-24h' },
+                { name: 'Café Leonar', type: 'Jüdische Küche', address: 'Grindelhof 59', coords: [53.5678, 9.9833], link: 'https://www.cafe-leonar.de/', veggie: true, hours: 'Di-So 10-22h, Mo geschlossen' },
+                { name: 'Wandrahm', type: 'Modern Europäisch', address: 'Am Sandtorkai 77', coords: [53.5433, 9.9892], link: '', veggie: true, hours: 'Di-Sa 12-22h' },
                 // St. Pauli / Schanze
-                { name: 'Tazzi Pizza', type: 'Beste Pizza St. Pauli', address: 'Reeperbahn 61', coords: [53.5494, 9.9611], link: 'https://www.tazzi-pizza.de/', veggie: true },
-                { name: 'Kleine Pause', type: 'Burger & Bowls', address: 'Friedrichstraße 25', coords: [53.5503, 9.9658], link: 'https://www.instagram.com/kleinepause_hamburg/', veggie: true },
-                { name: 'Die Kombüse', type: 'Mexikanisch', address: 'Wohlwillstraße 20', coords: [53.5517, 9.9600], link: 'https://www.diekombuesehamburg.de/', veggie: true },
-                { name: 'Altes Mädchen', type: 'Craft Beer & vegetarisch', address: 'Lagerstraße 28b', coords: [53.5636, 9.9628], link: 'https://www.altes-maedchen.com/', veggie: true },
-                { name: 'Vincent Vegan', type: '100% Vegan Burger', address: 'Schulterblatt 31', coords: [53.5622, 9.9583], link: 'https://vincent-vegan.com/', veggie: true },
-                { name: 'Leaf', type: '100% Vegan', address: 'Beim Grünen Jäger 14', coords: [53.5578, 9.9592], link: '', veggie: true },
-                { name: 'Bidges & Sons', type: 'Veganer Brunch', address: 'Schulterblatt 1', coords: [53.5617, 9.9611], link: '', veggie: true },
+                { name: 'Tazzi Pizza', type: 'Beste Pizza St. Pauli', address: 'Reeperbahn 61', coords: [53.5494, 9.9611], link: 'https://www.tazzi-pizza.de/', veggie: true, hours: 'Mo-So 12-2h' },
+                { name: 'Kleine Pause', type: 'Burger & Bowls', address: 'Friedrichstraße 25', coords: [53.5503, 9.9658], link: 'https://www.instagram.com/kleinepause_hamburg/', veggie: true, hours: 'Mo-Fr 12-22h, Sa-So 11-22h' },
+                { name: 'Die Kombüse', type: 'Mexikanisch', address: 'Wohlwillstraße 20', coords: [53.5517, 9.9600], link: 'https://www.diekombuesehamburg.de/', veggie: true, hours: 'Mo-So 17-23h' },
+                { name: 'Altes Mädchen', type: 'Craft Beer & vegetarisch', address: 'Lagerstraße 28b', coords: [53.5636, 9.9628], link: 'https://www.altes-maedchen.com/', veggie: true, hours: 'Mo-Sa 12-24h, So 10-23h' },
+                { name: 'Vincent Vegan', type: '100% Vegan Burger', address: 'Schulterblatt 31', coords: [53.5622, 9.9583], link: 'https://vincent-vegan.com/', veggie: true, hours: 'Mo-So 11-22h' },
+                { name: 'Leaf', type: '100% Vegan', address: 'Beim Grünen Jäger 14', coords: [53.5578, 9.9592], link: '', veggie: true, hours: 'Di-Sa 12-21h' },
+                { name: 'Bidges & Sons', type: 'Veganer Brunch', address: 'Schulterblatt 1', coords: [53.5617, 9.9611], link: '', veggie: true, hours: 'Mo-Fr 9-18h, Sa-So 10-18h' },
                 // Altona / Ottensen
-                { name: 'Maquis', type: '100% Vegetarisch', address: 'Thedestraße 2', coords: [53.5519, 9.9347], link: 'https://www.maquis.de/', veggie: true },
-                { name: 'Froindlichst', type: '100% Vegan', address: 'Bahrenfelder Str. 131', coords: [53.5556, 9.9375], link: 'https://froindlichst.de/', veggie: true },
-                { name: 'Café May', type: 'Frühstück & Kuchen', address: 'Beim Grünen Jäger 66', coords: [53.5572, 9.9544], link: '', veggie: true },
+                { name: 'Maquis', type: '100% Vegetarisch', address: 'Thedestraße 2', coords: [53.5519, 9.9347], link: 'https://www.maquis.de/', veggie: true, hours: 'Di-Sa 18-22h, So-Mo geschlossen' },
+                { name: 'Froindlichst', type: '100% Vegan', address: 'Bahrenfelder Str. 131', coords: [53.5556, 9.9375], link: 'https://froindlichst.de/', veggie: true, hours: 'Mo-Sa 11-22h' },
+                { name: 'Café May', type: 'Frühstück & Kuchen', address: 'Beim Grünen Jäger 66', coords: [53.5572, 9.9544], link: '', veggie: true, hours: 'Mo-So 9-18h' },
                 // Eppendorf / Winterhude
-                { name: 'Mirou', type: 'Israelische Mezze', address: 'Mühlenkamp 43', coords: [53.5889, 10.0083], link: 'https://www.mirou-hamburg.de/', veggie: true },
-                { name: 'Tassajara', type: 'Vegan seit 1976', address: 'Eppendorfer Weg 47', coords: [53.5700, 9.9600], link: 'https://www.tassajara.de/', veggie: true },
-                { name: 'Happenpappen', type: 'Bio & Vegetarisch', address: 'Eppendorfer Weg 63', coords: [53.5711, 9.9583], link: '', veggie: true },
+                { name: 'Mirou', type: 'Israelische Mezze', address: 'Mühlenkamp 43', coords: [53.5889, 10.0083], link: 'https://www.mirou-hamburg.de/', veggie: true, hours: 'Di-Sa 18-23h, So geschlossen' },
+                { name: 'Tassajara', type: 'Vegan seit 1976', address: 'Eppendorfer Weg 47', coords: [53.5700, 9.9600], link: 'https://www.tassajara.de/', veggie: true, hours: 'Mo-So 11:30-22h' },
+                { name: 'Happenpappen', type: 'Bio & Vegetarisch', address: 'Eppendorfer Weg 63', coords: [53.5711, 9.9583], link: '', veggie: true, hours: 'Mo-Fr 12-21h, Sa 10-21h' },
                 // Karoviertel / Sternschanze
-                { name: 'Cai Kitchen', type: '100% Vegan Sichuan', address: 'Glashüttenstr. 85a', coords: [53.5617, 9.9636], link: 'https://www.cai-kitchen.de/', veggie: true },
-                { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße 2', coords: [53.5633, 9.9611], link: '', veggie: true },
-                { name: 'Mehl, Butter, Zucker', type: 'Café & Kuchen', address: 'Bartelsstraße 26', coords: [53.5639, 9.9597], link: '', veggie: true },
-                { name: 'Nil', type: 'Sudanesisch Vegetarisch', address: 'Neuer Pferdemarkt 5', coords: [53.5569, 9.9619], link: '', veggie: true },
+                { name: 'Cai Kitchen', type: '100% Vegan Sichuan', address: 'Glashüttenstr. 85a', coords: [53.5617, 9.9636], link: 'https://www.cai-kitchen.de/', veggie: true, hours: 'Mo-So 12-22h' },
+                { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße 2', coords: [53.5633, 9.9611], link: '', veggie: true, hours: 'Mo-So 12-23h' },
+                { name: 'Mehl, Butter, Zucker', type: 'Café & Kuchen', address: 'Bartelsstraße 26', coords: [53.5639, 9.9597], link: '', veggie: true, hours: 'Mi-So 10-18h' },
+                { name: 'Nil', type: 'Sudanesisch Vegetarisch', address: 'Neuer Pferdemarkt 5', coords: [53.5569, 9.9619], link: '', veggie: true, hours: 'Di-So 12-22h' },
                 // Grindel / Uni
-                { name: 'Pony Bar', type: 'Bar & Essen', address: 'Allende-Platz 1', coords: [53.5669, 9.9850], link: '', veggie: true },
-                { name: 'Campus Suite', type: 'Café & Bistro', address: 'Grindelallee 43', coords: [53.5672, 9.9842], link: '', veggie: true },
+                { name: 'Pony Bar', type: 'Bar & Essen', address: 'Allende-Platz 1', coords: [53.5669, 9.9850], link: '', veggie: true, hours: 'Mo-So 17-1h' },
+                { name: 'Campus Suite', type: 'Café & Bistro', address: 'Grindelallee 43', coords: [53.5672, 9.9842], link: '', veggie: true, hours: 'Mo-Fr 8-18h' },
                 // HafenCity / Speicherstadt
-                { name: 'Hobenköök', type: 'Regionale Küche', address: 'Stockmeyerstraße 43', coords: [53.5350, 10.0050], link: 'https://www.hobenkoeok.de/', veggie: true },
-                { name: 'Fleetschlösschen', type: 'Café Speicherstadt', address: 'Brooktorkai 17', coords: [53.5433, 10.0017], link: '', veggie: true },
+                { name: 'Hobenköök', type: 'Regionale Küche', address: 'Stockmeyerstraße 43', coords: [53.5350, 10.0050], link: 'https://www.hobenkoeok.de/', veggie: true, hours: 'Di-Sa 12-22h, So-Mo geschlossen' },
+                { name: 'Fleetschlösschen', type: 'Café Speicherstadt', address: 'Brooktorkai 17', coords: [53.5433, 10.0017], link: '', veggie: true, hours: 'Mo-So 10-18h' },
                 // Barmbek / Uhlenhorst
-                { name: 'Momo Ramen', type: 'Vegane Ramen-Option', address: 'Mühlenkamp 59', coords: [53.5883, 10.0075], link: '', veggie: true },
-                { name: 'Feldstern', type: 'Bio-Café', address: 'Sternstraße 2', coords: [53.5856, 10.0039], link: '', veggie: true },
+                { name: 'Momo Ramen', type: 'Vegane Ramen-Option', address: 'Mühlenkamp 59', coords: [53.5883, 10.0075], link: '', veggie: true, hours: 'Mo-So 12-22h' },
+                { name: 'Feldstern', type: 'Bio-Café', address: 'Sternstraße 2', coords: [53.5856, 10.0039], link: '', veggie: true, hours: 'Mo-Fr 8-18h, Sa 9-16h' },
             ],
             bars: [
                 // Innenstadt
-                { name: 'Le Lion', type: 'Beste Cocktailbar', address: 'Rathausstraße 3', coords: [53.5503, 9.9930], link: 'https://www.lelion.net/' },
-                { name: 'Parlament', type: 'Weinbar', address: 'Rathausmarkt 1', coords: [53.5500, 9.9920], link: 'https://www.parlament-hamburg.de/' },
-                { name: 'Boilerman Bar', type: 'Highballs', address: 'Eppendorfer Weg 211', coords: [53.5722, 9.9583], link: 'https://www.theboilerman.de/' },
+                { name: 'Le Lion', type: 'Beste Cocktailbar', address: 'Rathausstraße 3', coords: [53.5503, 9.9930], link: 'https://www.lelion.net/', hours: 'Di-Sa 18-2h' },
+                { name: 'Parlament', type: 'Weinbar', address: 'Rathausmarkt 1', coords: [53.5500, 9.9920], link: 'https://www.parlament-hamburg.de/', hours: 'Mo-Sa 17-24h' },
+                { name: 'Boilerman Bar', type: 'Highballs', address: 'Eppendorfer Weg 211', coords: [53.5722, 9.9583], link: 'https://www.theboilerman.de/', hours: 'Di-Sa 19-2h' },
                 // St. Pauli / Reeperbahn
-                { name: 'Zum Silbersack', type: 'Kiez-Legende seit 1949', address: 'Silbersackstraße 9', coords: [53.5497, 9.9578], link: 'https://www.silbersack.de/' },
-                { name: 'Clouds', type: 'Rooftop Bar', address: 'Reeperbahn 1', coords: [53.5494, 9.9606], link: 'https://clouds-hamburg.de/' },
-                { name: 'Ritze', type: 'Boxkneipe', address: 'Reeperbahn 140', coords: [53.5489, 9.9539], link: 'https://www.ritze.de/' },
-                { name: 'Astra Stube', type: 'Kultkneipe', address: 'Max-Brauer-Allee 200', coords: [53.5550, 9.9528], link: 'https://www.astrastube.de/' },
-                { name: 'Komet', type: 'Indie-Bar', address: 'Erichstraße 11', coords: [53.5506, 9.9622], link: '' },
-                { name: 'Molotow', type: 'Club & Bar', address: 'Nobistor 14', coords: [53.5489, 9.9536], link: 'https://molotowclub.com/' },
+                { name: 'Zum Silbersack', type: 'Kiez-Legende seit 1949', address: 'Silbersackstraße 9', coords: [53.5497, 9.9578], link: 'https://www.silbersack.de/', hours: 'Mo-So 20-5h' },
+                { name: 'Clouds', type: 'Rooftop Bar', address: 'Reeperbahn 1', coords: [53.5494, 9.9606], link: 'https://clouds-hamburg.de/', hours: 'Mo-So 17-1h' },
+                { name: 'Ritze', type: 'Boxkneipe', address: 'Reeperbahn 140', coords: [53.5489, 9.9539], link: 'https://www.ritze.de/', hours: 'Mo-So 21-5h' },
+                { name: 'Astra Stube', type: 'Kultkneipe', address: 'Max-Brauer-Allee 200', coords: [53.5550, 9.9528], link: 'https://www.astrastube.de/', hours: 'Mo-So 19-3h' },
+                { name: 'Komet', type: 'Indie-Bar', address: 'Erichstraße 11', coords: [53.5506, 9.9622], link: '', hours: 'Di-Sa 20-3h' },
+                { name: 'Molotow', type: 'Club & Bar', address: 'Nobistor 14', coords: [53.5489, 9.9536], link: 'https://molotowclub.com/', hours: 'Mi-Sa 21-4h' },
                 // Schanze / Karoviertel
-                { name: 'Familieneck', type: 'Kultkneipe Schanze', address: 'Friedensallee 9', coords: [53.5611, 9.9600], link: '' },
-                { name: 'Katze', type: 'Bar & Späti', address: 'Schulterblatt 63', coords: [53.5633, 9.9569], link: '' },
-                { name: 'Goldfischglas', type: 'Gemütliche Kneipe', address: 'Bartelsstraße 30', coords: [53.5636, 9.9594], link: '' },
-                { name: 'Zwick', type: 'Rock-Kneipe', address: 'Sternstraße 28', coords: [53.5628, 9.9558], link: '' },
-                { name: 'Reh Bar', type: 'Kleine Cocktailbar', address: 'Juliusstraße 22', coords: [53.5617, 9.9564], link: '' },
+                { name: 'Familieneck', type: 'Kultkneipe Schanze', address: 'Friedensallee 9', coords: [53.5611, 9.9600], link: '', hours: 'Mo-So 18-2h' },
+                { name: 'Katze', type: 'Bar & Späti', address: 'Schulterblatt 63', coords: [53.5633, 9.9569], link: '', hours: 'Mo-So 17-3h' },
+                { name: 'Goldfischglas', type: 'Gemütliche Kneipe', address: 'Bartelsstraße 30', coords: [53.5636, 9.9594], link: '', hours: 'Di-So 19-2h' },
+                { name: 'Zwick', type: 'Rock-Kneipe', address: 'Sternstraße 28', coords: [53.5628, 9.9558], link: '', hours: 'Mo-So 20-4h' },
+                { name: 'Reh Bar', type: 'Kleine Cocktailbar', address: 'Juliusstraße 22', coords: [53.5617, 9.9564], link: '', hours: 'Di-Sa 19-1h' },
                 // Eppendorf / Winterhude
-                { name: 'Julep', type: 'Whiskey & Cocktails', address: 'Eppendorfer Weg 139', coords: [53.5700, 9.9650], link: 'https://www.instagram.com/julep_bar/' },
-                { name: 'Hadleys', type: 'Speakeasy', address: 'Beim Schlump 84a', coords: [53.5683, 9.9775], link: 'https://hadleys.de/' },
-                { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Str. 159', coords: [53.5800, 10.0050], link: '' },
-                { name: 'Cascadas', type: 'Cocktails Eppendorf', address: 'Eppendorfer Landstr. 80', coords: [53.5856, 9.9958], link: '' },
+                { name: 'Julep', type: 'Whiskey & Cocktails', address: 'Eppendorfer Weg 139', coords: [53.5700, 9.9650], link: 'https://www.instagram.com/julep_bar/', hours: 'Di-Sa 19-2h' },
+                { name: 'Hadleys', type: 'Speakeasy', address: 'Beim Schlump 84a', coords: [53.5683, 9.9775], link: 'https://hadleys.de/', hours: 'Di-Sa 18-1h' },
+                { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Str. 159', coords: [53.5800, 10.0050], link: '', hours: 'Mo-So 10-24h' },
+                { name: 'Cascadas', type: 'Cocktails Eppendorf', address: 'Eppendorfer Landstr. 80', coords: [53.5856, 9.9958], link: '', hours: 'Mo-Sa 18-1h' },
                 // Altona / Ottensen
-                { name: 'Nachtasyl', type: 'Thalia Theater Bar', address: 'Alstertor 1', coords: [53.5522, 9.9986], link: '' },
-                { name: 'Elbschlosskeller', type: 'Legendäre Kneipe', address: 'Elbberg 1', coords: [53.5469, 9.9328], link: '' },
-                { name: 'Strandperle', type: 'Beach Bar', address: 'Övelgönne 60', coords: [53.5439, 9.9089], link: '' },
+                { name: 'Nachtasyl', type: 'Thalia Theater Bar', address: 'Alstertor 1', coords: [53.5522, 9.9986], link: '', hours: 'Di-Sa 17-24h' },
+                { name: 'Elbschlosskeller', type: 'Legendäre Kneipe', address: 'Elbberg 1', coords: [53.5469, 9.9328], link: '', hours: 'Mo-So 19-6h' },
+                { name: 'Strandperle', type: 'Beach Bar', address: 'Övelgönne 60', coords: [53.5439, 9.9089], link: '', hours: 'Mo-So 10-22h (Sommer)' },
             ]
         };
+
+        // ============ OPENSTREETMAP LIVE-DATEN ============
+        const OSM_CACHE_KEY = 'datebuch_osm_venues';
+        const OSM_CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 Stunden
+        let osmVenueData = { restaurants: [], bars: [], lastFetch: 0 };
+        let showOnlyOpenVenues = false; // Filter-Toggle
+
+        // OSM Öffnungszeiten-Parser (vereinfacht)
+        function parseOpeningHours(hoursString) {
+            if (!hoursString) return null;
+
+            // Häufige deutsche Formate
+            const hourPatterns = [
+                // "Mo-Fr 12-22h, Sa-So 11-22h"
+                /([A-Za-z]{2})-([A-Za-z]{2})\s+(\d{1,2})[:h]?-?(\d{1,2})[:h]?/g,
+                // "Di-Sa 18-23h"
+                /([A-Za-z]{2})-([A-Za-z]{2})\s+(\d{1,2})[:.]?(\d{0,2})?-(\d{1,2})[:.]?(\d{0,2})?/g,
+                // "Mo-So 9-24h"
+                /([A-Za-z]{2})-([A-Za-z]{2})\s+(\d{1,2})-(\d{1,2})/g
+            ];
+
+            const dayMap = {
+                'mo': 1, 'di': 2, 'mi': 3, 'do': 4, 'fr': 5, 'sa': 6, 'so': 0,
+                'mon': 1, 'tue': 2, 'wed': 3, 'thu': 4, 'fri': 5, 'sat': 6, 'sun': 0
+            };
+
+            return hoursString.toLowerCase();
+        }
+
+        // Prüfen ob Venue gerade offen ist
+        function isVenueOpen(venue) {
+            const hours = venue.hours || venue.opening_hours;
+            if (!hours) return null; // Unbekannt
+
+            const now = new Date();
+            const day = now.getDay(); // 0=So, 1=Mo, ...
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentTime = currentHour * 60 + currentMinute;
+
+            const hoursLower = hours.toLowerCase();
+
+            // Prüfe auf "geschlossen" für heute
+            const dayNames = ['so', 'mo', 'di', 'mi', 'do', 'fr', 'sa'];
+            const todayName = dayNames[day];
+
+            // Check if explicitly closed today
+            if (hoursLower.includes(`${todayName} geschlossen`) ||
+                hoursLower.includes(`${todayName}-${dayNames[(day+1)%7]} geschlossen`)) {
+                return false;
+            }
+
+            // Parse time ranges
+            const timeMatches = hours.match(/(\d{1,2})[:.]?(\d{0,2})?\s*[-–]\s*(\d{1,2})[:.]?(\d{0,2})?/g);
+            if (!timeMatches) return null;
+
+            // Einfache Prüfung: Suche nach Tagesbereich der heute enthält
+            const dayRanges = {
+                'mo-fr': [1,2,3,4,5],
+                'mo-sa': [1,2,3,4,5,6],
+                'mo-so': [0,1,2,3,4,5,6],
+                'di-sa': [2,3,4,5,6],
+                'di-so': [0,2,3,4,5,6],
+                'sa-so': [0,6],
+                'mo': [1], 'di': [2], 'mi': [3], 'do': [4], 'fr': [5], 'sa': [6], 'so': [0]
+            };
+
+            let isOpen = false;
+
+            // Finde alle Tag-Zeit-Kombinationen
+            for (const [range, days] of Object.entries(dayRanges)) {
+                if (hoursLower.includes(range) && days.includes(day)) {
+                    // Finde die Zeit nach diesem Tagesbereich
+                    const regex = new RegExp(range + '\\s+(\\d{1,2})[:.]?(\\d{0,2})?\\s*[-–]\\s*(\\d{1,2})[:.]?(\\d{0,2})?', 'i');
+                    const match = hours.match(regex);
+                    if (match) {
+                        const openHour = parseInt(match[1]);
+                        const openMin = parseInt(match[2]) || 0;
+                        const closeHour = parseInt(match[3]);
+                        const closeMin = parseInt(match[4]) || 0;
+
+                        const openTime = openHour * 60 + openMin;
+                        let closeTime = closeHour * 60 + closeMin;
+
+                        // Handle overnight (z.B. 18-2h)
+                        if (closeTime < openTime) closeTime += 24 * 60;
+
+                        if (currentTime >= openTime && currentTime <= closeTime) {
+                            isOpen = true;
+                            break;
+                        }
+                        // Nach Mitternacht Check
+                        if (closeTime > 24*60 && currentTime + 24*60 <= closeTime && currentTime < closeHour * 60 + closeMin) {
+                            isOpen = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return isOpen;
+        }
+
+        // Hole formatierte Öffnungszeiten für Anzeige
+        function getFormattedHours(venue) {
+            const hours = venue.hours || venue.opening_hours;
+            if (!hours) return null;
+
+            // Kürze lange Strings
+            if (hours.length > 40) {
+                return hours.substring(0, 37) + '...';
+            }
+            return hours;
+        }
+
+        // Badge für Öffnungsstatus
+        function getOpenStatusBadge(venue) {
+            const isOpen = isVenueOpen(venue);
+
+            if (isOpen === null) {
+                return '<span class="open-status-badge unknown" title="Öffnungszeiten unbekannt">?</span>';
+            } else if (isOpen) {
+                return '<span class="open-status-badge open" title="Jetzt geöffnet">●</span>';
+            } else {
+                return '<span class="open-status-badge closed" title="Geschlossen">●</span>';
+            }
+        }
+
+        // OSM Overpass API - Venues in Hamburg abrufen
+        async function fetchOSMVenues() {
+            // Prüfe Cache
+            const cached = localStorage.getItem(OSM_CACHE_KEY);
+            if (cached) {
+                try {
+                    const data = JSON.parse(cached);
+                    if (Date.now() - data.lastFetch < OSM_CACHE_DURATION) {
+                        osmVenueData = data;
+                        console.log('🗺️ OSM-Daten aus Cache geladen:', osmVenueData.restaurants.length, 'Restaurants,', osmVenueData.bars.length, 'Bars');
+                        mergeOSMWithLocal();
+                        return;
+                    }
+                } catch (e) {
+                    console.warn('OSM Cache ungültig:', e);
+                }
+            }
+
+            // Overpass API Query für Hamburg (vereinfacht)
+            const overpassUrl = 'https://overpass-api.de/api/interpreter';
+            const query = `
+                [out:json][timeout:30];
+                area["name"="Hamburg"]["admin_level"="4"]->.hamburg;
+                (
+                    node["amenity"~"restaurant|cafe"]["cuisine"~"vegetarian|vegan|organic"](area.hamburg);
+                    node["amenity"="bar"]["opening_hours"](area.hamburg);
+                    node["amenity"="pub"]["opening_hours"](area.hamburg);
+                );
+                out body;
+            `;
+
+            try {
+                console.log('🌐 Lade OSM-Daten für Hamburg...');
+                const response = await fetch(overpassUrl, {
+                    method: 'POST',
+                    body: 'data=' + encodeURIComponent(query),
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                });
+
+                if (!response.ok) throw new Error('OSM API Fehler: ' + response.status);
+
+                const data = await response.json();
+
+                // Parse OSM Daten
+                osmVenueData.restaurants = [];
+                osmVenueData.bars = [];
+
+                data.elements.forEach(el => {
+                    if (!el.tags?.name) return;
+
+                    const venue = {
+                        name: el.tags.name,
+                        type: el.tags.cuisine || el.tags.amenity,
+                        address: [el.tags['addr:street'], el.tags['addr:housenumber']].filter(Boolean).join(' ') || '',
+                        coords: [el.lat, el.lon],
+                        opening_hours: el.tags.opening_hours,
+                        phone: el.tags.phone,
+                        website: el.tags.website,
+                        osm_id: el.id,
+                        veggie: ['vegetarian', 'vegan', 'organic'].some(v =>
+                            (el.tags.cuisine || '').toLowerCase().includes(v) ||
+                            el.tags['diet:vegetarian'] === 'yes' ||
+                            el.tags['diet:vegan'] === 'yes'
+                        )
+                    };
+
+                    if (el.tags.amenity === 'bar' || el.tags.amenity === 'pub') {
+                        osmVenueData.bars.push(venue);
+                    } else {
+                        osmVenueData.restaurants.push(venue);
+                    }
+                });
+
+                osmVenueData.lastFetch = Date.now();
+
+                // Cache speichern
+                try {
+                    localStorage.setItem(OSM_CACHE_KEY, JSON.stringify(osmVenueData));
+                } catch (e) {
+                    console.warn('Konnte OSM-Daten nicht cachen:', e);
+                }
+
+                console.log('✅ OSM-Daten geladen:', osmVenueData.restaurants.length, 'Restaurants,', osmVenueData.bars.length, 'Bars');
+                mergeOSMWithLocal();
+
+            } catch (error) {
+                console.warn('⚠️ OSM-Abruf fehlgeschlagen, nutze lokale Daten:', error);
+            }
+        }
+
+        // Merge OSM-Daten mit lokaler Datenbank (lokale haben Priorität)
+        function mergeOSMWithLocal() {
+            // Erweitere lokale Venues mit OSM-Öffnungszeiten wenn vorhanden
+            venueDatabase.restaurants.forEach(local => {
+                const osmMatch = osmVenueData.restaurants.find(osm =>
+                    osm.name.toLowerCase() === local.name.toLowerCase() ||
+                    (osm.coords && local.coords &&
+                     Math.abs(osm.coords[0] - local.coords[0]) < 0.001 &&
+                     Math.abs(osm.coords[1] - local.coords[1]) < 0.001)
+                );
+                if (osmMatch && osmMatch.opening_hours && !local.hours) {
+                    local.hours = osmMatch.opening_hours;
+                }
+            });
+
+            venueDatabase.bars.forEach(local => {
+                const osmMatch = osmVenueData.bars.find(osm =>
+                    osm.name.toLowerCase() === local.name.toLowerCase() ||
+                    (osm.coords && local.coords &&
+                     Math.abs(osm.coords[0] - local.coords[0]) < 0.001 &&
+                     Math.abs(osm.coords[1] - local.coords[1]) < 0.001)
+                );
+                if (osmMatch && osmMatch.opening_hours && !local.hours) {
+                    local.hours = osmMatch.opening_hours;
+                }
+            });
+        }
+
+        // Toggle für "Nur offene Locations"
+        function toggleOnlyOpenVenues() {
+            showOnlyOpenVenues = !showOnlyOpenVenues;
+            const btn = document.getElementById('openOnlyToggle');
+            if (btn) {
+                btn.classList.toggle('active', showOnlyOpenVenues);
+                btn.innerHTML = showOnlyOpenVenues ? '🟢 Nur Offene' : '⚪ Alle zeigen';
+            }
+            // Refresh aktuelle Ansicht wenn Date Builder offen
+            if (document.getElementById('dateBuilderModal')?.classList.contains('active')) {
+                if (currentDatePlan.restaurant === null && currentDatePlan.wantFood) {
+                    renderRestaurantSelection();
+                } else if (currentDatePlan.bar === null && currentDatePlan.wantDrinks !== false) {
+                    renderBarSelection();
+                }
+            }
+        }
 
         // Distanz zwischen zwei Koordinaten berechnen (in km)
         function getDistanceKm(coords1, coords2) {
@@ -2276,6 +2600,9 @@
             updateDateStats();
             updateStreak();
             loadWeather();
+
+            // OSM Live-Daten für Restaurants/Bars laden (im Hintergrund)
+            fetchOSMVenues();
         });
 
         // ============ FEIERABEND ============
@@ -3389,23 +3716,36 @@
             const e = currentDatePlan.activity;
 
             // Finde nahegelegene Restaurants (basierend auf Event-Koordinaten)
-            const nearbyRestaurants = findNearbyVenues(e.coords, 'restaurants', 3);
+            let nearbyRestaurants = findNearbyVenues(e.coords, 'restaurants', 6);
+
+            // Filter: Nur offene anzeigen wenn Toggle aktiv
+            if (showOnlyOpenVenues) {
+                nearbyRestaurants = nearbyRestaurants.filter(r => isVenueOpen(r) !== false);
+            }
+            nearbyRestaurants = nearbyRestaurants.slice(0, 3);
 
             // Fallback: Event-Restaurant verwenden wenn vorhanden, oder erstes aus der Liste
             if (nearbyRestaurants.length === 0 && e.restaurant) {
                 nearbyRestaurants.push(e.restaurant);
             }
 
-            const restaurantOptionsHtml = nearbyRestaurants.map((r, i) => `
+            const restaurantOptionsHtml = nearbyRestaurants.map((r, i) => {
+                const statusBadge = getOpenStatusBadge(r);
+                const hours = getFormattedHours(r);
+                const hoursHtml = hours ? `<div class="venue-hours"><span class="hours-icon">🕐</span> ${hours}</div>` : '';
+
+                return `
                 <div class="venue-option" onclick="selectRestaurant(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
-                    <strong>🍽️ ${r.name}</strong>
-                    ${r.distance ? `<span style="float:right;color:var(--sage-dark);font-size:0.85rem;">${(r.distance * 1000).toFixed(0)}m</span>` : ''}
-                    <br>
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                        <strong>🍽️ ${r.name}</strong>
+                        <span>${statusBadge}${r.distance ? `<span style="color:var(--sage-dark);font-size:0.85rem;margin-left:8px;">${(r.distance * 1000).toFixed(0)}m</span>` : ''}</span>
+                    </div>
                     <small style="color:var(--text-light)">${r.type || ''}</small><br>
                     <small>${r.address || ''}</small>
-                    ${r.link ? `<br><a href="${r.link}" target="_blank" style="color:var(--sage-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zum Restaurant</a>` : ''}
+                    ${hoursHtml}
+                    ${r.link ? `<a href="${r.link}" target="_blank" style="color:var(--sage-dark);font-size:0.85rem;display:block;margin-top:4px;" onclick="event.stopPropagation()">→ Zum Restaurant</a>` : ''}
                 </div>
-            `).join('') || '<p style="color:var(--text-light)">Keine Restaurants in der Nähe gefunden</p>';
+            `}).join('') || '<p style="color:var(--text-light)">Keine Restaurants in der Nähe gefunden</p>';
 
             // Speichere die Optionen für später
             currentDatePlan.restaurantOptions = nearbyRestaurants;
@@ -3421,7 +3761,12 @@
 
                 <div class="date-builder-question">
                     <h4>🍽️ Wähle ein Restaurant (${currentDatePlan.foodTiming})</h4>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">In der Nähe von ${e.location || 'deiner Aktivität'}:</p>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <p style="font-size:0.9rem;color:var(--text-light);margin:0;">In der Nähe von ${e.location || 'deiner Aktivität'}:</p>
+                        <button id="openOnlyToggle" class="open-filter-toggle ${showOnlyOpenVenues ? 'active' : ''}" onclick="toggleOnlyOpenVenues()">
+                            ${showOnlyOpenVenues ? '🟢 Nur Offene' : '⚪ Alle zeigen'}
+                        </button>
+                    </div>
                     ${restaurantOptionsHtml}
                     <button class="date-option-btn" style="margin-top:10px;width:100%;" onclick="skipRestaurant()">Überspringen</button>
                 </div>
@@ -3453,7 +3798,13 @@
             const r = currentDatePlan.restaurant;
 
             // Finde nahegelegene Bars (mehr Optionen!)
-            const nearbyBars = findNearbyVenues(e.coords, 'bars', 5);
+            let nearbyBars = findNearbyVenues(e.coords, 'bars', 8);
+
+            // Filter: Nur offene anzeigen wenn Toggle aktiv
+            if (showOnlyOpenVenues) {
+                nearbyBars = nearbyBars.filter(b => isVenueOpen(b) !== false);
+            }
+            nearbyBars = nearbyBars.slice(0, 5);
 
             // Speichere die Optionen für später
             currentDatePlan.barOptions = nearbyBars;
@@ -3466,21 +3817,28 @@
                 </div>
             ` : '';
 
-            const barOptionsHtml = nearbyBars.map((b, i) => `
+            const barOptionsHtml = nearbyBars.map((b, i) => {
+                const statusBadge = getOpenStatusBadge(b);
+                const hours = getFormattedHours(b);
+                const hoursHtml = hours ? `<div class="venue-hours"><span class="hours-icon">🕐</span> ${hours}</div>` : '';
+
+                return `
                 <div class="venue-option bar-option" onclick="toggleBarSelection(${i})" style="background:white;padding:15px;border-radius:12px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s;" data-index="${i}">
                     <div style="display:flex;align-items:center;gap:10px;">
                         <span class="bar-checkbox" style="width:22px;height:22px;border:2px solid var(--rose);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"></span>
                         <div style="flex:1;">
-                            <strong>🍸 ${b.name}</strong>
-                            ${b.distance ? `<span style="float:right;color:var(--rose-dark);font-size:0.85rem;">${(b.distance * 1000).toFixed(0)}m</span>` : ''}
-                            <br>
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <strong>🍸 ${b.name}</strong>
+                                <span>${statusBadge}${b.distance ? `<span style="color:var(--rose-dark);font-size:0.85rem;margin-left:8px;">${(b.distance * 1000).toFixed(0)}m</span>` : ''}</span>
+                            </div>
                             <small style="color:var(--text-light)">${b.type || ''}</small><br>
                             <small>${b.address || ''}</small>
-                            ${b.link ? `<br><a href="${b.link}" target="_blank" style="color:var(--rose-dark);font-size:0.85rem;" onclick="event.stopPropagation()">→ Zur Bar</a>` : ''}
+                            ${hoursHtml}
+                            ${b.link ? `<a href="${b.link}" target="_blank" style="color:var(--rose-dark);font-size:0.85rem;display:block;margin-top:4px;" onclick="event.stopPropagation()">→ Zur Bar</a>` : ''}
                         </div>
                     </div>
                 </div>
-            `).join('') || '<p style="color:var(--text-light)">Keine Bars in der Nähe gefunden</p>';
+            `}).join('') || '<p style="color:var(--text-light)">Keine Bars in der Nähe gefunden</p>';
 
             flow.innerHTML = `
                 <div class="date-builder-question">
@@ -3494,7 +3852,12 @@
 
                 <div class="date-builder-question">
                     <h4>🍸 Bars für danach? (mehrere möglich)</h4>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:10px;">Wähle eine oder mehrere Bars aus:</p>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <p style="font-size:0.9rem;color:var(--text-light);margin:0;">Wähle eine oder mehrere Bars aus:</p>
+                        <button id="openOnlyToggle" class="open-filter-toggle ${showOnlyOpenVenues ? 'active' : ''}" onclick="toggleOnlyOpenVenues()">
+                            ${showOnlyOpenVenues ? '🟢 Nur Offene' : '⚪ Alle zeigen'}
+                        </button>
+                    </div>
                     ${barOptionsHtml}
                     <div style="display:flex;gap:10px;margin-top:15px;">
                         <button class="date-option-btn" style="flex:1;" onclick="confirmBarSelection()">Weiter</button>
