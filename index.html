@@ -478,6 +478,7 @@
             cursor: grab;
             user-select: none;
             transition: transform 0.1s;
+            pointer-events: auto;
         }
         .person-nick:active { cursor: grabbing; }
         .person-nick.hit {
@@ -494,6 +495,7 @@
         .icicle {
             cursor: pointer;
             transition: transform 0.2s;
+            pointer-events: auto;
         }
         .icicle:hover { transform: scale(1.1); }
         .icicle.falling {
@@ -593,8 +595,8 @@
             font-size: 0.9rem;
         }
         
-        .nav-tab:hover { border-color: var(--sage); }
-        .nav-tab.active { background: var(--sage); color: white; }
+        .nav-tab:hover:not(.active) { border-color: var(--ice-blue); background: var(--frost); }
+        .nav-tab.active { background: var(--sage); color: white; border-color: var(--sage); }
 
         /* Feierabend Toggle */
         .feierabend-toggle {
@@ -950,6 +952,22 @@
         .modal-header { padding: 22px; text-align: center; border-bottom: 1px solid var(--ice-blue); }
         .modal-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--navy); }
         .modal-body { padding: 22px; }
+
+        /* Date Navigation Buttons */
+        .date-nav-btn {
+            width: 36px; height: 36px;
+            border: none;
+            background: var(--sage);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .date-nav-btn:hover { background: var(--rose); transform: scale(1.1); }
         
         /* ROULETTE */
         .roulette-result { text-align: center; }
@@ -2554,8 +2572,10 @@
     <div class="modal" id="dayEventsModal">
         <div class="modal-content" style="max-width:700px;">
             <button class="modal-close" onclick="closeDayEventsModal()">✕</button>
-            <div class="modal-header">
-                <h3 id="dayEventsTitle">📅 Events am ...</h3>
+            <div class="modal-header" style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                <button class="date-nav-btn" onclick="navigateDayEvents(-1)" title="Vorheriger Tag">‹</button>
+                <h3 id="dayEventsTitle" style="flex:1;text-align:center;margin:0;">📅 Events am ...</h3>
+                <button class="date-nav-btn" onclick="navigateDayEvents(1)" title="Nächster Tag">›</button>
             </div>
             <div class="modal-body" id="dayEventsBody" style="max-height:70vh;overflow-y:auto;">
                 <!-- Kategorie-Filter Pills -->
@@ -3281,9 +3301,26 @@
         function setupNavigation() {
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.addEventListener('click', () => {
+                    const cat = tab.dataset.category;
+                    const wasActive = tab.classList.contains('active');
+
+                    // Wenn bereits aktiv, schließe die Kategorie (gehe zur ersten)
+                    if (wasActive) {
+                        // Erste Kategorie aktivieren (handwerk)
+                        const firstTab = document.querySelector('.nav-tab[data-category="handwerk"]');
+                        if (firstTab && firstTab !== tab) {
+                            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                            firstTab.classList.add('active');
+                            document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+                            document.getElementById('handwerk')?.classList.add('active');
+                            const feierabendToggle = document.getElementById('feierabendToggle');
+                            if (feierabendToggle) feierabendToggle.style.display = 'flex';
+                        }
+                        return;
+                    }
+
                     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
-                    const cat = tab.dataset.category;
                     document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
                     document.getElementById(cat)?.classList.add('active');
                     if (cat === 'travel') setTimeout(initGlobe, 150);
@@ -3723,7 +3760,8 @@
 
             eventsWithCoords.forEach(e => {
                 const marker = L.marker(e.coords).addTo(dayEventsMap);
-                marker.bindPopup(`<strong>${e.emoji} ${e.title}</strong><br>${e.location || ''}<br><small>${e.time || ''} - ${e.price || ''}</small>`);
+                const linkHtml = e.link ? `<br><a href="${e.link}" target="_blank" style="color:var(--sage);font-weight:600;">🎟️ Mehr Info</a>` : '';
+                marker.bindPopup(`<strong>${e.emoji} ${e.title}</strong><br>${e.location || ''}<br><small>${e.time || ''} - ${e.price || ''}</small>${linkHtml}`);
                 bounds.push(e.coords);
             });
 
@@ -3738,6 +3776,20 @@
                 dayEventsMap.remove();
                 dayEventsMap = null;
             }
+        }
+
+        // Navigiert zum vorherigen/nächsten Tag
+        function navigateDayEvents(direction) {
+            if (!currentSelectedDateStr) return;
+
+            const currentDate = new Date(currentSelectedDateStr);
+            currentDate.setDate(currentDate.getDate() + direction);
+
+            const newDateStr = currentDate.toISOString().split('T')[0];
+            showEventsForDate(newDateStr);
+
+            // Mini-Kalender aktualisieren
+            document.getElementById('globalDate').value = newDateStr;
         }
 
         // ============ ROULETTE ============
