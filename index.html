@@ -1212,57 +1212,71 @@
         .lightbox-prev { left: 20px; }
         .lightbox-next { right: 20px; }
 
-        /* ============ DATE COUNTER & STATS ============ */
-        .date-stats {
+        /* ============ KOMPAKTE WIDGETS BAR ============ */
+        .widgets-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--frost);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .widget-mini {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 10px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .widget-mini.widget-highlight {
             background: linear-gradient(135deg, var(--rose), var(--rose-dark));
             color: white;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
         }
-        .date-counter {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 700;
+        .widget-mini.widget-btn {
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
         }
-        .date-counter-label { font-size: 1rem; opacity: 0.9; }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 15px;
+        .widget-mini.widget-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
-        .stat-item {
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
-            padding: 12px;
-        }
-        .stat-value { font-size: 1.5rem; font-weight: 700; }
-        .stat-label { font-size: 0.8rem; opacity: 0.8; }
 
-        /* ============ ACHIEVEMENTS ============ */
+        /* ============ ACHIEVEMENTS (kollabierbar) ============ */
         .achievements-section {
             background: var(--frost);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .achievements-section.collapsed {
+            display: none;
         }
         .achievements-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
         }
         .achievement {
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             background: var(--ice-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -1276,13 +1290,14 @@
             transform: translateX(-50%);
             background: var(--navy);
             color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.7rem;
             white-space: nowrap;
             opacity: 0;
             visibility: hidden;
             transition: all 0.2s;
+            z-index: 10;
         }
         .achievement:hover .achievement-tooltip { opacity: 1; visibility: visible; bottom: 110%; }
 
@@ -1305,34 +1320,16 @@
             to { transform: scale(1.2); }
         }
 
-        /* ============ WEATHER WIDGET ============ */
-        .weather-widget {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
-            color: white;
-            border-radius: 12px;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        .weather-icon { font-size: 2rem; }
-        .weather-temp { font-size: 1.5rem; font-weight: 700; }
-        .weather-desc { font-size: 0.85rem; opacity: 0.9; }
-        .weather-suggestion {
-            margin-left: auto;
-            background: rgba(255,255,255,0.2);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* ============ MINI CALENDAR ============ */
+        /* ============ MINI CALENDAR (kollabierbar) ============ */
         .mini-calendar {
             background: var(--frost);
-            border-radius: 16px;
-            padding: 15px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .mini-calendar.collapsed {
+            display: none;
         }
         .mini-calendar-header {
             display: flex;
@@ -1746,51 +1743,46 @@
             </div>
         </div>
         
-        <!-- Date Stats & Streak -->
-        <div class="date-stats" id="dateStats">
-            <div class="date-counter" id="dateCounter">0</div>
-            <div class="date-counter-label">Dates zusammen 💕</div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value" id="statFavorites">0</div>
-                    <div class="stat-label">Favoriten</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="statCategories">0</div>
-                    <div class="stat-label">Kategorien</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="statMemories">0</div>
-                    <div class="stat-label">Erinnerungen</div>
-                </div>
+        <!-- Kompakte Widgets-Zeile -->
+        <div class="widgets-bar">
+            <!-- Wetter (mini) -->
+            <div class="widget-mini" id="weatherWidget" title="Hamburg Wetter">
+                <span id="weatherIcon">☀️</span>
+                <span id="weatherTemp">--°</span>
             </div>
-        </div>
 
-        <!-- Streak Display -->
-        <div class="streak-display" id="streakDisplay" style="display:none;">
-            <span class="streak-fire">🔥</span>
-            <span id="streakCount">0</span> Wochen Date-Streak!
-        </div>
-
-        <!-- Weather Widget -->
-        <div class="weather-widget" id="weatherWidget">
-            <span class="weather-icon" id="weatherIcon">☀️</span>
-            <div>
-                <div class="weather-temp" id="weatherTemp">--°</div>
-                <div class="weather-desc" id="weatherDesc">Wetter laden...</div>
+            <!-- Date Counter (mini) -->
+            <div class="widget-mini widget-highlight" id="dateStats" title="Eure Dates">
+                <span>💕</span>
+                <span id="dateCounter">0</span>
             </div>
-            <span class="weather-suggestion" id="weatherSuggestion">Perfekt für...</span>
+
+            <!-- Streak (mini) -->
+            <div class="widget-mini" id="streakDisplay" style="display:none;" title="Date-Streak">
+                <span>🔥</span>
+                <span id="streakCount">0</span>
+            </div>
+
+            <!-- Achievements Button -->
+            <button class="widget-mini widget-btn" onclick="toggleAchievements()" title="Achievements">
+                🏆 <span id="achievementCount">0</span>
+            </button>
+
+            <!-- Kalender Button -->
+            <button class="widget-mini widget-btn" onclick="toggleMiniCalendar()" title="Kalender">
+                📅
+            </button>
         </div>
 
-        <!-- Search Bar -->
+        <!-- Search Bar (kompakter) -->
         <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="globalSearch" placeholder="Events, Restaurants, Bars durchsuchen..." oninput="handleSearch(this.value)">
+            <input type="text" class="search-input" id="globalSearch" placeholder="Suchen..." oninput="handleSearch(this.value)">
             <div class="search-results" id="searchResults"></div>
         </div>
 
-        <!-- Mini Calendar -->
-        <div class="mini-calendar" id="miniCalendar">
+        <!-- Mini Calendar (versteckt) -->
+        <div class="mini-calendar collapsed" id="miniCalendar">
             <div class="mini-calendar-header">
                 <div class="mini-calendar-title" id="calendarTitle">Dezember 2025</div>
                 <div class="mini-calendar-nav">
@@ -1801,24 +1793,24 @@
             <div class="mini-calendar-grid" id="calendarGrid"></div>
         </div>
 
-        <!-- Achievements -->
-        <div class="achievements-section">
-            <h3 style="text-align:center;font-family:'Cormorant Garamond',serif;color:var(--navy);margin-bottom:15px;">🏆 Achievements</h3>
+        <!-- Achievements (versteckt) -->
+        <div class="achievements-section collapsed" id="achievementsSection">
             <div class="achievements-grid" id="achievementsGrid"></div>
         </div>
 
         <!-- Nav Spacer for sticky nav -->
         <div class="nav-spacer" id="navSpacer"></div>
 
+        <!-- Kompaktes Menü -->
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-category="handwerk">🔨 Handwerk</button>
-            <button class="nav-tab" data-category="aktiv">🏃‍♀️ Aktiv</button>
-            <button class="nav-tab" data-category="wellness">💆 Wellness</button>
-            <button class="nav-tab" data-category="comedy">😂 Comedy</button>
-            <button class="nav-tab" data-category="essen">🍽️ Essen</button>
-            <button class="nav-tab" data-category="shows">🎭 Shows</button>
-            <button class="nav-tab" data-category="travel">🌍 Reiseziele</button>
-            <button class="nav-tab" data-category="memories">📸 Erinnerungen</button>
+            <button class="nav-tab active" data-category="handwerk">🔨</button>
+            <button class="nav-tab" data-category="aktiv">🏃‍♀️</button>
+            <button class="nav-tab" data-category="wellness">💆</button>
+            <button class="nav-tab" data-category="comedy">😂</button>
+            <button class="nav-tab" data-category="essen">🍽️</button>
+            <button class="nav-tab" data-category="shows">🎭</button>
+            <button class="nav-tab" data-category="travel">🌍</button>
+            <button class="nav-tab" data-category="memories">📸</button>
             <span class="nav-separator">|</span>
             <button class="nav-tab nav-tab-side" data-category="liked">👍</button>
             <button class="nav-tab nav-tab-side" data-category="nope">👎</button>
@@ -1827,11 +1819,11 @@
 
         <!-- Feierabend Toggle -->
         <div class="feierabend-toggle" id="feierabendToggle">
-            <span class="feierabend-label">Solli hat frei ab:</span>
+            <span class="feierabend-label">Frei ab:</span>
             <select id="feierabendTime" onchange="saveFeierabendSetting()">
-                <option value="18:00">18:00 (normal)</option>
-                <option value="17:00">17:00 (früher)</option>
-                <option value="ganztags">Ganztags frei</option>
+                <option value="18:00">18:00</option>
+                <option value="17:00">17:00</option>
+                <option value="ganztags">Ganztags</option>
             </select>
         </div>
         
@@ -4931,6 +4923,21 @@ END:VCALENDAR`;
             showToast(isDark ? '☀️ Hell-Modus' : '🌙 Dunkel-Modus');
         }
 
+        // ============ TOGGLE FUNKTIONEN ============
+        function toggleMiniCalendar() {
+            const cal = document.getElementById('miniCalendar');
+            if (cal) {
+                cal.classList.toggle('collapsed');
+            }
+        }
+
+        function toggleAchievements() {
+            const section = document.getElementById('achievementsSection');
+            if (section) {
+                section.classList.toggle('collapsed');
+            }
+        }
+
         // ============ STICKY NAVIGATION ============
         function setupStickyNav() {
             const nav = document.getElementById('navTabs');
@@ -5272,19 +5279,25 @@ END:VCALENDAR`;
 
         function renderAchievements() {
             const grid = document.getElementById('achievementsGrid');
+            const countEl = document.getElementById('achievementCount');
             if (!grid) return;
 
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            let unlockedCount = 0;
 
             grid.innerHTML = achievementsList.map(a => {
                 const unlocked = a.check(saved);
+                if (unlocked) unlockedCount++;
                 return `
                     <div class="achievement ${unlocked ? 'unlocked' : 'locked'}">
                         ${a.emoji}
-                        <div class="achievement-tooltip">${a.name}<br><small>${a.desc}</small></div>
+                        <div class="achievement-tooltip">${a.name}</div>
                     </div>
                 `;
             }).join('');
+
+            // Update counter in widget bar
+            if (countEl) countEl.textContent = unlockedCount;
         }
 
         function checkAchievements() {
@@ -5304,8 +5317,9 @@ END:VCALENDAR`;
 
         // ============ WEATHER ============
         async function loadWeather() {
-            const widget = document.getElementById('weatherWidget');
-            if (!widget) return;
+            const iconEl = document.getElementById('weatherIcon');
+            const tempEl = document.getElementById('weatherTemp');
+            if (!iconEl || !tempEl) return;
 
             try {
                 // Kostenlose API für Hamburg
@@ -5317,33 +5331,21 @@ END:VCALENDAR`;
 
                 const weatherInfo = getWeatherInfo(code);
 
-                document.getElementById('weatherIcon').textContent = weatherInfo.icon;
-                document.getElementById('weatherTemp').textContent = `${temp}°C`;
-                document.getElementById('weatherDesc').textContent = weatherInfo.desc;
-                document.getElementById('weatherSuggestion').textContent = weatherInfo.suggestion;
-
-                // Widget-Farbe anpassen
-                if (code >= 51) { // Regen/Schnee
-                    widget.style.background = 'linear-gradient(135deg, #636e72, #2d3436)';
-                } else if (temp < 5) { // Kalt
-                    widget.style.background = 'linear-gradient(135deg, #74b9ff, #0984e3)';
-                } else { // Warm/Schön
-                    widget.style.background = 'linear-gradient(135deg, #fdcb6e, #f39c12)';
-                }
+                iconEl.textContent = weatherInfo.icon;
+                tempEl.textContent = `${temp}°`;
             } catch (e) {
                 console.log('Wetter konnte nicht geladen werden');
-                widget.style.display = 'none';
             }
         }
 
         function getWeatherInfo(code) {
-            if (code === 0) return { icon: '☀️', desc: 'Sonnig', suggestion: 'Perfekt für Outdoor!' };
-            if (code <= 3) return { icon: '⛅', desc: 'Teilweise bewölkt', suggestion: 'Gut für alles!' };
-            if (code <= 48) return { icon: '☁️', desc: 'Bewölkt', suggestion: 'Indoor-Date?' };
-            if (code <= 67) return { icon: '🌧️', desc: 'Regen', suggestion: 'Wellness-Tag!' };
-            if (code <= 77) return { icon: '🌨️', desc: 'Schnee', suggestion: 'Gemütlich drinnen!' };
-            if (code <= 82) return { icon: '🌧️', desc: 'Starker Regen', suggestion: 'Kino oder Spa!' };
-            return { icon: '⛈️', desc: 'Gewitter', suggestion: 'Bleibt drinnen!' };
+            if (code === 0) return { icon: '☀️', desc: 'Sonnig' };
+            if (code <= 3) return { icon: '⛅', desc: 'Teilweise bewölkt' };
+            if (code <= 48) return { icon: '☁️', desc: 'Bewölkt' };
+            if (code <= 67) return { icon: '🌧️', desc: 'Regen' };
+            if (code <= 77) return { icon: '🌨️', desc: 'Schnee' };
+            if (code <= 82) return { icon: '🌧️', desc: 'Starker Regen' };
+            return { icon: '⛈️', desc: 'Gewitter' };
         }
 
         // ============ LIGHTBOX FOR MEMORIES ============
