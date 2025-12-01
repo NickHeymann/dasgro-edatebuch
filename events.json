@@ -1999,6 +1999,37 @@
       }
     },
     {
+      "id": "dauer-hamam",
+      "emoji": "🛁",
+      "title": "Das Hamam - Türkisches Bad",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "wellness",
+      "description": "Original türkisches Hamam in Wilhelmsburg! Peeling, Wolkenschaum-Massage, Begrüßungstee. Reservierung nötig unter 040/76752900!",
+      "location": "Das Hamam",
+      "address": "Veringweg 4, 21107 Hamburg",
+      "coords": [53.4978, 10.0056],
+      "link": "https://www.das-hamam.de/",
+      "time": "nur mit Terminvereinbarung",
+      "price": "ab 35€",
+      "treatment": "Hamam-Ritual: Ganzkörper-Peeling + Seifenschaum-Waschung + Wolkenschaum-Massage. VIP-Paket mit Ölmassage ab 150€.",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Aomame Vegan",
+        "type": "100% Vegan Japanisch",
+        "address": "Veringstraße 155, Wilhelmsburg",
+        "link": "https://aomame-vegan.de/",
+        "coords": [53.4969, 10.0069],
+        "empfehlung": "Miso Ramen (ab 9,90€) oder vegane Tapas-Auswahl"
+      },
+      "bar": {
+        "name": "Deichdiele",
+        "type": "Wilhelmsburgs Wohnzimmer",
+        "address": "Veringstraße 156",
+        "link": "https://www.instagram.com/deichdiele/"
+      }
+    },
+    {
       "id": "dauer-amun",
       "emoji": "🏺",
       "title": "Studio Amun Töpferkurs",
@@ -2028,19 +2059,49 @@
       }
     },
     {
-      "id": "dauer-makerhafen",
-      "emoji": "🏺",
-      "title": "Makerhafen Töpferkurs",
+      "id": "dauer-goldschmied",
+      "emoji": "💍",
+      "title": "Goldschmiedekurs - eigenen Ring fertigen",
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "handwerk",
-      "description": "Handaufbau ohne Scheibe! Nur 35€ inkl. alles. Günstigste Option!",
-      "location": "Makerhafen",
-      "address": "Ottenser Hauptstraße 10, 22765 Hamburg",
-      "coords": [53.5519, 9.9306],
-      "link": "https://makerhafen.de/kurse/toepferkurs-in-hamburg/",
-      "time": "verschiedene",
-      "price": "35€",
+      "description": "Eigenen Schmuck herstellen! Sägen, Feilen, Löten lernen. Silberring als erstes Projekt.",
+      "location": "Astrid Eckert Goldschmiede",
+      "address": "Bahrenfeld, Hamburg",
+      "coords": [53.5636, 9.9100],
+      "link": "https://www.goldschmiedekurs-hamburg.de/",
+      "time": "verschiedene Termine",
+      "price": "ab 90€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Cai Kitchen",
+        "type": "Vegan Asiatisch",
+        "address": "Bahrenfelder Straße 201",
+        "link": "https://www.cai-kitchen.de/",
+        "coords": [53.5600, 9.9300],
+        "empfehlung": "Dan Dan Nudeln oder Dumplings"
+      },
+      "bar": {
+        "name": "Ampere",
+        "type": "Cocktails & Vinyl",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://www.instagram.com/ampere_bar/"
+      }
+    },
+    {
+      "id": "dauer-coopgold",
+      "emoji": "💎",
+      "title": "coopgold - Wachsmodellieren Schmuck",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "handwerk",
+      "description": "Wachsmodell für eigenen Ring erstellen! Wird dann gegossen. Kreative Schmuckherstellung.",
+      "location": "coopgold",
+      "address": "Hamburg",
+      "coords": [53.5500, 9.9500],
+      "link": "https://www.coopgold.de/workshops/",
+      "time": "verschiedene Termine",
+      "price": "ab 190€",
       "vorher_nachher": "Nachher",
       "restaurant": {
         "name": "Maquis",
@@ -2050,10 +2111,10 @@
         "coords": [53.5589, 9.9450]
       },
       "bar": {
-        "name": "Strand Pauli",
-        "type": "Beach Bar",
-        "address": "St. Pauli Hafenstraße 89",
-        "link": "https://www.strandpauli.de/"
+        "name": "Katze",
+        "type": "Kultkneipe Schanze",
+        "address": "Schulterblatt 81",
+        "link": "https://www.instagram.com/katze.hamburg/"
       }
     },
     {
@@ -2592,17 +2653,17 @@
       }
     },
     {
-      "id": "dauer-pasta-dammetto",
+      "id": "dauer-pasta-damettto",
       "emoji": "🍝",
-      "title": "Pasta-Workshop Dammetto",
+      "title": "Pasta-Workshop Damettto",
       "date": "2025-12-01",
       "endDate": "2026-02-28",
       "category": "handwerk",
       "description": "Frische Nudeln selbst machen! Workshop + 3-Gang-Menü + Wein.",
-      "location": "Dammetto Nudeln",
+      "location": "Damettto Nudeln",
       "address": "Erikastraße 70, 20251 Hamburg",
       "coords": [53.5883, 9.9867],
-      "link": "https://dammetto.de/",
+      "link": "https://www.damettto-nudeln.de/",
       "time": "verschiedene",
       "price": "ab 89€/Person",
       "vorher_nachher": "Komplett",
@@ -2610,7 +2671,7 @@
         "name": "3-Gang-Menü inklusive",
         "type": "Selbstgemachte Pasta",
         "address": "Vor Ort",
-        "link": "https://dammetto.de/"
+        "link": "https://www.damettto-nudeln.de/"
       },
       "bar": {
         "name": "Julep",
@@ -3582,6 +3643,180 @@
         "type": "Gin-Bar",
         "address": "Pinnasberg 60, St. Pauli",
         "link": "https://www.christiansens.de/"
+      }
+    },
+    {
+      "id": "dauer-nordwand-schnupper",
+      "emoji": "🧗",
+      "title": "Nordwandhalle Schnupperklettern",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "aktiv",
+      "description": "Klettern ausprobieren! 2h Einführung mit Trainer, Material inklusive. Perfekt für Anfänger.",
+      "location": "Nordwandhalle",
+      "address": "Am Inselpark 20, 21109 Hamburg",
+      "coords": [53.5058, 9.9975],
+      "link": "https://nordwandhalle.de/",
+      "time": "verschiedene Termine",
+      "price": "ab 39€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Refugium (in der Halle)",
+        "type": "Café & Restaurant",
+        "address": "In der Nordwandhalle",
+        "link": "https://nordwandhalle.de/",
+        "empfehlung": "Direkt in der Halle essen nach dem Klettern"
+      },
+      "bar": {
+        "name": "Flutlicht",
+        "type": "Bar Wilhelmsburg",
+        "address": "Stübenplatz 10, Wilhelmsburg",
+        "link": "https://www.instagram.com/flutlicht_wburg/"
+      }
+    },
+    {
+      "id": "dauer-nordwand-einsteiger",
+      "emoji": "🧗",
+      "title": "Nordwandhalle Einsteigerkurs Klettern",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "aktiv",
+      "description": "4-teiliger Kletterkurs! Sichern, Klettertechnik und selbstständig klettern lernen. Mit Prüfung.",
+      "location": "Nordwandhalle",
+      "address": "Am Inselpark 20, 21109 Hamburg",
+      "coords": [53.5058, 9.9975],
+      "link": "https://nordwandhalle.de/",
+      "time": "verschiedene Termine",
+      "price": "ab 119€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Aomame Vegan",
+        "type": "100% Vegan Japanisch",
+        "address": "Veringstraße 155, Wilhelmsburg",
+        "link": "https://aomame-vegan.de/",
+        "empfehlung": "Miso Ramen (ab 9,90€)"
+      },
+      "bar": {
+        "name": "Deichdiele",
+        "type": "Wilhelmsburgs Wohnzimmer",
+        "address": "Veringstraße 156",
+        "link": "https://www.instagram.com/deichdiele/"
+      }
+    },
+    {
+      "id": "dauer-flashh-bouldern",
+      "emoji": "🧗",
+      "title": "FLASHH Bouldern (ohne Seil)",
+      "date": "2025-12-01",
+      "endDate": "2026-02-28",
+      "category": "aktiv",
+      "description": "Bouldern ohne Anmeldung! 200+ Routen auf 1300qm. Perfekt für spontane Dates. Schuhe leihbar.",
+      "location": "FLASHH",
+      "address": "Gasstraße 18, 22761 Hamburg",
+      "coords": [53.5636, 9.9100],
+      "link": "https://www.flashh.de/",
+      "time": "Mo-Fr 10-23h, Sa-So 9-22h",
+      "price": "ab 13€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Cai Kitchen",
+        "type": "Vegan Asiatisch",
+        "address": "Bahrenfelder Straße 201",
+        "link": "https://www.cai-kitchen.de/",
+        "empfehlung": "Dan Dan Nudeln (würzig!) oder Kartoffel-Dumplings"
+      },
+      "bar": {
+        "name": "Ampere",
+        "type": "Cocktails & Vinyl",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://www.instagram.com/ampere_bar/"
+      }
+    },
+    {
+      "id": "dauer-laufwerk-marathon",
+      "emoji": "🏃",
+      "title": "Laufwerk Hamburg - Marathontraining 2026",
+      "date": "2026-01-25",
+      "endDate": "2026-04-12",
+      "category": "aktiv",
+      "description": "Professionelles Marathontraining! 7 Sonntags-Läufe, Lauf-ABC, HF-Test, Ernährungsvorträge. Für alle Zielzeiten 3:15-5:00h.",
+      "location": "Laufwerk Hamburg",
+      "address": "Hoheluftchaussee 42, 20253 Hamburg",
+      "coords": [53.5803, 9.9678],
+      "link": "https://www.laufwerk-hamburg.de/training/marathontraining-2/",
+      "time": "Sonntags 10:00",
+      "price": "109€ (7 Läufe + Extras)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Froindlichst",
+        "type": "100% Vegan",
+        "address": "Lagerstraße 34",
+        "link": "https://www.froindlichst.de/",
+        "empfehlung": "Veganer Burger nach dem Lauf zur Regeneration"
+      },
+      "bar": {
+        "name": "Altes Mädchen",
+        "type": "Craft Beer",
+        "address": "Lagerstraße 28b",
+        "link": "https://www.altes-maedchen.com/"
+      }
+    },
+    {
+      "id": "dauer-laufwerk-tempo",
+      "emoji": "🏃",
+      "title": "Laufwerk Tempotraining",
+      "date": "2026-01-01",
+      "endDate": "2026-07-31",
+      "category": "aktiv",
+      "description": "Wöchentliches Tempotraining im Stadtpark! Koordination, Laufstil, Intervalle. Ideal als Marathon-Ergänzung.",
+      "location": "Stadtpark Hamburg",
+      "address": "Jahnkampfbahn, Stadtpark",
+      "coords": [53.5967, 10.0167],
+      "link": "https://www.laufwerk-hamburg.de/training/laufen/tempokurse/",
+      "time": "Mittwochs 19:00-20:30",
+      "price": "90€ (8 Einheiten)",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Tassajara",
+        "type": "Vegan",
+        "address": "Eppendorfer Weg 47",
+        "link": "https://www.tassajara.de/",
+        "empfehlung": "Proteinreiches veganes Abendessen"
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "dauer-hhsc-laufkurs",
+      "emoji": "🏃",
+      "title": "HHSC Laufkurs für Anfänger",
+      "date": "2025-12-01",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "description": "Entspannter Einstieg ins Laufen! Montags im Stadtpark. Ziel: 5km ohne Pause durchlaufen.",
+      "location": "Jahnkampfbahn Stadtpark",
+      "address": "Linnering, 22299 Hamburg",
+      "coords": [53.5967, 10.0167],
+      "link": "https://hhsc.de/",
+      "time": "Montags 19:15-21:00",
+      "price": "Vereinsbeitrag",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Mirou",
+        "type": "Israelische Mezze",
+        "address": "Gertigstraße 21",
+        "link": "https://www.mirou-hamburg.de/",
+        "empfehlung": "Hummus, Falafel und Shakshuka"
+      },
+      "bar": {
+        "name": "Die Schöne",
+        "type": "Bar Winterhude",
+        "address": "Barmbeker Straße 159",
+        "link": "https://www.instagram.com/dieschoene_bar/"
       }
     }
   ],

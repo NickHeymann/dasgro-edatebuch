@@ -24,7 +24,7 @@ Jedes Event hat:
 - `id`, `emoji`, `title`, `date`, `category`
 - `location`, `address`, `coords` (für Karte)
 - `link` (Ticketshop), `time`, `price`
-- `restaurant` (Name, Type, Address, Link)
+- `restaurant` (Name, Type, Address, Link, empfehlung) - empfehlung enthält konkrete Gerichte von der Karte!
 - `bar` (Name, Type, Address, Link) - kann auch Array mit mehreren Bars sein!
 - Optional: `endDate` (für Dauerevents), `treatment` (für Wellness)
 
@@ -42,6 +42,16 @@ Jedes Event hat:
 7. **Feierabend-Toggle** - "Solli hat frei ab:" Dropdown für Zeitfilterung (nur bei handwerk, aktiv, wellness, comedy, essen, shows)
 8. **Multi-Bar Auswahl** - Im Date Builder können mehrere Bars ausgewählt werden
 9. **Memories/Erinnerungen** - Polaroid-Galerie mit bearbeitbaren Titeln (werden in localStorage gespeichert)
+10. **HVV-Verbindung** - Button "🚇 HVV ab Arbeit" öffnet Fahrplanauskunft mit Sollis Arbeitsadresse als Start
+
+## Sollis Arbeitsweg (WICHTIG!)
+- **Sollis Arbeit**: Stadtdeich 5, 20097 Hamburg
+- **Frühester Feierabend**: 17:00 Uhr (variiert: 17:00, 17:30, 18:00)
+- **Transport**: Öffis (HVV) im Winter, Fahrrad/Emmy nur bei >10°C und <30 Min Fahrt
+- Der "🚇 HVV ab Arbeit" Button im Date Builder öffnet die HVV Fahrplanauskunft mit:
+  - Start: Stadtdeich 5, Hamburg
+  - Ziel: Erstes Ziel des Dates (Restaurant wenn vorher, sonst Aktivität)
+- **WICHTIG**: iFrames sind laut HVV-Nutzungsbedingungen verboten! Nur Links erlaubt.
 
 ## Technische Details
 
@@ -61,14 +71,20 @@ Jedes Event hat:
 - Nur sichtbar bei bestimmten Kategorien: `['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows']`
 - Bei Travel, Memories etc. versteckt
 
+### HVV-Integration
+- Funktion `openHVVConnection()` generiert HVV Geofox Link
+- URL-Format: `https://geofox.hvv.de/web/de/connections?originName=...&destName=...`
+- Öffnet im neuen Tab (kein iFrame erlaubt!)
+
 ## Regelmäßige Aufgaben
 
 ### Events updaten
 Wenn Nick sagt "Update die Events":
 1. Nach neuen Events in Hamburg recherchieren (Konzerte, Theater, Comedy, Wellness, etc.)
 2. Neue Events zu `events.json` hinzufügen (mit Restaurant + Bar!)
-3. `node deduplicate-events.js` ausführen
-4. Committen und pushen
+3. **Restaurant-Empfehlungen**: Konkrete vegetarische Gerichte von der aktuellen Karte recherchieren!
+4. `node deduplicate-events.js` ausführen
+5. Committen und pushen
 
 ### Locations-Datenbank prüfen
 Die `locations-database.json` enthält alle Restaurants, Bars und Aktivitäten mit Öffnungszeiten. Bei jedem größeren Update:
@@ -84,13 +100,23 @@ Nick & Solli möchten KEINE:
 - **Fleisch-Restaurants** (keine Steakhäuser wie Block House)
 - **Outdoor-Events im Winter** (es ist kalt!)
 - **Weihnachtsmärkte**
+- **Ketten-Restaurants** (kein Vapiano, Starbucks, Balzac Coffee etc.)
+- **Cafés als Restaurant-Empfehlung** (Cafés sind keine Restaurants!)
 
 Stattdessen bevorzugen sie:
-- Vegetarische/vegane Restaurants
+- Vegetarische/vegane Restaurants (Einzelläden!)
 - Indoor-Aktivitäten
 - Wellness & Spa
 - Musicals, Theater, Comedy
 - Elektronische Musik, Indie, Rock
+- **Aktive Dates**: Bouldern, Klettern, Laufkurse (Solli trainiert für Marathon 2026!)
+
+## Aktive Date-Ideen (Sollis Marathon-Training)
+Solli trainiert für einen Marathon! Passende Dates:
+- **Laufwerk Hamburg**: Marathontraining (So 10h), Tempotraining (Mi 19h), Lauf-ABC
+- **HHSC Laufgruppe**: Anfängerkurs Mo 19:15 im Stadtpark
+- **Nordwandhalle**: Schnupperklettern, Einsteigerkurs (Wilhelmsburg - nah an Sollis Arbeit!)
+- **FLASHH**: Spontan Bouldern ohne Anmeldung (Bahrenfeld)
 
 ## Event-Quellen für Recherche
 - hamburg.de/kultur
@@ -100,8 +126,10 @@ Stattdessen bevorzugen sie:
 - stage-entertainment.de (Musicals)
 - quatsch-comedy-club.de
 - eventim.de
-- Wellness: wellnest.me, heavenlyspahamburg.de
+- Wellness: wellnest.me, heavenlyspahamburg.de, das-hamam.de
 - Partys: ohschonhell.de, heuteinhamburg.de
+- Aktiv: nordwandhalle.de, flashh.de, laufwerk-hamburg.de, hhsc.de
+- Handwerk: goldschmiedekurs-hamburg.de, coopgold.de, studioamun.com
 
 ## Stil der App
 - Romantisch, pastellfarben

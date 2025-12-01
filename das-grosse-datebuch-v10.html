@@ -1621,7 +1621,7 @@
             { id: 'hw3', emoji: '🧵', title: 'Nähkurs für Anfänger', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Nähen lernen! Nähmaschine bedienen, Stoffe zuschneiden, erstes Kissen oder Tasche', location: 'Erbsenprinzessin, Ottensen', part1Title: 'Kreativwerkstatt', part1Desc: 'Kleine Gruppen, individuelle Betreuung', part2Title: 'Danach: Ahoi Steffen', part2Desc: 'Fischbrötchen in Ottensen' },
             { id: 'hw4', emoji: '🧵', title: 'COKO Nahtstelle - Nähkurs', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Exklusive Nähkurse in Bramfeld, max. 4 Teilnehmer. Professionelle Fertigungstechniken!', location: 'Nahtstelle Hamburg, Bramfeld', part1Title: 'Nahtstelle Hamburg', part1Desc: 'Einzeln oder Kleingruppe', part2Title: 'Danach: Shiso Burger', part2Desc: 'Asian-Style Burger' },
             { id: 'hw5', emoji: '🏺', title: 'Töpferkurs an der Drehscheibe', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Töpfern lernen! Ton formen, Gefäße drehen, später glasieren', location: 'Studio Amun oder Unser Atelier', part1Title: 'Studio Amun', part1Desc: '2-3h, ca. 80-100€, Material inkl.', part2Title: 'Danach: Cai Kitchen', part2Desc: 'Vegane Dumplings zur Stärkung' },
-            { id: 'hw6', emoji: '🏺', title: 'Makerhafen Töpferkurs', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Töpfern ohne Drehscheibe! Handaufbau-Techniken, super für Anfänger', location: 'Makerhafen, Altona', part1Title: 'Makerhafen', part1Desc: 'Nur 35€ inkl. Ton & Rohbrand!', part2Title: 'Danach: Maquis', part2Desc: 'Vegetarisch in Altona' },
+            { id: 'hw6', emoji: '💍', title: 'Goldschmiedekurs - eigenen Ring fertigen', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Eigenen Schmuck herstellen! Sägen, Feilen, Löten lernen. Silberring als erstes Projekt.', location: 'Astrid Eckert Goldschmiede, Bahrenfeld', part1Title: 'Goldschmiedekurs', part1Desc: 'ab 90€, Silberring selbst machen', part2Title: 'Danach: Cai Kitchen', part2Desc: 'Vegane Sichuan-Küche' },
             { id: 'hw7', emoji: '🪵', title: 'Holz-Workshop: Schneidebrett', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Eigenes Schneidebrett aus Edelholz bauen! Traditionelle Tischlerei kennenlernen', location: 'Ärmel Hoch, Hamburg', part1Title: 'Ärmel Hoch', part1Desc: 'Tischlermeister leitet an', part2Title: 'Danach: Bidges & Sons', part2Desc: 'Veganer Brunch' },
             { id: 'hw8', emoji: '🛹', title: 'Balance Board bauen', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Eigenes Balance Board aus Holz bauen! Surf-Fitness-Training', location: 'Ärmel Hoch, Hamburg', part1Title: 'Ärmel Hoch', part1Desc: 'Komplett selbst gebaut', part2Title: 'Danach: Cai Kitchen', part2Desc: 'Vegane Sichuan-Küche' },
             { id: 'hw9', emoji: '🪑', title: 'Grundkurs Tischlern (Wochenende)', date: '2025-12-01', endDate: '2026-12-31', category: 'handwerk', description: 'Holzbearbeitung lernen! Tablett oder Rahmen bauen - Hobby-Kurs, kein Bildungsurlaub', location: 'Von Frauenhand / Tischler-Akademie', part1Title: 'Wochenend-Workshop', part1Desc: 'Sa+So, 12h Kurszeit, ca. 250€', part2Title: 'Danach: Altes Mädchen', part2Desc: 'Craft Beer & Burger' },
@@ -3017,6 +3017,7 @@
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
                     <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">In Kalender</button>
                     <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">WhatsApp</button>
+                    <button class="btn btn-primary" onclick="openHVVConnection()" style="background:#e31e24;">🚇 HVV ab Arbeit</button>
                 </div>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:15px;">
@@ -3194,6 +3195,30 @@ END:VCALENDAR`;
             window.open(whatsappUrl, '_blank');
 
             showToast('📱 WhatsApp geöffnet!');
+        }
+
+        // ============ HVV VERBINDUNG ============
+        function openHVVConnection() {
+            const e = currentDatePlan.activity;
+            const r = currentDatePlan.restaurant;
+            const foodTiming = currentDatePlan.foodTiming;
+
+            // Sollis Arbeitsadresse
+            const startAddress = "Stadtdeich 5, Hamburg";
+
+            // Bestimme das erste Ziel (Restaurant vorher oder Aktivität)
+            let firstDestination;
+            if (currentDatePlan.wantFood && foodTiming === 'vorher' && r) {
+                firstDestination = r.address || r.name + ", Hamburg";
+            } else {
+                firstDestination = e.address || e.location + ", Hamburg";
+            }
+
+            // HVV Geofox URL mit vorausgefülltem Start und Ziel
+            const hvvUrl = `https://geofox.hvv.de/web/de/connections?originName=${encodeURIComponent(startAddress)}&destName=${encodeURIComponent(firstDestination)}`;
+
+            window.open(hvvUrl, '_blank');
+            showToast('🚇 HVV Fahrplanauskunft geöffnet!');
         }
 
         // ============ TOAST ============

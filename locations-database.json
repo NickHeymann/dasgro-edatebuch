@@ -617,6 +617,16 @@
       "category": "wellness"
     },
     {
+      "name": "Das Hamam",
+      "type": "Türkisches Hamam",
+      "address": "Veringweg 4, 21107 Hamburg",
+      "district": "Wilhelmsburg",
+      "hours": "nur mit Terminvereinbarung (040/76752900)",
+      "link": "https://www.das-hamam.de/",
+      "price": "ab 35€",
+      "category": "wellness"
+    },
+    {
       "name": "Yogaraum Hamburg",
       "type": "Yoga Studio Schanze",
       "address": "Schulterblatt 58, 20357 Hamburg",
@@ -667,13 +677,13 @@
       "category": "handwerk"
     },
     {
-      "name": "Makerhafen Töpferkurs",
-      "type": "Töpfern ohne Scheibe",
+      "name": "Makerhafen Workshops",
+      "type": "Makerspace (3D-Druck, Löten, etc.)",
       "address": "Ottenser Hauptstraße 10, 22765 Hamburg",
       "district": "Ottensen",
-      "hours": "verschiedene Termine",
-      "link": "https://makerhafen.de/",
-      "price": "35€",
+      "hours": "siehe Kalender",
+      "link": "https://makerhafen.de/kalender/",
+      "price": "variiert",
       "category": "handwerk"
     },
     {
@@ -695,6 +705,46 @@
       "link": "https://www.schmiedejungs.de/",
       "price": "ab 150€",
       "category": "handwerk"
+    },
+    {
+      "name": "Astrid Eckert Goldschmiede",
+      "type": "Goldschmiedekurs",
+      "address": "Bahrenfeld, Hamburg",
+      "district": "Bahrenfeld",
+      "hours": "verschiedene Termine",
+      "link": "https://www.goldschmiedekurs-hamburg.de/",
+      "price": "ab 90€",
+      "category": "handwerk"
+    },
+    {
+      "name": "coopgold Schmuckworkshop",
+      "type": "Wachsmodellieren & Goldschmieden",
+      "address": "Hamburg",
+      "district": "Hamburg",
+      "hours": "verschiedene Termine",
+      "link": "https://www.coopgold.de/workshops/",
+      "price": "ab 190€",
+      "category": "handwerk"
+    },
+    {
+      "name": "Laufwerk Hamburg",
+      "type": "Marathontraining & Lauf-ABC",
+      "address": "Hoheluftchaussee 42, 20253 Hamburg",
+      "district": "Hoheluft",
+      "hours": "So 10h (Marathon), Mi 19h (Tempo)",
+      "link": "https://www.laufwerk-hamburg.de/",
+      "price": "ab 80€",
+      "category": "aktiv"
+    },
+    {
+      "name": "HHSC Laufgruppe",
+      "type": "Laufkurs für Anfänger",
+      "address": "Jahnkampfbahn, Stadtpark",
+      "district": "Winterhude",
+      "hours": "Mo 19:15, Do 19:15",
+      "link": "https://hhsc.de/",
+      "price": "Vereinsbeitrag",
+      "category": "aktiv"
     },
     {
       "name": "Ärmel Hoch Schneidebrett",
@@ -727,12 +777,12 @@
       "category": "handwerk"
     },
     {
-      "name": "Dammetto Pasta-Workshop",
+      "name": "Damettto Pasta-Workshop",
       "type": "Frische Nudeln machen",
       "address": "Erikastraße 70, 20251 Hamburg",
       "district": "Eppendorf",
-      "hours": "verschiedene Termine",
-      "link": "https://dammetto.de/",
+      "hours": "Do-Fr 14-18 Uhr",
+      "link": "https://www.damettto-nudeln.de/",
       "price": "ab 89€",
       "category": "handwerk"
     }
