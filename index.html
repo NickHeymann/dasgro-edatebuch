@@ -6004,10 +6004,12 @@ END:VCALENDAR`;
                 const zoomSpeed = 0.005; // 5x schneller als vorher
                 camera.position.z += e.deltaY * zoomSpeed;
                 camera.position.z = Math.max(1.2, Math.min(5, camera.position.z));
+                console.log('Zoom level:', camera.position.z, 'Threshold:', STREETVIEW_THRESHOLD);
                 updateMarkersForZoom();
 
                 // Automatisch zu Streetview wechseln wenn sehr nah rangezoomt
                 if (camera.position.z <= STREETVIEW_THRESHOLD && !isStreetViewActive) {
+                    console.log('Switching to street view...');
                     showStreetView();
                 }
             }, { passive: false });
