@@ -5894,6 +5894,12 @@ END:VCALENDAR`;
             globeGroup = new THREE.Group();
             scene.add(globeGroup);
 
+            // Initiale Rotation: Zeige Europa (Hamburg: lat ~53.5, lon ~10)
+            // lat = rotX * 180/PI → rotX = lat * PI/180 = 53.5 * 0.01745 = ~0.93
+            // lon = -rotY * 180/PI - 90 → rotY = -(lon + 90) * PI/180 = -(10 + 90) * 0.01745 = ~-1.75
+            globeGroup.rotation.x = 0.4; // ~23° Nord - gute Sicht auf Europa
+            globeGroup.rotation.y = -1.75; // ~-100° → Hamburg/Europa im Blick
+
             // ===== STERNENHIMMEL =====
             const starGeometry = new THREE.BufferGeometry();
             const starCount = 1500;
@@ -6431,24 +6437,42 @@ END:VCALENDAR`;
         function getGlobeCenter() {
             if (!globeGroup) return currentGlobeCenter;
 
-            // Hole die Rotation des Globus
-            const rotY = globeGroup.rotation.y;
-            const rotX = globeGroup.rotation.x;
+            // Die Kamera schaut von +Z auf den Globus (0,0,0)
+            // Wir müssen herausfinden, welcher Punkt auf der Erde zur Kamera zeigt
 
-            // Berechne den Punkt auf der Kugel, der zur Kamera zeigt
-            // Die Kamera schaut auf (0,0,0), der Globus ist rotiert
-            // Wir müssen den Punkt finden, der nach der Rotation in Richtung Kamera zeigt
+            // Three.js Euler-Rotation: Standard ist 'XYZ' - erst X, dann Y, dann Z
+            // Wir rotieren den Globus mit rotation.x und rotation.y
+            // Um den sichtbaren Punkt zu finden, müssen wir die INVERSE Rotation
+            // auf den Kamera-Blickpunkt (0,0,1) anwenden
 
-            // Invertiere die Rotation um den Punkt zu finden
-            // Longitude: Rotation um Y-Achse (negiert, weil Globus rotiert, nicht Kamera)
-            let lon = (rotY * 180 / Math.PI);
-            // Normalisiere auf -180 bis 180
+            const rotX = globeGroup.rotation.x; // Vertikal (Latitude-ähnlich)
+            const rotY = globeGroup.rotation.y; // Horizontal (Longitude-ähnlich)
+
+            // Einfachere Berechnung basierend auf den Rotationswinkeln:
+            // - rotY dreht den Globus horizontal (positive Werte = Globus dreht nach rechts = wir schauen nach links/Westen)
+            // - rotX dreht den Globus vertikal (positive Werte = Globus kippt nach unten = wir schauen nach oben/Norden)
+
+            // Latitude: Bei rotX = 0 schauen wir auf den Äquator (lat = 0)
+            // Bei rotX = PI/2 schauen wir auf den Nordpol (lat = 90)
+            // Bei rotX = -PI/2 schauen wir auf den Südpol (lat = -90)
+            const lat = rotX * 180 / Math.PI; // Direkte Umrechnung: rotX in Radians -> Grad
+
+            // Longitude: Bei rotY = 0 schauen wir auf lon = 0 (Greenwich)
+            // Der Globus startet so, dass die Kamera auf (0,0,1) schaut
+            // In latLonToVector3: Bei lon=0 ist theta = PI, also z = sin(phi)*sin(PI) = 0, x = -sin(phi)*cos(PI) = sin(phi)
+            // Das bedeutet bei lon=0, lat=0 ist der Punkt bei (1, 0, 0) - nicht bei (0, 0, 1)!
+            // Bei lon=-90 ist theta = PI/2, also z = sin(phi), x = 0 -> Punkt bei (0, 0, 1)
+            // Also: Wenn rotY = 0, schauen wir auf lon = -90
+            // Wenn rotY = PI/2 (90°), schauen wir auf lon = 0
+            // Formel: lon = -rotY * 180/PI - 90
+            let lon = -rotY * 180 / Math.PI - 90;
+
+            // Normalisiere lon auf -180 bis 180
             while (lon > 180) lon -= 360;
             while (lon < -180) lon += 360;
 
-            // Latitude: Rotation um X-Achse (negiert)
-            let lat = -(rotX * 180 / Math.PI);
-            lat = Math.max(-85, Math.min(85, lat));
+            console.log('Globe rotation:', { rotX: rotX.toFixed(3), rotY: rotY.toFixed(3) });
+            console.log('Calculated center:', { lat: lat.toFixed(2), lon: lon.toFixed(2) });
 
             return { lat, lon };
         }
