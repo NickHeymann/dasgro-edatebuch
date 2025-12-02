@@ -6427,21 +6427,27 @@ END:VCALENDAR`;
         let isStreetViewActive = false;
         let currentGlobeCenter = { lat: 53.55, lon: 10.0 }; // Hamburg als Default
 
-        // Berechne ungefähre Koordinaten aus Globus-Rotation
+        // Berechne Koordinaten aus Globus-Rotation (Mittelpunkt der Ansicht)
         function getGlobeCenter() {
             if (!globeGroup) return currentGlobeCenter;
 
-            // Rotation zu Lat/Lon umrechnen (vereinfacht)
+            // Hole die Rotation des Globus
             const rotY = globeGroup.rotation.y;
             const rotX = globeGroup.rotation.x;
 
-            // Longitude aus Y-Rotation (umgekehrt, da Rotation anders herum)
-            let lon = (-rotY * 180 / Math.PI) % 360;
-            if (lon > 180) lon -= 360;
-            if (lon < -180) lon += 360;
+            // Berechne den Punkt auf der Kugel, der zur Kamera zeigt
+            // Die Kamera schaut auf (0,0,0), der Globus ist rotiert
+            // Wir müssen den Punkt finden, der nach der Rotation in Richtung Kamera zeigt
 
-            // Latitude aus X-Rotation
-            let lat = (rotX * 180 / Math.PI);
+            // Invertiere die Rotation um den Punkt zu finden
+            // Longitude: Rotation um Y-Achse (negiert, weil Globus rotiert, nicht Kamera)
+            let lon = (rotY * 180 / Math.PI);
+            // Normalisiere auf -180 bis 180
+            while (lon > 180) lon -= 360;
+            while (lon < -180) lon += 360;
+
+            // Latitude: Rotation um X-Achse (negiert)
+            let lat = -(rotX * 180 / Math.PI);
             lat = Math.max(-85, Math.min(85, lat));
 
             return { lat, lon };
@@ -6472,6 +6478,12 @@ END:VCALENDAR`;
             backBtn.style.display = 'block';
             isStreetViewActive = true;
 
+            // Berechne Zoom-Level basierend auf Globe-Zoom
+            // Globe camera.position.z: 1.35 (threshold) bis 1.2 (max zoom)
+            // Leaflet: 4 (Kontinent) bis 6 (Land/Region) - passend zum Globe-Übergang
+            const globeZoom = camera ? camera.position.z : 1.35;
+            const leafletZoom = Math.round(4 + (1.35 - globeZoom) * 15); // ~4-6 beim Übergang
+
             // Leaflet Map initialisieren falls nicht vorhanden
             if (!globeStreetMap) {
                 // Kurz warten bis Container sichtbar
@@ -6481,13 +6493,14 @@ END:VCALENDAR`;
                         scrollWheelZoom: true
                     });
 
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    // OpenStreetMap mit deutscher Lokalisierung (OSMDE)
+                    L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
                         attribution: '© OpenStreetMap',
                         maxZoom: 19
                     }).addTo(globeStreetMap);
 
-                    // Karte auf aktuelle Position setzen
-                    globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
+                    // Karte auf aktuelle Position setzen mit passendem Zoom
+                    globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], leafletZoom);
 
                     // Alle Marker hinzufügen
                     addMarkersToStreetMap();
@@ -6496,8 +6509,8 @@ END:VCALENDAR`;
                     setTimeout(() => globeStreetMap.invalidateSize(), 100);
                 }, 50);
             } else {
-                // Karte auf aktuelle Position setzen
-                globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
+                // Karte auf aktuelle Position setzen mit passendem Zoom
+                globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], leafletZoom);
 
                 // Alle Marker hinzufügen
                 addMarkersToStreetMap();
