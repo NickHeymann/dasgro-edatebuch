@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Datebuch">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkRhcyBncm/Dn2UgRGF0ZWJ1Y2giLAogICJzaG9ydF9uYW1lIjogIkRhdGVidWNoIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmYWY4ZjUiLAogICJ0aGVtZV9jb2xvciI6ICIjZThiNGI4IiwKICAiaWNvbnMiOiBbXQp9">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -938,6 +938,153 @@
         .legend-dot.visited { background: var(--sage); }
         .legend-dot.wishlist { background: var(--rose); }
         .globe-instructions { color: var(--text-light); font-size: 0.85rem; margin-top: 12px; text-align: center; }
+
+        /* ===== BUCKET LIST ===== */
+        .bucket-list-container { padding: 15px; }
+        .bucket-progress {
+            background: var(--ice-blue);
+            border-radius: 20px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .bucket-progress-bar {
+            background: linear-gradient(90deg, var(--sage), var(--sage-dark));
+            height: 100%;
+            border-radius: 20px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .bucket-progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.85rem;
+        }
+        .bucket-items { display: flex; flex-direction: column; gap: 10px; }
+        .bucket-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 2px solid var(--ice-blue);
+            transition: all 0.3s;
+        }
+        .bucket-item.completed {
+            background: linear-gradient(135deg, rgba(143, 188, 143, 0.1), rgba(143, 188, 143, 0.2));
+            border-color: var(--sage);
+        }
+        .bucket-item.completed .bucket-text { text-decoration: line-through; opacity: 0.7; }
+        .bucket-checkbox {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 3px solid var(--sage);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .bucket-checkbox:hover { background: rgba(143, 188, 143, 0.2); }
+        .bucket-item.completed .bucket-checkbox { background: var(--sage); color: white; }
+        .bucket-text { flex: 1; font-size: 1rem; }
+        .bucket-emoji { font-size: 1.5rem; }
+        .bucket-delete {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .bucket-delete:hover { opacity: 1; color: var(--rose-dark); }
+
+        /* ===== JAHRESRÜCKBLICK ===== */
+        .year-review-container { padding: 15px; }
+        .year-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .year-stat-card {
+            background: linear-gradient(135deg, var(--rose-light), white);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        .year-stat-value { font-size: 2rem; font-weight: bold; color: var(--sage-dark); }
+        .year-stat-label { font-size: 0.85rem; color: var(--text-light); margin-top: 5px; }
+        .year-highlight {
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .year-highlight h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .year-highlight p { margin: 5px 0; opacity: 0.9; }
+
+        /* ===== BUDGET TRACKER ===== */
+        .budget-container { padding: 15px; }
+        .budget-header { margin-bottom: 20px; }
+        .budget-total {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .budget-label { font-weight: 500; }
+        .budget-value { font-size: 1.5rem; font-weight: bold; color: var(--sage-dark); }
+        .budget-of { color: var(--text-light); }
+        .budget-input {
+            width: 70px;
+            padding: 5px 10px;
+            border: 2px solid var(--sage);
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .budget-bar-container {
+            background: var(--ice-blue);
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+        .budget-bar {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s, background 0.5s;
+            background: var(--sage);
+        }
+        .budget-bar.warning { background: #f39c12; }
+        .budget-bar.danger { background: #e74c3c; }
+        .budget-history { display: flex; flex-direction: column; gap: 8px; }
+        .budget-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--sage);
+        }
+        .budget-entry-info { display: flex; flex-direction: column; }
+        .budget-entry-title { font-weight: 500; }
+        .budget-entry-date { font-size: 0.8rem; color: var(--text-light); }
+        .budget-entry-amount { font-weight: bold; color: var(--rose-dark); }
         
         /* MODALS */
         .modal {
@@ -2330,6 +2477,9 @@
             <button class="nav-tab nav-tab-side" data-category="liked">👍</button>
             <button class="nav-tab nav-tab-side" data-category="nope">👎</button>
             <button class="nav-tab nav-tab-side" data-category="custom">✨</button>
+            <button class="nav-tab nav-tab-side" data-category="bucketlist">🪣</button>
+            <button class="nav-tab nav-tab-side" data-category="yearreview">📊</button>
+            <button class="nav-tab nav-tab-side" data-category="budget">💰</button>
         </nav>
 
         <!-- Feierabend Toggle -->
@@ -2459,18 +2609,26 @@
 
                     <!-- Travel Stats -->
                     <div class="date-stats" style="margin:15px 0;background:linear-gradient(135deg, #74b9ff, #0984e3);" id="travelStats">
-                        <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:15px;">
-                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:80px;">
+                        <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px;">
+                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:70px;">
                                 <div class="stat-value" id="travelVisited">0</div>
-                                <div class="stat-label">✈️ Besucht</div>
+                                <div class="stat-label">✈️ Länder</div>
                             </div>
-                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:80px;">
+                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:70px;">
+                                <div class="stat-value" id="travelCities">0</div>
+                                <div class="stat-label">🏙️ Städte</div>
+                            </div>
+                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:70px;">
                                 <div class="stat-value" id="travelWishlist">0</div>
                                 <div class="stat-label">🌟 Wishlist</div>
                             </div>
-                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:80px;">
+                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:70px;">
                                 <div class="stat-value" id="travelDistance">0</div>
-                                <div class="stat-label">🌍 km gereist</div>
+                                <div class="stat-label">🌍 km</div>
+                            </div>
+                            <div class="stat-item" style="background:rgba(255,255,255,0.2);flex:1;min-width:70px;">
+                                <div class="stat-value" id="travelPercent">0%</div>
+                                <div class="stat-label">🗺️ Welt</div>
                             </div>
                         </div>
                     </div>
@@ -2524,9 +2682,64 @@
                     <p class="empty-message">Noch nichts aussortiert.</p>
                 </div>
             </section>
-            
+
+            <!-- BUCKET LIST -->
+            <section class="category-section" id="bucketlist">
+                <div class="category-header">
+                    <h2>🪣 Bevor wir 35 sind...</h2>
+                    <p>Unsere gemeinsame Bucket List!</p>
+                </div>
+                <div class="bucket-list-container">
+                    <div class="bucket-progress">
+                        <div class="bucket-progress-bar" id="bucketProgressBar"></div>
+                        <span class="bucket-progress-text" id="bucketProgressText">0 / 0 erledigt</span>
+                    </div>
+                    <div class="bucket-items" id="bucketItems">
+                        <!-- Items werden dynamisch geladen -->
+                    </div>
+                    <button class="btn btn-add" style="margin-top:15px;" onclick="openAddBucketModal()">➕ Neues Ziel hinzufügen</button>
+                </div>
+            </section>
+
+            <!-- JAHRESRÜCKBLICK -->
+            <section class="category-section" id="yearreview">
+                <div class="category-header">
+                    <h2>📊 Euer Jahr 2025</h2>
+                    <p>Was ihr zusammen erlebt habt!</p>
+                </div>
+                <div class="year-review-container" id="yearReviewContent">
+                    <!-- Stats werden dynamisch geladen -->
+                </div>
+            </section>
+
+            <!-- BUDGET TRACKER -->
+            <section class="category-section" id="budget">
+                <div class="category-header">
+                    <h2>💰 Date-Budget</h2>
+                    <p>Eure Ausgaben im Blick</p>
+                </div>
+                <div class="budget-container">
+                    <div class="budget-header">
+                        <div class="budget-total">
+                            <span class="budget-label">Diesen Monat:</span>
+                            <span class="budget-value" id="budgetSpent">0€</span>
+                            <span class="budget-of">von</span>
+                            <input type="number" id="budgetLimit" class="budget-input" value="200" onchange="saveBudget()">
+                            <span>€</span>
+                        </div>
+                        <div class="budget-bar-container">
+                            <div class="budget-bar" id="budgetBar"></div>
+                        </div>
+                    </div>
+                    <div class="budget-history" id="budgetHistory">
+                        <!-- Ausgaben-Liste -->
+                    </div>
+                    <button class="btn btn-add" style="margin-top:15px;" onclick="openAddExpenseModal()">➕ Ausgabe hinzufügen</button>
+                </div>
+            </section>
+
         </div>
-        
+
         <footer class="book-footer">
             <p>Mit ❄️ gemacht für uns • Winter 2025/26</p>
         </footer>
@@ -5168,20 +5381,28 @@ END:VCALENDAR`;
         
         function updateTravelStats() {
             const visitedEl = document.getElementById('travelVisited');
+            const citiesEl = document.getElementById('travelCities');
             const wishlistEl = document.getElementById('travelWishlist');
             const distanceEl = document.getElementById('travelDistance');
+            const percentEl = document.getElementById('travelPercent');
 
+            // Länder & Städte
             if (visitedEl) visitedEl.textContent = destinations.visited.length;
+            if (citiesEl) citiesEl.textContent = destinations.visitedCities ? destinations.visitedCities.length : 0;
             if (wishlistEl) wishlistEl.textContent = destinations.wishlist.length;
 
             // Geschätzte Distanz berechnen (Hamburg als Ausgangspunkt)
             const hamburg = { lat: 53.55, lon: 10.0 };
             let totalDistance = 0;
-            destinations.visited.forEach(dest => {
-                totalDistance += haversineDistance(hamburg.lat, hamburg.lon, dest.lat, dest.lon);
-            });
-            // Hin- und Rückflug
-            totalDistance *= 2;
+
+            // Distanz zu allen besuchten Städten (Hin- und Rückflug)
+            if (destinations.visitedCities) {
+                destinations.visitedCities.forEach(city => {
+                    if (city.name !== 'Hamburg') {
+                        totalDistance += haversineDistance(hamburg.lat, hamburg.lon, city.lat, city.lon) * 2;
+                    }
+                });
+            }
 
             if (distanceEl) {
                 if (totalDistance > 1000) {
@@ -5190,6 +5411,11 @@ END:VCALENDAR`;
                     distanceEl.textContent = Math.round(totalDistance);
                 }
             }
+
+            // Prozent der Welt bereist (195 Länder anerkannt)
+            const worldCountries = 195;
+            const percent = ((destinations.visited.length / worldCountries) * 100).toFixed(1);
+            if (percentEl) percentEl.textContent = percent + '%';
         }
 
         function haversineDistance(lat1, lon1, lat2, lon2) {
@@ -5221,29 +5447,75 @@ END:VCALENDAR`;
             globeGroup = new THREE.Group();
             scene.add(globeGroup);
 
-            // Schöner stilisierter Globe mit Pastell-Farben
-            // Ozean-Kugel (hellblau)
+            // ===== STERNENHIMMEL =====
+            const starGeometry = new THREE.BufferGeometry();
+            const starCount = 1500;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i += 3) {
+                const radius = 15 + Math.random() * 10;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+                starPositions[i] = radius * Math.sin(phi) * Math.cos(theta);
+                starPositions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                starPositions[i + 2] = radius * Math.cos(phi);
+            }
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.8 });
+            scene.add(new THREE.Points(starGeometry, starMaterial));
+
+            // ===== ERDE MIT REALISTISCHER TEXTUR =====
+            const textureLoader = new THREE.TextureLoader();
             const globeGeo = new THREE.SphereGeometry(1, 64, 64);
-            const oceanMat = new THREE.MeshPhongMaterial({
-                color: 0xadd8e6, // Hellblau
-                emissive: 0x87ceeb,
-                emissiveIntensity: 0.1,
-                shininess: 30
+
+            // Lade Earth-Textur (Blue Marble)
+            const earthTexture = textureLoader.load(
+                'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
+                () => console.log('Earth texture loaded'),
+                undefined,
+                () => {
+                    // Fallback bei Fehler: Hellblaue Kugel
+                    earthMesh.material = new THREE.MeshPhongMaterial({ color: 0x4a90d9, shininess: 25 });
+                }
+            );
+
+            const earthMat = new THREE.MeshPhongMaterial({
+                map: earthTexture,
+                bumpScale: 0.02,
+                specular: new THREE.Color(0x333333),
+                shininess: 5
             });
-            const oceanMesh = new THREE.Mesh(globeGeo, oceanMat);
-            globeGroup.add(oceanMesh);
+            const earthMesh = new THREE.Mesh(globeGeo, earthMat);
+            globeGroup.add(earthMesh);
 
-            // Lade Natural Earth Vektordaten und zeichne nur Grenzen (keine Füllung)
-            loadCountryOutlines();
+            // ===== ATMOSPHÄRE (Fresnel-Glow) =====
+            // Innerer Glow
+            const innerGlowMat = new THREE.MeshBasicMaterial({
+                color: 0x88ccff,
+                transparent: true,
+                opacity: 0.15,
+                side: THREE.BackSide
+            });
+            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.02, 32, 32), innerGlowMat));
 
-            // Subtle atmosphere glow
-            const glowMat = new THREE.MeshBasicMaterial({ color: 0x88ccff, transparent: true, opacity: 0.1, side: THREE.BackSide });
-            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.06, 32, 32), glowMat));
+            // Äußerer Glow (Atmosphäre)
+            const outerGlowMat = new THREE.MeshBasicMaterial({
+                color: 0x4fc3f7,
+                transparent: true,
+                opacity: 0.08,
+                side: THREE.BackSide
+            });
+            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.08, 32, 32), outerGlowMat));
 
-            scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-            const dir = new THREE.DirectionalLight(0xffffff, 0.5);
-            dir.position.set(5, 3, 5);
-            scene.add(dir);
+            // ===== BELEUCHTUNG =====
+            scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+            const sunLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            sunLight.position.set(5, 3, 5);
+            scene.add(sunLight);
+
+            // Leichtes Gegenlicht für bessere Sichtbarkeit der Schattenseite
+            const fillLight = new THREE.DirectionalLight(0x4a6fa5, 0.3);
+            fillLight.position.set(-5, -3, -5);
+            scene.add(fillLight);
 
             addMarkers();
             
@@ -5339,9 +5611,93 @@ END:VCALENDAR`;
                 }
             }, { passive: true });
             
-            function animate() { requestAnimationFrame(animate); renderer.render(scene, camera); }
+            // Auto-Rotation wenn nicht interagiert
+            let lastInteraction = Date.now();
+            const autoRotateSpeed = 0.0005;
+            const autoRotateDelay = 3000; // 3 Sekunden warten
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Auto-Rotation wenn keine Interaktion
+                if (!isDragging && Date.now() - lastInteraction > autoRotateDelay) {
+                    globeGroup.rotation.y += autoRotateSpeed;
+                }
+
+                // Pulsierende Marker Animation
+                const time = Date.now() * 0.003;
+                cityMarkers.forEach((m, i) => {
+                    if (m.visible) {
+                        const scale = 1 + Math.sin(time + i) * 0.15;
+                        m.scale.setScalar(scale);
+                    }
+                });
+
+                // Wishlist Marker pulsieren stärker
+                countryMarkers.forEach((m, i) => {
+                    if (!m.userData.isVisited) {
+                        const scale = 1 + Math.sin(time * 1.5 + i) * 0.25;
+                        m.scale.setScalar(scale);
+                    }
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            // Reset auto-rotate timer bei Interaktion
+            canvas.addEventListener('mousedown', () => { lastInteraction = Date.now(); });
+            canvas.addEventListener('touchstart', () => { lastInteraction = Date.now(); });
+            canvas.addEventListener('wheel', () => { lastInteraction = Date.now(); });
+
+            // Fluglinien zwischen besuchten Städten zeichnen
+            addFlightPaths();
+
             animate();
             globeInitialized = true;
+        }
+
+        // Fluglinien (Bögen) zwischen Hamburg und besuchten Städten
+        function addFlightPaths() {
+            const hamburg = { lat: 53.55, lon: 10.0 };
+
+            // Verbinde Hamburg mit allen besuchten Städten
+            if (destinations.visitedCities) {
+                destinations.visitedCities.forEach(city => {
+                    if (city.name !== 'Hamburg') {
+                        createFlightArc(hamburg, city, 0x8fbc8f, 0.4);
+                    }
+                });
+            }
+
+            // Verbinde Hamburg mit Wishlist-Zielen (gestrichelt/anders)
+            destinations.wishlist.forEach(dest => {
+                createFlightArc(hamburg, dest, 0xe8b4b8, 0.25);
+            });
+        }
+
+        // Erstelle einen Bogen zwischen zwei Punkten
+        function createFlightArc(from, to, color, opacity) {
+            const start = latLonToVector3(from.lat, from.lon, 1.01);
+            const end = latLonToVector3(to.lat, to.lon, 1.01);
+
+            // Mittelpunkt berechnen (erhöht für Bogen-Effekt)
+            const mid = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+            const distance = start.distanceTo(end);
+            mid.normalize().multiplyScalar(1.01 + distance * 0.15); // Höhe abhängig von Distanz
+
+            // Kurve erstellen
+            const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+            const points = curve.getPoints(50);
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+            const material = new THREE.LineBasicMaterial({
+                color: color,
+                transparent: true,
+                opacity: opacity
+            });
+
+            const arc = new THREE.Line(geometry, material);
+            globeGroup.add(arc);
         }
         
         function latLonToVector3(lat, lon, r) {
@@ -6633,6 +6989,255 @@ END:VCALENDAR`;
 
             return html;
         };
+
+        // ============ BUCKET LIST ============
+        const defaultBucketItems = [
+            { id: 'b1', emoji: '🌋', text: 'Vulkan besteigen', completed: false },
+            { id: 'b2', emoji: '🎿', text: 'Zusammen Skifahren lernen', completed: false },
+            { id: 'b3', emoji: '🏕️', text: 'Unter freiem Himmel schlafen', completed: false },
+            { id: 'b4', emoji: '🎭', text: '10 verschiedene Musicals sehen', completed: false },
+            { id: 'b5', emoji: '🍳', text: 'Zusammen einen Kochkurs machen', completed: false },
+            { id: 'b6', emoji: '🏃', text: 'Marathon zusammen laufen', completed: false },
+            { id: 'b7', emoji: '🎨', text: 'Gemeinsam ein Bild malen', completed: false },
+            { id: 'b8', emoji: '🚂', text: 'Interrail durch Europa', completed: false },
+            { id: 'b9', emoji: '🤿', text: 'Tauchen gehen', completed: false },
+            { id: 'b10', emoji: '🎪', text: 'Zu einem Festival fahren', completed: false },
+        ];
+
+        function loadBucketList() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return saved.bucketList || [...defaultBucketItems];
+        }
+
+        function saveBucketList(items) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.bucketList = items;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+
+        function renderBucketList() {
+            const items = loadBucketList();
+            const container = document.getElementById('bucketItems');
+            if (!container) return;
+
+            container.innerHTML = items.map(item => `
+                <div class="bucket-item ${item.completed ? 'completed' : ''}" data-id="${item.id}">
+                    <div class="bucket-checkbox" onclick="toggleBucketItem('${item.id}')">
+                        ${item.completed ? '✓' : ''}
+                    </div>
+                    <span class="bucket-emoji">${item.emoji}</span>
+                    <span class="bucket-text">${item.text}</span>
+                    <button class="bucket-delete" onclick="deleteBucketItem('${item.id}')" title="Löschen">×</button>
+                </div>
+            `).join('');
+
+            // Update Progress
+            const completed = items.filter(i => i.completed).length;
+            const total = items.length;
+            const percent = total > 0 ? (completed / total) * 100 : 0;
+
+            const progressBar = document.getElementById('bucketProgressBar');
+            const progressText = document.getElementById('bucketProgressText');
+            if (progressBar) progressBar.style.width = percent + '%';
+            if (progressText) progressText.textContent = `${completed} / ${total} erledigt`;
+        }
+
+        function toggleBucketItem(id) {
+            const items = loadBucketList();
+            const item = items.find(i => i.id === id);
+            if (item) {
+                item.completed = !item.completed;
+                saveBucketList(items);
+                renderBucketList();
+            }
+        }
+
+        function deleteBucketItem(id) {
+            if (!confirm('Dieses Ziel wirklich löschen?')) return;
+            let items = loadBucketList();
+            items = items.filter(i => i.id !== id);
+            saveBucketList(items);
+            renderBucketList();
+        }
+
+        function openAddBucketModal() {
+            const text = prompt('Neues Ziel für eure Bucket List:');
+            if (!text || !text.trim()) return;
+
+            const emoji = prompt('Passendes Emoji:', '🎯') || '🎯';
+
+            const items = loadBucketList();
+            items.push({
+                id: 'b' + Date.now(),
+                emoji: emoji,
+                text: text.trim(),
+                completed: false
+            });
+            saveBucketList(items);
+            renderBucketList();
+        }
+
+        // ============ JAHRESRÜCKBLICK ============
+        function renderYearReview() {
+            const container = document.getElementById('yearReviewContent');
+            if (!container) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            const expenses = saved.expenses || [];
+
+            // Statistiken berechnen
+            const likedEvents = allEvents.filter(e => ratings[e.id]?.liked);
+            const completedDates = expenses.length; // Annahme: Ausgabe = gemachtes Date
+            const totalSpent = expenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+
+            // Meistbesuchte Kategorie
+            const categoryCount = {};
+            likedEvents.forEach(e => {
+                categoryCount[e.category] = (categoryCount[e.category] || 0) + 1;
+            });
+            const topCategory = Object.entries(categoryCount).sort((a, b) => b[1] - a[1])[0];
+            const categoryEmojis = {
+                handwerk: '🔨', aktiv: '🏃', wellness: '💆', comedy: '😂',
+                essen: '🍽️', shows: '🎭', musical: '🎵', variete: '🎪',
+                theater: '🎭', musik: '🎸'
+            };
+
+            container.innerHTML = `
+                <div class="year-stats-grid">
+                    <div class="year-stat-card">
+                        <div class="year-stat-value">${likedEvents.length}</div>
+                        <div class="year-stat-label">👍 Favoriten</div>
+                    </div>
+                    <div class="year-stat-card">
+                        <div class="year-stat-value">${completedDates}</div>
+                        <div class="year-stat-label">📅 Dates gemacht</div>
+                    </div>
+                    <div class="year-stat-card">
+                        <div class="year-stat-value">${totalSpent}€</div>
+                        <div class="year-stat-label">💸 Ausgegeben</div>
+                    </div>
+                    <div class="year-stat-card">
+                        <div class="year-stat-value">${destinations.visited.length}</div>
+                        <div class="year-stat-label">✈️ Länder besucht</div>
+                    </div>
+                </div>
+                ${topCategory ? `
+                <div class="year-highlight">
+                    <h3>🏆 Eure Lieblings-Kategorie</h3>
+                    <p>${categoryEmojis[topCategory[0]] || '🎯'} ${topCategory[0].charAt(0).toUpperCase() + topCategory[0].slice(1)} (${topCategory[1]}x)</p>
+                </div>
+                ` : ''}
+                <div class="year-highlight" style="background: linear-gradient(135deg, var(--rose), var(--rose-dark));">
+                    <h3>💕 Zusammenfassung</h3>
+                    <p>Ihr habt ${completedDates} gemeinsame Dates erlebt!</p>
+                    <p>Weiter so - auf viele weitere Abenteuer! 🥂</p>
+                </div>
+            `;
+        }
+
+        // ============ BUDGET TRACKER ============
+        function loadBudget() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return {
+                limit: saved.budgetLimit || 200,
+                expenses: saved.expenses || []
+            };
+        }
+
+        function saveBudget() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const limitInput = document.getElementById('budgetLimit');
+            if (limitInput) {
+                saved.budgetLimit = parseInt(limitInput.value) || 200;
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            renderBudget();
+        }
+
+        function saveExpenses(expenses) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.expenses = expenses;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+
+        function renderBudget() {
+            const { limit, expenses } = loadBudget();
+
+            // Nur Ausgaben dieses Monats
+            const now = new Date();
+            const thisMonth = now.getMonth();
+            const thisYear = now.getFullYear();
+            const monthExpenses = expenses.filter(e => {
+                const d = new Date(e.date);
+                return d.getMonth() === thisMonth && d.getFullYear() === thisYear;
+            });
+
+            const spent = monthExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+            const percent = Math.min((spent / limit) * 100, 100);
+
+            // UI Updates
+            const spentEl = document.getElementById('budgetSpent');
+            const limitEl = document.getElementById('budgetLimit');
+            const barEl = document.getElementById('budgetBar');
+            const historyEl = document.getElementById('budgetHistory');
+
+            if (spentEl) spentEl.textContent = spent + '€';
+            if (limitEl) limitEl.value = limit;
+            if (barEl) {
+                barEl.style.width = percent + '%';
+                barEl.className = 'budget-bar';
+                if (percent > 80) barEl.classList.add('warning');
+                if (percent >= 100) barEl.classList.add('danger');
+            }
+
+            if (historyEl) {
+                historyEl.innerHTML = monthExpenses.length === 0
+                    ? '<p style="text-align:center;color:var(--text-light);">Noch keine Ausgaben diesen Monat</p>'
+                    : monthExpenses.sort((a, b) => new Date(b.date) - new Date(a.date)).map(e => `
+                        <div class="budget-entry">
+                            <div class="budget-entry-info">
+                                <span class="budget-entry-title">${e.title}</span>
+                                <span class="budget-entry-date">${new Date(e.date).toLocaleDateString('de-DE')}</span>
+                            </div>
+                            <span class="budget-entry-amount">-${e.amount}€</span>
+                        </div>
+                    `).join('');
+            }
+        }
+
+        function openAddExpenseModal() {
+            const title = prompt('Wofür habt ihr Geld ausgegeben?', 'Date-Night');
+            if (!title || !title.trim()) return;
+
+            const amount = parseFloat(prompt('Wie viel? (€)', '30'));
+            if (isNaN(amount) || amount <= 0) return;
+
+            const { expenses } = loadBudget();
+            expenses.push({
+                id: 'exp' + Date.now(),
+                title: title.trim(),
+                amount: amount,
+                date: new Date().toISOString()
+            });
+            saveExpenses(expenses);
+            renderBudget();
+            renderYearReview(); // Update Year Review auch
+        }
+
+        // Initialize neue Features
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBucketList();
+            renderYearReview();
+            renderBudget();
+
+            // Service Worker für Offline-Modus registrieren
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registriert:', reg.scope))
+                    .catch(err => console.log('Service Worker Fehler:', err));
+            }
+        });
 
     </script>
 </body>
