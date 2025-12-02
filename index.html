@@ -5365,77 +5365,28 @@ END:VCALENDAR`;
             const material = new THREE.MeshBasicMaterial({
                 color: color,
                 transparent: true,
-                opacity: 0.85,
-                side: THREE.DoubleSide,
-                depthWrite: false // Prevents z-fighting artifacts
+                opacity: 0.8,
+                side: THREE.DoubleSide
             });
 
-            // Normalize longitude to handle antimeridian wrapping
-            const normalizeLongitude = (coords) => {
-                if (coords.length < 2) return coords;
-
-                const normalized = [[coords[0][0], coords[0][1]]];
-                let offset = 0;
-
-                for (let i = 1; i < coords.length; i++) {
-                    let lon = coords[i][0];
-                    const prevLon = normalized[i - 1][0];
-
-                    // Detect large jumps (crossing antimeridian)
-                    if (lon - prevLon > 180) {
-                        offset -= 360;
-                    } else if (prevLon - lon > 180) {
-                        offset += 360;
-                    }
-
-                    normalized.push([lon + offset, coords[i][1]]);
-                }
-
-                return normalized;
-            };
-
-            // Subdivide long edges for better sphere mapping
-            const subdivideEdge = (p1, p2, maxDist = 5) => {
-                const dist = Math.sqrt(Math.pow(p2[0] - p1[0], 2) + Math.pow(p2[1] - p1[1], 2));
-                if (dist < maxDist) return [p1];
-
-                const steps = Math.ceil(dist / maxDist);
-                const points = [];
-                for (let i = 0; i < steps; i++) {
-                    const t = i / steps;
-                    points.push([
-                        p1[0] + t * (p2[0] - p1[0]),
-                        p1[1] + t * (p2[1] - p1[1])
-                    ]);
-                }
-                return points;
-            };
-
-            // Subdivide polygon for smoother sphere mapping
-            const subdividePolygon = (coords) => {
-                const result = [];
+            // Check if polygon crosses the antimeridian (causes rendering issues)
+            const crossesAntimeridian = (coords) => {
                 for (let i = 0; i < coords.length - 1; i++) {
-                    result.push(...subdivideEdge(coords[i], coords[i + 1]));
+                    if (Math.abs(coords[i + 1][0] - coords[i][0]) > 170) return true;
                 }
-                result.push(coords[coords.length - 1]);
-                return result;
+                return false;
             };
 
             const drawSinglePolygon = (coords, mat, rad) => {
                 if (coords.length < 3) return;
 
+                // Skip polygons that cross the antimeridian - they cause artifacts
+                if (crossesAntimeridian(coords)) return;
+
                 try {
-                    // Normalize to handle antimeridian
-                    let normalizedCoords = normalizeLongitude(coords);
-
-                    // Subdivide for smoother sphere projection
-                    normalizedCoords = subdividePolygon(normalizedCoords);
-
-                    if (normalizedCoords.length < 3) return;
-
                     // Flatten coordinates for earcut (lon, lat pairs)
                     const flatCoords = [];
-                    normalizedCoords.forEach(([lon, lat]) => {
+                    coords.forEach(([lon, lat]) => {
                         flatCoords.push(lon, lat);
                     });
 
@@ -5444,7 +5395,7 @@ END:VCALENDAR`;
 
                     if (indices.length === 0) {
                         // Fallback to triangle fan if earcut fails
-                        drawPolygonFallback(normalizedCoords, mat, rad);
+                        drawPolygonFallback(coords, mat, rad);
                         return;
                     }
 
@@ -5458,13 +5409,13 @@ END:VCALENDAR`;
                         const i2 = indices[i + 2];
 
                         // Bounds check
-                        if (i0 >= normalizedCoords.length || i1 >= normalizedCoords.length || i2 >= normalizedCoords.length) {
+                        if (i0 >= coords.length || i1 >= coords.length || i2 >= coords.length) {
                             continue;
                         }
 
-                        const v0 = latLonToVector3(normalizedCoords[i0][1], normalizedCoords[i0][0], rad);
-                        const v1 = latLonToVector3(normalizedCoords[i1][1], normalizedCoords[i1][0], rad);
-                        const v2 = latLonToVector3(normalizedCoords[i2][1], normalizedCoords[i2][0], rad);
+                        const v0 = latLonToVector3(coords[i0][1], coords[i0][0], rad);
+                        const v1 = latLonToVector3(coords[i1][1], coords[i1][0], rad);
+                        const v2 = latLonToVector3(coords[i2][1], coords[i2][0], rad);
 
                         vertices.push(v0.x, v0.y, v0.z);
                         vertices.push(v1.x, v1.y, v1.z);
@@ -5472,7 +5423,7 @@ END:VCALENDAR`;
                     }
 
                     if (vertices.length === 0) {
-                        drawPolygonFallback(normalizedCoords, mat, rad);
+                        drawPolygonFallback(coords, mat, rad);
                         return;
                     }
 
@@ -5482,24 +5433,20 @@ END:VCALENDAR`;
                     const mesh = new THREE.Mesh(geo, mat);
                     globeGroup.add(mesh);
                 } catch (e) {
-                    console.warn('Earcut failed, using fallback:', e);
                     drawPolygonFallback(coords, mat, rad);
                 }
             };
 
-            // Fallback: triangle fan from centroid (works for most convex-ish polygons)
+            // Fallback: triangle fan from centroid
             const drawPolygonFallback = (coords, mat, rad) => {
                 if (coords.length < 3) return;
 
-                // Calculate centroid
                 let sumLon = 0, sumLat = 0;
                 coords.forEach(([lon, lat]) => {
                     sumLon += lon;
                     sumLat += lat;
                 });
-                const centroidLon = sumLon / coords.length;
-                const centroidLat = sumLat / coords.length;
-                const centroidVec = latLonToVector3(centroidLat, centroidLon, rad);
+                const centroidVec = latLonToVector3(sumLat / coords.length, sumLon / coords.length, rad);
 
                 const geo = new THREE.BufferGeometry();
                 const vertices = [];
@@ -5508,33 +5455,21 @@ END:VCALENDAR`;
                     const [lon1, lat1] = coords[i];
                     const [lon2, lat2] = coords[(i + 1) % coords.length];
 
-                    const v1 = latLonToVector3(lat1, lon1, rad);
-                    const v2 = latLonToVector3(lat2, lon2, rad);
-
                     vertices.push(centroidVec.x, centroidVec.y, centroidVec.z);
-                    vertices.push(v1.x, v1.y, v1.z);
-                    vertices.push(v2.x, v2.y, v2.z);
+                    vertices.push(latLonToVector3(lat1, lon1, rad).x, latLonToVector3(lat1, lon1, rad).y, latLonToVector3(lat1, lon1, rad).z);
+                    vertices.push(latLonToVector3(lat2, lon2, rad).x, latLonToVector3(lat2, lon2, rad).y, latLonToVector3(lat2, lon2, rad).z);
                 }
 
                 geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
                 geo.computeVertexNormals();
-
-                const mesh = new THREE.Mesh(geo, mat);
-                globeGroup.add(mesh);
-            };
-
-            // Process polygon rings (outer ring only for simplicity)
-            const processRing = (ring) => {
-                if (ring && ring.length >= 3) {
-                    drawSinglePolygon(ring, material, radius);
-                }
+                globeGroup.add(new THREE.Mesh(geo, mat));
             };
 
             if (geometry.type === 'Polygon') {
-                processRing(geometry.coordinates[0]);
+                if (geometry.coordinates[0]) drawSinglePolygon(geometry.coordinates[0], material, radius);
             } else if (geometry.type === 'MultiPolygon') {
                 geometry.coordinates.forEach(polygon => {
-                    processRing(polygon[0]);
+                    if (polygon[0]) drawSinglePolygon(polygon[0], material, radius);
                 });
             }
         }
