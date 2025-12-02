@@ -585,7 +585,7 @@
         
         .nav-tab {
             padding: 10px 16px;
-            background: white;
+            background: transparent;
             border: 2px solid transparent;
             border-radius: 10px;
             font-family: inherit;
@@ -594,7 +594,7 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
-        
+
         .nav-tab:hover:not(.active) { border-color: var(--ice-blue); background: var(--frost); }
         .nav-tab.active { background: var(--sage); color: white; border-color: var(--sage); }
 
@@ -2465,7 +2465,7 @@
 
         <!-- Kompaktes Menü -->
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-category="handwerk">🔨</button>
+            <button class="nav-tab" data-category="handwerk">🔨</button>
             <button class="nav-tab" data-category="aktiv">🏃‍♀️</button>
             <button class="nav-tab" data-category="wellness">💆</button>
             <button class="nav-tab" data-category="comedy">😂</button>
@@ -2483,7 +2483,7 @@
         </nav>
 
         <!-- Feierabend Toggle -->
-        <div class="feierabend-toggle" id="feierabendToggle">
+        <div class="feierabend-toggle" id="feierabendToggle" style="display: none;">
             <span class="feierabend-label">Frei ab:</span>
             <select id="feierabendTime" onchange="saveFeierabendSetting()">
                 <option value="18:00">18:00</option>
@@ -2494,7 +2494,7 @@
         
         <div class="book-content">
             <!-- HANDWERK (1. Position) -->
-            <section class="category-section active" id="handwerk">
+            <section class="category-section" id="handwerk">
                 <div class="category-header">
                     <h2>🔨 Handwerk</h2>
                     <p>Workshops & DIY</p>
@@ -3573,24 +3573,19 @@
                     const cat = tab.dataset.category;
                     const wasActive = tab.classList.contains('active');
 
-                    // Wenn bereits aktiv, schließe die Kategorie (gehe zur ersten)
+                    // Alle Tabs und Sections deaktivieren
+                    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+
+                    // Wenn bereits aktiv war, einfach schließen (nichts öffnen)
                     if (wasActive) {
-                        // Erste Kategorie aktivieren (handwerk)
-                        const firstTab = document.querySelector('.nav-tab[data-category="handwerk"]');
-                        if (firstTab && firstTab !== tab) {
-                            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                            firstTab.classList.add('active');
-                            document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
-                            document.getElementById('handwerk')?.classList.add('active');
-                            const feierabendToggle = document.getElementById('feierabendToggle');
-                            if (feierabendToggle) feierabendToggle.style.display = 'flex';
-                        }
+                        const feierabendToggle = document.getElementById('feierabendToggle');
+                        if (feierabendToggle) feierabendToggle.style.display = 'none';
                         return;
                     }
 
-                    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                    // Sonst diesen Tab und seine Section öffnen
                     tab.classList.add('active');
-                    document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
                     document.getElementById(cat)?.classList.add('active');
                     if (cat === 'travel') setTimeout(initGlobe, 150);
 
