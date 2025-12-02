@@ -5221,37 +5221,29 @@ END:VCALENDAR`;
             globeGroup = new THREE.Group();
             scene.add(globeGroup);
 
-            // Earth with texture - viel zuverlässiger als Polygon-Triangulation!
-            const textureLoader = new THREE.TextureLoader();
-            const earthTexture = textureLoader.load(
-                'https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg',
-                () => { /* loaded */ },
-                undefined,
-                () => {
-                    // Fallback: einfache blaue Kugel wenn Textur nicht lädt
-                    console.log('Texture failed, using fallback');
-                }
-            );
-
+            // Schöner stilisierter Globe mit Pastell-Farben
+            // Ozean-Kugel (hellblau)
             const globeGeo = new THREE.SphereGeometry(1, 64, 64);
-            const globeMat = new THREE.MeshPhongMaterial({
-                map: earthTexture,
-                bumpScale: 0.02,
-                specular: new THREE.Color(0x333333),
-                shininess: 5
+            const oceanMat = new THREE.MeshPhongMaterial({
+                color: 0xadd8e6, // Hellblau
+                emissive: 0x87ceeb,
+                emissiveIntensity: 0.1,
+                shininess: 30
             });
-            globeGroup.add(new THREE.Mesh(globeGeo, globeMat));
+            const oceanMesh = new THREE.Mesh(globeGeo, oceanMat);
+            globeGroup.add(oceanMesh);
+
+            // Lade Natural Earth Vektordaten und zeichne nur Grenzen (keine Füllung)
+            loadCountryOutlines();
 
             // Subtle atmosphere glow
-            const glowMat = new THREE.MeshBasicMaterial({ color: 0x88ccff, transparent: true, opacity: 0.08, side: THREE.BackSide });
-            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.05, 32, 32), glowMat));
+            const glowMat = new THREE.MeshBasicMaterial({ color: 0x88ccff, transparent: true, opacity: 0.1, side: THREE.BackSide });
+            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.06, 32, 32), glowMat));
 
-            scene.add(new THREE.AmbientLight(0xffffff, 0.8));
-            const dir = new THREE.DirectionalLight(0xffffff, 0.6);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+            const dir = new THREE.DirectionalLight(0xffffff, 0.5);
             dir.position.set(5, 3, 5);
             scene.add(dir);
-
-            // Keine Polygon-Länder mehr nötig - Textur zeigt alles!
 
             addMarkers();
             
@@ -5394,175 +5386,63 @@ END:VCALENDAR`;
         ];
         const visitedColor = 0x8fbc8f; // Sage green - wie die visited marker
 
-        // Load country borders from GeoJSON
-        async function loadCountryBorders() {
+        // NUR Länder-Outlines zeichnen (keine Füllung - das verursacht Artefakte)
+        async function loadCountryOutlines() {
             try {
-                // Use Natural Earth data via GitHub - more reliable
-                const response = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json');
+                const response = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
                 const topology = await response.json();
-
-                // Convert TopoJSON to GeoJSON features
                 const countries = topojson.feature(topology, topology.objects.countries);
 
-                // Draw each country with a pastel fill and border
-                countries.features.forEach((country, index) => {
-                    // Check if country was visited - use green!
-                    // Convert to string for comparison (TopoJSON IDs can be numbers)
-                    const countryId = String(country.id);
-                    const isVisited = visitedCountryCodes.includes(countryId);
-                    const fillColor = isVisited ? visitedColor : pastelColors[index % pastelColors.length];
+                // Nur Grenzen zeichnen - keine Füllung!
+                const borderMaterial = new THREE.LineBasicMaterial({
+                    color: 0x557755, // Dunkelgrün für schönen Kontrast
+                    transparent: true,
+                    opacity: 0.6
+                });
 
-                    // Draw filled country (visited countries slightly higher so they stand out)
-                    drawFilledCountry(country.geometry, fillColor, isVisited ? 1.004 : 1.002);
-
-                    // Draw border
-                    const borderMaterial = new THREE.LineBasicMaterial({
-                        color: 0xffffff,
-                        transparent: true,
-                        opacity: 0.4
-                    });
-                    drawGeoJSONFeature(country.geometry, borderMaterial, 1.006);
+                countries.features.forEach(country => {
+                    drawCountryOutline(country.geometry, borderMaterial, 1.001);
                 });
 
             } catch (error) {
-                console.error('Failed to load country borders:', error);
-                // Fallback: draw simplified continents manually
+                console.error('Failed to load country outlines:', error);
                 drawSimplifiedContinents();
             }
         }
 
-        // Draw filled country on the globe using improved triangulation
-        function drawFilledCountry(geometry, color, radius) {
+        // Zeichne nur die Outline eines Landes (keine Füllung)
+        function drawCountryOutline(geometry, material, radius) {
             if (!geometry) return;
 
-            const material = new THREE.MeshBasicMaterial({
-                color: color,
-                transparent: true,
-                opacity: 0.85,
-                side: THREE.DoubleSide
-            });
+            const drawRing = (coords) => {
+                if (coords.length < 2) return;
 
-            // Check if polygon crosses the antimeridian
-            const crossesAntimeridian = (coords) => {
+                // Prüfe auf Antimeridian-Crossing
+                let crossesAntimeridian = false;
                 for (let i = 0; i < coords.length - 1; i++) {
-                    if (Math.abs(coords[i + 1][0] - coords[i][0]) > 170) return true;
-                }
-                return false;
-            };
-
-            // Simplify polygon to reduce complexity for problematic shapes
-            const simplifyPolygon = (coords, tolerance = 0.5) => {
-                if (coords.length < 10) return coords;
-                const simplified = [coords[0]];
-                for (let i = 1; i < coords.length - 1; i++) {
-                    const prev = simplified[simplified.length - 1];
-                    const curr = coords[i];
-                    const dist = Math.sqrt(Math.pow(curr[0] - prev[0], 2) + Math.pow(curr[1] - prev[1], 2));
-                    if (dist > tolerance) {
-                        simplified.push(curr);
+                    if (Math.abs(coords[i + 1][0] - coords[i][0]) > 170) {
+                        crossesAntimeridian = true;
+                        break;
                     }
                 }
-                simplified.push(coords[coords.length - 1]);
-                return simplified;
-            };
+                if (crossesAntimeridian) return; // Überspringe problematische Polygone
 
-            const drawSinglePolygon = (coords, mat, rad) => {
-                if (coords.length < 3) return;
-
-                // Skip antimeridian-crossing polygons
-                if (crossesAntimeridian(coords)) return;
-
-                // Simplify very complex polygons
-                let processedCoords = coords.length > 100 ? simplifyPolygon(coords, 1.0) : coords;
-                if (processedCoords.length < 3) return;
-
-                try {
-                    // Flatten coordinates for earcut
-                    const flatCoords = [];
-                    processedCoords.forEach(([lon, lat]) => {
-                        flatCoords.push(lon, lat);
-                    });
-
-                    // Triangulate
-                    const indices = earcut(flatCoords, null, 2);
-
-                    if (indices.length === 0) {
-                        drawPolygonFallback(processedCoords, mat, rad);
-                        return;
-                    }
-
-                    const geo = new THREE.BufferGeometry();
-                    const vertices = [];
-
-                    for (let i = 0; i < indices.length; i += 3) {
-                        const i0 = indices[i];
-                        const i1 = indices[i + 1];
-                        const i2 = indices[i + 2];
-
-                        if (i0 >= processedCoords.length || i1 >= processedCoords.length || i2 >= processedCoords.length) {
-                            continue;
-                        }
-
-                        const v0 = latLonToVector3(processedCoords[i0][1], processedCoords[i0][0], rad);
-                        const v1 = latLonToVector3(processedCoords[i1][1], processedCoords[i1][0], rad);
-                        const v2 = latLonToVector3(processedCoords[i2][1], processedCoords[i2][0], rad);
-
-                        vertices.push(v0.x, v0.y, v0.z);
-                        vertices.push(v1.x, v1.y, v1.z);
-                        vertices.push(v2.x, v2.y, v2.z);
-                    }
-
-                    if (vertices.length === 0) {
-                        drawPolygonFallback(processedCoords, mat, rad);
-                        return;
-                    }
-
-                    geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-                    geo.computeVertexNormals();
-                    globeGroup.add(new THREE.Mesh(geo, mat));
-                } catch (e) {
-                    drawPolygonFallback(processedCoords, mat, rad);
-                }
-            };
-
-            // Fallback: triangle fan from centroid
-            const drawPolygonFallback = (coords, mat, rad) => {
-                if (coords.length < 3) return;
-
-                let sumLon = 0, sumLat = 0;
+                const points = [];
                 coords.forEach(([lon, lat]) => {
-                    sumLon += lon;
-                    sumLat += lat;
+                    points.push(latLonToVector3(lat, lon, radius));
                 });
-                const cx = sumLon / coords.length;
-                const cy = sumLat / coords.length;
-                const centroidVec = latLonToVector3(cy, cx, rad);
 
-                const geo = new THREE.BufferGeometry();
-                const vertices = [];
-
-                for (let i = 0; i < coords.length; i++) {
-                    const [lon1, lat1] = coords[i];
-                    const [lon2, lat2] = coords[(i + 1) % coords.length];
-
-                    const v1 = latLonToVector3(lat1, lon1, rad);
-                    const v2 = latLonToVector3(lat2, lon2, rad);
-
-                    vertices.push(centroidVec.x, centroidVec.y, centroidVec.z);
-                    vertices.push(v1.x, v1.y, v1.z);
-                    vertices.push(v2.x, v2.y, v2.z);
+                if (points.length > 1) {
+                    const geo = new THREE.BufferGeometry().setFromPoints(points);
+                    globeGroup.add(new THREE.Line(geo, material));
                 }
-
-                geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-                geo.computeVertexNormals();
-                globeGroup.add(new THREE.Mesh(geo, mat));
             };
 
             if (geometry.type === 'Polygon') {
-                if (geometry.coordinates[0]) drawSinglePolygon(geometry.coordinates[0], material, radius);
+                geometry.coordinates.forEach(ring => drawRing(ring));
             } else if (geometry.type === 'MultiPolygon') {
                 geometry.coordinates.forEach(polygon => {
-                    if (polygon[0]) drawSinglePolygon(polygon[0], material, radius);
+                    polygon.forEach(ring => drawRing(ring));
                 });
             }
         }
