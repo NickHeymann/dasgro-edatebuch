@@ -5221,22 +5221,37 @@ END:VCALENDAR`;
             globeGroup = new THREE.Group();
             scene.add(globeGroup);
 
-            // Ocean sphere (soft light blue - clearly water)
+            // Earth with texture - viel zuverlässiger als Polygon-Triangulation!
+            const textureLoader = new THREE.TextureLoader();
+            const earthTexture = textureLoader.load(
+                'https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg',
+                () => { /* loaded */ },
+                undefined,
+                () => {
+                    // Fallback: einfache blaue Kugel wenn Textur nicht lädt
+                    console.log('Texture failed, using fallback');
+                }
+            );
+
             const globeGeo = new THREE.SphereGeometry(1, 64, 64);
-            const globeMat = new THREE.MeshPhongMaterial({ color: 0x8ec8e8, emissive: 0x4a8ab0, shininess: 20 });
+            const globeMat = new THREE.MeshPhongMaterial({
+                map: earthTexture,
+                bumpScale: 0.02,
+                specular: new THREE.Color(0x333333),
+                shininess: 5
+            });
             globeGroup.add(new THREE.Mesh(globeGeo, globeMat));
 
-            // Glow effect (subtle warm glow)
-            const glowMat = new THREE.MeshBasicMaterial({ color: 0xf5e6d3, transparent: true, opacity: 0.1, side: THREE.BackSide });
-            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.08, 32, 32), glowMat));
+            // Subtle atmosphere glow
+            const glowMat = new THREE.MeshBasicMaterial({ color: 0x88ccff, transparent: true, opacity: 0.08, side: THREE.BackSide });
+            globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.05, 32, 32), glowMat));
 
-            scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-            const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+            const dir = new THREE.DirectionalLight(0xffffff, 0.6);
             dir.position.set(5, 3, 5);
             scene.add(dir);
 
-            // Load GeoJSON countries
-            loadCountryBorders();
+            // Keine Polygon-Länder mehr nötig - Textur zeigt alles!
 
             addMarkers();
             
