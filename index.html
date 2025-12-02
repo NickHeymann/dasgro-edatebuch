@@ -896,8 +896,49 @@
         .globe-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 6px; }
         .globe-header p { color: var(--text-light); margin-bottom: 20px; }
         
-        .globe-container { width: 100%; height: 380px; position: relative; }
-        #globeCanvas { width: 100%; height: 100%; display: block; }
+        .globe-container { width: 100%; height: 380px; position: relative; overflow: hidden; border-radius: 12px; }
+        #globeCanvas { width: 100%; height: 100%; display: block; transition: opacity 0.5s ease; }
+        #globeCanvas.hidden { opacity: 0; pointer-events: none; }
+
+        .globe-street-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            z-index: 5;
+            border-radius: 12px;
+        }
+        .globe-street-map.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-globe-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 15;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .back-to-globe-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
 
         .globe-controls {
             position: absolute;
@@ -2809,11 +2850,18 @@
 
                     <div class="globe-container">
                         <canvas id="globeCanvas"></canvas>
+                        <!-- Leaflet Streetmap (erscheint bei tiefem Zoom) -->
+                        <div id="globeStreetMap" class="globe-street-map"></div>
                         <div class="globe-controls">
                             <button class="globe-btn" onclick="globeZoom(-1)" title="Reinzoomen">+</button>
                             <button class="globe-btn" onclick="globeZoom(1)" title="Rauszoomen">−</button>
                             <button class="globe-btn cities-btn" onclick="showCities()" title="Städte zeigen">🏙️</button>
+                            <button class="globe-btn street-btn" id="streetViewBtn" onclick="toggleStreetView()" title="Straßenansicht">🗺️</button>
                         </div>
+                        <!-- Back to Globe Button -->
+                        <button class="back-to-globe-btn" id="backToGlobeBtn" onclick="backToGlobe()" style="display:none;">
+                            🌍 Zurück zum Globus
+                        </button>
                     </div>
                     <!-- Moderne Kategorie-Cards -->
                     <div class="travel-cards">
@@ -6225,7 +6273,152 @@ END:VCALENDAR`;
             }
             animateZoom();
         }
-        
+
+        // ============ GLOBE <-> STREETMAP WECHSEL ============
+        let globeStreetMap = null;
+        let isStreetViewActive = false;
+        let currentGlobeCenter = { lat: 53.55, lon: 10.0 }; // Hamburg als Default
+
+        // Berechne ungefähre Koordinaten aus Globus-Rotation
+        function getGlobeCenter() {
+            if (!globeGroup) return currentGlobeCenter;
+
+            // Rotation zu Lat/Lon umrechnen (vereinfacht)
+            const rotY = globeGroup.rotation.y;
+            const rotX = globeGroup.rotation.x;
+
+            // Longitude aus Y-Rotation (umgekehrt, da Rotation anders herum)
+            let lon = (-rotY * 180 / Math.PI) % 360;
+            if (lon > 180) lon -= 360;
+            if (lon < -180) lon += 360;
+
+            // Latitude aus X-Rotation
+            let lat = (rotX * 180 / Math.PI);
+            lat = Math.max(-85, Math.min(85, lat));
+
+            return { lat, lon };
+        }
+
+        // Wechsel zur Straßenansicht
+        function toggleStreetView() {
+            if (isStreetViewActive) {
+                backToGlobe();
+            } else {
+                showStreetView();
+            }
+        }
+
+        function showStreetView() {
+            const mapContainer = document.getElementById('globeStreetMap');
+            const canvas = document.getElementById('globeCanvas');
+            const backBtn = document.getElementById('backToGlobeBtn');
+
+            if (!mapContainer) return;
+
+            // Aktuelle Position vom Globus holen
+            currentGlobeCenter = getGlobeCenter();
+
+            // Leaflet Map initialisieren falls nicht vorhanden
+            if (!globeStreetMap) {
+                globeStreetMap = L.map('globeStreetMap', {
+                    zoomControl: true,
+                    scrollWheelZoom: true
+                });
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap',
+                    maxZoom: 19
+                }).addTo(globeStreetMap);
+            }
+
+            // Karte auf aktuelle Position setzen
+            globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
+
+            // Alle Marker hinzufügen
+            addMarkersToStreetMap();
+
+            // UI umschalten
+            canvas.classList.add('hidden');
+            mapContainer.classList.add('active');
+            backBtn.style.display = 'block';
+            isStreetViewActive = true;
+
+            // Map neu rendern (wichtig nach display-Wechsel)
+            setTimeout(() => globeStreetMap.invalidateSize(), 100);
+        }
+
+        function backToGlobe() {
+            const mapContainer = document.getElementById('globeStreetMap');
+            const canvas = document.getElementById('globeCanvas');
+            const backBtn = document.getElementById('backToGlobeBtn');
+
+            canvas.classList.remove('hidden');
+            mapContainer.classList.remove('active');
+            backBtn.style.display = 'none';
+            isStreetViewActive = false;
+        }
+
+        function addMarkersToStreetMap() {
+            if (!globeStreetMap) return;
+
+            // Alte Marker entfernen
+            globeStreetMap.eachLayer(layer => {
+                if (layer instanceof L.Marker) {
+                    globeStreetMap.removeLayer(layer);
+                }
+            });
+
+            // Besuchte Städte
+            if (destinations.visitedCities) {
+                destinations.visitedCities.forEach(city => {
+                    const icon = L.divIcon({
+                        html: `<div style="font-size:20px;text-shadow:0 2px 4px rgba(0,0,0,0.3);">${city.emoji || '📍'}</div>`,
+                        className: 'street-marker visited',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15]
+                    });
+                    L.marker([city.lat, city.lon], { icon })
+                        .addTo(globeStreetMap)
+                        .bindPopup(`<b>${city.emoji} ${city.name}</b><br><span style="color:var(--sage);">✓ Besucht</span>`);
+                });
+            }
+
+            // Wishlist
+            destinations.wishlist.forEach(dest => {
+                const icon = L.divIcon({
+                    html: `<div style="font-size:20px;text-shadow:0 2px 4px rgba(0,0,0,0.3);">${dest.emoji || '⭐'}</div>`,
+                    className: 'street-marker wishlist',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                });
+                L.marker([dest.lat, dest.lon], { icon })
+                    .addTo(globeStreetMap)
+                    .bindPopup(`<b>${dest.emoji} ${dest.name}</b><br><span style="color:var(--rose);">🌟 Wunschliste</span>`);
+            });
+
+            // Strava/Komoot Routen hinzufügen
+            const activities = getStoredActivities();
+            [...activities.strava, ...activities.komoot].forEach(act => {
+                if (act.coords && act.coords.length > 1) {
+                    const color = act.type === 'Run' ? '#fc4c02' : '#6aa127';
+                    L.polyline(act.coords, {
+                        color: color,
+                        weight: 3,
+                        opacity: 0.8
+                    }).addTo(globeStreetMap)
+                      .bindPopup(`<b>${act.name}</b><br>${(act.distance / 1000).toFixed(1)} km`);
+                }
+            });
+        }
+
+        // Zeige Street-View Button wenn nah genug rangezoomt
+        function updateStreetViewButton() {
+            const btn = document.getElementById('streetViewBtn');
+            if (btn && camera) {
+                btn.style.display = camera.position.z < 2 ? 'flex' : 'none';
+            }
+        }
+
         window.addEventListener('resize', () => {
             if (renderer && camera) {
                 const c = document.querySelector('.globe-container');
