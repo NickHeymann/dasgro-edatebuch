@@ -5861,12 +5861,18 @@ END:VCALENDAR`;
             canvas.addEventListener('touchend', () => isDragging = false);
 
             // Zoom mit Mausrad - SCHNELLER!
+            const STREETVIEW_THRESHOLD = 1.35; // Bei diesem Zoom-Level wechseln
             canvas.addEventListener('wheel', e => {
                 e.preventDefault();
                 const zoomSpeed = 0.005; // 5x schneller als vorher
                 camera.position.z += e.deltaY * zoomSpeed;
-                camera.position.z = Math.max(1.2, Math.min(5, camera.position.z)); // Näher ranzoomen erlaubt
+                camera.position.z = Math.max(1.2, Math.min(5, camera.position.z));
                 updateMarkersForZoom();
+
+                // Automatisch zu Streetview wechseln wenn sehr nah rangezoomt
+                if (camera.position.z <= STREETVIEW_THRESHOLD && !isStreetViewActive) {
+                    showStreetView();
+                }
             }, { passive: false });
 
             // Pinch-Zoom für Mobile
@@ -5889,6 +5895,11 @@ END:VCALENDAR`;
                     const scale = initialPinchDistance / currentDistance;
                     camera.position.z = Math.max(1.2, Math.min(5, initialCameraZ * scale));
                     updateMarkersForZoom();
+
+                    // Automatisch zu Streetview wechseln wenn sehr nah rangezoomt
+                    if (camera.position.z <= STREETVIEW_THRESHOLD && !isStreetViewActive) {
+                        showStreetView();
+                    }
                 }
             }, { passive: true });
 
@@ -6242,12 +6253,18 @@ END:VCALENDAR`;
         }
 
         // Zoom-Button Funktion
+        const STREETVIEW_ZOOM_THRESHOLD = 1.35;
         function globeZoom(direction) {
             if (!camera) return;
             const step = 0.3; // Zoom-Schritt
             camera.position.z += direction * step;
             camera.position.z = Math.max(1.2, Math.min(5, camera.position.z));
             updateMarkersForZoom();
+
+            // Automatisch zu Streetview wechseln wenn sehr nah rangezoomt
+            if (camera.position.z <= STREETVIEW_ZOOM_THRESHOLD && !isStreetViewActive) {
+                showStreetView();
+            }
         }
 
         // Direkt zu Städte-Ansicht zoomen
