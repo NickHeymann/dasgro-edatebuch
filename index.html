@@ -6330,38 +6330,50 @@ END:VCALENDAR`;
             const canvas = document.getElementById('globeCanvas');
             const backBtn = document.getElementById('backToGlobeBtn');
 
-            if (!mapContainer) return;
+            if (!mapContainer || isStreetViewActive) return;
 
             // Aktuelle Position vom Globus holen
             currentGlobeCenter = getGlobeCenter();
 
-            // Leaflet Map initialisieren falls nicht vorhanden
-            if (!globeStreetMap) {
-                globeStreetMap = L.map('globeStreetMap', {
-                    zoomControl: true,
-                    scrollWheelZoom: true
-                });
-
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap',
-                    maxZoom: 19
-                }).addTo(globeStreetMap);
-            }
-
-            // Karte auf aktuelle Position setzen
-            globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
-
-            // Alle Marker hinzufügen
-            addMarkersToStreetMap();
-
-            // UI umschalten
+            // UI umschalten ZUERST (damit Container sichtbar ist)
             canvas.classList.add('hidden');
             mapContainer.classList.add('active');
             backBtn.style.display = 'block';
             isStreetViewActive = true;
 
-            // Map neu rendern (wichtig nach display-Wechsel)
-            setTimeout(() => globeStreetMap.invalidateSize(), 100);
+            // Leaflet Map initialisieren falls nicht vorhanden
+            if (!globeStreetMap) {
+                // Kurz warten bis Container sichtbar
+                setTimeout(() => {
+                    globeStreetMap = L.map('globeStreetMap', {
+                        zoomControl: true,
+                        scrollWheelZoom: true
+                    });
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap',
+                        maxZoom: 19
+                    }).addTo(globeStreetMap);
+
+                    // Karte auf aktuelle Position setzen
+                    globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
+
+                    // Alle Marker hinzufügen
+                    addMarkersToStreetMap();
+
+                    // Nochmal invalidieren nach kurzer Zeit
+                    setTimeout(() => globeStreetMap.invalidateSize(), 100);
+                }, 50);
+            } else {
+                // Karte auf aktuelle Position setzen
+                globeStreetMap.setView([currentGlobeCenter.lat, currentGlobeCenter.lon], 12);
+
+                // Alle Marker hinzufügen
+                addMarkersToStreetMap();
+
+                // Map neu rendern
+                setTimeout(() => globeStreetMap.invalidateSize(), 100);
+            }
         }
 
         function backToGlobe() {

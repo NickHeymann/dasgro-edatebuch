@@ -1,5 +1,5 @@
 // Service Worker für Datebuch PWA
-const CACHE_NAME = 'datebuch-v4';
+const CACHE_NAME = 'datebuch-v5';
 const urlsToCache = [
   './',
   './index.html',
