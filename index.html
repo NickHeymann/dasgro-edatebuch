@@ -939,6 +939,30 @@
         .legend-dot.wishlist { background: var(--rose); }
         .globe-instructions { color: var(--text-light); font-size: 0.85rem; margin-top: 12px; text-align: center; }
 
+        /* ===== ACTIVITY CONNECT BUTTONS ===== */
+        .activity-connect-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .activity-connect-btn.strava { border-color: #fc4c02; }
+        .activity-connect-btn.strava:hover { background: #fc4c02; color: white; }
+        .activity-connect-btn.strava.connected { background: #fc4c02; color: white; }
+        .activity-connect-btn.komoot { border-color: #6aa127; }
+        .activity-connect-btn.komoot:hover { background: #6aa127; color: white; }
+        .activity-connect-btn.komoot.connected { background: #6aa127; color: white; }
+        .activity-icon { font-size: 1.2rem; }
+        .activity-name { font-weight: 600; }
+        .activity-status { font-size: 0.75rem; opacity: 0.8; }
+
         /* ===== BUCKET LIST ===== */
         .bucket-list-container { padding: 15px; }
         .bucket-progress {
@@ -2646,6 +2670,24 @@
                         <div class="legend-item"><span class="legend-dot wishlist"></span><span>Wollen wir hin</span></div>
                     </div>
                     <p class="globe-instructions">💡 Drehen mit der Maus/Finger • Klick auf Marker für Details</p>
+
+                    <!-- Strava/Komoot Integration -->
+                    <div class="activity-connections" style="margin-top:20px;padding:15px;background:var(--frost);border-radius:12px;">
+                        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:12px;">🏃 Aktivitäten verbinden</h4>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+                            <button class="activity-connect-btn strava" id="stravaConnectBtn" onclick="connectStrava()">
+                                <span class="activity-icon">🏃</span>
+                                <span class="activity-name">Strava</span>
+                                <span class="activity-status" id="stravaStatus">Verbinden</span>
+                            </button>
+                            <button class="activity-connect-btn komoot" id="komootConnectBtn" onclick="connectKomoot()">
+                                <span class="activity-icon">🚴</span>
+                                <span class="activity-name">Komoot</span>
+                                <span class="activity-status" id="komootStatus">Verbinden</span>
+                            </button>
+                        </div>
+                        <p style="font-size:0.8rem;color:var(--text-light);margin-top:10px;text-align:center;">Zeige eure Läufe, Radtouren & Wanderungen auf der Karte!</p>
+                    </div>
                 </div>
             </section>
             
@@ -2804,12 +2846,19 @@
     </div>
     
     <div class="modal" id="destinationPopup">
-        <div class="modal-content" style="max-width:500px;">
+        <div class="modal-content" style="max-width:600px;">
             <button class="modal-close" onclick="closeDestinationPopup()">✕</button>
             <div style="padding:20px;">
                 <h3 id="destPopupTitle" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy);margin-bottom:10px;"></h3>
                 <span id="destPopupStatus" style="display:inline-block;padding:5px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:15px;"></span>
                 <div id="destPopupBody"></div>
+                <!-- Leaflet Streetmap -->
+                <div id="destStreetMap" style="height:250px;border-radius:12px;margin:15px 0;overflow:hidden;"></div>
+                <!-- Strava/Komoot Activities -->
+                <div id="destActivities" style="display:none;">
+                    <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin:15px 0 10px;">🏃 Aktivitäten in der Nähe</h4>
+                    <div id="destActivitiesList"></div>
+                </div>
                 <!-- Diary Section -->
                 <div id="destDiarySection" class="diary-section"></div>
                 <!-- Hidden file input -->
@@ -5207,6 +5256,54 @@ END:VCALENDAR`;
             renderDiarySection(dest.name, isVisited);
 
             document.getElementById('destinationPopup').classList.add('active');
+
+            // Leaflet Streetmap initialisieren
+            setTimeout(() => initDestinationMap(dest), 100);
+
+            // Strava/Komoot Aktivitäten laden falls verbunden
+            loadNearbyActivities(dest);
+        }
+
+        // ============ DESTINATION STREET MAP ============
+        let destMap = null;
+
+        function initDestinationMap(dest) {
+            const container = document.getElementById('destStreetMap');
+            if (!container) return;
+
+            // Alte Map zerstören falls vorhanden
+            if (destMap) {
+                destMap.remove();
+                destMap = null;
+            }
+
+            // Karte erstellen mit Straßen-Zoom
+            destMap = L.map('destStreetMap', {
+                zoomControl: true,
+                scrollWheelZoom: true
+            }).setView([dest.lat, dest.lon], 14); // Zoom 14 = Straßenebene
+
+            // OpenStreetMap Tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 19
+            }).addTo(destMap);
+
+            // Marker für den Ort
+            const markerIcon = L.divIcon({
+                html: `<div style="font-size:24px;text-align:center;">${dest.emoji || '📍'}</div>`,
+                className: 'dest-marker-icon',
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
+            });
+
+            L.marker([dest.lat, dest.lon], { icon: markerIcon })
+                .addTo(destMap)
+                .bindPopup(`<b>${dest.name}</b>`)
+                .openPopup();
+
+            // Strava/Komoot Routen auf Karte zeichnen falls vorhanden
+            drawActivityRoutes(destMap, dest);
         }
 
         // ============ TRAVEL DIARY ============
@@ -7220,11 +7317,242 @@ END:VCALENDAR`;
             renderYearReview(); // Update Year Review auch
         }
 
+        // ============ STRAVA / KOMOOT INTEGRATION ============
+        // WICHTIG: Für echte OAuth-Integration brauchst du API-Keys!
+        // Strava: https://www.strava.com/settings/api
+        // Komoot: https://www.komoot.de/api
+
+        const STRAVA_CLIENT_ID = ''; // Hier deine Strava Client ID eintragen
+        const KOMOOT_CLIENT_ID = ''; // Hier deine Komoot Client ID eintragen
+
+        // Gespeicherte Aktivitäten laden
+        function getStoredActivities() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return saved.activities || { strava: [], komoot: [] };
+        }
+
+        function saveActivities(activities) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.activities = activities;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+
+        // Strava verbinden
+        function connectStrava() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            if (saved.stravaToken) {
+                // Bereits verbunden - trennen
+                delete saved.stravaToken;
+                delete saved.stravaAthlete;
+                if (saved.activities) saved.activities.strava = [];
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateStravaButton(false);
+                showToast('🏃 Strava getrennt');
+                return;
+            }
+
+            if (!STRAVA_CLIENT_ID) {
+                // Demo-Modus: Zeige Beispiel-Aktivitäten
+                showToast('🏃 Demo-Modus: Beispiel-Aktivitäten geladen');
+                const demoActivities = [
+                    { id: 1, name: 'Morgenlauf Stadtpark', type: 'Run', distance: 8200, date: '2025-11-28', coords: [[53.60, 10.01], [53.61, 10.02], [53.60, 10.03]] },
+                    { id: 2, name: 'Feierabend-Joggen Alster', type: 'Run', distance: 5400, date: '2025-11-25', coords: [[53.57, 9.99], [53.58, 10.00], [53.57, 10.01]] },
+                    { id: 3, name: 'Lissabon Sightseeing Lauf', type: 'Run', distance: 12300, date: '2025-09-15', coords: [[38.72, -9.14], [38.73, -9.13], [38.71, -9.12]] }
+                ];
+                const activities = getStoredActivities();
+                activities.strava = demoActivities;
+                saveActivities(activities);
+                saved.stravaToken = 'demo';
+                saved.stravaAthlete = { name: 'Demo User' };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateStravaButton(true);
+                return;
+            }
+
+            // Echter OAuth Flow
+            const redirectUri = window.location.origin + window.location.pathname;
+            const scope = 'read,activity:read_all';
+            const authUrl = `https://www.strava.com/oauth/authorize?client_id=${STRAVA_CLIENT_ID}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}&state=strava`;
+            window.location.href = authUrl;
+        }
+
+        // Komoot verbinden
+        function connectKomoot() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            if (saved.komootToken) {
+                // Bereits verbunden - trennen
+                delete saved.komootToken;
+                delete saved.komootUser;
+                if (saved.activities) saved.activities.komoot = [];
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateKomootButton(false);
+                showToast('🚴 Komoot getrennt');
+                return;
+            }
+
+            if (!KOMOOT_CLIENT_ID) {
+                // Demo-Modus
+                showToast('🚴 Demo-Modus: Beispiel-Touren geladen');
+                const demoTours = [
+                    { id: 1, name: 'Radtour Elbe', type: 'Bike', distance: 25000, date: '2025-11-20', coords: [[53.55, 9.95], [53.54, 9.90], [53.52, 9.85]] },
+                    { id: 2, name: 'Wanderung Harburger Berge', type: 'Hike', distance: 14000, date: '2025-11-10', coords: [[53.45, 9.98], [53.44, 9.99], [53.43, 10.00]] },
+                    { id: 3, name: 'Porto Stadtrundfahrt', type: 'Bike', distance: 18500, date: '2025-09-12', coords: [[41.16, -8.63], [41.15, -8.62], [41.17, -8.61]] }
+                ];
+                const activities = getStoredActivities();
+                activities.komoot = demoTours;
+                saveActivities(activities);
+                saved.komootToken = 'demo';
+                saved.komootUser = { name: 'Demo User' };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateKomootButton(true);
+                return;
+            }
+
+            // Echter OAuth Flow
+            const redirectUri = window.location.origin + window.location.pathname;
+            const authUrl = `https://www.komoot.de/oauth/authorize?client_id=${KOMOOT_CLIENT_ID}&response_type=code&redirect_uri=${redirectUri}&state=komoot`;
+            window.location.href = authUrl;
+        }
+
+        function updateStravaButton(connected) {
+            const btn = document.getElementById('stravaConnectBtn');
+            const status = document.getElementById('stravaStatus');
+            if (connected) {
+                btn.classList.add('connected');
+                status.textContent = '✓ Verbunden';
+            } else {
+                btn.classList.remove('connected');
+                status.textContent = 'Verbinden';
+            }
+        }
+
+        function updateKomootButton(connected) {
+            const btn = document.getElementById('komootConnectBtn');
+            const status = document.getElementById('komootStatus');
+            if (connected) {
+                btn.classList.add('connected');
+                status.textContent = '✓ Verbunden';
+            } else {
+                btn.classList.remove('connected');
+                status.textContent = 'Verbinden';
+            }
+        }
+
+        // Aktivitäten in der Nähe eines Ortes laden
+        function loadNearbyActivities(dest) {
+            const activities = getStoredActivities();
+            const container = document.getElementById('destActivities');
+            const list = document.getElementById('destActivitiesList');
+
+            if (!container || !list) return;
+
+            // Finde Aktivitäten in der Nähe (innerhalb 50km)
+            const nearby = [];
+            const maxDistance = 50; // km
+
+            [...activities.strava, ...activities.komoot].forEach(act => {
+                if (act.coords && act.coords.length > 0) {
+                    const actLat = act.coords[0][0];
+                    const actLon = act.coords[0][1];
+                    const dist = haversineDistance(dest.lat, dest.lon, actLat, actLon);
+                    if (dist <= maxDistance) {
+                        nearby.push({ ...act, distanceFromDest: dist });
+                    }
+                }
+            });
+
+            if (nearby.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.style.display = 'block';
+            list.innerHTML = nearby.map(act => `
+                <div style="display:flex;align-items:center;gap:10px;padding:10px;background:var(--ice-blue);border-radius:8px;margin-bottom:8px;">
+                    <span style="font-size:1.3rem;">${act.type === 'Run' ? '🏃' : act.type === 'Bike' ? '🚴' : '🥾'}</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:600;">${act.name}</div>
+                        <div style="font-size:0.8rem;color:var(--text-light);">${(act.distance / 1000).toFixed(1)} km • ${new Date(act.date).toLocaleDateString('de-DE')}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Aktivitätsrouten auf der Karte zeichnen
+        function drawActivityRoutes(map, dest) {
+            const activities = getStoredActivities();
+            const maxDistance = 50; // km
+
+            [...activities.strava, ...activities.komoot].forEach(act => {
+                if (act.coords && act.coords.length > 1) {
+                    const actLat = act.coords[0][0];
+                    const actLon = act.coords[0][1];
+                    const dist = haversineDistance(dest.lat, dest.lon, actLat, actLon);
+
+                    if (dist <= maxDistance) {
+                        const color = act.type === 'Run' ? '#fc4c02' : '#6aa127';
+                        L.polyline(act.coords, {
+                            color: color,
+                            weight: 3,
+                            opacity: 0.7
+                        }).addTo(map).bindPopup(`<b>${act.name}</b><br>${(act.distance / 1000).toFixed(1)} km`);
+                    }
+                }
+            });
+        }
+
+        // Haversine Distanz (km)
+        function haversineDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) ** 2;
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        }
+
+        // OAuth Callback verarbeiten
+        function handleOAuthCallback() {
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get('code');
+            const state = params.get('state');
+
+            if (code && state) {
+                // In einer echten App würdest du hier den Token beim Backend austauschen
+                // Für Demo: Einfach als verbunden markieren
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+                if (state === 'strava') {
+                    saved.stravaToken = code;
+                    showToast('🏃 Strava erfolgreich verbunden!');
+                    updateStravaButton(true);
+                } else if (state === 'komoot') {
+                    saved.komootToken = code;
+                    showToast('🚴 Komoot erfolgreich verbunden!');
+                    updateKomootButton(true);
+                }
+
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+                // URL bereinigen
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+
         // Initialize neue Features
         document.addEventListener('DOMContentLoaded', () => {
             renderBucketList();
             renderYearReview();
             renderBudget();
+
+            // OAuth Callback prüfen
+            handleOAuthCallback();
+
+            // Strava/Komoot Button-Status aktualisieren
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            updateStravaButton(!!saved.stravaToken);
+            updateKomootButton(!!saved.komootToken);
 
             // Service Worker für Offline-Modus registrieren
             if ('serviceWorker' in navigator) {
