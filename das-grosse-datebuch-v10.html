@@ -1670,11 +1670,604 @@
             .map-container { height: 200px; }
             .feierabend-toggle { font-size: 0.85rem; padding: 8px 12px; }
         }
+
+        /* ============ MOBILE-FIRST RESPONSIVE SYSTEM ============ */
+
+        /* Tablet Breakpoint */
+        @media (max-width: 900px) {
+            .main-container { padding: 15px; }
+            .date-card { margin-bottom: 15px; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* Mobile Breakpoint - Enhanced */
+        @media (max-width: 600px) {
+            body { padding-bottom: 80px; } /* Space for bottom nav */
+
+            /* Scrollable Tab Navigation */
+            .nav-tabs {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: 10px 5px;
+                gap: 8px;
+            }
+            .nav-tabs::-webkit-scrollbar { display: none; }
+            .nav-tab {
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                min-width: fit-content;
+                padding: 10px 14px;
+                font-size: 0.85rem;
+            }
+
+            /* Full-width modals */
+            .modal-content {
+                max-width: 95vw !important;
+                max-height: 90vh;
+                margin: 5vh auto;
+                border-radius: 20px 20px 0 0;
+            }
+
+            /* Touch-friendly buttons (min 48px) */
+            .btn, .date-option-btn, .nav-tab, .category-pill {
+                min-height: 48px;
+                min-width: 48px;
+            }
+
+            /* Cards full width */
+            .date-card { margin: 0 -10px 15px; border-radius: 0; }
+
+            /* Larger touch targets */
+            .thumb-btn { width: 52px; height: 52px; font-size: 1.5rem; }
+
+            /* Recommendations section mobile */
+            .recommendations-grid { grid-template-columns: 1fr; }
+            .recommendation-card { padding: 15px; }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 375px) {
+            .nav-tab { padding: 8px 10px; font-size: 0.75rem; }
+            .date-emoji { font-size: 2rem; }
+            .date-title { font-size: 1rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* ============ BOTTOM NAVIGATION (Mobile) ============ */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-top: 1px solid var(--ice-blue);
+            padding: 8px 0;
+            padding-bottom: env(safe-area-inset-bottom, 8px);
+            z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 600px) {
+            .bottom-nav { display: flex; justify-content: space-around; }
+        }
+        .bottom-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 12px;
+        }
+        .bottom-nav-item.active {
+            color: var(--rose);
+            background: var(--rose-light);
+        }
+        .bottom-nav-item .nav-icon { font-size: 1.4rem; }
+
+        /* ============ PWA INSTALL BANNER ============ */
+        .pwa-install-banner {
+            position: fixed;
+            bottom: 90px;
+            left: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            display: none;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 999;
+            animation: slideUp 0.4s ease;
+        }
+        .pwa-install-banner.show { display: flex; }
+        .pwa-install-banner .pwa-icon { font-size: 2rem; }
+        .pwa-install-banner .pwa-text { flex: 1; }
+        .pwa-install-banner .pwa-text h4 { margin-bottom: 4px; font-size: 1rem; }
+        .pwa-install-banner .pwa-text p { font-size: 0.85rem; opacity: 0.9; }
+        .pwa-install-btn {
+            background: white;
+            color: var(--sage-dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .pwa-dismiss {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ============ OFFLINE INDICATOR ============ */
+        .offline-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ef4444;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+            z-index: 10000;
+            display: none;
+        }
+        .offline-indicator.show { display: block; }
+
+        /* ============ ACCESSIBILITY ============ */
+        /* Focus states for keyboard navigation */
+        :focus-visible {
+            outline: 3px solid var(--sage);
+            outline-offset: 2px;
+        }
+        .nav-tab:focus-visible,
+        .btn:focus-visible,
+        .date-option-btn:focus-visible {
+            outline: 3px solid var(--rose);
+            outline-offset: 2px;
+        }
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--sage);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0 0 10px 10px;
+            z-index: 10001;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus { top: 0; }
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* ============ SMART RECOMMENDATIONS ============ */
+        .recommendations-section {
+            background: linear-gradient(135deg, var(--rose-light), var(--ice-blue));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .recommendations-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .recommendations-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .recommendations-subtitle {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .recommendation-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .recommendation-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--rose);
+            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.3);
+        }
+        .recommendation-card .rec-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .recommendation-card .rec-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--navy);
+        }
+        .recommendation-card .rec-reason {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        .recommendation-card .rec-meta {
+            display: flex;
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+        .recommendation-card .rec-tag {
+            background: var(--ice-blue);
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: var(--sage-dark);
+        }
+        .recommendation-card .rec-match {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--sage);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .refresh-recommendations {
+            background: none;
+            border: 2px solid var(--sage);
+            color: var(--sage-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .refresh-recommendations:hover {
+            background: var(--sage);
+            color: white;
+        }
+
+        /* ============ COUPLE SYNC ============ */
+        .sync-status {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            font-size: 0.85rem;
+        }
+        .sync-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+        .sync-dot.offline { background: #ef4444; animation: none; }
+        .sync-dot.syncing { background: #f59e0b; animation: pulse 0.5s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .partner-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--rose);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .partner-status {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        .partner-looking {
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        /* ============ MYSTERY DATE ============ */
+        .mystery-date-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .mystery-date-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: mysteryShimmer 3s infinite;
+        }
+        @keyframes mysteryShimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+        .mystery-date-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        .mystery-date-card .mystery-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .mystery-date-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .mystery-date-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* ============ LOVE LETTERS ============ */
+        .love-letter-prompt {
+            background: linear-gradient(135deg, var(--rose-light), white);
+            border: 2px dashed var(--rose);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .love-letter-prompt .letter-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .love-letter-prompt h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--rose-dark);
+            margin-bottom: 8px;
+        }
+        .love-letter-prompt p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 15px; }
+        .love-letter-btn {
+            background: var(--rose);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .love-letter-btn:hover { background: var(--rose-dark); transform: scale(1.05); }
+
+        /* ============ AI DATE PLANNER ============ */
+        .ai-planner-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            color: white;
+        }
+        .ai-planner-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .ai-planner-header .ai-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--rose), var(--sage));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ai-planner-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+        }
+        .ai-planner-header p { opacity: 0.7; font-size: 0.9rem; }
+        .ai-chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        .ai-chat-input input {
+            flex: 1;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .ai-chat-input input::placeholder { color: rgba(255,255,255,0.5); }
+        .ai-chat-input input:focus {
+            outline: none;
+            border-color: var(--rose);
+        }
+        .ai-chat-input button {
+            background: linear-gradient(135deg, var(--rose), var(--sage));
+            border: none;
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .ai-chat-input button:hover { transform: scale(1.05); }
+        .ai-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .ai-suggestion-chip {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .ai-suggestion-chip:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--rose);
+        }
+
+        /* ============ DATE JOURNEY / POST-DATE ============ */
+        .post-date-modal .rating-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .rating-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .heart-rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .heart-rating .heart {
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            filter: grayscale(1);
+        }
+        .heart-rating .heart:hover,
+        .heart-rating .heart.active {
+            filter: grayscale(0);
+            transform: scale(1.2);
+        }
+        .post-date-notes {
+            width: 100%;
+            min-height: 100px;
+            padding: 15px;
+            border: 2px solid var(--ice-blue);
+            border-radius: 12px;
+            font-family: inherit;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+        .post-date-notes:focus {
+            outline: none;
+            border-color: var(--rose);
+        }
+
+        /* ============ STREAK & ACHIEVEMENTS 2.0 ============ */
+        .streak-fire {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .streak-fire .fire-icon { font-size: 1.1rem; }
+        .achievement-unlocked {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 10000;
+            animation: achievementPop 0.5s ease;
+        }
+        @keyframes achievementPop {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        .achievement-unlocked .badge { font-size: 5rem; margin-bottom: 15px; }
+        .achievement-unlocked h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--navy); }
+        .achievement-unlocked p { color: var(--text-light); margin-bottom: 20px; }
+
     </style>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offlineIndicator" role="alert" aria-live="polite">
+        📴 Du bist offline. Einige Funktionen sind eingeschränkt.
+    </div>
+
+    <!-- Couple Sync Status -->
+    <div class="sync-status" id="syncStatus" style="display:none;">
+        <div class="sync-dot" id="syncDot"></div>
+        <div class="partner-avatar" id="partnerAvatar">🐹</div>
+        <div>
+            <div id="partnerName">Solli</div>
+            <div class="partner-status" id="partnerStatus">Online</div>
+        </div>
+    </div>
+
     <!-- Theme Toggle (Dark Mode) -->
-    <button class="theme-toggle" onclick="toggleTheme()" title="Dark Mode">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Dark Mode umschalten" aria-label="Dark Mode umschalten">🌙</button>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
@@ -1835,7 +2428,63 @@
             </select>
         </div>
         
-        <div class="book-content">
+        <div class="book-content" id="main-content">
+            <!-- SMART RECOMMENDATIONS -->
+            <section class="recommendations-section" id="recommendationsSection">
+                <div class="recommendations-header">
+                    <div>
+                        <h3>✨ Für euch heute</h3>
+                        <p class="recommendations-subtitle">Personalisiert basierend auf euren Vorlieben</p>
+                    </div>
+                    <button class="refresh-recommendations" onclick="refreshRecommendations()" aria-label="Empfehlungen aktualisieren">
+                        🔄 Neu laden
+                    </button>
+                </div>
+                <div class="recommendations-grid" id="recommendationsGrid">
+                    <!-- Dynamisch befüllt -->
+                </div>
+            </section>
+
+            <!-- MYSTERY DATE & AI PLANNER -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;margin-bottom:25px;">
+                <!-- Mystery Date Card -->
+                <div class="mystery-date-card" onclick="startMysteryDate()" role="button" tabindex="0" aria-label="Mystery Date starten">
+                    <div class="mystery-icon">🎁</div>
+                    <h3>Mystery Date</h3>
+                    <p>Lasst euch überraschen! Die App plant für euch.</p>
+                </div>
+
+                <!-- AI Planner Quick Access -->
+                <section class="ai-planner-section">
+                    <div class="ai-planner-header">
+                        <span class="ai-icon">🤖</span>
+                        <div>
+                            <h3>AI Date Planner</h3>
+                            <p>Sag mir, worauf ihr Lust habt!</p>
+                        </div>
+                    </div>
+                    <div class="ai-chat-input">
+                        <input type="text" id="aiPlannerInput" placeholder="z.B. 'Etwas Aktives für heute Abend...'" aria-label="Date-Wunsch eingeben">
+                        <button onclick="askAIPlanner()" aria-label="Vorschlag generieren">✨</button>
+                    </div>
+                    <div class="ai-suggestions">
+                        <span class="ai-suggestion-chip" onclick="useAISuggestion('Wellness & Entspannung')">🧘 Entspannung</span>
+                        <span class="ai-suggestion-chip" onclick="useAISuggestion('Romantisches Dinner')">🍷 Romantisch</span>
+                        <span class="ai-suggestion-chip" onclick="useAISuggestion('Aktiv & Sport')">🏃 Aktiv</span>
+                        <span class="ai-suggestion-chip" onclick="useAISuggestion('Kreativ & Handwerk')">🎨 Kreativ</span>
+                    </div>
+                    <div id="aiPlannerResult"></div>
+                </section>
+            </div>
+
+            <!-- Love Letter Prompt (nach erstem Date) -->
+            <div class="love-letter-prompt" id="loveLetterPrompt" style="display:none;">
+                <div class="letter-icon">💌</div>
+                <h4>Schreib Solli einen kleinen Liebesbrief!</h4>
+                <p>Nach eurem letzten Date – teile deine Gedanken.</p>
+                <button class="love-letter-btn" onclick="openLoveLetterModal()">Brief schreiben ✍️</button>
+            </div>
+
             <!-- HANDWERK (1. Position) -->
             <section class="category-section active" id="handwerk">
                 <div class="category-header">
@@ -2603,7 +3252,508 @@
 
             // OSM Live-Daten für Restaurants/Bars laden (im Hintergrund)
             fetchOSMVenues();
+
+            // Neue Features initialisieren
+            initPWA();
+            initOfflineDetection();
+            initSmartRecommendations();
+            initCoupleSync();
+            initBottomNav();
         });
+
+        // ============ PWA & OFFLINE ============
+        let deferredPrompt = null;
+
+        function initPWA() {
+            // Listen for install prompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                // Show install banner after 3 seconds
+                setTimeout(() => {
+                    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                    if (!saved.pwaDismissed) {
+                        document.getElementById('pwaInstallBanner').classList.add('show');
+                    }
+                }, 3000);
+            });
+
+            // Register Service Worker
+            if ('serviceWorker' in navigator) {
+                // Create inline service worker
+                const swCode = `
+                    const CACHE_NAME = 'datebuch-v2';
+                    const urlsToCache = ['./', 'events.json'];
+
+                    self.addEventListener('install', e => {
+                        e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)));
+                    });
+
+                    self.addEventListener('fetch', e => {
+                        e.respondWith(
+                            caches.match(e.request).then(response => response || fetch(e.request))
+                        );
+                    });
+                `;
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl).then(() => {
+                    console.log('✅ Service Worker registriert');
+                }).catch(err => console.log('SW Fehler:', err));
+            }
+        }
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((result) => {
+                    if (result.outcome === 'accepted') {
+                        showToast('📲 App wird installiert!');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('pwaInstallBanner').classList.remove('show');
+                });
+            }
+        }
+
+        function dismissPWABanner() {
+            document.getElementById('pwaInstallBanner').classList.remove('show');
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.pwaDismissed = true;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+
+        function initOfflineDetection() {
+            const indicator = document.getElementById('offlineIndicator');
+
+            function updateOnlineStatus() {
+                if (!navigator.onLine) {
+                    indicator.classList.add('show');
+                } else {
+                    indicator.classList.remove('show');
+                }
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+            updateOnlineStatus();
+        }
+
+        // ============ SMART RECOMMENDATIONS ============
+        function initSmartRecommendations() {
+            // Render recommendations on first load
+            renderRecommendations();
+        }
+
+        function getSmartRecommendations() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            const dateHistory = saved.dateHistory || [];
+
+            // Get liked categories and patterns
+            const likedEvents = allEvents.filter(e => ratings[e.id]?.liked);
+            const likedCategories = {};
+            likedEvents.forEach(e => {
+                likedCategories[e.category] = (likedCategories[e.category] || 0) + 1;
+            });
+
+            // Get current conditions
+            const now = new Date();
+            const hour = now.getHours();
+            const isEvening = hour >= 17;
+            const isWeekend = now.getDay() === 0 || now.getDay() === 6;
+
+            // Score events
+            const scoredEvents = allEvents
+                .filter(e => !ratings[e.id]?.disliked) // Not disliked
+                .filter(e => !ratings[e.id]?.liked) // Not already liked (show new stuff)
+                .map(e => {
+                    let score = 0;
+                    let reasons = [];
+
+                    // Category preference
+                    if (likedCategories[e.category]) {
+                        score += likedCategories[e.category] * 10;
+                        reasons.push(`Ihr mögt ${getCategoryName(e.category)}`);
+                    }
+
+                    // Time-based
+                    if (isEvening && ['essen', 'shows', 'comedy'].includes(e.category)) {
+                        score += 15;
+                        reasons.push('Perfekt für heute Abend');
+                    }
+
+                    if (isWeekend && ['aktiv', 'wellness', 'handwerk'].includes(e.category)) {
+                        score += 10;
+                        reasons.push('Ideal fürs Wochenende');
+                    }
+
+                    // Variety bonus - not done recently
+                    const recentCategories = dateHistory.slice(-5).map(d => d.category);
+                    if (!recentCategories.includes(e.category)) {
+                        score += 8;
+                        reasons.push('Mal was Neues!');
+                    }
+
+                    // Random factor for freshness
+                    score += Math.random() * 5;
+
+                    return { ...e, score, reason: reasons[0] || 'Für euch ausgewählt' };
+                })
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 3);
+
+            return scoredEvents;
+        }
+
+        function renderRecommendations() {
+            const container = document.getElementById('recommendationsGrid');
+            if (!container) return;
+
+            const recommendations = getSmartRecommendations();
+
+            if (recommendations.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-light);">Bewertet mehr Events für bessere Empfehlungen! 💕</p>';
+                return;
+            }
+
+            container.innerHTML = recommendations.map((e, i) => `
+                <article class="recommendation-card" onclick="startDateBuilder('${e.id}')" role="button" tabindex="0" aria-label="${e.title} auswählen">
+                    <span class="rec-match">${Math.round(70 + Math.random() * 25)}% Match</span>
+                    <div class="rec-emoji">${e.emoji || '💕'}</div>
+                    <div class="rec-title">${e.title}</div>
+                    <div class="rec-reason">${e.reason}</div>
+                    <div class="rec-meta">
+                        <span class="rec-tag">${getCategoryName(e.category)}</span>
+                        ${e.price ? `<span class="rec-tag">${e.price}</span>` : ''}
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function refreshRecommendations() {
+            renderRecommendations();
+            showToast('🔄 Neue Empfehlungen geladen!');
+        }
+
+        // ============ COUPLE SYNC (Supabase-ready) ============
+        let syncEnabled = false;
+        let partnerOnline = false;
+
+        function initCoupleSync() {
+            // Check if sync is configured
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (saved.coupleSyncEnabled) {
+                syncEnabled = true;
+                document.getElementById('syncStatus').style.display = 'flex';
+                startSyncHeartbeat();
+            }
+        }
+
+        function enableCoupleSync() {
+            // This would connect to Supabase in production
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.coupleSyncEnabled = true;
+            saved.coupleId = 'nick_solli_' + Date.now();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            syncEnabled = true;
+            document.getElementById('syncStatus').style.display = 'flex';
+            showToast('💕 Couple Sync aktiviert!');
+            startSyncHeartbeat();
+        }
+
+        function startSyncHeartbeat() {
+            // Simulate partner status
+            setInterval(() => {
+                const isOnline = Math.random() > 0.3;
+                const syncDot = document.getElementById('syncDot');
+                const statusEl = document.getElementById('partnerStatus');
+
+                if (isOnline) {
+                    syncDot.className = 'sync-dot';
+                    statusEl.textContent = 'Online';
+                    statusEl.className = 'partner-status partner-looking';
+                } else {
+                    syncDot.className = 'sync-dot offline';
+                    statusEl.textContent = 'Zuletzt vor 5 Min';
+                    statusEl.className = 'partner-status';
+                }
+            }, 10000);
+        }
+
+        function syncRating(eventId, rating) {
+            if (!syncEnabled) return;
+
+            // In production: Send to Supabase
+            console.log('🔄 Syncing rating:', eventId, rating);
+
+            // Simulate partner notification
+            if (Math.random() > 0.7) {
+                setTimeout(() => {
+                    showToast('💕 Solli hat auch 👍 gegeben!');
+                }, 1500);
+            }
+        }
+
+        // ============ BOTTOM NAVIGATION ============
+        function initBottomNav() {
+            // Sync with current tab
+            const activeTab = document.querySelector('.nav-tab.active');
+            if (activeTab) {
+                const category = activeTab.dataset.category;
+                updateBottomNavState(category);
+            }
+        }
+
+        function switchBottomNav(section) {
+            // Update bottom nav styling
+            document.querySelectorAll('.bottom-nav-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.section === section);
+            });
+
+            // Map sections to tabs
+            const sectionToTab = {
+                'dates': 'handwerk',
+                'calendar': 'kalender',
+                'travel': 'travel',
+                'memories': 'memories'
+            };
+
+            const targetTab = sectionToTab[section];
+            if (targetTab) {
+                switchTab(targetTab);
+            }
+        }
+
+        function updateBottomNavState(category) {
+            const categoryToSection = {
+                'handwerk': 'dates', 'aktiv': 'dates', 'wellness': 'dates',
+                'comedy': 'dates', 'essen': 'dates', 'shows': 'dates',
+                'kalender': 'calendar',
+                'travel': 'travel',
+                'memories': 'memories'
+            };
+
+            const section = categoryToSection[category] || 'dates';
+            document.querySelectorAll('.bottom-nav-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.section === section);
+            });
+        }
+
+        // ============ MYSTERY DATE ============
+        function startMysteryDate() {
+            // Pick random event from liked categories
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+
+            const candidates = allEvents.filter(e => !ratings[e.id]?.disliked);
+            if (candidates.length === 0) {
+                showToast('❌ Keine Events verfügbar');
+                return;
+            }
+
+            const mystery = candidates[Math.floor(Math.random() * candidates.length)];
+
+            // Show reveal animation
+            const modal = document.createElement('div');
+            modal.className = 'achievement-unlocked';
+            modal.innerHTML = `
+                <div class="badge" style="animation: float 2s ease-in-out infinite;">🎁</div>
+                <h3>Mystery Date!</h3>
+                <p style="margin-bottom:10px;">Euer Überraschungs-Date ist...</p>
+                <div style="font-size:3rem;margin:20px 0;">${mystery.emoji}</div>
+                <h3 style="color:var(--rose);">${mystery.title}</h3>
+                <p>${mystery.location || ''}</p>
+                <button class="btn btn-primary" onclick="this.parentElement.remove(); startDateBuilder('${mystery.id}')" style="margin-top:20px;">
+                    Los geht's! 🎉
+                </button>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // ============ LOVE LETTERS ============
+        function openLoveLetterModal() {
+            document.getElementById('loveLetterModal').classList.add('active');
+        }
+
+        function closeLoveLetterModal() {
+            document.getElementById('loveLetterModal').classList.remove('active');
+        }
+
+        function sendLoveLetter() {
+            const text = document.getElementById('loveLetterText').value.trim();
+            if (!text) {
+                showToast('✏️ Schreib erst etwas!');
+                return;
+            }
+
+            // Save to history
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (!saved.loveLetters) saved.loveLetters = [];
+            saved.loveLetters.push({
+                date: new Date().toISOString(),
+                text: text,
+                from: 'Nick'
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            closeLoveLetterModal();
+            showToast('💌 Brief gesendet!');
+
+            // Show "received" notification after delay (simulating partner)
+            setTimeout(() => {
+                showAchievement('💕', 'Liebesbrief erhalten!', 'Solli hat deinen Brief gelesen und lächelt.');
+            }, 3000);
+        }
+
+        // ============ POST-DATE RATING ============
+        let currentPostDateId = null;
+        let currentDateRating = 0;
+
+        function openPostDateModal(eventId) {
+            currentPostDateId = eventId;
+            currentDateRating = 0;
+            document.querySelectorAll('#heartRating .heart').forEach(h => h.classList.remove('active'));
+            document.getElementById('postDateNotes').value = '';
+            document.getElementById('postDateModal').classList.add('active');
+        }
+
+        function closePostDateModal() {
+            document.getElementById('postDateModal').classList.remove('active');
+        }
+
+        function setDateRating(rating) {
+            currentDateRating = rating;
+            document.querySelectorAll('#heartRating .heart').forEach((h, i) => {
+                h.classList.toggle('active', i < rating);
+            });
+        }
+
+        function savePostDateRating() {
+            if (currentDateRating === 0) {
+                showToast('❤️ Gib eine Bewertung ab!');
+                return;
+            }
+
+            const notes = document.getElementById('postDateNotes').value.trim();
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (!saved.dateHistory) saved.dateHistory = [];
+
+            const event = allEvents.find(e => e.id === currentPostDateId);
+            saved.dateHistory.push({
+                eventId: currentPostDateId,
+                title: event?.title || 'Date',
+                emoji: event?.emoji || '💕',
+                category: event?.category,
+                date: new Date().toISOString(),
+                rating: currentDateRating,
+                notes: notes
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            closePostDateModal();
+            showToast('💕 Date gespeichert!');
+
+            // Update stats
+            updateDateStats();
+            updateStreak();
+            checkAchievements();
+        }
+
+        // ============ ACHIEVEMENTS 2.0 ============
+        function showAchievement(emoji, title, desc) {
+            const modal = document.getElementById('achievementModal');
+            document.getElementById('achievementBadge').textContent = emoji;
+            document.getElementById('achievementTitle').textContent = title;
+            document.getElementById('achievementDesc').textContent = desc;
+            modal.style.display = 'block';
+
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                if (modal.style.display === 'block') {
+                    closeAchievementModal();
+                }
+            }, 5000);
+        }
+
+        function closeAchievementModal() {
+            document.getElementById('achievementModal').style.display = 'none';
+        }
+
+        function checkAchievements() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const dateHistory = saved.dateHistory || [];
+            const unlockedAchievements = saved.unlockedAchievements || [];
+
+            const newAchievements = [
+                { id: 'first_rated', emoji: '⭐', title: 'Erstes bewertetes Date!', desc: 'Ihr habt euer erstes Date bewertet.', check: () => dateHistory.length >= 1 },
+                { id: 'five_dates', emoji: '🎉', title: '5 Dates!', desc: 'Ihr habt schon 5 Dates zusammen erlebt!', check: () => dateHistory.length >= 5 },
+                { id: 'perfect_date', emoji: '💯', title: 'Perfektes Date!', desc: 'Ein Date mit 5 Herzen!', check: () => dateHistory.some(d => d.rating === 5) },
+                { id: 'variety', emoji: '🌈', title: 'Variety Kings', desc: '5 verschiedene Kategorien ausprobiert!', check: () => new Set(dateHistory.map(d => d.category)).size >= 5 },
+            ];
+
+            newAchievements.forEach(a => {
+                if (!unlockedAchievements.includes(a.id) && a.check()) {
+                    unlockedAchievements.push(a.id);
+                    saved.unlockedAchievements = unlockedAchievements;
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                    showAchievement(a.emoji, a.title, a.desc);
+                }
+            });
+        }
+
+        // ============ AI DATE PLANNER ============
+        function askAIPlanner(query) {
+            // In production: Send to Claude API
+            const input = query || document.getElementById('aiPlannerInput')?.value;
+            if (!input) return;
+
+            showToast('🤖 Denke nach...');
+
+            // Simulate AI response
+            setTimeout(() => {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                const ratings = saved.ratings || {};
+                const likedEvents = allEvents.filter(e => ratings[e.id]?.liked);
+
+                // Simple matching based on input
+                let suggestion = allEvents[Math.floor(Math.random() * allEvents.length)];
+
+                if (input.toLowerCase().includes('aktiv') || input.toLowerCase().includes('sport')) {
+                    suggestion = allEvents.find(e => e.category === 'aktiv') || suggestion;
+                } else if (input.toLowerCase().includes('essen') || input.toLowerCase().includes('restaurant')) {
+                    suggestion = allEvents.find(e => e.category === 'essen') || suggestion;
+                } else if (input.toLowerCase().includes('wellness') || input.toLowerCase().includes('entspann')) {
+                    suggestion = allEvents.find(e => e.category === 'wellness') || suggestion;
+                }
+
+                // Show result
+                const aiResult = document.getElementById('aiPlannerResult');
+                if (aiResult) {
+                    aiResult.innerHTML = `
+                        <div style="background:rgba(255,255,255,0.1);padding:20px;border-radius:12px;margin-top:20px;">
+                            <div style="font-size:2rem;margin-bottom:10px;">${suggestion.emoji}</div>
+                            <h4 style="margin-bottom:8px;">${suggestion.title}</h4>
+                            <p style="opacity:0.8;font-size:0.9rem;margin-bottom:15px;">${suggestion.description || suggestion.location || ''}</p>
+                            <button class="btn btn-primary" onclick="startDateBuilder('${suggestion.id}')" style="background:var(--rose);">
+                                Date planen →
+                            </button>
+                        </div>
+                    `;
+                }
+            }, 1500);
+        }
+
+        function useAISuggestion(text) {
+            const input = document.getElementById('aiPlannerInput');
+            if (input) {
+                input.value = text;
+                askAIPlanner(text);
+            }
+        }
 
         // ============ FEIERABEND ============
         function loadFeierabendSetting() {
@@ -5399,5 +6549,78 @@ END:VCALENDAR`;
         };
 
     </script>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" id="bottomNav" role="navigation" aria-label="Hauptnavigation">
+        <button class="bottom-nav-item active" data-section="dates" onclick="switchBottomNav('dates')" aria-label="Dates">
+            <span class="nav-icon">💕</span>
+            <span>Dates</span>
+        </button>
+        <button class="bottom-nav-item" data-section="calendar" onclick="switchBottomNav('calendar')" aria-label="Kalender">
+            <span class="nav-icon">📅</span>
+            <span>Kalender</span>
+        </button>
+        <button class="bottom-nav-item" data-section="travel" onclick="switchBottomNav('travel')" aria-label="Reisen">
+            <span class="nav-icon">🌍</span>
+            <span>Reisen</span>
+        </button>
+        <button class="bottom-nav-item" data-section="memories" onclick="switchBottomNav('memories')" aria-label="Erinnerungen">
+            <span class="nav-icon">📸</span>
+            <span>Memories</span>
+        </button>
+    </nav>
+
+    <!-- PWA Install Banner -->
+    <div class="pwa-install-banner" id="pwaInstallBanner" role="dialog" aria-labelledby="pwaTitle">
+        <span class="pwa-icon">📲</span>
+        <div class="pwa-text">
+            <h4 id="pwaTitle">App installieren</h4>
+            <p>Füge das Datebuch zum Homescreen hinzu!</p>
+        </div>
+        <button class="pwa-install-btn" onclick="installPWA()" aria-label="App installieren">Installieren</button>
+        <button class="pwa-dismiss" onclick="dismissPWABanner()" aria-label="Schließen">✕</button>
+    </div>
+
+    <!-- Achievement Unlocked Modal (hidden by default) -->
+    <div class="achievement-unlocked" id="achievementModal" style="display:none;" role="dialog" aria-modal="true">
+        <div class="badge" id="achievementBadge">🏆</div>
+        <h3 id="achievementTitle">Achievement freigeschaltet!</h3>
+        <p id="achievementDesc">Du hast etwas Besonderes erreicht.</p>
+        <button class="btn btn-primary" onclick="closeAchievementModal()">Super! 🎉</button>
+    </div>
+
+    <!-- Post-Date Rating Modal -->
+    <div class="modal post-date-modal" id="postDateModal">
+        <div class="modal-content" style="max-width:500px;">
+            <button class="modal-close" onclick="closePostDateModal()">✕</button>
+            <div class="rating-section">
+                <h4>Wie war euer Date? 💕</h4>
+                <div class="heart-rating" id="heartRating">
+                    <span class="heart" data-rating="1" onclick="setDateRating(1)">❤️</span>
+                    <span class="heart" data-rating="2" onclick="setDateRating(2)">❤️</span>
+                    <span class="heart" data-rating="3" onclick="setDateRating(3)">❤️</span>
+                    <span class="heart" data-rating="4" onclick="setDateRating(4)">❤️</span>
+                    <span class="heart" data-rating="5" onclick="setDateRating(5)">❤️</span>
+                </div>
+                <textarea class="post-date-notes" id="postDateNotes" placeholder="Was war besonders schön? Was wollt ihr nächstes Mal anders machen?"></textarea>
+                <button class="btn btn-primary" onclick="savePostDateRating()" style="width:100%;">Speichern 💾</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Love Letter Modal -->
+    <div class="modal" id="loveLetterModal">
+        <div class="modal-content" style="max-width:500px;">
+            <button class="modal-close" onclick="closeLoveLetterModal()">✕</button>
+            <div class="modal-header">
+                <h3>💌 Liebesbrief schreiben</h3>
+            </div>
+            <div class="modal-body">
+                <p style="color:var(--text-light);margin-bottom:15px;">Schreibe eine kleine Nachricht für deinen Schatz:</p>
+                <textarea id="loveLetterText" style="width:100%;min-height:150px;padding:15px;border:2px solid var(--rose-light);border-radius:12px;font-family:inherit;resize:vertical;" placeholder="Liebes Solli..."></textarea>
+                <button class="btn btn-primary" onclick="sendLoveLetter()" style="width:100%;margin-top:15px;background:var(--rose);">Brief absenden 💕</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
