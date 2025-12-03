@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Datebuch">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkRhcyBncm/Dn2UgRGF0ZWJ1Y2giLAogICJzaG9ydF9uYW1lIjogIkRhdGVidWNoIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmYWY4ZjUiLAogICJ0aGVtZV9jb2xvciI6ICIjZThiNGI4IiwKICAiaWNvbnMiOiBbXQp9">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -2753,7 +2753,36 @@
 
     <script>
         const STORAGE_KEY = 'datebuch_nick_solli_v9';
-        
+
+        // ============ BACKEND CONFIGURATION ============
+        // Supabase Configuration (set your credentials here)
+        const SUPABASE_CONFIG = {
+            url: localStorage.getItem('supabase_url') || '',
+            anonKey: localStorage.getItem('supabase_anon_key') || '',
+            enabled: false
+        };
+
+        // Claude API Configuration (set your API key here)
+        const CLAUDE_CONFIG = {
+            apiKey: localStorage.getItem('claude_api_key') || '',
+            model: 'claude-sonnet-4-20250514',
+            enabled: false
+        };
+
+        // Initialize Supabase client if configured
+        let supabaseClient = null;
+        if (SUPABASE_CONFIG.url && SUPABASE_CONFIG.anonKey) {
+            SUPABASE_CONFIG.enabled = true;
+            // In production: import { createClient } from '@supabase/supabase-js'
+            // supabaseClient = createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey);
+            console.log('✅ Supabase konfiguriert (Produktionsmodus benötigt SDK)');
+        }
+
+        if (CLAUDE_CONFIG.apiKey) {
+            CLAUDE_CONFIG.enabled = true;
+            console.log('✅ Claude API konfiguriert');
+        }
+
         // MEMORIES DATA
         const memoriesData = [
             { id: 'mem1', caption: 'Mit Teddy 🧸', image: 'memories/IMG_9423.jpg' },
@@ -3280,25 +3309,18 @@
 
             // Register Service Worker
             if ('serviceWorker' in navigator) {
-                // Create inline service worker
-                const swCode = `
-                    const CACHE_NAME = 'datebuch-v2';
-                    const urlsToCache = ['./', 'events.json'];
+                navigator.serviceWorker.register('./sw.js').then((registration) => {
+                    console.log('✅ Service Worker registriert:', registration.scope);
 
-                    self.addEventListener('install', e => {
-                        e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)));
+                    // Check for updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                showToast('🔄 Neue Version verfügbar! Seite neu laden.');
+                            }
+                        });
                     });
-
-                    self.addEventListener('fetch', e => {
-                        e.respondWith(
-                            caches.match(e.request).then(response => response || fetch(e.request))
-                        );
-                    });
-                `;
-                const blob = new Blob([swCode], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                navigator.serviceWorker.register(swUrl).then(() => {
-                    console.log('✅ Service Worker registriert');
                 }).catch(err => console.log('SW Fehler:', err));
             }
         }
@@ -3706,32 +3728,109 @@
         }
 
         // ============ AI DATE PLANNER ============
-        function askAIPlanner(query) {
-            // In production: Send to Claude API
+        async function askAIPlanner(query) {
             const input = query || document.getElementById('aiPlannerInput')?.value;
             if (!input) return;
 
             showToast('🤖 Denke nach...');
+            const aiResult = document.getElementById('aiPlannerResult');
 
-            // Simulate AI response
+            // Use Claude API if configured
+            if (CLAUDE_CONFIG.enabled && CLAUDE_CONFIG.apiKey) {
+                try {
+                    const eventList = allEvents.slice(0, 50).map(e =>
+                        `- ${e.title} (${e.category}): ${e.description || e.location}`
+                    ).join('\n');
+
+                    const response = await fetch('https://api.anthropic.com/v1/messages', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'x-api-key': CLAUDE_CONFIG.apiKey,
+                            'anthropic-version': '2023-06-01'
+                        },
+                        body: JSON.stringify({
+                            model: CLAUDE_CONFIG.model,
+                            max_tokens: 300,
+                            messages: [{
+                                role: 'user',
+                                content: `Du bist ein Date-Planer für ein Pärchen in Hamburg.
+Hier sind verfügbare Events:\n${eventList}\n\n
+Der User fragt: "${input}"
+Antworte auf Deutsch mit einer kurzen Empfehlung (1-2 Sätze) und nenne den Titel des empfohlenen Events exakt.`
+                            }]
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        const aiText = data.content[0].text;
+
+                        // Find matching event
+                        const suggestion = allEvents.find(e => aiText.includes(e.title)) ||
+                                           allEvents[Math.floor(Math.random() * allEvents.length)];
+
+                        if (aiResult) {
+                            aiResult.innerHTML = `
+                                <div style="background:rgba(255,255,255,0.1);padding:20px;border-radius:12px;margin-top:20px;">
+                                    <div style="font-size:0.85rem;opacity:0.8;margin-bottom:15px;line-height:1.5;">${aiText}</div>
+                                    <div style="font-size:2rem;margin-bottom:10px;">${suggestion.emoji}</div>
+                                    <h4 style="margin-bottom:8px;">${suggestion.title}</h4>
+                                    <button class="btn btn-primary" onclick="startDateBuilder('${suggestion.id}')" style="background:var(--rose);">
+                                        Date planen →
+                                    </button>
+                                </div>
+                            `;
+                        }
+                        return;
+                    }
+                } catch (err) {
+                    console.log('Claude API error, falling back to local:', err);
+                }
+            }
+
+            // Fallback: Local matching
             setTimeout(() => {
                 const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
                 const ratings = saved.ratings || {};
-                const likedEvents = allEvents.filter(e => ratings[e.id]?.liked);
+                const likedCategories = {};
+                allEvents.filter(e => ratings[e.id]?.liked).forEach(e => {
+                    likedCategories[e.category] = (likedCategories[e.category] || 0) + 1;
+                });
 
-                // Simple matching based on input
-                let suggestion = allEvents[Math.floor(Math.random() * allEvents.length)];
+                // Smart matching based on input keywords
+                const keywords = {
+                    'aktiv': ['aktiv', 'sport', 'bewegen', 'action', 'klettern', 'eislaufen'],
+                    'essen': ['essen', 'restaurant', 'hunger', 'dinner', 'food', 'brunch'],
+                    'wellness': ['wellness', 'entspann', 'spa', 'massage', 'sauna', 'relaxen'],
+                    'comedy': ['comedy', 'lachen', 'lustig', 'witzig', 'quatsch'],
+                    'theater': ['theater', 'kultur', 'bühne', 'schauspiel'],
+                    'musik': ['musik', 'konzert', 'live', 'band', 'elektro'],
+                    'handwerk': ['handwerk', 'kreativ', 'basteln', 'töpfern', 'machen']
+                };
 
-                if (input.toLowerCase().includes('aktiv') || input.toLowerCase().includes('sport')) {
-                    suggestion = allEvents.find(e => e.category === 'aktiv') || suggestion;
-                } else if (input.toLowerCase().includes('essen') || input.toLowerCase().includes('restaurant')) {
-                    suggestion = allEvents.find(e => e.category === 'essen') || suggestion;
-                } else if (input.toLowerCase().includes('wellness') || input.toLowerCase().includes('entspann')) {
-                    suggestion = allEvents.find(e => e.category === 'wellness') || suggestion;
+                let matchedCategory = null;
+                const inputLower = input.toLowerCase();
+                for (const [cat, words] of Object.entries(keywords)) {
+                    if (words.some(w => inputLower.includes(w))) {
+                        matchedCategory = cat;
+                        break;
+                    }
                 }
 
-                // Show result
-                const aiResult = document.getElementById('aiPlannerResult');
+                let candidates = matchedCategory
+                    ? allEvents.filter(e => e.category === matchedCategory)
+                    : allEvents;
+
+                // Boost liked categories
+                candidates = candidates.sort((a, b) => {
+                    const scoreA = likedCategories[a.category] || 0;
+                    const scoreB = likedCategories[b.category] || 0;
+                    return scoreB - scoreA;
+                });
+
+                const suggestion = candidates[0] || allEvents[Math.floor(Math.random() * allEvents.length)];
+
                 if (aiResult) {
                     aiResult.innerHTML = `
                         <div style="background:rgba(255,255,255,0.1);padding:20px;border-radius:12px;margin-top:20px;">
@@ -3744,7 +3843,7 @@
                         </div>
                     `;
                 }
-            }, 1500);
+            }, 800);
         }
 
         function useAISuggestion(text) {
@@ -3961,16 +4060,20 @@
                 const container = document.getElementById(`${category}-container`);
                 if (!container) return;
 
-                // Events dieser Kategorie filtern (Aussortierte ausblenden)
+                // Events dieser Kategorie filtern (Aussortierte + Vergangene ausblenden)
                 // "shows" = musical + variete + theater + musik fusioniert
                 let categoryEvents;
                 if (category === 'shows') {
                     categoryEvents = allEvents.filter(e =>
-                        ['musical', 'variete', 'theater', 'musik'].includes(e.category) && !ratings[e.id]?.disliked
+                        ['musical', 'variete', 'theater', 'musik'].includes(e.category) &&
+                        !ratings[e.id]?.disliked &&
+                        !isPastEvent(e)
                     );
                 } else {
                     categoryEvents = allEvents.filter(e =>
-                        e.category === category && !ratings[e.id]?.disliked
+                        e.category === category &&
+                        !ratings[e.id]?.disliked &&
+                        !isPastEvent(e)
                     );
                 }
 
@@ -6527,6 +6630,32 @@ END:VCALENDAR`;
             return null;
         }
 
+        // ============ PAST EVENT FILTER ============
+        function isPastEvent(event) {
+            // "dauerhaft" events are never past
+            if (event.date === 'dauerhaft' || !event.date) return false;
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Check endDate first (for events with date ranges)
+            if (event.endDate) {
+                const endDate = new Date(event.endDate);
+                endDate.setHours(0, 0, 0, 0);
+                return endDate < today;
+            }
+
+            // Check event date
+            const eventDate = new Date(event.date);
+            eventDate.setHours(0, 0, 0, 0);
+            return eventDate < today;
+        }
+
+        // Filter function to get only upcoming events
+        function getUpcomingEvents(events) {
+            return events.filter(e => !isPastEvent(e));
+        }
+
         // ============ UPDATE renderEventCard with Countdown ============
         const originalRenderEventCard = renderEventCard;
         renderEventCard = function(e, ratings, showDateBuilder = false) {
@@ -6547,6 +6676,287 @@ END:VCALENDAR`;
 
             return html;
         };
+
+        // ============ PUSH NOTIFICATIONS ============
+        async function requestNotificationPermission() {
+            if (!('Notification' in window)) {
+                showToast('⚠️ Browser unterstützt keine Benachrichtigungen');
+                return false;
+            }
+
+            if (Notification.permission === 'granted') {
+                return true;
+            }
+
+            if (Notification.permission !== 'denied') {
+                const permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                    showToast('🔔 Benachrichtigungen aktiviert!');
+                    return true;
+                }
+            }
+
+            showToast('❌ Benachrichtigungen blockiert');
+            return false;
+        }
+
+        async function scheduleEventReminder(eventId, eventTitle, eventDate, reminderHours = 24) {
+            const hasPermission = await requestNotificationPermission();
+            if (!hasPermission) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.reminders = saved.reminders || {};
+
+            const eventDateTime = new Date(eventDate);
+            const reminderTime = new Date(eventDateTime.getTime() - (reminderHours * 60 * 60 * 1000));
+
+            saved.reminders[eventId] = {
+                title: eventTitle,
+                date: eventDate,
+                reminderTime: reminderTime.toISOString(),
+                notified: false
+            };
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            showToast(`🔔 Erinnerung für ${eventTitle} gesetzt!`);
+
+            // Check reminders periodically
+            checkReminders();
+        }
+
+        function checkReminders() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const reminders = saved.reminders || {};
+            const now = new Date();
+
+            Object.entries(reminders).forEach(([eventId, reminder]) => {
+                if (reminder.notified) return;
+
+                const reminderTime = new Date(reminder.reminderTime);
+                if (now >= reminderTime) {
+                    showNotification(reminder.title, reminder.date);
+                    saved.reminders[eventId].notified = true;
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                }
+            });
+        }
+
+        function showNotification(title, date) {
+            if (Notification.permission === 'granted') {
+                const notification = new Notification('💕 Datebuch Erinnerung', {
+                    body: `Morgen: ${title}`,
+                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💕</text></svg>',
+                    tag: 'datebuch-reminder',
+                    requireInteraction: true
+                });
+
+                notification.onclick = () => {
+                    window.focus();
+                    notification.close();
+                };
+            }
+        }
+
+        // Check reminders on load and every hour
+        setInterval(checkReminders, 3600000);
+
+        // ============ FOTO UPLOAD ============
+        function openPhotoUpload() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.multiple = true;
+
+            input.onchange = async (e) => {
+                const files = Array.from(e.target.files);
+                for (const file of files) {
+                    await addMemoryPhoto(file);
+                }
+            };
+
+            input.click();
+        }
+
+        async function addMemoryPhoto(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                    saved.customMemories = saved.customMemories || [];
+
+                    const memoryId = 'custom_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+                    saved.customMemories.push({
+                        id: memoryId,
+                        caption: 'Neues Foto 📸',
+                        image: e.target.result, // Base64 encoded
+                        uploadedAt: new Date().toISOString()
+                    });
+
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                    showToast('📸 Foto hinzugefügt!');
+                    renderMemories(); // Refresh the gallery
+                    resolve();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function deleteMemoryPhoto(memoryId) {
+            if (!confirm('Foto wirklich löschen?')) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.customMemories = (saved.customMemories || []).filter(m => m.id !== memoryId);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            showToast('🗑️ Foto gelöscht');
+            renderMemories();
+        }
+
+        // ============ EXPORT / BACKUP ============
+        function exportAllData() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            const exportData = {
+                version: '1.0',
+                exportedAt: new Date().toISOString(),
+                data: saved
+            };
+
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `datebuch-backup-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('💾 Backup erstellt!');
+        }
+
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+
+            input.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                try {
+                    const text = await file.text();
+                    const importData = JSON.parse(text);
+
+                    if (!importData.data) {
+                        throw new Error('Ungültiges Backup-Format');
+                    }
+
+                    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+                    // Merge data (don't overwrite everything)
+                    const merged = {
+                        ...saved,
+                        ...importData.data,
+                        ratings: { ...(saved.ratings || {}), ...(importData.data.ratings || {}) },
+                        customMemories: [...(saved.customMemories || []), ...(importData.data.customMemories || [])]
+                    };
+
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+                    showToast('✅ Backup wiederhergestellt!');
+                    location.reload();
+                } catch (err) {
+                    showToast('❌ Fehler beim Import: ' + err.message);
+                }
+            };
+
+            input.click();
+        }
+
+        function clearAllData() {
+            if (!confirm('Wirklich ALLE Daten löschen? Das kann nicht rückgängig gemacht werden!')) return;
+            if (!confirm('Bist du WIRKLICH sicher?')) return;
+
+            localStorage.removeItem(STORAGE_KEY);
+            showToast('🗑️ Alle Daten gelöscht');
+            location.reload();
+        }
+
+        // ============ SETTINGS PANEL ============
+        function openSettings() {
+            const settingsHtml = `
+                <div class="modal-backdrop" onclick="closeSettings()">
+                    <div class="modal-content" onclick="event.stopPropagation()" style="max-width:500px;">
+                        <button class="modal-close" onclick="closeSettings()">×</button>
+                        <h2 style="margin-bottom:20px;">⚙️ Einstellungen</h2>
+
+                        <div style="margin-bottom:25px;">
+                            <h3 style="margin-bottom:10px;">🔔 Benachrichtigungen</h3>
+                            <button class="btn btn-secondary" onclick="requestNotificationPermission()">
+                                Benachrichtigungen aktivieren
+                            </button>
+                        </div>
+
+                        <div style="margin-bottom:25px;">
+                            <h3 style="margin-bottom:10px;">💾 Daten</h3>
+                            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                                <button class="btn btn-secondary" onclick="exportAllData()">
+                                    📤 Backup erstellen
+                                </button>
+                                <button class="btn btn-secondary" onclick="importData()">
+                                    📥 Backup laden
+                                </button>
+                                <button class="btn" style="background:#dc3545;color:white;" onclick="clearAllData()">
+                                    🗑️ Alles löschen
+                                </button>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom:25px;">
+                            <h3 style="margin-bottom:10px;">🔗 API-Konfiguration</h3>
+                            <div style="margin-bottom:10px;">
+                                <label style="display:block;margin-bottom:5px;font-size:0.9rem;">Claude API Key:</label>
+                                <input type="password" id="claudeApiKeyInput"
+                                       value="${localStorage.getItem('claude_api_key') || ''}"
+                                       placeholder="sk-ant-..."
+                                       style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;">
+                            </div>
+                            <button class="btn btn-secondary" onclick="saveApiKeys()">
+                                API Keys speichern
+                            </button>
+                        </div>
+
+                        <div style="text-align:center;opacity:0.6;font-size:0.85rem;margin-top:20px;">
+                            Datebuch v10 • Mit 💕 für Nick & Solli
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modal = document.createElement('div');
+            modal.id = 'settingsModal';
+            modal.innerHTML = settingsHtml;
+            document.body.appendChild(modal);
+        }
+
+        function closeSettings() {
+            const modal = document.getElementById('settingsModal');
+            if (modal) modal.remove();
+        }
+
+        function saveApiKeys() {
+            const claudeKey = document.getElementById('claudeApiKeyInput')?.value;
+
+            if (claudeKey) {
+                localStorage.setItem('claude_api_key', claudeKey);
+                CLAUDE_CONFIG.apiKey = claudeKey;
+                CLAUDE_CONFIG.enabled = true;
+            }
+
+            showToast('✅ API Keys gespeichert!');
+            closeSettings();
+        }
 
     </script>
 

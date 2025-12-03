@@ -3583,6 +3583,281 @@
         "address": "Pinnasberg 60, St. Pauli",
         "link": "https://www.christiansens.de/"
       }
+    },
+    {
+      "id": "dec2024-palazzo",
+      "emoji": "🎪",
+      "title": "PALAZZO Extravaganza",
+      "date": "2024-12-14",
+      "endDate": "2025-03-09",
+      "category": "variete",
+      "description": "Akrobatik, Comedy & 5-Gänge-Menü von Cornelia Poletto! Dinner-Show im historischen Spiegelpalast.",
+      "location": "Spiegelpalast Hamburg",
+      "address": "Waidmannstraße 26, 22769 Hamburg",
+      "coords": [53.5625, 9.9458],
+      "link": "https://www.palazzo.org/hamburg/",
+      "time": "19:00 Uhr (So 18:00)",
+      "price": "ab 105€",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Im PALAZZO",
+        "type": "5-Gänge-Menü von Cornelia Poletto",
+        "address": "Waidmannstraße 26",
+        "link": "https://www.palazzo.org/hamburg/"
+      },
+      "bar": {
+        "name": "Clouds",
+        "type": "Rooftop Bar mit Hafenblick",
+        "address": "Reeperbahn 1, Tanzende Türme",
+        "link": "https://clouds-hamburg.de/"
+      }
+    },
+    {
+      "id": "jan2025-lalelu",
+      "emoji": "🎤",
+      "title": "LaLeLu A-cappella Comedy",
+      "date": "2025-01-18",
+      "category": "comedy",
+      "description": "Hamburgs beliebteste A-cappella-Gruppe! Mix aus Gesang, Comedy, Parodie und Show.",
+      "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, 20359 Hamburg",
+      "coords": [53.5494, 9.9622],
+      "link": "https://www.st-pauli-theater.de/",
+      "time": "20:00 Uhr",
+      "price": "ab 35€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Bullerei",
+        "type": "Tim Mälzer Restaurant",
+        "address": "Lagerstraße 34b",
+        "link": "https://www.bullerei.com/"
+      },
+      "bar": {
+        "name": "Tower Bar",
+        "type": "Rooftop im Hotel Hafen Hamburg",
+        "address": "Seewartenstraße 9",
+        "link": "https://www.hotel-hafen-hamburg.de/tower-bar/"
+      }
+    },
+    {
+      "id": "jan2025-tatortreiniger",
+      "emoji": "🧹",
+      "title": "Der Tatortreiniger - Live!",
+      "date": "2025-01-10",
+      "endDate": "2025-01-20",
+      "category": "theater",
+      "description": "Schotty räumt auf! Die Kult-Serie als Live-Theaterstück. Bjarne Mädel-Charme garantiert.",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, 20146 Hamburg",
+      "coords": [53.5678, 9.9889],
+      "link": "https://hamburger-kammerspiele.de/",
+      "time": "20:00 Uhr",
+      "price": "ab 28€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Café Leonar",
+        "type": "Jüdische Küche",
+        "address": "Grindelhof 59",
+        "link": "https://www.cafe-leonar.de/"
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy Bar",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "jan2025-comedian-harmonists",
+      "emoji": "🎶",
+      "title": "Comedian Harmonists",
+      "date": "2025-01-27",
+      "endDate": "2025-02-18",
+      "category": "theater",
+      "description": "Berlin 1927: Die Geschichte der legendären Gesangsgruppe. Wiederaufnahme des Erfolgs!",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, 20146 Hamburg",
+      "coords": [53.5678, 9.9889],
+      "link": "https://hamburger-kammerspiele.de/",
+      "time": "19:30 Uhr",
+      "price": "ab 32€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Wolfs Junge",
+        "type": "Grüner Michelin-Stern",
+        "address": "Zimmerstraße 30",
+        "link": "https://www.wolfsjunge.de/"
+      },
+      "bar": {
+        "name": "Julep",
+        "type": "Whiskey & Cocktails",
+        "address": "Eppendorfer Weg 139",
+        "link": "https://www.instagram.com/julep_bar/"
+      }
+    },
+    {
+      "id": "jan2025-beethoven-elphi",
+      "emoji": "🎹",
+      "title": "Beethoven-Zyklus: Jan Lisiecki",
+      "date": "2025-01-14",
+      "endDate": "2025-01-16",
+      "category": "musik",
+      "description": "Alle 5 Beethoven-Klavierkonzerte an 3 Abenden! Mit der Academy of St Martin in the Fields.",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5413, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00 Uhr",
+      "price": "ab 45€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Wandrahm",
+        "type": "Fine Dining HafenCity",
+        "address": "Am Sandtorkai 77",
+        "link": "https://www.restaurant-wandrahm.de/"
+      },
+      "bar": {
+        "name": "Störtebeker Elbphilharmonie",
+        "type": "Craft Beer & Hafenblick",
+        "address": "Am Kaiserkai 1",
+        "link": "https://stoertebeker-elbphilharmonie.de/"
+      }
+    },
+    {
+      "id": "jan2025-poetry-slam",
+      "emoji": "📝",
+      "title": "Best of Poetry Slam Day",
+      "date": "2025-01-04",
+      "category": "comedy",
+      "description": "Poetry Slam in der Elbphilharmonie! Rising Stars, Awards & Legends an einem Tag.",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "coords": [53.5413, 9.9842],
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "15:00 / 19:00 / 23:00 Uhr",
+      "price": "ab 34€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "VLET in der Speicherstadt",
+        "type": "Hamburger Küche",
+        "address": "Am Sandtorkai 23-24",
+        "link": "https://www.vlet.de/"
+      },
+      "bar": {
+        "name": "Boilerman Bar",
+        "type": "Cocktails & Whisky",
+        "address": "Ericusspitze 4, HafenCity",
+        "link": "https://www.boilermanbar.de/"
+      }
+    },
+    {
+      "id": "dec2024-wedding-present",
+      "emoji": "🎸",
+      "title": "The Wedding Present - 40th Anniversary",
+      "date": "2025-12-09",
+      "category": "musik",
+      "description": "Indie-Rock-Legenden aus Leeds feiern 40 Jahre! Im legendären Molotow.",
+      "location": "Molotow",
+      "address": "Nobistor 14, 22767 Hamburg",
+      "coords": [53.5508, 9.9564],
+      "link": "https://www.molotowclub.com/",
+      "time": "20:00 Uhr",
+      "price": "ca. 30€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "ÜberQuell",
+        "type": "Pizza & Craft Beer",
+        "address": "St. Pauli Fischmarkt 28-32",
+        "link": "https://www.ueberquell.com/"
+      },
+      "bar": {
+        "name": "Komet Musik Bar",
+        "type": "Indie & Cocktails",
+        "address": "Erichstraße 11",
+        "link": "https://www.komet-hamburg.de/"
+      }
+    },
+    {
+      "id": "jan2025-gotts-street",
+      "emoji": "🎷",
+      "title": "Gotts Street Park",
+      "date": "2025-12-07",
+      "category": "musik",
+      "description": "Soul, Funk & Jazz aus Leeds! Das Produzenten-Kollektiv live im Mojo Club.",
+      "location": "Mojo Club",
+      "address": "Reeperbahn 1, 20359 Hamburg",
+      "coords": [53.5492, 9.9617],
+      "link": "https://www.mojo.de/",
+      "time": "21:00 Uhr",
+      "price": "ca. 25€",
+      "vorher_nachher": "Vorher",
+      "restaurant": {
+        "name": "Salt & Silver",
+        "type": "Mexikanische Mezze",
+        "address": "St. Pauli Fischmarkt 3",
+        "link": "https://www.saltandsilver.de/"
+      },
+      "bar": {
+        "name": "20up",
+        "type": "Skyline Bar im Empire",
+        "address": "Bernhard-Nocht-Straße 97",
+        "link": "https://www.empire-riverside.de/20up/"
+      }
+    },
+    {
+      "id": "dec2024-silvester-palazzo",
+      "emoji": "🎆",
+      "title": "Silvester Gala im PALAZZO",
+      "date": "2024-12-31",
+      "category": "variete",
+      "description": "Silvester deluxe! 6-Gänge-Menü, Varieté-Show & Mitternachts-Champagner.",
+      "location": "Spiegelpalast Hamburg",
+      "address": "Waidmannstraße 26, 22769 Hamburg",
+      "coords": [53.5625, 9.9458],
+      "link": "https://www.palazzo.org/hamburg/",
+      "time": "20:00 Uhr",
+      "price": "ab 250€",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Im PALAZZO",
+        "type": "6-Gänge Silvester Gala Menü",
+        "address": "Waidmannstraße 26",
+        "link": "https://www.palazzo.org/hamburg/"
+      },
+      "bar": {
+        "name": "Im PALAZZO",
+        "type": "Mitternachts-Champagner",
+        "address": "Waidmannstraße 26",
+        "link": "https://www.palazzo.org/hamburg/"
+      }
+    },
+    {
+      "id": "feb2025-ulrich-tukur",
+      "emoji": "🎺",
+      "title": "Ulrich Tukur & Die Rhythmus Boys: Tohuwabohu!",
+      "date": "2025-02-25",
+      "endDate": "2025-02-26",
+      "category": "musik",
+      "description": "30 Jahre Jubiläum! Swing, Chanson & Humor mit dem Schauspieler-Musiker.",
+      "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, 20359 Hamburg",
+      "coords": [53.5494, 9.9622],
+      "link": "https://www.st-pauli-theater.de/",
+      "time": "20:00 Uhr",
+      "price": "ab 42€",
+      "vorher_nachher": "Nachher",
+      "restaurant": {
+        "name": "Gassenhaur",
+        "type": "Österreichische Küche",
+        "address": "Beim Grünen Jäger 14",
+        "link": "https://gassenhaur.de/"
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Legendäre Cocktailbar",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
     }
   ],
   "categories": {
