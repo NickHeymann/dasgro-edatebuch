@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Private documentation with sensitive data
+SETUP-PRIVATE.md
+
 # vercel
 .vercel
 
