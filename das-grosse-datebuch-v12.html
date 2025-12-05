@@ -1,0 +1,2646 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Das große Datebuch</title>
+    <meta name="description" content="Date-Ideen für Nick & Solli">
+    <meta name="theme-color" content="#f8f6f3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <script src="https://unpkg.com/earcut@2.2.4/dist/earcut.min.js"></script>
+    <style>
+        /* ========================================
+           DAS GROSSE DATEBUCH v12
+           Design: Elegante Light/Dark Version
+           ======================================== */
+
+        :root {
+            /* Light Mode (Default) */
+            --bg-primary: #f8f6f3;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f0ede8;
+            --bg-card: #ffffff;
+            --bg-elevated: #ffffff;
+
+            /* Gold Accents */
+            --gold: #b8956e;
+            --gold-light: #d4b896;
+            --gold-dark: #96724f;
+            --gold-glow: rgba(184, 149, 110, 0.15);
+
+            /* Rose/Sage Accents */
+            --rose: #c17b7f;
+            --rose-light: #e8c4c6;
+            --rose-dark: #9a5a5f;
+            --sage: #7a9e7a;
+            --sage-light: #a8c5a0;
+            --sage-dark: #5c7a5c;
+
+            /* Text */
+            --text-primary: #2c2c2e;
+            --text-secondary: #6e6e73;
+            --text-muted: #8e8e93;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-light: rgba(0, 0, 0, 0.05);
+
+            /* Typography */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+
+            /* Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #141416;
+            --bg-tertiary: #1a1a1f;
+            --bg-card: #1e1e24;
+            --bg-elevated: #252530;
+
+            --gold: #c9a962;
+            --gold-light: #d4bc7a;
+            --gold-dark: #a88c4a;
+
+            --rose: #b76e79;
+            --sage: #8fbc8f;
+
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-muted: #6e6e73;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(255, 255, 255, 0.05);
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="18" font-size="18">🐹</text></svg>') 12 12, auto;
+        }
+
+        a, button, .clickable {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="24">🐹</text></svg>') 16 16, pointer;
+        }
+
+        /* ========================================
+           INTRO SPLASH
+           ======================================== */
+
+        .intro {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.8s var(--ease-out);
+        }
+
+        .intro.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .intro-content {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+
+        .intro-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-lg);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .intro-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .intro-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .intro-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            background: var(--gold);
+            border: none;
+            border-radius: var(--radius-full);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .intro-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 149, 110, 0.3);
+        }
+
+        /* ========================================
+           MAIN APP
+           ======================================== */
+
+        .app {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s var(--ease-out);
+        }
+
+        .app.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-md) var(--space-lg);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* Search */
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            padding-left: 40px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            background: var(--bg-card);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 100;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .search-results.active { display: block; }
+
+        .search-result-item {
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover { background: var(--bg-tertiary); }
+
+        /* Navigation */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+            background: var(--bg-card);
+            padding: var(--space-md);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border);
+        }
+
+        .nav-tab {
+            padding: var(--space-sm) var(--space-md);
+            border: none;
+            background: transparent;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        .nav-tab.active {
+            background: var(--gold);
+            color: white;
+        }
+
+        .nav-separator {
+            color: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        /* Feierabend Toggle */
+        .feierabend-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--rose);
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 0.85rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .feierabend-toggle select {
+            padding: 4px 8px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-weight: 500;
+            background: white;
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg) var(--space-2xl);
+        }
+
+        /* Category Sections */
+        .category-section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .category-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-header {
+            text-align: center;
+            padding: var(--space-xl) var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .category-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .category-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Event Cards */
+        .events-grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        .date-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s var(--ease-out);
+            position: relative;
+        }
+
+        .date-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--gold-light);
+        }
+
+        .date-card.excluded { display: none; }
+
+        .date-card.past-event {
+            opacity: 0.5;
+            filter: grayscale(30%);
+        }
+
+        .date-card-header {
+            padding: var(--space-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .date-emoji {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .date-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .date-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .date-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .date-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .date-badges {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+        }
+
+        .date-badge {
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-countdown {
+            background: var(--rose);
+            color: white;
+        }
+
+        .badge-free {
+            background: var(--sage);
+            color: white;
+        }
+
+        .date-card-body {
+            padding: var(--space-lg);
+        }
+
+        .date-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        /* Venue Cards */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .venue-card {
+            padding: var(--space-md);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .venue-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xs);
+        }
+
+        .venue-icon {
+            font-size: 1.2rem;
+        }
+
+        .venue-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .venue-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .venue-type {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .venue-link {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .venue-link:hover { text-decoration: underline; }
+
+        /* Card Actions */
+        .card-actions {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .btn {
+            padding: var(--space-sm) var(--space-md);
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        /* Thumbs Rating */
+        .thumbs-rating {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-left: auto;
+        }
+
+        .thumb-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .thumb-btn:hover { transform: scale(1.1); }
+        .thumb-btn.selected { border-width: 2px; }
+        .thumb-up.selected { background: var(--sage-light); border-color: var(--sage); }
+        .thumb-down.selected { background: var(--rose-light); border-color: var(--rose); }
+
+        /* ========================================
+           DATE BUILDER
+           ======================================== */
+
+        .date-builder-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+        }
+
+        .date-builder-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .date-builder-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .date-builder-step {
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .category-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .category-pill {
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .category-pill:hover {
+            border-color: var(--gold);
+        }
+
+        .category-pill.active {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+
+        .event-select-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .event-select-card {
+            padding: var(--space-md);
+            background: var(--bg-tertiary);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .event-select-card:hover {
+            border-color: var(--gold-light);
+        }
+
+        .event-select-card.selected {
+            border-color: var(--gold);
+            background: var(--gold-glow);
+        }
+
+        /* Date Summary */
+        .date-summary {
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .date-summary h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .summary-item:last-child { border-bottom: none; }
+
+        .summary-actions {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .summary-actions .btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .summary-actions .btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Map */
+        .map-container {
+            height: 300px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin: var(--space-lg) 0;
+            border: 1px solid var(--border);
+        }
+
+        #dateBuilderMap { height: 100%; width: 100%; }
+
+        /* ========================================
+           3D GLOBE (Travel)
+           ======================================== */
+
+        .globe-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .globe-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .globe-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .travel-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .travel-stat {
+            text-align: center;
+        }
+
+        .travel-stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .travel-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .globe-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1a);
+        }
+
+        #globeCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .globe-controls {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .globe-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .globe-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .globe-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-top: var(--space-md);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.9rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: var(--radius-full);
+        }
+
+        .legend-dot.visited { background: var(--sage); }
+        .legend-dot.wishlist { background: var(--rose); }
+
+        /* ========================================
+           MEMORIES
+           ======================================== */
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .memory-item {
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s var(--ease-out);
+            background: var(--bg-tertiary);
+        }
+
+        .memory-item:hover {
+            transform: scale(1.03);
+        }
+
+        .memory-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .memory-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--space-lg) var(--space-md) var(--space-md);
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .memory-edit {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 28px;
+            height: 28px;
+            background: rgba(255,255,255,0.9);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .memory-item:hover .memory-edit { opacity: 1; }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+        }
+
+        .lightbox-caption {
+            color: white;
+            margin-top: var(--space-lg);
+            font-size: 1.2rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .lightbox-close:hover { transform: scale(1.2); }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* ========================================
+           WIDGETS (Weather, Calendar, etc.)
+           ======================================== */
+
+        .widgets-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .widget-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .widget-mini.clickable {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .widget-mini.clickable:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+        }
+
+        /* Mini Calendar */
+        .mini-calendar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .mini-calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .mini-calendar-title {
+            font-weight: 600;
+        }
+
+        .mini-calendar-nav {
+            display: flex;
+            gap: 4px;
+        }
+
+        .mini-calendar-nav button {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+        }
+
+        .mini-calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            text-align: center;
+        }
+
+        .mini-calendar-day {
+            padding: 8px 4px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mini-calendar-day.header {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            cursor: default;
+        }
+
+        .mini-calendar-day.other-month { opacity: 0.3; }
+        .mini-calendar-day.has-event { background: var(--rose); color: white; }
+        .mini-calendar-day.today { border: 2px solid var(--sage); }
+        .mini-calendar-day:hover:not(.header) { background: var(--bg-tertiary); }
+
+        /* ========================================
+           MODALS
+           ======================================== */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            max-width: 500px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn 0.3s var(--ease-out);
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-full);
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-header {
+            padding: var(--space-xl);
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+        }
+
+        .modal-body {
+            padding: var(--space-xl);
+        }
+
+        /* Roulette Modal */
+        .roulette-result {
+            text-align: center;
+        }
+
+        .roulette-emoji {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .roulette-emoji.spinning {
+            animation: spinEmoji 0.5s ease-out;
+        }
+
+        @keyframes spinEmoji {
+            from { transform: rotate(0); }
+            to { transform: rotate(720deg); }
+        }
+
+        .roulette-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .roulette-actions {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========================================
+           TOASTS
+           ======================================== */
+
+        .toast-notification {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--sage);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            animation: toastIn 0.3s var(--ease-out), toastOut 0.3s var(--ease-out) 2s forwards;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        @keyframes toastOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        /* ========================================
+           BACK TO TOP
+           ======================================== */
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out);
+            box-shadow: var(--shadow-md);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+            .search-container {
+                order: 3;
+                max-width: 100%;
+                width: 100%;
+                margin-top: var(--space-sm);
+            }
+
+            .nav-tabs {
+                gap: 6px;
+                padding: var(--space-sm);
+            }
+
+            .nav-tab {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+
+            .travel-stats {
+                gap: var(--space-md);
+            }
+
+            .travel-stat-value {
+                font-size: 1.5rem;
+            }
+
+            .globe-container {
+                height: 300px;
+            }
+
+            .venue-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Splash -->
+    <div class="intro" id="intro">
+        <div class="intro-content">
+            <div class="intro-icon">💕</div>
+            <h1 class="intro-title">Das große Datebuch</h1>
+            <p class="intro-subtitle">Nick & Solli</p>
+            <button class="intro-btn" onclick="enterApp()">
+                Buch öffnen →
+            </button>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app" id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-inner">
+                <div class="logo">
+                    <span>📖</span>
+                    <span>Datebuch</span>
+                </div>
+
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="globalSearch" placeholder="Suchen..." oninput="handleSearch(this.value)">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-container">
+            <div class="nav-tabs" id="navTabs">
+                <button class="nav-tab active" data-category="all" onclick="showCategory('all')">📅 Alle</button>
+                <button class="nav-tab" data-category="wellness" onclick="showCategory('wellness')">💆 Wellness</button>
+                <button class="nav-tab" data-category="aktiv" onclick="showCategory('aktiv')">🏃 Aktiv</button>
+                <button class="nav-tab" data-category="handwerk" onclick="showCategory('handwerk')">🔨 Handwerk</button>
+                <button class="nav-tab" data-category="comedy" onclick="showCategory('comedy')">😂 Comedy</button>
+                <button class="nav-tab" data-category="essen" onclick="showCategory('essen')">🍽️ Essen</button>
+                <button class="nav-tab" data-category="musik" onclick="showCategory('musik')">🎵 Musik</button>
+                <button class="nav-tab" data-category="shows" onclick="showCategory('shows')">🎭 Shows</button>
+                <span class="nav-separator">|</span>
+                <button class="nav-tab" data-category="builder" onclick="showCategory('builder')">🎯 Date Builder</button>
+                <button class="nav-tab" data-category="travel" onclick="showCategory('travel')">🌍 Travel</button>
+                <button class="nav-tab" data-category="memories" onclick="showCategory('memories')">📸 Erinnerungen</button>
+                <span class="nav-separator">|</span>
+                <button class="nav-tab" data-category="favorites" onclick="showCategory('favorites')">❤️</button>
+                <button class="nav-tab" data-category="nope" onclick="showCategory('nope')">👎</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Feierabend Toggle -->
+            <div class="feierabend-toggle" id="feierabendToggle" style="display:none;">
+                <span>🌅 Solli hat frei ab:</span>
+                <select id="feierabendTime" onchange="filterByFeierabend()">
+                    <option value="">Egal</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                </select>
+            </div>
+
+            <!-- Widgets Bar -->
+            <div class="widgets-bar" id="widgetsBar">
+                <div class="widget-mini" id="weatherWidget">
+                    <span>🌤️</span>
+                    <span id="weatherTemp">--°</span>
+                </div>
+                <div class="widget-mini clickable" onclick="toggleMiniCalendar()">
+                    <span>📅</span>
+                    <span id="nextEventWidget">Nächstes Date laden...</span>
+                </div>
+                <button class="widget-mini btn-primary" onclick="openRoulette()">
+                    <span>🎲</span>
+                    <span>Zufälliges Date</span>
+                </button>
+            </div>
+
+            <!-- Mini Calendar -->
+            <div class="mini-calendar" id="miniCalendar" style="display:none;">
+                <div class="mini-calendar-header">
+                    <span class="mini-calendar-title" id="calendarTitle">Dezember 2025</span>
+                    <div class="mini-calendar-nav">
+                        <button onclick="changeCalendarMonth(-1)">←</button>
+                        <button onclick="changeCalendarMonth(1)">→</button>
+                    </div>
+                </div>
+                <div class="mini-calendar-grid" id="calendarGrid"></div>
+            </div>
+
+            <!-- ALL EVENTS -->
+            <section class="category-section active" id="section-all">
+                <div class="category-header">
+                    <h2>Alle Date-Ideen</h2>
+                    <p>Eure gesammelten Erlebnisse für Hamburg und drumherum</p>
+                </div>
+                <div class="events-grid" id="eventsContainer"></div>
+            </section>
+
+            <!-- WELLNESS -->
+            <section class="category-section" id="section-wellness">
+                <div class="category-header">
+                    <h2>💆 Wellness & Entspannung</h2>
+                    <p>Zeit zum Abschalten und Genießen</p>
+                </div>
+                <div class="events-grid" id="wellnessEvents"></div>
+            </section>
+
+            <!-- AKTIV -->
+            <section class="category-section" id="section-aktiv">
+                <div class="category-header">
+                    <h2>🏃 Aktiv & Sport</h2>
+                    <p>Gemeinsam in Bewegung kommen</p>
+                </div>
+                <div class="events-grid" id="aktivEvents"></div>
+            </section>
+
+            <!-- HANDWERK -->
+            <section class="category-section" id="section-handwerk">
+                <div class="category-header">
+                    <h2>🔨 Handwerk & Kreativ</h2>
+                    <p>Zusammen etwas erschaffen</p>
+                </div>
+                <div class="events-grid" id="handwerkEvents"></div>
+            </section>
+
+            <!-- COMEDY -->
+            <section class="category-section" id="section-comedy">
+                <div class="category-header">
+                    <h2>😂 Comedy & Kabarett</h2>
+                    <p>Gemeinsam lachen</p>
+                </div>
+                <div class="events-grid" id="comedyEvents"></div>
+            </section>
+
+            <!-- ESSEN -->
+            <section class="category-section" id="section-essen">
+                <div class="category-header">
+                    <h2>🍽️ Essen & Kulinarik</h2>
+                    <p>Kulinarische Entdeckungen</p>
+                </div>
+                <div class="events-grid" id="essenEvents"></div>
+            </section>
+
+            <!-- MUSIK -->
+            <section class="category-section" id="section-musik">
+                <div class="category-header">
+                    <h2>🎵 Musik & Konzerte</h2>
+                    <p>Gemeinsam Musik erleben</p>
+                </div>
+                <div class="events-grid" id="musikEvents"></div>
+            </section>
+
+            <!-- SHOWS -->
+            <section class="category-section" id="section-shows">
+                <div class="category-header">
+                    <h2>🎭 Shows & Theater</h2>
+                    <p>Bühnenkunst erleben</p>
+                </div>
+                <div class="events-grid" id="showsEvents"></div>
+            </section>
+
+            <!-- DATE BUILDER -->
+            <section class="category-section" id="section-builder">
+                <div class="date-builder-container">
+                    <div class="date-builder-header">
+                        <h2>🎯 Date Builder</h2>
+                        <p>Stelle dein perfektes Date zusammen</p>
+                    </div>
+
+                    <div class="date-builder-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Kategorie wählen</span>
+                        </div>
+                        <div class="category-pills" id="builderCategories"></div>
+                    </div>
+
+                    <div class="date-builder-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Aktivität auswählen</span>
+                        </div>
+                        <div class="event-select-grid" id="builderEvents"></div>
+                    </div>
+
+                    <div class="date-builder-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Essen dazu?</span>
+                        </div>
+                        <div class="category-pills">
+                            <button class="category-pill" onclick="setFoodOption('vorher')">🍽️ Vorher essen</button>
+                            <button class="category-pill" onclick="setFoodOption('nachher')">🍽️ Nachher essen</button>
+                            <button class="category-pill" onclick="setFoodOption('nein')">❌ Kein Essen</button>
+                        </div>
+                    </div>
+
+                    <div class="date-builder-step">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Drinks dazu?</span>
+                        </div>
+                        <div class="category-pills">
+                            <button class="category-pill" onclick="setDrinksOption('ja')">🍸 Ja, Drinks!</button>
+                            <button class="category-pill" onclick="setDrinksOption('nein')">❌ Keine Drinks</button>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <div id="dateBuilderMap"></div>
+                    </div>
+
+                    <div class="date-summary" id="dateSummary" style="display:none;">
+                        <h3>✨ Euer Date-Plan</h3>
+                        <div id="summaryContent"></div>
+                        <div class="summary-actions">
+                            <button class="btn" onclick="shareToWhatsApp()">📱 WhatsApp</button>
+                            <button class="btn" onclick="exportToCalendar()">📅 Kalender</button>
+                            <button class="btn" onclick="openTransitRoute()">🚇 Route ab Arbeit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRAVEL -->
+            <section class="category-section" id="section-travel">
+                <div class="globe-section">
+                    <div class="globe-header">
+                        <h2>🌍 Unsere Reisen</h2>
+                        <p>Gemeinsam die Welt entdecken</p>
+                    </div>
+
+                    <div class="travel-stats">
+                        <div class="travel-stat">
+                            <div class="travel-stat-value" id="travelCountries">0</div>
+                            <div class="travel-stat-label">Länder</div>
+                        </div>
+                        <div class="travel-stat">
+                            <div class="travel-stat-value" id="travelCities">0</div>
+                            <div class="travel-stat-label">Städte</div>
+                        </div>
+                        <div class="travel-stat">
+                            <div class="travel-stat-value" id="travelWishlist">0</div>
+                            <div class="travel-stat-label">Bucket List</div>
+                        </div>
+                    </div>
+
+                    <div class="globe-container">
+                        <canvas id="globeCanvas"></canvas>
+                        <div class="globe-controls">
+                            <button class="globe-btn" onclick="globeZoom(-1)">+</button>
+                            <button class="globe-btn" onclick="globeZoom(1)">−</button>
+                        </div>
+                    </div>
+
+                    <div class="globe-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot visited"></div>
+                            <span>Besucht</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot wishlist"></div>
+                            <span>Bucket List</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEMORIES -->
+            <section class="category-section" id="section-memories">
+                <div class="category-header">
+                    <h2>📸 Erinnerungen</h2>
+                    <p>Eure schönsten Momente</p>
+                </div>
+                <div class="memories-grid" id="memoriesGrid"></div>
+            </section>
+
+            <!-- FAVORITES -->
+            <section class="category-section" id="section-favorites">
+                <div class="category-header">
+                    <h2>❤️ Favoriten</h2>
+                    <p>Eure Lieblings-Dates</p>
+                </div>
+                <div class="events-grid" id="favoritesContainer"></div>
+            </section>
+
+            <!-- NOPE -->
+            <section class="category-section" id="section-nope">
+                <div class="category-header">
+                    <h2>👎 Ausgeblendet</h2>
+                    <p>Diese Dates habt ihr ausgeblendet</p>
+                </div>
+                <div class="events-grid" id="nopeContainer"></div>
+            </section>
+        </main>
+
+        <!-- Back to Top -->
+        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+    </div>
+
+    <!-- Roulette Modal -->
+    <div class="modal" id="rouletteModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('rouletteModal')">×</button>
+            <div class="modal-header">
+                <h3>🎲 Zufälliges Date</h3>
+            </div>
+            <div class="modal-body">
+                <div class="roulette-result" id="rouletteResult">
+                    <div class="roulette-emoji" id="rouletteEmoji">🎲</div>
+                    <h4 class="roulette-title" id="rouletteTitle">Würfeln...</h4>
+                    <div id="rouletteDetails"></div>
+                    <div class="roulette-actions">
+                        <button class="btn btn-primary" onclick="spinRoulette()">🎲 Nochmal</button>
+                        <button class="btn btn-secondary" onclick="closeModal('rouletteModal')">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
+        <span class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</span>
+        <img id="lightboxImg" src="" alt="">
+        <span class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</span>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // ============ CONFIG ============
+        const STORAGE_KEY = 'datebuch_v12';
+        let allEvents = [];
+        let currentCategory = 'all';
+        let dateBuilderMap = null;
+
+        // ============ DESTINATIONS ============
+        const destinations = {
+            visited: [
+                { name: 'Deutschland', emoji: '🇩🇪', lat: 51.1657, lon: 10.4515 },
+                { name: 'Portugal', emoji: '🇵🇹', lat: 39.3999, lon: -8.2245 },
+                { name: 'Spanien', emoji: '🇪🇸', lat: 40.4637, lon: -3.7492 },
+                { name: 'Frankreich', emoji: '🇫🇷', lat: 46.2276, lon: 2.2137 },
+                { name: 'Dänemark', emoji: '🇩🇰', lat: 56.2639, lon: 9.5018 }
+            ],
+            visitedCities: [
+                { name: 'Hamburg', emoji: '⚓', lat: 53.5511, lon: 9.9937 },
+                { name: 'Lissabon', emoji: '🏛️', lat: 38.7223, lon: -9.1393 },
+                { name: 'Barcelona', emoji: '🏖️', lat: 41.3851, lon: 2.1734 },
+                { name: 'Paris', emoji: '🗼', lat: 48.8566, lon: 2.3522 },
+                { name: 'Kopenhagen', emoji: '🧜‍♀️', lat: 55.6761, lon: 12.5683 }
+            ],
+            wishlist: [
+                { name: 'Japan', emoji: '🇯🇵', lat: 36.2048, lon: 138.2529, reasons: ['🌸 Kirschblüte', '🍣 Sushi', '⛩️ Tempel'] },
+                { name: 'Neuseeland', emoji: '🇳🇿', lat: -40.9006, lon: 174.886, reasons: ['🏔️ Wandern', '🌿 Natur'] },
+                { name: 'Island', emoji: '🇮🇸', lat: 64.9631, lon: -19.0208, reasons: ['🌋 Vulkane', '🌌 Nordlichter'] }
+            ]
+        };
+
+        // ============ MEMORIES DATA ============
+        const memoriesData = [
+            { file: 'memories/memory1.jpg', title: 'Erstes Date' },
+            { file: 'memories/memory2.jpg', title: 'Strandtag' },
+            { file: 'memories/memory3.jpg', title: 'Konzert' },
+            { file: 'memories/memory4.jpg', title: 'Wanderung' },
+            { file: 'memories/memory5.jpg', title: 'Wellness Tag' },
+            { file: 'memories/memory6.jpg', title: 'Restaurant' }
+        ];
+
+        // ============ INIT ============
+        document.addEventListener('DOMContentLoaded', async () => {
+            loadTheme();
+            await loadEvents();
+            renderEvents();
+            renderMemories();
+            initMiniCalendar();
+            updateNextEventWidget();
+            setupBackToTop();
+            loadWeather();
+            initDateBuilder();
+        });
+
+        function enterApp() {
+            document.getElementById('intro').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('intro').style.display = 'none';
+                document.getElementById('app').classList.add('visible');
+            }, 800);
+        }
+
+        // ============ THEME ============
+        function loadTheme() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (saved.darkMode) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.darkMode = !isDark;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            showToast(isDark ? '☀️ Hell-Modus' : '🌙 Dunkel-Modus');
+        }
+
+        // ============ EVENTS ============
+        async function loadEvents() {
+            try {
+                const response = await fetch('events.json');
+                const data = await response.json();
+                allEvents = data.events || [];
+            } catch (e) {
+                console.error('Events laden fehlgeschlagen:', e);
+                allEvents = [];
+            }
+        }
+
+        function renderEvents() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+
+            // Filter active events (not disliked, not past)
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const activeEvents = allEvents.filter(e => {
+                if (ratings[e.id]?.disliked) return false;
+                const eventDate = new Date(e.date);
+                const endDate = e.endDate ? new Date(e.endDate) : eventDate;
+                return endDate >= today;
+            });
+
+            // Render all events
+            const allContainer = document.getElementById('eventsContainer');
+            allContainer.innerHTML = activeEvents.map(e => createEventCard(e, ratings)).join('');
+
+            // Render category-specific
+            const categories = ['wellness', 'aktiv', 'handwerk', 'comedy', 'essen', 'musik', 'shows'];
+            categories.forEach(cat => {
+                const container = document.getElementById(`${cat}Events`);
+                if (container) {
+                    const catEvents = activeEvents.filter(e => e.category === cat);
+                    container.innerHTML = catEvents.length > 0
+                        ? catEvents.map(e => createEventCard(e, ratings)).join('')
+                        : '<p style="text-align:center;color:var(--text-muted);padding:40px;">Keine Events in dieser Kategorie</p>';
+                }
+            });
+
+            // Render favorites
+            const favorites = allEvents.filter(e => ratings[e.id]?.liked);
+            document.getElementById('favoritesContainer').innerHTML = favorites.length > 0
+                ? favorites.map(e => createEventCard(e, ratings)).join('')
+                : '<p style="text-align:center;color:var(--text-muted);padding:40px;">Noch keine Favoriten - liked eure Lieblings-Dates!</p>';
+
+            // Render nope
+            const nope = allEvents.filter(e => ratings[e.id]?.disliked);
+            document.getElementById('nopeContainer').innerHTML = nope.length > 0
+                ? nope.map(e => `
+                    <div style="padding:var(--space-md);background:var(--bg-card);border-radius:var(--radius-md);display:flex;justify-content:space-between;align-items:center;">
+                        <span>${e.emoji} ${e.title}</span>
+                        <button class="btn btn-secondary" onclick="restoreEvent('${e.id}')">Wiederherstellen</button>
+                    </div>
+                `).join('')
+                : '<p style="text-align:center;color:var(--text-muted);padding:40px;">Keine ausgeblendeten Events</p>';
+        }
+
+        function createEventCard(event, ratings) {
+            const isLiked = ratings[event.id]?.liked;
+            const isDisliked = ratings[event.id]?.disliked;
+            const eventDate = new Date(event.date);
+            const today = new Date();
+            const daysUntil = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+
+            let countdownBadge = '';
+            if (daysUntil === 0) {
+                countdownBadge = '<span class="date-badge badge-countdown">Heute!</span>';
+            } else if (daysUntil > 0 && daysUntil <= 7) {
+                countdownBadge = `<span class="date-badge badge-countdown">In ${daysUntil} Tag${daysUntil > 1 ? 'en' : ''}</span>`;
+            }
+
+            const isPast = eventDate < today && !event.endDate;
+
+            return `
+                <div class="date-card ${isPast ? 'past-event' : ''}" data-event-id="${event.id}">
+                    <div class="date-card-header">
+                        <div class="date-emoji">${event.emoji}</div>
+                        <div class="date-info">
+                            <h3 class="date-title">${event.title}</h3>
+                            <div class="date-meta">
+                                <span>📅 ${formatDate(event.date)}${event.endDate ? ' - ' + formatDate(event.endDate) : ''}</span>
+                                ${event.time ? `<span>🕐 ${event.time}</span>` : ''}
+                                ${event.price ? `<span>💰 ${event.price}</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="date-badges">
+                            ${countdownBadge}
+                            ${event.price && event.price.toLowerCase().includes('frei') ? '<span class="date-badge badge-free">Gratis</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="date-card-body">
+                        ${event.description ? `<p class="date-description">${event.description}</p>` : ''}
+
+                        <div class="venue-grid">
+                            ${event.restaurant ? `
+                                <div class="venue-card">
+                                    <div class="venue-card-header">
+                                        <span class="venue-icon">🍽️</span>
+                                        <span class="venue-label">Restaurant</span>
+                                    </div>
+                                    <div class="venue-name">${event.restaurant.name}</div>
+                                    <div class="venue-type">${event.restaurant.type}</div>
+                                    ${event.restaurant.link ? `<a href="${event.restaurant.link}" target="_blank" class="venue-link">Zur Website →</a>` : ''}
+                                </div>
+                            ` : ''}
+
+                            ${event.bar ? `
+                                <div class="venue-card">
+                                    <div class="venue-card-header">
+                                        <span class="venue-icon">🍸</span>
+                                        <span class="venue-label">Bar</span>
+                                    </div>
+                                    <div class="venue-name">${Array.isArray(event.bar) ? event.bar.map(b => b.name).join(', ') : event.bar.name}</div>
+                                    <div class="venue-type">${Array.isArray(event.bar) ? event.bar[0].type : event.bar.type}</div>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="card-actions">
+                            ${event.link ? `<a href="${event.link}" target="_blank" class="btn btn-primary">🎟️ Tickets/Info</a>` : ''}
+                            ${event.address ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}" target="_blank" class="btn btn-secondary">📍 Karte</a>` : ''}
+
+                            <div class="thumbs-rating">
+                                <button class="thumb-btn thumb-up ${isLiked ? 'selected' : ''}" onclick="rateEvent('${event.id}', 'like')">👍</button>
+                                <button class="thumb-btn thumb-down ${isDisliked ? 'selected' : ''}" onclick="rateEvent('${event.id}', 'dislike')">👎</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'short' });
+        }
+
+        function rateEvent(eventId, type) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (!saved.ratings) saved.ratings = {};
+
+            if (type === 'like') {
+                saved.ratings[eventId] = { liked: !saved.ratings[eventId]?.liked, disliked: false };
+                showToast(saved.ratings[eventId].liked ? '❤️ Favorit gespeichert!' : '💔 Favorit entfernt');
+            } else {
+                saved.ratings[eventId] = { liked: false, disliked: !saved.ratings[eventId]?.disliked };
+                showToast(saved.ratings[eventId].disliked ? '👎 Ausgeblendet' : '👍 Wiederhergestellt');
+            }
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            renderEvents();
+        }
+
+        function restoreEvent(eventId) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (saved.ratings && saved.ratings[eventId]) {
+                saved.ratings[eventId].disliked = false;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                renderEvents();
+                showToast('✅ Event wiederhergestellt!');
+            }
+        }
+
+        // ============ NAVIGATION ============
+        function showCategory(category) {
+            currentCategory = category;
+
+            // Update nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === category);
+            });
+
+            // Show/hide sections
+            document.querySelectorAll('.category-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(`section-${category}`).classList.add('active');
+
+            // Feierabend toggle visibility
+            const feierabendCategories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows', 'all'];
+            document.getElementById('feierabendToggle').style.display =
+                feierabendCategories.includes(category) ? 'flex' : 'none';
+
+            // Init globe if travel
+            if (category === 'travel') {
+                setTimeout(initGlobe, 100);
+            }
+
+            // Init date builder map
+            if (category === 'builder') {
+                setTimeout(initDateBuilderMap, 100);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterByFeierabend() {
+            const time = document.getElementById('feierabendTime').value;
+            if (!time) {
+                document.querySelectorAll('.date-card').forEach(card => card.classList.remove('excluded'));
+                return;
+            }
+
+            const [hours, mins] = time.split(':').map(Number);
+            const feierabendMins = hours * 60 + mins;
+
+            document.querySelectorAll('.date-card').forEach(card => {
+                const eventId = card.dataset.eventId;
+                const event = allEvents.find(e => e.id === eventId);
+                if (!event || !event.time) {
+                    card.classList.remove('excluded');
+                    return;
+                }
+
+                const match = event.time.match(/(\d{1,2}):?(\d{2})?/);
+                if (!match) {
+                    card.classList.remove('excluded');
+                    return;
+                }
+
+                const eventHours = parseInt(match[1]);
+                const eventMins = parseInt(match[2] || 0);
+                const eventTotalMins = eventHours * 60 + eventMins;
+
+                // Add 45 min travel time from work
+                card.classList.toggle('excluded', eventTotalMins < feierabendMins + 45);
+            });
+        }
+
+        // ============ SEARCH ============
+        function handleSearch(query) {
+            const results = document.getElementById('searchResults');
+            if (query.length < 2) {
+                results.classList.remove('active');
+                return;
+            }
+
+            const q = query.toLowerCase();
+            const matches = allEvents.filter(e =>
+                e.title.toLowerCase().includes(q) ||
+                (e.description && e.description.toLowerCase().includes(q)) ||
+                (e.location && e.location.toLowerCase().includes(q))
+            ).slice(0, 8);
+
+            if (matches.length === 0) {
+                results.innerHTML = '<div class="search-result-item" style="color:var(--text-muted)">Keine Ergebnisse</div>';
+            } else {
+                results.innerHTML = matches.map(e => `
+                    <div class="search-result-item" onclick="goToEvent('${e.category}', '${e.id}')">
+                        <div><span>${e.emoji}</span> <strong>${e.title}</strong></div>
+                        <div style="font-size:0.8rem;color:var(--text-muted)">${formatDate(e.date)}</div>
+                    </div>
+                `).join('');
+            }
+            results.classList.add('active');
+        }
+
+        function goToEvent(category, eventId) {
+            document.getElementById('searchResults').classList.remove('active');
+            document.getElementById('globalSearch').value = '';
+            showCategory(category);
+            setTimeout(() => {
+                const card = document.querySelector(`[data-event-id="${eventId}"]`);
+                if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.search-container')) {
+                document.getElementById('searchResults')?.classList.remove('active');
+            }
+        });
+
+        // ============ MINI CALENDAR ============
+        let calendarMonth = new Date().getMonth();
+        let calendarYear = new Date().getFullYear();
+
+        function initMiniCalendar() {
+            renderMiniCalendar();
+        }
+
+        function toggleMiniCalendar() {
+            const cal = document.getElementById('miniCalendar');
+            cal.style.display = cal.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function changeCalendarMonth(delta) {
+            calendarMonth += delta;
+            if (calendarMonth > 11) { calendarMonth = 0; calendarYear++; }
+            if (calendarMonth < 0) { calendarMonth = 11; calendarYear--; }
+            renderMiniCalendar();
+        }
+
+        function renderMiniCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            const title = document.getElementById('calendarTitle');
+
+            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+            title.textContent = `${months[calendarMonth]} ${calendarYear}`;
+
+            const firstDay = new Date(calendarYear, calendarMonth, 1);
+            const lastDay = new Date(calendarYear, calendarMonth + 1, 0);
+            const startDay = (firstDay.getDay() + 6) % 7;
+            const today = new Date();
+
+            const eventDays = new Set();
+            allEvents.forEach(e => {
+                const d = new Date(e.date);
+                if (d.getMonth() === calendarMonth && d.getFullYear() === calendarYear) {
+                    eventDays.add(d.getDate());
+                }
+            });
+
+            let html = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'].map(d =>
+                `<div class="mini-calendar-day header">${d}</div>`
+            ).join('');
+
+            for (let i = 0; i < startDay; i++) {
+                html += '<div class="mini-calendar-day other-month"></div>';
+            }
+
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                const isToday = day === today.getDate() && calendarMonth === today.getMonth() && calendarYear === today.getFullYear();
+                const hasEvent = eventDays.has(day);
+                html += `<div class="mini-calendar-day ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}" onclick="showEventsForDay(${day})">${day}</div>`;
+            }
+
+            grid.innerHTML = html;
+        }
+
+        function showEventsForDay(day) {
+            const date = new Date(calendarYear, calendarMonth, day);
+            const dateStr = date.toISOString().split('T')[0];
+            const dayEvents = allEvents.filter(e => e.date === dateStr);
+
+            if (dayEvents.length > 0) {
+                showCategory('all');
+                setTimeout(() => {
+                    const card = document.querySelector(`[data-event-id="${dayEvents[0].id}"]`);
+                    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+
+        function updateNextEventWidget() {
+            const today = new Date();
+            const upcoming = allEvents
+                .filter(e => new Date(e.date) >= today)
+                .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            if (upcoming.length > 0) {
+                const next = upcoming[0];
+                const daysUntil = Math.ceil((new Date(next.date) - today) / (1000 * 60 * 60 * 24));
+                document.getElementById('nextEventWidget').textContent =
+                    daysUntil === 0 ? `Heute: ${next.emoji} ${next.title}` :
+                    daysUntil === 1 ? `Morgen: ${next.emoji} ${next.title}` :
+                    `In ${daysUntil} Tagen: ${next.emoji}`;
+            } else {
+                document.getElementById('nextEventWidget').textContent = 'Keine Events geplant';
+            }
+        }
+
+        // ============ WEATHER ============
+        async function loadWeather() {
+            try {
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=53.55&longitude=10.00&current_weather=true');
+                const data = await response.json();
+                const temp = Math.round(data.current_weather.temperature);
+                const code = data.current_weather.weathercode;
+                const emoji = code === 0 ? '☀️' : code < 3 ? '⛅' : code < 50 ? '☁️' : '🌧️';
+                document.getElementById('weatherTemp').textContent = `${temp}°`;
+                document.getElementById('weatherWidget').querySelector('span').textContent = emoji;
+            } catch (e) {
+                console.log('Weather loading failed');
+            }
+        }
+
+        // ============ ROULETTE ============
+        function openRoulette() {
+            document.getElementById('rouletteModal').classList.add('active');
+            spinRoulette();
+        }
+
+        function spinRoulette() {
+            const emoji = document.getElementById('rouletteEmoji');
+            const title = document.getElementById('rouletteTitle');
+            const details = document.getElementById('rouletteDetails');
+
+            emoji.classList.add('spinning');
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const ratings = saved.ratings || {};
+            const today = new Date();
+
+            const available = allEvents.filter(e => {
+                if (ratings[e.id]?.disliked) return false;
+                const eventDate = new Date(e.date);
+                const endDate = e.endDate ? new Date(e.endDate) : eventDate;
+                return endDate >= today;
+            });
+
+            if (available.length === 0) {
+                setTimeout(() => {
+                    emoji.classList.remove('spinning');
+                    emoji.textContent = '😢';
+                    title.textContent = 'Keine Events verfügbar';
+                    details.innerHTML = '';
+                }, 500);
+                return;
+            }
+
+            const random = available[Math.floor(Math.random() * available.length)];
+
+            setTimeout(() => {
+                emoji.classList.remove('spinning');
+                emoji.textContent = random.emoji;
+                title.textContent = random.title;
+                details.innerHTML = `
+                    <p style="color:var(--text-secondary);margin-bottom:var(--space-md);">📅 ${formatDate(random.date)} ${random.time ? '• ' + random.time : ''}</p>
+                    ${random.restaurant ? `<p>🍽️ ${random.restaurant.name}</p>` : ''}
+                    ${random.bar ? `<p>🍸 ${Array.isArray(random.bar) ? random.bar[0].name : random.bar.name}</p>` : ''}
+                `;
+            }, 500);
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Close modal on backdrop click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => {
+                if (e.target === modal) modal.classList.remove('active');
+            });
+        });
+
+        // ============ MEMORIES ============
+        let currentLightboxIndex = 0;
+
+        function renderMemories() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const customTitles = saved.memoryTitles || {};
+
+            document.getElementById('memoriesGrid').innerHTML = memoriesData.map((m, i) => `
+                <div class="memory-item" onclick="openLightbox(${i})">
+                    <img src="${m.file}" alt="${m.title}" onerror="this.parentElement.style.display='none'">
+                    <div class="memory-caption">${customTitles[m.file] || m.title}</div>
+                    <div class="memory-edit" onclick="event.stopPropagation();editMemoryTitle(${i})">✏️</div>
+                </div>
+            `).join('');
+        }
+
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            const m = memoriesData[index];
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const title = saved.memoryTitles?.[m.file] || m.title;
+
+            document.getElementById('lightboxImg').src = m.file;
+            document.getElementById('lightboxCaption').textContent = title;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function navigateLightbox(dir) {
+            currentLightboxIndex = (currentLightboxIndex + dir + memoriesData.length) % memoriesData.length;
+            const m = memoriesData[currentLightboxIndex];
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const title = saved.memoryTitles?.[m.file] || m.title;
+
+            document.getElementById('lightboxImg').src = m.file;
+            document.getElementById('lightboxCaption').textContent = title;
+        }
+
+        function editMemoryTitle(index) {
+            const m = memoriesData[index];
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const currentTitle = saved.memoryTitles?.[m.file] || m.title;
+
+            const newTitle = prompt('Titel bearbeiten:', currentTitle);
+            if (newTitle && newTitle !== currentTitle) {
+                if (!saved.memoryTitles) saved.memoryTitles = {};
+                saved.memoryTitles[m.file] = newTitle;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                renderMemories();
+                showToast('📝 Titel gespeichert!');
+            }
+        }
+
+        // ============ DATE BUILDER ============
+        let currentDatePlan = {
+            category: null,
+            event: null,
+            food: null,
+            drinks: null
+        };
+
+        function initDateBuilder() {
+            const categories = ['wellness', 'aktiv', 'handwerk', 'comedy', 'essen', 'musik', 'shows'];
+            document.getElementById('builderCategories').innerHTML = categories.map(cat => `
+                <button class="category-pill" onclick="selectBuilderCategory('${cat}')">${getCategoryEmoji(cat)} ${cat.charAt(0).toUpperCase() + cat.slice(1)}</button>
+            `).join('');
+        }
+
+        function getCategoryEmoji(cat) {
+            const emojis = { wellness: '💆', aktiv: '🏃', handwerk: '🔨', comedy: '😂', essen: '🍽️', musik: '🎵', shows: '🎭' };
+            return emojis[cat] || '📌';
+        }
+
+        function selectBuilderCategory(category) {
+            currentDatePlan.category = category;
+
+            document.querySelectorAll('#builderCategories .category-pill').forEach(p => {
+                p.classList.toggle('active', p.textContent.toLowerCase().includes(category));
+            });
+
+            const events = allEvents.filter(e => e.category === category);
+            document.getElementById('builderEvents').innerHTML = events.map(e => `
+                <div class="event-select-card" onclick="selectBuilderEvent('${e.id}')">
+                    <div style="font-size:1.5rem;margin-bottom:var(--space-xs)">${e.emoji}</div>
+                    <div style="font-weight:600">${e.title}</div>
+                    <div style="font-size:0.85rem;color:var(--text-muted)">${formatDate(e.date)}</div>
+                </div>
+            `).join('');
+        }
+
+        function selectBuilderEvent(eventId) {
+            currentDatePlan.event = allEvents.find(e => e.id === eventId);
+
+            document.querySelectorAll('.event-select-card').forEach(c => {
+                c.classList.remove('selected');
+            });
+            event.target.closest('.event-select-card').classList.add('selected');
+
+            updateDateSummary();
+        }
+
+        function setFoodOption(option) {
+            currentDatePlan.food = option;
+            updateDateSummary();
+        }
+
+        function setDrinksOption(option) {
+            currentDatePlan.drinks = option;
+            updateDateSummary();
+        }
+
+        function updateDateSummary() {
+            if (!currentDatePlan.event) return;
+
+            const summary = document.getElementById('dateSummary');
+            const content = document.getElementById('summaryContent');
+            const e = currentDatePlan.event;
+
+            let html = `<div class="summary-item"><span>1️⃣</span><span>${e.emoji} ${e.title}</span></div>`;
+
+            if (currentDatePlan.food === 'vorher' && e.restaurant) {
+                html = `<div class="summary-item"><span>1️⃣</span><span>🍽️ ${e.restaurant.name}</span></div>` +
+                       `<div class="summary-item"><span>2️⃣</span><span>${e.emoji} ${e.title}</span></div>`;
+            } else if (currentDatePlan.food === 'nachher' && e.restaurant) {
+                html += `<div class="summary-item"><span>2️⃣</span><span>🍽️ ${e.restaurant.name}</span></div>`;
+            }
+
+            if (currentDatePlan.drinks === 'ja' && e.bar) {
+                const barName = Array.isArray(e.bar) ? e.bar[0].name : e.bar.name;
+                html += `<div class="summary-item"><span>🍸</span><span>${barName}</span></div>`;
+            }
+
+            content.innerHTML = html;
+            summary.style.display = 'block';
+
+            // Update map
+            updateDateBuilderMap();
+        }
+
+        function initDateBuilderMap() {
+            if (dateBuilderMap) return;
+
+            dateBuilderMap = L.map('dateBuilderMap').setView([53.55, 10.0], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(dateBuilderMap);
+        }
+
+        function updateDateBuilderMap() {
+            if (!dateBuilderMap || !currentDatePlan.event) return;
+
+            // Clear markers
+            dateBuilderMap.eachLayer(layer => {
+                if (layer instanceof L.Marker) dateBuilderMap.removeLayer(layer);
+            });
+
+            const e = currentDatePlan.event;
+            const markers = [];
+
+            if (e.coords) {
+                L.marker(e.coords).addTo(dateBuilderMap).bindPopup(`${e.emoji} ${e.title}`);
+                markers.push(e.coords);
+            }
+
+            if (currentDatePlan.food !== 'nein' && e.restaurant?.coords) {
+                L.marker(e.restaurant.coords).addTo(dateBuilderMap).bindPopup(`🍽️ ${e.restaurant.name}`);
+                markers.push(e.restaurant.coords);
+            }
+
+            if (markers.length > 0) {
+                const bounds = L.latLngBounds(markers);
+                dateBuilderMap.fitBounds(bounds, { padding: [50, 50] });
+            }
+        }
+
+        function shareToWhatsApp() {
+            if (!currentDatePlan.event) return;
+
+            const e = currentDatePlan.event;
+            let text = `💕 Date-Plan:\n\n${e.emoji} ${e.title}\n📅 ${formatDate(e.date)}`;
+
+            if (currentDatePlan.food !== 'nein' && e.restaurant) {
+                text += `\n🍽️ ${e.restaurant.name} (${currentDatePlan.food === 'vorher' ? 'vorher' : 'nachher'})`;
+            }
+
+            if (currentDatePlan.drinks === 'ja' && e.bar) {
+                const barName = Array.isArray(e.bar) ? e.bar[0].name : e.bar.name;
+                text += `\n🍸 ${barName}`;
+            }
+
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function exportToCalendar() {
+            if (!currentDatePlan.event) return;
+
+            const e = currentDatePlan.event;
+            const date = new Date(e.date);
+            const dateStr = date.toISOString().replace(/-|:|\.\d+/g, '').slice(0, 15) + 'Z';
+
+            let description = e.description || '';
+            if (e.restaurant) description += `\\n\\n🍽️ Restaurant: ${e.restaurant.name}`;
+            if (e.bar) description += `\\n🍸 Bar: ${Array.isArray(e.bar) ? e.bar[0].name : e.bar.name}`;
+
+            const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${dateStr}
+SUMMARY:${e.emoji} ${e.title}
+DESCRIPTION:${description}
+LOCATION:${e.address || e.location || ''}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([ics], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `date-${e.id}.ics`;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            showToast('📅 Kalender-Event erstellt!');
+        }
+
+        function openTransitRoute() {
+            if (!currentDatePlan.event) return;
+
+            const e = currentDatePlan.event;
+            const startAddress = 'Stadtdeich 5, 20097 Hamburg';
+            let firstDestination;
+
+            if (currentDatePlan.food === 'vorher' && e.restaurant) {
+                firstDestination = e.restaurant.address || e.restaurant.name + ', Hamburg';
+            } else {
+                firstDestination = e.address || e.location + ', Hamburg';
+            }
+
+            const mapsUrl = `https://www.google.com/maps/dir/${encodeURIComponent(startAddress)}/${encodeURIComponent(firstDestination)}/?travelmode=transit`;
+            window.open(mapsUrl, '_blank');
+            showToast('🚇 Route geöffnet!');
+        }
+
+        // ============ 3D GLOBE ============
+        let scene, camera, renderer, globeGroup, globeInitialized = false;
+        let isDragging = false, prevMouse = { x: 0, y: 0 };
+
+        function initGlobe() {
+            if (globeInitialized) return;
+
+            const canvas = document.getElementById('globeCanvas');
+            if (!canvas) return;
+
+            const container = canvas.parentElement;
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+            camera.position.z = 2.8;
+
+            renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            globeGroup = new THREE.Group();
+            scene.add(globeGroup);
+
+            // Initial rotation to show Europe
+            globeGroup.rotation.x = 0.4;
+            globeGroup.rotation.y = -1.75;
+
+            // Stars
+            const starGeometry = new THREE.BufferGeometry();
+            const starPositions = new Float32Array(1500 * 3);
+            for (let i = 0; i < 1500 * 3; i += 3) {
+                const radius = 15 + Math.random() * 10;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+                starPositions[i] = radius * Math.sin(phi) * Math.cos(theta);
+                starPositions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                starPositions[i + 2] = radius * Math.cos(phi);
+            }
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            scene.add(new THREE.Points(starGeometry, new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.8 })));
+
+            // Earth
+            const textureLoader = new THREE.TextureLoader();
+            const earthTexture = textureLoader.load('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
+            const earthMesh = new THREE.Mesh(
+                new THREE.SphereGeometry(1, 64, 64),
+                new THREE.MeshPhongMaterial({ map: earthTexture, shininess: 5 })
+            );
+            globeGroup.add(earthMesh);
+
+            // Atmosphere
+            globeGroup.add(new THREE.Mesh(
+                new THREE.SphereGeometry(1.02, 32, 32),
+                new THREE.MeshBasicMaterial({ color: 0x88ccff, transparent: true, opacity: 0.15, side: THREE.BackSide })
+            ));
+
+            // Lighting
+            scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+            const sun = new THREE.DirectionalLight(0xffffff, 1);
+            sun.position.set(5, 3, 5);
+            scene.add(sun);
+
+            // Add markers
+            addGlobeMarkers();
+
+            // Controls
+            canvas.addEventListener('mousedown', e => { isDragging = true; prevMouse = { x: e.clientX, y: e.clientY }; });
+            canvas.addEventListener('mouseup', () => isDragging = false);
+            canvas.addEventListener('mouseleave', () => isDragging = false);
+            canvas.addEventListener('mousemove', e => {
+                if (isDragging) {
+                    globeGroup.rotation.y += (e.clientX - prevMouse.x) * 0.005;
+                    globeGroup.rotation.x += (e.clientY - prevMouse.y) * 0.005;
+                    globeGroup.rotation.x = Math.max(-Math.PI/2, Math.min(Math.PI/2, globeGroup.rotation.x));
+                }
+                prevMouse = { x: e.clientX, y: e.clientY };
+            });
+
+            canvas.addEventListener('wheel', e => {
+                e.preventDefault();
+                camera.position.z += e.deltaY * 0.005;
+                camera.position.z = Math.max(1.5, Math.min(5, camera.position.z));
+            }, { passive: false });
+
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Update stats
+            document.getElementById('travelCountries').textContent = destinations.visited.length;
+            document.getElementById('travelCities').textContent = destinations.visitedCities.length;
+            document.getElementById('travelWishlist').textContent = destinations.wishlist.length;
+
+            globeInitialized = true;
+        }
+
+        function latLonToVector3(lat, lon, r) {
+            const phi = (90 - lat) * Math.PI / 180;
+            const theta = (lon + 180) * Math.PI / 180;
+            return new THREE.Vector3(
+                -r * Math.sin(phi) * Math.cos(theta),
+                r * Math.cos(phi),
+                r * Math.sin(phi) * Math.sin(theta)
+            );
+        }
+
+        function addGlobeMarkers() {
+            // Visited countries
+            destinations.visited.forEach(d => {
+                const marker = new THREE.Mesh(
+                    new THREE.SphereGeometry(0.04, 16, 16),
+                    new THREE.MeshBasicMaterial({ color: 0x7a9e7a })
+                );
+                marker.position.copy(latLonToVector3(d.lat, d.lon, 1.02));
+                globeGroup.add(marker);
+            });
+
+            // Wishlist
+            destinations.wishlist.forEach(d => {
+                const marker = new THREE.Mesh(
+                    new THREE.SphereGeometry(0.05, 16, 16),
+                    new THREE.MeshBasicMaterial({ color: 0xc17b7f })
+                );
+                marker.position.copy(latLonToVector3(d.lat, d.lon, 1.02));
+                globeGroup.add(marker);
+            });
+        }
+
+        function globeZoom(direction) {
+            if (!camera) return;
+            camera.position.z += direction * 0.3;
+            camera.position.z = Math.max(1.5, Math.min(5, camera.position.z));
+        }
+
+        // ============ UTILITIES ============
+        function showToast(msg) {
+            document.querySelector('.toast-notification')?.remove();
+            const t = document.createElement('div');
+            t.className = 'toast-notification';
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 2500);
+        }
+
+        function setupBackToTop() {
+            const btn = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                btn.classList.toggle('visible', window.scrollY > 500);
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle window resize for globe
+        window.addEventListener('resize', () => {
+            if (renderer && camera) {
+                const container = document.querySelector('.globe-container');
+                if (container) {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

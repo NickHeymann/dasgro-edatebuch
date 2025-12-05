@@ -1,0 +1,3112 @@
+[
+  {
+    "name": "3001 Kino",
+    "address": "Schanzenstraße 75, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Kleines Programmkino in der Schanze mit Arthouse-Filmen und besonderem Charme.",
+    "website": "https://www.3001-kino.de",
+    "tags": {
+      "vibe": ["Alternativ", "Gemütlich", "Arthouse"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Programmkino", "Kleine Säle", "Schanzenlage"],
+      "best_for": ["Film-Date", "Regentag", "Kulturabend"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Arthouse-Kino mit Charme mitten in der Schanze"
+  },
+  {
+    "name": "Abaton Kino",
+    "address": "Allendeplatz 3, 20146 Hamburg",
+    "district": "Grindel",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Legendäres Programmkino seit 1970 mit großem Saal und besonderer Atmosphäre – Hamburgs ältestes Arthouse-Kino.",
+    "website": "https://www.abaton.de",
+    "tags": {
+      "vibe": ["Kultig", "Klassisch", "Arthouse"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Größtes Programmkino HH", "Café", "Seit 1970"],
+      "best_for": ["Film-Date", "Klassiker", "Regentag"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Hamburgs ältestes Programmkino seit 1970 mit Café im Foyer"
+  },
+  {
+    "name": "Alma Hoppes Lustspielhaus",
+    "address": "Ludolfstraße 53, 20249 Hamburg",
+    "district": "Eppendorf",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Kabarett- und Comedy-Bühne mit politischem Humor und satirischen Programmen.",
+    "website": "https://www.almahoppe.de",
+    "tags": {
+      "vibe": ["Lustig", "Politisch", "Intelligent"],
+      "activity": ["Kabarett", "Comedy", "Satire"],
+      "feature": ["Politisches Kabarett", "Gastspiele"],
+      "best_for": ["Comedy-Date", "Kulturabend", "Kabarett-Fans"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Politisches Kabarett und satirische Comedy"
+  },
+  {
+    "name": "Altes Mädchen – Braugasthaus",
+    "address": "Lagerstraße 28b, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Großes Braugasthaus mit vielen Craft-Bieren vom Hahn und herzhafter Küche im Schanzenhöfe-Areal.",
+    "website": "https://altes-maedchen.com",
+    "tags": {
+      "vibe": ["Lebhaft", "Rustikal", "Schanzenhöfe"],
+      "drink": ["Craft Beer", "Tasting Flights"],
+      "food": ["Flammkuchen", "Brotzeit", "Burger"],
+      "feature": ["Große Tische", "Reservierung empfohlen"],
+      "best_for": ["After Work", "Größere Gruppen", "Casual Date"]
+    },
+    "opening_hours": {
+      "mon-thu": "12:00-23:00",
+      "fri-sat": "12:00-00:00",
+      "sun": "12:00-22:00"
+    },
+    "specialty": "Große Craft-Beer-Auswahl und Brauhaus-Atmosphäre in den Schanzenhöfen"
+  },
+  {
+    "name": "AN Vegan House",
+    "address": "Grasweg 20, 22299 Hamburg",
+    "district": "Winterhude",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Authentische vietnamesische Küche komplett vegan interpretiert – von Pho bis Banh Mi.",
+    "website": "https://www.instagram.com/an_veganhouse/",
+    "tags": {
+      "vibe": ["Gemütlich", "Authentisch", "Modern"],
+      "food": ["Vietnamesisch", "Pho", "Banh Mi", "Vegan"],
+      "feature": ["Komplett vegan", "Frische Zutaten"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Casual", "Asiatisch"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-21:00",
+      "mon": "closed"
+    },
+    "specialty": "Komplett vegane vietnamesische Küche mit authentischen Rezepten"
+  },
+  {
+    "name": "Apple & Eve",
+    "address": "Grindelallee 87, 20146 Hamburg",
+    "district": "Rotherbaum",
+    "type": "restaurant",
+    "price_range": "€",
+    "description": "Veganes Fast Food mit Burgern, Wraps und Bowls – schnell, lecker und 100% pflanzlich.",
+    "website": "https://www.appleandeve.de",
+    "tags": {
+      "vibe": ["Casual", "Jung", "Schnell"],
+      "food": ["Vegan Burger", "Wraps", "Bowls"],
+      "feature": ["Komplett vegan", "To-Go-freundlich"],
+      "dietary": ["Vegan"],
+      "best_for": ["Schnelles Date", "Vegan-Date", "Mittagspause"]
+    },
+    "opening_hours": {
+      "mon-sat": "11:30-21:00",
+      "sun": "12:00-20:00"
+    },
+    "specialty": "Vegane Burger und Bowls zum fairen Preis"
+  },
+  {
+    "name": "Azeitona",
+    "address": "Grindelallee 77, 20146 Hamburg",
+    "district": "Rotherbaum",
+    "type": "restaurant",
+    "price_range": "€",
+    "description": "Legendärer Falafel-Imbiss mit dem angeblich besten Falafel Hamburgs für nur 4€.",
+    "website": null,
+    "tags": {
+      "vibe": ["Einfach", "Authentisch", "Studentisch"],
+      "food": ["Falafel", "Hummus", "Arabisch"],
+      "feature": ["Günstig", "Vegetarisch", "Schnell"],
+      "dietary": ["Vegetarisch", "Vegan"],
+      "best_for": ["Schnelles Date", "Budget-Date", "Spätes Essen"]
+    },
+    "opening_hours": {
+      "mon-sat": "11:00-23:00",
+      "sun": "12:00-22:00"
+    },
+    "specialty": "Bester Falafel Hamburgs für nur 4€"
+  },
+  {
+    "name": "Baalsaal",
+    "address": "Reeperbahn 24, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Techno-Club auf der Reeperbahn mit elektronischer Musik und intimer Atmosphäre.",
+    "website": "https://www.baalsaal.com",
+    "tags": {
+      "vibe": ["Dunkel", "Techno", "Underground"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Gutes Soundsystem", "Reeperbahn-Lage"],
+      "best_for": ["Techno-Date", "Spätes Date", "Clubnacht"]
+    },
+    "opening_hours": {
+      "fri-sat": "23:00-07:00"
+    },
+    "specialty": "Techno und elektronische Musik auf der Reeperbahn"
+  },
+  {
+    "name": "Bao Bao",
+    "address": "Eppendorfer Weg 171, 20253 Hamburg",
+    "district": "Eppendorf",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Bio-vietnamesisches Restaurant mit frischen, handgemachten Pho und Banh Bao.",
+    "website": "https://www.baobao-hamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Gesund", "Gemütlich"],
+      "food": ["Vietnamesisch", "Pho", "Banh Bao", "Bio"],
+      "feature": ["Bio-Zutaten", "Frisch zubereitet"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Gesundes Date", "Casual", "Winterdate"]
+    },
+    "opening_hours": {
+      "mon-sat": "12:00-21:30",
+      "sun": "closed"
+    },
+    "specialty": "Vietnamesische Bio-Küche mit handgemachten Pho und Banh Bao"
+  },
+  {
+    "name": "Bar Italia",
+    "address": "Eppendorfer Weg 79, 20259 Hamburg",
+    "district": "Eppendorf",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Legendäre Bar mit Live-Jazz und Blues an 5 Abenden pro Woche in uriger Atmosphäre.",
+    "website": "https://www.baritalia.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Live-Musik", "Klassisch"],
+      "drink": ["Wein", "Cocktails", "Bier"],
+      "activity": ["Live Jazz", "Live Blues"],
+      "feature": ["5x pro Woche Live-Musik", "Kein Eintritt"],
+      "best_for": ["Musik-Date", "Entspannter Abend", "Jazz-Liebhaber"]
+    },
+    "opening_hours": {
+      "mon-sat": "19:00-02:00",
+      "sun": "closed"
+    },
+    "specialty": "Live Jazz und Blues an 5 Abenden pro Woche ohne Eintritt"
+  },
+  {
+    "name": "Bar Noir",
+    "address": "Wexstraße 28, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Elegante Weinbar mit ausgesuchten Weinen und entspannter Atmosphäre.",
+    "website": "https://www.barnoir.de",
+    "tags": {
+      "vibe": ["Elegant", "Intim", "Weinbar"],
+      "drink": ["Wein", "Naturwein", "Champagner"],
+      "feature": ["Weinauswahl", "Sommelierberatung"],
+      "best_for": ["Weinabend", "Romantisches Date", "After Dinner"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-00:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Kuratierte Weinauswahl in stilvoller Atmosphäre"
+  },
+  {
+    "name": "Bar Thier",
+    "address": "Schulterblatt 98, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Versteckte Bar ohne Türschild am Ende des Schulterblatts mit Elektrobeats, DJs und queerer Szene.",
+    "website": "https://www.facebook.com/thier.hh/",
+    "tags": {
+      "vibe": ["Alternativ", "LGBTQ+", "Versteckt"],
+      "drink": ["Cocktails", "Bier", "Rhababsi Schnaps"],
+      "activity": ["Tanzen", "DJ", "Drag Race Streaming"],
+      "feature": ["Biergarten", "Queerer Safe Space"],
+      "best_for": ["Spätes Date", "LGBTQ+ Date", "Alternativ"]
+    },
+    "opening_hours": {
+      "tue-thu": "19:00-01:00",
+      "fri-sat": "19:00-02:00",
+      "sun": "19:00-01:00",
+      "mon": "closed"
+    },
+    "specialty": "LGBTQ+-freundliche Bar mit Drag Race Streaming am Sonntag"
+  },
+  {
+    "name": "Big Break Hamburg",
+    "address": "Große Elbstraße 212, 22767 Hamburg",
+    "district": "Altona",
+    "type": "activity",
+    "price_range": "€€€",
+    "description": "Preisgekrönter Escape Room – Platz 31 weltweit bei TERPECA 2024.",
+    "website": "https://www.bigbreak.de",
+    "tags": {
+      "vibe": ["Spannend", "Immersiv", "Teamwork"],
+      "activity": ["Escape Room", "Rätsel"],
+      "feature": ["Weltklasse-Qualität", "TERPECA 2024", "Verschiedene Räume"],
+      "best_for": ["Abenteuer-Date", "Gruppen-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "10:00-22:00"
+    },
+    "specialty": "Escape Room auf Weltklasse-Niveau – Platz 31 weltweit"
+  },
+  {
+    "name": "Black Hat Coffee",
+    "address": "Wexstraße 28, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Third-Wave Coffee mit australischem Touch – perfekter Flat White und hausgemachte Bagels.",
+    "website": "https://www.blackhatcoffee.de",
+    "tags": {
+      "vibe": ["Hip", "Australisch", "Modern"],
+      "drink": ["Specialty Coffee", "Flat White", "Cold Brew"],
+      "food": ["Bagels", "Frühstück", "Kuchen"],
+      "feature": ["Australischer Stil", "Hausgemachte Bagels"],
+      "best_for": ["Kaffeedate", "Frühstück", "Remote Work"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Australischer Specialty Coffee mit perfektem Flat White"
+  },
+  {
+    "name": "Boilerman Bar",
+    "address": "Eppendorfer Weg 211, 20253 Hamburg",
+    "district": "Eppendorf",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Stylische Cocktailbar im Industrial-Look mit erstklassigen Drinks und Highballs.",
+    "website": "https://www.boilermanbar.com",
+    "tags": {
+      "vibe": ["Stylish", "Industrial", "Modern"],
+      "drink": ["Cocktails", "Highballs", "Whisky"],
+      "feature": ["Erstklassige Cocktails", "Barkeeper-Handwerk"],
+      "best_for": ["Cocktail-Date", "Stilvolles Date", "Erstes Date"]
+    },
+    "opening_hours": {
+      "tue-sat": "19:00-02:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Kreative Highballs und klassische Cocktails im Industrial-Ambiente"
+  },
+  {
+    "name": "Botanist Bar",
+    "address": "Katharinenfleet 20, 20457 Hamburg",
+    "district": "Altstadt",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Elegante Cocktailbar mit Fokus auf Gin und botanische Drinks.",
+    "website": "https://www.botanist-bar.de",
+    "tags": {
+      "vibe": ["Elegant", "Botanisch", "Stilvoll"],
+      "drink": ["Gin", "Cocktails", "Botanische Drinks"],
+      "feature": ["Große Gin-Auswahl", "Stilvolles Ambiente"],
+      "best_for": ["Gin-Liebhaber", "Stilvolles Date", "After Dinner"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-01:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Botanische Cocktails und große Gin-Auswahl"
+  },
+  {
+    "name": "Boulderwelt Hamburg",
+    "address": "Spaldingstraße 218, 20097 Hamburg",
+    "district": "Hammerbrook",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Große Boulderhalle mit Routen für alle Schwierigkeitsgrade – perfekt für Anfänger und Profis.",
+    "website": "https://www.boulderwelt-hamburg.de",
+    "tags": {
+      "vibe": ["Sportlich", "Community", "Modern"],
+      "activity": ["Bouldern", "Klettern", "Indoor Sport"],
+      "feature": ["Anfängerkurse", "Verschiedene Schwierigkeiten", "Café"],
+      "best_for": ["Aktives Date", "Sport-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-23:00",
+      "sat-sun": "09:00-22:00"
+    },
+    "specialty": "Große Boulderhalle mit Routen für alle Level und Café"
+  },
+  {
+    "name": "braena",
+    "address": "Karolinenstraße 35, 20357 Hamburg",
+    "district": "Karoviertel",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Skandinavisch inspiriertes Café mit exzellentem Brunch und Specialty Coffee.",
+    "website": "https://www.braena.de",
+    "tags": {
+      "vibe": ["Skandinavisch", "Hell", "Modern"],
+      "food": ["Brunch", "Bowls", "Eggs Benedict"],
+      "drink": ["Specialty Coffee", "Säfte"],
+      "feature": ["Skandinavisches Design", "Brunch-Favorit"],
+      "best_for": ["Brunch-Date", "Kaffeedate", "Wochenende"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:30-16:00",
+      "sat-sun": "09:00-17:00"
+    },
+    "specialty": "Skandinavisch inspirierter Brunch im Karoviertel"
+  },
+  {
+    "name": "BUDDELS Weinhandlung & Bar",
+    "address": "Wexstraße 32, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Gemütliche Weinbar mit angeschlossener Weinhandlung und wechselnder Auswahl.",
+    "website": "https://www.buddels.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Weinbar", "Nachbarschaftlich"],
+      "drink": ["Wein", "Naturwein", "Kleine Speisen"],
+      "feature": ["Weinhandlung", "Zum Mitnehmen"],
+      "best_for": ["Weinabend", "Casual Date", "After Work"]
+    },
+    "opening_hours": {
+      "tue-sat": "15:00-23:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Weinbar mit angeschlossener Weinhandlung zum Entdecken"
+  },
+  {
+    "name": "Bullerei",
+    "address": "Lagerstraße 34b, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Tim Mälzers Szenerestaurant in einer denkmalgeschützten Viehmarkthalle mit moderner europäischer Küche.",
+    "website": "https://bullerei.com",
+    "tags": {
+      "vibe": ["Lebhaft", "Industrial", "Trendy"],
+      "food": ["Moderne Küche", "Steaks", "Pasta"],
+      "drink": ["Wein", "Cocktails"],
+      "feature": ["Offene Küche", "Deli", "Reservierung empfohlen"],
+      "best_for": ["Date Night", "Besonderer Anlass", "Foodies"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-23:00"
+    },
+    "specialty": "Tim Mälzers kulinarisches Herzstück in historischer Viehmarkthalle"
+  },
+  {
+    "name": "Café Hosch",
+    "address": "Poelchaukamp 19, 22301 Hamburg",
+    "district": "Winterhude",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Traditionelles Café mit Confiserie und Meisterkonditor, bekannt für handgemachte Torten und Quiches.",
+    "website": "https://cafehosch.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Elegant", "Traditionell"],
+      "food": ["Torten", "Quiches", "Frühstück"],
+      "drink": ["Kaffee", "Tee"],
+      "feature": ["Meisterkonditor", "Handgemachte Spezialitäten"],
+      "best_for": ["Sonntagsbrunch", "Kaffeedate", "Nachmittags"]
+    },
+    "opening_hours": {
+      "wed-fri": "10:30-18:00",
+      "sat-sun": "10:00-18:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Meisterkonditor kreiert handgemachte Torten und Gebäck mit natürlichen Zutaten"
+  },
+  {
+    "name": "Café Kö",
+    "address": "Königstraße 10, 22767 Hamburg",
+    "district": "Altona",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Billard-Café mit mehreren Tischen, Snacks und entspannter Atmosphäre.",
+    "website": null,
+    "tags": {
+      "vibe": ["Entspannt", "Retro", "Gemütlich"],
+      "activity": ["Billard", "Pool"],
+      "drink": ["Bier", "Kaffee", "Cocktails"],
+      "feature": ["Mehrere Billardtische", "Café-Atmosphäre"],
+      "best_for": ["Spieleabend", "Casual Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "16:00-02:00"
+    },
+    "specialty": "Billard spielen in entspannter Café-Atmosphäre"
+  },
+  {
+    "name": "Café Paris",
+    "address": "Rathausstraße 4, 20095 Hamburg",
+    "district": "Altstadt",
+    "type": "cafe",
+    "price_range": "€€€",
+    "description": "Elegantes Jugendstil-Café seit 1882 mit französischer Küche und exzellentem Brunch.",
+    "website": "https://www.cafeparis.net",
+    "tags": {
+      "vibe": ["Elegant", "Historisch", "Französisch"],
+      "food": ["Brunch", "Französische Küche", "Klassiker"],
+      "drink": ["Champagner", "Wein", "Kaffee"],
+      "feature": ["Jugendstil", "Seit 1882", "Zentrale Lage"],
+      "best_for": ["Brunch-Date", "Besonderer Anlass", "Klassiker"]
+    },
+    "opening_hours": {
+      "mon-sun": "09:00-23:00"
+    },
+    "specialty": "Legendäres Jugendstil-Café seit 1882 mit französischem Flair"
+  },
+  {
+    "name": "Cai Kitchen",
+    "address": "Schulterblatt 73, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Vegane Sichuan-Küche mit authentischen Gewürzen und würzigen Gerichten.",
+    "website": "https://www.instagram.com/cai.kitchen/",
+    "tags": {
+      "vibe": ["Modern", "Würzig", "Authentisch"],
+      "food": ["Sichuan", "Chinesisch", "Vegan"],
+      "feature": ["Komplett vegan", "Authentische Gewürze"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Scharf-Liebhaber", "Asiatisch"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Authentische vegane Sichuan-Küche mit würzigem Kick"
+  },
+  {
+    "name": "Carino",
+    "address": "Lange Reihe 93, 20099 Hamburg",
+    "district": "St. Georg",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Vegetarischer Italiener mit hausgemachter Pasta und italienischen Klassikern ohne Fleisch.",
+    "website": "https://www.carino-hamburg.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Italienisch", "Romantisch"],
+      "food": ["Italienisch", "Pasta", "Pizza", "Vegetarisch"],
+      "feature": ["Hausgemachte Pasta", "Vegetarische Klassiker"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Italienisches Date", "Romantisches Dinner", "Vegetarisch"]
+    },
+    "opening_hours": {
+      "tue-sun": "17:00-22:30",
+      "mon": "closed"
+    },
+    "specialty": "Vegetarischer Italiener mit hausgemachter Pasta"
+  },
+  {
+    "name": "Centralkomitee",
+    "address": "St. Pauli Fischmarkt 28-32, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Politisches Kabarett und Comedy in der ehemaligen ÜberQuell-Location mit Hafenblick.",
+    "website": "https://www.centralkomitee.de",
+    "tags": {
+      "vibe": ["Lustig", "Politisch", "Satirisch"],
+      "activity": ["Kabarett", "Comedy", "Satire"],
+      "feature": ["Hafenblick", "Politischer Humor"],
+      "best_for": ["Comedy-Date", "Kabarett", "Kulturabend"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Politisches Kabarett mit Hafenblick"
+  },
+  {
+    "name": "clockers",
+    "address": "Paul-Roosen-Straße 27, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Versteckte Cocktailbar im St.-Pauli-Hinterhof mit Wald-Interior und sehr kreativen Drinks.",
+    "website": "https://clockers.hamburg",
+    "tags": {
+      "vibe": ["Romantisch", "Hip", "Versteckt", "Intim"],
+      "drink": ["Cocktails", "Signature Drinks", "Gin"],
+      "ingredient": ["Hausgemachte Sirups", "Große Gin-Auswahl"],
+      "feature": ["Reservierung empfohlen", "Speakeasy-Feeling"],
+      "best_for": ["Erstes Date", "Jahrestag", "Später Drink"]
+    },
+    "opening_hours": {
+      "tue-wed": "19:00-01:00",
+      "thu": "19:00-01:00",
+      "fri": "19:00-02:00",
+      "sat": "19:00-03:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Auf den Gast abgestimmte Cocktails in Märchenwald-Atmosphäre"
+  },
+  {
+    "name": "Clouds – Heaven's Bar & Kitchen",
+    "address": "Reeperbahn 1, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€€€",
+    "description": "Stylishes Restaurant mit Bar im 23. Stock der Tanzenden Türme mit großartigem Blick über Reeperbahn und Hafen.",
+    "website": "https://www.clouds-hamburg.de",
+    "tags": {
+      "vibe": ["Elegant", "Besonders", "Skyline-View"],
+      "drink": ["Cocktails", "Wein"],
+      "food": ["Steaks", "Seafood", "Fine Dining"],
+      "feature": ["Rooftop", "Offene Küche", "Reservierung nötig"],
+      "best_for": ["Jahrestag", "Business Date"]
+    },
+    "opening_hours": {
+      "mon-sun": "18:00-23:00"
+    },
+    "specialty": "Fine-Dining-Erlebnis hoch über der Reeperbahn mit Hafenblick"
+  },
+  {
+    "name": "CODOS Coffee",
+    "address": "Große Bergstraße 160, 22767 Hamburg",
+    "district": "Altona",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Minimalistisches Specialty-Coffee-Café mit exzellenten Bohnen und gemütlicher Atmosphäre.",
+    "website": "https://www.codoscoffee.de",
+    "tags": {
+      "vibe": ["Minimalistisch", "Hip", "Ruhig"],
+      "drink": ["Specialty Coffee", "Pour Over", "Espresso"],
+      "food": ["Gebäck", "Snacks"],
+      "feature": ["Hochwertige Bohnen", "Minimalistische Einrichtung"],
+      "best_for": ["Kaffeedate", "Ruhiges Date", "Remote Work"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Minimalistisches Café mit exzellentem Specialty Coffee"
+  },
+  {
+    "name": "Copenhagen Coffee Lab",
+    "address": "Eppendorfer Landstraße 4, 20249 Hamburg",
+    "district": "Eppendorf",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Skandinavisch inspiriertes Specialty Coffee Lab mit hochwertigen Bohnen und hausgemachtem Gebäck.",
+    "website": "https://copenhagencoffeelab.com",
+    "tags": {
+      "vibe": ["Skandinavisch", "Modern", "Entspannt"],
+      "drink": ["Specialty Coffee", "Flat White", "Pour Over"],
+      "food": ["Gebäck", "Tartes", "Sandwiches"],
+      "feature": ["Hochwertige Bohnen", "Außensitzplätze"],
+      "best_for": ["Kaffeedate", "Remote Work", "Nachmittags"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Erstklassiger Specialty Coffee aus ausgewählten Farmen weltweit"
+  },
+  {
+    "name": "Cotton Club",
+    "address": "Alter Steinweg 10, 20459 Hamburg",
+    "district": "Altstadt",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Hamburgs ältester Jazzclub mit über 300 Konzerten pro Jahr – Mittwoch ist Eintritt frei!",
+    "website": "https://www.cotton-club.de",
+    "tags": {
+      "vibe": ["Klassisch", "Intim", "Live-Musik"],
+      "drink": ["Cocktails", "Bier", "Wein"],
+      "activity": ["Live Jazz", "Konzerte"],
+      "feature": ["300+ Konzerte/Jahr", "Mittwoch Eintritt frei"],
+      "best_for": ["Musik-Date", "Kulturabend", "Jazz-Liebhaber"]
+    },
+    "opening_hours": {
+      "mon-sat": "20:00-01:00",
+      "sun": "closed"
+    },
+    "specialty": "Hamburgs ältester Jazzclub – über 300 Konzerte pro Jahr, Mittwoch gratis"
+  },
+  {
+    "name": "Damn Good Yoga",
+    "address": "Grindelallee 41, 20146 Hamburg",
+    "district": "Grindel",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Modernes Yogastudio mit regelmäßigen Filmabenden inklusive Popcorn.",
+    "website": "https://www.damngood-yoga.com",
+    "tags": {
+      "vibe": ["Entspannt", "Modern", "Community"],
+      "activity": ["Yoga", "Filmabende", "Workshops"],
+      "feature": ["Filmabende mit Popcorn", "Verschiedene Stile"],
+      "best_for": ["Yoga-Date", "Kreatives Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "Kurse nach Stundenplan"
+    },
+    "specialty": "Filmabende mit Popcorn im Yogastudio"
+  },
+  {
+    "name": "Daruma",
+    "address": "Colonnaden 96, 20354 Hamburg",
+    "district": "Neustadt",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Authentisches japanisches Restaurant mit Omakase-Menü und traditioneller Küche.",
+    "website": "https://www.daruma-hamburg.de",
+    "tags": {
+      "vibe": ["Traditionell", "Authentisch", "Elegant"],
+      "food": ["Japanisch", "Omakase", "Sushi", "Ramen"],
+      "feature": ["Omakase-Menü", "Authentische Zubereitung"],
+      "best_for": ["Japanisch", "Besonderes Essen", "Omakase-Erlebnis"]
+    },
+    "opening_hours": {
+      "tue-sat": "12:00-14:30, 18:00-22:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Authentisches Omakase-Erlebnis in traditionellem Ambiente"
+  },
+  {
+    "name": "Das Hamam",
+    "address": "Feldstraße 39, 20357 Hamburg",
+    "district": "Karolinenviertel",
+    "type": "wellness",
+    "price_range": "€€€",
+    "description": "Orientalisches Hamam direkt am Heiligengeistfeld mit traditioneller türkischer Badekultur. JGA-Pakete ab 499€, berühmt für Wolkenschaum-Behandlungen.",
+    "website": "https://www.das-hamam.de",
+    "tags": {
+      "vibe": ["Entspannt", "Orientalisch", "Romantisch"],
+      "activity": ["Hamam", "Massage", "Peeling", "Wolkenschaum"],
+      "feature": ["Paarrituale", "Orientalisches Ambiente", "JGA-Pakete"],
+      "best_for": ["Wellness-Date", "Jahrestag", "Winterdate", "JGA"]
+    },
+    "opening_hours": {
+      "wed-mon": "12:00-22:00",
+      "tue": "closed"
+    },
+    "specialty": "Traditionelles türkisches Hamam mit Wolkenschaum-Behandlungen und JGA-Paketen ab 499€"
+  },
+  {
+    "name": "Dialog im Dunkeln",
+    "address": "Alter Wandrahm 4, 20457 Hamburg",
+    "district": "Speicherstadt",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Einzigartiges Erlebnis in völliger Dunkelheit, geführt von blinden oder sehbehinderten Guides.",
+    "website": "https://dialog-in-hamburg.de",
+    "tags": {
+      "vibe": ["Besonders", "Emotional", "Interaktiv"],
+      "activity": ["Ausstellung", "Sinneserfahrung"],
+      "feature": ["Geführte Tour", "Inklusion"],
+      "best_for": ["Besonderes Date", "Abenteuer", "Ungewöhnlich"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-18:00",
+      "sat": "09:00-18:00"
+    },
+    "specialty": "Die Welt mit anderen Sinnen erleben in völliger Dunkelheit"
+  },
+  {
+    "name": "DOT Club",
+    "address": "Pulverteich 12, 20099 Hamburg",
+    "district": "St. Georg",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Kleiner Techno-Club mit intimem Vibe und elektronischer Musik nahe dem Hauptbahnhof.",
+    "website": "https://www.dotclub.de",
+    "tags": {
+      "vibe": ["Intim", "Techno", "Underground"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Kleine Location", "Gutes Soundsystem"],
+      "best_for": ["Techno-Date", "Spätes Date", "Clubnacht"]
+    },
+    "opening_hours": {
+      "fri-sat": "23:00-07:00"
+    },
+    "specialty": "Intimer Techno-Club mit guter Soundanlage"
+  },
+  {
+    "name": "Down Under",
+    "address": "Lange Reihe 51, 20099 Hamburg",
+    "district": "St. Georg",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Australischer Pub mit wöchentlichem Pubquiz jeden Montag um 18:30 Uhr.",
+    "website": "https://www.downunder.de",
+    "tags": {
+      "vibe": ["Lebhaft", "Pub", "Gesellig"],
+      "drink": ["Bier", "Cocktails", "Longdrinks"],
+      "activity": ["Pubquiz"],
+      "feature": ["Pubquiz jeden Montag 18:30"],
+      "best_for": ["Quiz-Date", "After Work", "Montag"]
+    },
+    "opening_hours": {
+      "mon-sat": "17:00-01:00",
+      "sun": "17:00-00:00"
+    },
+    "specialty": "Pubquiz jeden Montag um 18:30 Uhr"
+  },
+  {
+    "name": "dripBAR",
+    "address": "Antonistraße 4, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Innovative Cocktailbar am Hein-Köllisch-Platz mit einzigartigen Slow-Drip-Cocktails.",
+    "website": "https://www.instagram.com/dripbar_hh/",
+    "tags": {
+      "vibe": ["Hip", "Kreativ", "Versteckt"],
+      "drink": ["Slow Drip Cocktails", "Cold Brew", "Signature Drinks"],
+      "feature": ["Innovative Techniken", "Versteckter Eingang"],
+      "best_for": ["Cocktail-Liebhaber", "Besonderes Date", "Kreatives Date"]
+    },
+    "opening_hours": {
+      "mon-wed": "18:00-01:00",
+      "thu-sat": "18:00-02:00",
+      "sun": "closed"
+    },
+    "specialty": "Einzigartige Slow-Drip-Cocktails mit stundenlang extrahierten Aromen"
+  },
+  {
+    "name": "Edelfettwerk",
+    "address": "Schnackenburgallee 202, 22525 Hamburg",
+    "district": "Stellingen",
+    "type": "club",
+    "price_range": "€€€",
+    "description": "Große Clubhalle für Techno und elektronische Musik mit wechselnden Events und Partyreihen.",
+    "website": "https://www.edelfettwerk.de",
+    "tags": {
+      "vibe": ["Groß", "Techno", "Industrial"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Große Halle", "Wechselnde Events"],
+      "best_for": ["Techno-Date", "Clubnacht", "Spätes Date"]
+    },
+    "opening_hours": {
+      "Events nach Programm": true
+    },
+    "specialty": "Große Halle für Techno-Events und elektronische Musik"
+  },
+  {
+    "name": "elbgold Röstkaffee Schanze",
+    "address": "Lagerstraße 34c, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Third-Wave-Coffeeshop mit eigener Rösterei in einer ehemaligen Fabrikhalle, beliebt für Cappuccino und New-York-Cheesecake.",
+    "website": "https://www.elbgold.com",
+    "tags": {
+      "vibe": ["Hip", "Lichtdurchflutet", "Schanzen-Industrial"],
+      "drink": ["Specialty Coffee", "Cold Brew"],
+      "food": ["Kuchen", "Frühstück", "Pastries"],
+      "feature": ["Eigene Rösterei", "Außensitzplätze"],
+      "best_for": ["Erstes Date", "Remote Work"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "09:00-18:00"
+    },
+    "specialty": "Hausgerösteter Specialty Coffee und Cappuccino im Herzen der Schanze"
+  },
+  {
+    "name": "Eleven:Eleven",
+    "address": "Eppendorfer Weg 145, 20253 Hamburg",
+    "district": "Eppendorf",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Beliebtes Brunch-Café mit All-Day-Breakfast und gesunden Bowls.",
+    "website": "https://www.eleven-eleven.de",
+    "tags": {
+      "vibe": ["Hell", "Modern", "Gemütlich"],
+      "food": ["Brunch", "Bowls", "Avocado-Toast", "All-Day-Breakfast"],
+      "drink": ["Kaffee", "Säfte", "Smoothies"],
+      "feature": ["All-Day-Breakfast", "Gesunde Optionen"],
+      "best_for": ["Brunch-Date", "Wochenende", "Gesundes Date"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-16:00",
+      "sat-sun": "09:00-17:00"
+    },
+    "specialty": "All-Day-Breakfast und gesunde Bowls"
+  },
+  {
+    "name": "FLASHH Kletterhalle",
+    "address": "Lademannbogen 69, 22339 Hamburg",
+    "district": "Hummelsbüttel",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Moderne Boulderhalle mit 3.000 qm Kletterfläche und über 300 Bouldern.",
+    "website": "https://www.flashh.de",
+    "tags": {
+      "vibe": ["Sportlich", "Modern", "Community"],
+      "activity": ["Bouldern", "Klettern", "Indoor Sport"],
+      "feature": ["3.000 qm", "300+ Boulder", "Anfängerkurse"],
+      "best_for": ["Aktives Date", "Sport-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-23:00",
+      "sat-sun": "09:00-22:00"
+    },
+    "specialty": "3.000 qm Boulderhalle mit über 300 verschiedenen Routen"
+  },
+  {
+    "name": "Float Hamburg",
+    "address": "Verschiedene Standorte",
+    "district": "Hamburg",
+    "type": "wellness",
+    "price_range": "€€€",
+    "description": "Floating-Erlebnis in Salzwasser-Tanks für tiefe Entspannung – 3 Standorte in Hamburg.",
+    "website": "https://www.float-hamburg.de",
+    "tags": {
+      "vibe": ["Entspannt", "Meditativ", "Besonders"],
+      "activity": ["Floating", "Entspannung", "Meditation"],
+      "feature": ["3 Standorte", "Salzwasser-Tanks"],
+      "best_for": ["Wellness-Date", "Stressabbau", "Besonderes Erlebnis"]
+    },
+    "opening_hours": {
+      "mon-sun": "09:00-22:00"
+    },
+    "specialty": "Schwereloses Floating in Salzwasser-Tanks an 3 Standorten"
+  },
+  {
+    "name": "Freundlich+Kompetent",
+    "address": "Osterstraße 55, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Gemütliche Nachbarschaftsbar mit regelmäßigem Pubquiz und entspannter Atmosphäre.",
+    "website": "https://www.instagram.com/freundlichundkompetent/",
+    "tags": {
+      "vibe": ["Gemütlich", "Nachbarschaftlich", "Lebhaft"],
+      "drink": ["Bier", "Wein", "Cocktails"],
+      "activity": ["Pubquiz"],
+      "feature": ["Regelmäßiges Pubquiz", "Entspannte Atmosphäre"],
+      "best_for": ["Quiz-Date", "Casual", "Nachbarschaftsbar"]
+    },
+    "opening_hours": {
+      "mon-sat": "18:00-01:00",
+      "sun": "closed"
+    },
+    "specialty": "Regelmäßiges Pubquiz in gemütlicher Atmosphäre"
+  },
+  {
+    "name": "Fritz Bauch",
+    "address": "Bartelsstraße 6, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€",
+    "description": "Uriger Pub mit langer Geschichte, norddeutschem Bier vom Fass und Biergarten im Hinterhof.",
+    "website": "http://www.fritzbauch.de",
+    "tags": {
+      "vibe": ["Rustikal", "Alternativ", "Gemütlich"],
+      "drink": ["Bier vom Fass", "Wein"],
+      "food": ["Bratkartoffeln"],
+      "feature": ["Biergarten", "Raucherbar", "Barzahlung"],
+      "best_for": ["Casual Date", "After Work", "Kiezabend"]
+    },
+    "opening_hours": {
+      "mon": "12:00-02:00",
+      "tue-thu": "15:30-02:00",
+      "fri": "15:30-04:00",
+      "sat": "12:00-04:00",
+      "sun": "11:00-02:00"
+    },
+    "specialty": "Echte Hamburger Kneipe mit Bratkartoffeln und Biergarten"
+  },
+  {
+    "name": "Fundbureau",
+    "address": "Stresemannstraße 114, 22769 Hamburg",
+    "district": "Altona-Nord",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Alternativer Club und Kulturzentrum mit wechselnden Partys und elektronischer Musik.",
+    "website": "https://www.fundbureau.de",
+    "tags": {
+      "vibe": ["Alternativ", "Techno", "Underground"],
+      "activity": ["Tanzen", "DJ", "Konzerte"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Wechselnde Events", "Alternative Szene"],
+      "best_for": ["Techno-Date", "Alternativ", "Spätes Date"]
+    },
+    "opening_hours": {
+      "Events nach Programm": true
+    },
+    "specialty": "Alternatives Kulturzentrum mit elektronischer Musik"
+  },
+  {
+    "name": "Galopper des Jahres",
+    "address": "Schulterblatt 36, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€",
+    "description": "Kult-Schanzenbar mit Pubquiz an Montag und Dienstag und langen Nächten.",
+    "website": "https://www.instagram.com/galopperdesjahres/",
+    "tags": {
+      "vibe": ["Alternativ", "Lebhaft", "Kultig"],
+      "drink": ["Bier", "Longdrinks"],
+      "activity": ["Pubquiz Mo/Di"],
+      "feature": ["Pubquiz Montag & Dienstag", "Späte Öffnungszeiten"],
+      "best_for": ["Quiz-Date", "Spätes Date", "Schanzen-Klassiker"]
+    },
+    "opening_hours": {
+      "mon-sat": "20:00-04:00",
+      "sun": "20:00-02:00"
+    },
+    "specialty": "Pubquiz jeden Montag und Dienstag in der Kultbar"
+  },
+  {
+    "name": "Gilde-Bowling",
+    "address": "Landwehr 1, 22087 Hamburg",
+    "district": "Uhlenhorst",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Klassische Bowlingbahn mit 24 Bahnen, Bar und Gastronomie.",
+    "website": "https://www.gilde-bowling.de",
+    "tags": {
+      "vibe": ["Retro", "Lebhaft", "Gesellig"],
+      "activity": ["Bowling", "Spiele"],
+      "drink": ["Bier", "Cocktails"],
+      "food": ["Snacks", "Burger"],
+      "feature": ["24 Bahnen", "Bar"],
+      "best_for": ["Spieleabend", "Gruppen-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-thu": "14:00-00:00",
+      "fri-sat": "14:00-02:00",
+      "sun": "12:00-00:00"
+    },
+    "specialty": "Klassisches Bowling mit 24 Bahnen und Bar"
+  },
+  {
+    "name": "Glanz & Gloria",
+    "address": "Spielbudenplatz 28, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Bunte Kiezbar mit viel Licht, Spiegeln und Mixed Audience direkt an der Reeperbahn.",
+    "website": "https://glanzundgloria.hamburg",
+    "tags": {
+      "vibe": ["Laut", "Bunt", "Kiez"],
+      "drink": ["Longdrinks", "Bier", "Shots"],
+      "activity": ["Vorglühen", "Tanzen"],
+      "feature": ["Zentrale Lage", "Lange Öffnungszeiten"],
+      "best_for": ["Pre-Party", "Freunde"]
+    },
+    "opening_hours": {
+      "mon-sun": "18:00-05:00"
+    },
+    "specialty": "Klassische Reeperbahn-Bar zum Vorglühen mit viel Neon und Stimmung"
+  },
+  {
+    "name": "Glouglou Naturweinbar",
+    "address": "Clemens-Schultz-Straße 93, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Naturweinbar mit handverlesener Auswahl an Orange Wines und kleinen Snacks.",
+    "website": "https://www.glouglou-hamburg.de",
+    "tags": {
+      "vibe": ["Hip", "Natürlich", "Intim"],
+      "drink": ["Naturwein", "Orange Wine", "Biowein"],
+      "food": ["Kleine Snacks", "Käse", "Oliven"],
+      "feature": ["Handverlesene Auswahl", "Naturwein-Fokus"],
+      "best_for": ["Weinabend", "Naturwein-Entdecken", "Casual Date"]
+    },
+    "opening_hours": {
+      "tue-sat": "17:00-00:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Handverlesene Naturweine und Orange Wines"
+  },
+  {
+    "name": "Gold im Mund",
+    "address": "Wohlwillstraße 20, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Hippes Frühstückscafé im Kiez mit kreativem Brunch und guter Kaffeeauswahl.",
+    "website": "https://www.goldimmund-hamburg.de",
+    "tags": {
+      "vibe": ["Hip", "Kiez", "Gemütlich"],
+      "food": ["Brunch", "Frühstück", "Bowls"],
+      "drink": ["Specialty Coffee", "Säfte"],
+      "feature": ["Kreative Gerichte", "Kiez-Atmosphäre"],
+      "best_for": ["Brunch-Date", "Wochenende", "Kiez-Date"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-16:00",
+      "sat-sun": "09:00-17:00"
+    },
+    "specialty": "Kreatives Frühstück und Brunch im Kiez"
+  },
+  {
+    "name": "Golden Pudel Club",
+    "address": "St. Pauli Fischmarkt 27, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Legendärer kleiner Club am Hafen – Geheimtipp für experimentelle elektronische Musik.",
+    "website": "https://www.pudel.com",
+    "tags": {
+      "vibe": ["Alternativ", "Legendär", "Intim"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Hafenlage", "Experimentelle Musik"],
+      "best_for": ["Musik-Date", "Spätes Date", "Underground"]
+    },
+    "opening_hours": {
+      "thu-sat": "22:00-05:00"
+    },
+    "specialty": "Legendärer Club für experimentelle elektronische Musik am Hafen"
+  },
+  {
+    "name": "GoldFischGlas",
+    "address": "Bartelsstraße 30, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Schanzenbar mit langer Theke, Happy Hour, Mini-Disco im Keller und dichtem, aber entspanntem Publikum.",
+    "website": "https://goldfischglas.de",
+    "tags": {
+      "vibe": ["Laut", "Lebhaft", "Hip", "Schanzenviertel"],
+      "drink": ["Longdrinks", "Cocktails", "Bier"],
+      "activity": ["Tanzen", "DJ"],
+      "feature": ["Happy Hour", "Später geöffnet"],
+      "best_for": ["Casual", "After Work", "Spontaner Abend"]
+    },
+    "opening_hours": {
+      "mon-sat": "14:00-04:00",
+      "sun": "14:00-02:00"
+    },
+    "specialty": "Bar mit Mini-Disco im Keller und täglicher Happy Hour bis in den Abend"
+  },
+  {
+    "name": "haebel",
+    "address": "Paul-Roosen-Straße 31, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€€€",
+    "description": "Intimes Michelin-Stern-Restaurant mit nur wenigen Plätzen und offener Küche in der Paul-Roosen-Straße.",
+    "website": "https://www.haebel.hamburg",
+    "tags": {
+      "food": ["Tasting Menu", "Modern Cuisine", "Saisonale Küche"],
+      "drink": ["Weinbegleitung", "Naturwein"],
+      "vibe": ["Sehr intim", "Fein", "Minimalistisch"],
+      "feature": ["Offene Küche", "Nur Menü", "Reservierung zwingend"],
+      "dietary": ["Vegetarisches Menü verfügbar"],
+      "best_for": ["Jahrestag", "Fine Dining Date", "Besonderer Anlass"]
+    },
+    "opening_hours": {
+      "tue-thu": "18:30-22:00",
+      "fri-sat": "18:30-22:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Zwei Degustationsmenüs (Flora/Fauna) in extrem persönlicher Atmosphäre mit offenem Küchenkonzept"
+  },
+  {
+    "name": "HALO Club",
+    "address": "Große Freiheit 6, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Clubbing auf mehreren Floors mit House und Techno auf der Großen Freiheit.",
+    "website": "https://www.halo-hamburg.de",
+    "tags": {
+      "vibe": ["House", "Techno", "Party"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Cocktails", "Bier"],
+      "feature": ["Mehrere Floors", "Große Freiheit"],
+      "best_for": ["Clubnacht", "Spätes Date", "Party"]
+    },
+    "opening_hours": {
+      "fri-sat": "23:00-07:00"
+    },
+    "specialty": "House und Techno auf mehreren Floors"
+  },
+  {
+    "name": "Hamburger Kunsthalle",
+    "address": "Glockengießerwall 5, 20095 Hamburg",
+    "district": "Altstadt",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Eines der wichtigsten Kunstmuseen Deutschlands mit Werken vom Mittelalter bis zur Gegenwart.",
+    "website": "https://www.hamburger-kunsthalle.de",
+    "tags": {
+      "vibe": ["Kulturell", "Ruhig", "Inspirierend"],
+      "activity": ["Museum", "Kunstausstellung"],
+      "feature": ["Donnerstags günstiger", "Café im Museum"],
+      "best_for": ["Kulturdate", "Regentag", "Kunstliebhaber"]
+    },
+    "opening_hours": {
+      "tue-sun": "10:00-18:00",
+      "thu": "10:00-21:00",
+      "mon": "closed"
+    },
+    "specialty": "Donnerstagabend von 17:30-21 Uhr ermäßigter Eintritt für 8€"
+  },
+  {
+    "name": "Han Mi",
+    "address": "Bahrenfelder Straße 169, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Authentisches koreanisches Restaurant mit Korean BBQ und klassischen Gerichten.",
+    "website": "https://www.hanmi-hamburg.de",
+    "tags": {
+      "vibe": ["Authentisch", "Lebhaft", "Koreanisch"],
+      "food": ["Koreanisch", "Korean BBQ", "Bibimbap", "Kimchi"],
+      "feature": ["Korean BBQ am Tisch", "Authentische Rezepte"],
+      "best_for": ["Koreanisch", "Gruppen-Date", "Besonderes Essen"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Authentisches Korean BBQ am Tisch grillen"
+  },
+  {
+    "name": "Happenpappen",
+    "address": "Osterstraße 52, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Komplett veganes Restaurant mit wechselnder Tageskarte und Soulfood-Vibes.",
+    "website": "https://www.happenpappen.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Kreativ", "Familiär"],
+      "food": ["Vegan", "Wechselnde Karte", "Soulfood"],
+      "feature": ["Komplett vegan", "Tagesgerichte"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Mittagessen", "Casual"]
+    },
+    "opening_hours": {
+      "tue-sat": "12:00-21:00",
+      "sun": "closed",
+      "mon": "closed"
+    },
+    "specialty": "Komplett veganes Restaurant mit täglich wechselnder Karte"
+  },
+  {
+    "name": "Hatari Pfälzer Stube",
+    "address": "Schanzenstraße 2–4, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Rustikales Schanzenrestaurant für deftige Pfälzer Küche, große Burger und Flammkuchen.",
+    "website": "https://hataripfaelzerstube.com",
+    "tags": {
+      "food": ["Burger", "Flammkuchen", "Pfälzer Küche"],
+      "drink": ["Bier", "Wein"],
+      "vibe": ["Gemütlich", "Rustikal", "Lebhaft"],
+      "feature": ["Durchgehend warme Küche", "Schanzenlage"],
+      "dietary": ["Vegetarisch"],
+      "best_for": ["Casual", "Freunde", "After Work"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-23:00"
+    },
+    "specialty": "Deftige Pfälzer Teller und riesige Burger im Herzen der Schanze"
+  },
+  {
+    "name": "Heavenly Spa by Westin",
+    "address": "Platz der Deutschen Einheit 2, 20457 Hamburg",
+    "district": "HafenCity",
+    "type": "wellness",
+    "price_range": "€€€€",
+    "description": "Luxuriöses Spa im Westin Hotel in der Elbphilharmonie mit Hafenblick, Pool, Saunalandschaft und privater Suite mit Whirlpool.",
+    "website": "https://www.heavenlyspahamburg.de",
+    "tags": {
+      "vibe": ["Luxuriös", "Entspannt", "Exklusiv"],
+      "activity": ["Spa", "Massage", "Pool", "Sauna"],
+      "feature": ["Elbphilharmonie-Lage", "Hafenblick", "Private Suiten", "Whirlpool"],
+      "best_for": ["Wellness-Date", "Luxus-Date", "Besonderer Anlass"]
+    },
+    "opening_hours": {
+      "mon-sun": "07:00-22:00"
+    },
+    "specialty": "Wellness hoch über dem Hafen mit privater Suite und Whirlpool"
+  },
+  {
+    "name": "Holi Kino",
+    "address": "Hein-Köllisch-Platz 12, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Kleines Programmkino im Herzen von St. Pauli mit Arthouse-Filmen.",
+    "website": "https://www.holi-kino.de",
+    "tags": {
+      "vibe": ["Kiez", "Intim", "Arthouse"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Programmkino", "Kleine Säle", "Kiez-Lage"],
+      "best_for": ["Film-Date", "Regentag", "Kiez-Date"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Intimes Programmkino mitten im Kiez"
+  },
+  {
+    "name": "Holthusenbad – Jugendstilhalle",
+    "address": "Goernestraße 21, 20249 Hamburg",
+    "district": "Eppendorf",
+    "type": "wellness",
+    "price_range": "€€",
+    "description": "Historisches Jugendstil-Schwimmbad mit warmem Innenbecken, Sauna und nostalgischem Flair.",
+    "website": "https://www.baederland.de/baeder/holthusenbad",
+    "tags": {
+      "vibe": ["Entspannt", "Nostalgisch", "Ruhig"],
+      "activity": ["Schwimmen", "Sauna"],
+      "feature": ["Innenbecken", "Jugendstil-Architektur"],
+      "best_for": ["Winterdate", "Entspannungsdate"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-22:00",
+      "sat-sun": "10:00-20:00"
+    },
+    "specialty": "Schwimmen unter Jugendstil-Decke mit warmem Wasser und Sauna-Bereich"
+  },
+  {
+    "name": "Irish Rover",
+    "address": "Detlev-Bremer-Straße 39, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Authentischer Irish Pub mit wöchentlichem Pubquiz jeden Donnerstag um 19:00 Uhr.",
+    "website": "https://www.irishrover.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Pub", "Irisch"],
+      "drink": ["Guinness", "Whiskey", "Bier"],
+      "activity": ["Pubquiz"],
+      "feature": ["Pubquiz jeden Donnerstag 19:00"],
+      "best_for": ["Quiz-Date", "Pub-Abend", "Donnerstag"]
+    },
+    "opening_hours": {
+      "mon-sat": "16:00-02:00",
+      "sun": "16:00-00:00"
+    },
+    "specialty": "Pubquiz jeden Donnerstag um 19:00 Uhr"
+  },
+  {
+    "name": "JA AN Korean BBQ",
+    "address": "Hopfenmarkt 10, 20457 Hamburg",
+    "district": "Altstadt",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Modernes Korean BBQ Restaurant mit All-you-can-eat Option und Premium-Fleisch.",
+    "website": "https://www.jaan-hamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Lebhaft", "Interaktiv"],
+      "food": ["Korean BBQ", "Koreanisch", "All-you-can-eat"],
+      "feature": ["Grillen am Tisch", "Premium-Qualität"],
+      "best_for": ["Gruppen-Date", "Besonderes Essen", "Interaktiv"]
+    },
+    "opening_hours": {
+      "tue-sun": "17:00-23:00",
+      "mon": "closed"
+    },
+    "specialty": "Korean BBQ mit All-you-can-eat Option"
+  },
+  {
+    "name": "JING JING",
+    "address": "Grindelhof 66, 20146 Hamburg",
+    "district": "Rotherbaum",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Beliebtes chinesisches Restaurant mit Dim Sum und Szechuan-Küche.",
+    "website": null,
+    "tags": {
+      "vibe": ["Authentisch", "Lebhaft", "Familiär"],
+      "food": ["Chinesisch", "Dim Sum", "Szechuan"],
+      "feature": ["Hausgemachte Dim Sum", "Authentische Gewürze"],
+      "best_for": ["Asiatisch", "Dim Sum", "Casual Date"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-22:00"
+    },
+    "specialty": "Hausgemachte Dim Sum und authentische Szechuan-Küche"
+  },
+  {
+    "name": "Jour Fixe Café",
+    "address": "Eppendorfer Weg 69, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Gemütliches Café mit Specialty Coffee und hausgemachtem Kuchen.",
+    "website": "https://www.jourfixe-cafe.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Nachbarschaftlich", "Ruhig"],
+      "drink": ["Specialty Coffee", "Tee"],
+      "food": ["Kuchen", "Frühstück"],
+      "feature": ["Hausgemachter Kuchen", "Ruhige Atmosphäre"],
+      "best_for": ["Kaffeedate", "Ruhiges Date", "Nachmittags"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Specialty Coffee und hausgemachter Kuchen in gemütlicher Atmosphäre"
+  },
+  {
+    "name": "Kaffeemuseum Burg",
+    "address": "St. Annenufer 2, 20457 Hamburg",
+    "district": "Speicherstadt",
+    "type": "activity",
+    "price_range": "€",
+    "description": "Familiengeführtes Kaffeemuseum seit 1923 im einzigen Gewölbekeller der Speicherstadt.",
+    "website": "https://kaffeemuseum-burg.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Historisch", "Duftend"],
+      "activity": ["Museum", "Kaffee-Verkostung"],
+      "feature": ["Eigene Rösterei", "Gewölbekeller"],
+      "best_for": ["Kaffeeliebhaber", "Kulturdate", "Schlechtwetter"]
+    },
+    "opening_hours": {
+      "thu-sun": "10:00-18:00",
+      "mon-wed": "closed"
+    },
+    "specialty": "8.500 Exponate rund um Kaffee im historischen Gewölbekeller"
+  },
+  {
+    "name": "Kaifu-Sole",
+    "address": "Hohe Weide 15, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "wellness",
+    "price_range": "€€",
+    "description": "Solebad mit Floating-Pool (6% Salzgehalt) und Himalaya-Salzgrotte für tiefe Entspannung.",
+    "website": "https://www.baederland.de/baeder/kaifu-sole",
+    "tags": {
+      "vibe": ["Entspannt", "Therapeutisch", "Ruhig"],
+      "activity": ["Floating", "Sauna", "Salzgrotte", "Schwimmen"],
+      "feature": ["Floating-Pool 6% Salzgehalt", "Himalaya-Sauna"],
+      "best_for": ["Wellness-Date", "Entspannung", "Winterdate"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-23:00",
+      "sat-sun": "09:00-22:00"
+    },
+    "specialty": "Floating-Pool mit 6% Salzgehalt und Himalaya-Salzgrotte"
+  },
+  {
+    "name": "Kapitel Drei",
+    "address": "Schulterblatt 58, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Buchhandlung und Café mit Fokus auf feministische und queere Literatur, regelmäßiger Buchclub.",
+    "website": "https://www.kapiteldrei.de",
+    "tags": {
+      "vibe": ["Intellektuell", "Inklusiv", "Gemütlich"],
+      "drink": ["Kaffee", "Tee"],
+      "food": ["Kuchen", "Snacks"],
+      "activity": ["Buchclub", "Lesungen"],
+      "feature": ["Feministische Literatur", "Queere Literatur", "Buchclub"],
+      "best_for": ["Literatur-Date", "Ruhiges Date", "LGBTQ+ Date"]
+    },
+    "opening_hours": {
+      "mon-sat": "10:00-19:00",
+      "sun": "closed"
+    },
+    "specialty": "Buchclub mit Fokus auf feministische und queere Literatur"
+  },
+  {
+    "name": "Karls Café & Weine",
+    "address": "Keplerstraße 17a, 22763 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Authentisches äthiopisch-eritreisches Restaurant mit Injera, Wots und traditioneller Kaffeezeremonie.",
+    "website": "https://www.karlscafeweine.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Authentisch", "Exotisch"],
+      "food": ["Äthiopisch", "Injera", "Doro Wot"],
+      "drink": ["Äthiopischer Kaffee", "Wein"],
+      "feature": ["Barzahlung", "Kaffeezeremonie"],
+      "dietary": ["Vegan", "Vegetarisch"],
+      "best_for": ["Besonderes Essen", "Vegan-Date", "Kulturell"]
+    },
+    "opening_hours": {
+      "tue-sat": "17:00-22:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Traditionelle äthiopische Kaffeezeremonie Bunna mit Popcorn"
+  },
+  {
+    "name": "Katze",
+    "address": "Schulterblatt 88, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€",
+    "description": "Kult-Bar direkt am Schulterblatt gegenüber der Roten Flora mit großer Terrasse und Caipirinha-Happy-Hour.",
+    "website": "https://www.instagram.com/katze_hamburg/",
+    "tags": {
+      "vibe": ["Lebhaft", "Alternativ", "Schanze"],
+      "drink": ["Caipirinha", "Cocktails", "Bier"],
+      "food": ["Bar-Food", "Mittag- und Abendessen"],
+      "feature": ["Große Terrasse", "Happy Hour bis 22 Uhr"],
+      "best_for": ["After Work", "Casual Date", "Sonniger Tag"]
+    },
+    "opening_hours": {
+      "mon-thu": "15:00-00:00",
+      "fri": "18:00-03:00",
+      "sat": "13:00-03:00"
+    },
+    "specialty": "Caipirinha-Happy-Hour bis 22 Uhr für 5 Euro"
+  },
+  {
+    "name": "Kenko",
+    "address": "Clemens-Schultz-Straße 97, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Neueröffnung 2025 – Veganes japanisches Restaurant mit Ramen und Gyoza.",
+    "website": null,
+    "tags": {
+      "vibe": ["Modern", "Japanisch", "Neu"],
+      "food": ["Japanisch", "Vegan", "Ramen", "Gyoza"],
+      "feature": ["Neueröffnung 2025", "Komplett vegan"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Japanisch", "Neueröffnung"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Vegane japanische Küche – Neueröffnung 2025"
+  },
+  {
+    "name": "kini",
+    "address": "Schulterblatt 77, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Erstes vegan-koreanisches Restaurant Hamburgs mit authentischen Gerichten ohne tierische Produkte.",
+    "website": "https://www.kini-hamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Authentisch", "Minimalistisch"],
+      "food": ["Koreanisch", "Vegan", "Bibimbap", "Kimchi"],
+      "feature": ["Erstes vegan-koreanisches Restaurant HH", "Komplett vegan"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Koreanisch", "Besonderes Essen"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-21:30",
+      "mon": "closed"
+    },
+    "specialty": "Erstes vegan-koreanisches Restaurant Hamburgs"
+  },
+  {
+    "name": "Kkokki Loves Vegan",
+    "address": "Schanzenstraße 24, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Veganes koreanisches Restaurant mit Korean Fried Chicken, Bibimbap und mehr – alles pflanzlich.",
+    "website": "https://www.instagram.com/kkokki.loves.vegan/",
+    "tags": {
+      "vibe": ["Hip", "Modern", "Schanze"],
+      "food": ["Koreanisch", "Vegan", "Korean Fried Chicken"],
+      "feature": ["Komplett vegan", "Koreanische Klassiker"],
+      "dietary": ["Vegan"],
+      "best_for": ["Vegan-Date", "Koreanisch", "Casual"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Veganes Korean Fried Chicken und koreanische Klassiker"
+  },
+  {
+    "name": "Klatschmohn Café",
+    "address": "Bahrenfelder Straße 257, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Gemütliches Café mit exzellentem Brunch und hausgemachten Kuchen in Ottensen.",
+    "website": null,
+    "tags": {
+      "vibe": ["Gemütlich", "Familiär", "Heimelig"],
+      "food": ["Brunch", "Kuchen", "Frühstück"],
+      "drink": ["Kaffee", "Tee"],
+      "feature": ["Hausgemachter Kuchen", "Brunch-Favorit"],
+      "best_for": ["Brunch-Date", "Kaffeedate", "Wochenende"]
+    },
+    "opening_hours": {
+      "wed-sun": "09:00-18:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Hausgemachter Kuchen und gemütlicher Brunch"
+  },
+  {
+    "name": "Klinker Bar",
+    "address": "Wexstraße 38, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Entspannte Weinbar mit Naturweinen und kleinen Gerichten in gemütlicher Atmosphäre.",
+    "website": "https://www.klinker-bar.de",
+    "tags": {
+      "vibe": ["Entspannt", "Natürlich", "Gemütlich"],
+      "drink": ["Naturwein", "Wein", "Orange Wine"],
+      "food": ["Kleine Gerichte", "Käse", "Antipasti"],
+      "feature": ["Naturwein-Fokus", "Kleine Karte"],
+      "best_for": ["Weinabend", "Casual Date", "After Dinner"]
+    },
+    "opening_hours": {
+      "tue-sat": "17:00-00:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Entspannte Naturweinbar mit kleinen Gerichten"
+  },
+  {
+    "name": "Kopiba",
+    "address": "Beim Grünen Jäger 19, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Café-Bar mit eigener Röstung, gemütlichem Interior und Abendprogramm von Stand-up bis Poetry.",
+    "website": "https://kopiba.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Kiezig", "Alternativ"],
+      "drink": ["Kaffee", "Longdrinks"],
+      "food": ["Kuchen"],
+      "activity": ["Comedy", "Poetry Slam"],
+      "best_for": ["Casual Date", "Kulturdate"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-01:00",
+      "sat-sun": "10:00-01:00"
+    },
+    "specialty": "Mischung aus Kaffeerösterei, Bar und Kleinkunstbühne"
+  },
+  {
+    "name": "Koralle Kino",
+    "address": "Osterstraße 45-47, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Traditionelles Programmkino seit 1954 mit besonderem Charme und Arthouse-Filmen.",
+    "website": "https://www.koralle-kino.de",
+    "tags": {
+      "vibe": ["Nostalgisch", "Klassisch", "Arthouse"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Seit 1954", "Traditionelles Kino", "Charme"],
+      "best_for": ["Film-Date", "Regentag", "Klassiker"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Traditionelles Programmkino seit 1954"
+  },
+  {
+    "name": "KorallBar",
+    "address": "Simon-von-Utrecht-Straße 89, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€",
+    "description": "Urige Eckkneipe mit U-förmigem Tresen, maritimer Deko und wechselnden DJs.",
+    "website": "https://www.instagram.com/korallbar/",
+    "tags": {
+      "vibe": ["Urig", "Maritim", "Kiezig"],
+      "drink": ["Cocktails", "Bier", "Longdrinks"],
+      "activity": ["DJ"],
+      "feature": ["Raucherbar", "Kneipencharme"],
+      "best_for": ["Kiezabend", "Authentisches St. Pauli", "Spätes Date"]
+    },
+    "opening_hours": {
+      "tue-sat": "19:00-03:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Echte Hamburger Hafenkneipe mit maritimem Charme"
+  },
+  {
+    "name": "Krug",
+    "address": "Paul-Roosen-Straße 35, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Kleines Wohnzimmer-Restaurant mit wechselnder Karte, offener Küche und starker Weinauswahl in der Paul-Roosen-Straße.",
+    "website": "https://www.krughamburg.de",
+    "tags": {
+      "food": ["Regionale Küche", "Wechselnde Karte", "Hausmannskost modern"],
+      "drink": ["Wein", "Aperitif"],
+      "vibe": ["Romantisch", "Gemütlich", "Intim"],
+      "feature": ["Offene Küche", "Kleine Karte", "Terrassenplatz im Sommer"],
+      "dietary": ["Vegetarische Optionen"],
+      "best_for": ["Erstes Date", "Jahrestag", "Ruhiges Dinner"]
+    },
+    "opening_hours": {
+      "mon-sun": "18:00-23:00"
+    },
+    "specialty": "Sehr persönliche Atmosphäre mit offener Küche und liebevoll kuratierter Weinkarte"
+  },
+  {
+    "name": "Kurkuma Kochschule",
+    "address": "Gärtnerstraße 43, 20253 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "activity",
+    "price_range": "€€€",
+    "description": "Kochschule mit Fokus auf vegane Kochkurse und internationale Küche.",
+    "website": "https://www.kurkuma-kochschule.de",
+    "tags": {
+      "vibe": ["Lehrreich", "Gesellig", "Kreativ"],
+      "activity": ["Kochkurs", "Vegan kochen"],
+      "feature": ["Vegane Kurse", "Internationale Küche"],
+      "best_for": ["Kochdate", "Vegan-Date", "Gruppen-Date"]
+    },
+    "opening_hours": {
+      "Kurse nach Terminplan": true
+    },
+    "specialty": "Vegane Kochkurse mit wechselnden internationalen Themen"
+  },
+  {
+    "name": "La Crème de la Crêpe",
+    "address": "Erzbergerstraße 14, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Authentische französische Crêperie mit Galettes aus bretonischem Buchweizenmehl.",
+    "website": "https://www.instagram.com/lacremedelacrepe.hh/",
+    "tags": {
+      "vibe": ["Französisch", "Gemütlich", "Authentisch"],
+      "food": ["Crêpes", "Galettes", "Französisch"],
+      "drink": ["Cidre", "Wein"],
+      "feature": ["Echte Zutaten aus Frankreich"],
+      "dietary": ["Vegetarisch", "Glutenfreie Optionen"],
+      "best_for": ["Französisches Date", "Casual", "Sonntagsbrunch"]
+    },
+    "opening_hours": {
+      "wed-fri": "12:00-14:30, 18:00-22:00",
+      "sat": "12:30-22:00",
+      "sun": "13:00-18:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Bretonische Galettes aus echtem französischem Buchweizenmehl"
+  },
+  {
+    "name": "Le Lion • Bar de Paris",
+    "address": "Rathausstraße 3, 20095 Hamburg",
+    "district": "Altstadt",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Legendäre Pariser Cocktailbar, die den Gin Basil Smash erfand und klassische Cocktails in elegantem Setting serviert.",
+    "website": "https://www.lelion.net",
+    "tags": {
+      "vibe": ["Romantisch", "Elegant", "Speakeasy"],
+      "drink": ["Gin Basil Smash", "Klassische Cocktails", "Champagner"],
+      "ingredient": ["Große Gin-Auswahl", "Frische Kräuter"],
+      "feature": ["Reservierung nötig", "Kartenzahlung"],
+      "best_for": ["Erstes Date", "Jahrestag"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-01:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Erfinder des Gin Basil Smash und elegante Cocktailkunst"
+  },
+  {
+    "name": "Le SPA Hamburg",
+    "address": "Lange Reihe 25, 20099 Hamburg",
+    "district": "St. Georg",
+    "type": "wellness",
+    "price_range": "€€",
+    "description": "Entspannendes Day Spa mit erschwinglichen Massagen wie der Kerzen-Massage für 55€.",
+    "website": "https://www.lespa-hamburg.de",
+    "tags": {
+      "vibe": ["Entspannt", "Intim", "Gemütlich"],
+      "activity": ["Massage", "Wellness"],
+      "feature": ["Kerzen-Massage 55€", "Erschwingliche Preise"],
+      "best_for": ["Wellness-Date", "Entspannung", "Geschenk"]
+    },
+    "opening_hours": {
+      "mon-sat": "10:00-20:00",
+      "sun": "12:00-18:00"
+    },
+    "specialty": "Kerzen-Massage für 55€ – entspannend und erschwinglich"
+  },
+  {
+    "name": "Lesesaal Bar",
+    "address": "Karolinenstraße 2, 20357 Hamburg",
+    "district": "Karoviertel",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Ruhige Bar mit Bücherregalen, Kerzenlicht und guten Drinks – ideal für Gespräche.",
+    "website": "https://www.instagram.com/lesesaal_bar/",
+    "tags": {
+      "vibe": ["Romantisch", "Leise", "Intellektuell"],
+      "drink": ["Wein", "Cocktails"],
+      "feature": ["Bücherregale", "Kerzenlicht"],
+      "best_for": ["Erstes Date", "Langes Gespräch"],
+      "activity": ["Lesungen gelegentlich"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-01:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Bücherregale und Wohnzimmer-Atmosphäre als Bar im Karoviertel"
+  },
+  {
+    "name": "Lilli Escher",
+    "address": "Max-Brauer-Allee 279, 22769 Hamburg",
+    "district": "Altona-Nord",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Bar an prominenter Ecke zwischen Altona und Schanze mit langer Theke, Cocktails und regelmäßigen DJ-Partys.",
+    "website": "https://www.instagram.com/lilli_escher/",
+    "tags": {
+      "vibe": ["Hip", "Lebhaft", "Party"],
+      "drink": ["Cocktails", "Longdrinks", "Bier"],
+      "activity": ["DJ", "Tanzen", "Billard"],
+      "feature": ["Lange Theke", "Regelmäßige Events"],
+      "best_for": ["After Work", "Partynacht", "Casual Date"]
+    },
+    "opening_hours": {
+      "tue-thu": "19:00-02:00",
+      "fri-sat": "19:00-04:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Perfekte Lage für lange Partynächte mit regelmäßigen DJ Line-ups"
+  },
+  {
+    "name": "Lily of the Valley",
+    "address": "Bahrenfelder Straße 212, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Vegetarisches Café und Bistro mit wöchentlich wechselnder Karte und liebevoll angerichteten Gerichten.",
+    "website": "https://www.lily-hamburg.de",
+    "tags": {
+      "vibe": ["Grün", "Gemütlich", "Liebevoll"],
+      "food": ["Vegetarisch", "Soja-Bolo", "Risotto", "Brunch"],
+      "drink": ["Kaffee", "Säfte"],
+      "feature": ["Wöchentlich wechselnde Karte", "Außensitzplätze"],
+      "dietary": ["Vegetarisch", "Vegan"],
+      "best_for": ["Vegetarisches Date", "Sonntagsbrunch", "Casual"]
+    },
+    "opening_hours": {
+      "mon": "11:30-15:00",
+      "tue-fri": "11:30-17:00",
+      "sat": "10:00-17:00",
+      "sun": "10:00-17:00"
+    },
+    "specialty": "Vegetarische Küche mit Dauerbrenner Soja-Bolo und wechselnden Gerichten"
+  },
+  {
+    "name": "Literaturhaus Hamburg",
+    "address": "Schwanenwik 38, 22087 Hamburg",
+    "district": "Uhlenhorst",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Kulturzentrum mit täglichen Lesungen, Café und literarischen Veranstaltungen an der Außenalster.",
+    "website": "https://www.literaturhaus-hamburg.de",
+    "tags": {
+      "vibe": ["Kulturell", "Ruhig", "Literarisch"],
+      "activity": ["Lesungen", "Café", "Veranstaltungen"],
+      "feature": ["Tägliche Lesungen", "Café", "Alsterblick"],
+      "best_for": ["Kulturdate", "Literatur-Date", "Ruhiges Date"]
+    },
+    "opening_hours": {
+      "Veranstaltungen nach Programm": true
+    },
+    "specialty": "Tägliche Lesungen und Café mit Blick auf die Außenalster"
+  },
+  {
+    "name": "Maquis",
+    "address": "Max-Brauer-Allee 142, 22765 Hamburg",
+    "district": "Altona",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Vegetarisches Restaurant mit angeschlossener Weinbar – 3-Gang-Menü für 55€.",
+    "website": "https://www.maquis-hamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Elegant", "Weinbar"],
+      "food": ["Vegetarisch", "Menü", "Fine Dining"],
+      "drink": ["Naturwein", "Wein"],
+      "feature": ["Weinbar", "3-Gang-Menü 55€"],
+      "dietary": ["Vegetarisch"],
+      "best_for": ["Vegetarisches Date", "Fine Dining", "Weinabend"]
+    },
+    "opening_hours": {
+      "wed-sat": "18:00-22:00",
+      "sun-tue": "closed"
+    },
+    "specialty": "Vegetarisches 3-Gang-Menü für 55€ mit exzellenter Weinbegleitung"
+  },
+  {
+    "name": "Meyer Lansky's",
+    "address": "Poolstraße 22, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Versteckte Speakeasy-Bar im Stil der Prohibitionszeit mit exzellenten Cocktails.",
+    "website": "https://www.meyerlanskys.de",
+    "tags": {
+      "vibe": ["Versteckt", "Speakeasy", "Exklusiv"],
+      "drink": ["Cocktails", "Whisky", "Prohibition-Style"],
+      "feature": ["Versteckter Eingang", "1920er Stil"],
+      "best_for": ["Besonderes Date", "Speakeasy-Erlebnis", "Cocktail-Liebhaber"]
+    },
+    "opening_hours": {
+      "tue-sat": "19:00-02:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Versteckte Speakeasy-Bar im Stil der 1920er Jahre"
+  },
+  {
+    "name": "Miniatur Wunderland",
+    "address": "Kehrwieder 2–4/Block D, 20457 Hamburg",
+    "district": "Speicherstadt",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Die größte Modelleisenbahn der Welt mit liebevoll gestalteten Miniaturwelten – überraschend romantisch und verspielt.",
+    "website": "https://www.miniatur-wunderland.de",
+    "tags": {
+      "vibe": ["Verspielt", "Staunend", "Touristisch"],
+      "activity": ["Spaziergang durch Ausstellung", "Fotospots"],
+      "feature": ["Lange Öffnungszeiten", "Vorab-Ticket empfohlen"],
+      "best_for": ["Erstes Date", "Verspieltes Date", "Schlechtwetter"]
+    },
+    "opening_hours": {
+      "mon-thu": "10:00-19:00",
+      "fri": "10:00-21:00",
+      "sat": "08:30-21:00",
+      "sun": "08:30-20:00"
+    },
+    "specialty": "Detailverliebte Miniaturwelt mit Tag-Nacht-Wechsel und vielen versteckten Gags"
+  },
+  {
+    "name": "Molotow",
+    "address": "Nobistor 14, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "club",
+    "price_range": "€€",
+    "description": "Legendärer Indie-Club mit Live-Konzerten, Parties und kleinem Hofgarten am Nobistor.",
+    "website": "https://www.molotowclub.com",
+    "tags": {
+      "vibe": ["Indie", "Alternativ", "Laut"],
+      "activity": ["Live Musik", "Clubnacht"],
+      "feature": ["Open-Air-Hof", "Mehrere Floors"],
+      "best_for": ["Indie-Date", "Nach dem Konzert"],
+      "drink": ["Bier", "Longdrinks"]
+    },
+    "opening_hours": {
+      "event_days": "meist ab 20:00 bis spät"
+    },
+    "specialty": "Intime Indie-Konzerte und alternative Clubnächte mit Kiez-Charme"
+  },
+  {
+    "name": "Mr Kao",
+    "address": "Kleine Rainstraße 10, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Modernes taiwanesisches Restaurant mit Bao Buns, Ramen und asiatischem Comfort Food.",
+    "website": "https://www.mrkao.de",
+    "tags": {
+      "vibe": ["Modern", "Hip", "Asiatisch"],
+      "food": ["Taiwanesisch", "Bao Buns", "Ramen", "Asiatisch"],
+      "feature": ["Bao Buns", "Moderne Asia-Küche"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Asiatisch", "Casual Date", "Hip"]
+    },
+    "opening_hours": {
+      "tue-sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Taiwanesische Bao Buns und modernes asiatisches Comfort Food"
+  },
+  {
+    "name": "Mr. Dumpling",
+    "address": "Ottenser Hauptstraße 34, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Türkische Dumplings (Manti), georgische Khinkali und mongolische Buuz – handgemacht und liebevoll gefüllt.",
+    "website": "https://mrdumpling.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Authentisch", "International"],
+      "food": ["Dumplings", "Manti", "Khinkali"],
+      "feature": ["Handgemacht", "Glutenfreie Option"],
+      "dietary": ["Vegetarisch", "Vegan", "Glutenfrei"],
+      "best_for": ["Casual Date", "Streetfood-Vibes", "Vegan-Date"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-22:00"
+    },
+    "specialty": "Handgefüllte türkische Manti und internationale Dumplings"
+  },
+  {
+    "name": "Naturweinladen",
+    "address": "Eppendorfer Weg 117, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Spezialisierte Weinhandlung und Bar mit großer Auswahl an Naturweinen zum Probieren.",
+    "website": "https://www.naturweinladen.de",
+    "tags": {
+      "vibe": ["Entspannt", "Natürlich", "Spezialisiert"],
+      "drink": ["Naturwein", "Biowein", "Orange Wine"],
+      "feature": ["Weinverkostung", "Weinhandlung", "Große Auswahl"],
+      "best_for": ["Weinabend", "Naturwein-Entdecken", "After Work"]
+    },
+    "opening_hours": {
+      "tue-fri": "14:00-21:00",
+      "sat": "12:00-20:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Große Auswahl an Naturweinen zum Probieren und Mitnehmen"
+  },
+  {
+    "name": "Nica Jazz Club",
+    "address": "Poolstraße 11, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Neuer Jazzclub seit November 2024 mit fast täglichen Live-Konzerten in intimer Atmosphäre.",
+    "website": "https://www.nicajazzclub.de",
+    "tags": {
+      "vibe": ["Intim", "Live-Musik", "Neu"],
+      "drink": ["Cocktails", "Wein", "Bier"],
+      "activity": ["Live Jazz", "Konzerte"],
+      "feature": ["Fast täglich Konzerte", "Neu seit Nov 2024"],
+      "best_for": ["Musik-Date", "Jazz-Liebhaber", "Kulturabend"]
+    },
+    "opening_hours": {
+      "tue-sat": "19:00-01:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Neuer Jazzclub mit fast täglichen Live-Konzerten seit November 2024"
+  },
+  {
+    "name": "NOM",
+    "address": "Bahrenfelder Straße 206, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Modernes vietnamesisches Restaurant mit Pho, Bun und frischen Zutaten.",
+    "website": "https://www.nom-restaurant.de",
+    "tags": {
+      "vibe": ["Modern", "Frisch", "Asiatisch"],
+      "food": ["Vietnamesisch", "Pho", "Bun", "Summer Rolls"],
+      "feature": ["Frische Zutaten", "Moderne Interpretation"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Asiatisch", "Casual Date", "Gesund"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-22:00"
+    },
+    "specialty": "Modernes vietnamesisches Essen mit frischen Zutaten"
+  },
+  {
+    "name": "Nord Coast Coffee",
+    "address": "Kleine Reichenstraße 9-11, 20457 Hamburg",
+    "district": "Altstadt",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Specialty Coffee Rösterei mit Café in der Altstadt – bekannt für exzellenten Kaffee.",
+    "website": "https://www.nordcoast.coffee",
+    "tags": {
+      "vibe": ["Modern", "Professionell", "Hip"],
+      "drink": ["Specialty Coffee", "Espresso", "Filter"],
+      "food": ["Gebäck", "Snacks"],
+      "feature": ["Eigene Rösterei", "Barista-Qualität"],
+      "best_for": ["Kaffeedate", "Espresso-Liebhaber", "Remote Work"]
+    },
+    "opening_hours": {
+      "mon-fri": "07:30-18:00",
+      "sat": "09:00-18:00",
+      "sun": "10:00-17:00"
+    },
+    "specialty": "Hauseigene Rösterei mit exzellentem Espresso"
+  },
+  {
+    "name": "Nordwandhalle",
+    "address": "Kielortring 51, 22457 Hamburg",
+    "district": "Langenhorn",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Größte Kletterhalle Norddeutschlands mit 4.000 qm Kletterfläche und Anfängerkursen.",
+    "website": "https://www.nordwandhalle.de",
+    "tags": {
+      "vibe": ["Sportlich", "Groß", "Professionell"],
+      "activity": ["Klettern", "Bouldern", "Indoor Sport"],
+      "feature": ["4.000 qm", "Größte Halle Norddeutschlands", "Anfängerkurse"],
+      "best_for": ["Aktives Date", "Sport-Date", "Klettern lernen"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-23:00",
+      "sat-sun": "09:00-22:00"
+    },
+    "specialty": "Größte Kletterhalle Norddeutschlands mit 4.000 qm"
+  },
+  {
+    "name": "Omen Café",
+    "address": "Schulterblatt 87, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Kleines Specialty-Coffee-Café mit minimalistischem Design und exzellenten Bohnen.",
+    "website": null,
+    "tags": {
+      "vibe": ["Minimalistisch", "Klein", "Hip"],
+      "drink": ["Specialty Coffee", "Espresso"],
+      "food": ["Gebäck"],
+      "feature": ["Kleine Location", "Fokus auf Kaffee"],
+      "best_for": ["Kaffeedate", "Espresso-Pause", "Schanze"]
+    },
+    "opening_hours": {
+      "mon-fri": "08:00-18:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Minimalistisches Café mit Fokus auf exzellenten Espresso"
+  },
+  {
+    "name": "OT Restaurant",
+    "address": "Bahrenfelder Straße 87, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Asiatische Fusionsküche mit modernen Interpretationen klassischer Gerichte.",
+    "website": "https://www.ot-restaurant.de",
+    "tags": {
+      "vibe": ["Modern", "Elegant", "Fusion"],
+      "food": ["Asiatisch", "Fusion", "Modern"],
+      "feature": ["Moderne Interpretation", "Kreative Gerichte"],
+      "best_for": ["Besonderes Essen", "Fusion", "Date Night"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-23:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Moderne asiatische Fusionsküche"
+  },
+  {
+    "name": "Paledo Café & Deli",
+    "address": "Mühlenkamp 1, 22303 Hamburg",
+    "district": "Winterhude",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Modernes Superfood-Café mit frischen, regionalen und nachhaltigen Gerichten direkt am Mühlenkamp.",
+    "website": "https://paledohamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Gesund", "Hell"],
+      "food": ["Açai Bowls", "Superfood", "Brunch", "Sandwiches"],
+      "drink": ["Smoothies", "Frisch gepresste Säfte"],
+      "feature": ["Keine Reservierung", "Außensitzplätze"],
+      "dietary": ["Vegetarisch", "Vegan", "Glutenfrei"],
+      "best_for": ["Gesundes Date", "Frühstück", "Remote Work"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-17:00",
+      "sat-sun": "09:00-18:00"
+    },
+    "specialty": "Açai Bowls und Superfood für einen gesunden Start in den Tag"
+  },
+  {
+    "name": "Park Fiction (Antonipark)",
+    "address": "Antonipark, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "activity",
+    "price_range": "€",
+    "description": "Von Anwohnern gestalteter Kunst-Park mit Plastikpalmen und grünem Bodenbelag über dem Hafen.",
+    "website": "https://www.hamburg.com/visitors/sights/alternative/park-fiction-23434",
+    "tags": {
+      "vibe": ["Bohemien", "Alternativ", "Romantisch"],
+      "activity": ["Chillen", "Picknick", "Sonnenuntergang"],
+      "feature": ["Plastikpalmen", "Grüner Teppich", "Hafenblick"],
+      "best_for": ["Casual Date", "Sonnenuntergang", "Freiluft"]
+    },
+    "opening_hours": {
+      "daily": "open 24h"
+    },
+    "specialty": "Künstlerischer Park mit Plastikpalmen und magischem Teppich über dem Hafen"
+  },
+  {
+    "name": "Passage Kino",
+    "address": "Mönckebergstraße 17, 20095 Hamburg",
+    "district": "Altstadt",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Traditionsreiches Programmkino in der Innenstadt mit Arthouse-Filmen und besonderen Retrospektiven.",
+    "website": "https://www.passage-kino.de",
+    "tags": {
+      "vibe": ["Klassisch", "Zentral", "Arthouse"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Zentrale Lage", "Retrospektiven"],
+      "best_for": ["Film-Date", "Regentag", "Innenstadt"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Traditionsreiches Programmkino mit Arthouse-Filmen"
+  },
+  {
+    "name": "Pause & Play",
+    "address": "Neuer Kamp 32, 20357 Hamburg",
+    "district": "Karolinenviertel",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Escape Room mit verschiedenen Räumen und immersiven Szenarien.",
+    "website": "https://www.pauseandplay.de",
+    "tags": {
+      "vibe": ["Spannend", "Teamwork", "Interaktiv"],
+      "activity": ["Escape Room", "Rätsel"],
+      "feature": ["Verschiedene Schwierigkeitsgrade", "Mehrere Räume"],
+      "best_for": ["Abenteuer-Date", "Gruppen-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "11:00-22:00"
+    },
+    "specialty": "Immersive Escape Rooms im Karoviertel"
+  },
+  {
+    "name": "Polittbüro",
+    "address": "Steindamm 45, 20099 Hamburg",
+    "district": "St. Georg",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Kleine Kabarett-Bühne mit politischem Humor und satirischen Programmen.",
+    "website": "https://www.polittbuero.de",
+    "tags": {
+      "vibe": ["Politisch", "Intelligent", "Intim"],
+      "activity": ["Kabarett", "Comedy", "Satire"],
+      "feature": ["Kleine Bühne", "Politisches Kabarett"],
+      "best_for": ["Kabarett", "Comedy-Date", "Kulturabend"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Politisches Kabarett auf kleiner, intimer Bühne"
+  },
+  {
+    "name": "Quatsch Comedy Club",
+    "address": "Spielbudenplatz 20, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "culture",
+    "price_range": "€€€",
+    "description": "Bekannter Comedy-Club auf der Reeperbahn mit Stand-up-Shows und bekannten Comedians.",
+    "website": "https://www.quatsch-comedy-club.de",
+    "tags": {
+      "vibe": ["Lustig", "Lebhaft", "Professionell"],
+      "activity": ["Stand-up Comedy", "Shows"],
+      "feature": ["Bekannte Comedians", "Reeperbahn-Lage"],
+      "best_for": ["Comedy-Date", "Abend auf der Reeperbahn", "Lachen"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Stand-up Comedy mit bekannten Comedians auf der Reeperbahn"
+  },
+  {
+    "name": "Restaurant Eisenstein",
+    "address": "Friedensallee 9, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Szenerestaurant in ehemaliger Schiffsschraubenfabrik mit großer Holzofenpizza und moderner europäischer Küche.",
+    "website": "https://restaurant-eisenstein.de",
+    "tags": {
+      "food": ["Pizza", "Pasta", "Europäische Küche"],
+      "vibe": ["Gemütlich", "Industrial", "Lebhaft"],
+      "feature": ["Holzofen", "Große Räume", "Reservierung empfohlen"],
+      "dietary": ["Vegetarisch"],
+      "best_for": ["Date Night", "Freunde", "Familie"]
+    },
+    "opening_hours": {
+      "mon-fri": "12:00-22:00",
+      "sat-sun": "16:00-22:00"
+    },
+    "specialty": "Holzofenpizza in imposanter Industrie-Location in Ottensen"
+  },
+  {
+    "name": "Restaurant Nil",
+    "address": "Neuer Pferdemarkt 5, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Traditionshaus am Neuen Pferdemarkt mit kreativer, saisonaler Küche und Bib-Gourmand-Niveau.",
+    "website": "https://restaurant-nil.de",
+    "tags": {
+      "food": ["Saisonale Küche", "Mehrgangmenü", "Feine Küche"],
+      "vibe": ["Elegant", "Ruhig", "Zeitlos"],
+      "feature": ["Weinkarte", "Menü", "Reservierung nötig"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Jahrestag", "Besonderer Anlass", "Fine Dining Date"]
+    },
+    "opening_hours": {
+      "mon": "18:00-01:00",
+      "wed-thu": "18:00-01:00",
+      "fri-sun": "17:00-01:00",
+      "tue": "closed"
+    },
+    "specialty": "Saisonales Menü mit sehr guter Weinauswahl im Kiez, aber abseits vom Reeperbahn-Trubel"
+  },
+  {
+    "name": "Roots Yoga",
+    "address": "Mittelweg 166, 20148 Hamburg",
+    "district": "Pöseldorf",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Yogastudio im denkmalgeschützten Kutscherhaus mit besonderem Ambiente.",
+    "website": "https://www.rootsyoga.de",
+    "tags": {
+      "vibe": ["Ruhig", "Besonders", "Historisch"],
+      "activity": ["Yoga", "Workshops"],
+      "feature": ["Im Kutscherhaus", "Denkmalgeschützt"],
+      "best_for": ["Yoga-Date", "Ruhiges Date", "Besonderes Ambiente"]
+    },
+    "opening_hours": {
+      "Kurse nach Stundenplan": true
+    },
+    "specialty": "Yoga im denkmalgeschützten Kutscherhaus in Pöseldorf"
+  },
+  {
+    "name": "Sankt Pauli Museum",
+    "address": "Davidstraße 17, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "activity",
+    "price_range": "€",
+    "description": "Kleines Museum zur Geschichte von St. Pauli, Kiez-Kultur und Halbwelt.",
+    "website": "https://sankt-pauli-museum.de",
+    "tags": {
+      "vibe": ["Kiezig", "Kurios", "Lokal"],
+      "activity": ["Ausstellung", "Spaziergang danach"],
+      "best_for": ["Kiezdate", "Vor dem Drink"],
+      "feature": ["Zentrale Lage", "Kurzer Besuch"]
+    },
+    "opening_hours": {
+      "wed-sun": "11:00-18:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Kompakte Einführung in die Geschichte des Kiezes"
+  },
+  {
+    "name": "sanktpaulibar",
+    "address": "Spielbudenplatz 29, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Stylische Bar direkt am Spielbudenplatz mit zwei Etagen, Terrasse und Blick auf den Kiez.",
+    "website": "https://www.sanktpaulibar.de",
+    "tags": {
+      "vibe": ["Stylish", "Kiez", "Lebhaft"],
+      "drink": ["Cocktails", "Wein", "Bier"],
+      "feature": ["Zwei Etagen", "Terrasse", "Spielbudenplatz-Blick"],
+      "best_for": ["Before Theater", "After Show", "Kiez-Date"]
+    },
+    "opening_hours": {
+      "mon-thu": "18:00-01:00",
+      "fri": "18:00-03:00",
+      "sat": "17:00-05:00",
+      "sun": "18:00-01:00"
+    },
+    "specialty": "Perfekte Bar vor oder nach dem Besuch im St. Pauli Theater"
+  },
+  {
+    "name": "Schmidt Tivoli",
+    "address": "Spielbudenplatz 27–28, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Legendäres Reeperbahn-Theater für Musicals, Shows und Comedy mit viel Kiez-Charme.",
+    "website": "https://www.tivoli.de",
+    "tags": {
+      "vibe": ["Bunt", "Laut", "Kiez"],
+      "activity": ["Show", "Musical", "Comedy"],
+      "feature": ["Abendprogramm", "Reeperbahn-Lage"],
+      "best_for": ["Erstes Date", "Unterhaltungsdate"]
+    },
+    "opening_hours": {
+      "show_days": "ab ca. 18:00 geöffnet"
+    },
+    "specialty": "Kultige Kiez-Shows wie „Heiße Ecke" mitten auf der Reeperbahn"
+  },
+  {
+    "name": "Schwarzlichtviertel",
+    "address": "Kieler Straße 571, 22525 Hamburg",
+    "district": "Stellingen",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Schwarzlicht-Minigolf in farbenfroher 3D-Welt mit leuchtenden Bahnen und Effekten.",
+    "website": "https://www.schwarzlichtviertel.de",
+    "tags": {
+      "vibe": ["Bunt", "Verspielt", "Einzigartig"],
+      "activity": ["Minigolf", "Schwarzlicht"],
+      "feature": ["18 Bahnen", "3D-Effekte", "Indoor"],
+      "best_for": ["Verspieltes Date", "Regentag", "Gruppen-Date"]
+    },
+    "opening_hours": {
+      "mon-fri": "14:00-22:00",
+      "sat-sun": "10:00-22:00"
+    },
+    "specialty": "Schwarzlicht-Minigolf mit leuchtenden 3D-Bahnen"
+  },
+  {
+    "name": "Shamrock",
+    "address": "Schulterblatt 26, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Irish Pub in der Schanze mit wöchentlichem Pubquiz jeden Donnerstag um 21:30 Uhr.",
+    "website": "https://www.shamrock-hamburg.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Pub", "Irisch"],
+      "drink": ["Guinness", "Whiskey", "Bier"],
+      "activity": ["Pubquiz"],
+      "feature": ["Pubquiz jeden Donnerstag 21:30"],
+      "best_for": ["Quiz-Date", "Pub-Abend", "Donnerstag"]
+    },
+    "opening_hours": {
+      "sun-thu": "18:00-02:00",
+      "fri-sat": "18:00-04:00"
+    },
+    "specialty": "Pubquiz jeden Donnerstag um 21:30 Uhr"
+  },
+  {
+    "name": "Simple Sandwich",
+    "address": "Eppendorfer Weg 100, 20259 Hamburg",
+    "district": "Eimsbüttel",
+    "type": "restaurant",
+    "price_range": "€",
+    "description": "Neueröffnung 2025 – Frische Sandwiches und Bagels mit hochwertigen Zutaten.",
+    "website": null,
+    "tags": {
+      "vibe": ["Casual", "Frisch", "Neu"],
+      "food": ["Sandwiches", "Bagels", "Salate"],
+      "feature": ["Neueröffnung 2025", "Hochwertige Zutaten"],
+      "best_for": ["Schnelles Date", "Mittagspause", "Casual"]
+    },
+    "opening_hours": {
+      "mon-sat": "10:00-20:00",
+      "sun": "11:00-18:00"
+    },
+    "specialty": "Frische Sandwiches mit hochwertigen Zutaten – Neueröffnung 2025"
+  },
+  {
+    "name": "Skyline Bar 20up",
+    "address": "Bernhard-Nocht-Straße 97, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Skybar im Empire Riverside Hotel mit bodentiefen Panoramafenstern und spektakulärem Blick über Hafen und Elbe.",
+    "website": "https://www.empire-riverside.de/de/bar-20up/",
+    "tags": {
+      "vibe": ["Romantisch", "Stylish", "Skyline-View"],
+      "drink": ["Cocktails", "Champagner"],
+      "ingredient": ["Premium-Spirituosen"],
+      "feature": ["Rooftop", "Fensterfront", "Reservierung empfohlen"],
+      "best_for": ["Jahrestag", "Besonderer Anlass"]
+    },
+    "opening_hours": {
+      "mon-sun": "18:00-01:00"
+    },
+    "specialty": "Panoramablick über Hafen, Elbphilharmonie und Lichter der Stadt"
+  },
+  {
+    "name": "Skurrilum",
+    "address": "Spielbudenplatz 21, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "activity",
+    "price_range": "€€€",
+    "description": "Theatralischer Escape Room vom Schmidt Theater – immersive Rätsel mit Schauspielern.",
+    "website": "https://www.skurrilum.de",
+    "tags": {
+      "vibe": ["Theatralisch", "Immersiv", "Spannend"],
+      "activity": ["Escape Room", "Theater", "Rätsel"],
+      "feature": ["Mit Schauspielern", "Vom Schmidt Theater"],
+      "best_for": ["Besonderes Date", "Theater-Fans", "Abenteuer"]
+    },
+    "opening_hours": {
+      "Termine nach Buchung": true
+    },
+    "specialty": "Theatralischer Escape Room mit echten Schauspielern vom Schmidt Theater"
+  },
+  {
+    "name": "Speicherstadtmuseum",
+    "address": "Am Sandtorkai 36, 20457 Hamburg",
+    "district": "Speicherstadt",
+    "type": "activity",
+    "price_range": "€",
+    "description": "Authentisches Museum im Speicherblock von 1888 über die Geschichte der Speicherstadt und Lagerarbeit.",
+    "website": "https://speicherstadtmuseum.de",
+    "tags": {
+      "vibe": ["Historisch", "Authentisch", "Informativ"],
+      "activity": ["Museum", "Ausstellung"],
+      "feature": ["UNESCO Welterbe", "Café nebenan"],
+      "best_for": ["Kulturdate", "Regentag", "Kurzbesuch"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-17:00",
+      "sat-sun": "10:00-18:00"
+    },
+    "specialty": "Ursprüngliche Atmosphäre eines Speicherblocks mit typischen Importwaren"
+  },
+  {
+    "name": "StrandPauli",
+    "address": "St. Pauli Hafenstraße 89, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Ganzjährig geöffneter City-Beachclub mit Sand, Liegestühlen und Elbblick – im Winter als Winterzauber dekoriert.",
+    "website": "https://www.strandpauli.de",
+    "tags": {
+      "vibe": ["Casual", "Beach-Vibe", "Sonnenuntergang"],
+      "food": ["BBQ", "Snacks"],
+      "drink": ["Cocktails", "Bier"],
+      "feature": ["Strandliegen", "Feuerstellen"],
+      "best_for": ["After Work", "Sommerdate"]
+    },
+    "opening_hours": {
+      "wed-thu": "16:00-23:00",
+      "fri": "14:00-00:00",
+      "sat": "12:00-00:00",
+      "sun": "12:00-18:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Stadtstrand mit Sand und Blick auf die Elbe"
+  },
+  {
+    "name": "Studio Amun",
+    "address": "Große Freiheit 60, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "activity",
+    "price_range": "€€€",
+    "description": "Töpferkurse an der Drehscheibe – eigene Keramik gestalten.",
+    "website": "https://www.studioamun.de",
+    "tags": {
+      "vibe": ["Kreativ", "Entspannt", "Handwerklich"],
+      "activity": ["Töpfern", "Drehscheibe", "Kurs"],
+      "feature": ["Töpfern an der Drehscheibe", "Eigenes Werk mitnehmen"],
+      "best_for": ["Kreatives Date", "Handwerk-Date", "Besonderes Erlebnis"]
+    },
+    "opening_hours": {
+      "Kurse nach Terminplan": true
+    },
+    "specialty": "Töpfern an der Drehscheibe mit eigener Keramik zum Mitnehmen"
+  },
+  {
+    "name": "Südpol",
+    "address": "Süderstraße 112, 20537 Hamburg",
+    "district": "Hammerbrook",
+    "type": "club",
+    "price_range": "€€€",
+    "description": "Großer Techno-Club mit internationalen DJs und mehrstündigen Sets.",
+    "website": "https://www.suedpol-hamburg.de",
+    "tags": {
+      "vibe": ["Techno", "Groß", "International"],
+      "activity": ["Tanzen", "DJ", "Clubnacht"],
+      "drink": ["Bier", "Longdrinks"],
+      "feature": ["Internationale DJs", "Lange Sets"],
+      "best_for": ["Techno-Date", "Clubnacht", "Wochenende"]
+    },
+    "opening_hours": {
+      "fri-sat": "23:00-10:00"
+    },
+    "specialty": "Techno-Club mit internationalen DJs und langen Sets"
+  },
+  {
+    "name": "Superbad Burger",
+    "address": "Schulterblatt 65, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Neueröffnung 2025 – Smash Burger und vegane Optionen in der Schanze.",
+    "website": null,
+    "tags": {
+      "vibe": ["Hip", "Neu", "Casual"],
+      "food": ["Burger", "Smash Burger", "Vegan-Optionen"],
+      "feature": ["Neueröffnung 2025", "Vegane Burger"],
+      "dietary": ["Vegan-Optionen"],
+      "best_for": ["Burger-Date", "Casual", "Neueröffnung"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-22:00"
+    },
+    "specialty": "Smash Burger mit veganen Optionen – Neueröffnung 2025"
+  },
+  {
+    "name": "Takumi Ramen",
+    "address": "Große Rainstraße 20, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Authentische japanische Ramen aus hausgemachten Nudeln in gemütlichem Setting.",
+    "website": "https://www.takumi-hamburg.com",
+    "tags": {
+      "vibe": ["Gemütlich", "Authentisch", "Japanisch"],
+      "food": ["Ramen", "Japanisch", "Nudeln"],
+      "feature": ["Hausgemachte Nudeln", "Kleine Tische"],
+      "dietary": ["Vegetarisch", "Vegan"],
+      "best_for": ["Winterdate", "Casual", "Schnelles Date"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-21:00"
+    },
+    "specialty": "Unglaublich leckere Ramen aus hausgemachten Nudeln"
+  },
+  {
+    "name": "Tassajara",
+    "address": "Eppendorfer Landstraße 4, 20249 Hamburg",
+    "district": "Eppendorf",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Deutschlands erstes veganes Restaurant seit 1976 – Pionier der pflanzlichen Küche.",
+    "website": "https://www.tassajara.de",
+    "tags": {
+      "vibe": ["Historisch", "Pionier", "Gemütlich"],
+      "food": ["Vegan", "Vegetarisch", "Bio"],
+      "feature": ["Erstes veganes Restaurant DE", "Seit 1976"],
+      "dietary": ["Vegan", "Vegetarisch"],
+      "best_for": ["Vegan-Date", "Historisches Erlebnis", "Bio"]
+    },
+    "opening_hours": {
+      "tue-sat": "12:00-22:00",
+      "sun": "12:00-21:00",
+      "mon": "closed"
+    },
+    "specialty": "Deutschlands erstes veganes Restaurant seit 1976"
+  },
+  {
+    "name": "TeamBreakout",
+    "address": "Nagelsweg 14, 20097 Hamburg",
+    "district": "Hammerbrook",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Escape Room mit verschiedenen thematischen Räumen und Schwierigkeitsgraden.",
+    "website": "https://www.teambreakout.de",
+    "tags": {
+      "vibe": ["Spannend", "Teamwork", "Abenteuer"],
+      "activity": ["Escape Room", "Rätsel"],
+      "feature": ["Verschiedene Themen", "Mehrere Schwierigkeitsgrade"],
+      "best_for": ["Abenteuer-Date", "Gruppen-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "10:00-22:00"
+    },
+    "specialty": "Escape Rooms mit verschiedenen thematischen Welten"
+  },
+  {
+    "name": "TeamEscape",
+    "address": "Wexstraße 32, 20355 Hamburg",
+    "district": "Neustadt",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Escape Room Anbieter mit mehreren Räumen unterschiedlicher Schwierigkeit.",
+    "website": "https://www.teamescape.de",
+    "tags": {
+      "vibe": ["Spannend", "Teamwork", "Interaktiv"],
+      "activity": ["Escape Room", "Rätsel"],
+      "feature": ["Mehrere Räume", "Zentrale Lage"],
+      "best_for": ["Abenteuer-Date", "Gruppen-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-sun": "10:00-22:00"
+    },
+    "specialty": "Zentral gelegene Escape Rooms mit verschiedenen Schwierigkeiten"
+  },
+  {
+    "name": "TEN'S Billard Dart Bar",
+    "address": "Grindelallee 134, 20146 Hamburg",
+    "district": "Rotherbaum",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Billard und Darts Bar mit mehreren Tischen und Steeldart-Boards.",
+    "website": "https://www.tens-hamburg.de",
+    "tags": {
+      "vibe": ["Entspannt", "Spielerisch", "Gesellig"],
+      "activity": ["Billard", "Darts", "Pool"],
+      "drink": ["Bier", "Cocktails"],
+      "feature": ["Billard", "Steeldarts", "Bar"],
+      "best_for": ["Spieleabend", "Casual Date", "Gruppen"]
+    },
+    "opening_hours": {
+      "mon-thu": "15:00-01:00",
+      "fri-sat": "15:00-03:00",
+      "sun": "15:00-00:00"
+    },
+    "specialty": "Billard und Steeldarts mit Bar-Atmosphäre"
+  },
+  {
+    "name": "The Baby Goat Barn",
+    "address": "Detlev-Bremer-Straße 49, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Craft Beer Pub mit hauseigener Brauerei und neapolitanischer Pizza in der Nähe der Reeperbahn.",
+    "website": "https://www.thebabygoat.de",
+    "tags": {
+      "vibe": ["Lässig", "Hip", "Bier-Fokus"],
+      "drink": ["Craft Beer", "Hausgebrautes Bier"],
+      "food": ["Pizza", "Bar-Food"],
+      "feature": ["12 Biere vom Hahn", "Live-Sport", "DJ"],
+      "best_for": ["Bier-Date", "Casual", "Sportübertragung"]
+    },
+    "opening_hours": {
+      "tue": "17:00-00:00",
+      "wed-thu": "17:00-00:00",
+      "fri": "16:00-02:00",
+      "sat": "12:00-02:00",
+      "sun": "12:00-22:00",
+      "mon": "closed"
+    },
+    "specialty": "Hausgebrautes Craft Beer mit Namen wie 'Looking Goat' IPA"
+  },
+  {
+    "name": "The Chug Club",
+    "address": "Taubenstraße 13, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Preisgekrönte Cocktailbar spezialisiert auf Tequila und Mezcal mit kreativen 'Chugs'.",
+    "website": "https://www.thechugclub.bar",
+    "tags": {
+      "vibe": ["Hip", "Kreativ", "Spezialisiert"],
+      "drink": ["Tequila", "Mezcal", "Signature Chugs", "Cocktails"],
+      "feature": ["Inhabergeführt", "Raucherbar", "Preisgekrönt"],
+      "best_for": ["Tequila-Liebhaber", "Kreatives Date", "Cocktail-Abenteuer"]
+    },
+    "opening_hours": {
+      "mon-thu": "18:00-01:00",
+      "fri-sat": "18:00-02:00",
+      "sun": "18:00-01:00"
+    },
+    "specialty": "Buttermilch-Margarita und 5er-Chug-Menü mit kreativen Shots"
+  },
+  {
+    "name": "The Morgenmuffel",
+    "address": "Clemens-Schultz-Straße 40, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Beliebtes Frühstückscafé im Kiez mit großer Brunch-Auswahl und gemütlicher Atmosphäre.",
+    "website": null,
+    "tags": {
+      "vibe": ["Gemütlich", "Kiez", "Entspannt"],
+      "food": ["Brunch", "Frühstück", "Pancakes"],
+      "drink": ["Kaffee", "Säfte"],
+      "feature": ["Große Brunch-Auswahl", "Kiez-Atmosphäre"],
+      "best_for": ["Brunch-Date", "Wochenende", "Kiez-Date"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-16:00",
+      "sat-sun": "09:00-17:00"
+    },
+    "specialty": "Gemütliches Frühstück und Brunch im Kiez"
+  },
+  {
+    "name": "Trucys",
+    "address": "Schulterblatt 85, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "cafe",
+    "price_range": "€€",
+    "description": "Hippes Frühstückscafé in der Schanze mit amerikanischem Einfluss – Pancakes, Eggs Benedict und mehr.",
+    "website": "https://www.trucys.de",
+    "tags": {
+      "vibe": ["Hip", "Amerikanisch", "Lebhaft"],
+      "food": ["Brunch", "Pancakes", "Eggs Benedict", "French Toast"],
+      "drink": ["Kaffee", "Smoothies"],
+      "feature": ["Amerikanisches Frühstück", "Oft Schlange"],
+      "best_for": ["Brunch-Date", "Wochenende", "Pancake-Fans"]
+    },
+    "opening_hours": {
+      "mon-fri": "09:00-16:00",
+      "sat-sun": "09:00-17:00"
+    },
+    "specialty": "Amerikanisches Frühstück mit Pancakes und Eggs Benedict"
+  },
+  {
+    "name": "TYO TYO",
+    "address": "Rothenbaumchaussee 40, 20148 Hamburg",
+    "district": "Rotherbaum",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Modernes japanisches Restaurant mit Izakaya-Konzept und kreativen Gerichten.",
+    "website": "https://www.tyotyo.de",
+    "tags": {
+      "vibe": ["Modern", "Izakaya", "Stylish"],
+      "food": ["Japanisch", "Izakaya", "Sushi", "Sharing"],
+      "feature": ["Izakaya-Konzept", "Sharing-Gerichte"],
+      "best_for": ["Japanisch", "Gruppen-Date", "Modern"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-23:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Modernes Izakaya mit Sharing-Gerichten"
+  },
+  {
+    "name": "ÜberQuell",
+    "address": "St. Pauli Fischmarkt 28–32, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Brewpub direkt an den Landungsbrücken mit eigener Brauerei, neapolitanischer Pizza und großem Hafenbiergarten.",
+    "website": "https://ueberquell.com",
+    "tags": {
+      "food": ["Pizza", "Neapolitanische Pizza", "Burgersnacks"],
+      "drink": ["Craft Beer", "Hausgebrautes Bier"],
+      "vibe": ["Lebhaft", "Hip", "Locker"],
+      "feature": ["Biergarten", "Hafenblick", "Draußen sitzen"],
+      "dietary": ["Vegetarisch", "Vegan"],
+      "best_for": ["Casual", "After Work", "Größere Gruppen"]
+    },
+    "opening_hours": {
+      "mon-thu": "17:00-23:00",
+      "fri-sun": "15:00-23:00"
+    },
+    "specialty": "Hausgebrautes Craft Beer mit Blick auf den Hafen und Pizza aus dem Holzofen"
+  },
+  {
+    "name": "Uebel & Gefährlich",
+    "address": "Feldstraße 66, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "club",
+    "price_range": "€€€",
+    "description": "Clublocation im ehemaligen Flakbunker mit Konzerten, Techno-Nights und Dachterrasse.",
+    "website": "https://www.uebelundgefaehrlich.com",
+    "tags": {
+      "vibe": ["Laut", "Dunkel", "Urban"],
+      "activity": ["Live Musik", "Techno", "Konzerte"],
+      "feature": ["Bunker", "Dachterrasse"],
+      "best_for": ["Spätes Date", "Konzertdate"],
+      "drink": ["Bier", "Longdrinks"]
+    },
+    "opening_hours": {
+      "event_days": "je nach Veranstaltung ab ca. 20:00"
+    },
+    "specialty": "Konzerte und Clubnächte im ikonischen Bunker mit Dachterrasse"
+  },
+  {
+    "name": "Unser Atelier",
+    "address": "Bahrenfelder Straße 201, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "activity",
+    "price_range": "€€€",
+    "description": "Töpferkurse für Anfänger und Fortgeschrittene – eigene Keramik gestalten.",
+    "website": "https://www.unser-atelier.de",
+    "tags": {
+      "vibe": ["Kreativ", "Entspannt", "Gemeinschaftlich"],
+      "activity": ["Töpfern", "Kurs", "Handwerk"],
+      "feature": ["Anfängerkurse", "Eigenes Werk mitnehmen"],
+      "best_for": ["Kreatives Date", "Handwerk-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "Kurse nach Terminplan": true
+    },
+    "specialty": "Töpferkurse für alle Level mit eigenem Werk zum Mitnehmen"
+  },
+  {
+    "name": "Urban Yoga Hamburg",
+    "address": "Schanzenstraße 6, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Modernes Yogastudio in der Schanze mit speziellen Workshops wie Rauhnächte und Emotional Release.",
+    "website": "https://www.urbanyogahamburg.de",
+    "tags": {
+      "vibe": ["Modern", "Urban", "Community"],
+      "activity": ["Yoga", "Workshops", "Meditation"],
+      "feature": ["Spezial-Workshops", "Rauhnächte", "Emotional Release"],
+      "best_for": ["Yoga-Date", "Workshop-Date", "Besonderes Erlebnis"]
+    },
+    "opening_hours": {
+      "Kurse nach Stundenplan": true
+    },
+    "specialty": "Spezial-Workshops wie Rauhnächte und Emotional Release"
+  },
+  {
+    "name": "urban apes",
+    "address": "Nordkanalstraße 28, 20097 Hamburg",
+    "district": "Hammerbrook",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Moderne Boulderhalle mit coolem Design und Community-Feeling.",
+    "website": "https://www.urbanapes.de",
+    "tags": {
+      "vibe": ["Modern", "Community", "Hip"],
+      "activity": ["Bouldern", "Klettern", "Indoor Sport"],
+      "feature": ["Modernes Design", "Community", "Café"],
+      "best_for": ["Aktives Date", "Sport-Date", "Regentag"]
+    },
+    "opening_hours": {
+      "mon-fri": "10:00-23:00",
+      "sat-sun": "09:00-22:00"
+    },
+    "specialty": "Moderne Boulderhalle mit Community-Feeling"
+  },
+  {
+    "name": "vabali spa Hamburg",
+    "address": "In der Trift 1, 21509 Glinde",
+    "district": "Glinde",
+    "type": "wellness",
+    "price_range": "€€€",
+    "description": "Große balinesisch inspirierte Wellness-Oase mit Saunalandschaft, Pools und Hotel-Option. Paar-Pakete von 229-398€, DaySpa Suiten verfügbar.",
+    "website": "https://www.vabali.de/hamburg/",
+    "tags": {
+      "vibe": ["Entspannt", "Balinesisch", "Luxuriös"],
+      "activity": ["Sauna", "Pool", "Massage", "Wellness"],
+      "feature": ["36.000 qm", "Innen- und Außenpool", "Hotel", "Paar-Pakete", "DaySpa Suiten"],
+      "best_for": ["Wellness-Tag", "Besonderer Anlass", "Winterdate"]
+    },
+    "opening_hours": {
+      "mon-sun": "09:00-00:00"
+    },
+    "specialty": "Balinesische Wellness-Landschaft mit Paar-Paketen von 229-398€ und DaySpa Suiten"
+  },
+  {
+    "name": "W die Weinbar",
+    "address": "Rathausstraße 14, 20095 Hamburg",
+    "district": "Altstadt",
+    "type": "bar",
+    "price_range": "€€€",
+    "description": "Elegante Weinbar in der Innenstadt mit großer Auswahl und Sommelierberatung.",
+    "website": "https://www.wdieweinbar.de",
+    "tags": {
+      "vibe": ["Elegant", "Zentral", "Weinbar"],
+      "drink": ["Wein", "Champagner", "Naturwein"],
+      "food": ["Kleine Speisen", "Käse"],
+      "feature": ["Sommelierberatung", "Große Auswahl"],
+      "best_for": ["Weinabend", "After Work", "Stilvolles Date"]
+    },
+    "opening_hours": {
+      "tue-sat": "17:00-00:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Elegante Weinbar mit Sommelierberatung"
+  },
+  {
+    "name": "Weinladen St. Pauli",
+    "address": "Wohlwillstraße 10, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Gemütliche Weinbar im Kiez mit ausgesuchten Weinen und entspannter Atmosphäre.",
+    "website": "https://www.weinladen-stpauli.de",
+    "tags": {
+      "vibe": ["Gemütlich", "Kiezig", "Entspannt"],
+      "drink": ["Wein", "Naturwein"],
+      "feature": ["Weinhandlung", "Weinverkostung"],
+      "best_for": ["Weinabend", "Casual Date", "Kiez-Date"]
+    },
+    "opening_hours": {
+      "tue-sat": "16:00-23:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Ausgesuchte Weine in gemütlicher Kiez-Atmosphäre"
+  },
+  {
+    "name": "Wellnest",
+    "address": "Stresemannstraße 217, 22769 Hamburg",
+    "district": "Altona-Nord",
+    "type": "wellness",
+    "price_range": "€€€",
+    "description": "Private Spa-Nester zum Mieten mit Whirlpool, Sauna und Erlebnisdusche für bis zu 4 Personen.",
+    "website": "https://wellnest.me",
+    "tags": {
+      "vibe": ["Privat", "Intim", "Entspannt"],
+      "activity": ["Private Sauna", "Whirlpool", "Wellness"],
+      "feature": ["Stundenweise buchbar", "Komplett privat", "Tiefgarage"],
+      "best_for": ["Romantisches Date", "Jahrestag", "Paar-Wellness"]
+    },
+    "opening_hours": {
+      "mon-sun": "10:00-22:00"
+    },
+    "specialty": "35 qm private Wellness-Suite mit Sauna und Whirlpool nur für euch"
+  },
+  {
+    "name": "Witwenball",
+    "address": "Beim Grünen Jäger 21, 20359 Hamburg",
+    "district": "St. Pauli",
+    "type": "bar",
+    "price_range": "€€",
+    "description": "Charmante Weinbar mit großer Naturwein-Auswahl und französischem Flair.",
+    "website": "https://www.witwenball.de",
+    "tags": {
+      "vibe": ["Charmant", "Französisch", "Gemütlich"],
+      "drink": ["Naturwein", "Wein", "Champagner"],
+      "food": ["Französische Kleinigkeiten", "Käse"],
+      "feature": ["Naturwein-Fokus", "Französisches Flair"],
+      "best_for": ["Weinabend", "Romantisches Date", "After Dinner"]
+    },
+    "opening_hours": {
+      "tue-sat": "17:00-00:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Naturweine mit französischem Charme"
+  },
+  {
+    "name": "Wolfs Junge",
+    "address": "Zimmerstraße 30, 22085 Hamburg",
+    "district": "Uhlenhorst",
+    "type": "restaurant",
+    "price_range": "€€€€",
+    "description": "Vegetarisches Fine Dining mit Grünem Michelin-Stern – 119€ Menü in minimalistischem Ambiente.",
+    "website": "https://www.wolfsjunge.de",
+    "tags": {
+      "vibe": ["Minimalistisch", "Fein", "Nachhaltig"],
+      "food": ["Vegetarisch", "Tasting Menu", "Fine Dining"],
+      "drink": ["Weinbegleitung", "Naturwein"],
+      "feature": ["Grüner Michelin-Stern", "119€ Menü", "Nachhaltig"],
+      "dietary": ["Vegetarisch"],
+      "best_for": ["Besonderer Anlass", "Fine Dining", "Jahrestag"]
+    },
+    "opening_hours": {
+      "wed-sat": "18:00-22:00",
+      "sun-tue": "closed"
+    },
+    "specialty": "Vegetarisches Fine Dining mit Grünem Michelin-Stern – 119€ Menü"
+  },
+  {
+    "name": "XeÔm",
+    "address": "Bahrenfelder Straße 118, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "restaurant",
+    "price_range": "€€",
+    "description": "Vietnamesisches Street Food mit Pho, Banh Mi und frischen Gerichten.",
+    "website": "https://www.xeom-hamburg.de",
+    "tags": {
+      "vibe": ["Casual", "Frisch", "Authentisch"],
+      "food": ["Vietnamesisch", "Pho", "Banh Mi", "Street Food"],
+      "feature": ["Frische Zutaten", "Street Food Style"],
+      "dietary": ["Vegetarisch", "Vegan-Optionen"],
+      "best_for": ["Asiatisch", "Schnelles Date", "Casual"]
+    },
+    "opening_hours": {
+      "mon-sat": "12:00-22:00",
+      "sun": "closed"
+    },
+    "specialty": "Vietnamesisches Street Food mit frischen Zutaten"
+  },
+  {
+    "name": "XO Seafoodbar",
+    "address": "Paul-Roosen-Straße 22, 22767 Hamburg",
+    "district": "St. Pauli",
+    "type": "restaurant",
+    "price_range": "€€€€",
+    "description": "Moderne Seafoodbar mit Fokus auf nachhaltigen Fisch, kreativen Zubereitungen und lebendiger St.-Pauli-Atmosphäre.",
+    "website": "https://www.thisisxo.de",
+    "tags": {
+      "food": ["Seafood", "Fisch", "Pasta Krabbe"],
+      "drink": ["Wein", "Cocktails"],
+      "vibe": ["Stylish", "Lebhaft", "Modern"],
+      "feature": ["Offene Küche", "Chef's Specials", "Reservierung empfohlen"],
+      "dietary": ["Vegetarische Optionen", "Vegan-Optionen"],
+      "best_for": ["Date Night", "Foodies", "Besonderer Anlass"]
+    },
+    "opening_hours": {
+      "wed-fri": "18:00-00:00",
+      "sat": "17:00-00:00",
+      "sun": "17:00-22:00",
+      "mon-tue": "closed"
+    },
+    "specialty": "Kreative Fischküche mit nachhaltigem Ansatz und Signature-Gerichten wie 'Pasta Krabbe'"
+  },
+  {
+    "name": "Yakido",
+    "address": "Neuer Wall 50, 20354 Hamburg",
+    "district": "Neustadt",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Neueröffnung 2025 – Modernes japanisches Restaurant mit Yakitori und Izakaya-Gerichten.",
+    "website": null,
+    "tags": {
+      "vibe": ["Modern", "Japanisch", "Neu"],
+      "food": ["Japanisch", "Yakitori", "Izakaya"],
+      "feature": ["Neueröffnung 2025", "Zentrale Lage"],
+      "best_for": ["Japanisch", "Neueröffnung", "After Shopping"]
+    },
+    "opening_hours": {
+      "mon-sat": "12:00-22:00",
+      "sun": "closed"
+    },
+    "specialty": "Modernes Yakitori und Izakaya – Neueröffnung 2025"
+  },
+  {
+    "name": "YogaLab Hamburg",
+    "address": "Bartelsstraße 12, 20357 Hamburg",
+    "district": "Sternschanze",
+    "type": "activity",
+    "price_range": "€€",
+    "description": "Modernes Yogastudio in der Schanze mit internationalen Workshops – Jerome Burdi Workshop Sept 2025.",
+    "website": "https://www.yogalab-hamburg.de",
+    "tags": {
+      "vibe": ["Modern", "International", "Community"],
+      "activity": ["Yoga", "Workshops"],
+      "feature": ["Internationale Workshops", "Jerome Burdi Sept 2025"],
+      "best_for": ["Yoga-Date", "Workshop-Date", "Schanze"]
+    },
+    "opening_hours": {
+      "Kurse nach Stundenplan": true
+    },
+    "specialty": "Internationale Yoga-Workshops – Jerome Burdi im September 2025"
+  },
+  {
+    "name": "Yu Garden",
+    "address": "Große Bleichen 34, 20354 Hamburg",
+    "district": "Neustadt",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Elegantes chinesisches Restaurant mit Dim Sum und kantonesischer Küche im historischen Ambiente.",
+    "website": "https://www.yugarden.de",
+    "tags": {
+      "vibe": ["Elegant", "Chinesisch", "Traditionell"],
+      "food": ["Chinesisch", "Dim Sum", "Kantonesisch"],
+      "feature": ["Elegantes Ambiente", "Dim Sum"],
+      "best_for": ["Chinesisch", "Dim Sum", "Besonderes Essen"]
+    },
+    "opening_hours": {
+      "mon-sun": "12:00-23:00"
+    },
+    "specialty": "Elegante Dim Sum und kantonesische Küche"
+  },
+  {
+    "name": "Zeise Kinos",
+    "address": "Friedensallee 7-9, 22765 Hamburg",
+    "district": "Ottensen",
+    "type": "culture",
+    "price_range": "€€",
+    "description": "Programmkino-Komplex in der ehemaligen Schiffsschraubenfabrik mit mehreren Sälen und Arthouse-Filmen.",
+    "website": "https://www.zeise.de",
+    "tags": {
+      "vibe": ["Industrial", "Arthouse", "Charakter"],
+      "activity": ["Kino", "Filme", "Kultur"],
+      "feature": ["Mehrere Säle", "In Zeise-Hallen", "Café"],
+      "best_for": ["Film-Date", "Regentag", "Ottensen"]
+    },
+    "opening_hours": {
+      "Vorstellungen nach Programm": true
+    },
+    "specialty": "Programmkino in den historischen Zeise-Hallen mit Café"
+  },
+  {
+    "name": "Zipang",
+    "address": "Eppendorfer Weg 171, 20253 Hamburg",
+    "district": "Eppendorf",
+    "type": "restaurant",
+    "price_range": "€€€",
+    "description": "Traditionelles japanisches Restaurant mit authentischem Sushi und Kaiseki-Elementen.",
+    "website": "https://www.zipang.de",
+    "tags": {
+      "vibe": ["Traditionell", "Authentisch", "Elegant"],
+      "food": ["Japanisch", "Sushi", "Kaiseki"],
+      "feature": ["Traditionelle Zubereitung", "Authentisch"],
+      "best_for": ["Japanisch", "Sushi-Liebhaber", "Besonderes Essen"]
+    },
+    "opening_hours": {
+      "tue-sat": "18:00-22:00",
+      "sun-mon": "closed"
+    },
+    "specialty": "Traditionelles japanisches Sushi und Kaiseki-Elemente"
+  }
+]
