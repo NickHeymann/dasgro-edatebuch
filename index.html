@@ -4065,9 +4065,12 @@
             <section class="recommendations-section" id="recommendationsSection">
                 <div class="recommendations-header">
                     <h3>💡 Für euch empfohlen</h3>
-                    <button class="btn btn-secondary" onclick="refreshRecommendations()" style="padding: 8px 16px; font-size: 0.85rem;">
-                        🔄 Neu laden
-                    </button>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <button class="btn btn-secondary" onclick="refreshRecommendations()" style="padding: 8px 16px; font-size: 0.85rem;">
+                            🔄 Neu laden
+                        </button>
+                        <button onclick="hideRecommendations()" style="background:none;border:none;font-size:1.2rem;cursor:pointer;padding:4px 8px;opacity:0.6;transition:opacity 0.2s;" title="Ausblenden">✕</button>
+                    </div>
                 </div>
                 <div class="recommendations-grid" id="recommendationsGrid">
                     <!-- Wird dynamisch gefüllt -->
@@ -5317,6 +5320,7 @@
             loadProgress();
             loadEvents();
             loadFeierabendSetting();
+            showRecommendationsIfEnabled();
             document.getElementById('globalDate').valueAsDate = new Date();
 
             // Sheet ID aus Storage laden
@@ -10836,6 +10840,22 @@ END:VCALENDAR`;
         function refreshRecommendations() {
             renderRecommendations();
             showToast('🔄 Neue Empfehlungen geladen!');
+        }
+
+        function hideRecommendations() {
+            const section = document.getElementById('recommendationsSection');
+            if (section) {
+                section.style.display = 'none';
+                localStorage.setItem('datebuch_hideRecommendations', 'true');
+            }
+        }
+
+        function showRecommendationsIfEnabled() {
+            const section = document.getElementById('recommendationsSection');
+            const hidden = localStorage.getItem('datebuch_hideRecommendations') === 'true';
+            if (section) {
+                section.style.display = hidden ? 'none' : 'block';
+            }
         }
 
         // ============ COUPLE SYNC ============
