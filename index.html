@@ -718,6 +718,56 @@
             opacity: 1;
         }
 
+        /* Nav More Menu (Dropdown) */
+        .nav-more-wrapper {
+            position: relative;
+        }
+        .nav-more-btn {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .nav-more-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            min-width: 180px;
+            z-index: 100;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .nav-more-menu.active {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-more-item {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            text-align: left;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .nav-more-item:hover {
+            background: var(--ice-blue);
+        }
+        .nav-more-item.active {
+            background: var(--sage-light);
+            color: var(--sage-dark);
+            font-weight: 600;
+        }
+
         /* Feierabend Toggle */
         .feierabend-toggle {
             display: flex;
@@ -956,6 +1006,210 @@
         .thumb-up.selected { background: var(--sage); border-color: var(--sage); }
         .thumb-down.selected { background: var(--rose); border-color: var(--rose); }
         
+        /* PLANNED DATES */
+        .planned-dates-container {
+            padding: 20px;
+            background: var(--frost);
+            border-radius: 16px;
+        }
+
+        .planned-date-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--rose);
+        }
+
+        .planned-date-card.completed {
+            border-left-color: var(--sage);
+            opacity: 0.9;
+        }
+
+        .planned-date-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .planned-date-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .planned-date-info .date-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .planned-date-status {
+            display: flex;
+            gap: 8px;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-badge.upcoming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-badge.done {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .planned-date-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--frost);
+            border-radius: 12px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .detail-item .emoji { font-size: 1.1rem; }
+
+        .planned-date-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .planned-date-actions .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        /* Date Review Section */
+        .date-review-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--rose);
+        }
+
+        .date-review-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 15px;
+            color: var(--sage);
+        }
+
+        .review-photos {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .review-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .add-photo-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            border: 2px dashed var(--sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--sage);
+            cursor: pointer;
+            background: var(--frost);
+        }
+
+        .review-notes textarea {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 10px;
+            padding: 12px;
+            font-family: inherit;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        .review-cost-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .review-cost-input input {
+            width: 100px;
+            padding: 8px 12px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .highlight-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-tag {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: 2px solid var(--ice-blue);
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .highlight-tag.selected {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: white;
+        }
+
+        .next-time-input {
+            margin-top: 15px;
+        }
+
+        .next-time-input label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .next-time-input textarea {
+            width: 100%;
+            min-height: 60px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 10px;
+            padding: 12px;
+            font-family: inherit;
+            resize: vertical;
+        }
+
         /* MEMORIES */
         .memories-grid {
             display: grid;
@@ -1431,7 +1685,544 @@
         .budget-entry-title { font-weight: 500; }
         .budget-entry-date { font-size: 0.8rem; color: var(--text-light); }
         .budget-entry-amount { font-weight: bold; color: var(--rose-dark); }
-        
+
+        /* ===== PARTNER PROFIL ===== */
+        .partner-counter-card {
+            background: linear-gradient(135deg, var(--rose-light) 0%, var(--blush) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .counter-hearts { font-size: 3rem; margin-bottom: 10px; }
+        .partner-counter-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+        .counter-date-input input {
+            padding: 10px 15px;
+            border: 2px solid var(--rose);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+        }
+        .counter-display {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .counter-big {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--rose-dark);
+            line-height: 1;
+        }
+        .counter-label {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        .counter-details {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .counter-detail {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .counter-detail-num {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--sage-dark);
+        }
+        .counter-detail-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Meilensteine */
+        .partner-milestones {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .partner-milestones h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .milestone-item {
+            background: var(--ice-blue);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .milestone-item.achieved {
+            background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage) 100%);
+            color: white;
+        }
+        .milestone-item.achieved .milestone-icon { filter: none; }
+        .milestone-icon { font-size: 2rem; margin-bottom: 5px; filter: grayscale(1); }
+        .milestone-item.achieved .milestone-icon { filter: none; }
+        .milestone-title { font-size: 0.85rem; font-weight: 500; }
+        .milestone-date { font-size: 0.75rem; opacity: 0.7; margin-top: 3px; }
+
+        /* Partner Profile Cards */
+        .partner-profiles {
+            margin-bottom: 20px;
+        }
+        .partner-profiles h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .profiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .profile-card:hover { border-color: var(--rose); }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--ice-blue);
+        }
+        .profile-avatar { font-size: 2.5rem; }
+        .profile-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: var(--navy);
+            width: 100%;
+        }
+        .profile-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .profile-field { display: flex; flex-direction: column; gap: 5px; }
+        .profile-field.full-width { grid-column: 1 / -1; }
+        .profile-field label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .profile-field input,
+        .profile-field select,
+        .profile-field textarea {
+            padding: 10px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: white;
+            transition: border-color 0.3s;
+        }
+        .profile-field input:focus,
+        .profile-field select:focus,
+        .profile-field textarea:focus {
+            border-color: var(--rose);
+            outline: none;
+        }
+        .profile-field textarea { min-height: 60px; resize: vertical; }
+
+        /* Wunschlisten */
+        .partner-wishlists {
+            margin-bottom: 20px;
+        }
+        .partner-wishlists h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .wishlists-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .wishlist-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .wishlist-card h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .wishlist-items { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        .wishlist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .wishlist-item.bought {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+        .wishlist-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--sage);
+        }
+        .wishlist-item-text { flex: 1; }
+        .wishlist-item-delete {
+            background: none;
+            border: none;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        .wishlist-item-delete:hover { opacity: 1; }
+        .wishlist-add {
+            display: flex;
+            gap: 8px;
+        }
+        .wishlist-add input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 8px;
+        }
+        .btn-small {
+            padding: 10px 15px;
+            background: var(--sage);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-small:hover { background: var(--sage-dark); }
+
+        /* Tägliche Paar-Frage */
+        .partner-daily-question {
+            margin-bottom: 20px;
+        }
+        .partner-daily-question h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .daily-question-card {
+            background: linear-gradient(135deg, var(--sage-light) 0%, var(--ice-blue) 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+        .question-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .question-answers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .question-answer {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: left;
+        }
+        .question-answer label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .question-answer textarea {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 8px;
+            padding: 10px;
+            resize: vertical;
+        }
+        .past-questions {
+            margin-top: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .past-questions h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .past-question-item {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .past-question-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .past-question-answers {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .past-answer {
+            flex: 1;
+            min-width: 150px;
+            background: var(--ice-blue);
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.85rem;
+        }
+        .past-answer strong { display: block; margin-bottom: 5px; }
+
+        /* Love Languages */
+        .partner-love-languages {
+            margin-bottom: 20px;
+        }
+        .partner-love-languages h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .love-languages-display {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .love-languages-display .hint {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        .love-lang-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+        .love-lang-person {
+            text-align: center;
+        }
+        .love-lang-person .avatar { font-size: 2rem; margin-bottom: 10px; }
+        .love-lang-person .name { font-weight: 600; margin-bottom: 5px; }
+        .love-lang-person .lang {
+            background: var(--rose-light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .love-lang-heart { font-size: 2rem; }
+        .love-lang-tip {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--ice-blue);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ===== AVATAR CREATOR ===== */
+        .couple-avatar-section {
+            background: linear-gradient(135deg, var(--rose-light) 0%, var(--sage-light) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .couple-avatar-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        .couple-avatar-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .avatar-preview {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .avatar-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-placeholder {
+            font-size: 3rem;
+        }
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--rose);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        .couple-heart {
+            font-size: 2rem;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .avatar-hint {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Avatar Modal */
+        .avatar-upload-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .avatar-photo-preview {
+            width: 150px;
+            height: 150px;
+            margin: 15px auto;
+            background: var(--ice-blue);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        .avatar-photo-preview:hover {
+            background: var(--sage-light);
+        }
+        .avatar-photo-preview span {
+            font-size: 3rem;
+        }
+        .avatar-photo-preview p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        .avatar-photo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-customize h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        .avatar-result {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: var(--ice-blue);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .avatar-result img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .avatar-option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .avatar-option-group label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .avatar-option-group select,
+        .avatar-option-group input[type="color"] {
+            padding: 8px;
+            border: 1px solid var(--ice-blue);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .avatar-option-group input[type="color"] {
+            height: 38px;
+            cursor: pointer;
+        }
+        .btn-shuffle {
+            width: 100%;
+            padding: 10px;
+            background: var(--sage-light);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+        .btn-shuffle:hover {
+            background: var(--sage);
+            color: white;
+        }
+
         /* MODALS */
         .modal {
             display: none;
@@ -3227,23 +4018,35 @@
         <!-- Nav Spacer for sticky nav -->
         <div class="nav-spacer" id="navSpacer"></div>
 
-        <!-- Kompaktes Menü -->
+        <!-- Kompaktes Menü - Neu organisiert -->
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab" data-category="handwerk">🔨</button>
-            <button class="nav-tab" data-category="aktiv">🏃‍♀️</button>
-            <button class="nav-tab" data-category="wellness">💆</button>
-            <button class="nav-tab" data-category="comedy">😂</button>
-            <button class="nav-tab" data-category="essen">🍽️</button>
-            <button class="nav-tab" data-category="shows">🎭</button>
-            <button class="nav-tab" data-category="travel">🌍</button>
-            <button class="nav-tab" data-category="memories">📸</button>
+            <!-- Haupt-Kategorien: Date-Ideen -->
+            <button class="nav-tab" data-category="handwerk" title="Handwerk">🔨</button>
+            <button class="nav-tab" data-category="aktiv" title="Sport & Aktiv">🏃‍♀️</button>
+            <button class="nav-tab" data-category="wellness" title="Wellness">💆</button>
+            <button class="nav-tab" data-category="essen" title="Essen">🍽️</button>
+            <button class="nav-tab" data-category="shows" title="Shows & Comedy">🎭</button>
+
             <span class="nav-separator">|</span>
-            <button class="nav-tab nav-tab-side" data-category="liked">👍</button>
-            <button class="nav-tab nav-tab-side" data-category="nope">👎</button>
-            <button class="nav-tab nav-tab-side" data-category="custom">✨</button>
-            <button class="nav-tab nav-tab-side" data-category="bucketlist">🪣</button>
-            <button class="nav-tab nav-tab-side" data-category="yearreview">📊</button>
-            <button class="nav-tab nav-tab-side" data-category="budget">💰</button>
+
+            <!-- Persönliches -->
+            <button class="nav-tab" data-category="planned" title="Geplante Dates">📋</button>
+            <button class="nav-tab" data-category="partner" title="Wir 💕">💕</button>
+            <button class="nav-tab" data-category="travel" title="Reisen">🌍</button>
+            <button class="nav-tab" data-category="memories" title="Erinnerungen">📸</button>
+
+            <!-- Mehr-Menü für erweiterte Features -->
+            <div class="nav-more-wrapper">
+                <button class="nav-tab nav-more-btn" onclick="toggleMoreMenu()" title="Mehr">⋯</button>
+                <div class="nav-more-menu" id="navMoreMenu">
+                    <button class="nav-more-item" data-category="liked">👍 Gefällt uns</button>
+                    <button class="nav-more-item" data-category="nope">👎 Nope</button>
+                    <button class="nav-more-item" data-category="custom">✨ Eigene Dates</button>
+                    <button class="nav-more-item" data-category="bucketlist">🪣 Bucket List</button>
+                    <button class="nav-more-item" data-category="yearreview">📊 Jahresrückblick</button>
+                    <button class="nav-more-item" data-category="budget">💰 Budget</button>
+                </div>
+            </div>
         </nav>
 
         <!-- Feierabend Toggle -->
@@ -3368,6 +4171,17 @@
                 </div>
                 <div id="shows-container">
                     <p class="empty-message">Keine Shows gefunden.</p>
+                </div>
+            </section>
+
+            <!-- PLANNED DATES -->
+            <section class="category-section" id="planned">
+                <div class="category-header">
+                    <h2>📋 Geplante Dates</h2>
+                    <p>Eure kommenden Dates - nach dem Date: Fotos, Kosten & Erinnerungen festhalten!</p>
+                </div>
+                <div class="planned-dates-container" id="plannedDatesContainer">
+                    <p class="empty-message">Noch keine Dates geplant! Wähle ein Date aus und klick auf "📋 Planen"</p>
                 </div>
             </section>
 
@@ -3572,6 +4386,216 @@
                 </div>
             </section>
 
+            <!-- PARTNER PROFIL -->
+            <section class="category-section" id="partner">
+                <div class="category-header">
+                    <h2>💕 Unser Profil</h2>
+                    <p>Alles über uns</p>
+                </div>
+
+                <!-- Zusammen-Seit Counter -->
+                <div class="partner-counter-card">
+                    <div class="counter-hearts">💑</div>
+                    <h3>Zusammen seit</h3>
+                    <div class="counter-date-input">
+                        <input type="date" id="relationshipStartDate" onchange="saveRelationshipDate()">
+                    </div>
+                    <div class="counter-display" id="relationshipCounter">
+                        <span class="counter-big" id="counterDays">0</span>
+                        <span class="counter-label">Tage</span>
+                    </div>
+                    <div class="counter-details" id="counterDetails">
+                        <!-- Jahre, Monate, Wochen -->
+                    </div>
+                </div>
+
+                <!-- Meilensteine -->
+                <div class="partner-milestones">
+                    <h3>🏆 Meilensteine</h3>
+                    <div class="milestones-grid" id="milestonesGrid">
+                        <!-- Wird per JS gefüllt -->
+                    </div>
+                </div>
+
+                <!-- Paar-Avatar Creator -->
+                <div class="couple-avatar-section">
+                    <h3>📸 Unsere Avatare</h3>
+                    <div class="couple-avatar-display">
+                        <div class="avatar-preview" id="nickAvatarPreview">
+                            <img id="nickAvatarImg" src="" alt="Nick Avatar" style="display:none;">
+                            <span class="avatar-placeholder" id="nickAvatarPlaceholder">🧔</span>
+                            <button class="avatar-edit-btn" onclick="openAvatarCreator('nick')">✏️</button>
+                        </div>
+                        <div class="couple-heart">💕</div>
+                        <div class="avatar-preview" id="solliAvatarPreview">
+                            <img id="solliAvatarImg" src="" alt="Solli Avatar" style="display:none;">
+                            <span class="avatar-placeholder" id="solliAvatarPlaceholder">👩</span>
+                            <button class="avatar-edit-btn" onclick="openAvatarCreator('solli')">✏️</button>
+                        </div>
+                    </div>
+                    <p class="avatar-hint">Klicke auf ✏️ um einen Avatar zu erstellen</p>
+                </div>
+
+                <!-- Partner Profile Cards -->
+                <div class="partner-profiles">
+                    <h3>👫 Unsere Profile</h3>
+                    <div class="profiles-container">
+                        <!-- Nick's Profil -->
+                        <div class="profile-card" id="profileNick">
+                            <div class="profile-header">
+                                <div class="profile-avatar" id="nickProfileAvatar">🧔</div>
+                                <input type="text" class="profile-name" id="nickName" value="Nick" onchange="savePartnerProfiles()">
+                            </div>
+                            <div class="profile-fields">
+                                <div class="profile-field">
+                                    <label>🍕 Lieblingsessen</label>
+                                    <input type="text" id="nickFood" placeholder="z.B. Pizza, Pasta..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>🍹 Lieblingsgetränk</label>
+                                    <input type="text" id="nickDrink" placeholder="z.B. Aperol Spritz..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>👕 Kleidergröße</label>
+                                    <input type="text" id="nickSize" placeholder="z.B. M, 38..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>👟 Schuhgröße</label>
+                                    <input type="text" id="nickShoe" placeholder="z.B. 43..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>🎂 Geburtstag</label>
+                                    <input type="date" id="nickBirthday" onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>💝 Love Language</label>
+                                    <select id="nickLoveLanguage" onchange="savePartnerProfiles()">
+                                        <option value="">Wählen...</option>
+                                        <option value="words">Worte der Anerkennung</option>
+                                        <option value="time">Zweisamkeit</option>
+                                        <option value="gifts">Geschenke</option>
+                                        <option value="service">Hilfsbereitschaft</option>
+                                        <option value="touch">Körperliche Nähe</option>
+                                    </select>
+                                </div>
+                                <div class="profile-field full-width">
+                                    <label>📝 Notizen</label>
+                                    <textarea id="nickNotes" placeholder="Allergien, Vorlieben, Besonderheiten..." onchange="savePartnerProfiles()"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Solli's Profil -->
+                        <div class="profile-card" id="profileSolli">
+                            <div class="profile-header">
+                                <div class="profile-avatar" id="solliProfileAvatar">👩</div>
+                                <input type="text" class="profile-name" id="solliName" value="Solli" onchange="savePartnerProfiles()">
+                            </div>
+                            <div class="profile-fields">
+                                <div class="profile-field">
+                                    <label>🍕 Lieblingsessen</label>
+                                    <input type="text" id="solliFood" placeholder="z.B. Sushi, Curry..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>🍹 Lieblingsgetränk</label>
+                                    <input type="text" id="solliDrink" placeholder="z.B. Hugo, Gin Tonic..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>👗 Kleidergröße</label>
+                                    <input type="text" id="solliSize" placeholder="z.B. S, 36..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>👠 Schuhgröße</label>
+                                    <input type="text" id="solliShoe" placeholder="z.B. 38..." onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>🎂 Geburtstag</label>
+                                    <input type="date" id="solliBirthday" onchange="savePartnerProfiles()">
+                                </div>
+                                <div class="profile-field">
+                                    <label>💝 Love Language</label>
+                                    <select id="solliLoveLanguage" onchange="savePartnerProfiles()">
+                                        <option value="">Wählen...</option>
+                                        <option value="words">Worte der Anerkennung</option>
+                                        <option value="time">Zweisamkeit</option>
+                                        <option value="gifts">Geschenke</option>
+                                        <option value="service">Hilfsbereitschaft</option>
+                                        <option value="touch">Körperliche Nähe</option>
+                                    </select>
+                                </div>
+                                <div class="profile-field full-width">
+                                    <label>📝 Notizen</label>
+                                    <textarea id="solliNotes" placeholder="Allergien, Vorlieben, Besonderheiten..." onchange="savePartnerProfiles()"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geschenk-Wunschlisten -->
+                <div class="partner-wishlists">
+                    <h3>🎁 Wunschlisten</h3>
+                    <div class="wishlists-container">
+                        <div class="wishlist-card">
+                            <h4>🧔 Nicks Wünsche</h4>
+                            <div class="wishlist-items" id="nickWishlist">
+                                <!-- Wird per JS gefüllt -->
+                            </div>
+                            <div class="wishlist-add">
+                                <input type="text" id="nickWishInput" placeholder="Neuer Wunsch...">
+                                <button onclick="addWish('nick')" class="btn-small">➕</button>
+                            </div>
+                        </div>
+                        <div class="wishlist-card">
+                            <h4>👩 Sollis Wünsche</h4>
+                            <div class="wishlist-items" id="solliWishlist">
+                                <!-- Wird per JS gefüllt -->
+                            </div>
+                            <div class="wishlist-add">
+                                <input type="text" id="solliWishInput" placeholder="Neuer Wunsch...">
+                                <button onclick="addWish('solli')" class="btn-small">➕</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tägliche Paar-Frage -->
+                <div class="partner-daily-question">
+                    <h3>💬 Frage des Tages</h3>
+                    <div class="daily-question-card">
+                        <div class="question-text" id="dailyQuestionText">
+                            Was war der schönste Moment unserer Beziehung?
+                        </div>
+                        <div class="question-answers">
+                            <div class="question-answer">
+                                <label>🧔 Nick</label>
+                                <textarea id="nickAnswer" placeholder="Deine Antwort..." onchange="saveDailyAnswers()"></textarea>
+                            </div>
+                            <div class="question-answer">
+                                <label>👩 Solli</label>
+                                <textarea id="solliAnswer" placeholder="Deine Antwort..." onchange="saveDailyAnswers()"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="newDailyQuestion()">🔄 Neue Frage</button>
+                    </div>
+                    <div class="past-questions">
+                        <h4>📚 Vergangene Antworten</h4>
+                        <div id="pastQuestionsContainer">
+                            <!-- Wird per JS gefüllt -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Love Languages Übersicht -->
+                <div class="partner-love-languages">
+                    <h3>💝 Unsere Love Languages</h3>
+                    <div class="love-languages-display" id="loveLanguagesDisplay">
+                        <!-- Wird per JS gefüllt wenn beide gewählt haben -->
+                        <p class="hint">Wählt eure Love Languages in den Profilen oben aus!</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <footer class="book-footer">
@@ -3636,7 +4660,71 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Avatar Creator Modal -->
+    <div class="modal" id="avatarModal">
+        <div class="modal-content" style="max-width:500px;">
+            <button class="modal-close" onclick="closeAvatarModal()">✕</button>
+            <div class="modal-header"><h3>📸 Avatar erstellen</h3></div>
+            <div class="modal-body">
+                <input type="hidden" id="avatarForPerson">
+
+                <!-- Foto Upload -->
+                <div class="avatar-upload-section">
+                    <p>Lade ein Foto hoch und wir erstellen einen Cartoon-Avatar!</p>
+                    <div class="avatar-photo-preview" id="avatarPhotoPreview">
+                        <span>📷</span>
+                        <p>Klick zum Hochladen</p>
+                    </div>
+                    <input type="file" id="avatarPhotoInput" accept="image/*" style="display:none;" onchange="handleAvatarPhoto(event)">
+                </div>
+
+                <!-- Avatar Customization -->
+                <div class="avatar-customize" id="avatarCustomize" style="display:none;">
+                    <h4>Avatar anpassen</h4>
+                    <div class="avatar-result">
+                        <img id="generatedAvatar" src="" alt="Avatar">
+                    </div>
+                    <div class="avatar-options">
+                        <div class="avatar-option-group full-width">
+                            <label>Wähle dein Tier</label>
+                            <select id="avatarAnimal" onchange="updateAvatarPreview()">
+                                <option value="dog">🐕 Hund</option>
+                                <option value="panda">🐼 Panda</option>
+                                <option value="koala">🐨 Koala</option>
+                                <option value="rabbit">🐰 Hase</option>
+                                <option value="fox">🦊 Fuchs</option>
+                                <option value="penguin">🐧 Pinguin</option>
+                                <option value="otter">🦦 Otter</option>
+                                <option value="hedgehog">🦔 Igel</option>
+                                <option value="squirrel">🐿️ Eichhörnchen</option>
+                                <option value="capybara">Capybara</option>
+                                <option value="axolotl">Axolotl</option>
+                                <option value="dolphin">🐬 Delfin</option>
+                                <option value="elephant">🐘 Elefant</option>
+                                <option value="giraffe">🦒 Giraffe</option>
+                                <option value="hippo">🦛 Nilpferd</option>
+                                <option value="tiger">🐯 Tiger</option>
+                                <option value="wolf">🐺 Wolf</option>
+                                <option value="monkey">🐵 Affe</option>
+                                <option value="frog">🐸 Frosch</option>
+                                <option value="duck">🦆 Ente</option>
+                                <option value="turtle">🐢 Schildkröte</option>
+                                <option value="llama">🦙 Lama</option>
+                                <option value="sloth">🦥 Faultier</option>
+                                <option value="raccoon">🦝 Waschbär</option>
+                                <option value="beaver">🦫 Biber</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-shuffle" onclick="shuffleAvatar()">🎲 Zufälliges Tier</button>
+                </div>
+
+                <button class="btn btn-primary" style="width:100%;margin-top:15px;" onclick="saveAvatar()">💾 Avatar speichern</button>
+            </div>
+        </div>
+    </div>
+
     <div class="modal" id="destinationPopup">
         <div class="modal-content" style="max-width:600px;">
             <button class="modal-close" onclick="closeDestinationPopup()">✕</button>
@@ -3766,7 +4854,6 @@
                 // Altona / Ottensen
                 { name: 'Maquis', type: '100% Vegetarisch', address: 'Thedestraße 2', coords: [53.5519, 9.9347], link: 'https://www.maquis.de/', veggie: true, hours: 'Di-Sa 18-22h, So-Mo geschlossen' },
                 { name: 'Froindlichst', type: '100% Vegan', address: 'Bahrenfelder Str. 131', coords: [53.5556, 9.9375], link: 'https://froindlichst.de/', veggie: true, hours: 'Mo-Sa 11-22h' },
-                { name: 'Café May', type: 'Frühstück & Kuchen', address: 'Beim Grünen Jäger 66', coords: [53.5572, 9.9544], link: '', veggie: true, hours: 'Mo-So 9-18h' },
                 // Eppendorf / Winterhude
                 { name: 'Mirou', type: 'Israelische Mezze', address: 'Mühlenkamp 43', coords: [53.5889, 10.0083], link: 'https://www.mirou-hamburg.de/', veggie: true, hours: 'Di-Sa 18-23h, So geschlossen' },
                 { name: 'Tassajara', type: 'Vegan seit 1976', address: 'Eppendorfer Weg 47', coords: [53.5700, 9.9600], link: 'https://www.tassajara.de/', veggie: true, hours: 'Mo-So 11:30-22h' },
@@ -3774,17 +4861,16 @@
                 // Karoviertel / Sternschanze
                 { name: 'Cai Kitchen', type: '100% Vegan Sichuan', address: 'Glashüttenstr. 85a', coords: [53.5617, 9.9636], link: 'https://www.cai-kitchen.de/', veggie: true, hours: 'Mo-So 12-22h' },
                 { name: 'Hatari', type: 'Srilankisches Curry', address: 'Schanzenstraße 2', coords: [53.5633, 9.9611], link: '', veggie: true, hours: 'Mo-So 12-23h' },
-                { name: 'Mehl, Butter, Zucker', type: 'Café & Kuchen', address: 'Bartelsstraße 26', coords: [53.5639, 9.9597], link: '', veggie: true, hours: 'Mi-So 10-18h' },
                 { name: 'Nil', type: 'Sudanesisch Vegetarisch', address: 'Neuer Pferdemarkt 5', coords: [53.5569, 9.9619], link: '', veggie: true, hours: 'Di-So 12-22h' },
                 // Grindel / Uni
-                { name: 'Pony Bar', type: 'Bar & Essen', address: 'Allende-Platz 1', coords: [53.5669, 9.9850], link: '', veggie: true, hours: 'Mo-So 17-1h' },
-                { name: 'Campus Suite', type: 'Café & Bistro', address: 'Grindelallee 43', coords: [53.5672, 9.9842], link: '', veggie: true, hours: 'Mo-Fr 8-18h' },
+                { name: 'Abaton Bistro', type: 'Kino-Restaurant', address: 'Allende-Platz 3', coords: [53.5669, 9.9850], link: '', veggie: true, hours: 'Mo-So 11-23h' },
+                { name: 'Shalimar', type: 'Indisch-Pakistanisch', address: 'Grindelallee 19', coords: [53.5669, 9.9811], link: '', veggie: true, hours: 'Mo-So 12-23h' },
+                { name: 'Asia Hung', type: 'Vietnamesisch', address: 'Grindelhof 77', coords: [53.5681, 9.9850], link: '', veggie: true, hours: 'Mo-So 11:30-22:30h' },
                 // HafenCity / Speicherstadt
                 { name: 'Hobenköök', type: 'Regionale Küche', address: 'Stockmeyerstraße 43', coords: [53.5350, 10.0050], link: 'https://www.hobenkoeok.de/', veggie: true, hours: 'Di-Sa 12-22h, So-Mo geschlossen' },
-                { name: 'Fleetschlösschen', type: 'Café Speicherstadt', address: 'Brooktorkai 17', coords: [53.5433, 10.0017], link: '', veggie: true, hours: 'Mo-So 10-18h' },
                 // Barmbek / Uhlenhorst
                 { name: 'Momo Ramen', type: 'Vegane Ramen-Option', address: 'Mühlenkamp 59', coords: [53.5883, 10.0075], link: '', veggie: true, hours: 'Mo-So 12-22h' },
-                { name: 'Feldstern', type: 'Bio-Café', address: 'Sternstraße 2', coords: [53.5856, 10.0039], link: '', veggie: true, hours: 'Mo-Fr 8-18h, Sa 9-16h' },
+                { name: 'Sattgrün', type: 'Veganes Buffet', address: 'Mühlenkamp 39', coords: [53.5856, 10.0039], link: '', veggie: true, hours: 'Mo-So 11:30-22h' },
             ],
             bars: [
                 // Innenstadt
@@ -3804,15 +4890,33 @@
                 { name: 'Goldfischglas', type: 'Gemütliche Kneipe', address: 'Bartelsstraße 30', coords: [53.5636, 9.9594], link: '', hours: 'Di-So 19-2h' },
                 { name: 'Zwick', type: 'Rock-Kneipe', address: 'Sternstraße 28', coords: [53.5628, 9.9558], link: '', hours: 'Mo-So 20-4h' },
                 { name: 'Reh Bar', type: 'Kleine Cocktailbar', address: 'Juliusstraße 22', coords: [53.5617, 9.9564], link: '', hours: 'Di-Sa 19-1h' },
-                // Eppendorf / Winterhude
+                // Eppendorf / Winterhude / Grindel
                 { name: 'Julep', type: 'Whiskey & Cocktails', address: 'Eppendorfer Weg 139', coords: [53.5700, 9.9650], link: 'https://www.instagram.com/julep_bar/', hours: 'Di-Sa 19-2h' },
                 { name: 'Hadleys', type: 'Speakeasy', address: 'Beim Schlump 84a', coords: [53.5683, 9.9775], link: 'https://hadleys.de/', hours: 'Di-Sa 18-1h' },
+                { name: 'Pony Bar', type: 'Gemütliche Uni-Bar', address: 'Allende-Platz 1', coords: [53.5669, 9.9850], link: '', hours: 'Mo-So 17-1h' },
                 { name: 'Die Schöne', type: 'Bar & Café', address: 'Barmbeker Str. 159', coords: [53.5800, 10.0050], link: '', hours: 'Mo-So 10-24h' },
                 { name: 'Cascadas', type: 'Cocktails Eppendorf', address: 'Eppendorfer Landstr. 80', coords: [53.5856, 9.9958], link: '', hours: 'Mo-Sa 18-1h' },
                 // Altona / Ottensen
                 { name: 'Nachtasyl', type: 'Thalia Theater Bar', address: 'Alstertor 1', coords: [53.5522, 9.9986], link: '', hours: 'Di-Sa 17-24h' },
                 { name: 'Elbschlosskeller', type: 'Legendäre Kneipe', address: 'Elbberg 1', coords: [53.5469, 9.9328], link: '', hours: 'Mo-So 19-6h' },
                 { name: 'Strandperle', type: 'Beach Bar', address: 'Övelgönne 60', coords: [53.5439, 9.9089], link: '', hours: 'Mo-So 10-22h (Sommer)' },
+            ],
+            cafes: [
+                // Grindel / Uni
+                { name: 'Campus Suite', type: 'Café & Bistro', address: 'Grindelallee 43', coords: [53.5672, 9.9842], link: '', veggie: true, hours: 'Mo-Fr 8-18h' },
+                // Schanze / Karoviertel
+                { name: 'Mehl, Butter, Zucker', type: 'Café & Kuchen', address: 'Bartelsstraße 26', coords: [53.5639, 9.9597], link: '', veggie: true, hours: 'Mi-So 10-18h' },
+                { name: 'Elbgold', type: 'Specialty Coffee', address: 'Lagerstraße 34c', coords: [53.5636, 9.9628], link: 'https://elbgold.com/', veggie: true, hours: 'Mo-Fr 8-18h, Sa-So 9-18h' },
+                // Altona / Ottensen
+                { name: 'Café May', type: 'Frühstück & Kuchen', address: 'Beim Grünen Jäger 66', coords: [53.5572, 9.9544], link: '', veggie: true, hours: 'Mo-So 9-18h' },
+                { name: 'Von der Motte', type: 'Brunch Café', address: 'Eulenstraße 43', coords: [53.5508, 9.9381], link: '', veggie: true, hours: 'Mo-Fr 8-18h, Sa-So 9-18h' },
+                // HafenCity / Speicherstadt
+                { name: 'Fleetschlösschen', type: 'Café Speicherstadt', address: 'Brooktorkai 17', coords: [53.5433, 10.0017], link: '', veggie: true, hours: 'Mo-So 10-18h' },
+                // Winterhude / Eppendorf
+                { name: 'Feldstern', type: 'Bio-Café', address: 'Sternstraße 2', coords: [53.5856, 10.0039], link: '', veggie: true, hours: 'Mo-Fr 8-18h, Sa 9-16h' },
+                { name: 'Café Johanna', type: 'Frühstück & Brunch', address: 'Mühlenkamp 1', coords: [53.5883, 10.0075], link: '', veggie: true, hours: 'Mo-So 9-18h' },
+                // St. Georg
+                { name: 'Café Gnosa', type: 'LGBTQ+ Café', address: 'Lange Reihe 93', coords: [53.5556, 10.0094], link: '', veggie: true, hours: 'Mo-So 10-1h' },
             ]
         };
 
@@ -4409,36 +5513,71 @@
         const feierabendCategories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows'];
 
         function setupNavigation() {
-            document.querySelectorAll('.nav-tab').forEach(tab => {
+            // Normale nav-tabs
+            document.querySelectorAll('.nav-tab[data-category]').forEach(tab => {
                 tab.addEventListener('click', () => {
                     const cat = tab.dataset.category;
-                    const wasActive = tab.classList.contains('active');
-
-                    // Alle Tabs und Sections deaktivieren
-                    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
-
-                    // Wenn bereits aktiv war, einfach schließen (nichts öffnen)
-                    if (wasActive) {
-                        const feierabendToggle = document.getElementById('feierabendToggle');
-                        if (feierabendToggle) feierabendToggle.style.display = 'none';
-                        return;
-                    }
-
-                    // Sonst diesen Tab und seine Section öffnen
-                    tab.classList.add('active');
-                    document.getElementById(cat)?.classList.add('active');
-                    if (cat === 'travel') setTimeout(initGlobe, 150);
-
-                    // Feierabend-Toggle nur für bestimmte Kategorien anzeigen
-                    const feierabendToggle = document.getElementById('feierabendToggle');
-                    if (feierabendToggle) {
-                        feierabendToggle.style.display = feierabendCategories.includes(cat) ? 'flex' : 'none';
-                    }
-
-                    updateLists();
+                    if (!cat) return;
+                    navigateToCategory(cat, tab);
                 });
             });
+
+            // Nav-more-items (im Dropdown)
+            document.querySelectorAll('.nav-more-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const cat = item.dataset.category;
+                    if (!cat) return;
+                    navigateToCategory(cat, item);
+                    closeMoreMenu();
+                });
+            });
+
+            // Schließe Dropdown bei Klick außerhalb
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-more-wrapper')) {
+                    closeMoreMenu();
+                }
+            });
+        }
+
+        function navigateToCategory(cat, clickedElement) {
+            const wasActive = clickedElement.classList.contains('active');
+
+            // Alle Tabs und Sections deaktivieren
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-more-item').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+
+            // Wenn bereits aktiv war, einfach schließen (nichts öffnen)
+            if (wasActive) {
+                const feierabendToggle = document.getElementById('feierabendToggle');
+                if (feierabendToggle) feierabendToggle.style.display = 'none';
+                return;
+            }
+
+            // Sonst diesen Tab und seine Section öffnen
+            clickedElement.classList.add('active');
+            document.getElementById(cat)?.classList.add('active');
+            if (cat === 'travel') setTimeout(initGlobe, 150);
+            if (cat === 'planned') renderPlannedDates();
+
+            // Feierabend-Toggle nur für bestimmte Kategorien anzeigen
+            const feierabendToggle = document.getElementById('feierabendToggle');
+            if (feierabendToggle) {
+                feierabendToggle.style.display = feierabendCategories.includes(cat) ? 'flex' : 'none';
+            }
+
+            updateLists();
+        }
+
+        function toggleMoreMenu() {
+            const menu = document.getElementById('navMoreMenu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMoreMenu() {
+            const menu = document.getElementById('navMoreMenu');
+            if (menu) menu.classList.remove('active');
         }
         
         // ============ GOOGLE SHEETS ============
@@ -5556,6 +6695,22 @@
             const e = currentDatePlan.activity;
             const r = currentDatePlan.restaurant;
 
+            // Skip bar selection for party events - nach dem Feiern braucht man keine Bar mehr!
+            const isPartyEvent = e.category === 'musik' ||
+                                 e.title.toLowerCase().includes('party') ||
+                                 e.title.toLowerCase().includes('warehouse') ||
+                                 e.title.toLowerCase().includes('rave') ||
+                                 e.title.toLowerCase().includes('club') ||
+                                 e.title.toLowerCase().includes('nacht') ||
+                                 e.title.toLowerCase().includes('nye') ||
+                                 e.title.toLowerCase().includes('silvester');
+
+            if (isPartyEvent) {
+                currentDatePlan.bars = [];
+                showDatePlanSummary();
+                return;
+            }
+
             // Finde nahegelegene Bars (mehr Optionen!)
             let nearbyBars = findNearbyVenues(e.coords, 'bars', 8);
 
@@ -5756,7 +6911,7 @@
                     <button class="btn btn-primary" onclick="addDateToCalendar()" style="background:var(--sage);">In Kalender</button>
                     <button class="btn btn-primary" onclick="shareDateViaWhatsApp()" style="background:#25D366;">WhatsApp</button>
                     <button class="btn btn-primary" onclick="openTransitConnection()" style="background:#4285F4;">🚇 Route ab Arbeit</button>
-                    <button class="btn btn-secondary" onclick="markDateDone('${e.id}')" title="Als erledigt markieren">✅ Gemacht!</button>
+                    <button class="btn btn-primary" onclick="addToPlannedDates('${e.id}')" style="background:var(--rose);">📋 Planen</button>
                 </div>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:15px;">
@@ -5817,11 +6972,329 @@
             };
         }
 
-        // Date als erledigt markieren
-        function markDateDone(eventId) {
-            addToDateHistory(eventId);
-            showToast('✅ Date zur History hinzugefügt!');
+        // ============ PLANNED DATES SYSTEM ============
+
+        // Geplante Dates aus localStorage laden
+        function loadPlannedDates() {
+            const saved = localStorage.getItem('datebuch_plannedDates');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        // Geplante Dates speichern
+        function savePlannedDates(dates) {
+            localStorage.setItem('datebuch_plannedDates', JSON.stringify(dates));
+        }
+
+        // Date zu geplanten Dates hinzufügen
+        function addToPlannedDates(eventId) {
+            const plannedDates = loadPlannedDates();
+
+            // Prüfen ob bereits geplant
+            if (plannedDates.find(d => d.eventId === eventId && !d.completed)) {
+                showToast('📋 Dieses Date ist bereits geplant!');
+                return;
+            }
+
+            const event = events.find(e => e.id === eventId);
+            if (!event) return;
+
+            // Aktuelle Date Builder Auswahl speichern
+            const selectedRestaurant = document.querySelector('input[name="restaurantChoice"]:checked')?.value || null;
+            const selectedBars = Array.from(document.querySelectorAll('input[name="barChoice"]:checked')).map(cb => cb.value);
+            const eatFirst = document.getElementById('eatFirst')?.checked || false;
+
+            const plannedDate = {
+                id: Date.now().toString(),
+                eventId: eventId,
+                plannedAt: new Date().toISOString(),
+                eventDate: event.date,
+                eventTitle: event.title,
+                eventEmoji: event.emoji,
+                eventCategory: event.category,
+                eventLocation: event.location,
+                selectedRestaurant: selectedRestaurant,
+                selectedBars: selectedBars,
+                eatFirst: eatFirst,
+                completed: false,
+                // Review-Daten (werden später ausgefüllt)
+                review: null
+            };
+
+            plannedDates.push(plannedDate);
+            savePlannedDates(plannedDates);
+
+            showToast('📋 Date geplant! Findest du unter "Geplante Dates"');
             closeDateBuilder();
+        }
+
+        // Geplante Dates anzeigen
+        function renderPlannedDates() {
+            const container = document.getElementById('plannedDatesContainer');
+            if (!container) return;
+
+            const plannedDates = loadPlannedDates();
+
+            if (plannedDates.length === 0) {
+                container.innerHTML = '<p class="empty-message">Noch keine Dates geplant! Wähle ein Date aus und klick auf "📋 Planen"</p>';
+                return;
+            }
+
+            // Sortieren: Bevorstehende zuerst, dann abgeschlossene
+            const sorted = [...plannedDates].sort((a, b) => {
+                if (a.completed !== b.completed) return a.completed ? 1 : -1;
+                return new Date(a.eventDate) - new Date(b.eventDate);
+            });
+
+            container.innerHTML = sorted.map(planned => {
+                const event = events.find(e => e.id === planned.eventId);
+                const isPast = new Date(planned.eventDate) < new Date();
+                const statusClass = planned.completed ? 'done' : (isPast ? 'upcoming' : 'upcoming');
+                const statusText = planned.completed ? '✓ Erledigt' : (isPast ? '⏰ Fällig!' : '📅 Geplant');
+
+                // Restaurant & Bar Info
+                let detailsHtml = '';
+                if (event) {
+                    detailsHtml = `
+                        <div class="planned-date-details">
+                            <div class="detail-item"><span class="emoji">📍</span> ${event.location || 'Hamburg'}</div>
+                            <div class="detail-item"><span class="emoji">📅</span> ${formatDate(planned.eventDate)}</div>
+                            ${event.time ? `<div class="detail-item"><span class="emoji">🕐</span> ${event.time}</div>` : ''}
+                            ${planned.selectedRestaurant ? `<div class="detail-item"><span class="emoji">🍽️</span> ${planned.selectedRestaurant}</div>` : ''}
+                            ${planned.selectedBars.length > 0 ? `<div class="detail-item"><span class="emoji">🍸</span> ${planned.selectedBars.join(', ')}</div>` : ''}
+                        </div>
+                    `;
+                }
+
+                // Review-Bereich wenn abgeschlossen
+                let reviewHtml = '';
+                if (planned.completed && planned.review) {
+                    reviewHtml = `
+                        <div class="date-review-section">
+                            <h4>💕 Unser Fazit</h4>
+                            ${planned.review.photos && planned.review.photos.length > 0 ? `
+                                <div class="review-photos">
+                                    ${planned.review.photos.map(p => `<img src="${p}" class="review-photo" onclick="openPhotoViewer('${p}')">`).join('')}
+                                </div>
+                            ` : ''}
+                            ${planned.review.actualCost ? `<p><strong>💰 Ausgegeben:</strong> ${planned.review.actualCost}€</p>` : ''}
+                            ${planned.review.highlights && planned.review.highlights.length > 0 ? `<p><strong>✨ Highlights:</strong> ${planned.review.highlights.join(', ')}</p>` : ''}
+                            ${planned.review.notes ? `<p><strong>📝 Notizen:</strong> ${planned.review.notes}</p>` : ''}
+                            ${planned.review.nextTime ? `<p><strong>💡 Nächstes Mal:</strong> ${planned.review.nextTime}</p>` : ''}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="planned-date-card ${planned.completed ? 'completed' : ''}">
+                        <div class="planned-date-header">
+                            <div class="planned-date-info">
+                                <h3>${planned.eventEmoji} ${planned.eventTitle}</h3>
+                                <div class="date-meta">${formatDate(planned.eventDate)} • ${getCategoryLabel(planned.eventCategory)}</div>
+                            </div>
+                            <div class="planned-date-status">
+                                <span class="status-badge ${statusClass}">${statusText}</span>
+                            </div>
+                        </div>
+                        ${detailsHtml}
+                        <div class="planned-date-actions">
+                            ${!planned.completed ? `
+                                <button class="btn btn-primary" onclick="markPlannedDateComplete('${planned.id}')" style="background:var(--sage);">✓ Waren wir!</button>
+                                <button class="btn btn-secondary" onclick="startDateBuilder('${planned.eventId}')">✏️ Anpassen</button>
+                            ` : `
+                                <button class="btn btn-secondary" onclick="editDateReview('${planned.id}')">📝 Bearbeiten</button>
+                            `}
+                            <button class="btn btn-secondary" onclick="removePlannedDate('${planned.id}')" style="color:#dc3545;">🗑️</button>
+                        </div>
+                        ${reviewHtml}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Kategorie-Label
+        function getCategoryLabel(category) {
+            const labels = {
+                'handwerk': '🔨 Handwerk',
+                'aktiv': '🏃‍♀️ Aktiv',
+                'wellness': '💆 Wellness',
+                'essen': '🍽️ Essen',
+                'shows': '🎭 Shows',
+                'musical': '🎭 Musical',
+                'theater': '🎭 Theater',
+                'comedy': '😂 Comedy',
+                'variete': '🎪 Varieté',
+                'musik': '🎵 Musik'
+            };
+            return labels[category] || category;
+        }
+
+        // Date als erledigt markieren - öffnet Review Modal
+        function markPlannedDateComplete(plannedId) {
+            const plannedDates = loadPlannedDates();
+            const planned = plannedDates.find(d => d.id === plannedId);
+            if (!planned) return;
+
+            // Review Modal öffnen
+            openDateReviewModal(plannedId);
+        }
+
+        // Review Modal öffnen
+        function openDateReviewModal(plannedId) {
+            const plannedDates = loadPlannedDates();
+            const planned = plannedDates.find(d => d.id === plannedId);
+            if (!planned) return;
+
+            const existingReview = planned.review || {};
+
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.id = 'dateReviewModal';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width:500px;">
+                    <button class="close-modal" onclick="closeDateReviewModal()">×</button>
+                    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:20px;">
+                        ${planned.eventEmoji} ${planned.eventTitle}
+                    </h3>
+                    <p style="color:var(--text-light);margin-bottom:20px;">Wie war euer Date? Halte eure Erinnerungen fest!</p>
+
+                    <div class="review-form">
+                        <!-- Fotos -->
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block;margin-bottom:8px;font-weight:600;">📸 Fotos vom Date</label>
+                            <div class="review-photos" id="reviewPhotosContainer">
+                                ${existingReview.photos ? existingReview.photos.map(p => `
+                                    <img src="${p}" class="review-photo" data-photo="${p}">
+                                `).join('') : ''}
+                                <div class="add-photo-btn" onclick="document.getElementById('reviewPhotoInput').click()">➕</div>
+                            </div>
+                            <input type="file" id="reviewPhotoInput" accept="image/*" multiple style="display:none;" onchange="handleReviewPhotoUpload(event)">
+                        </div>
+
+                        <!-- Kosten -->
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block;margin-bottom:8px;font-weight:600;">💰 Was habt ihr ausgegeben?</label>
+                            <div class="review-cost-input">
+                                <input type="number" id="reviewActualCost" placeholder="0" value="${existingReview.actualCost || ''}">
+                                <span>€ insgesamt</span>
+                            </div>
+                        </div>
+
+                        <!-- Highlights -->
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block;margin-bottom:8px;font-weight:600;">✨ Was war besonders schön?</label>
+                            <div class="highlight-tags" id="highlightTags">
+                                ${['Essen top!', 'Super Atmosphäre', 'Tolle Gespräche', 'Romantisch', 'Lustig', 'Überraschend', 'Entspannt', 'Abenteuerlich'].map(tag => `
+                                    <span class="highlight-tag ${existingReview.highlights?.includes(tag) ? 'selected' : ''}" onclick="toggleHighlightTag(this)">${tag}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Notizen -->
+                        <div class="review-notes" style="margin-bottom:20px;">
+                            <label style="display:block;margin-bottom:8px;font-weight:600;">📝 Notizen & Erinnerungen</label>
+                            <textarea id="reviewNotes" placeholder="Was wollt ihr festhalten?">${existingReview.notes || ''}</textarea>
+                        </div>
+
+                        <!-- Nächstes Mal -->
+                        <div class="next-time-input">
+                            <label>💡 Das machen wir nächstes Mal anders:</label>
+                            <textarea id="reviewNextTime" placeholder="z.B. früher reservieren, andere Bar danach...">${existingReview.nextTime || ''}</textarea>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:10px;margin-top:25px;">
+                        <button class="btn btn-primary" onclick="saveDateReview('${plannedId}')" style="flex:1;background:var(--sage);">💾 Speichern</button>
+                        <button class="btn btn-secondary" onclick="closeDateReviewModal()">Abbrechen</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Temporäre Foto-Sammlung
+            window.reviewTempPhotos = existingReview.photos ? [...existingReview.photos] : [];
+        }
+
+        // Highlight Tag toggle
+        function toggleHighlightTag(el) {
+            el.classList.toggle('selected');
+        }
+
+        // Foto Upload für Review
+        function handleReviewPhotoUpload(event) {
+            const files = event.target.files;
+            const container = document.getElementById('reviewPhotosContainer');
+            const addBtn = container.querySelector('.add-photo-btn');
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'review-photo';
+                    img.dataset.photo = e.target.result;
+                    container.insertBefore(img, addBtn);
+                    window.reviewTempPhotos.push(e.target.result);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Review speichern
+        function saveDateReview(plannedId) {
+            const plannedDates = loadPlannedDates();
+            const idx = plannedDates.findIndex(d => d.id === plannedId);
+            if (idx === -1) return;
+
+            const highlights = Array.from(document.querySelectorAll('.highlight-tag.selected')).map(el => el.textContent);
+
+            plannedDates[idx].completed = true;
+            plannedDates[idx].completedAt = new Date().toISOString();
+            plannedDates[idx].review = {
+                photos: window.reviewTempPhotos || [],
+                actualCost: document.getElementById('reviewActualCost').value || null,
+                highlights: highlights,
+                notes: document.getElementById('reviewNotes').value || null,
+                nextTime: document.getElementById('reviewNextTime').value || null
+            };
+
+            savePlannedDates(plannedDates);
+
+            // Auch zur Date History hinzufügen für Budget-Tracking
+            addToDateHistory(plannedDates[idx].eventId, plannedDates[idx].review.actualCost);
+
+            closeDateReviewModal();
+            renderPlannedDates();
+            showToast('✨ Date-Erinnerung gespeichert!');
+        }
+
+        // Review bearbeiten
+        function editDateReview(plannedId) {
+            openDateReviewModal(plannedId);
+        }
+
+        // Modal schließen
+        function closeDateReviewModal() {
+            const modal = document.getElementById('dateReviewModal');
+            if (modal) modal.remove();
+            window.reviewTempPhotos = [];
+        }
+
+        // Geplantes Date entfernen
+        function removePlannedDate(plannedId) {
+            if (!confirm('Date wirklich entfernen?')) return;
+
+            let plannedDates = loadPlannedDates();
+            plannedDates = plannedDates.filter(d => d.id !== plannedId);
+            savePlannedDates(plannedDates);
+            renderPlannedDates();
+            showToast('🗑️ Date entfernt');
+        }
+
+        // Datum formatieren
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const options = { weekday: 'short', day: 'numeric', month: 'short' };
+            return date.toLocaleDateString('de-DE', options);
         }
 
         function initDatePlanMap(steps) {
@@ -8307,6 +9780,648 @@ END:VCALENDAR`;
             renderYearReview(); // Update Year Review auch
         }
 
+        // ============ PARTNER PROFIL ============
+        const COUPLE_QUESTIONS = [
+            "Was war der schönste Moment unserer Beziehung?",
+            "Wofür bist du mir am meisten dankbar?",
+            "Was ist dein Lieblings-Date mit mir?",
+            "Was bewunderst du an mir am meisten?",
+            "Wenn du einen Wunsch für unsere Beziehung hättest, was wäre er?",
+            "Was ist deine Lieblingserinnerung von unserem ersten Jahr?",
+            "Welche Eigenschaft von mir hat dich zuerst angezogen?",
+            "Was möchtest du unbedingt noch mit mir erleben?",
+            "Was ist das Lustigste, was wir zusammen erlebt haben?",
+            "In welchen Momenten fühlst du dich mir am nächsten?",
+            "Was habe ich dir beigebracht?",
+            "Welche Kleinigkeit von mir macht dich besonders glücklich?",
+            "Was würdest du an unserer Beziehung niemals ändern wollen?",
+            "Welches gemeinsame Hobby sollten wir ausprobieren?",
+            "Was ist dein Traumurlaub mit mir?",
+            "Wann hast du gewusst, dass du mich liebst?",
+            "Was macht unsere Beziehung besonders?",
+            "Welches Lied erinnert dich an mich?",
+            "Was möchtest du mir schon lange sagen?",
+            "Welchen Film oder Serie sollten wir zusammen schauen?"
+        ];
+
+        const MILESTONES = [
+            { days: 1, icon: "💕", title: "Erster Tag" },
+            { days: 7, icon: "🌟", title: "Eine Woche" },
+            { days: 30, icon: "🌙", title: "Ein Monat" },
+            { days: 100, icon: "💯", title: "100 Tage" },
+            { days: 180, icon: "🌸", title: "6 Monate" },
+            { days: 365, icon: "🎂", title: "Ein Jahr" },
+            { days: 500, icon: "🏆", title: "500 Tage" },
+            { days: 730, icon: "💎", title: "2 Jahre" },
+            { days: 1000, icon: "🌈", title: "1000 Tage" },
+            { days: 1095, icon: "👑", title: "3 Jahre" },
+            { days: 1825, icon: "💍", title: "5 Jahre" }
+        ];
+
+        const LOVE_LANGUAGE_NAMES = {
+            words: "Worte der Anerkennung",
+            time: "Zweisamkeit",
+            gifts: "Geschenke",
+            service: "Hilfsbereitschaft",
+            touch: "Körperliche Nähe"
+        };
+
+        const LOVE_LANGUAGE_TIPS = {
+            words: "Sage öfter, was du an deinem Partner liebst!",
+            time: "Plant regelmäßig Quality Time ohne Ablenkung!",
+            gifts: "Kleine Aufmerksamkeiten zeigen, dass du denkst an sie/ihn!",
+            service: "Nimm deinem Partner kleine Aufgaben ab!",
+            touch: "Kuscheln, Händchen halten - zeigt eure Nähe!"
+        };
+
+        // Relationship Date
+        function saveRelationshipDate() {
+            const dateInput = document.getElementById('relationshipStartDate');
+            if (dateInput && dateInput.value) {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                saved.relationshipStart = dateInput.value;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateRelationshipCounter();
+            }
+        }
+
+        function updateRelationshipCounter() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const startDate = saved.relationshipStart;
+
+            const dateInput = document.getElementById('relationshipStartDate');
+            if (dateInput && startDate) {
+                dateInput.value = startDate;
+            }
+
+            if (!startDate) {
+                document.getElementById('counterDays').textContent = '?';
+                document.getElementById('counterDetails').innerHTML = '<p>Wähle euer Startdatum!</p>';
+                return;
+            }
+
+            const start = new Date(startDate);
+            const now = new Date();
+            const diffTime = Math.abs(now - start);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            const years = Math.floor(diffDays / 365);
+            const months = Math.floor((diffDays % 365) / 30);
+            const weeks = Math.floor(diffDays / 7);
+
+            document.getElementById('counterDays').textContent = diffDays;
+
+            let detailsHTML = '';
+            if (years > 0) {
+                detailsHTML += `<div class="counter-detail"><span class="counter-detail-num">${years}</span><span class="counter-detail-label">Jahre</span></div>`;
+            }
+            detailsHTML += `<div class="counter-detail"><span class="counter-detail-num">${months}</span><span class="counter-detail-label">Monate</span></div>`;
+            detailsHTML += `<div class="counter-detail"><span class="counter-detail-num">${weeks}</span><span class="counter-detail-label">Wochen</span></div>`;
+
+            document.getElementById('counterDetails').innerHTML = detailsHTML;
+
+            // Update milestones
+            renderMilestones(diffDays);
+        }
+
+        function renderMilestones(currentDays) {
+            const grid = document.getElementById('milestonesGrid');
+            if (!grid) return;
+
+            grid.innerHTML = MILESTONES.map(m => {
+                const achieved = currentDays >= m.days;
+                return `
+                    <div class="milestone-item ${achieved ? 'achieved' : ''}">
+                        <div class="milestone-icon">${m.icon}</div>
+                        <div class="milestone-title">${m.title}</div>
+                        ${achieved ? `<div class="milestone-date">✓</div>` : `<div class="milestone-date">in ${m.days - currentDays} Tagen</div>`}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Partner Profiles
+        function savePartnerProfiles() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.partnerProfiles = {
+                nick: {
+                    name: document.getElementById('nickName')?.value || 'Nick',
+                    food: document.getElementById('nickFood')?.value || '',
+                    drink: document.getElementById('nickDrink')?.value || '',
+                    size: document.getElementById('nickSize')?.value || '',
+                    shoe: document.getElementById('nickShoe')?.value || '',
+                    birthday: document.getElementById('nickBirthday')?.value || '',
+                    loveLanguage: document.getElementById('nickLoveLanguage')?.value || '',
+                    notes: document.getElementById('nickNotes')?.value || ''
+                },
+                solli: {
+                    name: document.getElementById('solliName')?.value || 'Solli',
+                    food: document.getElementById('solliFood')?.value || '',
+                    drink: document.getElementById('solliDrink')?.value || '',
+                    size: document.getElementById('solliSize')?.value || '',
+                    shoe: document.getElementById('solliShoe')?.value || '',
+                    birthday: document.getElementById('solliBirthday')?.value || '',
+                    loveLanguage: document.getElementById('solliLoveLanguage')?.value || '',
+                    notes: document.getElementById('solliNotes')?.value || ''
+                }
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            updateLoveLanguagesDisplay();
+        }
+
+        function loadPartnerProfiles() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const profiles = saved.partnerProfiles || { nick: {}, solli: {} };
+
+            // Nick
+            if (document.getElementById('nickName')) document.getElementById('nickName').value = profiles.nick.name || 'Nick';
+            if (document.getElementById('nickFood')) document.getElementById('nickFood').value = profiles.nick.food || '';
+            if (document.getElementById('nickDrink')) document.getElementById('nickDrink').value = profiles.nick.drink || '';
+            if (document.getElementById('nickSize')) document.getElementById('nickSize').value = profiles.nick.size || '';
+            if (document.getElementById('nickShoe')) document.getElementById('nickShoe').value = profiles.nick.shoe || '';
+            if (document.getElementById('nickBirthday')) document.getElementById('nickBirthday').value = profiles.nick.birthday || '';
+            if (document.getElementById('nickLoveLanguage')) document.getElementById('nickLoveLanguage').value = profiles.nick.loveLanguage || '';
+            if (document.getElementById('nickNotes')) document.getElementById('nickNotes').value = profiles.nick.notes || '';
+
+            // Solli
+            if (document.getElementById('solliName')) document.getElementById('solliName').value = profiles.solli.name || 'Solli';
+            if (document.getElementById('solliFood')) document.getElementById('solliFood').value = profiles.solli.food || '';
+            if (document.getElementById('solliDrink')) document.getElementById('solliDrink').value = profiles.solli.drink || '';
+            if (document.getElementById('solliSize')) document.getElementById('solliSize').value = profiles.solli.size || '';
+            if (document.getElementById('solliShoe')) document.getElementById('solliShoe').value = profiles.solli.shoe || '';
+            if (document.getElementById('solliBirthday')) document.getElementById('solliBirthday').value = profiles.solli.birthday || '';
+            if (document.getElementById('solliLoveLanguage')) document.getElementById('solliLoveLanguage').value = profiles.solli.loveLanguage || '';
+            if (document.getElementById('solliNotes')) document.getElementById('solliNotes').value = profiles.solli.notes || '';
+
+            updateLoveLanguagesDisplay();
+        }
+
+        // Love Languages Display
+        function updateLoveLanguagesDisplay() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const profiles = saved.partnerProfiles || { nick: {}, solli: {} };
+            const display = document.getElementById('loveLanguagesDisplay');
+            if (!display) return;
+
+            const nickLang = profiles.nick.loveLanguage;
+            const solliLang = profiles.solli.loveLanguage;
+
+            if (!nickLang || !solliLang) {
+                display.innerHTML = '<p class="hint">Wählt eure Love Languages in den Profilen oben aus!</p>';
+                return;
+            }
+
+            display.innerHTML = `
+                <div class="love-lang-comparison">
+                    <div class="love-lang-person">
+                        <div class="avatar">🧔</div>
+                        <div class="name">${profiles.nick.name || 'Nick'}</div>
+                        <div class="lang">${LOVE_LANGUAGE_NAMES[nickLang]}</div>
+                    </div>
+                    <div class="love-lang-heart">💕</div>
+                    <div class="love-lang-person">
+                        <div class="avatar">👩</div>
+                        <div class="name">${profiles.solli.name || 'Solli'}</div>
+                        <div class="lang">${LOVE_LANGUAGE_NAMES[solliLang]}</div>
+                    </div>
+                </div>
+                <div class="love-lang-tip">
+                    💡 <strong>Tipp für ${profiles.nick.name || 'Nick'}:</strong> ${LOVE_LANGUAGE_TIPS[solliLang]}<br>
+                    💡 <strong>Tipp für ${profiles.solli.name || 'Solli'}:</strong> ${LOVE_LANGUAGE_TIPS[nickLang]}
+                </div>
+            `;
+        }
+
+        // Wishlists
+        function loadWishlists() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const wishlists = saved.wishlists || { nick: [], solli: [] };
+            renderWishlist('nick', wishlists.nick);
+            renderWishlist('solli', wishlists.solli);
+        }
+
+        function renderWishlist(person, items) {
+            const container = document.getElementById(person + 'Wishlist');
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-light);font-size:0.9rem;">Noch keine Wünsche</p>';
+                return;
+            }
+
+            container.innerHTML = items.map((item, idx) => `
+                <div class="wishlist-item ${item.bought ? 'bought' : ''}">
+                    <input type="checkbox" ${item.bought ? 'checked' : ''} onchange="toggleWish('${person}', ${idx})">
+                    <span class="wishlist-item-text">${item.text}</span>
+                    <button class="wishlist-item-delete" onclick="deleteWish('${person}', ${idx})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function addWish(person) {
+            const input = document.getElementById(person + 'WishInput');
+            if (!input || !input.value.trim()) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const wishlists = saved.wishlists || { nick: [], solli: [] };
+
+            wishlists[person].push({ text: input.value.trim(), bought: false });
+            saved.wishlists = wishlists;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            input.value = '';
+            loadWishlists();
+        }
+
+        function toggleWish(person, idx) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const wishlists = saved.wishlists || { nick: [], solli: [] };
+
+            if (wishlists[person][idx]) {
+                wishlists[person][idx].bought = !wishlists[person][idx].bought;
+            }
+            saved.wishlists = wishlists;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            loadWishlists();
+        }
+
+        function deleteWish(person, idx) {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const wishlists = saved.wishlists || { nick: [], solli: [] };
+
+            wishlists[person].splice(idx, 1);
+            saved.wishlists = wishlists;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            loadWishlists();
+        }
+
+        // Daily Question
+        function loadDailyQuestion() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const today = new Date().toISOString().split('T')[0];
+
+            // Check if we need a new question
+            if (saved.dailyQuestion?.date !== today) {
+                // Pick a random question
+                const randomIdx = Math.floor(Math.random() * COUPLE_QUESTIONS.length);
+                saved.dailyQuestion = {
+                    date: today,
+                    question: COUPLE_QUESTIONS[randomIdx],
+                    nickAnswer: '',
+                    solliAnswer: ''
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            }
+
+            // Display current question
+            const questionEl = document.getElementById('dailyQuestionText');
+            if (questionEl) questionEl.textContent = saved.dailyQuestion.question;
+
+            const nickAnswer = document.getElementById('nickAnswer');
+            const solliAnswer = document.getElementById('solliAnswer');
+            if (nickAnswer) nickAnswer.value = saved.dailyQuestion.nickAnswer || '';
+            if (solliAnswer) solliAnswer.value = saved.dailyQuestion.solliAnswer || '';
+
+            renderPastQuestions();
+        }
+
+        function saveDailyAnswers() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            if (!saved.dailyQuestion) return;
+
+            saved.dailyQuestion.nickAnswer = document.getElementById('nickAnswer')?.value || '';
+            saved.dailyQuestion.solliAnswer = document.getElementById('solliAnswer')?.value || '';
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+
+        function newDailyQuestion() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            // Save current question to history if answers exist
+            if (saved.dailyQuestion && (saved.dailyQuestion.nickAnswer || saved.dailyQuestion.solliAnswer)) {
+                saved.pastQuestions = saved.pastQuestions || [];
+                saved.pastQuestions.unshift({
+                    date: saved.dailyQuestion.date,
+                    question: saved.dailyQuestion.question,
+                    nickAnswer: saved.dailyQuestion.nickAnswer,
+                    solliAnswer: saved.dailyQuestion.solliAnswer
+                });
+                // Keep only last 20 questions
+                saved.pastQuestions = saved.pastQuestions.slice(0, 20);
+            }
+
+            // Pick a new random question
+            const randomIdx = Math.floor(Math.random() * COUPLE_QUESTIONS.length);
+            saved.dailyQuestion = {
+                date: new Date().toISOString().split('T')[0],
+                question: COUPLE_QUESTIONS[randomIdx],
+                nickAnswer: '',
+                solliAnswer: ''
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+            loadDailyQuestion();
+        }
+
+        function renderPastQuestions() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const container = document.getElementById('pastQuestionsContainer');
+            if (!container) return;
+
+            const pastQuestions = saved.pastQuestions || [];
+
+            if (pastQuestions.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-light);">Noch keine vergangenen Fragen</p>';
+                return;
+            }
+
+            container.innerHTML = pastQuestions.slice(0, 5).map(q => `
+                <div class="past-question-item">
+                    <div class="past-question-text">"${q.question}"</div>
+                    <div class="past-question-answers">
+                        <div class="past-answer"><strong>🧔 Nick:</strong> ${q.nickAnswer || '-'}</div>
+                        <div class="past-answer"><strong>👩 Solli:</strong> ${q.solliAnswer || '-'}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize Partner Section
+        function initPartnerSection() {
+            updateRelationshipCounter();
+            loadPartnerProfiles();
+            loadWishlists();
+            loadDailyQuestion();
+            loadAvatars();
+            initSupabaseSync();
+        }
+
+        // ============ AVATAR CREATOR ============
+        let currentAvatarSeed = '';
+        let currentAvatarPerson = '';
+
+        function openAvatarCreator(person) {
+            currentAvatarPerson = person;
+            document.getElementById('avatarForPerson').value = person;
+            document.getElementById('avatarModal').classList.add('active');
+
+            // Zeige direkt die Tier-Auswahl (kein Foto nötig)
+            document.getElementById('avatarCustomize').style.display = 'block';
+
+            // Verstecke Foto-Upload (nicht mehr nötig für Tiere)
+            document.querySelector('.avatar-upload-section').style.display = 'none';
+
+            // Setze Standard-Tier basierend auf Person
+            const animalSelect = document.getElementById('avatarAnimal');
+            if (person === 'nick') {
+                animalSelect.value = 'dog'; // Hund für Nick
+            } else {
+                animalSelect.value = 'rabbit'; // Hase für Solli (Hamster gibt's nicht, Hase ist ähnlich süß)
+            }
+
+            updateAvatarPreview();
+        }
+
+        function closeAvatarModal() {
+            document.getElementById('avatarModal').classList.remove('active');
+        }
+
+        function handleAvatarPhoto(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                // Show photo preview
+                document.getElementById('avatarPhotoPreview').innerHTML = `<img src="${e.target.result}" alt="Foto">`;
+
+                // Extract dominant color from photo for avatar customization
+                extractColorsFromPhoto(e.target.result);
+
+                // Show customization options
+                document.getElementById('avatarCustomize').style.display = 'block';
+                updateAvatarPreview();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function extractColorsFromPhoto(imgSrc) {
+            // Simple color extraction using canvas
+            const img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 50;
+                canvas.height = 50;
+                ctx.drawImage(img, 0, 0, 50, 50);
+
+                // Get pixel data from hair area (top center)
+                const hairData = ctx.getImageData(20, 5, 10, 10).data;
+                let hairR = 0, hairG = 0, hairB = 0;
+                for (let i = 0; i < hairData.length; i += 4) {
+                    hairR += hairData[i];
+                    hairG += hairData[i + 1];
+                    hairB += hairData[i + 2];
+                }
+                const pixels = hairData.length / 4;
+                hairR = Math.round(hairR / pixels);
+                hairG = Math.round(hairG / pixels);
+                hairB = Math.round(hairB / pixels);
+
+                // Set hair color
+                const hairColor = '#' + [hairR, hairG, hairB].map(x => x.toString(16).padStart(2, '0')).join('');
+                document.getElementById('avatarHairColor').value = hairColor;
+
+                updateAvatarPreview();
+            };
+            img.src = imgSrc;
+        }
+
+        // Süße Tier-Avatare
+        const CUTE_ANIMALS = [
+            'panda', 'koala', 'rabbit', 'fox', 'penguin', 'otter', 'hedgehog',
+            'squirrel', 'capybara', 'axolotl', 'dolphin', 'elephant', 'giraffe',
+            'hippo', 'tiger', 'wolf', 'monkey', 'frog', 'duck', 'turtle',
+            'llama', 'raccoon', 'beaver', 'chinchilla', 'ferret', 'lemur'
+        ];
+
+        function updateAvatarPreview() {
+            const animal = document.getElementById('avatarAnimal').value;
+
+            // Anonymous Animals API für süße Tier-Avatare
+            const url = `https://anonymous-animals.azurewebsites.net/animal/${animal}`;
+            document.getElementById('generatedAvatar').src = url;
+        }
+
+        function shuffleAvatar() {
+            // Zufälliges süßes Tier
+            const randomAnimal = CUTE_ANIMALS[Math.floor(Math.random() * CUTE_ANIMALS.length)];
+            const animalSelect = document.getElementById('avatarAnimal');
+
+            // Prüfe ob das Tier in der Select-Liste ist
+            const option = Array.from(animalSelect.options).find(opt => opt.value === randomAnimal);
+            if (option) {
+                animalSelect.value = randomAnimal;
+            } else {
+                // Fallback: Zufällige Option aus der Liste
+                const randomIndex = Math.floor(Math.random() * animalSelect.options.length);
+                animalSelect.selectedIndex = randomIndex;
+            }
+
+            updateAvatarPreview();
+        }
+
+        function saveAvatar() {
+            const avatarUrl = document.getElementById('generatedAvatar').src;
+            const person = currentAvatarPerson;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            saved.avatars = saved.avatars || {};
+            saved.avatars[person] = avatarUrl;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            loadAvatars();
+            closeAvatarModal();
+            showToast(`✨ Avatar für ${person === 'nick' ? 'Nick' : 'Solli'} gespeichert!`);
+
+            // Sync to Supabase
+            syncToSupabase();
+        }
+
+        function loadAvatars() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const avatars = saved.avatars || {};
+
+            // Nick Avatar
+            if (avatars.nick) {
+                document.getElementById('nickAvatarImg').src = avatars.nick;
+                document.getElementById('nickAvatarImg').style.display = 'block';
+                document.getElementById('nickAvatarPlaceholder').style.display = 'none';
+                document.getElementById('nickProfileAvatar').innerHTML = `<img src="${avatars.nick}" style="width:100%;height:100%;border-radius:50%;">`;
+            }
+
+            // Solli Avatar
+            if (avatars.solli) {
+                document.getElementById('solliAvatarImg').src = avatars.solli;
+                document.getElementById('solliAvatarImg').style.display = 'block';
+                document.getElementById('solliAvatarPlaceholder').style.display = 'none';
+                document.getElementById('solliProfileAvatar').innerHTML = `<img src="${avatars.solli}" style="width:100%;height:100%;border-radius:50%;">`;
+            }
+        }
+
+        // ============ SUPABASE COUPLE SYNC ============
+        // WICHTIG: Erstelle ein Supabase-Projekt unter https://supabase.com
+        // und füge deine Credentials hier ein:
+        const SUPABASE_URL = ''; // z.B. 'https://xxxxx.supabase.co'
+        const SUPABASE_ANON_KEY = ''; // Dein anon/public key
+
+        let supabaseClient = null;
+        let coupleChannel = null;
+
+        function initSupabaseSync() {
+            if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+                console.log('Supabase nicht konfiguriert - Couple Sync deaktiviert');
+                return;
+            }
+
+            // Dynamisch Supabase laden
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+            script.onload = () => {
+                supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                setupRealtimeSync();
+                showToast('💕 Couple Sync verbunden!');
+            };
+            document.head.appendChild(script);
+        }
+
+        function setupRealtimeSync() {
+            if (!supabaseClient) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const coupleId = saved.coupleId || 'nick_solli_default';
+
+            // Subscribe to realtime changes
+            coupleChannel = supabaseClient
+                .channel(`couple:${coupleId}`)
+                .on('broadcast', { event: 'sync' }, (payload) => {
+                    console.log('Received sync from partner:', payload);
+                    handlePartnerSync(payload.payload);
+                })
+                .subscribe();
+
+            console.log('Realtime sync active for couple:', coupleId);
+        }
+
+        function handlePartnerSync(data) {
+            if (!data) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            // Merge partner data
+            if (data.partnerProfiles) {
+                saved.partnerProfiles = { ...saved.partnerProfiles, ...data.partnerProfiles };
+            }
+            if (data.wishlists) {
+                saved.wishlists = { ...saved.wishlists, ...data.wishlists };
+            }
+            if (data.dailyQuestion) {
+                // Merge daily question answers
+                if (saved.dailyQuestion && saved.dailyQuestion.date === data.dailyQuestion.date) {
+                    saved.dailyQuestion.nickAnswer = data.dailyQuestion.nickAnswer || saved.dailyQuestion.nickAnswer;
+                    saved.dailyQuestion.solliAnswer = data.dailyQuestion.solliAnswer || saved.dailyQuestion.solliAnswer;
+                }
+            }
+            if (data.avatars) {
+                saved.avatars = { ...saved.avatars, ...data.avatars };
+            }
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+            // Refresh UI
+            loadPartnerProfiles();
+            loadWishlists();
+            loadDailyQuestion();
+            loadAvatars();
+
+            showToast('💕 Daten von Partner synchronisiert!');
+        }
+
+        async function syncToSupabase() {
+            if (!supabaseClient || !coupleChannel) return;
+
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            // Broadcast changes to partner
+            await coupleChannel.send({
+                type: 'broadcast',
+                event: 'sync',
+                payload: {
+                    partnerProfiles: saved.partnerProfiles,
+                    wishlists: saved.wishlists,
+                    dailyQuestion: saved.dailyQuestion,
+                    avatars: saved.avatars,
+                    relationshipStart: saved.relationshipStart,
+                    timestamp: Date.now()
+                }
+            });
+
+            console.log('Synced to partner');
+        }
+
+        // Override save functions to trigger sync
+        const originalSavePartnerProfiles = savePartnerProfiles;
+        savePartnerProfiles = function() {
+            originalSavePartnerProfiles();
+            syncToSupabase();
+        };
+
+        const originalSaveDailyAnswers = saveDailyAnswers;
+        saveDailyAnswers = function() {
+            originalSaveDailyAnswers();
+            syncToSupabase();
+        };
+
         // ============ STRAVA / KOMOOT INTEGRATION ============
         // WICHTIG: Für echte OAuth-Integration brauchst du API-Keys!
         // Strava: https://www.strava.com/settings/api
@@ -8980,6 +11095,7 @@ END:VCALENDAR`;
             initCoupleSync();
             initBottomNav();
             initSmartRecommendations();
+            initPartnerSection();
         });
 
     </script>
