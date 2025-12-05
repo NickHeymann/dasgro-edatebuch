@@ -4026,6 +4026,7 @@
             <button class="nav-tab" data-category="wellness" title="Wellness">💆</button>
             <button class="nav-tab" data-category="essen" title="Essen">🍽️</button>
             <button class="nav-tab" data-category="shows" title="Shows & Comedy">🎭</button>
+            <button class="nav-tab" data-category="musik" title="Partys & Clubs">🎧</button>
 
             <span class="nav-separator">|</span>
 
@@ -4171,6 +4172,20 @@
                 </div>
                 <div id="shows-container">
                     <p class="empty-message">Keine Shows gefunden.</p>
+                </div>
+            </section>
+
+            <!-- PARTYS & CLUBS -->
+            <section class="category-section" id="musik">
+                <div class="category-header">
+                    <h2>🎧 Partys & Clubs</h2>
+                    <p>Elektronische Musik, Techno & Club-Nächte</p>
+                    <a href="https://ohschonhell.de/" target="_blank" class="party-finder-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:8px 16px;background:linear-gradient(135deg, var(--rose) 0%, #d4a5a8 100%);color:white;border-radius:20px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:transform 0.2s, box-shadow 0.2s;">
+                        🔥 Mehr Partys auf ohschonhell.de
+                    </a>
+                </div>
+                <div id="musik-container">
+                    <p class="empty-message">Keine Partys gefunden.</p>
                 </div>
             </section>
 
@@ -5635,7 +5650,7 @@
 
         async function loadEvents() {
             // Loading-Anzeige in allen Containern
-            const categories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows'];
+            const categories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows', 'musik'];
             categories.forEach(cat => {
                 const container = document.getElementById(`${cat}-container`);
                 if (container) {
@@ -5669,7 +5684,7 @@
         
         // Rendert alle Events in ihre jeweiligen Kategorie-Container
         function renderCategoryEvents() {
-            const categories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows'];
+            const categories = ['handwerk', 'aktiv', 'wellness', 'comedy', 'essen', 'shows', 'musik'];
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
             const ratings = saved.ratings || {};
 
@@ -5678,12 +5693,12 @@
                 if (!container) return;
 
                 // Events dieser Kategorie filtern (Aussortierte + vergangene ausblenden)
-                // "shows" = musical + variete + theater + musik fusioniert
+                // "shows" = musical + variete + theater (ohne musik - das hat jetzt eigene Kategorie)
                 const activeEvents = getActiveEvents(ratings);
                 let categoryEvents;
                 if (category === 'shows') {
                     categoryEvents = activeEvents.filter(e =>
-                        ['musical', 'variete', 'theater', 'musik'].includes(e.category)
+                        ['musical', 'variete', 'theater'].includes(e.category)
                     );
                 } else {
                     categoryEvents = activeEvents.filter(e =>
@@ -5708,7 +5723,8 @@
                 wellness: 'Wellness-Angebote',
                 aktiv: 'Aktiv-Angebote',
                 handwerk: 'Handwerk-Workshops',
-                essen: 'Restaurant-Tipps'
+                essen: 'Restaurant-Tipps',
+                musik: 'Partys & Club-Events'
             };
             return names[category] || 'Events';
         }
