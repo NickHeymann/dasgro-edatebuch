@@ -4334,6 +4334,174 @@
         "address": "Schulterblatt 63",
         "link": "https://www.katze-hamburg.de/"
       }
+    },
+    {
+      "id": "essen-neni-hafencity",
+      "emoji": "🧆",
+      "title": "Israelische Mezze bei NENI",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Levante-Küche im Alten Hafenamt! Hummus, Falafel, Babaganoush - perfekt zum Teilen. Direkt neben Sollis Arbeit!",
+      "location": "NENI Hamburg",
+      "address": "Osakaallee 12, 20457 Hamburg",
+      "coords": [53.5411, 10.0006],
+      "link": "https://nenifood.com/restaurants/hamburg",
+      "time": "täglich 12-23h",
+      "price": "25-40€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "NENI Hamburg",
+        "type": "Israelisch / Levante",
+        "address": "Osakaallee 12, HafenCity",
+        "link": "https://nenifood.com/restaurants/hamburg",
+        "empfehlung": "Best of NENI Menü (~40€), Triple Hummus, Babaganoush, Falafel"
+      },
+      "bar": {
+        "name": "Störtebeker Elbphilharmonie",
+        "type": "Craft Beer mit Elbblick",
+        "address": "Platz der Deutschen Einheit 4",
+        "link": "https://www.stoertebeker-elbphilharmonie.de/"
+      }
+    },
+    {
+      "id": "essen-sencha-hafencity",
+      "emoji": "🍣",
+      "title": "Veggie Sushi bei Sencha",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Sushi mit veganen & vegetarischen Optionen in der HafenCity! Große Terrasse, 5 Min von Sollis Arbeit.",
+      "location": "Sencha Sushi",
+      "address": "Osakaallee 2, 20457 Hamburg",
+      "coords": [53.5406, 9.9989],
+      "link": "https://sencha-hamburg.de/",
+      "time": "Mo-Do 16-22h, Fr-So 12-23h",
+      "price": "20-35€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Sencha Sushi",
+        "type": "Japanisch (veggie-freundlich)",
+        "address": "Osakaallee 2, HafenCity",
+        "link": "https://sencha-hamburg.de/",
+        "empfehlung": "Veggie Sushi Platte, Edamame, Miso-Suppe"
+      },
+      "bar": {
+        "name": "Überquell",
+        "type": "Craft Beer Brauerei",
+        "address": "St. Pauli Fischmarkt 28-32",
+        "link": "https://ueberquell.com/"
+      }
+    },
+    {
+      "id": "essen-chingu-chay",
+      "emoji": "🌱",
+      "title": "Veganes Korea bei Chingu & Chay",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "100% vegan im Westfield Überseequartier! Korean Fried 'Chicken' trifft Asia-Bowls. Perfekt für heute Abend!",
+      "location": "Chingu & Chay",
+      "address": "Überseeallee 10, 20457 Hamburg",
+      "coords": [53.5397, 9.9983],
+      "link": "https://www.westfield.com/en/germany/hamburg/restaurants/chingu-and-chay/83018",
+      "time": "Mo-Sa 10-21h",
+      "price": "12-20€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Chingu & Chay",
+        "type": "Vegan Korean & Asian",
+        "address": "Überseeallee 10, Westfield",
+        "link": "https://www.westfield.com/en/germany/hamburg/restaurants/chingu-and-chay/83018",
+        "empfehlung": "Korean Fried Tofu, Vegane Bibimbap Bowl, Kimchi"
+      },
+      "bar": {
+        "name": "Baby Goat",
+        "type": "Bar im Westfield",
+        "address": "Überseeallee 10",
+        "link": "https://www.westfield.com/germany/hamburg"
+      }
+    },
+    {
+      "id": "essen-galactic",
+      "emoji": "🥖",
+      "title": "Sterneküche bei Galactic Bread",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Sternekoch Stefan Fäth im Westfield! Sauerteigbrot-Spezialitäten, vegetarisch top. Brunch mit Elbblick.",
+      "location": "Galactic",
+      "address": "Überseeallee 10, 20457 Hamburg",
+      "coords": [53.5395, 9.9978],
+      "link": "https://www.galactic-hamburg.de/",
+      "time": "täglich 9-22h",
+      "price": "15-30€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Galactic",
+        "type": "Moderne Brasserie (Sternekoch)",
+        "address": "Überseeallee 10, Westfield",
+        "link": "https://www.galactic-hamburg.de/",
+        "empfehlung": "Sauerteigbrot-Kreationen, Brunch, vegetarische Tagesgerichte"
+      },
+      "bar": {
+        "name": "Baby Goat",
+        "type": "Bar im Westfield",
+        "address": "Überseeallee 10",
+        "link": "https://www.westfield.com/germany/hamburg"
+      }
+    },
+    {
+      "id": "essen-cigkoftem",
+      "emoji": "🌯",
+      "title": "Türkisch Vegan bei Cigköftem",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "100% veganes türkisches Streetfood im Westfield! Çiğ Köfte Wraps - würzig, günstig, schnell.",
+      "location": "Cigköftem",
+      "address": "Überseeallee 10, 20457 Hamburg",
+      "coords": [53.5396, 9.9980],
+      "link": "https://www.cigkoftem.com/",
+      "time": "Mo-Sa 10-21h",
+      "price": "8-15€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Cigköftem",
+        "type": "Türkisch Vegan",
+        "address": "Überseeallee 10, Westfield UG",
+        "link": "https://www.cigkoftem.com/",
+        "empfehlung": "Çiğ Köfte Dürüm, Falafel Wrap, Ayran"
+      },
+      "bar": {
+        "name": "Störtebeker Elbphilharmonie",
+        "type": "Craft Beer mit Elbblick",
+        "address": "Platz der Deutschen Einheit 4",
+        "link": "https://www.stoertebeker-elbphilharmonie.de/"
+      }
+    },
+    {
+      "id": "essen-wat-dat-pho-solliarbeit",
+      "emoji": "🍜",
+      "title": "Quick Lunch: Wat Dat Pho",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "10 Min von Sollis Arbeit! Perfekt für Mittagspause oder After-Work Pho in Wilhelmsburg.",
+      "location": "Wat Dat Pho",
+      "address": "Veringstraße 157, 21107 Hamburg",
+      "coords": [53.4983, 9.9903],
+      "link": "https://www.instagram.com/watdatpho/",
+      "time": "Di-So 12-21h",
+      "price": "8-12€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Wat Dat Pho",
+        "type": "Vietnamesische Pho",
+        "address": "Veringstraße 157, Wilhelmsburg",
+        "link": "https://www.instagram.com/watdatpho/",
+        "empfehlung": "Pho Bo, Sommerrollen - schnell & günstig in Sollis Nähe!"
+      },
+      "bar": {
+        "name": "Turtur",
+        "type": "Bar & Club Wilhelmsburg",
+        "address": "Vogelhüttendeich 17",
+        "link": "https://turtur.hamburg/"
+      }
     }
   ],
   "categories": {
