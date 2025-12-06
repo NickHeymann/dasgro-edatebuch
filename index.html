@@ -19,6 +19,8 @@
     <!-- Leaflet für Karten -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Tesseract.js für OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
     <style>
         :root {
             /* Moderne, sophisticated Farbpalette */
@@ -3055,6 +3057,164 @@
             border-radius: 8px;
             margin-top: 4px;
             font-family: inherit;
+        }
+
+        /* OCR Loading & Progress */
+        .ocr-loading {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--warm-white) 0%, white 100%);
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+        .ocr-loading .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--warm-white);
+            border-top: 4px solid var(--rose);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .ocr-loading h4 {
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .ocr-loading p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .ocr-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--warm-white);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        .ocr-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--rose) 0%, var(--sage) 100%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* OCR Result Display */
+        .ocr-result-section {
+            background: linear-gradient(135deg, #f8fff8 0%, white 100%);
+            border: 2px solid var(--sage);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .ocr-result-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .ocr-result-header h4 {
+            color: var(--sage);
+            margin: 0;
+        }
+        .ocr-badge {
+            background: var(--sage);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .ocr-raw-text {
+            background: white;
+            border: 1px solid var(--warm-white);
+            border-radius: 12px;
+            padding: 16px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text);
+            white-space: pre-wrap;
+            margin-bottom: 16px;
+        }
+        .ocr-edit-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .ocr-edit-toggle button {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--warm-white);
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+        .ocr-edit-toggle button.active {
+            border-color: var(--rose);
+            background: linear-gradient(135deg, var(--blush) 0%, white 100%);
+        }
+        .ocr-edit-toggle button:hover {
+            border-color: var(--rose);
+        }
+
+        /* Parsed Recipe Preview */
+        .parsed-recipe-preview {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .parsed-recipe-preview h3 {
+            color: var(--text);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .parsed-section {
+            margin-bottom: 20px;
+        }
+        .parsed-section h5 {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .parsed-ingredients-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .parsed-ingredient-tag {
+            background: linear-gradient(135deg, var(--blush) 0%, white 100%);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .parsed-instructions {
+            background: var(--warm-white);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .parsed-instructions ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .parsed-instructions li {
+            margin-bottom: 8px;
         }
 
         /* Own Recipe Card mit Delete Button */
@@ -9794,10 +9954,27 @@ END:VCALENDAR`;
                         </div>
                     ` : ''}
 
-                    ${recipe.instructions ? `
+                    ${recipe.instructions && (Array.isArray(recipe.instructions) ? recipe.instructions.length > 0 : recipe.instructions) ? `
                         <div style="margin-bottom:16px;">
                             <h3 style="margin-bottom:8px;">📝 Zubereitung</h3>
-                            <p style="white-space:pre-line;">${recipe.instructions}</p>
+                            ${Array.isArray(recipe.instructions) ? `
+                                <ol style="margin:0;padding-left:20px;line-height:1.8;">
+                                    ${recipe.instructions.map(step => `<li style="margin-bottom:8px;">${step}</li>`).join('')}
+                                </ol>
+                            ` : `<p style="white-space:pre-line;">${recipe.instructions}</p>`}
+                        </div>
+                    ` : ''}
+
+                    ${recipe.scanned && recipe.ocrText ? `
+                        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--warm-white);">
+                            <details style="cursor:pointer;">
+                                <summary style="color:var(--text-light);font-size:0.85rem;">
+                                    📷 Original OCR-Text anzeigen
+                                </summary>
+                                <div style="margin-top:12px;background:var(--warm-white);padding:12px;border-radius:8px;font-size:0.8rem;max-height:150px;overflow-y:auto;white-space:pre-wrap;">
+                                    ${recipe.ocrText}
+                                </div>
+                            </details>
                         </div>
                     ` : ''}
 
@@ -10033,6 +10210,10 @@ END:VCALENDAR`;
                                 <input type="text" id="scanRecipeTime" placeholder="z.B. 45 Min">
                             </div>
                             <div class="scan-result-field">
+                                <label>👨‍🍳 Zubereitung</label>
+                                <textarea id="scanRecipeInstructions" rows="5" placeholder="Die Zubereitungsschritte..."></textarea>
+                            </div>
+                            <div class="scan-result-field">
                                 <label>Tags</label>
                                 <input type="text" id="scanRecipeTags" placeholder="z.B. vegan, schnell">
                             </div>
@@ -10057,19 +10238,275 @@ END:VCALENDAR`;
             scanImageData = null;
         }
 
+        let ocrResult = null;
+        let parsedRecipe = null;
+
         function handleScanImage(event) {
             const file = event.target.files[0];
             if (!file) return;
 
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = async function(e) {
                 scanImageData = e.target.result;
 
                 document.getElementById('scanOptions').style.display = 'none';
                 document.getElementById('scanPreview').style.display = 'block';
                 document.getElementById('scanPreviewImage').src = scanImageData;
+
+                // Show OCR loading state
+                showOCRLoading();
+
+                // Perform OCR
+                try {
+                    const result = await performOCR(scanImageData);
+                    ocrResult = result;
+                    parsedRecipe = parseRecipeFromOCR(result);
+                    showOCRResult(result, parsedRecipe);
+                } catch (error) {
+                    console.error('OCR Error:', error);
+                    hideOCRLoading();
+                    // Still allow manual entry if OCR fails
+                }
             };
             reader.readAsDataURL(file);
+        }
+
+        function showOCRLoading() {
+            const loadingHtml = `
+                <div class="ocr-loading" id="ocrLoadingState">
+                    <div class="spinner"></div>
+                    <h4>🔍 Rezept wird gescannt...</h4>
+                    <p id="ocrStatusText">Tesseract OCR lädt...</p>
+                    <div class="ocr-progress-bar">
+                        <div class="ocr-progress-fill" id="ocrProgressFill"></div>
+                    </div>
+                </div>
+            `;
+            const preview = document.getElementById('scanPreview');
+            const existingResult = document.getElementById('ocrResultSection');
+            if (existingResult) existingResult.remove();
+
+            const existingLoading = document.getElementById('ocrLoadingState');
+            if (existingLoading) existingLoading.remove();
+
+            preview.insertAdjacentHTML('beforeend', loadingHtml);
+        }
+
+        function hideOCRLoading() {
+            const loading = document.getElementById('ocrLoadingState');
+            if (loading) loading.remove();
+        }
+
+        async function performOCR(imageData) {
+            const progressFill = document.getElementById('ocrProgressFill');
+            const statusText = document.getElementById('ocrStatusText');
+
+            const worker = await Tesseract.createWorker('deu', 1, {
+                logger: m => {
+                    if (m.status === 'recognizing text') {
+                        const progress = Math.round(m.progress * 100);
+                        if (progressFill) progressFill.style.width = progress + '%';
+                        if (statusText) statusText.textContent = `Text wird erkannt... ${progress}%`;
+                    } else if (m.status === 'loading language traineddata') {
+                        if (statusText) statusText.textContent = 'Deutsche Sprache wird geladen...';
+                        if (progressFill) progressFill.style.width = '20%';
+                    } else if (m.status === 'initializing tesseract') {
+                        if (statusText) statusText.textContent = 'OCR-Engine wird initialisiert...';
+                        if (progressFill) progressFill.style.width = '10%';
+                    }
+                }
+            });
+
+            const { data: { text } } = await worker.recognize(imageData);
+            await worker.terminate();
+
+            return text;
+        }
+
+        function parseRecipeFromOCR(text) {
+            // Smart parsing of recipe text
+            const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+            let title = '';
+            let ingredients = [];
+            let instructions = [];
+            let time = '';
+            let portions = '';
+
+            // Common patterns for recipe sections
+            const ingredientKeywords = ['zutaten', 'ingredients', 'für', 'benötigt'];
+            const instructionKeywords = ['zubereitung', 'anleitung', 'so geht', 'schritt', 'instructions', 'vorbereitung'];
+            const timeKeywords = ['zeit', 'dauer', 'minuten', 'min', 'stunden', 'std'];
+            const portionKeywords = ['portionen', 'personen', 'für'];
+
+            let currentSection = 'title';
+            let foundIngredients = false;
+            let foundInstructions = false;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const lineLower = line.toLowerCase();
+
+                // Check for section headers
+                if (ingredientKeywords.some(k => lineLower.includes(k)) && !foundIngredients) {
+                    currentSection = 'ingredients';
+                    foundIngredients = true;
+                    continue;
+                }
+                if (instructionKeywords.some(k => lineLower.includes(k))) {
+                    currentSection = 'instructions';
+                    foundInstructions = true;
+                    continue;
+                }
+
+                // Extract time
+                if (timeKeywords.some(k => lineLower.includes(k))) {
+                    const timeMatch = line.match(/(\d+)\s*(min|minuten|std|stunden)/i);
+                    if (timeMatch) {
+                        time = timeMatch[0];
+                    }
+                }
+
+                // Extract portions
+                if (portionKeywords.some(k => lineLower.includes(k))) {
+                    const portionMatch = line.match(/(\d+)\s*(portionen|personen|stück)/i);
+                    if (portionMatch) {
+                        portions = portionMatch[0];
+                    }
+                }
+
+                // Assign to sections
+                if (currentSection === 'title' && !title && line.length > 3 && line.length < 60) {
+                    title = line;
+                } else if (currentSection === 'ingredients') {
+                    // Check if line looks like an ingredient (has quantity or common ingredient patterns)
+                    if (line.match(/^\d|^-|^•|^\*/) || line.match(/\d+\s*(g|kg|ml|l|el|tl|stück|prise)/i)) {
+                        ingredients.push(line.replace(/^[-•*]\s*/, ''));
+                    } else if (line.length > 2 && line.length < 50) {
+                        ingredients.push(line);
+                    }
+                } else if (currentSection === 'instructions') {
+                    // Numbered steps or regular paragraphs
+                    if (line.match(/^\d+[.):]/)) {
+                        instructions.push(line.replace(/^\d+[.):\s]+/, ''));
+                    } else if (line.length > 10) {
+                        instructions.push(line);
+                    }
+                }
+            }
+
+            // If no sections found, try simpler extraction
+            if (ingredients.length === 0 && instructions.length === 0) {
+                // Split by common patterns
+                for (const line of lines) {
+                    if (line.match(/\d+\s*(g|kg|ml|l|el|tl)/i)) {
+                        ingredients.push(line);
+                    } else if (line.length > 30) {
+                        instructions.push(line);
+                    }
+                }
+            }
+
+            return {
+                title: title || 'Gescanntes Rezept',
+                ingredients,
+                instructions,
+                time,
+                portions,
+                rawText: text
+            };
+        }
+
+        function showOCRResult(rawText, parsed) {
+            hideOCRLoading();
+
+            const resultHtml = `
+                <div class="ocr-result-section" id="ocrResultSection">
+                    <div class="ocr-result-header">
+                        <h4>✨ Text erkannt!</h4>
+                        <span class="ocr-badge">OCR</span>
+                    </div>
+
+                    <div class="ocr-edit-toggle">
+                        <button class="active" onclick="toggleOCRView('parsed')">📋 Strukturiert</button>
+                        <button onclick="toggleOCRView('raw')">📝 Rohtext</button>
+                    </div>
+
+                    <div id="ocrViewParsed">
+                        <div class="parsed-recipe-preview">
+                            <h3>🍳 ${parsed.title}</h3>
+
+                            ${parsed.time || parsed.portions ? `
+                                <div style="display:flex;gap:16px;margin-bottom:16px;color:var(--text-light);font-size:0.9rem;">
+                                    ${parsed.time ? `<span>⏱️ ${parsed.time}</span>` : ''}
+                                    ${parsed.portions ? `<span>👥 ${parsed.portions}</span>` : ''}
+                                </div>
+                            ` : ''}
+
+                            ${parsed.ingredients.length > 0 ? `
+                                <div class="parsed-section">
+                                    <h5>🥗 Zutaten</h5>
+                                    <div class="parsed-ingredients-list">
+                                        ${parsed.ingredients.map(i => `<span class="parsed-ingredient-tag">${i}</span>`).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${parsed.instructions.length > 0 ? `
+                                <div class="parsed-section">
+                                    <h5>👨‍🍳 Zubereitung</h5>
+                                    <div class="parsed-instructions">
+                                        <ol>
+                                            ${parsed.instructions.map(s => `<li>${s}</li>`).join('')}
+                                        </ol>
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <div id="ocrViewRaw" style="display:none;">
+                        <div class="ocr-raw-text">${rawText}</div>
+                    </div>
+
+                    <p style="color:var(--text-light);font-size:0.85rem;margin-top:12px;text-align:center;">
+                        💡 Du kannst die erkannten Daten unten noch bearbeiten
+                    </p>
+                </div>
+            `;
+
+            const preview = document.getElementById('scanPreview');
+            preview.insertAdjacentHTML('beforeend', resultHtml);
+
+            // Auto-fill the form fields
+            document.getElementById('scanRecipeTitle').value = parsed.title;
+            document.getElementById('scanRecipeIngredients').value = parsed.ingredients.join(', ');
+            if (parsed.time) document.getElementById('scanRecipeTime').value = parsed.time;
+            if (parsed.instructions.length > 0) {
+                // Add instructions to a new field if exists, or store for later
+                const instructionsField = document.getElementById('scanRecipeInstructions');
+                if (instructionsField) {
+                    instructionsField.value = parsed.instructions.join('\n');
+                }
+            }
+        }
+
+        function toggleOCRView(view) {
+            const parsedView = document.getElementById('ocrViewParsed');
+            const rawView = document.getElementById('ocrViewRaw');
+            const buttons = document.querySelectorAll('.ocr-edit-toggle button');
+
+            buttons.forEach(b => b.classList.remove('active'));
+
+            if (view === 'parsed') {
+                parsedView.style.display = 'block';
+                rawView.style.display = 'none';
+                buttons[0].classList.add('active');
+            } else {
+                parsedView.style.display = 'none';
+                rawView.style.display = 'block';
+                buttons[1].classList.add('active');
+            }
         }
 
         function saveScanedRecipe() {
@@ -10090,15 +10527,24 @@ END:VCALENDAR`;
                 .map(t => t.trim().toLowerCase())
                 .filter(t => t);
 
+            // Parse instructions from textarea (split by newlines or numbered items)
+            const instructionsText = document.getElementById('scanRecipeInstructions').value;
+            const instructions = instructionsText
+                .split(/\n|\d+[.)]\s*/)
+                .map(i => i.trim())
+                .filter(i => i.length > 0);
+
             const newRecipe = {
                 id: 'scan-' + Date.now(),
                 title: title,
                 desc: document.getElementById('scanRecipeDesc').value.trim(),
                 time: document.getElementById('scanRecipeTime').value.trim(),
                 ingredients: ingredients,
+                instructions: instructions,
                 tags: tags,
                 image: scanImageData,
                 scanned: true,
+                ocrText: ocrResult || null,
                 createdAt: new Date().toISOString()
             };
 
