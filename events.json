@@ -4166,6 +4166,174 @@
         "link": "https://www.tazzi-pizza.de/",
         "coords": [53.5494, 9.9611]
       }
+    },
+    {
+      "id": "essen-pho-tinh",
+      "emoji": "🍜",
+      "title": "Authentische Pho bei Phở Tình",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Beste Pho in der Innenstadt! Traditionell vietnamesisch, faire Preise (~8€), 5 Min vom Hauptbahnhof. 4.6★ auf Google.",
+      "location": "Phở Tình",
+      "address": "Altstädter Straße 23, 20095 Hamburg",
+      "coords": [53.5503, 10.0003],
+      "link": "https://www.photinh.de/",
+      "time": "Mo-Fr 11-17h, Sa 12-18h",
+      "price": "8-12€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Phở Tình",
+        "type": "Vietnamesische Pho-Suppe",
+        "address": "Altstädter Straße 23",
+        "link": "https://www.photinh.de/",
+        "empfehlung": "Pho Bo (Rind) oder Pho Ga (Huhn), dazu frische Sommerrollen"
+      },
+      "bar": {
+        "name": "Hadley's",
+        "type": "Speakeasy Bar",
+        "address": "Beim Schlump 84a",
+        "link": "https://hadleys.de/"
+      }
+    },
+    {
+      "id": "essen-pho-rice",
+      "emoji": "🍜",
+      "title": "Vegane Pho bei Phở & Rice",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Familiengeführt in St. Georg, viele vegane Optionen! Bunte Hocker, authentisches Flair. Terrasse vorhanden.",
+      "location": "Phở & Rice",
+      "address": "Kirchenallee 27, 20099 Hamburg",
+      "coords": [53.5531, 10.0069],
+      "link": "https://phoandrice.de/",
+      "time": "Mo-Fr & So 12-22h, Sa geschlossen",
+      "price": "10-15€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Phở & Rice",
+        "type": "Vietnamesisch (vegan-freundlich)",
+        "address": "Kirchenallee 27",
+        "link": "https://phoandrice.de/",
+        "empfehlung": "Pho Chay (vegan), Sommerrollen, Sticky Rice mit Mango"
+      },
+      "bar": {
+        "name": "Generation Bar",
+        "type": "Cocktailbar St. Georg",
+        "address": "Steindamm 80",
+        "link": "https://www.generation-bar.de/"
+      }
+    },
+    {
+      "id": "essen-wat-dat-pho",
+      "emoji": "🍜",
+      "title": "Pho in Wilhelmsburg bei Wat Dat Pho",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Kurzurlaub nach Vietnam - direkt neben Sollis Arbeit! Authentische Pho mit 3 Rindfleischsorten, günstige Preise.",
+      "location": "Wat Dat Pho",
+      "address": "Veringstraße 157, 21107 Hamburg",
+      "coords": [53.4983, 9.9903],
+      "link": "https://www.instagram.com/watdatpho/",
+      "time": "Di-So 12-21h",
+      "price": "8-12€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Wat Dat Pho",
+        "type": "Vietnamesische Pho & Bun",
+        "address": "Veringstraße 157, Wilhelmsburg",
+        "link": "https://www.instagram.com/watdatpho/",
+        "empfehlung": "Pho Bo Tai Nam Gau (alle 3 Rindfleischsorten), Bun Bo Hue"
+      },
+      "bar": {
+        "name": "Turtur",
+        "type": "Bar & Club Wilhelmsburg",
+        "address": "Vogelhüttendeich 17",
+        "link": "https://turtur.hamburg/"
+      }
+    },
+    {
+      "id": "essen-quan-do",
+      "emoji": "🍜",
+      "title": "Riesige Pho-Portionen bei Quan Do",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Die Pho-Meister in der Innenstadt! Riesige Portionen für kleines Geld, vegane Optionen verfügbar.",
+      "location": "Quan Do",
+      "address": "Georgsplatz 16, 20099 Hamburg",
+      "coords": [53.5536, 10.0078],
+      "link": "https://www.facebook.com/QuanDoHamburg/",
+      "time": "Mo-Sa 11:30-22h",
+      "price": "8-14€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Quan Do",
+        "type": "Vietnamesisch traditionell",
+        "address": "Georgsplatz 16",
+        "link": "https://www.facebook.com/QuanDoHamburg/",
+        "empfehlung": "Große Pho-Portion, Sommerrollen, Frühlingsrollen"
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Beste Cocktailbar Hamburgs",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "essen-flying-market",
+      "emoji": "🍜",
+      "title": "Streetfood-Feeling bei Flying Market",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "DAS vietnamesische Restaurant in Ottensen! Streetfood-Kultur, Flying Noodles als Signature Dish, vegetarisch top.",
+      "location": "Flying Market",
+      "address": "Eulenstraße 38, 22765 Hamburg",
+      "coords": [53.5511, 9.9247],
+      "link": "https://www.flyingmarket.de/",
+      "time": "Di-So 12-22h",
+      "price": "12-18€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Flying Market",
+        "type": "Vietnamesisches Streetfood",
+        "address": "Eulenstraße 38, Ottensen",
+        "link": "https://www.flyingmarket.de/",
+        "empfehlung": "Flying Noodles (Signature!), Pho, frische Sommerrollen"
+      },
+      "bar": {
+        "name": "Aurel",
+        "type": "Bar & Kneipe Ottensen",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://aurel-hamburg.de/"
+      }
+    },
+    {
+      "id": "essen-quan36",
+      "emoji": "🍜",
+      "title": "Vietnamesische Tapas bei Quan36",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Vietnamesische Tapas zum Teilen im Schanzenviertel! Viele vegane Optionen, legendärer Vietnamese Coffee.",
+      "location": "Quan36",
+      "address": "Schulterblatt 36, 20357 Hamburg",
+      "coords": [53.5628, 9.9614],
+      "link": "https://www.quan36.de/",
+      "time": "Mo-So 12-23h",
+      "price": "15-25€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Quan36",
+        "type": "Vietnamesische Tapas",
+        "address": "Schulterblatt 36",
+        "link": "https://www.quan36.de/",
+        "empfehlung": "Tapas zum Teilen, Vietnamese Coffee mit Kondensmilch, Bao Buns"
+      },
+      "bar": {
+        "name": "Katze",
+        "type": "Kultige Schanze-Bar",
+        "address": "Schulterblatt 63",
+        "link": "https://www.katze-hamburg.de/"
+      }
     }
   ],
   "categories": {
