@@ -2839,6 +2839,247 @@
         .recipe-link:hover {
             text-decoration: underline;
         }
+
+        /* ============ KOCHEN SEKTION STYLES ============ */
+        .recipe-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .recipe-tab {
+            padding: 10px 20px;
+            border: none;
+            background: var(--warm-white);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        .recipe-tab:hover {
+            background: var(--ice-blue);
+        }
+        .recipe-tab.active {
+            background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+            color: white;
+        }
+        .add-recipe-section {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .add-recipe-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Recipe Modal Styles */
+        .recipe-modal-content {
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .recipe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .recipe-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .recipe-form-group label {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        .recipe-form-group input,
+        .recipe-form-group textarea,
+        .recipe-form-group select {
+            padding: 12px;
+            border: 2px solid var(--warm-white);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        .recipe-form-group input:focus,
+        .recipe-form-group textarea:focus {
+            outline: none;
+            border-color: var(--rose);
+        }
+        .recipe-form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .recipe-image-upload {
+            border: 2px dashed var(--text-muted);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--warm-white);
+        }
+        .recipe-image-upload:hover {
+            border-color: var(--rose);
+            background: var(--rose-light);
+        }
+        .recipe-image-upload.has-image {
+            padding: 10px;
+        }
+        .recipe-image-upload img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 12px;
+        }
+        .recipe-image-upload-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .recipe-image-upload-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .ingredients-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .ingredient-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .ingredient-row input {
+            flex: 1;
+        }
+        .ingredient-row button {
+            padding: 8px 12px;
+            background: var(--rose-light);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--rose-dark);
+            font-size: 1.1rem;
+        }
+        .add-ingredient-btn {
+            padding: 10px;
+            background: var(--sage-light);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: var(--sage-dark);
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .add-ingredient-btn:hover {
+            background: var(--sage);
+            color: white;
+        }
+
+        /* Scan Modal */
+        .scan-options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .scan-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--warm-white);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .scan-option:hover {
+            border-color: var(--rose);
+            background: var(--rose-light);
+        }
+        .scan-option-icon {
+            font-size: 2.5rem;
+        }
+        .scan-option-text h4 {
+            margin: 0 0 4px 0;
+            color: var(--navy);
+        }
+        .scan-option-text p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+        .scan-preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .scan-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .scan-result {
+            background: var(--ice-blue);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            margin-top: 16px;
+        }
+        .scan-result h4 {
+            margin: 0 0 12px 0;
+            color: var(--navy);
+        }
+        .scan-result-field {
+            margin-bottom: 8px;
+        }
+        .scan-result-field label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .scan-result-field input,
+        .scan-result-field textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--warm-white);
+            border-radius: 8px;
+            margin-top: 4px;
+            font-family: inherit;
+        }
+
+        /* Own Recipe Card mit Delete Button */
+        .recipe-card-own {
+            position: relative;
+        }
+        .recipe-card-own .recipe-delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        .recipe-card-own:hover .recipe-delete-btn {
+            opacity: 1;
+        }
+
         .food-search-results {
             margin-bottom: 20px;
         }
@@ -4025,6 +4266,7 @@
             <button class="nav-tab" data-category="aktiv" title="Sport & Aktiv">🏃‍♀️</button>
             <button class="nav-tab" data-category="wellness" title="Wellness">💆</button>
             <button class="nav-tab" data-category="essen" title="Essen">🍽️</button>
+            <button class="nav-tab" data-category="kochen" title="Selber kochen">👨‍🍳</button>
             <button class="nav-tab" data-category="shows" title="Shows & Comedy">🎭</button>
             <button class="nav-tab" data-category="musik" title="Partys & Clubs">🎧</button>
 
@@ -4164,6 +4406,43 @@
                         <p>Zusammen kochen ist das beste Date! Hier sind unsere Favoriten:</p>
                     </div>
                     <div class="recipe-grid" id="recipeGrid"></div>
+                </div>
+            </section>
+
+            <!-- KOCHEN - Eigene Rezepte mit Scan-Funktion -->
+            <section class="category-section" id="kochen">
+                <div class="category-header">
+                    <h2>👨‍🍳 Selber Kochen</h2>
+                    <p>Eure eigenen Date-Night-Rezepte</p>
+                </div>
+
+                <!-- Tabs für Rezeptansicht -->
+                <div class="recipe-tabs">
+                    <button class="recipe-tab active" onclick="showRecipeTab('favorites')">💕 Unsere Favoriten</button>
+                    <button class="recipe-tab" onclick="showRecipeTab('own')">📝 Eigene Rezepte</button>
+                </div>
+
+                <!-- Favoriten (vordefinierte Rezepte) -->
+                <div id="recipe-tab-favorites" class="recipe-tab-content">
+                    <div class="recipe-grid" id="favoritesRecipeGrid"></div>
+                </div>
+
+                <!-- Eigene Rezepte -->
+                <div id="recipe-tab-own" class="recipe-tab-content" style="display:none;">
+                    <!-- Rezept hinzufügen Button -->
+                    <div class="add-recipe-section">
+                        <button class="btn btn-primary add-recipe-btn" onclick="openAddRecipeModal()">
+                            ➕ Neues Rezept hinzufügen
+                        </button>
+                        <button class="btn btn-secondary" onclick="openScanRecipeModal()">
+                            📷 Rezept scannen
+                        </button>
+                    </div>
+
+                    <!-- Eigene Rezepte Grid -->
+                    <div class="recipe-grid" id="ownRecipesGrid">
+                        <p class="empty-message" id="noOwnRecipes">Noch keine eigenen Rezepte. Füge dein erstes hinzu!</p>
+                    </div>
                 </div>
             </section>
 
@@ -5579,6 +5858,7 @@
             document.getElementById(cat)?.classList.add('active');
             if (cat === 'travel') setTimeout(initGlobe, 150);
             if (cat === 'planned') renderPlannedDates();
+            if (cat === 'kochen') initKochenSection();
 
             // Feierabend-Toggle nur für bestimmte Kategorien anzeigen
             const feierabendToggle = document.getElementById('feierabendToggle');
@@ -9398,6 +9678,446 @@ END:VCALENDAR`;
                     </div>
                 </div>
             `).join('');
+        }
+
+        // ============ KOCHEN SEKTION - EIGENE REZEPTE ============
+        let ownRecipes = JSON.parse(localStorage.getItem('datebuch_ownRecipes') || '[]');
+        let currentRecipeImage = null;
+        let scanImageData = null;
+
+        function saveOwnRecipes() {
+            localStorage.setItem('datebuch_ownRecipes', JSON.stringify(ownRecipes));
+        }
+
+        function showRecipeTab(tab) {
+            document.querySelectorAll('.recipe-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.recipe-tab-content').forEach(c => c.style.display = 'none');
+
+            event.target.classList.add('active');
+            document.getElementById(`recipe-tab-${tab}`).style.display = 'block';
+
+            if (tab === 'favorites') {
+                initFavoritesRecipes();
+            } else if (tab === 'own') {
+                renderOwnRecipes();
+            }
+        }
+
+        function initFavoritesRecipes() {
+            const grid = document.getElementById('favoritesRecipeGrid');
+            if (!grid) return;
+
+            grid.innerHTML = dateNightRecipes.map(r => `
+                <div class="recipe-card" onclick="showRecipeDetail('${r.id}', 'favorite')">
+                    <div class="recipe-image" style="background-image:url('${r.image}')">
+                        <span class="recipe-time">⏱️ ${r.time}</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-title">${r.title}</div>
+                        <div class="recipe-desc">${r.desc}</div>
+                        <div class="recipe-tags">
+                            ${r.tags.map(t => `<span class="recipe-tag ${t === 'vegan' ? 'vegan' : ''}">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderOwnRecipes() {
+            const grid = document.getElementById('ownRecipesGrid');
+            const emptyMsg = document.getElementById('noOwnRecipes');
+
+            if (!grid) return;
+
+            if (ownRecipes.length === 0) {
+                grid.innerHTML = '';
+                if (emptyMsg) emptyMsg.style.display = 'block';
+                return;
+            }
+
+            if (emptyMsg) emptyMsg.style.display = 'none';
+
+            grid.innerHTML = ownRecipes.map((r, index) => `
+                <div class="recipe-card recipe-card-own" onclick="showRecipeDetail('${index}', 'own')">
+                    <button class="recipe-delete-btn" onclick="event.stopPropagation(); deleteOwnRecipe(${index})">🗑️</button>
+                    <div class="recipe-image" style="background-image:url('${r.image || 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400'}')">
+                        ${r.time ? `<span class="recipe-time">⏱️ ${r.time}</span>` : ''}
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-title">${r.title}</div>
+                        <div class="recipe-desc">${r.desc || ''}</div>
+                        ${r.tags && r.tags.length > 0 ? `
+                            <div class="recipe-tags">
+                                ${r.tags.map(t => `<span class="recipe-tag ${t === 'vegan' ? 'vegan' : ''}">${t}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function deleteOwnRecipe(index) {
+            if (confirm('Rezept wirklich löschen?')) {
+                ownRecipes.splice(index, 1);
+                saveOwnRecipes();
+                renderOwnRecipes();
+            }
+        }
+
+        function showRecipeDetail(id, type) {
+            let recipe;
+            if (type === 'favorite') {
+                recipe = dateNightRecipes.find(r => r.id === id);
+            } else {
+                recipe = ownRecipes[parseInt(id)];
+            }
+
+            if (!recipe) return;
+
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.id = 'recipeDetailModal';
+            modal.innerHTML = `
+                <div class="modal-content recipe-modal-content">
+                    <button class="modal-close" onclick="closeRecipeDetailModal()">×</button>
+                    ${recipe.image ? `<img src="${recipe.image}" style="width:100%;max-height:250px;object-fit:cover;border-radius:12px;margin-bottom:16px;">` : ''}
+                    <h2 style="margin-bottom:8px;">${recipe.title}</h2>
+                    ${recipe.time ? `<p style="color:var(--text-light);margin-bottom:12px;">⏱️ ${recipe.time}</p>` : ''}
+                    ${recipe.desc ? `<p style="margin-bottom:16px;">${recipe.desc}</p>` : ''}
+
+                    ${recipe.ingredients && recipe.ingredients.length > 0 ? `
+                        <div style="margin-bottom:16px;">
+                            <h3 style="margin-bottom:8px;">🥕 Zutaten</h3>
+                            <ul style="margin:0;padding-left:20px;">
+                                ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+
+                    ${recipe.instructions ? `
+                        <div style="margin-bottom:16px;">
+                            <h3 style="margin-bottom:8px;">📝 Zubereitung</h3>
+                            <p style="white-space:pre-line;">${recipe.instructions}</p>
+                        </div>
+                    ` : ''}
+
+                    ${recipe.link ? `
+                        <a href="${recipe.link}" target="_blank" class="btn btn-primary" style="display:block;text-align:center;">
+                            → Zum Originalrezept
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeRecipeDetailModal() {
+            const modal = document.getElementById('recipeDetailModal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            }
+        }
+
+        function openAddRecipeModal() {
+            currentRecipeImage = null;
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.id = 'addRecipeModal';
+            modal.innerHTML = `
+                <div class="modal-content recipe-modal-content">
+                    <button class="modal-close" onclick="closeAddRecipeModal()">×</button>
+                    <h2 style="margin-bottom:20px;">➕ Neues Rezept</h2>
+
+                    <form class="recipe-form" onsubmit="saveNewRecipe(event)">
+                        <div class="recipe-form-group">
+                            <label>Foto (optional)</label>
+                            <div class="recipe-image-upload" id="recipeImageUpload" onclick="document.getElementById('recipeImageInput').click()">
+                                <div class="recipe-image-upload-icon">📷</div>
+                                <div class="recipe-image-upload-text">Klicken zum Foto hinzufügen</div>
+                            </div>
+                            <input type="file" id="recipeImageInput" accept="image/*" style="display:none;" onchange="handleRecipeImageUpload(event)">
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Rezeptname *</label>
+                            <input type="text" id="recipeTitle" required placeholder="z.B. Omas Käsespätzle">
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Kurze Beschreibung</label>
+                            <input type="text" id="recipeDesc" placeholder="z.B. Cremig, käsig und einfach lecker!">
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Zubereitungszeit</label>
+                            <input type="text" id="recipeTime" placeholder="z.B. 30 Min">
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Zutaten</label>
+                            <div class="ingredients-list" id="ingredientsList">
+                                <div class="ingredient-row">
+                                    <input type="text" placeholder="z.B. 500g Spätzle" class="ingredient-input">
+                                    <button type="button" onclick="removeIngredient(this)">×</button>
+                                </div>
+                            </div>
+                            <button type="button" class="add-ingredient-btn" onclick="addIngredient()">+ Weitere Zutat</button>
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Zubereitung</label>
+                            <textarea id="recipeInstructions" placeholder="Schritt für Schritt Anleitung..."></textarea>
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Tags (durch Komma getrennt)</label>
+                            <input type="text" id="recipeTags" placeholder="z.B. vegetarisch, comfort food, schnell">
+                        </div>
+
+                        <div class="recipe-form-group">
+                            <label>Link zum Originalrezept (optional)</label>
+                            <input type="url" id="recipeLink" placeholder="https://...">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:10px;">
+                            💾 Rezept speichern
+                        </button>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeAddRecipeModal() {
+            const modal = document.getElementById('addRecipeModal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            }
+            currentRecipeImage = null;
+        }
+
+        function handleRecipeImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentRecipeImage = e.target.result;
+                const uploadDiv = document.getElementById('recipeImageUpload');
+                uploadDiv.innerHTML = `<img src="${currentRecipeImage}" alt="Rezeptbild">`;
+                uploadDiv.classList.add('has-image');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function addIngredient() {
+            const list = document.getElementById('ingredientsList');
+            const row = document.createElement('div');
+            row.className = 'ingredient-row';
+            row.innerHTML = `
+                <input type="text" placeholder="z.B. 200g Käse" class="ingredient-input">
+                <button type="button" onclick="removeIngredient(this)">×</button>
+            `;
+            list.appendChild(row);
+        }
+
+        function removeIngredient(btn) {
+            const list = document.getElementById('ingredientsList');
+            if (list.children.length > 1) {
+                btn.parentElement.remove();
+            }
+        }
+
+        function saveNewRecipe(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('recipeTitle').value.trim();
+            if (!title) return;
+
+            const ingredients = [];
+            document.querySelectorAll('.ingredient-input').forEach(input => {
+                if (input.value.trim()) {
+                    ingredients.push(input.value.trim());
+                }
+            });
+
+            const tags = document.getElementById('recipeTags').value
+                .split(',')
+                .map(t => t.trim().toLowerCase())
+                .filter(t => t);
+
+            const newRecipe = {
+                id: 'own-' + Date.now(),
+                title: title,
+                desc: document.getElementById('recipeDesc').value.trim(),
+                time: document.getElementById('recipeTime').value.trim(),
+                ingredients: ingredients,
+                instructions: document.getElementById('recipeInstructions').value.trim(),
+                tags: tags,
+                link: document.getElementById('recipeLink').value.trim(),
+                image: currentRecipeImage,
+                createdAt: new Date().toISOString()
+            };
+
+            ownRecipes.push(newRecipe);
+            saveOwnRecipes();
+            closeAddRecipeModal();
+            renderOwnRecipes();
+
+            // Switch to own recipes tab
+            showRecipeTab('own');
+            document.querySelectorAll('.recipe-tab')[1].classList.add('active');
+            document.querySelectorAll('.recipe-tab')[0].classList.remove('active');
+        }
+
+        // ============ REZEPT SCANNEN ============
+        function openScanRecipeModal() {
+            scanImageData = null;
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.id = 'scanRecipeModal';
+            modal.innerHTML = `
+                <div class="modal-content recipe-modal-content">
+                    <button class="modal-close" onclick="closeScanRecipeModal()">×</button>
+                    <h2 style="margin-bottom:10px;">📷 Rezept scannen</h2>
+                    <p style="color:var(--text-light);margin-bottom:20px;">
+                        Fotografiere ein Rezept aus einem Kochbuch oder von einer Webseite!
+                    </p>
+
+                    <div class="scan-options" id="scanOptions">
+                        <div class="scan-option" onclick="document.getElementById('scanCameraInput').click()">
+                            <div class="scan-option-icon">📸</div>
+                            <div class="scan-option-text">
+                                <h4>Kamera</h4>
+                                <p>Fotografiere jetzt ein Rezept</p>
+                            </div>
+                        </div>
+                        <input type="file" id="scanCameraInput" accept="image/*" capture="environment" style="display:none;" onchange="handleScanImage(event)">
+
+                        <div class="scan-option" onclick="document.getElementById('scanFileInput').click()">
+                            <div class="scan-option-icon">🖼️</div>
+                            <div class="scan-option-text">
+                                <h4>Aus Galerie</h4>
+                                <p>Wähle ein bestehendes Foto</p>
+                            </div>
+                        </div>
+                        <input type="file" id="scanFileInput" accept="image/*" style="display:none;" onchange="handleScanImage(event)">
+                    </div>
+
+                    <div class="scan-preview" id="scanPreview" style="display:none;">
+                        <img id="scanPreviewImage" src="" alt="Gescanntes Rezept">
+                        <p style="color:var(--text-light);font-size:0.9rem;">
+                            ✨ Foto aufgenommen! Fülle die Details unten aus:
+                        </p>
+
+                        <div class="scan-result">
+                            <h4>Rezeptdetails</h4>
+                            <div class="scan-result-field">
+                                <label>Rezeptname</label>
+                                <input type="text" id="scanRecipeTitle" placeholder="Name des Rezepts">
+                            </div>
+                            <div class="scan-result-field">
+                                <label>Beschreibung</label>
+                                <input type="text" id="scanRecipeDesc" placeholder="Kurze Beschreibung">
+                            </div>
+                            <div class="scan-result-field">
+                                <label>Zutaten (durch Komma getrennt)</label>
+                                <textarea id="scanRecipeIngredients" rows="3" placeholder="z.B. 500g Mehl, 3 Eier, 200ml Milch"></textarea>
+                            </div>
+                            <div class="scan-result-field">
+                                <label>Zubereitungszeit</label>
+                                <input type="text" id="scanRecipeTime" placeholder="z.B. 45 Min">
+                            </div>
+                            <div class="scan-result-field">
+                                <label>Tags</label>
+                                <input type="text" id="scanRecipeTags" placeholder="z.B. vegan, schnell">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="width:100%;margin-top:16px;" onclick="saveScanedRecipe()">
+                            💾 Rezept speichern
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeScanRecipeModal() {
+            const modal = document.getElementById('scanRecipeModal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            }
+            scanImageData = null;
+        }
+
+        function handleScanImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                scanImageData = e.target.result;
+
+                document.getElementById('scanOptions').style.display = 'none';
+                document.getElementById('scanPreview').style.display = 'block';
+                document.getElementById('scanPreviewImage').src = scanImageData;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveScanedRecipe() {
+            const title = document.getElementById('scanRecipeTitle').value.trim();
+            if (!title) {
+                alert('Bitte gib einen Rezeptnamen ein!');
+                return;
+            }
+
+            const ingredientsText = document.getElementById('scanRecipeIngredients').value;
+            const ingredients = ingredientsText
+                .split(',')
+                .map(i => i.trim())
+                .filter(i => i);
+
+            const tags = document.getElementById('scanRecipeTags').value
+                .split(',')
+                .map(t => t.trim().toLowerCase())
+                .filter(t => t);
+
+            const newRecipe = {
+                id: 'scan-' + Date.now(),
+                title: title,
+                desc: document.getElementById('scanRecipeDesc').value.trim(),
+                time: document.getElementById('scanRecipeTime').value.trim(),
+                ingredients: ingredients,
+                tags: tags,
+                image: scanImageData,
+                scanned: true,
+                createdAt: new Date().toISOString()
+            };
+
+            ownRecipes.push(newRecipe);
+            saveOwnRecipes();
+            closeScanRecipeModal();
+            renderOwnRecipes();
+
+            // Switch to own recipes tab
+            document.getElementById('recipe-tab-favorites').style.display = 'none';
+            document.getElementById('recipe-tab-own').style.display = 'block';
+            document.querySelectorAll('.recipe-tab')[0].classList.remove('active');
+            document.querySelectorAll('.recipe-tab')[1].classList.add('active');
+        }
+
+        // Initialize kochen section when shown
+        function initKochenSection() {
+            initFavoritesRecipes();
+            renderOwnRecipes();
         }
 
         function showFoodMode(mode) {
