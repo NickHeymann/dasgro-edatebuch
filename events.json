@@ -4502,6 +4502,286 @@
         "address": "Vogelhüttendeich 17",
         "link": "https://turtur.hamburg/"
       }
+    },
+    {
+      "id": "essen-xeom-eatery",
+      "emoji": "🍜",
+      "title": "Streetfood vom Feinsten bei XeÔm",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Authentisches vietnamesisches Streetfood im Karoviertel! 4.4★ bei 3000+ Bewertungen. Nur Barzahlung, keine Reservierung. Nahe Messehallen.",
+      "location": "XeÔm Eatery",
+      "address": "Karolinenstraße 25, 20357 Hamburg",
+      "coords": [53.5583, 9.9683],
+      "link": "https://www.instagram.com/xeom_hamburg/",
+      "time": "Mo-Do 12-22h, Fr 12-22:30h, Sa 14-22:30h, So 14-22h",
+      "price": "10-15€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "XeÔm Eatery",
+        "type": "Vietnamesisches Streetfood",
+        "address": "Karolinenstraße 25, Karoviertel",
+        "link": "https://www.instagram.com/xeom_hamburg/",
+        "empfehlung": "Pho Bo (legendär!), Bún Bò Huế, Bánh Mì - alles frisch zubereitet"
+      },
+      "bar": {
+        "name": "Gefährlich",
+        "type": "Café & Bar im Karoviertel",
+        "address": "Karolinenstraße 3",
+        "link": "https://gefaehrlich.net/"
+      }
+    },
+    {
+      "id": "essen-comnieu21",
+      "emoji": "🍜",
+      "title": "Moderne Vietnamese bei Comnieu21",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Vietnamesisch mit modernem Twist auf St. Pauli! 4.6★ bei 870 Bewertungen. Terrasse, Reservierung möglich, auch Lieferung.",
+      "location": "Comnieu21",
+      "address": "Davidstraße 21, 20359 Hamburg",
+      "coords": [53.5494, 9.9639],
+      "link": "https://comnieu21.de/",
+      "time": "täglich ab 12h",
+      "price": "12-18€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Comnieu21",
+        "type": "Modern-Vietnamesisch",
+        "address": "Davidstraße 21, St. Pauli",
+        "link": "https://comnieu21.de/",
+        "empfehlung": "Pho (klassisch gelungen), Com Nieu Bowls, frische Frühlingsrollen"
+      },
+      "bar": {
+        "name": "Zum Silbersack",
+        "type": "Kiez-Legende seit 1949",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
+    },
+    {
+      "id": "essen-bun-pho-hang",
+      "emoji": "🍜",
+      "title": "Traditionelle Pho bei Bun Pho Hang",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Traditionell vietnamesisch mitten auf dem Kiez! 4.3★, günstig und reichhaltig. Nahe St. Pauli U-Bahn.",
+      "location": "Bun Pho Hang",
+      "address": "Davidstraße 30, 20359 Hamburg",
+      "coords": [53.5492, 9.9644],
+      "link": "https://www.bunphohang.de/",
+      "time": "Mo-Fr 12-15:30h & 17:30-22:30h, Sa 13-23h, So 13-22h",
+      "price": "8-14€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Bun Pho Hang",
+        "type": "Traditionell Vietnamesisch",
+        "address": "Davidstraße 30, St. Pauli",
+        "link": "https://www.bunphohang.de/",
+        "empfehlung": "Pho mit Rind oder Huhn, Bún-Gerichte, knusprige Frühlingsrollen"
+      },
+      "bar": {
+        "name": "Zum Silbersack",
+        "type": "Kiez-Legende seit 1949",
+        "address": "Silbersackstraße 9",
+        "link": "https://www.silbersack.de/"
+      }
+    },
+    {
+      "id": "essen-cooko-ottensen",
+      "emoji": "🍜",
+      "title": "Bester Vietnamese Ottensen: Cooko",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "DER Vietnamese in Altona/Ottensen! Berühmt für Glasnudelgerichte, moderate Preise, freundlicher Service.",
+      "location": "Cooko",
+      "address": "Bahrenfelder Straße 130, 22765 Hamburg",
+      "coords": [53.5528, 9.9317],
+      "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d2333530-Cooko-Hamburg.html",
+      "time": "Di-So 12-22h",
+      "price": "10-16€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Cooko",
+        "type": "Vietnamesisch traditionell",
+        "address": "Bahrenfelder Straße 130, Ottensen",
+        "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d2333530-Cooko-Hamburg.html",
+        "empfehlung": "Glasnudelgerichte (beste in Altona!), Pho, Sommerrollen"
+      },
+      "bar": {
+        "name": "Aurel",
+        "type": "Bar & Kneipe Ottensen",
+        "address": "Bahrenfelder Straße 157",
+        "link": "https://aurel-hamburg.de/"
+      }
+    },
+    {
+      "id": "essen-oren-ishii",
+      "emoji": "🍜",
+      "title": "Lunch-Geheimtipp: O-ren Ishii",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Der Lunch-Hotspot in der Altstadt! 4.4★ bei 4500+ Bewertungen. Frisch zubereitete Pho, Currys und Glasnudelsalate. Nur Barzahlung, nur wochentags!",
+      "location": "O-ren Ishii",
+      "address": "Kleine Reichenstraße 18, 20457 Hamburg",
+      "coords": [53.5497, 9.9922],
+      "link": "https://www.o-ren-ishii.com/",
+      "time": "Mo-Fr 11-18h, Sa+So geschlossen",
+      "price": "10-20€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "O-ren Ishii",
+        "type": "Vietnamesisch Modern",
+        "address": "Kleine Reichenstraße 18, Altstadt",
+        "link": "https://www.o-ren-ishii.com/",
+        "empfehlung": "Pho (täglich frisch), Glasnudelsalat, Curry - alles wird extrem lecker zubereitet!"
+      },
+      "bar": {
+        "name": "Le Lion",
+        "type": "Beste Cocktailbar Hamburgs",
+        "address": "Rathausstraße 3",
+        "link": "https://www.lelion.net/"
+      }
+    },
+    {
+      "id": "essen-nom-zeughausmarkt",
+      "emoji": "🍜",
+      "title": "Vietnamese Fusion bei NOM",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Südvietnamesische Fusion-Küche am Zeughausmarkt! 4.4★, traditionell an Bambustischen oder normal. Parkplätze direkt vor der Tür.",
+      "location": "NOM Vietnamese Fusion",
+      "address": "Zeughausmarkt 17, 20459 Hamburg",
+      "coords": [53.5506, 9.9783],
+      "link": "https://nom-restaurant.de/",
+      "time": "Mo-Fr 11:30-22h, Sa-So 12-22h",
+      "price": "10-18€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "NOM",
+        "type": "Vietnamesisch Fusion",
+        "address": "Zeughausmarkt 17, Neustadt",
+        "link": "https://nom-restaurant.de/",
+        "empfehlung": "Vorspeisenplatte (Sommerrollen, Frühlingsrollen), würzige Pho, Eiernudeln"
+      },
+      "bar": {
+        "name": "Tor 23",
+        "type": "Cocktailbar am Hafen",
+        "address": "Vorsetzen 23",
+        "link": "https://www.tor23.de/"
+      }
+    },
+    {
+      "id": "essen-hanoi-deli-rathaus",
+      "emoji": "🍜",
+      "title": "Pho am Rathaus: Hanoi Deli",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Direkt neben dem Rathaus! 4.6★, authentische Pho ohne Geschmacksverstärker. Auch hausgemachtes Sushi, vegane Optionen.",
+      "location": "Hanoi Deli Rathaus",
+      "address": "Schauenburger Str. 49, 20095 Hamburg",
+      "coords": [53.5508, 9.9933],
+      "link": "https://www.hanoideli-rathaus.de/",
+      "time": "Mo-Fr 11:30-15:30h & 16:30-22h, So 11:30-21:30h",
+      "price": "12-20€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Hanoi Deli Rathaus",
+        "type": "Vietnamesisch & Sushi",
+        "address": "Schauenburger Str. 49, Altstadt",
+        "link": "https://www.hanoideli-rathaus.de/",
+        "empfehlung": "Authentische Pho (stundenlang gekochte Brühe!), Sommerrollen, Sushi-Platte"
+      },
+      "bar": {
+        "name": "Chug Club",
+        "type": "Cocktailbar am Rödingsmarkt",
+        "address": "Rödingsmarkt 2",
+        "link": "https://www.chugclub.de/"
+      }
+    },
+    {
+      "id": "essen-quan-ngon",
+      "emoji": "🍜",
+      "title": "Günstige Pho bei Quan Ngon",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Super Mittagstisch in der Altstadt! Pho & Bun für nur 6-7,50€, große Portionen. 4.4★, nur wochentags.",
+      "location": "Quan Ngon",
+      "address": "Springeltwiete 1, 20095 Hamburg",
+      "coords": [53.5511, 9.9978],
+      "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d15873331-Reviews-Quan_Ngon-Hamburg.html",
+      "time": "Mo-Fr 11-17h, Sa+So geschlossen",
+      "price": "6-10€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Quan Ngon",
+        "type": "Vietnamesisch günstig",
+        "address": "Springeltwiete 1, Altstadt",
+        "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d15873331-Reviews-Quan_Ngon-Hamburg.html",
+        "empfehlung": "Mittagstisch: Pho oder Bun für ~7€ - beste Preis-Leistung in der Innenstadt!"
+      },
+      "bar": {
+        "name": "Generation Bar",
+        "type": "Cocktailbar St. Georg",
+        "address": "Steindamm 80",
+        "link": "https://www.generation-bar.de/"
+      }
+    },
+    {
+      "id": "essen-pho-la-7",
+      "emoji": "🍜",
+      "title": "Pho an der Langen Reihe",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "Gemütlicher Vietnamese in St. Georg! 4.5★, super Preis-Leistung, täglich geöffnet. Perfekt nach dem Spaziergang an der Alster.",
+      "location": "Pho La 7",
+      "address": "Lange Reihe 7, 20099 Hamburg",
+      "coords": [53.5553, 10.0050],
+      "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d15204279-Reviews-Pho_La_7-Hamburg.html",
+      "time": "Mo-So geöffnet",
+      "price": "10-15€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Pho La 7",
+        "type": "Vietnamesisch gemütlich",
+        "address": "Lange Reihe 7, St. Georg",
+        "link": "https://www.tripadvisor.de/Restaurant_Review-g187331-d15204279-Reviews-Pho_La_7-Hamburg.html",
+        "empfehlung": "Pho (fantastic laut Bewertungen), vietnamesische Klassiker"
+      },
+      "bar": {
+        "name": "Generation Bar",
+        "type": "Cocktailbar St. Georg",
+        "address": "Steindamm 80",
+        "link": "https://www.generation-bar.de/"
+      }
+    },
+    {
+      "id": "essen-viet-bowl",
+      "emoji": "🍜",
+      "title": "Top-Bewertung: Viet Bowl",
+      "date": "dauerhaft",
+      "category": "essen",
+      "description": "4.8★ - eines der bestbewerteten Vietnamese in Hamburg! Authentisch, erschwinglich, keine Reservierung nötig. Seit 2019 in der Altstadt.",
+      "location": "Viet Bowl",
+      "address": "Gertrudenstraße 13, 20095 Hamburg",
+      "coords": [53.5500, 9.9942],
+      "link": "https://www.vietbowl.de/hamburg",
+      "time": "Mo-Fr 11:30-21:30h, Sa-So 12-22h",
+      "price": "10-16€ p.P.",
+      "vorher_nachher": "Komplett",
+      "restaurant": {
+        "name": "Viet Bowl",
+        "type": "Vietnamesisch authentisch",
+        "address": "Gertrudenstraße 13, Altstadt",
+        "link": "https://www.vietbowl.de/hamburg",
+        "empfehlung": "Beef Pho (excellent!), Bun Bowls - alles selbst und authentisch gekocht"
+      },
+      "bar": {
+        "name": "Chug Club",
+        "type": "Cocktailbar am Rödingsmarkt",
+        "address": "Rödingsmarkt 2",
+        "link": "https://www.chugclub.de/"
+      }
     }
   ],
   "categories": {
