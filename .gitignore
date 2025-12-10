@@ -1,1 +1,9 @@
 .vercel
+node_modules/
+.DS_Store
+.env
+.env.local
+
+# CLAUDE.md backups (local only)
+CLAUDE.old.*.md
+*.old.*.md

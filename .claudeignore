@@ -1,0 +1,16 @@
+# Backup files (not for LLM context)
+CLAUDE.old.*.md
+*.old.*.md
+
+# Dependencies
+node_modules/
+
+# Build outputs
+.vercel/
+dist/
+
+# Large data files (read only when needed)
+memories/
+
+# Lock files
+package-lock.json
