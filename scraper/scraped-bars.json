@@ -1,0 +1,177 @@
+{
+  "bars_new": [
+    {
+      "name": "Drip Bar",
+      "type": "Speakeasy",
+      "address": "Antonistraße 4, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Mi 18-01h, Do-Sa 18-02h, So geschlossen",
+      "link": "https://www.instagram.com/dripbarhamburg",
+      "special": "Versteckter Speakeasy mit Cold-Drip-infusionierten Spirituosen"
+    },
+    {
+      "name": "Clockers",
+      "type": "Cocktailbar",
+      "address": "Paul-Roosen-Straße 27, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Do 19-01h, Fr-Sa 19-03h, So geschlossen",
+      "link": "https://www.instagram.com/clockers_hamburg",
+      "special": "Mooswand und Waldambiente, hausgemachter Clockers Gin"
+    },
+    {
+      "name": "Collab Bar",
+      "type": "Cocktailbar",
+      "address": "Hein-Hoyer-Straße 63, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Di-Do 18-24h, Fr-Sa 18-01h, So-Mo geschlossen",
+      "link": "https://www.instagram.com/collab_bar",
+      "special": "Equal Drinking - von alkoholfrei bis hochprozentig"
+    },
+    {
+      "name": "Skyline Bar 20up",
+      "type": "Rooftop Bar",
+      "address": "Bernhard-Nocht-Straße 97, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "So-Do 18-01h, Fr-Sa 18-01:30h",
+      "link": "https://www.empire-riverside.de/skyline-bar-20up/",
+      "special": "Höchste Rooftop Bar Hamburgs (90m) mit Hafenblick"
+    },
+    {
+      "name": "Puzzle Bar",
+      "type": "Rooftop Bar",
+      "address": "Versmannstraße 6-10, HafenCity",
+      "district": "HafenCity",
+      "hours": "Di-Do 18-00:30h, Fr-Sa 18-02h",
+      "link": "https://puzzle-bar.de",
+      "special": "Von 3-Sterne-Koch Kevin Fehling, 15. Etage"
+    },
+    {
+      "name": "MOON 46",
+      "type": "Rooftop Bar",
+      "address": "Am Sandtorkai 46, HafenCity",
+      "district": "HafenCity",
+      "hours": "Mi-So 16-21:30h (bei gutem Wetter)",
+      "link": "https://www.pierdrei-hotel.de/essen-trinken/moon-46",
+      "special": "Dachgarten mit Blick über HafenCity"
+    },
+    {
+      "name": "Berglund Bar",
+      "type": "Cocktailbar",
+      "address": "Gertigstraße 14, Winterhude",
+      "district": "Winterhude",
+      "hours": "Täglich ab 18h, Fr bis 03h",
+      "link": "https://www.berglund-bar.com",
+      "special": "Skandinavisch inspiriert, Fokus auf Gin-Cocktails"
+    },
+    {
+      "name": "W die Weinbar",
+      "type": "Weinbar",
+      "address": "Dorotheenstraße 180, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa ab 18h, So geschlossen",
+      "link": "https://w-die-weinbar.de",
+      "special": "German Wine List Award, 500 Weine, 60 glasweise"
+    },
+    {
+      "name": "Il Garage",
+      "type": "Weinbar",
+      "address": "Kleine Rainstraße 3, Ottensen",
+      "district": "Ottensen",
+      "hours": "Di-Fr 17-22h",
+      "link": "http://ilgarage.de",
+      "special": "Ehemalige Garage, Naturweine"
+    },
+    {
+      "name": "Witwenball",
+      "type": "Weinbar",
+      "address": "Weidenallee 20, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mi-Sa 18-24h, So 17-24h",
+      "link": "https://www.witwenball.com",
+      "special": "1920er Tanzlokal mit weißer Marmortheke"
+    },
+    {
+      "name": "Klinker Bar",
+      "type": "Weinbar",
+      "address": "Eppendorfer Weg 58, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Di-Fr 18-24h, Sa 11-17h",
+      "link": "https://www.klinker.bar",
+      "special": "Naturweine, biodynamischer Weinbau, vegetarisch"
+    },
+    {
+      "name": "Botanic District",
+      "type": "Cocktailbar",
+      "address": "Hegestraße 14, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Mi 17-01h, Do 17-02h, Fr-Sa 17-03h",
+      "link": "https://botanic-district.de",
+      "special": "Botanische Oase mit exotischen Pflanzen, New-York-Style"
+    },
+    {
+      "name": "Boilerman Bar",
+      "type": "Whiskey Bar",
+      "address": "Eppendorfer Weg 211, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Sa 18-02h, So geschlossen",
+      "link": "https://boilerman.de",
+      "special": "100 American Whiskeys, Highballs und Boilermakers"
+    },
+    {
+      "name": "Walrus Bar",
+      "type": "Cocktailbar",
+      "address": "Wohlwillstraße 47, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Mi 18-03h, Do 18-04h, Fr-Sa 18-06h, So 18-02h",
+      "link": "https://www.instagram.com/thewalrus.bar",
+      "special": "Craft Beer & Cocktails, nur Barzahlung"
+    },
+    {
+      "name": "Oorlam Bar",
+      "type": "Craft Beer",
+      "address": "Kohlhöfen 29, Neustadt",
+      "district": "Neustadt",
+      "hours": "Di-Mi 16-24h, Do-Fr 16-01h, Sa 15-01h, So 15-24h",
+      "link": "https://www.oorlam.de",
+      "special": "Buddelship Brauerei Taproom, 15 Zapfhähne"
+    },
+    {
+      "name": "Landgang Brauerei",
+      "type": "Craft Beer",
+      "address": "Beerenweg 12, Altona",
+      "district": "Altona",
+      "hours": "Mi-Do 17-21h, Fr 17-23h, Sa 14-23h",
+      "link": "https://www.landgang-brauerei.de",
+      "special": "Bar mitten in der Brauerei, 10 wechselnde Biere"
+    },
+    {
+      "name": "Galopper des Jahres",
+      "type": "Craft Beer",
+      "address": "Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Sa ab 17h",
+      "link": "https://galopper-hamburg.de",
+      "special": "12 Zapfhähne mit regionalen Craft Beers"
+    },
+    {
+      "name": "Shanghiat Brewery (Malto)",
+      "type": "Craft Beer",
+      "address": "Max-Brauer-Allee 88, Altona",
+      "district": "Altona",
+      "hours": "Mi-Do 18-22h, Fr-Sa 18-24h",
+      "link": "https://malto.shanghait.beer",
+      "special": "Nano-Brauerei mit experimentellen Bieren"
+    },
+    {
+      "name": "Craft Bier Bar Hamburg",
+      "type": "Craft Beer",
+      "address": "Max-Brauer-Allee 275, Altona",
+      "district": "Altona",
+      "hours": "Mo-Sa ab 17h",
+      "link": "https://craftbierbar.de",
+      "special": "Hamburg Beer Week, internationale Brauereien"
+    }
+  ],
+  "scraped_at": "2024-12-08",
+  "source": "Web Research"
+}

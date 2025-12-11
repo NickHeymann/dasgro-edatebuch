@@ -1,0 +1,186 @@
+{
+  "wellness_new": [
+    {
+      "name": "das Hamam",
+      "type": "Traditionelles Hamam",
+      "address": "Feldstraße 39, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-So nach Reservierung",
+      "link": "https://www.das-hamam.de/",
+      "special": "Authentisches türkisches Bad mit Peelings & Massagen"
+    },
+    {
+      "name": "Holthusenbad",
+      "type": "Historisches Schwimmbad & Sauna",
+      "address": "Goernestraße 21, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 6:30-22h, Sa-So 8-20h",
+      "link": "https://www.baederland.de/bad/holthusenbad.html",
+      "special": "Jugendstil-Bad von 1914, große Saunalandschaft"
+    },
+    {
+      "name": "Kaifu-Bad",
+      "type": "Freibad & Sauna",
+      "address": "Bundesstraße 107, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Fr 6:30-22h, Sa-So 8-20h",
+      "link": "https://www.baederland.de/bad/kaifu-bad.html",
+      "special": "Naturbad mit großer Saunawelt"
+    },
+    {
+      "name": "MeridianSpa Eppendorf",
+      "type": "Spa & Fitness",
+      "address": "Quickbornstraße 26, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 6-23h, Sa-So 8-22h",
+      "link": "https://www.meridianspa.de/",
+      "special": "Premium Spa mit Pool, Sauna & Day-Spa Angeboten"
+    },
+    {
+      "name": "Aspria Alstertal",
+      "type": "Wellness Club",
+      "address": "Alsterkrugchaussee 559, Alstertal",
+      "district": "Alstertal",
+      "hours": "Mo-Fr 6-23h, Sa-So 8-22h",
+      "link": "https://www.aspria.com/",
+      "special": "Luxus-Spa mit Außenpool & Rooftop Sauna"
+    },
+    {
+      "name": "relexa hotel Bellevue",
+      "type": "Hotel Spa",
+      "address": "An der Alster 14, St. Georg",
+      "district": "St. Georg",
+      "hours": "Day Spa buchbar",
+      "link": "https://www.relexa-hotel-bellevue-hamburg.de/",
+      "special": "Alsterblick-Sauna, Day-Spa Pakete"
+    },
+    {
+      "name": "Le Spa at The Fontenay",
+      "type": "Luxus Hotel Spa",
+      "address": "Fontenay 10, Rotherbaum",
+      "district": "Rotherbaum",
+      "hours": "Täglich 8-22h",
+      "link": "https://www.thefontenay.de/spa-wellness/",
+      "special": "Rooftop Pool mit Alsterblick, High-End Treatments"
+    },
+    {
+      "name": "Vabali Spa Hamburg",
+      "type": "Thermalbad & Sauna",
+      "address": "Schanzenstraße 75, Sternschanze",
+      "district": "Schanze",
+      "hours": "So-Do 9-23h, Fr-Sa 9-24h",
+      "link": "https://www.vabali.de/hamburg/",
+      "special": "Balinesisches Ambiente, 9 Saunen, Außenbereich"
+    },
+    {
+      "name": "Le Méridien Spa",
+      "type": "Hotel Spa",
+      "address": "An der Alster 52-56, St. Georg",
+      "district": "St. Georg",
+      "hours": "Täglich 7-22h",
+      "link": "https://www.marriott.com/",
+      "special": "Alsterblick, Indoor Pool, Tagestickets verfügbar"
+    },
+    {
+      "name": "Floating Hamburg",
+      "type": "Float Tank Studio",
+      "address": "Eppendorfer Weg 287, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Nach Terminvereinbarung",
+      "link": "https://www.floating-hamburg.de/",
+      "special": "Schwerelose Entspannung in Salzwasser-Tanks"
+    },
+    {
+      "name": "Stadtbad Ohlsdorf",
+      "type": "Schwimmbad & Sauna",
+      "address": "Scharnskamp 23, Ohlsdorf",
+      "district": "Ohlsdorf",
+      "hours": "Siehe Bäderland Website",
+      "link": "https://www.baederland.de/",
+      "special": "Moderne Saunalandschaft, textilfreie Bereiche"
+    },
+    {
+      "name": "Bartholomäus-Therme",
+      "type": "Thermalbad",
+      "address": "Bartholomäusstraße 95, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa 10-23h, So 10-20h",
+      "link": "https://www.baederland.de/",
+      "special": "Sole-Therme mit Wellness-Bereich"
+    },
+    {
+      "name": "YogaYa Studio",
+      "type": "Yoga Studio",
+      "address": "Rentzelstraße 10a, Rotherbaum",
+      "district": "Rotherbaum",
+      "hours": "Kurse täglich, siehe Website",
+      "link": "https://www.yogaya.de/",
+      "special": "Vielfältige Yoga-Stile, Drop-In Kurse"
+    },
+    {
+      "name": "Yoga Loft Hamburg",
+      "type": "Yoga Studio",
+      "address": "Bahrenfelder Straße 201, Ottensen",
+      "district": "Ottensen",
+      "hours": "Kurse täglich",
+      "link": "https://www.yogaloft-hamburg.de/",
+      "special": "Loft-Atmosphäre, verschiedene Yoga-Arten"
+    },
+    {
+      "name": "Urbanyoga Hamburg",
+      "type": "Yoga Studio",
+      "address": "Hoheluftchaussee 62, Hoheluft",
+      "district": "Hoheluft",
+      "hours": "Kurse täglich",
+      "link": "https://www.urbanyoga.de/",
+      "special": "Hot Yoga, Aerial Yoga, Workshops"
+    },
+    {
+      "name": "Thai Massage Siam",
+      "type": "Thai Massage",
+      "address": "Eppendorfer Weg 173, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Sa 10-20h",
+      "link": "https://www.siammassage-hamburg.de/",
+      "special": "Traditionelle Thai-Massage, Paarmassagen"
+    },
+    {
+      "name": "Wellness Oase Ottensen",
+      "type": "Massage & Wellness",
+      "address": "Ottenser Hauptstraße 56, Ottensen",
+      "district": "Ottensen",
+      "hours": "Di-Sa 10-19h",
+      "link": "https://www.wellness-oase-ottensen.de/",
+      "special": "Massagen, Kosmetik, Paar-Treatments"
+    },
+    {
+      "name": "Kosmetik Lounge Hamburg",
+      "type": "Spa & Beauty",
+      "address": "Isestraße 69, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Di-Sa nach Termin",
+      "link": "https://www.kosmetiklounge-hamburg.de/",
+      "special": "Luxus-Facials, Paar-Treatments"
+    },
+    {
+      "name": "Ayurveda Parkschlösschen Day Spa",
+      "type": "Ayurveda Spa",
+      "address": "Diverse Standorte",
+      "district": "City",
+      "hours": "Nach Termin",
+      "link": "https://www.ayurveda-parkschloesschen.de/",
+      "special": "Authentische Ayurveda-Behandlungen"
+    },
+    {
+      "name": "EAST Hotel Spa",
+      "type": "Hotel Spa",
+      "address": "Simon-von-Utrecht-Straße 31, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Täglich 7-22h",
+      "link": "https://www.east-hamburg.de/",
+      "special": "Design-Spa mit Pool, Day-Spa Pakete"
+    }
+  ],
+  "scraped_at": "2024-12-08",
+  "source": "Web Research"
+}

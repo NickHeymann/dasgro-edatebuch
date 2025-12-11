@@ -1,0 +1,61 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "version": "1.0.0",
+    "name": "Datebuch Design Tokens",
+    "description": "Single Source of Truth for all design values"
+  },
+  "spacing": {
+    "xs": { "value": "4px", "type": "dimension" },
+    "sm": { "value": "8px", "type": "dimension" },
+    "md": { "value": "16px", "type": "dimension" },
+    "lg": { "value": "24px", "type": "dimension" },
+    "xl": { "value": "32px", "type": "dimension" },
+    "2xl": { "value": "48px", "type": "dimension" }
+  },
+  "radius": {
+    "sm": { "value": "8px", "type": "dimension" },
+    "md": { "value": "12px", "type": "dimension" },
+    "lg": { "value": "16px", "type": "dimension" },
+    "xl": { "value": "24px", "type": "dimension" },
+    "full": { "value": "9999px", "type": "dimension" }
+  },
+  "transition": {
+    "fast": { "value": "0.15s ease", "type": "duration" },
+    "base": { "value": "0.3s cubic-bezier(0.4, 0, 0.2, 1)", "type": "duration" },
+    "slow": { "value": "0.5s cubic-bezier(0.4, 0, 0.2, 1)", "type": "duration" }
+  },
+  "typography": {
+    "fontFamily": {
+      "base": { "value": "'Inter', -apple-system, sans-serif", "type": "fontFamily" },
+      "display": { "value": "'Cormorant Garamond', Georgia, serif", "type": "fontFamily" }
+    },
+    "fontSize": {
+      "xs": { "value": "0.75rem", "type": "dimension" },
+      "sm": { "value": "0.875rem", "type": "dimension" },
+      "base": { "value": "1rem", "type": "dimension" },
+      "lg": { "value": "1.125rem", "type": "dimension" },
+      "xl": { "value": "1.25rem", "type": "dimension" },
+      "2xl": { "value": "1.5rem", "type": "dimension" },
+      "3xl": { "value": "2rem", "type": "dimension" }
+    },
+    "fontWeight": {
+      "normal": { "value": "400", "type": "fontWeight" },
+      "medium": { "value": "500", "type": "fontWeight" },
+      "semibold": { "value": "600", "type": "fontWeight" },
+      "bold": { "value": "700", "type": "fontWeight" }
+    },
+    "lineHeight": {
+      "tight": { "value": "1.25", "type": "number" },
+      "base": { "value": "1.5", "type": "number" },
+      "relaxed": { "value": "1.75", "type": "number" }
+    }
+  },
+  "shadow": {
+    "sm": { "value": "0 1px 2px rgba(0,0,0,0.05)", "type": "shadow" },
+    "md": { "value": "0 4px 6px rgba(0,0,0,0.07)", "type": "shadow" },
+    "lg": { "value": "0 10px 15px rgba(0,0,0,0.1)", "type": "shadow" },
+    "xl": { "value": "0 20px 25px rgba(0,0,0,0.15)", "type": "shadow" },
+    "glass": { "value": "0 8px 32px rgba(0,0,0,0.08)", "type": "shadow" }
+  }
+}

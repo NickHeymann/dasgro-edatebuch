@@ -1,0 +1,360 @@
+{
+  "events_new": [
+    {
+      "title": "Hamilton - Das Musical",
+      "date": "2025-12-15",
+      "endDate": "2026-06-30",
+      "category": "musical",
+      "location": "Operettenhaus",
+      "address": "Spielbudenplatz 1, St. Pauli",
+      "link": "https://www.stage-entertainment.de/musicals/hamilton",
+      "time": "20:00",
+      "price": "ab 59€"
+    },
+    {
+      "title": "Der König der Löwen",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "musical",
+      "location": "Theater im Hafen",
+      "address": "Norderelbstraße 6, Steinwerder",
+      "link": "https://www.stage-entertainment.de/musicals/koenig-der-loewen",
+      "time": "19:30",
+      "price": "ab 79€"
+    },
+    {
+      "title": "Quatsch Comedy Club",
+      "date": "2025-12-14",
+      "category": "comedy",
+      "location": "Quatsch Comedy Club",
+      "address": "Reeperbahn 25, St. Pauli",
+      "link": "https://www.quatsch-comedy-club.de/",
+      "time": "20:00",
+      "price": "ab 24€"
+    },
+    {
+      "title": "Varieté - GOP Wintergarten",
+      "date": "2025-12-10",
+      "endDate": "2026-03-30",
+      "category": "variete",
+      "location": "GOP Varieté-Theater",
+      "address": "Kirchenallee 57, St. Georg",
+      "link": "https://www.variete.de/",
+      "time": "20:00",
+      "price": "ab 42€"
+    },
+    {
+      "title": "Heiße Ecke - St. Pauli Musical",
+      "date": "2025-12-08",
+      "endDate": "2026-04-30",
+      "category": "musical",
+      "location": "Schmidts Tivoli",
+      "address": "Spielbudenplatz 27-28, St. Pauli",
+      "link": "https://www.tivoli.de/",
+      "time": "20:00",
+      "price": "ab 35€"
+    },
+    {
+      "title": "Phantom der Oper",
+      "date": "2026-02-01",
+      "endDate": "2026-06-30",
+      "category": "musical",
+      "location": "Mehr! Theater am Großmarkt",
+      "address": "Banksstraße 28, Hammerbrook",
+      "link": "https://www.mehr.de/",
+      "time": "19:30",
+      "price": "ab 49€"
+    },
+    {
+      "title": "Kammerspiele: Wer hat Angst vor Virginia Woolf?",
+      "date": "2026-01-20",
+      "category": "theater",
+      "location": "Hamburger Kammerspiele",
+      "address": "Hartungstraße 9-11, Rotherbaum",
+      "link": "https://www.hamburger-kammerspiele.de/",
+      "time": "20:00",
+      "price": "ab 22€"
+    },
+    {
+      "title": "St. Pauli Theater: Der Räuber Hotzenplotz",
+      "date": "2025-12-20",
+      "category": "theater",
+      "location": "St. Pauli Theater",
+      "address": "Spielbudenplatz 29-30, St. Pauli",
+      "link": "https://www.st-pauli-theater.de/",
+      "time": "19:30",
+      "price": "ab 28€"
+    },
+    {
+      "title": "Elbphilharmonie: Kammermusik Abend",
+      "date": "2026-02-10",
+      "category": "musik",
+      "location": "Elbphilharmonie Kleiner Saal",
+      "address": "Platz der Deutschen Einheit 4, HafenCity",
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "20:00",
+      "price": "ab 35€"
+    },
+    {
+      "title": "Laeiszhalle: Philharmoniker Hamburg",
+      "date": "2026-02-15",
+      "category": "musik",
+      "location": "Laeiszhalle",
+      "address": "Johannes-Brahms-Platz, Neustadt",
+      "link": "https://www.elbphilharmonie.de/de/laeiszhalle",
+      "time": "19:30",
+      "price": "ab 25€"
+    },
+    {
+      "title": "Hammam Date mit Massage",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "wellness",
+      "location": "das Hamam",
+      "address": "Feldstraße 39, St. Pauli",
+      "link": "https://www.das-hamam.de/",
+      "time": "nach Buchung",
+      "price": "ab 75€ p.P.",
+      "treatment": "Traditionelles Bad + Peeling + Massage"
+    },
+    {
+      "title": "Vabali Spa Tag",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "wellness",
+      "location": "Vabali Spa",
+      "address": "Schanzenstraße 75, Sternschanze",
+      "link": "https://www.vabali.de/hamburg/",
+      "time": "9-23h",
+      "price": "ab 45€ p.P.",
+      "treatment": "Ganztag Sauna & Pools"
+    },
+    {
+      "title": "Töpferkurs für Paare",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "handwerk",
+      "location": "Studio Amun",
+      "address": "Admiralitätstraße 71, Altstadt",
+      "link": "https://www.studioamun.com/",
+      "time": "nach Buchung",
+      "price": "ab 89€ p.P."
+    },
+    {
+      "title": "Goldschmiedekurs - Ringe schmieden",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "handwerk",
+      "location": "COOP Gold",
+      "address": "Lippmannstraße 59, Eimsbüttel",
+      "link": "https://www.coopgold.de/",
+      "time": "nach Buchung",
+      "price": "ab 159€ p.P."
+    },
+    {
+      "title": "Bouldern Schnupperkurs",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "FLASHH",
+      "address": "Gasstraße 4a, Bahrenfeld",
+      "link": "https://www.flashh.de/",
+      "time": "flexibel",
+      "price": "ab 14€ p.P."
+    },
+    {
+      "title": "Klettern Einsteigerkurs",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "Nordwandhalle",
+      "address": "Hermann-Blohm-Straße 1, Wilhelmsburg",
+      "link": "https://nordwandhalle.de/",
+      "time": "nach Buchung",
+      "price": "ab 29€ p.P."
+    },
+    {
+      "title": "Valentinstag Krimi Dinner",
+      "date": "2026-02-14",
+      "category": "essen",
+      "location": "Verschiedene Locations",
+      "address": "Hamburg City",
+      "link": "https://www.das-kriminal-dinner.de/",
+      "time": "19:00",
+      "price": "ab 79€ p.P."
+    },
+    {
+      "title": "Escape Room für 2",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "Hamburg Escapes",
+      "address": "Friedensallee 128, Ottensen",
+      "link": "https://www.hamburgescapes.de/",
+      "time": "nach Buchung",
+      "price": "ab 60€ für 2"
+    },
+    {
+      "title": "Planetarium Sternshow",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "shows",
+      "location": "Planetarium Hamburg",
+      "address": "Linnering 1, Winterhude",
+      "link": "https://www.planetarium-hamburg.de/",
+      "time": "verschiedene Zeiten",
+      "price": "ab 12€ p.P."
+    },
+    {
+      "title": "Dialog im Dunkeln",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "Dialog im Dunkeln",
+      "address": "Alter Wandrahm 4, Speicherstadt",
+      "link": "https://www.dialog-im-dunkeln.de/",
+      "time": "nach Buchung",
+      "price": "ab 24€ p.P."
+    },
+    {
+      "title": "Schmidts Mitternachtsshow",
+      "date": "2025-12-21",
+      "category": "variete",
+      "location": "Schmidt Theater",
+      "address": "Spielbudenplatz 24, St. Pauli",
+      "link": "https://www.tivoli.de/",
+      "time": "23:00",
+      "price": "ab 25€"
+    },
+    {
+      "title": "Silvester Show Schmidt Theater",
+      "date": "2025-12-31",
+      "category": "variete",
+      "location": "Schmidt Theater",
+      "address": "Spielbudenplatz 24, St. Pauli",
+      "link": "https://www.tivoli.de/",
+      "time": "20:00",
+      "price": "ab 89€"
+    },
+    {
+      "title": "Ohnsorg Theater: Komödie",
+      "date": "2026-01-15",
+      "category": "theater",
+      "location": "Ohnsorg Theater",
+      "address": "Heidi-Kabel-Platz 1, St. Georg",
+      "link": "https://www.ohnsorg.de/",
+      "time": "19:30",
+      "price": "ab 22€"
+    },
+    {
+      "title": "Thalia Theater: Klassiker",
+      "date": "2026-01-22",
+      "category": "theater",
+      "location": "Thalia Theater",
+      "address": "Alstertor, Altstadt",
+      "link": "https://www.thalia-theater.de/",
+      "time": "19:30",
+      "price": "ab 18€"
+    },
+    {
+      "title": "Deutsches Schauspielhaus",
+      "date": "2026-02-05",
+      "category": "theater",
+      "location": "Deutsches Schauspielhaus",
+      "address": "Kirchenallee 39, St. Georg",
+      "link": "https://www.schauspielhaus.de/",
+      "time": "19:30",
+      "price": "ab 15€"
+    },
+    {
+      "title": "Vegetarischer Kochkurs",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "essen",
+      "location": "Kochschule Hamburg",
+      "address": "Beim Schlump 84, Eimsbüttel",
+      "link": "https://www.kochschule-hamburg.de/",
+      "time": "nach Buchung",
+      "price": "ab 89€ p.P."
+    },
+    {
+      "title": "Miniatur Wunderland Abendöffnung",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "Miniatur Wunderland",
+      "address": "Kehrwieder 2-4, Speicherstadt",
+      "link": "https://www.miniatur-wunderland.de/",
+      "time": "bis 21h",
+      "price": "ab 20€ p.P."
+    },
+    {
+      "title": "Schwarzlicht Minigolf",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "aktiv",
+      "location": "Schwarzlichtviertel",
+      "address": "Kieler Straße 571, Stellingen",
+      "link": "https://www.schwarzlichtviertel.de/",
+      "time": "15-22h",
+      "price": "ab 12€ p.P."
+    },
+    {
+      "title": "ArtNight Malen & Wein",
+      "date": "2025-12-14",
+      "category": "handwerk",
+      "location": "Verschiedene Locations",
+      "address": "Hamburg",
+      "link": "https://www.artnight.com/",
+      "time": "19:00",
+      "price": "ab 35€ p.P."
+    },
+    {
+      "title": "Hamburg Dungeon",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "shows",
+      "location": "Hamburg Dungeon",
+      "address": "Kehrwieder 2, Speicherstadt",
+      "link": "https://www.thedungeons.com/hamburg/",
+      "time": "10-18h",
+      "price": "ab 25€ p.P."
+    },
+    {
+      "title": "Floating Session für 2",
+      "date": "2025-12-08",
+      "endDate": "2026-12-31",
+      "category": "wellness",
+      "location": "Floating Hamburg",
+      "address": "Eppendorfer Weg 287, Eppendorf",
+      "link": "https://www.floating-hamburg.de/",
+      "time": "nach Buchung",
+      "price": "ab 60€ p.P.",
+      "treatment": "60 Min Floating im Salzwasser-Tank"
+    },
+    {
+      "title": "Neujahrskonzert Elbphilharmonie",
+      "date": "2026-01-01",
+      "category": "musik",
+      "location": "Elbphilharmonie",
+      "address": "Platz der Deutschen Einheit 4, HafenCity",
+      "link": "https://www.elbphilharmonie.de/",
+      "time": "18:00",
+      "price": "ab 45€"
+    },
+    {
+      "title": "Winter-Lichterfest Planten un Blomen",
+      "date": "2025-12-15",
+      "endDate": "2026-01-06",
+      "category": "aktiv",
+      "location": "Planten un Blomen",
+      "address": "Marseiller Straße, Neustadt",
+      "link": "https://plantenunblomen.hamburg.de/",
+      "time": "17-21h",
+      "price": "kostenlos"
+    }
+  ],
+  "scraped_at": "2025-12-08",
+  "source": "Web Research - Stand: 08.12.2025",
+  "note": "Alle Events ab 08.12.2025"
+}

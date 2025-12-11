@@ -1,0 +1,252 @@
+{
+  "activities_new": [
+    {
+      "name": "Nordwandhalle",
+      "type": "Klettern & Bouldern",
+      "address": "Hermann-Blohm-Straße 1, Wilhelmsburg",
+      "district": "Wilhelmsburg",
+      "hours": "Mo-Fr 10-23h, Sa-So 10-22h",
+      "link": "https://nordwandhalle.de/",
+      "coords": [53.5195, 9.9765],
+      "special": "Größte Kletterhalle Norddeutschlands, nah an Sollis Arbeit!"
+    },
+    {
+      "name": "FLASHH Bouldern",
+      "type": "Bouldern",
+      "address": "Gasstraße 4a, Bahrenfeld",
+      "district": "Bahrenfeld",
+      "hours": "Mo-Fr 7-23h, Sa-So 9-22h",
+      "link": "https://www.flashh.de/",
+      "coords": [53.5612, 9.9134],
+      "special": "Ohne Anmeldung, spontan bouldern"
+    },
+    {
+      "name": "Laufwerk Hamburg",
+      "type": "Lauftraining",
+      "address": "Alstertal/Stadtpark",
+      "district": "Verschiedene",
+      "hours": "So 10h, Mi 19h",
+      "link": "https://www.laufwerk-hamburg.de/",
+      "special": "Marathontraining, Tempolauf, Lauf-ABC - perfekt für Sollis Marathon!"
+    },
+    {
+      "name": "Makerhafen",
+      "type": "Offene Werkstatt & Lasercutter",
+      "address": "Lippeltstraße 1, Winterhude",
+      "district": "Winterhude",
+      "hours": "Di-Do 17-21h, Sa 11-17h",
+      "link": "https://www.makerhafen.de/",
+      "coords": [53.5898, 10.0152],
+      "special": "Lasercutter, 3D-Drucker, Holz- & Metallwerkstatt"
+    },
+    {
+      "name": "Goldschmiede im Glasgang",
+      "type": "Goldschmiedekurs",
+      "address": "Neuer Wall 34, Altstadt",
+      "district": "Altstadt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.goldschmiedekurs-hamburg.de/",
+      "special": "Eigene Ringe schmieden, Paar-Workshops"
+    },
+    {
+      "name": "COOP Gold",
+      "type": "Goldschmiedekurs",
+      "address": "Lippmannstraße 59, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.coopgold.de/",
+      "special": "Trauringe selbst schmieden"
+    },
+    {
+      "name": "Studio Amun",
+      "type": "Keramik Workshop",
+      "address": "Admiralitätstraße 71, Altstadt",
+      "district": "Altstadt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.studioamun.com/",
+      "special": "Töpferkurse, Paarkurse, offene Werkstatt"
+    },
+    {
+      "name": "Hamburg Escapes",
+      "type": "Escape Room",
+      "address": "Friedensallee 128, Ottensen",
+      "district": "Ottensen",
+      "hours": "Täglich nach Buchung",
+      "link": "https://www.hamburgescapes.de/",
+      "special": "Verschiedene Szenarien für 2 Personen geeignet"
+    },
+    {
+      "name": "Mystery House",
+      "type": "Escape Room",
+      "address": "Große Reichenstraße 27, Altstadt",
+      "district": "Altstadt",
+      "hours": "Täglich nach Buchung",
+      "link": "https://www.mysteryhouse-hamburg.de/",
+      "special": "Mehrere Themenräume"
+    },
+    {
+      "name": "Kling Klang Born",
+      "type": "Töpferkurs",
+      "address": "Eppendorfer Weg 91, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.klingklangborn.de/",
+      "special": "Drehscheibenkurse, Glasurkurse"
+    },
+    {
+      "name": "Hansestudios",
+      "type": "Malworkshop",
+      "address": "Stresemannstraße 374, Altona",
+      "district": "Altona",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.hansestudios.de/",
+      "special": "Acryl, Öl, Aquarell Workshops"
+    },
+    {
+      "name": "ArtNight Hamburg",
+      "type": "Mal-Events",
+      "address": "Verschiedene Locations",
+      "district": "Verschiedene",
+      "hours": "Abendveranstaltungen",
+      "link": "https://www.artnight.com/",
+      "special": "Malen + Drinks, regelmäßige Events"
+    },
+    {
+      "name": "Die Glasfabrik",
+      "type": "Glasblasen",
+      "address": "Kanalstraße 52, Ottensen",
+      "district": "Ottensen",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.glasfabrik-hamburg.de/",
+      "special": "Glasperlen & Schmuck selbst machen"
+    },
+    {
+      "name": "Kinderkochschule Hamburg",
+      "type": "Kochkurs",
+      "address": "Eppendorfer Landstraße 14, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Erwachsenenkurse abends",
+      "link": "https://www.kinderkochschule-hamburg.de/",
+      "special": "Auch Erwachsenen-Paarkurse"
+    },
+    {
+      "name": "Kochschule Hamburg",
+      "type": "Kochkurs",
+      "address": "Beim Schlump 84, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.kochschule-hamburg.de/",
+      "special": "Vegetarische & vegane Kurse"
+    },
+    {
+      "name": "Süßes Hamburg",
+      "type": "Pralinenkurs",
+      "address": "Öjendorfer Weg 9, Billstedt",
+      "district": "Billstedt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.suesses-hamburg.de/",
+      "special": "Pralinen & Schokolade selbst machen"
+    },
+    {
+      "name": "Kanu Wanderer",
+      "type": "Kanu & Kajak",
+      "address": "Eppendorfer Landstraße 180, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Apr-Okt nach Wetter",
+      "link": "https://www.kanuwanderer.de/",
+      "special": "Kanutouren auf Alster & Kanälen"
+    },
+    {
+      "name": "SUP Club Hamburg",
+      "type": "Stand Up Paddling",
+      "address": "Isekai 1, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Apr-Okt nach Wetter",
+      "link": "https://www.supclub.hamburg/",
+      "special": "SUP Kurse & Verleih auf der Alster"
+    },
+    {
+      "name": "Minigolf Schwarzlichtviertel",
+      "type": "Indoor Minigolf",
+      "address": "Kieler Straße 571, Stellingen",
+      "district": "Stellingen",
+      "hours": "Mo-Fr 15-22h, Sa-So 12-22h",
+      "link": "https://www.schwarzlichtviertel.de/",
+      "special": "3D Schwarzlicht Minigolf"
+    },
+    {
+      "name": "Hamburg Dungeon",
+      "type": "Gruselkabinett",
+      "address": "Kehrwieder 2, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 10-18h",
+      "link": "https://www.thedungeons.com/hamburg/",
+      "special": "Hamburger Geschichte gruselig erzählt"
+    },
+    {
+      "name": "Dialog im Dunkeln",
+      "type": "Erfahrungsausstellung",
+      "address": "Alter Wandrahm 4, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Di-Fr 9-17h, Sa 10-20h, So 10-18h",
+      "link": "https://www.dialog-im-dunkeln.de/",
+      "special": "Führung durch stockdunkle Räume"
+    },
+    {
+      "name": "Miniatur Wunderland",
+      "type": "Modellbau-Ausstellung",
+      "address": "Kehrwieder 2-4, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 9:30-18h (variiert)",
+      "link": "https://www.miniatur-wunderland.de/",
+      "special": "Weltgrößte Modelleisenbahnanlage"
+    },
+    {
+      "name": "Planetarium Hamburg",
+      "type": "Sternwarte",
+      "address": "Linnering 1, Winterhude",
+      "district": "Winterhude",
+      "hours": "Verschiedene Shows",
+      "link": "https://www.planetarium-hamburg.de/",
+      "special": "Sternenshows, 360° Kuppel, romantisch!"
+    },
+    {
+      "name": "Bowling Arena Hamburg",
+      "type": "Bowling",
+      "address": "Kieler Straße 577, Stellingen",
+      "district": "Stellingen",
+      "hours": "Täglich 14-24h",
+      "link": "https://www.bowling-arena-hamburg.de/",
+      "special": "Bowling mit Disco-Beleuchtung"
+    },
+    {
+      "name": "LaserTag Hamburg",
+      "type": "LaserTag",
+      "address": "Spaldingstraße 210, Hammerbrook",
+      "district": "Hammerbrook",
+      "hours": "Mo-Do 16-22h, Fr-So 14-24h",
+      "link": "https://www.lasertag-hamburg.de/",
+      "special": "Sci-Fi Arena, 2er-Teams möglich"
+    },
+    {
+      "name": "JUMP House Hamburg",
+      "type": "Trampolinpark",
+      "address": "Kieler Straße 572, Stellingen",
+      "district": "Stellingen",
+      "hours": "Mo-Fr 14-20h, Sa-So 10-20h",
+      "link": "https://www.jumphouse.de/",
+      "special": "Trampoline, Ninja Parcours, Foam Pit"
+    },
+    {
+      "name": "Strandperle",
+      "type": "Beach Bar (Sommer)",
+      "address": "Övelgönne 60, Othmarschen",
+      "district": "Othmarschen",
+      "hours": "Bei gutem Wetter ab 10h",
+      "link": "https://www.strandperle-hamburg.de/",
+      "special": "Elbstrand mit Blick auf Container-Schiffe"
+    }
+  ],
+  "scraped_at": "2024-12-08",
+  "source": "Web Research"
+}

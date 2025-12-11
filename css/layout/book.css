@@ -1,0 +1,213 @@
+/* ============ BOOK COVER ============ */
+.book-cover {
+    background: linear-gradient(145deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
+    border-radius: 20px;
+    padding: 50px 30px 100px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+/* ICICLES - nur 2-3 Stück */
+.icicles {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    pointer-events: none;
+}
+
+.icicle {
+    position: absolute;
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top-style: solid;
+    border-top-color: rgba(200, 230, 255, 0.9);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    animation: icicleGrow 1.5s ease-out forwards;
+    cursor: pointer;
+    transition: transform 0.2s;
+    pointer-events: auto;
+}
+.icicle:hover { transform: scale(1.1); }
+.icicle.falling {
+    animation: icicleFall 1s ease-in forwards !important;
+}
+
+/* SNOW */
+.particles {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    animation: particleFall linear infinite;
+}
+
+.cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.cover-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+/* PHOTO WITH HEARTS */
+.cover-photo-frame {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    cursor: pointer;
+    background: var(--navy);
+}
+
+.cover-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.cover-photo-frame:hover img { transform: scale(1.08); }
+
+.hearts-container {
+    position: absolute;
+    top: -30px; left: -30px; right: -30px; bottom: -30px;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    animation: floatHeart 1.8s ease-out forwards;
+}
+
+.cover-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+/* WINTER SCENE */
+.winter-scene {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 100px;
+    pointer-events: auto;
+}
+
+.snow-ground {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(240,248,255,0.8));
+    border-radius: 100% 100% 0 0;
+}
+
+.snow-hill {
+    position: absolute;
+    bottom: 20px;
+    left: 8%;
+    width: 90px;
+    height: 45px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50% 50% 0 0;
+}
+
+.person-solli {
+    position: absolute;
+    bottom: 55px;
+    left: calc(8% + 30px);
+    font-size: 1.5rem;
+    animation: throwAction 3.5s ease-in-out infinite;
+}
+
+.snowball-wrapper {
+    position: absolute;
+    bottom: 62px;
+    left: calc(8% + 55px);
+    opacity: 0;
+    animation: snowballFly 3.5s ease-in-out infinite;
+}
+
+.snowball {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+.doofer-nick-label {
+    position: absolute;
+    bottom: 15px;
+    left: -15px;
+    font-size: 0.55rem;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    font-weight: 600;
+    opacity: 0;
+    animation: labelAppear 3.5s ease-in-out infinite;
+}
+
+.person-nick {
+    position: absolute;
+    bottom: 22px;
+    left: calc(8% + 110px);
+    font-size: 1.4rem;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.1s;
+    pointer-events: auto;
+}
+.person-nick:active { cursor: grabbing; }
+.person-nick.hit {
+    animation: getHit 0.5s ease-out;
+}
+
+.snowman { position: absolute; bottom: 22px; right: 20%; font-size: 2rem; }
+.sled { position: absolute; bottom: 5px; right: 12%; font-size: 1.3rem; }
+.tree { position: absolute; bottom: 22px; font-size: 1.8rem; }
+.tree:nth-of-type(1) { left: 2%; }
+.tree:nth-of-type(2) { right: 2%; font-size: 2.2rem; }
+
+/* ============ CONTROLS ============ */
+.controls-section {
+    background: var(--frost);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+

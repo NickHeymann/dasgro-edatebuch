@@ -1,0 +1,15 @@
+{
+  "name": "datebuch",
+  "version": "2.0.0",
+  "description": "Date planning app for Nick & Solli",
+  "type": "module",
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.js",
+    "build": "npm run build:tokens",
+    "serve": "python3 -m http.server 8080",
+    "validate": "for f in js/*.js; do node --check \"$f\"; done"
+  },
+  "keywords": ["dating", "planner", "pwa"],
+  "author": "Nick Heymann",
+  "license": "MIT"
+}

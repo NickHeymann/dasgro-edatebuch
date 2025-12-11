@@ -1,0 +1,97 @@
+/* ============ TRAVEL CARDS ============ */
+.travel-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-width: 160px;
+}
+
+.travel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.travel-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: var(--ice-blue);
+}
+
+.travel-card-content {
+    flex: 1;
+}
+
+.travel-card-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+}
+
+.travel-card-status {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+.travel-card-arrow {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.travel-card:hover .travel-card-arrow {
+    transform: translateX(4px);
+}
+
+.legend-card {
+    cursor: default;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(248,244,240,0.9));
+}
+
+.legend-card:hover {
+    transform: none;
+}
+
+/* ============ STRAVA CARD ============ */
+.strava-card .travel-card-icon {
+    background: linear-gradient(135deg, #fc4c02, #ff6b35);
+    color: white;
+}
+
+.strava-card.connected {
+    background: linear-gradient(135deg, rgba(252, 76, 2, 0.1), rgba(255, 107, 53, 0.15));
+    border-color: rgba(252, 76, 2, 0.3);
+}
+
+.strava-card.connected .travel-card-arrow {
+    color: #fc4c02;
+}
+
+/* ============ KOMOOT CARD ============ */
+.komoot-card .travel-card-icon {
+    background: linear-gradient(135deg, #6aa127, #8bc34a);
+    color: white;
+}
+
+.komoot-card.connected {
+    background: linear-gradient(135deg, rgba(106, 161, 39, 0.1), rgba(139, 195, 74, 0.15));
+    border-color: rgba(106, 161, 39, 0.3);
+}
+
+.komoot-card.connected .travel-card-arrow {
+    color: #6aa127;
+}

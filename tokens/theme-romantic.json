@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Romantic Theme",
+    "description": "Sanft, romantisch, pastellfarben - das Original Datebuch Design"
+  },
+  "color": {
+    "primary": {
+      "base": { "value": "#f472b6", "type": "color" },
+      "dark": { "value": "#ec4899", "type": "color" },
+      "light": { "value": "#fce7f3", "type": "color" }
+    },
+    "secondary": {
+      "base": { "value": "#10b981", "type": "color" },
+      "dark": { "value": "#059669", "type": "color" },
+      "light": { "value": "#d1fae5", "type": "color" }
+    },
+    "accent": {
+      "base": { "value": "#f59e0b", "type": "color" },
+      "dark": { "value": "#d97706", "type": "color" },
+      "light": { "value": "#fef3c7", "type": "color" }
+    },
+    "background": {
+      "base": { "value": "#fafafa", "type": "color" },
+      "warm": { "value": "#f5f5f7", "type": "color" },
+      "gradient": { "value": "linear-gradient(135deg, #fafafa 0%, #f0f9ff 50%, #fce7f3 100%)", "type": "color" }
+    },
+    "surface": {
+      "card": { "value": "rgba(255,255,255,0.8)", "type": "color" },
+      "frost": { "value": "rgba(255,255,255,0.72)", "type": "color" },
+      "glass": { "value": "rgba(255,255,255,0.6)", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "#1f2937", "type": "color" },
+      "secondary": { "value": "#6b7280", "type": "color" },
+      "muted": { "value": "#9ca3af", "type": "color" },
+      "heading": { "value": "#111827", "type": "color" }
+    },
+    "border": {
+      "base": { "value": "#e5e7eb", "type": "color" },
+      "light": { "value": "#f0f9ff", "type": "color" },
+      "glass": { "value": "rgba(255,255,255,0.3)", "type": "color" }
+    }
+  },
+  "effect": {
+    "blur": { "value": "blur(20px)", "type": "custom" },
+    "cardGradient": { "value": "linear-gradient(135deg, #fce7f3 0%, #f0f9ff 100%)", "type": "custom" },
+    "buttonGlow": { "value": "0 0 20px rgba(244,114,182,0.3)", "type": "shadow" }
+  }
+}

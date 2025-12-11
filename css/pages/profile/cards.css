@@ -1,0 +1,133 @@
+/* ============ PARTNER PROFILE CARDS ============ */
+.partner-profiles {
+    margin-bottom: 20px;
+}
+.partner-profiles h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--navy);
+}
+.profiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+.profile-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+.profile-card:hover { border-color: var(--rose); }
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--ice-blue);
+}
+.profile-avatar { font-size: 2.5rem; }
+.profile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: var(--navy);
+    width: 100%;
+}
+.profile-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.profile-field { display: flex; flex-direction: column; gap: 5px; }
+.profile-field.full-width { grid-column: 1 / -1; }
+.profile-field label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+.profile-field input,
+.profile-field select,
+.profile-field textarea {
+    padding: 10px;
+    border: 1px solid var(--ice-blue);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: white;
+    transition: border-color 0.3s;
+}
+.profile-field input:focus,
+.profile-field select:focus,
+.profile-field textarea:focus {
+    border-color: var(--rose);
+    outline: none;
+}
+.profile-field textarea { min-height: 60px; resize: vertical; }
+
+/* ============ WISHLISTS ============ */
+.partner-wishlists {
+    margin-bottom: 20px;
+}
+.partner-wishlists h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--navy);
+}
+.wishlists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.wishlist-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+}
+.wishlist-card h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--navy);
+}
+.wishlist-items { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.wishlist-item.bought {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+.wishlist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--sage);
+}
+.wishlist-item-text { flex: 1; }
+.wishlist-item-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+.wishlist-item-delete:hover { opacity: 1; }
+.wishlist-add {
+    display: flex;
+    gap: 8px;
+}
+.wishlist-add input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--ice-blue);
+    border-radius: 8px;
+}

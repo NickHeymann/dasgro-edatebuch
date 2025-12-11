@@ -1,0 +1,118 @@
+/* ================================================
+   Theme Preview Panel
+   For rapid design testing - Press Ctrl+Shift+T to toggle
+   ================================================ */
+
+.theme-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--surface-card, rgba(255,255,255,0.95));
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    padding: 16px;
+    z-index: 9999;
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-panel.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.theme-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light, #f0f0f0);
+}
+
+.theme-panel-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary, #1f2937);
+}
+
+.theme-panel-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.theme-panel-close:hover {
+    opacity: 1;
+}
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: var(--surface-frost, #f8f8f8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-option:hover {
+    border-color: var(--color-primary-light, #fce7f3);
+    transform: translateX(4px);
+}
+
+.theme-option.active {
+    border-color: var(--color-primary-base, #f472b6);
+    background: var(--color-primary-light, #fce7f3);
+}
+
+.theme-swatch {
+    display: flex;
+    gap: 3px;
+}
+
+.theme-swatch-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.theme-option-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary, #1f2937);
+}
+
+.theme-panel-hint {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light, #f0f0f0);
+    font-size: 0.75rem;
+    color: var(--text-muted, #9ca3af);
+    text-align: center;
+}
+
+.theme-panel-hint kbd {
+    background: var(--surface-frost, #f0f0f0);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.7rem;
+}

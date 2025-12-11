@@ -1,0 +1,269 @@
+/* ============ DATE BUILDER & ROULETTE ============ */
+.date-builder-flow { display: flex; flex-direction: column; gap: 20px; }
+.date-builder-question {
+    background: linear-gradient(135deg, var(--ice-blue), var(--cream));
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+.date-builder-question h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+.date-builder-options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+.roulette-result { text-align: center; }
+.roulette-emoji { font-size: 3.5rem; margin-bottom: 12px; }
+.roulette-emoji.spinning { animation: spinEmoji 0.5s ease-out; }
+.roulette-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 18px; }
+.roulette-parts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; text-align: left; }
+.roulette-part { background: var(--ice-blue); border-radius: 10px; padding: 12px; }
+.roulette-part-title { font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.roulette-part-desc { color: var(--text-light); font-size: 0.9rem; }
+.roulette-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.date-summary {
+    background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+    color: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.date-summary h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 15px; }
+.date-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.date-summary-item:last-child { border-bottom: none; }
+.date-summary-item .step-num {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ============ TRAVEL DIARY ============ */
+.diary-section { margin-top: 20px; }
+.diary-entry {
+    background: var(--ice-blue);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+.diary-entry-date {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+.diary-entry-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+.diary-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+}
+.diary-media-item {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.diary-media-item img, .diary-media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.diary-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.diary-add-btn:hover { opacity: 0.9; }
+.diary-form { margin-top: 15px; }
+.diary-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid var(--ice-blue);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+.diary-form textarea:focus { outline: none; border-color: var(--sage); }
+.diary-media-upload {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.diary-upload-btn {
+    padding: 10px 15px;
+    background: var(--ice-blue);
+    border: 2px dashed var(--sage);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.diary-upload-btn:hover { background: white; }
+
+/* ============ DATE HISTORY ============ */
+.date-history {
+    background: var(--frost);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.date-history h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+.history-emoji { font-size: 1.5rem; }
+.history-date { font-size: 0.8rem; color: var(--text-light); }
+
+/* ============ DATE REVIEW ============ */
+.date-review-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--rose);
+}
+
+.date-review-section h4 {
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 15px;
+    color: var(--sage);
+}
+
+.review-photos {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.review-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.add-photo-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px dashed var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--sage);
+    cursor: pointer;
+    background: var(--frost);
+}
+
+.review-notes textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid var(--ice-blue);
+    border-radius: 10px;
+    padding: 12px;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.review-cost-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.review-cost-input input {
+    width: 100px;
+    padding: 8px 12px;
+    border: 1px solid var(--ice-blue);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.highlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.highlight-tag {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 2px solid var(--ice-blue);
+    background: white;
+    transition: all 0.2s;
+}
+
+.highlight-tag.selected {
+    background: var(--rose);
+    border-color: var(--rose);
+    color: white;
+}
+
+.next-time-input {
+    margin-top: 15px;
+}
+
+.next-time-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.next-time-input textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid var(--ice-blue);
+    border-radius: 10px;
+    padding: 12px;
+    font-family: inherit;
+    resize: vertical;
+}
+

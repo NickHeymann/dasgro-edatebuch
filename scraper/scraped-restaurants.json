@@ -1,0 +1,236 @@
+{
+  "restaurants_new": [
+    {
+      "name": "Happenpappen",
+      "type": "100% Vegan Plant-Based",
+      "address": "Feldstraße 36, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mi-Sa 17:30-22h, Sa-So 11-16h Brunch",
+      "link": "https://happenpappen.de/",
+      "coords": [53.5584, 9.9670],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Cài Kitchen",
+      "type": "Vegane Sichuan-Küche",
+      "address": "Glashüttenstraße 85a, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 12-15h & 17-20h, Sa 18-21h",
+      "link": "https://caikitchen.de/",
+      "coords": [53.5579, 9.9663],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Kkokki Loves Vegan",
+      "type": "Koreanisches Vegan Street Food",
+      "address": "Schanzenstraße 36, Sternschanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 12-15h & 17-22h, Sa-So 12-22h",
+      "link": "https://www.kkokki-loves-vegan.de/",
+      "coords": [53.5605, 9.9642],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Azeitona Schanze",
+      "type": "Orientalische Mezze & Falafel",
+      "address": "Beckstraße 17-19, Sternschanze",
+      "district": "Schanze",
+      "hours": "So-Do 12-23h, Fr-Sa 12h-open end",
+      "link": "https://www.facebook.com/Azeitona",
+      "coords": [53.5597, 9.9655],
+      "cuisine": "orientalisch"
+    },
+    {
+      "name": "Azeitona Eimsbüttel",
+      "type": "Orientalische Mezze & Falafel",
+      "address": "Osterstraße 173, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Täglich 12-23h",
+      "link": "https://www.facebook.com/Azeitona",
+      "coords": [53.5741, 9.9658],
+      "cuisine": "orientalisch"
+    },
+    {
+      "name": "Citta Vegan House",
+      "type": "Asian Fusion 100% Vegan",
+      "address": "Osterstraße 98, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Mi 12-22:30h, Do-Sa 12-23h, So 13-22:30h",
+      "link": "https://www.citta-veganhouse.de/",
+      "coords": [53.5751, 9.9671],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "MOMO Ramen",
+      "type": "Japanische Ramen mit veganen Optionen",
+      "address": "Margaretenstraße 58, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-So 12-22h",
+      "link": "https://www.momo-ramen.de/",
+      "coords": [53.5628, 9.9652],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "JING JING",
+      "type": "Thai Restaurant mit veganen Optionen",
+      "address": "Waterloohain 7, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Di-Do 18-24h, Fr-Sa 18-2h",
+      "link": "https://jing-jing.de/",
+      "coords": [53.5605, 9.9520],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Vilai Vegan House",
+      "type": "Asiatisch Vegan Sushi & Bowls",
+      "address": "Bahrenfelder Straße 170, Ottensen",
+      "district": "Ottensen",
+      "hours": "Siehe Website für aktuelle Zeiten",
+      "link": "https://vilaivegan-hamburg.de/",
+      "coords": [53.5549, 9.9245],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Vincent Vegan",
+      "type": "100% Vegane Burger & Fast Food",
+      "address": "Ottenser Hauptstraße 10, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 11:30-19:30h",
+      "link": "https://eatvincent.com/",
+      "coords": [53.5529, 9.9348],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Lily of the Valley",
+      "type": "Vegetarisch/Vegan mit Wochenend-Brunch",
+      "address": "Bahrenfelder Straße 212, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 12-16h, Sa 10-16h",
+      "link": "https://www.lily-hamburg.de/",
+      "coords": [53.5566, 9.9153],
+      "cuisine": "vegetarisch"
+    },
+    {
+      "name": "Mr. Dumpling Ottensen",
+      "type": "Türkische Manti vegan & vegetarisch",
+      "address": "Ottenser Hauptstraße 34, Ottensen",
+      "district": "Ottensen",
+      "hours": "Siehe Website",
+      "link": "https://mrdumpling.de/",
+      "coords": [53.5525, 9.9358],
+      "cuisine": "türkisch"
+    },
+    {
+      "name": "AN Vegan House",
+      "type": "Vietnamesisch 100% Vegan",
+      "address": "Mühlenkamp 19, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa 11:30-23h",
+      "link": "https://www.instagram.com/an_vegan_house/",
+      "coords": [53.5842, 10.0093],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "BODHI Vegan Living",
+      "type": "Südostasiatisch 100% Vegan",
+      "address": "Borgweg 11, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Do 11:30-22:30h, Fr-Sa 11:30-23h, So 11:30-22:30h",
+      "link": "https://www.bodhihamburg.de/",
+      "coords": [53.5874, 10.0098],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "ÆNDRÈ Restaurant",
+      "type": "100% Vegan glutenfrei ohne Zucker",
+      "address": "Schlüterstraße 86, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Fr 9-15h, Sa-So 9-16h",
+      "link": "https://aendre.de/",
+      "coords": [53.5681, 9.9803],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "ÆNDRÈ Deli",
+      "type": "100% Vegan glutenfrei ohne Zucker",
+      "address": "Lehmweg 31a, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 9-15h, Sa-So 9-16h",
+      "link": "https://aendre.de/",
+      "coords": [53.5854, 9.9865],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "TA Vegan House Altona",
+      "type": "Vietnamesisch 100% Vegan",
+      "address": "Neue Große Bergstraße 11, Altona",
+      "district": "Altona",
+      "hours": "Mo-So 11:30-22h",
+      "link": "https://www.taveganhouse.hamburg/",
+      "coords": [53.5485, 9.9395],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Katzentempel HafenCity",
+      "type": "100% Vegan Katzencafé",
+      "address": "Überseeboulevard 2, HafenCity",
+      "district": "HafenCity",
+      "hours": "Mo-Sa 10-22h, So 10-20h",
+      "link": "https://katzentempel.de/",
+      "coords": [53.5405, 9.9987],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Loving Hut",
+      "type": "Asiatisch 100% Vegan",
+      "address": "Markusstraße 2, Neustadt",
+      "district": "Neustadt",
+      "hours": "Mo-Fr 11:30-15h & 17:30-21h, Sa 17:30-22h",
+      "link": "http://www.lovinghut.de/",
+      "coords": [53.5590, 9.9750],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Simbiosa",
+      "type": "Israelisch 100% Vegan",
+      "address": "Hein-Hoyer-Straße 60, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Di-Fr 15-24h, Sa-So 12-24h",
+      "link": "https://www.instagram.com/simbiosa.hamburg/",
+      "coords": [53.5582, 9.9598],
+      "cuisine": "israelisch-vegan"
+    },
+    {
+      "name": "Mamalicious",
+      "type": "Kanadisch vegetarisch/vegan Diner",
+      "address": "Max-Brauer-Allee 277, Schanze",
+      "district": "Schanze",
+      "hours": "Do-Mo 10-16h",
+      "link": "https://www.instagram.com/dascafemiller/",
+      "coords": [53.5591, 9.9491],
+      "cuisine": "vegetarisch"
+    },
+    {
+      "name": "Apple & Eve",
+      "type": "Vegan Soulfood Burger & Bowls",
+      "address": "Grindelallee 34, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Do 12-21:30h, Fr-Sa 12-23h, So 12-21:30h",
+      "link": "https://appleeve.de/",
+      "coords": [53.5677, 9.9814],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Mama Kumpir",
+      "type": "Türkische Kumpir vegetarisch/vegan",
+      "address": "Langenfelder Damm 90, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Fr 11-21:30h, Sa-So 12-21:30h",
+      "link": "https://www.mamakumpir.de/",
+      "coords": [53.5738, 9.9425],
+      "cuisine": "türkisch"
+    }
+  ],
+  "scraped_at": "2024-12-08",
+  "source": "Web Research"
+}

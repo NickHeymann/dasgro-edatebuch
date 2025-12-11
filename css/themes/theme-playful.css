@@ -1,0 +1,132 @@
+/* ================================================
+   Playful Theme Theme
+   Generated from Design Tokens - DO NOT EDIT MANUALLY
+   2025-12-08T23:59:00.674Z
+   ================================================ */
+
+:root {
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --typography-fontFamily-base: 'Inter', -apple-system, sans-serif;
+    --typography-fontFamily-display: 'Cormorant Garamond', Georgia, serif;
+    --typography-fontSize-xs: 0.75rem;
+    --typography-fontSize-sm: 0.875rem;
+    --typography-fontSize-base: 1rem;
+    --typography-fontSize-lg: 1.125rem;
+    --typography-fontSize-xl: 1.25rem;
+    --typography-fontSize-2xl: 1.5rem;
+    --typography-fontSize-3xl: 2rem;
+    --typography-fontWeight-normal: 400;
+    --typography-fontWeight-medium: 500;
+    --typography-fontWeight-semibold: 600;
+    --typography-fontWeight-bold: 700;
+    --typography-lineHeight-tight: 1.25;
+    --typography-lineHeight-base: 1.5;
+    --typography-lineHeight-relaxed: 1.75;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+    --shadow-glass: 0 8px 32px rgba(0,0,0,0.08);
+    --color-primary-base: #f97316;
+    --color-primary-dark: #ea580c;
+    --color-primary-light: #ffedd5;
+    --color-secondary-base: #14b8a6;
+    --color-secondary-dark: #0d9488;
+    --color-secondary-light: #ccfbf1;
+    --color-accent-base: #f43f5e;
+    --color-accent-dark: #e11d48;
+    --color-accent-light: #ffe4e6;
+    --color-background-base: #fffbeb;
+    --color-background-warm: #fef3c7;
+    --color-background-gradient: linear-gradient(135deg, #fffbeb 0%, #fef3c7 25%, #ccfbf1 75%, #ffe4e6 100%);
+    --color-surface-card: rgba(255,255,255,0.95);
+    --color-surface-frost: rgba(255,251,235,0.9);
+    --color-surface-glass: rgba(255,255,255,0.7);
+    --color-text-primary: #1c1917;
+    --color-text-secondary: #57534e;
+    --color-text-muted: #a8a29e;
+    --color-text-heading: #0c0a09;
+    --color-border-base: #fed7aa;
+    --color-border-light: #ffedd5;
+    --color-border-glass: rgba(254,215,170,0.5);
+    --effect-blur: blur(16px);
+    --effect-cardGradient: linear-gradient(135deg, #ffedd5 0%, #ccfbf1 100%);
+    --effect-buttonGlow: 0 0 30px rgba(249,115,22,0.4);
+}
+
+/* Theme attribute selector for switching */
+[data-design-theme="playful"] {
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --typography-fontFamily-base: 'Inter', -apple-system, sans-serif;
+    --typography-fontFamily-display: 'Cormorant Garamond', Georgia, serif;
+    --typography-fontSize-xs: 0.75rem;
+    --typography-fontSize-sm: 0.875rem;
+    --typography-fontSize-base: 1rem;
+    --typography-fontSize-lg: 1.125rem;
+    --typography-fontSize-xl: 1.25rem;
+    --typography-fontSize-2xl: 1.5rem;
+    --typography-fontSize-3xl: 2rem;
+    --typography-fontWeight-normal: 400;
+    --typography-fontWeight-medium: 500;
+    --typography-fontWeight-semibold: 600;
+    --typography-fontWeight-bold: 700;
+    --typography-lineHeight-tight: 1.25;
+    --typography-lineHeight-base: 1.5;
+    --typography-lineHeight-relaxed: 1.75;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+    --shadow-glass: 0 8px 32px rgba(0,0,0,0.08);
+    --color-primary-base: #f97316;
+    --color-primary-dark: #ea580c;
+    --color-primary-light: #ffedd5;
+    --color-secondary-base: #14b8a6;
+    --color-secondary-dark: #0d9488;
+    --color-secondary-light: #ccfbf1;
+    --color-accent-base: #f43f5e;
+    --color-accent-dark: #e11d48;
+    --color-accent-light: #ffe4e6;
+    --color-background-base: #fffbeb;
+    --color-background-warm: #fef3c7;
+    --color-background-gradient: linear-gradient(135deg, #fffbeb 0%, #fef3c7 25%, #ccfbf1 75%, #ffe4e6 100%);
+    --color-surface-card: rgba(255,255,255,0.95);
+    --color-surface-frost: rgba(255,251,235,0.9);
+    --color-surface-glass: rgba(255,255,255,0.7);
+    --color-text-primary: #1c1917;
+    --color-text-secondary: #57534e;
+    --color-text-muted: #a8a29e;
+    --color-text-heading: #0c0a09;
+    --color-border-base: #fed7aa;
+    --color-border-light: #ffedd5;
+    --color-border-glass: rgba(254,215,170,0.5);
+    --effect-blur: blur(16px);
+    --effect-cardGradient: linear-gradient(135deg, #ffedd5 0%, #ccfbf1 100%);
+    --effect-buttonGlow: 0 0 30px rgba(249,115,22,0.4);
+}

@@ -1,0 +1,267 @@
+{
+  "cafes_new": [
+    {
+      "name": "Elbgold Rösterei",
+      "type": "Specialty Coffee",
+      "address": "Lagerstraße 34c, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.elbgold.com/",
+      "special": "Eigene Rösterei, Third Wave Coffee"
+    },
+    {
+      "name": "nord coast coffee roastery",
+      "type": "Specialty Coffee",
+      "address": "Deichstraße 9, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Fr 8-18h, Sa 10-18h",
+      "link": "https://www.nordcoast.coffee/",
+      "special": "Historisches Gebäude an der Fleete"
+    },
+    {
+      "name": "Public Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Wexstraße 28, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.publiccoffeeroasters.com/",
+      "special": "Eigene Rösterei, skandinavisch-minimalistisch"
+    },
+    {
+      "name": "Café Johanna",
+      "type": "Frühstückscafé",
+      "address": "Eppendorfer Weg 170, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://cafejohanna.de/",
+      "special": "Bekannt für Frühstück & Kuchen"
+    },
+    {
+      "name": "Herr Max",
+      "type": "Café & Restaurant",
+      "address": "Schulterblatt 12, Schanze",
+      "district": "Schanze",
+      "hours": "Täglich 9-23h",
+      "link": "https://www.herrmax.de/",
+      "special": "Ganztägig Frühstück, vegane Optionen"
+    },
+    {
+      "name": "Café Götze",
+      "type": "Frühstückscafé",
+      "address": "Ottenser Hauptstraße 11, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "link": "https://www.instagram.com/cafe.goetze/",
+      "special": "Hausgemachte Kuchen, Brunch am Wochenende"
+    },
+    {
+      "name": "Cafe Mitte",
+      "type": "Kiezscafé",
+      "address": "Ditmar-Koel-Straße 22, Neustadt",
+      "district": "Neustadt",
+      "hours": "Täglich 10-18h",
+      "link": "https://cafemitte.de/",
+      "special": "Gemütlich, selbstgemachte Kuchen"
+    },
+    {
+      "name": "Milch",
+      "type": "Frühstückscafé",
+      "address": "Ditmar-Koel-Straße 6, Neustadt",
+      "district": "Neustadt",
+      "hours": "Täglich 9-18h",
+      "link": "https://www.cafe-milch.de/",
+      "special": "Bekannt für ausgiebigen Brunch"
+    },
+    {
+      "name": "Small Batch Coffee",
+      "type": "Specialty Coffee",
+      "address": "Glashüttenstraße 94, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8:30-18h, Sa 9-18h, So 10-17h",
+      "link": "https://www.smallbatchcoffee.de/",
+      "special": "Australisch inspiriert, Flat Whites"
+    },
+    {
+      "name": "Kaffee Stark",
+      "type": "Café & Rösterei",
+      "address": "Beim Grünen Jäger 2, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8-18h, Sa 9-18h",
+      "link": "https://www.kaffeestark.de/",
+      "special": "Eigene Röstung, guter Espresso"
+    },
+    {
+      "name": "Playground Coffee",
+      "type": "Specialty Coffee",
+      "address": "Detlev-Bremer-Straße 21, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8-18h, Sa-So 10-18h",
+      "link": "https://playground.coffee/",
+      "special": "Creative Space + Coffee"
+    },
+    {
+      "name": "Manufact Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Admiralitätstraße 74, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Fr 8-18h, Sa 10-17h",
+      "link": "https://manufactorycoffee.de/",
+      "special": "Industrieller Stil, Pour-Over Spezialitäten"
+    },
+    {
+      "name": "Café Paris",
+      "type": "Französisches Café",
+      "address": "Rathausstraße 4, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Sa 9-24h, So 10-24h",
+      "link": "https://cafeparis.net/",
+      "special": "Art Déco Ambiente seit 1882"
+    },
+    {
+      "name": "Café Leonar",
+      "type": "Kulturcafé",
+      "address": "Grindelhof 59, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Fr 10-22h, Sa-So 10-18h",
+      "link": "http://cafeleonar.de/",
+      "special": "Jüdisches Kulturcafé mit Veranstaltungen"
+    },
+    {
+      "name": "Speicherstadt Kaffeerösterei",
+      "type": "Historische Rösterei",
+      "address": "Kehrwieder 5, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 10-19h",
+      "link": "https://www.speicherstadt-kaffee.de/",
+      "special": "Traditionsrösterei seit 1998"
+    },
+    {
+      "name": "Stockholm Espresso Club",
+      "type": "Specialty Coffee",
+      "address": "Lange Reihe 91, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.stockholmespressoclub.com/",
+      "special": "Skandinavischer Stil, Cold Brew"
+    },
+    {
+      "name": "blackline coffee",
+      "type": "Specialty Coffee",
+      "address": "Isestraße 17, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Mo-Fr 8-17h, Sa 9-17h",
+      "link": "https://www.blackline.coffee/",
+      "special": "Minimalistisch, Single Origin"
+    },
+    {
+      "name": "tornqvist",
+      "type": "Specialty Coffee",
+      "address": "Neuer Kamp 31, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-17h, Sa 10-17h",
+      "link": "https://www.tornqvist.coffee/",
+      "special": "Scandi-Coffee, eigene Röstung"
+    },
+    {
+      "name": "LESS Political",
+      "type": "Veganes Café",
+      "address": "Schulterblatt 61, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "link": "https://www.lesspolitical.de/",
+      "special": "100% vegan, hausgemachte Kuchen"
+    },
+    {
+      "name": "Hermetic Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Bahrenfelder Straße 187, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 8:30-18h, Sa 10-18h",
+      "link": "https://www.hermetic-coffee.de/",
+      "special": "Wissenschaftlicher Ansatz, Light Roasts"
+    },
+    {
+      "name": "Café Schmidt Elbe",
+      "type": "Traditionscafé",
+      "address": "Große Elbstraße 212, Altona",
+      "district": "Altona",
+      "hours": "Täglich 10-18h",
+      "link": "https://www.cafeelbe.de/",
+      "special": "Hausgemachte Torten, Elbblick"
+    },
+    {
+      "name": "Balz und Balz",
+      "type": "Concept Coffee",
+      "address": "Lehmweg 17, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.balzundbalz.de/",
+      "special": "Premium Coffee, Instagram-worthy"
+    },
+    {
+      "name": "Codos",
+      "type": "Café & Bar",
+      "address": "Bartelsstraße 12, Schanze",
+      "district": "Schanze",
+      "hours": "Täglich 10-1h",
+      "link": "https://www.codos.de/",
+      "special": "Tag Café, Nachts Bar"
+    },
+    {
+      "name": "Mutterland",
+      "type": "Delikatessen-Café",
+      "address": "Ernst-Merck-Straße 9, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Sa 10-19h",
+      "link": "https://www.mutterland.de/",
+      "special": "Deutsche Delikatessen, Café im Store"
+    },
+    {
+      "name": "Störtebeker Elbphilharmonie",
+      "type": "Café mit Aussicht",
+      "address": "Platz der Deutschen Einheit 4, HafenCity",
+      "district": "HafenCity",
+      "hours": "Täglich 9-22h",
+      "link": "https://www.stoertebeker-elbphilharmonie.de/",
+      "special": "Panoramablick, Plaza Ebene"
+    },
+    {
+      "name": "Hermkes Rommel",
+      "type": "Bistro-Café",
+      "address": "Grindelallee 45, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Sa 9-23h",
+      "link": "https://www.hermkes-rommel.de/",
+      "special": "Frühstück bis nachmittags, abends Wein"
+    },
+    {
+      "name": "Frau Möller",
+      "type": "Café & Bar",
+      "address": "Lange Reihe 96, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Fr 9-1h, Sa-So 10-1h",
+      "link": "https://www.fraumoeller.com/",
+      "special": "Retro-Charme, ganztägig Frühstück"
+    },
+    {
+      "name": "Super Mercato",
+      "type": "Italienisches Café",
+      "address": "Marktstraße 118, Schanze",
+      "district": "Schanze",
+      "hours": "Di-Sa 11-20h",
+      "link": "https://www.supermercato.de/",
+      "special": "Italienischer Deli + Café"
+    },
+    {
+      "name": "Blumenau",
+      "type": "Café & Bar",
+      "address": "Wohlwillstraße 20, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Täglich 10-1h",
+      "link": "https://www.blumenau.hamburg/",
+      "special": "Tag Café, Nachts Cocktails"
+    }
+  ],
+  "scraped_at": "2024-12-08",
+  "source": "Web Research"
+}

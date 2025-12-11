@@ -1,0 +1,61 @@
+/* ============ PARTNER COUNTER ============ */
+.partner-counter-card {
+    background: linear-gradient(135deg, var(--rose-light) 0%, var(--blush) 100%);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.counter-hearts { font-size: 3rem; margin-bottom: 10px; }
+.partner-counter-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+.counter-date-input input {
+    padding: 10px 15px;
+    border: 2px solid var(--rose);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+}
+.counter-display {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.counter-big {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--rose-dark);
+    line-height: 1;
+}
+.counter-label {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+.counter-details {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.counter-detail {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+.counter-detail-num {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--sage-dark);
+}
+.counter-detail-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}

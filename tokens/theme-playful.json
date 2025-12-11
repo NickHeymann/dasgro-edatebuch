@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Playful Theme",
+    "description": "Bunt, verspielt, lebhaft - f\u00fcr junge Zielgruppen"
+  },
+  "color": {
+    "primary": {
+      "base": { "value": "#f97316", "type": "color" },
+      "dark": { "value": "#ea580c", "type": "color" },
+      "light": { "value": "#ffedd5", "type": "color" }
+    },
+    "secondary": {
+      "base": { "value": "#14b8a6", "type": "color" },
+      "dark": { "value": "#0d9488", "type": "color" },
+      "light": { "value": "#ccfbf1", "type": "color" }
+    },
+    "accent": {
+      "base": { "value": "#f43f5e", "type": "color" },
+      "dark": { "value": "#e11d48", "type": "color" },
+      "light": { "value": "#ffe4e6", "type": "color" }
+    },
+    "background": {
+      "base": { "value": "#fffbeb", "type": "color" },
+      "warm": { "value": "#fef3c7", "type": "color" },
+      "gradient": { "value": "linear-gradient(135deg, #fffbeb 0%, #fef3c7 25%, #ccfbf1 75%, #ffe4e6 100%)", "type": "color" }
+    },
+    "surface": {
+      "card": { "value": "rgba(255,255,255,0.95)", "type": "color" },
+      "frost": { "value": "rgba(255,251,235,0.9)", "type": "color" },
+      "glass": { "value": "rgba(255,255,255,0.7)", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "#1c1917", "type": "color" },
+      "secondary": { "value": "#57534e", "type": "color" },
+      "muted": { "value": "#a8a29e", "type": "color" },
+      "heading": { "value": "#0c0a09", "type": "color" }
+    },
+    "border": {
+      "base": { "value": "#fed7aa", "type": "color" },
+      "light": { "value": "#ffedd5", "type": "color" },
+      "glass": { "value": "rgba(254,215,170,0.5)", "type": "color" }
+    }
+  },
+  "effect": {
+    "blur": { "value": "blur(16px)", "type": "custom" },
+    "cardGradient": { "value": "linear-gradient(135deg, #ffedd5 0%, #ccfbf1 100%)", "type": "custom" },
+    "buttonGlow": { "value": "0 0 30px rgba(249,115,22,0.4)", "type": "shadow" }
+  }
+}

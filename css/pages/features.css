@@ -1,0 +1,245 @@
+/* ============ KOCHEN SEKTION ============ */
+.food-options {
+    background: var(--frost);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.food-search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.food-search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--ice-blue);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.food-search-input:focus {
+    outline: none;
+    border-color: var(--sage);
+}
+.food-toggle {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.food-toggle-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--sage);
+    background: white;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.food-toggle-btn:hover {
+    background: var(--ice-blue);
+}
+.food-toggle-btn.active {
+    background: var(--sage);
+    color: white;
+}
+.cook-intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cook-intro h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.recipe-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.recipe-tab {
+    padding: 10px 20px;
+    border: none;
+    background: var(--warm-white);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+.recipe-tab:hover {
+    background: var(--ice-blue);
+}
+.recipe-tab.active {
+    background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+    color: white;
+}
+.add-recipe-section {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.add-recipe-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.food-search-results {
+    margin-bottom: 20px;
+}
+.food-result-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.food-result-info h4 {
+    margin: 0 0 4px 0;
+    color: var(--navy);
+}
+.food-result-info p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.recipe-link {
+    display: inline-block;
+    color: var(--sage);
+    font-weight: 600;
+    text-decoration: none;
+}
+.recipe-link:hover {
+    text-decoration: underline;
+}
+
+/* ============ CALENDAR & MINI CALENDAR ============ */
+.mini-calendar {
+    background: var(--frost);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.mini-calendar.collapsed {
+    display: none;
+}
+.mini-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.mini-calendar-title { font-weight: 600; color: var(--navy); }
+.mini-calendar-nav { display: flex; gap: 5px; }
+.mini-calendar-nav button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: var(--ice-blue);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mini-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+}
+.mini-calendar-day {
+    padding: 8px 4px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.mini-calendar-day.header { font-weight: 600; color: var(--text-light); font-size: 0.75rem; }
+.mini-calendar-day.other-month { color: var(--text-light); opacity: 0.4; }
+.mini-calendar-day.has-event { background: var(--rose); color: white; font-weight: 600; }
+.mini-calendar-day.today { border: 2px solid var(--sage); }
+.mini-calendar-day:hover:not(.header) { background: var(--ice-blue); }
+
+/* ============ ACHIEVEMENTS ============ */
+.achievements-section {
+    background: var(--frost);
+    border-radius: 12px;
+    padding: 15px;
+    padding-top: 35px;
+    margin-bottom: 10px;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+.achievements-section.collapsed {
+    display: none;
+}
+.achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.achievement {
+    width: 50px;
+    height: 50px;
+    background: var(--ice-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.achievement.unlocked { background: linear-gradient(135deg, var(--gold), #c49660); }
+.achievement.locked { filter: grayscale(100%); opacity: 0.4; }
+.achievement:hover { transform: scale(1.15); }
+.achievement-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.achievement:hover .achievement-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============ STREAK TRACKER ============ */
+.streak-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff9500, #ff7f00);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.streak-fire { font-size: 1.5rem; animation: firePulse 0.5s infinite alternate; }
+

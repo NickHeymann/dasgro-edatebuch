@@ -1,0 +1,20 @@
+{
+  "name": "datebuch-scraper",
+  "version": "1.0.0",
+  "description": "Automatischer Event-Scraper für das Datebuch",
+  "main": "auto-scraper.js",
+  "scripts": {
+    "scrape": "node auto-scraper.js",
+    "scrape:cron": "node cron-runner.js",
+    "merge": "node merge-data.js",
+    "dedupe": "node ../deduplicate-events.js",
+    "full": "npm run scrape && npm run merge && npm run dedupe",
+    "test": "node auto-scraper.js --test"
+  },
+  "keywords": ["scraper", "events", "hamburg"],
+  "author": "Nick",
+  "license": "PRIVATE",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

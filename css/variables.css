@@ -1,0 +1,142 @@
+/* ================================================
+   DATEBUCH - CSS Variables & Color Themes
+   ================================================ */
+
+:root {
+    /* Moderne, sophisticated Farbpalette */
+    --cream: #fafafa;
+    --warm-white: #f5f5f7;
+    --sage: #10b981;
+    --sage-dark: #059669;
+    --sage-light: #d1fae5;
+    --rose: #f472b6;
+    --rose-dark: #ec4899;
+    --rose-light: #fce7f3;
+    --gold: #f59e0b;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --text-muted: #9ca3af;
+    --navy: #111827;
+    --ice-blue: #f0f9ff;
+    --frost: rgba(255,255,255,0.72);
+    --card-bg: rgba(255,255,255,0.8);
+    --body-bg: linear-gradient(135deg, #fafafa 0%, #f0f9ff 50%, #fce7f3 100%);
+
+    /* Glasmorphism */
+    --glass-bg: rgba(255,255,255,0.6);
+    --glass-border: rgba(255,255,255,0.3);
+    --glass-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    --glass-blur: blur(20px);
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============ DARK MODE ============ */
+[data-theme="dark"] {
+    --cream: #0f172a;
+    --warm-white: #1e293b;
+    --sage: #34d399;
+    --sage-dark: #10b981;
+    --sage-light: #064e3b;
+    --rose: #f472b6;
+    --rose-dark: #ec4899;
+    --rose-light: #831843;
+    --gold: #fbbf24;
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --text-muted: #64748b;
+    --navy: #f8fafc;
+    --ice-blue: #1e293b;
+    --frost: rgba(30,41,59,0.8);
+    --card-bg: rgba(30,41,59,0.6);
+    --body-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    --glass-bg: rgba(30,41,59,0.6);
+    --glass-border: rgba(255,255,255,0.1);
+    --glass-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] body {
+    background: var(--body-bg);
+}
+
+[data-theme="dark"] .date-card,
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .combo-part-card,
+[data-theme="dark"] .autocomplete-dropdown {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .date-card-header {
+    background: linear-gradient(135deg, #252540, #1a1a2e);
+}
+
+[data-theme="dark"] .book-cover {
+    background: linear-gradient(145deg, #1a1a2e 0%, #0f0f23 50%, #050510 100%);
+}
+
+[data-theme="dark"] .category-header,
+[data-theme="dark"] .controls-section,
+[data-theme="dark"] .nav-tabs,
+[data-theme="dark"] .globe-section,
+[data-theme="dark"] .list-container,
+[data-theme="dark"] .memories-grid {
+    background: var(--frost);
+}
+
+[data-theme="dark"] .nav-tab {
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--ice-blue);
+}
+
+[data-theme="dark"] .event-location-info {
+    background: var(--ice-blue);
+}
+
+[data-theme="dark"] .autocomplete-item:hover {
+    background: var(--ice-blue);
+}
+
+/* Dark Mode für Travel Cards */
+[data-theme="dark"] .travel-card {
+    background: rgba(30, 30, 50, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .legend-card {
+    background: linear-gradient(135deg, rgba(30,30,50,0.8), rgba(40,40,60,0.9));
+}
+
+[data-theme="dark"] .travel-card-icon {
+    background: rgba(255, 255, 255, 0.1);
+}

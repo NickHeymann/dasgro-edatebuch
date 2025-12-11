@@ -1,0 +1,170 @@
+/* ============ EVENT CARDS (date-card, combo-parts, planned-date) ============ */
+.date-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-lg);
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.date-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.date-card.excluded { display: none; }
+
+.date-card-header {
+    padding: var(--space-lg) var(--space-xl);
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,249,255,0.6));
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.date-emoji {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.date-title {
+    flex: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--navy);
+    min-width: 180px;
+    letter-spacing: -0.02em;
+}
+
+.date-card-body { padding: 20px; }
+.date-description { color: var(--text-light); margin-bottom: 16px; line-height: 1.6; }
+
+.date-card.past-event {
+    opacity: 0.5;
+    filter: grayscale(40%);
+}
+.date-card.past-event::after {
+    content: 'Vorbei';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--text-light);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+/* ============ COMBO PARTS ============ */
+.combo-parts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.combo-part-card {
+    background: var(--ice-blue);
+    border-radius: 12px;
+    padding: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.combo-part-card:hover { border-color: var(--sage); }
+
+.combo-part-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+
+.combo-part-num {
+    width: 22px; height: 22px;
+    background: var(--gold);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.combo-part-title { font-weight: 600; color: var(--navy); }
+.combo-part-desc { font-size: 0.9rem; color: var(--text-light); }
+.combo-part-link { display: block; margin-top: 6px; font-size: 0.85rem; color: var(--sage-dark); font-weight: 500; }
+
+/* ============ PLANNED DATE CARD ============ */
+.planned-date-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--rose);
+}
+
+.planned-date-card.completed {
+    border-left-color: var(--sage);
+    opacity: 0.9;
+}
+
+.planned-date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.planned-date-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.planned-date-info .date-meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.planned-date-status {
+    display: flex;
+    gap: 8px;
+}
+
+.planned-date-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: var(--frost);
+    border-radius: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.detail-item .emoji { font-size: 1.1rem; }
+
+.planned-date-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.planned-date-actions .btn {
+    flex: 1;
+    min-width: 120px;
+}

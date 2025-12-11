@@ -1,0 +1,14 @@
+/* ================================================
+   DATEBUCH - Page-Specific Styles (Index)
+   Split into modules for maintainability
+   ================================================ */
+
+@import url('pages/memories.css');
+@import url('pages/globe.css');
+@import url('pages/profile.css');
+@import url('pages/avatar.css');
+@import url('pages/builder.css');
+@import url('pages/features.css');
+@import url('pages/widgets.css');
+@import url('pages/overlays.css');
+@import url('pages/recipes.css');

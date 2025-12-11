@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Modern Theme",
+    "description": "Clean, minimal, professionell - f\u00fcr Business-Kunden"
+  },
+  "color": {
+    "primary": {
+      "base": { "value": "#6366f1", "type": "color" },
+      "dark": { "value": "#4f46e5", "type": "color" },
+      "light": { "value": "#e0e7ff", "type": "color" }
+    },
+    "secondary": {
+      "base": { "value": "#0ea5e9", "type": "color" },
+      "dark": { "value": "#0284c7", "type": "color" },
+      "light": { "value": "#e0f2fe", "type": "color" }
+    },
+    "accent": {
+      "base": { "value": "#8b5cf6", "type": "color" },
+      "dark": { "value": "#7c3aed", "type": "color" },
+      "light": { "value": "#ede9fe", "type": "color" }
+    },
+    "background": {
+      "base": { "value": "#ffffff", "type": "color" },
+      "warm": { "value": "#f8fafc", "type": "color" },
+      "gradient": { "value": "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)", "type": "color" }
+    },
+    "surface": {
+      "card": { "value": "#ffffff", "type": "color" },
+      "frost": { "value": "#f8fafc", "type": "color" },
+      "glass": { "value": "rgba(255,255,255,0.9)", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "#0f172a", "type": "color" },
+      "secondary": { "value": "#475569", "type": "color" },
+      "muted": { "value": "#94a3b8", "type": "color" },
+      "heading": { "value": "#020617", "type": "color" }
+    },
+    "border": {
+      "base": { "value": "#e2e8f0", "type": "color" },
+      "light": { "value": "#f1f5f9", "type": "color" },
+      "glass": { "value": "rgba(226,232,240,0.5)", "type": "color" }
+    }
+  },
+  "effect": {
+    "blur": { "value": "blur(12px)", "type": "custom" },
+    "cardGradient": { "value": "none", "type": "custom" },
+    "buttonGlow": { "value": "0 4px 14px rgba(99,102,241,0.25)", "type": "shadow" }
+  }
+}
