@@ -1,84 +1,113 @@
-// Service Worker für Datebuch PWA
-const CACHE_NAME = 'datebuch-v9';
-const urlsToCache = [
-  './',
-  './index.html',
-  './events.json',
-  './manifest.json',
-  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap',
-  'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-  'https://cdn.jsdelivr.net/npm/topojson-client@3',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+/**
+ * Datebuch Service Worker
+ * Offline caching for static assets and API responses
+ */
+
+const CACHE_NAME = 'datebuch-v16';
+
+const STATIC_ASSETS = [
+    './', './index.html', './events.json', './manifest.json',
+    './css/variables.css', './css/base.css', './css/animations.css',
+    './css/layout.css', './css/components.css', './css/pages.css',
+    './css/themes/theme-romantic.css', './css/themes/theme-modern.css', './css/themes/theme-playful.css',
+    './js/app.js', './js/logger.js', './js/config.js', './js/utils.js',
+    './js/storage.js', './js/auth.js', './js/events.js', './js/events-render.js',
+    './js/navigation.js', './js/calendar.js', './js/date-builder.js',
+    './js/date-builder-map.js', './js/date-builder-export.js', './js/weather.js',
+    './js/globe.js', './js/globe-controls.js', './js/memories.js',
+    './js/roulette.js', './js/strava.js', './js/komoot.js', './js/error-handler.js',
+    './js/theme-switcher.js'
 ];
 
-// Install - Cache wichtige Dateien
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Cache geöffnet');
-        return cache.addAll(urlsToCache);
-      })
-      .catch(err => console.log('Cache Fehler:', err))
-  );
-  self.skipWaiting();
+const API_PATTERNS = [/api\.open-meteo\.com/, /overpass-api\.de/];
+
+// Install: Cache static assets
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => cache.addAll(STATIC_ASSETS))
+            .then(() => self.skipWaiting())
+    );
 });
 
-// Activate - Alte Caches löschen
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Lösche alten Cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-  self.clients.claim();
+// Activate: Clean old caches
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then(names =>
+            Promise.all(names
+                .filter(name => name.startsWith('datebuch-') && name !== CACHE_NAME)
+                .map(name => caches.delete(name))
+            )
+        ).then(() => self.clients.claim())
+    );
 });
 
-// Fetch - Cache-First Strategie mit Netzwerk-Fallback
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
+// Fetch: Route to appropriate strategy
+self.addEventListener('fetch', (event) => {
+    const url = new URL(event.request.url);
+    if (event.request.method !== 'GET' || !url.protocol.startsWith('http')) return;
+
+    const isApi = API_PATTERNS.some(p => p.test(url.href));
+
+    if (isApi) {
+        event.respondWith(networkFirst(event.request));
+    } else if (url.pathname.endsWith('.json')) {
+        event.respondWith(staleWhileRevalidate(event.request));
+    } else {
+        event.respondWith(cacheFirst(event.request));
+    }
+});
+
+// Cache-first: Static assets
+async function cacheFirst(request) {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+
+    try {
+        const response = await fetch(request);
+        if (response.ok) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
         }
+        return response;
+    } catch {
+        if (request.mode === 'navigate') return caches.match('./index.html');
+        throw new Error('Offline');
+    }
+}
 
-        // Klone Request weil er nur einmal verwendet werden kann
-        const fetchRequest = event.request.clone();
+// Network-first: API calls
+async function networkFirst(request) {
+    try {
+        const response = await fetch(request);
+        if (response.ok) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
+        }
+        return response;
+    } catch {
+        return await caches.match(request) ||
+            new Response('{"error":"Offline"}', { status: 503, headers: { 'Content-Type': 'application/json' }});
+    }
+}
 
-        return fetch(fetchRequest).then(response => {
-          // Prüfe ob valide Response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
+// Stale-while-revalidate: JSON data
+async function staleWhileRevalidate(request) {
+    const cached = await caches.match(request);
+    const fetchPromise = fetch(request).then(response => {
+        if (response.ok) {
+            caches.open(CACHE_NAME).then(c => c.put(request, response.clone()));
+        }
+        return response;
+    }).catch(() => cached);
 
-          // Klone Response für Cache
-          const responseToCache = response.clone();
+    return cached || fetchPromise;
+}
 
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              // Nur GET Requests cachen
-              if (event.request.method === 'GET') {
-                cache.put(event.request, responseToCache);
-              }
-            });
-
-          return response;
-        }).catch(() => {
-          // Offline Fallback
-          if (event.request.destination === 'document') {
-            return caches.match('./index.html');
-          }
-        });
-      })
-  );
+// Message handling
+self.addEventListener('message', (event) => {
+    if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+    if (event.data?.type === 'CLEAR_CACHE') {
+        caches.delete(CACHE_NAME).then(() => event.ports[0]?.postMessage({ success: true }));
+    }
 });

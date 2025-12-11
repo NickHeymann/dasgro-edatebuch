@@ -7,7 +7,10 @@
       "district": "Winterhude",
       "hours": "Di-Sa 18-23h, So geschlossen",
       "link": "https://www.mirou-hamburg.de/",
-      "coords": [53.5889, 10.0083],
+      "coords": [
+        53.5889,
+        10.0083
+      ],
       "cuisine": "vegetarisch-freundlich"
     },
     {
@@ -17,7 +20,10 @@
       "district": "St. Pauli",
       "hours": "Mo-Fr 12-22h, Sa-So 11-22h",
       "link": "https://www.instagram.com/kleinepause_hamburg/",
-      "coords": [53.5503, 9.9658],
+      "coords": [
+        53.5503,
+        9.9658
+      ],
       "cuisine": "international"
     },
     {
@@ -27,7 +33,10 @@
       "district": "St. Pauli",
       "hours": "Di-So 17-23h, Mo geschlossen",
       "link": "https://www.ueberquell.com/",
-      "coords": [53.5456, 9.9511],
+      "coords": [
+        53.5456,
+        9.9511
+      ],
       "cuisine": "pizza"
     },
     {
@@ -37,7 +46,10 @@
       "district": "HafenCity",
       "hours": "Di-Sa 12-22h, So-Mo geschlossen",
       "link": "https://www.hobenkoeoek.de/",
-      "coords": [53.5419, 10.0189],
+      "coords": [
+        53.5419,
+        10.0189
+      ],
       "cuisine": "regional"
     },
     {
@@ -47,7 +59,10 @@
       "district": "Eimsbüttel",
       "hours": "Mo-So 11:30-22h",
       "link": "https://www.tassajara.de/",
-      "coords": [53.5700, 9.9600],
+      "coords": [
+        53.57,
+        9.96
+      ],
       "cuisine": "vegan"
     },
     {
@@ -57,7 +72,10 @@
       "district": "Sternschanze",
       "hours": "Mo-So 12-22h",
       "link": "https://www.kokomo-noodleclub.de/",
-      "coords": [53.5633, 9.9622],
+      "coords": [
+        53.5633,
+        9.9622
+      ],
       "cuisine": "asiatisch"
     },
     {
@@ -67,7 +85,10 @@
       "district": "St. Pauli",
       "hours": "Di-Sa 18-23h, So-Mo geschlossen",
       "link": "https://gassenhaur.de/",
-      "coords": [53.5592, 9.9625],
+      "coords": [
+        53.5592,
+        9.9625
+      ],
       "cuisine": "österreichisch"
     },
     {
@@ -77,7 +98,10 @@
       "district": "St. Pauli",
       "hours": "Mo-So 12-2h",
       "link": "https://www.tazzi-pizza.de/",
-      "coords": [53.5494, 9.9611],
+      "coords": [
+        53.5494,
+        9.9611
+      ],
       "cuisine": "pizza"
     },
     {
@@ -87,7 +111,10 @@
       "district": "Neustadt",
       "hours": "Mo-So 9-24h",
       "link": "https://www.cafeparis.net/",
-      "coords": [53.5503, 9.9933],
+      "coords": [
+        53.5503,
+        9.9933
+      ],
       "cuisine": "französisch"
     },
     {
@@ -97,7 +124,10 @@
       "district": "Altona",
       "hours": "Di-Sa 18-22h, So-Mo geschlossen",
       "link": "https://maquis.hamburg/",
-      "coords": [53.5589, 9.9450],
+      "coords": [
+        53.5589,
+        9.945
+      ],
       "cuisine": "vegetarisch"
     },
     {
@@ -107,7 +137,10 @@
       "district": "Harburg",
       "hours": "Di-So 12-22h, Mo geschlossen",
       "link": "https://hatari-hamburg.de/",
-      "coords": [53.4597, 9.9792],
+      "coords": [
+        53.4597,
+        9.9792
+      ],
       "cuisine": "sri-lanka"
     },
     {
@@ -117,7 +150,10 @@
       "district": "Sternschanze",
       "hours": "Mo-So 12-24h",
       "link": "https://www.altes-maedchen.com/",
-      "coords": [53.5636, 9.9628],
+      "coords": [
+        53.5636,
+        9.9628
+      ],
       "cuisine": "international"
     },
     {
@@ -127,7 +163,10 @@
       "district": "Sternschanze",
       "hours": "Di-So 12-21h, Mo geschlossen",
       "link": "https://www.froindlichst.de/",
-      "coords": [53.5636, 9.9622],
+      "coords": [
+        53.5636,
+        9.9622
+      ],
       "cuisine": "vegan"
     },
     {
@@ -137,7 +176,10 @@
       "district": "Sternschanze",
       "hours": "Mo-Sa 12-21h, So 13-21h",
       "link": "https://www.bidgesandsons.de/",
-      "coords": [53.5631, 9.9617],
+      "coords": [
+        53.5631,
+        9.9617
+      ],
       "cuisine": "vegan"
     },
     {
@@ -147,7 +189,10 @@
       "district": "St. Pauli",
       "hours": "Di-So 18-23h, Mo geschlossen",
       "link": "https://www.saltandsilver.de/",
-      "coords": [53.5456, 9.9511],
+      "coords": [
+        53.5456,
+        9.9511
+      ],
       "cuisine": "mexikanisch"
     },
     {
@@ -157,7 +202,10 @@
       "district": "St. Pauli",
       "hours": "Mo-So 17-23h",
       "link": "https://www.diekombuesehamburg.de/",
-      "coords": [53.5517, 9.9600],
+      "coords": [
+        53.5517,
+        9.96
+      ],
       "cuisine": "mexikanisch"
     },
     {
@@ -167,7 +215,10 @@
       "district": "Sternschanze",
       "hours": "Mo-Fr 18-22h, Sa-So 12-22h",
       "link": "https://www.zumspaetzle.de/",
-      "coords": [53.5633, 9.9622],
+      "coords": [
+        53.5633,
+        9.9622
+      ],
       "cuisine": "schwäbisch"
     },
     {
@@ -177,7 +228,10 @@
       "district": "Sternschanze",
       "hours": "Mo-So 12-23h",
       "link": "https://www.bullerei.com/",
-      "coords": [53.5636, 9.9622],
+      "coords": [
+        53.5636,
+        9.9622
+      ],
       "cuisine": "international"
     },
     {
@@ -187,7 +241,10 @@
       "district": "Rotherbaum",
       "hours": "Di-So 10-22h, Mo geschlossen",
       "link": "https://www.cafe-leonar.de/",
-      "coords": [53.5678, 9.9833],
+      "coords": [
+        53.5678,
+        9.9833
+      ],
       "cuisine": "jüdisch"
     },
     {
@@ -197,7 +254,10 @@
       "district": "Eimsbüttel",
       "hours": "Di-Sa 18-23h, So-Mo geschlossen",
       "link": "https://www.wolfsjunge.de/",
-      "coords": [53.5575, 9.9708],
+      "coords": [
+        53.5575,
+        9.9708
+      ],
       "cuisine": "nachhaltig"
     },
     {
@@ -207,7 +267,10 @@
       "district": "Sternschanze",
       "hours": "Mi-So 18-22h, Mo-Di geschlossen",
       "link": "https://www.instagram.com/hiddenkitchen.hh/",
-      "coords": [53.5633, 9.9622],
+      "coords": [
+        53.5633,
+        9.9622
+      ],
       "cuisine": "vegetarisch"
     },
     {
@@ -217,7 +280,10 @@
       "district": "Neustadt",
       "hours": "Mo-Sa 12-1h, So geschlossen",
       "link": "https://www.xo-seafoodbar.de/",
-      "coords": [53.5500, 9.9667],
+      "coords": [
+        53.55,
+        9.9667
+      ],
       "cuisine": "fisch"
     },
     {
@@ -227,7 +293,10 @@
       "district": "Sternschanze",
       "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
       "link": "https://www.instagram.com/lilyofthevalley.hh/",
-      "coords": [53.5636, 9.9622],
+      "coords": [
+        53.5636,
+        9.9622
+      ],
       "cuisine": "café"
     },
     {
@@ -237,7 +306,10 @@
       "district": "Altona",
       "hours": "Mo-Sa 12-21h, So geschlossen",
       "link": "https://www.cai-kitchen.de/",
-      "coords": [53.5547, 9.9386],
+      "coords": [
+        53.5547,
+        9.9386
+      ],
       "cuisine": "asiatisch"
     },
     {
@@ -247,7 +319,10 @@
       "district": "Sternschanze",
       "hours": "Mo-Fr 12-21h, Sa-So 12-20h",
       "link": "https://www.instagram.com/samisami.hh/",
-      "coords": [53.5628, 9.9608],
+      "coords": [
+        53.5628,
+        9.9608
+      ],
       "cuisine": "bowls"
     },
     {
@@ -257,7 +332,10 @@
       "district": "Sternschanze",
       "hours": "Mo-So 17-23h",
       "link": "https://www.trific.de/",
-      "coords": [53.5631, 9.9617],
+      "coords": [
+        53.5631,
+        9.9617
+      ],
       "cuisine": "europäisch"
     },
     {
@@ -267,7 +345,10 @@
       "district": "HafenCity",
       "hours": "Mo-Sa 12-22h, So 12-21h",
       "link": "https://www.vlet.de/",
-      "coords": [53.5436, 9.9914],
+      "coords": [
+        53.5436,
+        9.9914
+      ],
       "cuisine": "hamburger"
     },
     {
@@ -277,7 +358,10 @@
       "district": "HafenCity",
       "hours": "Di-Sa 18-22h, So-Mo geschlossen",
       "link": "https://www.restaurant-wandrahm.de/",
-      "coords": [53.5433, 9.9917],
+      "coords": [
+        53.5433,
+        9.9917
+      ],
       "cuisine": "fine-dining"
     },
     {
@@ -287,7 +371,10 @@
       "district": "Eimsbüttel",
       "hours": "Di-Sa 18-22h, So-Mo geschlossen",
       "link": "https://www.jellyfish-restaurant.de/",
-      "coords": [53.5694, 9.9647],
+      "coords": [
+        53.5694,
+        9.9647
+      ],
       "cuisine": "fisch"
     },
     {
@@ -297,7 +384,10 @@
       "district": "Neustadt",
       "hours": "Mi-Sa 19-21h, So-Di geschlossen",
       "link": "https://hvj.de/",
-      "coords": [53.5561, 9.9933],
+      "coords": [
+        53.5561,
+        9.9933
+      ],
       "cuisine": "fine-dining"
     },
     {
@@ -307,7 +397,10 @@
       "district": "Rotherbaum",
       "hours": "Di-Sa 18-22h, So-Mo geschlossen",
       "link": "https://www.thefontenay.com/",
-      "coords": [53.5639, 9.9969],
+      "coords": [
+        53.5639,
+        9.9969
+      ],
       "cuisine": "fine-dining"
     },
     {
@@ -317,8 +410,297 @@
       "district": "Rotherbaum",
       "hours": "Mo-Sa 11-22h, So 12-20h",
       "link": "https://www.instagram.com/edelcurry/",
-      "coords": [53.5658, 9.9783],
+      "coords": [
+        53.5658,
+        9.9783
+      ],
       "cuisine": "deutsch"
+    },
+    {
+      "name": "Happenpappen",
+      "type": "100% Vegan Plant-Based",
+      "address": "Feldstraße 36, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mi-Sa 17:30-22h, Sa-So 11-16h Brunch",
+      "link": "https://happenpappen.de/",
+      "coords": [
+        53.5584,
+        9.967
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Cài Kitchen",
+      "type": "Vegane Sichuan-Küche",
+      "address": "Glashüttenstraße 85a, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 12-15h & 17-20h, Sa 18-21h",
+      "link": "https://caikitchen.de/",
+      "coords": [
+        53.5579,
+        9.9663
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Kkokki Loves Vegan",
+      "type": "Koreanisches Vegan Street Food",
+      "address": "Schanzenstraße 36, Sternschanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 12-15h & 17-22h, Sa-So 12-22h",
+      "link": "https://www.kkokki-loves-vegan.de/",
+      "coords": [
+        53.5605,
+        9.9642
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Azeitona Schanze",
+      "type": "Orientalische Mezze & Falafel",
+      "address": "Beckstraße 17-19, Sternschanze",
+      "district": "Schanze",
+      "hours": "So-Do 12-23h, Fr-Sa 12h-open end",
+      "link": "https://www.facebook.com/Azeitona",
+      "coords": [
+        53.5597,
+        9.9655
+      ],
+      "cuisine": "orientalisch"
+    },
+    {
+      "name": "Azeitona Eimsbüttel",
+      "type": "Orientalische Mezze & Falafel",
+      "address": "Osterstraße 173, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Täglich 12-23h",
+      "link": "https://www.facebook.com/Azeitona",
+      "coords": [
+        53.5741,
+        9.9658
+      ],
+      "cuisine": "orientalisch"
+    },
+    {
+      "name": "Citta Vegan House",
+      "type": "Asian Fusion 100% Vegan",
+      "address": "Osterstraße 98, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Mi 12-22:30h, Do-Sa 12-23h, So 13-22:30h",
+      "link": "https://www.citta-veganhouse.de/",
+      "coords": [
+        53.5751,
+        9.9671
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "MOMO Ramen",
+      "type": "Japanische Ramen mit veganen Optionen",
+      "address": "Margaretenstraße 58, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-So 12-22h",
+      "link": "https://www.momo-ramen.de/",
+      "coords": [
+        53.5628,
+        9.9652
+      ],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "JING JING",
+      "type": "Thai Restaurant mit veganen Optionen",
+      "address": "Waterloohain 7, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Di-Do 18-24h, Fr-Sa 18-2h",
+      "link": "https://jing-jing.de/",
+      "coords": [
+        53.5605,
+        9.952
+      ],
+      "cuisine": "asiatisch"
+    },
+    {
+      "name": "Vilai Vegan House",
+      "type": "Asiatisch Vegan Sushi & Bowls",
+      "address": "Bahrenfelder Straße 170, Ottensen",
+      "district": "Ottensen",
+      "hours": "Siehe Website für aktuelle Zeiten",
+      "link": "https://vilaivegan-hamburg.de/",
+      "coords": [
+        53.5549,
+        9.9245
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Vincent Vegan",
+      "type": "100% Vegane Burger & Fast Food",
+      "address": "Ottenser Hauptstraße 10, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 11:30-19:30h",
+      "link": "https://eatvincent.com/",
+      "coords": [
+        53.5529,
+        9.9348
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Mr. Dumpling Ottensen",
+      "type": "Türkische Manti vegan & vegetarisch",
+      "address": "Ottenser Hauptstraße 34, Ottensen",
+      "district": "Ottensen",
+      "hours": "Siehe Website",
+      "link": "https://mrdumpling.de/",
+      "coords": [
+        53.5525,
+        9.9358
+      ],
+      "cuisine": "türkisch"
+    },
+    {
+      "name": "AN Vegan House",
+      "type": "Vietnamesisch 100% Vegan",
+      "address": "Mühlenkamp 19, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa 11:30-23h",
+      "link": "https://www.instagram.com/an_vegan_house/",
+      "coords": [
+        53.5842,
+        10.0093
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "BODHI Vegan Living",
+      "type": "Südostasiatisch 100% Vegan",
+      "address": "Borgweg 11, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Do 11:30-22:30h, Fr-Sa 11:30-23h, So 11:30-22:30h",
+      "link": "https://www.bodhihamburg.de/",
+      "coords": [
+        53.5874,
+        10.0098
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "ÆNDRÈ Restaurant",
+      "type": "100% Vegan glutenfrei ohne Zucker",
+      "address": "Schlüterstraße 86, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Fr 9-15h, Sa-So 9-16h",
+      "link": "https://aendre.de/",
+      "coords": [
+        53.5681,
+        9.9803
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "ÆNDRÈ Deli",
+      "type": "100% Vegan glutenfrei ohne Zucker",
+      "address": "Lehmweg 31a, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 9-15h, Sa-So 9-16h",
+      "link": "https://aendre.de/",
+      "coords": [
+        53.5854,
+        9.9865
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "TA Vegan House Altona",
+      "type": "Vietnamesisch 100% Vegan",
+      "address": "Neue Große Bergstraße 11, Altona",
+      "district": "Altona",
+      "hours": "Mo-So 11:30-22h",
+      "link": "https://www.taveganhouse.hamburg/",
+      "coords": [
+        53.5485,
+        9.9395
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Katzentempel HafenCity",
+      "type": "100% Vegan Katzencafé",
+      "address": "Überseeboulevard 2, HafenCity",
+      "district": "HafenCity",
+      "hours": "Mo-Sa 10-22h, So 10-20h",
+      "link": "https://katzentempel.de/",
+      "coords": [
+        53.5405,
+        9.9987
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Loving Hut",
+      "type": "Asiatisch 100% Vegan",
+      "address": "Markusstraße 2, Neustadt",
+      "district": "Neustadt",
+      "hours": "Mo-Fr 11:30-15h & 17:30-21h, Sa 17:30-22h",
+      "link": "http://www.lovinghut.de/",
+      "coords": [
+        53.559,
+        9.975
+      ],
+      "cuisine": "asiatisch-vegan"
+    },
+    {
+      "name": "Simbiosa",
+      "type": "Israelisch 100% Vegan",
+      "address": "Hein-Hoyer-Straße 60, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Di-Fr 15-24h, Sa-So 12-24h",
+      "link": "https://www.instagram.com/simbiosa.hamburg/",
+      "coords": [
+        53.5582,
+        9.9598
+      ],
+      "cuisine": "israelisch-vegan"
+    },
+    {
+      "name": "Mamalicious",
+      "type": "Kanadisch vegetarisch/vegan Diner",
+      "address": "Max-Brauer-Allee 277, Schanze",
+      "district": "Schanze",
+      "hours": "Do-Mo 10-16h",
+      "link": "https://www.instagram.com/dascafemiller/",
+      "coords": [
+        53.5591,
+        9.9491
+      ],
+      "cuisine": "vegetarisch"
+    },
+    {
+      "name": "Apple & Eve",
+      "type": "Vegan Soulfood Burger & Bowls",
+      "address": "Grindelallee 34, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Do 12-21:30h, Fr-Sa 12-23h, So 12-21:30h",
+      "link": "https://appleeve.de/",
+      "coords": [
+        53.5677,
+        9.9814
+      ],
+      "cuisine": "vegan"
+    },
+    {
+      "name": "Mama Kumpir",
+      "type": "Türkische Kumpir vegetarisch/vegan",
+      "address": "Langenfelder Damm 90, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Fr 11-21:30h, Sa-So 12-21:30h",
+      "link": "https://www.mamakumpir.de/",
+      "coords": [
+        53.5738,
+        9.9425
+      ],
+      "cuisine": "türkisch"
     }
   ],
   "bars": [
@@ -553,6 +935,168 @@
       "district": "Ottensen",
       "hours": "Mo-So 18-2h",
       "link": "https://www.instagram.com/familieneck/"
+    },
+    {
+      "name": "Drip Bar",
+      "type": "Speakeasy",
+      "address": "Antonistraße 4, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Mi 18-01h, Do-Sa 18-02h, So geschlossen",
+      "link": "https://www.instagram.com/dripbarhamburg",
+      "special": "Versteckter Speakeasy mit Cold-Drip-infusionierten Spirituosen"
+    },
+    {
+      "name": "Clockers",
+      "type": "Cocktailbar",
+      "address": "Paul-Roosen-Straße 27, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Do 19-01h, Fr-Sa 19-03h, So geschlossen",
+      "link": "https://www.instagram.com/clockers_hamburg",
+      "special": "Mooswand und Waldambiente, hausgemachter Clockers Gin"
+    },
+    {
+      "name": "Collab Bar",
+      "type": "Cocktailbar",
+      "address": "Hein-Hoyer-Straße 63, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Di-Do 18-24h, Fr-Sa 18-01h, So-Mo geschlossen",
+      "link": "https://www.instagram.com/collab_bar",
+      "special": "Equal Drinking - von alkoholfrei bis hochprozentig"
+    },
+    {
+      "name": "Skyline Bar 20up",
+      "type": "Rooftop Bar",
+      "address": "Bernhard-Nocht-Straße 97, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "So-Do 18-01h, Fr-Sa 18-01:30h",
+      "link": "https://www.empire-riverside.de/skyline-bar-20up/",
+      "special": "Höchste Rooftop Bar Hamburgs (90m) mit Hafenblick"
+    },
+    {
+      "name": "Puzzle Bar",
+      "type": "Rooftop Bar",
+      "address": "Versmannstraße 6-10, HafenCity",
+      "district": "HafenCity",
+      "hours": "Di-Do 18-00:30h, Fr-Sa 18-02h",
+      "link": "https://puzzle-bar.de",
+      "special": "Von 3-Sterne-Koch Kevin Fehling, 15. Etage"
+    },
+    {
+      "name": "MOON 46",
+      "type": "Rooftop Bar",
+      "address": "Am Sandtorkai 46, HafenCity",
+      "district": "HafenCity",
+      "hours": "Mi-So 16-21:30h (bei gutem Wetter)",
+      "link": "https://www.pierdrei-hotel.de/essen-trinken/moon-46",
+      "special": "Dachgarten mit Blick über HafenCity"
+    },
+    {
+      "name": "Berglund Bar",
+      "type": "Cocktailbar",
+      "address": "Gertigstraße 14, Winterhude",
+      "district": "Winterhude",
+      "hours": "Täglich ab 18h, Fr bis 03h",
+      "link": "https://www.berglund-bar.com",
+      "special": "Skandinavisch inspiriert, Fokus auf Gin-Cocktails"
+    },
+    {
+      "name": "W die Weinbar",
+      "type": "Weinbar",
+      "address": "Dorotheenstraße 180, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa ab 18h, So geschlossen",
+      "link": "https://w-die-weinbar.de",
+      "special": "German Wine List Award, 500 Weine, 60 glasweise"
+    },
+    {
+      "name": "Il Garage",
+      "type": "Weinbar",
+      "address": "Kleine Rainstraße 3, Ottensen",
+      "district": "Ottensen",
+      "hours": "Di-Fr 17-22h",
+      "link": "http://ilgarage.de",
+      "special": "Ehemalige Garage, Naturweine"
+    },
+    {
+      "name": "Witwenball",
+      "type": "Weinbar",
+      "address": "Weidenallee 20, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mi-Sa 18-24h, So 17-24h",
+      "link": "https://www.witwenball.com",
+      "special": "1920er Tanzlokal mit weißer Marmortheke"
+    },
+    {
+      "name": "Klinker Bar",
+      "type": "Weinbar",
+      "address": "Eppendorfer Weg 58, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Di-Fr 18-24h, Sa 11-17h",
+      "link": "https://www.klinker.bar",
+      "special": "Naturweine, biodynamischer Weinbau, vegetarisch"
+    },
+    {
+      "name": "Botanic District",
+      "type": "Cocktailbar",
+      "address": "Hegestraße 14, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Mi 17-01h, Do 17-02h, Fr-Sa 17-03h",
+      "link": "https://botanic-district.de",
+      "special": "Botanische Oase mit exotischen Pflanzen, New-York-Style"
+    },
+    {
+      "name": "Walrus Bar",
+      "type": "Cocktailbar",
+      "address": "Wohlwillstraße 47, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Mi 18-03h, Do 18-04h, Fr-Sa 18-06h, So 18-02h",
+      "link": "https://www.instagram.com/thewalrus.bar",
+      "special": "Craft Beer & Cocktails, nur Barzahlung"
+    },
+    {
+      "name": "Oorlam Bar",
+      "type": "Craft Beer",
+      "address": "Kohlhöfen 29, Neustadt",
+      "district": "Neustadt",
+      "hours": "Di-Mi 16-24h, Do-Fr 16-01h, Sa 15-01h, So 15-24h",
+      "link": "https://www.oorlam.de",
+      "special": "Buddelship Brauerei Taproom, 15 Zapfhähne"
+    },
+    {
+      "name": "Landgang Brauerei",
+      "type": "Craft Beer",
+      "address": "Beerenweg 12, Altona",
+      "district": "Altona",
+      "hours": "Mi-Do 17-21h, Fr 17-23h, Sa 14-23h",
+      "link": "https://www.landgang-brauerei.de",
+      "special": "Bar mitten in der Brauerei, 10 wechselnde Biere"
+    },
+    {
+      "name": "Galopper des Jahres",
+      "type": "Craft Beer",
+      "address": "Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Sa ab 17h",
+      "link": "https://galopper-hamburg.de",
+      "special": "12 Zapfhähne mit regionalen Craft Beers"
+    },
+    {
+      "name": "Shanghiat Brewery (Malto)",
+      "type": "Craft Beer",
+      "address": "Max-Brauer-Allee 88, Altona",
+      "district": "Altona",
+      "hours": "Mi-Do 18-22h, Fr-Sa 18-24h",
+      "link": "https://malto.shanghait.beer",
+      "special": "Nano-Brauerei mit experimentellen Bieren"
+    },
+    {
+      "name": "Craft Bier Bar Hamburg",
+      "type": "Craft Beer",
+      "address": "Max-Brauer-Allee 275, Altona",
+      "district": "Altona",
+      "hours": "Mo-Sa ab 17h",
+      "link": "https://craftbierbar.de",
+      "special": "Hamburg Beer Week, internationale Brauereien"
     }
   ],
   "activities": [
@@ -785,6 +1329,226 @@
       "link": "https://www.damettto-nudeln.de/",
       "price": "ab 89€",
       "category": "handwerk"
+    },
+    {
+      "name": "Makerhafen",
+      "type": "Offene Werkstatt & Lasercutter",
+      "address": "Lippeltstraße 1, Winterhude",
+      "district": "Winterhude",
+      "hours": "Di-Do 17-21h, Sa 11-17h",
+      "link": "https://www.makerhafen.de/",
+      "coords": [
+        53.5898,
+        10.0152
+      ],
+      "special": "Lasercutter, 3D-Drucker, Holz- & Metallwerkstatt"
+    },
+    {
+      "name": "Goldschmiede im Glasgang",
+      "type": "Goldschmiedekurs",
+      "address": "Neuer Wall 34, Altstadt",
+      "district": "Altstadt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.goldschmiedekurs-hamburg.de/",
+      "special": "Eigene Ringe schmieden, Paar-Workshops"
+    },
+    {
+      "name": "COOP Gold",
+      "type": "Goldschmiedekurs",
+      "address": "Lippmannstraße 59, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.coopgold.de/",
+      "special": "Trauringe selbst schmieden"
+    },
+    {
+      "name": "Studio Amun",
+      "type": "Keramik Workshop",
+      "address": "Admiralitätstraße 71, Altstadt",
+      "district": "Altstadt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.studioamun.com/",
+      "special": "Töpferkurse, Paarkurse, offene Werkstatt"
+    },
+    {
+      "name": "Hamburg Escapes",
+      "type": "Escape Room",
+      "address": "Friedensallee 128, Ottensen",
+      "district": "Ottensen",
+      "hours": "Täglich nach Buchung",
+      "link": "https://www.hamburgescapes.de/",
+      "special": "Verschiedene Szenarien für 2 Personen geeignet"
+    },
+    {
+      "name": "Mystery House",
+      "type": "Escape Room",
+      "address": "Große Reichenstraße 27, Altstadt",
+      "district": "Altstadt",
+      "hours": "Täglich nach Buchung",
+      "link": "https://www.mysteryhouse-hamburg.de/",
+      "special": "Mehrere Themenräume"
+    },
+    {
+      "name": "Kling Klang Born",
+      "type": "Töpferkurs",
+      "address": "Eppendorfer Weg 91, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.klingklangborn.de/",
+      "special": "Drehscheibenkurse, Glasurkurse"
+    },
+    {
+      "name": "Hansestudios",
+      "type": "Malworkshop",
+      "address": "Stresemannstraße 374, Altona",
+      "district": "Altona",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.hansestudios.de/",
+      "special": "Acryl, Öl, Aquarell Workshops"
+    },
+    {
+      "name": "ArtNight Hamburg",
+      "type": "Mal-Events",
+      "address": "Verschiedene Locations",
+      "district": "Verschiedene",
+      "hours": "Abendveranstaltungen",
+      "link": "https://www.artnight.com/",
+      "special": "Malen + Drinks, regelmäßige Events"
+    },
+    {
+      "name": "Die Glasfabrik",
+      "type": "Glasblasen",
+      "address": "Kanalstraße 52, Ottensen",
+      "district": "Ottensen",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.glasfabrik-hamburg.de/",
+      "special": "Glasperlen & Schmuck selbst machen"
+    },
+    {
+      "name": "Kinderkochschule Hamburg",
+      "type": "Kochkurs",
+      "address": "Eppendorfer Landstraße 14, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Erwachsenenkurse abends",
+      "link": "https://www.kinderkochschule-hamburg.de/",
+      "special": "Auch Erwachsenen-Paarkurse"
+    },
+    {
+      "name": "Kochschule Hamburg",
+      "type": "Kochkurs",
+      "address": "Beim Schlump 84, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.kochschule-hamburg.de/",
+      "special": "Vegetarische & vegane Kurse"
+    },
+    {
+      "name": "Süßes Hamburg",
+      "type": "Pralinenkurs",
+      "address": "Öjendorfer Weg 9, Billstedt",
+      "district": "Billstedt",
+      "hours": "Nach Kursbuchung",
+      "link": "https://www.suesses-hamburg.de/",
+      "special": "Pralinen & Schokolade selbst machen"
+    },
+    {
+      "name": "Kanu Wanderer",
+      "type": "Kanu & Kajak",
+      "address": "Eppendorfer Landstraße 180, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Apr-Okt nach Wetter",
+      "link": "https://www.kanuwanderer.de/",
+      "special": "Kanutouren auf Alster & Kanälen"
+    },
+    {
+      "name": "SUP Club Hamburg",
+      "type": "Stand Up Paddling",
+      "address": "Isekai 1, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Apr-Okt nach Wetter",
+      "link": "https://www.supclub.hamburg/",
+      "special": "SUP Kurse & Verleih auf der Alster"
+    },
+    {
+      "name": "Minigolf Schwarzlichtviertel",
+      "type": "Indoor Minigolf",
+      "address": "Kieler Straße 571, Stellingen",
+      "district": "Stellingen",
+      "hours": "Mo-Fr 15-22h, Sa-So 12-22h",
+      "link": "https://www.schwarzlichtviertel.de/",
+      "special": "3D Schwarzlicht Minigolf"
+    },
+    {
+      "name": "Hamburg Dungeon",
+      "type": "Gruselkabinett",
+      "address": "Kehrwieder 2, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 10-18h",
+      "link": "https://www.thedungeons.com/hamburg/",
+      "special": "Hamburger Geschichte gruselig erzählt"
+    },
+    {
+      "name": "Dialog im Dunkeln",
+      "type": "Erfahrungsausstellung",
+      "address": "Alter Wandrahm 4, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Di-Fr 9-17h, Sa 10-20h, So 10-18h",
+      "link": "https://www.dialog-im-dunkeln.de/",
+      "special": "Führung durch stockdunkle Räume"
+    },
+    {
+      "name": "Miniatur Wunderland",
+      "type": "Modellbau-Ausstellung",
+      "address": "Kehrwieder 2-4, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 9:30-18h (variiert)",
+      "link": "https://www.miniatur-wunderland.de/",
+      "special": "Weltgrößte Modelleisenbahnanlage"
+    },
+    {
+      "name": "Planetarium Hamburg",
+      "type": "Sternwarte",
+      "address": "Linnering 1, Winterhude",
+      "district": "Winterhude",
+      "hours": "Verschiedene Shows",
+      "link": "https://www.planetarium-hamburg.de/",
+      "special": "Sternenshows, 360° Kuppel, romantisch!"
+    },
+    {
+      "name": "Bowling Arena Hamburg",
+      "type": "Bowling",
+      "address": "Kieler Straße 577, Stellingen",
+      "district": "Stellingen",
+      "hours": "Täglich 14-24h",
+      "link": "https://www.bowling-arena-hamburg.de/",
+      "special": "Bowling mit Disco-Beleuchtung"
+    },
+    {
+      "name": "LaserTag Hamburg",
+      "type": "LaserTag",
+      "address": "Spaldingstraße 210, Hammerbrook",
+      "district": "Hammerbrook",
+      "hours": "Mo-Do 16-22h, Fr-So 14-24h",
+      "link": "https://www.lasertag-hamburg.de/",
+      "special": "Sci-Fi Arena, 2er-Teams möglich"
+    },
+    {
+      "name": "JUMP House Hamburg",
+      "type": "Trampolinpark",
+      "address": "Kieler Straße 572, Stellingen",
+      "district": "Stellingen",
+      "hours": "Mo-Fr 14-20h, Sa-So 10-20h",
+      "link": "https://www.jumphouse.de/",
+      "special": "Trampoline, Ninja Parcours, Foam Pit"
+    },
+    {
+      "name": "Strandperle",
+      "type": "Beach Bar (Sommer)",
+      "address": "Övelgönne 60, Othmarschen",
+      "district": "Othmarschen",
+      "hours": "Bei gutem Wetter ab 10h",
+      "link": "https://www.strandperle-hamburg.de/",
+      "special": "Elbstrand mit Blick auf Container-Schiffe"
     }
   ],
   "ottensen": [
@@ -1433,6 +2197,451 @@
       "cuisine": "polnisch"
     }
   ],
-  "lastUpdated": "2025-11-28",
-  "verificationNote": "Prüfe regelmäßig Öffnungszeiten und ob Locations noch existieren. Bei dauerhaft geschlossenen Orten 'status': 'geschlossen' hinzufügen."
+  "lastUpdated": "2025-12-08T09:43:58.754Z",
+  "verificationNote": "Prüfe regelmäßig Öffnungszeiten und ob Locations noch existieren. Bei dauerhaft geschlossenen Orten 'status': 'geschlossen' hinzufügen.",
+  "wellness": [
+    {
+      "name": "das Hamam",
+      "type": "Traditionelles Hamam",
+      "address": "Feldstraße 39, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-So nach Reservierung",
+      "link": "https://www.das-hamam.de/",
+      "special": "Authentisches türkisches Bad mit Peelings & Massagen"
+    },
+    {
+      "name": "Holthusenbad",
+      "type": "Historisches Schwimmbad & Sauna",
+      "address": "Goernestraße 21, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 6:30-22h, Sa-So 8-20h",
+      "link": "https://www.baederland.de/bad/holthusenbad.html",
+      "special": "Jugendstil-Bad von 1914, große Saunalandschaft"
+    },
+    {
+      "name": "Kaifu-Bad",
+      "type": "Freibad & Sauna",
+      "address": "Bundesstraße 107, Eimsbüttel",
+      "district": "Eimsbüttel",
+      "hours": "Mo-Fr 6:30-22h, Sa-So 8-20h",
+      "link": "https://www.baederland.de/bad/kaifu-bad.html",
+      "special": "Naturbad mit großer Saunawelt"
+    },
+    {
+      "name": "MeridianSpa Eppendorf",
+      "type": "Spa & Fitness",
+      "address": "Quickbornstraße 26, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 6-23h, Sa-So 8-22h",
+      "link": "https://www.meridianspa.de/",
+      "special": "Premium Spa mit Pool, Sauna & Day-Spa Angeboten"
+    },
+    {
+      "name": "Aspria Alstertal",
+      "type": "Wellness Club",
+      "address": "Alsterkrugchaussee 559, Alstertal",
+      "district": "Alstertal",
+      "hours": "Mo-Fr 6-23h, Sa-So 8-22h",
+      "link": "https://www.aspria.com/",
+      "special": "Luxus-Spa mit Außenpool & Rooftop Sauna"
+    },
+    {
+      "name": "relexa hotel Bellevue",
+      "type": "Hotel Spa",
+      "address": "An der Alster 14, St. Georg",
+      "district": "St. Georg",
+      "hours": "Day Spa buchbar",
+      "link": "https://www.relexa-hotel-bellevue-hamburg.de/",
+      "special": "Alsterblick-Sauna, Day-Spa Pakete"
+    },
+    {
+      "name": "Le Spa at The Fontenay",
+      "type": "Luxus Hotel Spa",
+      "address": "Fontenay 10, Rotherbaum",
+      "district": "Rotherbaum",
+      "hours": "Täglich 8-22h",
+      "link": "https://www.thefontenay.de/spa-wellness/",
+      "special": "Rooftop Pool mit Alsterblick, High-End Treatments"
+    },
+    {
+      "name": "Vabali Spa Hamburg",
+      "type": "Thermalbad & Sauna",
+      "address": "Schanzenstraße 75, Sternschanze",
+      "district": "Schanze",
+      "hours": "So-Do 9-23h, Fr-Sa 9-24h",
+      "link": "https://www.vabali.de/hamburg/",
+      "special": "Balinesisches Ambiente, 9 Saunen, Außenbereich"
+    },
+    {
+      "name": "Le Méridien Spa",
+      "type": "Hotel Spa",
+      "address": "An der Alster 52-56, St. Georg",
+      "district": "St. Georg",
+      "hours": "Täglich 7-22h",
+      "link": "https://www.marriott.com/",
+      "special": "Alsterblick, Indoor Pool, Tagestickets verfügbar"
+    },
+    {
+      "name": "Floating Hamburg",
+      "type": "Float Tank Studio",
+      "address": "Eppendorfer Weg 287, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Nach Terminvereinbarung",
+      "link": "https://www.floating-hamburg.de/",
+      "special": "Schwerelose Entspannung in Salzwasser-Tanks"
+    },
+    {
+      "name": "Stadtbad Ohlsdorf",
+      "type": "Schwimmbad & Sauna",
+      "address": "Scharnskamp 23, Ohlsdorf",
+      "district": "Ohlsdorf",
+      "hours": "Siehe Bäderland Website",
+      "link": "https://www.baederland.de/",
+      "special": "Moderne Saunalandschaft, textilfreie Bereiche"
+    },
+    {
+      "name": "Bartholomäus-Therme",
+      "type": "Thermalbad",
+      "address": "Bartholomäusstraße 95, Winterhude",
+      "district": "Winterhude",
+      "hours": "Mo-Sa 10-23h, So 10-20h",
+      "link": "https://www.baederland.de/",
+      "special": "Sole-Therme mit Wellness-Bereich"
+    },
+    {
+      "name": "YogaYa Studio",
+      "type": "Yoga Studio",
+      "address": "Rentzelstraße 10a, Rotherbaum",
+      "district": "Rotherbaum",
+      "hours": "Kurse täglich, siehe Website",
+      "link": "https://www.yogaya.de/",
+      "special": "Vielfältige Yoga-Stile, Drop-In Kurse"
+    },
+    {
+      "name": "Yoga Loft Hamburg",
+      "type": "Yoga Studio",
+      "address": "Bahrenfelder Straße 201, Ottensen",
+      "district": "Ottensen",
+      "hours": "Kurse täglich",
+      "link": "https://www.yogaloft-hamburg.de/",
+      "special": "Loft-Atmosphäre, verschiedene Yoga-Arten"
+    },
+    {
+      "name": "Urbanyoga Hamburg",
+      "type": "Yoga Studio",
+      "address": "Hoheluftchaussee 62, Hoheluft",
+      "district": "Hoheluft",
+      "hours": "Kurse täglich",
+      "link": "https://www.urbanyoga.de/",
+      "special": "Hot Yoga, Aerial Yoga, Workshops"
+    },
+    {
+      "name": "Thai Massage Siam",
+      "type": "Thai Massage",
+      "address": "Eppendorfer Weg 173, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Sa 10-20h",
+      "link": "https://www.siammassage-hamburg.de/",
+      "special": "Traditionelle Thai-Massage, Paarmassagen"
+    },
+    {
+      "name": "Wellness Oase Ottensen",
+      "type": "Massage & Wellness",
+      "address": "Ottenser Hauptstraße 56, Ottensen",
+      "district": "Ottensen",
+      "hours": "Di-Sa 10-19h",
+      "link": "https://www.wellness-oase-ottensen.de/",
+      "special": "Massagen, Kosmetik, Paar-Treatments"
+    },
+    {
+      "name": "Kosmetik Lounge Hamburg",
+      "type": "Spa & Beauty",
+      "address": "Isestraße 69, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Di-Sa nach Termin",
+      "link": "https://www.kosmetiklounge-hamburg.de/",
+      "special": "Luxus-Facials, Paar-Treatments"
+    },
+    {
+      "name": "Ayurveda Parkschlösschen Day Spa",
+      "type": "Ayurveda Spa",
+      "address": "Diverse Standorte",
+      "district": "City",
+      "hours": "Nach Termin",
+      "link": "https://www.ayurveda-parkschloesschen.de/",
+      "special": "Authentische Ayurveda-Behandlungen"
+    },
+    {
+      "name": "EAST Hotel Spa",
+      "type": "Hotel Spa",
+      "address": "Simon-von-Utrecht-Straße 31, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Täglich 7-22h",
+      "link": "https://www.east-hamburg.de/",
+      "special": "Design-Spa mit Pool, Day-Spa Pakete"
+    }
+  ],
+  "cafes": [
+    {
+      "name": "Elbgold Rösterei",
+      "type": "Specialty Coffee",
+      "address": "Lagerstraße 34c, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.elbgold.com/",
+      "special": "Eigene Rösterei, Third Wave Coffee"
+    },
+    {
+      "name": "nord coast coffee roastery",
+      "type": "Specialty Coffee",
+      "address": "Deichstraße 9, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Fr 8-18h, Sa 10-18h",
+      "link": "https://www.nordcoast.coffee/",
+      "special": "Historisches Gebäude an der Fleete"
+    },
+    {
+      "name": "Public Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Wexstraße 28, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.publiccoffeeroasters.com/",
+      "special": "Eigene Rösterei, skandinavisch-minimalistisch"
+    },
+    {
+      "name": "Café Johanna",
+      "type": "Frühstückscafé",
+      "address": "Eppendorfer Weg 170, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://cafejohanna.de/",
+      "special": "Bekannt für Frühstück & Kuchen"
+    },
+    {
+      "name": "Herr Max",
+      "type": "Café & Restaurant",
+      "address": "Schulterblatt 12, Schanze",
+      "district": "Schanze",
+      "hours": "Täglich 9-23h",
+      "link": "https://www.herrmax.de/",
+      "special": "Ganztägig Frühstück, vegane Optionen"
+    },
+    {
+      "name": "Café Götze",
+      "type": "Frühstückscafé",
+      "address": "Ottenser Hauptstraße 11, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "link": "https://www.instagram.com/cafe.goetze/",
+      "special": "Hausgemachte Kuchen, Brunch am Wochenende"
+    },
+    {
+      "name": "Cafe Mitte",
+      "type": "Kiezscafé",
+      "address": "Ditmar-Koel-Straße 22, Neustadt",
+      "district": "Neustadt",
+      "hours": "Täglich 10-18h",
+      "link": "https://cafemitte.de/",
+      "special": "Gemütlich, selbstgemachte Kuchen"
+    },
+    {
+      "name": "Milch",
+      "type": "Frühstückscafé",
+      "address": "Ditmar-Koel-Straße 6, Neustadt",
+      "district": "Neustadt",
+      "hours": "Täglich 9-18h",
+      "link": "https://www.cafe-milch.de/",
+      "special": "Bekannt für ausgiebigen Brunch"
+    },
+    {
+      "name": "Small Batch Coffee",
+      "type": "Specialty Coffee",
+      "address": "Glashüttenstraße 94, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8:30-18h, Sa 9-18h, So 10-17h",
+      "link": "https://www.smallbatchcoffee.de/",
+      "special": "Australisch inspiriert, Flat Whites"
+    },
+    {
+      "name": "Kaffee Stark",
+      "type": "Café & Rösterei",
+      "address": "Beim Grünen Jäger 2, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8-18h, Sa 9-18h",
+      "link": "https://www.kaffeestark.de/",
+      "special": "Eigene Röstung, guter Espresso"
+    },
+    {
+      "name": "Playground Coffee",
+      "type": "Specialty Coffee",
+      "address": "Detlev-Bremer-Straße 21, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Mo-Fr 8-18h, Sa-So 10-18h",
+      "link": "https://playground.coffee/",
+      "special": "Creative Space + Coffee"
+    },
+    {
+      "name": "Manufact Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Admiralitätstraße 74, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Fr 8-18h, Sa 10-17h",
+      "link": "https://manufactorycoffee.de/",
+      "special": "Industrieller Stil, Pour-Over Spezialitäten"
+    },
+    {
+      "name": "Café Paris",
+      "type": "Französisches Café",
+      "address": "Rathausstraße 4, Altstadt",
+      "district": "Altstadt",
+      "hours": "Mo-Sa 9-24h, So 10-24h",
+      "link": "https://cafeparis.net/",
+      "special": "Art Déco Ambiente seit 1882"
+    },
+    {
+      "name": "Café Leonar",
+      "type": "Kulturcafé",
+      "address": "Grindelhof 59, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Fr 10-22h, Sa-So 10-18h",
+      "link": "http://cafeleonar.de/",
+      "special": "Jüdisches Kulturcafé mit Veranstaltungen"
+    },
+    {
+      "name": "Speicherstadt Kaffeerösterei",
+      "type": "Historische Rösterei",
+      "address": "Kehrwieder 5, Speicherstadt",
+      "district": "Speicherstadt",
+      "hours": "Täglich 10-19h",
+      "link": "https://www.speicherstadt-kaffee.de/",
+      "special": "Traditionsrösterei seit 1998"
+    },
+    {
+      "name": "Stockholm Espresso Club",
+      "type": "Specialty Coffee",
+      "address": "Lange Reihe 91, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.stockholmespressoclub.com/",
+      "special": "Skandinavischer Stil, Cold Brew"
+    },
+    {
+      "name": "blackline coffee",
+      "type": "Specialty Coffee",
+      "address": "Isestraße 17, Harvestehude",
+      "district": "Harvestehude",
+      "hours": "Mo-Fr 8-17h, Sa 9-17h",
+      "link": "https://www.blackline.coffee/",
+      "special": "Minimalistisch, Single Origin"
+    },
+    {
+      "name": "tornqvist",
+      "type": "Specialty Coffee",
+      "address": "Neuer Kamp 31, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 8-17h, Sa 10-17h",
+      "link": "https://www.tornqvist.coffee/",
+      "special": "Scandi-Coffee, eigene Röstung"
+    },
+    {
+      "name": "LESS Political",
+      "type": "Veganes Café",
+      "address": "Schulterblatt 61, Schanze",
+      "district": "Schanze",
+      "hours": "Mo-Fr 9-18h, Sa-So 10-18h",
+      "link": "https://www.lesspolitical.de/",
+      "special": "100% vegan, hausgemachte Kuchen"
+    },
+    {
+      "name": "Hermetic Coffee Roasters",
+      "type": "Specialty Coffee",
+      "address": "Bahrenfelder Straße 187, Ottensen",
+      "district": "Ottensen",
+      "hours": "Mo-Fr 8:30-18h, Sa 10-18h",
+      "link": "https://www.hermetic-coffee.de/",
+      "special": "Wissenschaftlicher Ansatz, Light Roasts"
+    },
+    {
+      "name": "Café Schmidt Elbe",
+      "type": "Traditionscafé",
+      "address": "Große Elbstraße 212, Altona",
+      "district": "Altona",
+      "hours": "Täglich 10-18h",
+      "link": "https://www.cafeelbe.de/",
+      "special": "Hausgemachte Torten, Elbblick"
+    },
+    {
+      "name": "Balz und Balz",
+      "type": "Concept Coffee",
+      "address": "Lehmweg 17, Eppendorf",
+      "district": "Eppendorf",
+      "hours": "Mo-Fr 8-18h, Sa-So 9-18h",
+      "link": "https://www.balzundbalz.de/",
+      "special": "Premium Coffee, Instagram-worthy"
+    },
+    {
+      "name": "Codos",
+      "type": "Café & Bar",
+      "address": "Bartelsstraße 12, Schanze",
+      "district": "Schanze",
+      "hours": "Täglich 10-1h",
+      "link": "https://www.codos.de/",
+      "special": "Tag Café, Nachts Bar"
+    },
+    {
+      "name": "Mutterland",
+      "type": "Delikatessen-Café",
+      "address": "Ernst-Merck-Straße 9, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Sa 10-19h",
+      "link": "https://www.mutterland.de/",
+      "special": "Deutsche Delikatessen, Café im Store"
+    },
+    {
+      "name": "Störtebeker Elbphilharmonie",
+      "type": "Café mit Aussicht",
+      "address": "Platz der Deutschen Einheit 4, HafenCity",
+      "district": "HafenCity",
+      "hours": "Täglich 9-22h",
+      "link": "https://www.stoertebeker-elbphilharmonie.de/",
+      "special": "Panoramablick, Plaza Ebene"
+    },
+    {
+      "name": "Hermkes Rommel",
+      "type": "Bistro-Café",
+      "address": "Grindelallee 45, Grindelviertel",
+      "district": "Grindelviertel",
+      "hours": "Mo-Sa 9-23h",
+      "link": "https://www.hermkes-rommel.de/",
+      "special": "Frühstück bis nachmittags, abends Wein"
+    },
+    {
+      "name": "Frau Möller",
+      "type": "Café & Bar",
+      "address": "Lange Reihe 96, St. Georg",
+      "district": "St. Georg",
+      "hours": "Mo-Fr 9-1h, Sa-So 10-1h",
+      "link": "https://www.fraumoeller.com/",
+      "special": "Retro-Charme, ganztägig Frühstück"
+    },
+    {
+      "name": "Super Mercato",
+      "type": "Italienisches Café",
+      "address": "Marktstraße 118, Schanze",
+      "district": "Schanze",
+      "hours": "Di-Sa 11-20h",
+      "link": "https://www.supermercato.de/",
+      "special": "Italienischer Deli + Café"
+    },
+    {
+      "name": "Blumenau",
+      "type": "Café & Bar",
+      "address": "Wohlwillstraße 20, St. Pauli",
+      "district": "St. Pauli",
+      "hours": "Täglich 10-1h",
+      "link": "https://www.blumenau.hamburg/",
+      "special": "Tag Café, Nachts Cocktails"
+    }
+  ]
 }

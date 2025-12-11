@@ -432,15 +432,35 @@ Nick Heymann - der Entwickler und Nutzer der App zusammen mit Solli.
 ## Infrastruktur & Integration
 
 - **Hosting**: GitHub Pages (automatisches Deploy bei Push auf `main`)
+- **Live URL**: nickheymann.github.io/dasgro-edatebuch
 - **Backend-Services** (Hetzner CX32):
   - n8n: Automation/Workflows (z.B. Event-Scraper, Benachrichtigungen)
   - Supabase: Self-Hosted (falls User-Daten benötigt)
-- **Deployment**:
-  - Statische Seite via GitHub Pages
-  - Scraper-Scripts lokal oder via n8n
 - **Secrets-Management**:
   - Keine Secrets im Frontend (reine Static Site)
   - API Keys für Scraper in n8n Environment Variables
+
+## Deployment-Standards
+
+### Lokaler Test
+```bash
+npm run serve        # http://localhost:8080
+npm run validate     # JS Syntax-Check
+```
+
+### CI/CD
+- GitHub Pages deployed automatisch aus `main` Branch
+- Keine Build-Pipeline nötig (statische Dateien)
+- Optional: GitHub Actions für Linting/Validierung
+
+### Erweiterung (falls Backend benötigt)
+Falls API/Backend nötig (z.B. Strava OAuth):
+```
+Hetzner /opt/datebuch-api/
+├── docker-compose.yml
+├── .env
+└── server/
+```
 
 ## Safety-Regeln für Git-Operationen durch LLM
 
