@@ -429,6 +429,19 @@ Solli trainiert für einen Marathon! Passende Dates:
 ## Kontakt
 Nick Heymann - der Entwickler und Nutzer der App zusammen mit Solli.
 
+## Infrastruktur & Integration
+
+- **Hosting**: GitHub Pages (automatisches Deploy bei Push auf `main`)
+- **Backend-Services** (Hetzner CX32):
+  - n8n: Automation/Workflows (z.B. Event-Scraper, Benachrichtigungen)
+  - Supabase: Self-Hosted (falls User-Daten benötigt)
+- **Deployment**:
+  - Statische Seite via GitHub Pages
+  - Scraper-Scripts lokal oder via n8n
+- **Secrets-Management**:
+  - Keine Secrets im Frontend (reine Static Site)
+  - API Keys für Scraper in n8n Environment Variables
+
 ## Safety-Regeln für Git-Operationen durch LLM
 
 - Arbeite NIEMALS direkt auf dem Branch `main`, sondern immer auf Feature-/Fix-Branches (z.B. `feature/...`, `fix/...`, `refactor/...`).
