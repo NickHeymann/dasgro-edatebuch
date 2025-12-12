@@ -21,22 +21,6 @@ const THEMES = {
     playful: {
         name: 'Playful',
         colors: ['#f97316', '#14b8a6', '#f43f5e']
-    },
-    cozy: {
-        name: 'Cozy',
-        colors: ['#d97706', '#92400e', '#fef3c7']
-    },
-    minimalist: {
-        name: 'Minimalist',
-        colors: ['#000000', '#404040', '#ffffff']
-    },
-    vibrant: {
-        name: 'Vibrant',
-        colors: ['#e11d48', '#7c3aed', '#059669']
-    },
-    elegant: {
-        name: 'Elegant',
-        colors: ['#d4af37', '#1e293b', '#9333ea']
     }
 };
 const DEFAULT_THEME = 'romantic';
@@ -61,8 +45,14 @@ function applyTheme(themeName) {
         themeName = DEFAULT_THEME;
     }
 
-    // Set data attribute for CSS (themes are defined in variables.css)
+    // Set data attribute for CSS
     document.documentElement.dataset.designTheme = themeName;
+
+    // Dynamically load theme CSS if not already loaded
+    const themeLink = document.getElementById('theme-css');
+    if (themeLink) {
+        themeLink.href = `css/themes/theme-${themeName}.css`;
+    }
 
     // Update panel if exists
     updatePanelSelection(themeName);
