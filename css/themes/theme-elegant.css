@@ -1,7 +1,7 @@
 /* ================================================
-   Romantic Theme Theme
+   Elegant Theme Theme
    Generated from Design Tokens - DO NOT EDIT MANUALLY
-   2025-12-12T10:51:29.484Z
+   2025-12-12T10:51:29.481Z
    ================================================ */
 
 :root {
@@ -40,35 +40,35 @@
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
     --shadow-glass: 0 8px 32px rgba(0,0,0,0.08);
-    --color-primary-base: #f472b6;
-    --color-primary-dark: #ec4899;
-    --color-primary-light: #fce7f3;
-    --color-secondary-base: #10b981;
-    --color-secondary-dark: #059669;
-    --color-secondary-light: #d1fae5;
-    --color-accent-base: #f59e0b;
-    --color-accent-dark: #d97706;
-    --color-accent-light: #fef3c7;
-    --color-background-base: #fafafa;
-    --color-background-warm: #f5f5f7;
-    --color-background-gradient: linear-gradient(135deg, #fafafa 0%, #f0f9ff 50%, #fce7f3 100%);
-    --color-surface-card: rgba(255,255,255,0.8);
-    --color-surface-frost: rgba(255,255,255,0.72);
-    --color-surface-glass: rgba(255,255,255,0.6);
-    --color-text-primary: #1f2937;
-    --color-text-secondary: #6b7280;
-    --color-text-muted: #9ca3af;
-    --color-text-heading: #111827;
-    --color-border-base: #e5e7eb;
-    --color-border-light: #f0f9ff;
-    --color-border-glass: rgba(255,255,255,0.3);
+    --color-primary-base: #d4af37;
+    --color-primary-dark: #b8941f;
+    --color-primary-light: #fef9e7;
+    --color-secondary-base: #1e293b;
+    --color-secondary-dark: #0f172a;
+    --color-secondary-light: #cbd5e1;
+    --color-accent-base: #9333ea;
+    --color-accent-dark: #7e22ce;
+    --color-accent-light: #f3e8ff;
+    --color-background-base: #fafaf9;
+    --color-background-warm: #f5f5f4;
+    --color-background-gradient: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 50%, #fef9e7 100%);
+    --color-surface-card: rgba(255, 255, 255, 0.92);
+    --color-surface-frost: rgba(254, 249, 231, 0.85);
+    --color-surface-glass: rgba(212, 175, 55, 0.2);
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748b;
+    --color-text-heading: #0f172a;
+    --color-border-base: #e7e5e4;
+    --color-border-light: #fef9e7;
+    --color-border-glass: rgba(212, 175, 55, 0.3);
     --effect-blur: blur(20px);
-    --effect-cardGradient: linear-gradient(135deg, #fce7f3 0%, #f0f9ff 100%);
-    --effect-buttonGlow: 0 0 20px rgba(244,114,182,0.3);
+    --effect-cardGradient: linear-gradient(135deg, #fef9e7 0%, #f5f5f4 100%);
+    --effect-buttonGlow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 /* Theme attribute selector for switching */
-[data-design-theme="romantic"] {
+[data-design-theme="elegant"] {
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -104,29 +104,29 @@
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
     --shadow-glass: 0 8px 32px rgba(0,0,0,0.08);
-    --color-primary-base: #f472b6;
-    --color-primary-dark: #ec4899;
-    --color-primary-light: #fce7f3;
-    --color-secondary-base: #10b981;
-    --color-secondary-dark: #059669;
-    --color-secondary-light: #d1fae5;
-    --color-accent-base: #f59e0b;
-    --color-accent-dark: #d97706;
-    --color-accent-light: #fef3c7;
-    --color-background-base: #fafafa;
-    --color-background-warm: #f5f5f7;
-    --color-background-gradient: linear-gradient(135deg, #fafafa 0%, #f0f9ff 50%, #fce7f3 100%);
-    --color-surface-card: rgba(255,255,255,0.8);
-    --color-surface-frost: rgba(255,255,255,0.72);
-    --color-surface-glass: rgba(255,255,255,0.6);
-    --color-text-primary: #1f2937;
-    --color-text-secondary: #6b7280;
-    --color-text-muted: #9ca3af;
-    --color-text-heading: #111827;
-    --color-border-base: #e5e7eb;
-    --color-border-light: #f0f9ff;
-    --color-border-glass: rgba(255,255,255,0.3);
+    --color-primary-base: #d4af37;
+    --color-primary-dark: #b8941f;
+    --color-primary-light: #fef9e7;
+    --color-secondary-base: #1e293b;
+    --color-secondary-dark: #0f172a;
+    --color-secondary-light: #cbd5e1;
+    --color-accent-base: #9333ea;
+    --color-accent-dark: #7e22ce;
+    --color-accent-light: #f3e8ff;
+    --color-background-base: #fafaf9;
+    --color-background-warm: #f5f5f4;
+    --color-background-gradient: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 50%, #fef9e7 100%);
+    --color-surface-card: rgba(255, 255, 255, 0.92);
+    --color-surface-frost: rgba(254, 249, 231, 0.85);
+    --color-surface-glass: rgba(212, 175, 55, 0.2);
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748b;
+    --color-text-heading: #0f172a;
+    --color-border-base: #e7e5e4;
+    --color-border-light: #fef9e7;
+    --color-border-glass: rgba(212, 175, 55, 0.3);
     --effect-blur: blur(20px);
-    --effect-cardGradient: linear-gradient(135deg, #fce7f3 0%, #f0f9ff 100%);
-    --effect-buttonGlow: 0 0 20px rgba(244,114,182,0.3);
+    --effect-cardGradient: linear-gradient(135deg, #fef9e7 0%, #f5f5f4 100%);
+    --effect-buttonGlow: 0 0 20px rgba(212, 175, 55, 0.4);
 }

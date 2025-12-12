@@ -1,4 +1,8 @@
 /* Import all themes */
+@import "theme-cozy.css";
+@import "theme-elegant.css";
+@import "theme-minimalist.css";
 @import "theme-modern.css";
 @import "theme-playful.css";
 @import "theme-romantic.css";
+@import "theme-vibrant.css";

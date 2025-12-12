@@ -21,6 +21,22 @@ const THEMES = {
     playful: {
         name: 'Playful',
         colors: ['#f97316', '#14b8a6', '#f43f5e']
+    },
+    cozy: {
+        name: 'Cozy',
+        colors: ['#d97706', '#92400e', '#fef3c7']
+    },
+    minimalist: {
+        name: 'Minimalist',
+        colors: ['#000000', '#404040', '#ffffff']
+    },
+    vibrant: {
+        name: 'Vibrant',
+        colors: ['#e11d48', '#7c3aed', '#059669']
+    },
+    elegant: {
+        name: 'Elegant',
+        colors: ['#d4af37', '#1e293b', '#9333ea']
     }
 };
 const DEFAULT_THEME = 'romantic';

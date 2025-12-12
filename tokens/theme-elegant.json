@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Elegant Theme",
+    "description": "Gold-Akzente, luxuriös, edel - für besondere Dates"
+  },
+  "color": {
+    "primary": {
+      "base": { "value": "#d4af37", "type": "color" },
+      "dark": { "value": "#b8941f", "type": "color" },
+      "light": { "value": "#fef9e7", "type": "color" }
+    },
+    "secondary": {
+      "base": { "value": "#1e293b", "type": "color" },
+      "dark": { "value": "#0f172a", "type": "color" },
+      "light": { "value": "#cbd5e1", "type": "color" }
+    },
+    "accent": {
+      "base": { "value": "#9333ea", "type": "color" },
+      "dark": { "value": "#7e22ce", "type": "color" },
+      "light": { "value": "#f3e8ff", "type": "color" }
+    },
+    "background": {
+      "base": { "value": "#fafaf9", "type": "color" },
+      "warm": { "value": "#f5f5f4", "type": "color" },
+      "gradient": { "value": "linear-gradient(135deg, #fafaf9 0%, #f5f5f4 50%, #fef9e7 100%)", "type": "color" }
+    },
+    "surface": {
+      "card": { "value": "rgba(255, 255, 255, 0.92)", "type": "color" },
+      "frost": { "value": "rgba(254, 249, 231, 0.85)", "type": "color" },
+      "glass": { "value": "rgba(212, 175, 55, 0.2)", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "#1e293b", "type": "color" },
+      "secondary": { "value": "#475569", "type": "color" },
+      "muted": { "value": "#64748b", "type": "color" },
+      "heading": { "value": "#0f172a", "type": "color" }
+    },
+    "border": {
+      "base": { "value": "#e7e5e4", "type": "color" },
+      "light": { "value": "#fef9e7", "type": "color" },
+      "glass": { "value": "rgba(212, 175, 55, 0.3)", "type": "color" }
+    }
+  },
+  "effect": {
+    "blur": { "value": "blur(20px)", "type": "custom" },
+    "cardGradient": { "value": "linear-gradient(135deg, #fef9e7 0%, #f5f5f4 100%)", "type": "custom" },
+    "buttonGlow": { "value": "0 0 20px rgba(212, 175, 55, 0.4)", "type": "shadow" }
+  }
+}
