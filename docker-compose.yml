@@ -1,7 +1,5 @@
 # Das große Datebuch - Production Deployment
-# Hetzner Server mit Traefik Reverse Proxy
-
-version: '3.8'
+# Hetzner Server - Simplified (Direct Port Exposure)
 
 services:
   datebuch:
@@ -11,15 +9,16 @@ services:
     container_name: datebuch
     restart: unless-stopped
 
+    # Direct port exposure (no Traefik)
+    ports:
+      - "3005:80"
+
     # Resource Limits
     deploy:
       resources:
         limits:
           memory: 256M
           cpus: '0.25'
-        reservations:
-          memory: 128M
-          cpus: '0.1'
 
     # Security Options
     security_opt:
@@ -37,36 +36,9 @@ services:
       retries: 3
       start_period: 10s
 
-    # Traefik Labels
-    labels:
-      - "traefik.enable=true"
-
-      # HTTP Router
-      - "traefik.http.routers.datebuch.rule=Host(`91.99.177.238`) && PathPrefix(`/datebuch`)"
-      - "traefik.http.routers.datebuch.entrypoints=web"
-
-      # Strip prefix for clean URLs
-      - "traefik.http.middlewares.datebuch-stripprefix.stripprefix.prefixes=/datebuch"
-      - "traefik.http.routers.datebuch.middlewares=datebuch-stripprefix"
-
-      # Service
-      - "traefik.http.services.datebuch.loadbalancer.server.port=80"
-
-      # Optional: HTTPS (wenn Domain vorhanden)
-      # - "traefik.http.routers.datebuch-secure.rule=Host(`datebuch.nickheymann.de`)"
-      # - "traefik.http.routers.datebuch-secure.entrypoints=websecure"
-      # - "traefik.http.routers.datebuch-secure.tls.certresolver=letsencrypt"
-
-    networks:
-      - traefik-public
-
     # Logging
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
-
-networks:
-  traefik-public:
-    external: true
