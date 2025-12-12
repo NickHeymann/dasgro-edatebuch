@@ -28,6 +28,11 @@ COPY events.json /usr/share/nginx/html/
 COPY locations-database.json /usr/share/nginx/html/
 COPY memories/ /usr/share/nginx/html/memories/
 
+# Copy theme variations (modern, playful, cozy)
+COPY modern/ /usr/share/nginx/html/modern/
+COPY playful/ /usr/share/nginx/html/playful/
+COPY cozy/ /usr/share/nginx/html/cozy/
+
 # Security: Run as non-root
 RUN chown -R nginx:nginx /usr/share/nginx/html
 USER nginx
