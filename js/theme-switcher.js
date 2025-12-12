@@ -61,14 +61,8 @@ function applyTheme(themeName) {
         themeName = DEFAULT_THEME;
     }
 
-    // Set data attribute for CSS
+    // Set data attribute for CSS (themes are defined in variables.css)
     document.documentElement.dataset.designTheme = themeName;
-
-    // Dynamically load theme CSS if not already loaded
-    const themeLink = document.getElementById('theme-css');
-    if (themeLink) {
-        themeLink.href = `css/themes/theme-${themeName}.css`;
-    }
 
     // Update panel if exists
     updatePanelSelection(themeName);
