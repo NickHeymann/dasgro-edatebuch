@@ -1,184 +1,255 @@
-# Datebuch - Master Feature Liste
+# Datebuch - Feature Dokumentation
 
-Diese Datei dokumentiert alle Features, die in beiden Versionen der App verfügbar sein sollen.
-Beide Versionen haben ihr eigenes Design/UX, aber die gleiche Funktionalität.
-
-## Versionen
-
-| Version | Datei | Design | Status |
-|---------|-------|--------|--------|
-| Classic | `index.html` | Hell, romantisch, Glasmorphism, Buch-Animation | ✅ Komplett |
-| Modern | `datebuch-modern.html` | Dunkel, minimalistisch, Inter Font | 🔄 In Arbeit |
+**Stand:** 2025-12-12
+**Aktuelle Version:** Original Winter Scene (monolithic)
 
 ---
 
-## Core Features (Beide Versionen)
+## 📱 Aktuelle Versionen
 
-### 1. Event-Management
-- [x] Events aus `events.json` laden
-- [x] Events nach Kategorie filtern
-- [x] Events nach Datum filtern (Feierabend-Toggle)
-- [x] Event-Details anzeigen
-- [x] Events liken/disliken
-- [x] Vergangene Events ausblenden
-- [x] Countdown zu Events anzeigen
+| Version | Status | Datei | Zeilen | Design |
+|---------|--------|-------|--------|--------|
+| ❄️ **Original** | ✅ Live | `index.html` | 6521 | Romantisch, Winter Scene, Glassmorphism |
+| 🎨 Modern (color) | ⚠️ Nur Farbvariation | `modern/index.html` | 6521 | Indigo/Sky Blue/Purple |
+| 🎉 Playful (color) | ⚠️ Nur Farbvariation | `playful/index.html` | 6521 | Teal/Orange/Rose |
+| 🍂 Cozy (color) | ⚠️ Nur Farbvariation | `cozy/index.html` | 6521 | Amber/Red/Brown |
 
-### 2. Kategorien
-- [x] Shows (Musical, Varieté, Theater, Musik)
-- [x] Comedy
-- [x] Wellness
-- [x] Aktiv (Sport, Klettern, Laufen)
-- [x] Handwerk (Workshops, DIY)
-- [x] Essen (Restaurant-Tipps)
-
-### 3. Kalender
-- [x] Monatsansicht
-- [x] Mini-Kalender Navigation
-- [x] Events pro Tag anzeigen
-- [x] Zum aktuellen Monat springen
-
-### 4. Date Builder
-- [x] Event auswählen
-- [x] Restaurant auswählen (vorher/nachher)
-- [x] Bar(s) auswählen (Multi-Select)
-- [x] Budget berechnen
-- [x] WhatsApp teilen
-- [x] Kalender-Export (.ics)
-- [x] ÖPNV-Route von Sollis Arbeit
-
-### 5. 3D Globus & Reisen
-- [x] Interaktiver Three.js Globus
-- [x] Reiseziele markieren
-- [x] Tagebuch pro Reiseziel
-- [x] Visited/Wishlist Status
-- [x] Strava Integration (Demo)
-- [x] Komoot Integration (Demo)
-- [x] Aktivitäts-Routen auf Globus
-- [x] Flight Paths Animation
-
-### 6. Memories/Erinnerungen
-- [x] Polaroid-Galerie
-- [x] Lightbox für Fotos
-- [x] Titel bearbeiten (localStorage)
-- [x] User-Fotos hochladen
-
-### 7. Budget Tracker
-- [x] Monatsbudget setzen
-- [x] Ausgaben hinzufügen
-- [x] Fortschrittsbalken
-- [x] Kategorien für Ausgaben
-
-### 8. Bucket List
-- [x] Items hinzufügen
-- [x] Items abhaken
-- [x] Items löschen
-- [x] Fortschritt anzeigen
-
-### 9. Smart Features (NEU)
-- [x] Smart Recommendations (KI-basiert)
-- [x] Mystery Date (Zufalls-Date)
-- [x] Post-Date Rating (1-5 Herzen)
-- [x] Achievements System
-- [x] Love Letters
-- [x] Couple Sync (Demo)
-
-### 10. PWA & Offline
-- [x] Service Worker
-- [x] Offline-Modus
-- [x] Install Banner
-- [x] Offline-Indikator
-
-### 11. UI/UX
-- [x] Dark Mode Toggle
-- [x] Bottom Navigation (Mobile)
-- [x] Back-to-Top Button
-- [x] Toast Notifications
-- [x] Hamster Cursor (Classic only)
-- [x] Buch-Animation (Classic only)
-- [x] Schneeflocken/Eiszapfen (Classic only)
-
-### 12. Wetter & AI
-- [x] Wetter-Anzeige
-- [x] Wetter-basierte Vorschläge
-- [x] AI Insights (OpenAI-ready)
-
-### 13. Jahresrückblick
-- [x] Date-Statistiken
-- [x] Top-Kategorien
-- [x] Lieblings-Locations
-
-### 14. Suche
-- [x] Event-Suche
-- [x] Autocomplete
-- [x] Schnellnavigation
-
-### 15. Daten-Management
-- [x] Export (JSON)
-- [x] Import (JSON)
-- [x] localStorage Persistenz
+**Hinweis:** Die aktuellen "Varianten" (modern/playful/cozy) sind nur CSS-Farbänderungen, keine echten Design-Varianten. Siehe `DESIGN-VARIANTS-PLAN.md` für geplante echte Varianten.
 
 ---
 
-## Feature-Status pro Version
+## 🎯 Features der Original-Version
 
-| Feature | Classic (index.html) | Modern (datebuch-modern.html) |
-|---------|---------------------|------------------------------|
-| Event-Management | ✅ | ✅ |
-| Kategorien | ✅ | ✅ |
-| Kalender | ✅ | ✅ |
-| Date Builder | ✅ | ❌ |
-| 3D Globus | ✅ | ❌ |
-| Memories | ✅ | ❌ |
-| Budget Tracker | ✅ | ❌ |
-| Bucket List | ✅ | ❌ |
-| Smart Features | ✅ | 🔄 (teilweise) |
-| PWA | ✅ | ❌ |
-| Dark Mode | ✅ | ✅ (default dark) |
-| Bottom Nav | ✅ | ❌ |
-| Wetter | ✅ | ❌ |
-| Jahresrückblick | ✅ | ❌ |
-| Suche | ✅ | ❌ |
-| Export/Import | ✅ | ✅ |
+### 1. Event-Management ✅
+- Events aus `events.json` laden (129 KB, ~80 Events)
+- Kategoriefilter: Musical, Varieté, Theater, Comedy, Musik, Wellness, Aktiv, Handwerk, Essen, Shows
+- Datumsfilter mit "Feierabend-Toggle" (17:00, 17:30, 18:00 Uhr)
+- Event-Details Modal
+- Like/Dislike System (localStorage)
+- Vergangene Events automatisch ausblenden
+- Countdown zu kommenden Events
+
+### 2. Kalender ✅
+- Monatsansicht mit Event-Dots
+- Mini-Kalender Navigation
+- Events pro Tag anzeigen
+- "Zum aktuellen Monat springen" Button
+- Dark Mode Support
+
+### 3. Date Builder ✅
+- Event auswählen aus Kalender/Liste
+- Restaurant auswählen (vorher/nachher)
+- Multi-Bar-Auswahl (mehrere Bars möglich)
+- Budget automatisch berechnen
+- WhatsApp-Share (formatierter Text)
+- Kalender-Export (.ics Download)
+- ÖPNV-Route von Sollis Arbeit (Google Maps Transit)
+- Leaflet Map Integration (OpenStreetMap)
+
+### 4. 3D Globus & Reisen ✅
+- Interaktiver Three.js Globus
+- Reiseziele markieren (visited/wishlist)
+- Tagebuch pro Reiseziel (localStorage)
+- Flight Paths Animation
+- Polygon Triangulation (earcut.js)
+- Strava Integration (Demo-Modus, kein Server)
+- Komoot Integration (Demo-Modus, kein Server)
+
+### 5. Memories/Erinnerungen ✅
+- Polaroid-Galerie (15 Fotos)
+- Lightbox für Fotos
+- Titel bearbeiten (localStorage-persisted)
+- **WICHTIG:** User-Änderungen werden gespeichert!
+
+### 6. UI/UX Besonderheiten ✅
+- **Buch-Animation:** App öffnet sich wie ein Buch
+- **Winter Scene:** Schneemann ⛄, Schneeball-Wurf, Schnee-Hügel
+- **Hamster-Cursor:** Solli liebt Hamster!
+- **Glassmorphism:** Frosted glass effects
+- **Dark Mode:** Toggle mit localStorage
+- **Responsive Design:** Mobile-optimiert
+- **Scroll-to-Top Button**
+
+### 7. Smart Features ✅
+- Mystery Date (Zufalls-Date Generator)
+- Wetter-Widget (OpenWeatherMap API)
+- Offline-Support (Service Worker)
+
+### 8. Daten-Management ✅
+- localStorage Persistenz
+- Events: `events.json` (shared resource)
+- Locations: `locations-database.json` (shared resource)
 
 ---
 
-## Design-Unterschiede
+## 📊 Datenstruktur
 
-### Classic Version (`index.html`)
-- **Farbschema**: Rose, Sage, Blush, Pastelltöne
-- **Font**: Cormorant Garamond + Quicksand
-- **Stil**: Romantisch, verspielt, Glasmorphism
-- **Besonderheiten**:
-  - Buch-Animation beim Öffnen
-  - Hamster-Cursor
-  - Schneeflocken & Eiszapfen
-  - Nick & Solli Schneeball-Animation
+### events.json
+```json
+{
+  "id": "musical-frozen-2025-12-15",
+  "emoji": "🎭",
+  "title": "Frozen - Das Musical",
+  "date": "2025-12-15",
+  "category": "musical",
+  "location": "Stage Theater an der Elbe",
+  "address": "Norderelbstraße 6, 20457 Hamburg",
+  "coords": { "lat": 53.5406, "lng": 9.9851 },
+  "link": "https://stage-entertainment.de",
+  "time": "19:30",
+  "price": "€89",
+  "restaurant": {
+    "name": "Vlet",
+    "type": "Norddeutsch, vegetarisch",
+    "address": "Am Sandtorkai 23, 20457 Hamburg",
+    "link": "https://vlet.de",
+    "empfehlung": "Grünkohl-Ravioli, Rote Bete Carpaccio"
+  },
+  "bar": [
+    {
+      "name": "Le Lion Bar",
+      "type": "Cocktailbar",
+      "address": "Rathausstraße 3, 20095 Hamburg",
+      "link": "https://lelion.net"
+    }
+  ]
+}
+```
 
-### Modern Version (`datebuch-modern.html`)
-- **Farbschema**: Slate, Rose Accent, Dark Mode First
-- **Font**: Inter
-- **Stil**: Minimalistisch, clean, card-based
-- **Besonderheiten**:
-  - Kompakte Cards
-  - Quick-Actions
-  - Stats Dashboard
-  - Schnelle Navigation
+### locations-database.json
+```json
+{
+  "restaurants": [
+    {
+      "id": "vlet-hamburg",
+      "name": "Vlet",
+      "type": "Norddeutsch, vegetarisch",
+      "address": "Am Sandtorkai 23, 20457 Hamburg",
+      "coords": { "lat": 53.5406, "lng": 9.9851 },
+      "link": "https://vlet.de",
+      "hours": "Mo-So 12:00-23:00",
+      "status": "offen"
+    }
+  ],
+  "bars": [...],
+  "activities": [...]
+}
+```
 
 ---
 
-## Sync-Strategie
+## 🏗️ Technische Architektur
 
-Wenn Features hinzugefügt werden:
-1. Feature in `index.html` implementieren
-2. Feature in `datebuch-modern.html` mit eigenem Design adaptieren
-3. Diese Datei aktualisieren
-4. Beide Versionen testen
+### Monolithisches HTML
+Die Original-Version ist eine **einzige HTML-Datei** (6521 Zeilen) mit:
+- Inline CSS (im `<style>` Tag)
+- Inline JavaScript (im `<script>` Tag)
+- Keine externen CSS/JS-Dateien (außer CDN-Libraries)
 
-## Shared Resources
+### Externe Dependencies (CDN)
+```html
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond...&display=swap">
 
-Beide Versionen nutzen:
-- `events.json` - Event-Daten
-- `locations-database.json` - Restaurant/Bar-Daten
+<!-- Three.js (3D Globe) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- TopoJSON (Map Data) -->
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+<!-- Earcut (Polygon Triangulation) -->
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+
+<!-- Leaflet (Maps) -->
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+```
+
+### Shared Resources
+- `events.json` - Event-Datenbank (129 KB)
+- `locations-database.json` - Location-Datenbank (42 KB)
+- `memories/` - Foto-Ordner (15 JPG/PNG Dateien)
+- `sw.js` - Service Worker (Offline-Support)
 - `manifest.json` - PWA Manifest
-- `sw.js` - Service Worker
-- `memories/` - Foto-Ordner
+
+### localStorage Keys
+```javascript
+localStorage.setItem('datebuch-theme', 'dark'); // Dark Mode
+localStorage.setItem('datebuch-likes', JSON.stringify({})); // Event Likes
+localStorage.setItem('datebuch-memoryTitles', JSON.stringify({})); // Memory Titles
+localStorage.setItem('datebuch-travelJournal', JSON.stringify({})); // Travel Diary
+```
+
+---
+
+## 🔐 Login/Security
+
+### Login
+- Passwort: `nicksolli2025`
+- Session: 7 Tage (localStorage)
+- Face ID/Touch ID: Safari Keychain (automatisch)
+
+---
+
+## 🌍 Deployment
+
+### Hetzner VPS (Port 3005)
+```
+URL: http://91.99.177.238:3005/
+Container: datebuch (Nginx Alpine)
+Status: ✅ Running (19 hours uptime)
+Health Check: ✅ Passing
+```
+
+### GitHub Pages
+```
+URL: https://nickheymann.github.io/dasgro-edatebuch/
+Branch: main
+Deploy: Automatisch bei Push
+```
+
+### Git Tags
+- `original-winter-scene-v1.0` - Permanent backup (commit eb9aa62)
+- `snapshot-before-themes-20251212` - Vor Theme-Erstellung
+
+---
+
+## 📝 Bekannte Einschränkungen
+
+### Modulare Version (veraltet)
+Es gibt im Repo noch Reste einer alten modularen Refactoring-Version:
+- `css/` - Ordner (nicht verwendet im Original)
+- `js/` - Ordner (nicht verwendet im Original)
+- `tokens/` - Design Tokens (nicht verwendet)
+
+**Diese Dateien sind NICHT Teil der deployed Version!**
+
+### Demo-Features (kein Backend)
+- **Strava Integration:** Funktioniert nur im Demo-Modus (keine echten OAuth Tokens)
+- **Komoot Integration:** Funktioniert nur im Demo-Modus
+- **Couple Sync:** localStorage-only (kein Real-Time Sync)
+
+### Service Worker Caching
+Bei Updates kann es zu Problemen mit dem Service Worker Cache kommen.
+**Lösung:** DevTools → Application → Service Workers → "Unregister" → Hard Refresh
+
+---
+
+## 🚀 Geplante Erweiterungen
+
+Siehe `DESIGN-VARIANTS-PLAN.md` für detaillierte Planung von 4 echten Design-Varianten:
+
+1. **🃏 Swipe Mode** (Tinder-Style)
+2. **📅 Timeline Mode** (TripIt-Style)
+3. **📰 Feed Mode** (Eventbrite-Style)
+4. **📱 Dashboard Mode** (Cupla-Style)
+
+---
+
+## 📚 Weitere Dokumentation
+
+- `CLAUDE.md` - Projektbriefing für Claude (Coding-Standards, Features, Tech Stack)
+- `DEPLOYMENT.md` - Deployment-Anleitung (Docker, Hetzner)
+- `THEMES.md` - Theme-System Dokumentation (Farbvarianten)
+- `DESIGN-VARIANTS-PLAN.md` - ULTRATHINK Plan für echte Design-Varianten
+- `REFACTORING_STATUS.md` - Status der alten Refactoring-Versuche (veraltet)
